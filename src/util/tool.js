@@ -1,6 +1,6 @@
-import store from '../vuex/store'
+import store from '../store'
 
-/** 
+/**
 *   Toast公共方法
 */
 export function toast(str, icon) {
@@ -14,8 +14,8 @@ export function toast(str, icon) {
     }
     store.dispatch('toastMsg',str);
     setTimeout(() => {
-        store.dispatch('showToast', false); 
-    },1500); 
+        store.dispatch('showToast', false);
+    },1500);
 }
 
 /**
@@ -26,7 +26,7 @@ export function alert(str) {
     store.dispatch('showAlert', true)
     store.dispatch('alertMsg', str)
     setTimeout(() => {
-        store.dispatch('showAlert', false); 
+        store.dispatch('showAlert', false);
     },1500);
 }
 

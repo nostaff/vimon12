@@ -15,13 +15,13 @@
                     <span class="eamil-icon common-icon">
                         <i class="icon">&#xe601;</i>
                     </span>
-                    <input type="text" v-model="username" placeholder="手机号" />  
+                    <input type="text" v-model="username" placeholder="手机号" />
                 </div>
                 <div class="user-pasw common-div">
                     <span class="pasw-icon common-icon">
                         <i class="icon">&#xe687;</i>
                     </span>
-                    <input type="password" v-model="password" placeholder="密码" />        
+                    <input type="password" v-model="password" placeholder="密码" />
                 </div>
                 <div class="user-code common-div">
                     <span class="pasw-icon common-icon">
@@ -51,7 +51,7 @@ import { mapActions } from 'vuex'
 
 const REG_PHONE = '/^1[34578]\d{9}$/'
 
-import api from '../fetch/api'
+import api from '../api'
 import * as _ from '../util/tool'
 
 export default {

@@ -1,5 +1,5 @@
-import api from '../../fetch/api'
-import * as types from '../types'
+import api from '../../api'
+import * as types from '../mutation-types'
 
 const state = {
     sportsList: [],

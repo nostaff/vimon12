@@ -3,16 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
-import store from './vuex/store'
+import store from './store'
 import * as filters from './util/filter'
 
 Object.keys(filters).forEach(k => Vue.filter(k, filters[k])) //注册过滤器
 
-/* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  store,
-  ...App
-})
+    store,
+    router,
+    render: h => h(App)
+}).$mount('#app')

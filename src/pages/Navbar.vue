@@ -2,14 +2,14 @@
     <div class="navbar">
         <nav class="nav-box clearfix">
             <ul class="nav-bar">
-                <li v-for="(item, index) in itemTab" class="nav-bar-item" :class="{'nav-bar-active':initIndex === index}" @click="changeTab(index)">
+                <li v-for="(item, index) in itemTab" :key="item.id"  class="nav-bar-item" :class="{'nav-bar-active':initIndex === index}" @click="changeTab(index)">
                     {{item.title}}
                 </li>
             </ul>
         </nav>
         <section class="scroll-list">
-            <travel v-for="(item,index) in travelsList" :travel="item" v-show="initIndex == 0"></travel>
-            <panel v-for="(item,index) in sportsList" :sport="item" v-show="initIndex == 1"></panel>
+            <travel v-for="(item,index) in travelsList" :key="item.id" :travel="item" v-show="initIndex == 0"></travel>
+            <panel v-for="(item,index) in sportsList" :key="item.id" :sport="item" v-show="initIndex == 1"></panel>
         </section>
         <div class="btn-apply" id="drag1">
             <div @click="post">
@@ -24,7 +24,7 @@
     import travel from '@/components/travel'
     import panel from '@/components/panel'
 
-    import api from '../fetch/api.js'
+    import api from '../api'
     import * as _ from '../util/tool'
     import { mapGetters } from 'vuex'
 
@@ -70,7 +70,7 @@
             obj1.addEventListener('touchmove', function (event) {
 
                 if (event.targetTouches.length == 1) {
-                    event.preventDefault();// 阻止浏览器默认事件，重要 
+                    event.preventDefault();// 阻止浏览器默认事件，重要
                     var touch = event.targetTouches[0];
                     // 把元素放在手指所在的位置
                     obj1.style.left = touch.pageX - 50 + 'px';

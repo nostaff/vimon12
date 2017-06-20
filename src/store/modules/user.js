@@ -1,5 +1,5 @@
-import api from '../../fetch/api'
-import * as types from '../types'
+import api from '../../api'
+import * as types from '../mutation-types'
 
 const state = {
     // 用户登录状态
@@ -62,7 +62,7 @@ const mutations = {
     [types.GET_USER_DATA](state, res) {
         state.userData = res
     }
-    
+
 }
 
 export default {

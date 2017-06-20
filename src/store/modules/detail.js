@@ -1,5 +1,5 @@
-import api from '../../fetch/api'
-import * as types from '../types'
+import api from '../../api'
+import * as types from '../mutation-types'
 
 
 const state = {
@@ -25,7 +25,7 @@ const actions = {
                     commit(types.COM_LOADING_STATUS, false)
                     commit(types.GET_TRAVELS_DETAIL, res)
                 })
-        }   
+        }
     },
     /**
      * 活动点击次数

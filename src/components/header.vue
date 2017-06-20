@@ -1,71 +1,67 @@
 <template>
-  <div class="header">
-    <div class="header-icon" v-show="backDisplay" @click="goBack"><i class="icon">&#xe622;</i></div>
-    <div class="header-cont"><p>{{title}}</p></div>
-    <div class="header-icon" v-show="menuDisplay" @click="showBar"><i class="icon">&#xe634;</i></div>
-    <div class="header-icon" v-show="mapDisplay" @click="getMap"><i class="icon map-icon">&#xe600;</i></div>
+  <div class="bar bar-nav">
+    <slot name="overwrite-left">
+      <a class="btn btn-link btn-nav pull-left" v-show="_leftOptions.showBack" @click.preventDefault="onClickBack">
+        <span class="icon" :class="_leftOptions.backIcon"></span>
+        {{typeof _leftOptions.backText === 'undefined' ? 'Back' : _leftOptions.backText}}
+      </a>
+    </slot>
+    <slot name="left"></slot>
+    <a class="btn btn-link btn-nav pull-right" v-show="_rightOptions.showMore" @click.preventDefault="$emit('on-click-right')">
+      {{typeof _rightOptions.moreText === 'undefined' ? 'More' : _rightOptions.moreText}}
+      <span class="icon" :class="_rightOptions.moreIcon"></span>
+    </a>
+    <slot name="right"></slot>
+    <h1 class="title" @click="$emit('on-click-title')">
+      <slot name="title">
+        <transition :name="transition">
+          <span v-show="title">{{title}}</span>
+        </transition>
+      </slot>
+    </h1>
   </div>
 </template>
 
 <script>
-  export default {
-    props: {
-      title: String,
-      menuDisplay: Boolean,
-      backDisplay: Boolean,
-      mapDisplay: Boolean
-    },
-    data() {
-      return {
-        
-      }
-    },
-    methods: {
-      goBack () {
-        window.history.back()
-      },
-      getMap () {
-        alert('开发中')
-      },
-      showBar () {
-        this.$store.dispatch('setNavState', true)
-      }
+    import objectAssign from 'object-assign'
+
+    export default {
+        props: {
+            leftOptions: Object,
+            title: String,
+            transition: String,
+            rightOptions: Object
+        },
+        computed: {
+            _leftOptions () {
+                return objectAssign({
+                    backText: "Back",
+                    showBack: true,
+                    backIcon: 'icon-left-nav',
+                    preventGoBack: false
+                }, this.leftOptions || {})
+            },
+            _rightOptions () {
+                return objectAssign({
+                    moreText: "More",
+                    showMore: false,
+                    moreIcon: 'icon-right-nav',
+                }, this.rightOptions || {})
+            },
+        },
+        methods: {
+            onClickBack () {
+                if (this._leftOptions.preventGoBack) {
+                    this.$emit('on-click-back')
+                } else {
+                    this.$router ? this.$router.back() : window.history.back()
+                }
+            }
+        }
     }
-  }
 </script>
 
-<style lang="scss" scoped>
-@import '../assets/css/function';
-
-.header{
-  position: fixed;
-  transform: translateZ(0);
-  top: 0;
-  z-index: 4;
-  height: px2rem(100px);
-  width: 100%;
-  background: #76D49B;
-  display: flex;
-  flex-direction: row;
-  .header-icon{
-    flex:1;
-    text-align: center;
-    >i{
-      line-height: px2rem(100px);
-    }
-    .map-icon{
-      font-size: 22px;
-    }
-  }
-  
-  .header-cont {
-    flex: 6;
-    padding-left: px2rem(40px);
-      >p{
-        line-height: px2rem(100px);
-        color: #ffffff;
-        font-size:17px;
-      }
-    }
-  }
+<style lang="scss">
+  @import "../assets/css/variables";
+  @import "../assets/css/bars";
 </style>

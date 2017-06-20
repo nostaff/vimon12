@@ -11,6 +11,32 @@ export const COM_SHOW_ALERT = 'COM_SHOW_ALERT'
 export const COM_ALERT_MSG = 'COM_ALERT_MSG'
 export const COM_SHOW_TIME_PICKER = 'COM_SHOW_TIME_PICKER'  //显示timepicker
 
+// 用户信息
+export const SET_USER = 'SET_LOGIN_STATUS' // 设置登录状态
+// 头部tab页面切换
+export const CHANGE_HEADER_TAB = 'CHANGE_HEADER_TAB'
+export const CHANGE_TYPES_TAB = 'CHANGE_TYPES_TAB'
+export const CHANGE_MYLIST_TAB = 'CHANGE_MYLIST_TAB'
+// 底部栏切换状态
+export const CHANGE_ACTIVE = 'CHANGE_ACTIVE'
+
+// 购物车
+export const ADD_TO_CART = 'ADD_TO_CART'
+export const CHECKOUT_REQUEST = 'CHECKOUT_REQUEST'
+export const CHECKOUT_SUCCESS = 'CHECKOUT_SUCCESS'
+export const CHECKOUT_FAILURE = 'CHECKOUT_FAILURE'
+export const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS'
+
+// 查询组件中的 查询信息
+export const SEARCH_PARAM_LIST = 'SEARCH_PARAM_LIST'
+export const SET_SEARCH_LIST = "SET_SEARCH_LIST"
+export const GET_SEARCH_LIST = "GET_SEARCH_LIST"
+export const GET_SEARCH_GROUP_DATA = "GET_SEARCH_GROUP_DATA"
+
+// 设置查询分组值到state
+export const SET_SEARCH_GROUP_VAL = 'SET_SEARCH_GROUP_VAL'
+export const CLEAR_SEARCH_VAL = "CLEAR_SEARCH_VAL"
+export const UPDATE_SEARCH_VAL = "UPDATE_SEARCH_VAL"
 
 //user 用户
 export const SET_USER_INFO      = 'SETUSERINFO'      //设置用户信息

@@ -15,13 +15,13 @@
                     <span class="eamil-icon common-icon">
                         <i class="icon">&#xe601;</i>
                     </span>
-                    <input type="text" name="username" v-model="username" placeholder="手机号" />        
+                    <input type="text" name="username" v-model="username" placeholder="手机号" />
                 </div>
                 <div class="user-pasw common-div">
                     <span class="pasw-icon common-icon">
                         <i class="icon">&#xe687;</i>
                     </span>
-                    <input type="password" name="password" v-model="password" placeholder="密码" />        
+                    <input type="password" name="password" v-model="password" placeholder="密码" />
                 </div>
                 <div class="login-btn" @click="_login">登录</div>
             </form>
@@ -35,7 +35,7 @@
 
 <script>
 import { mapActions } from 'vuex'
-import api from '../fetch/api'
+import api from '../api'
 import * as _ from '../util/tool'
 
 export default {

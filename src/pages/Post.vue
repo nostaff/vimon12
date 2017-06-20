@@ -42,7 +42,7 @@
         </form>
 
         <div id="address-select">
-            
+
         </div>
     </div>
 </template>
@@ -54,7 +54,7 @@ import timePicker from '@/components/timePicker'
 import { mapState } from 'vuex'
 
 import * as _ from '../util/tool'
-import api from '../fetch/api'
+import api from '../api'
 
 require('../util/city-picker.js')
 
@@ -77,7 +77,7 @@ export default {
         }
     },
     computed: mapState({
-        showTimePicker: state => state.com.showTimePicker
+        showTimePicker: state => state.common.showTimePicker
     }),
     methods: {
         showPicker() {
@@ -167,7 +167,7 @@ export default {
             font-size: 14px;
         }
     }
-    
+
 }
 
 
