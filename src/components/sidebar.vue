@@ -11,13 +11,13 @@
 	          			<router-link to="">
 	          				<i class="icon">&#xe626;</i>
 	              			<span>我的参加</span>
-	          			</router-link>	
+	          			</router-link>
 	          		</div>
 	          		<div class="function_sub">
 	          			<a href="javascript:;" @click="logout">
 	          				<i class="icon">&#xe674;</i>
 	                		<span>退出登录</span>
-	          			</a>	
+	          			</a>
 	          		</div>
 	        	</div>
 	      	</div>
@@ -30,13 +30,13 @@
 	          			<router-link to="">
 	          				<i class="icon">&#xe626;</i>
 	              			<span>我的参加</span>
-	          			</router-link>	
+	          			</router-link>
 	          		</div>
 	          		<div class="function_sub">
 	          			<router-link to="user/login" @click="hidebar">
 	          				<i class="icon">&#xe601;</i>
 	                		<span>去登录</span>
-	          			</router-link>	
+	          			</router-link>
 	          		</div>
 	        	</div>
 	      	</div>
@@ -45,7 +45,7 @@
 	        		<router-link to="/home" @click="hidebar">
 	          			<i class="icon" style="color: #76D49B; font-size: 20px;">&#xe60a;</i>
 	          			<span>首页</span>
-	          		</router-link>	          		
+	          		</router-link>
 	        	</div>
 	        	<ul class="sidebar_list_ul">
 	          		<li>
@@ -75,7 +75,7 @@ import * as _ from '../util/tool'
 export default {
 	data () {
 		return {
-			
+
 		}
 	},
 	// created () {
@@ -93,7 +93,7 @@ export default {
             'userInfo'
 		]),
 		showbar () {
-			return this.$store.state.com.leftNavStatus
+			return this.$store.state.common.leftNavStatus
 		}
 	},
 	methods: {
@@ -183,7 +183,7 @@ export default {
 					    float: right;
 					    margin-right: px2rem(50px);
 					    font-size: 16px;
-					    opacity: 0.7; 
+					    opacity: 0.7;
 					}
 				}
 			}
