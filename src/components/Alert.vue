@@ -17,7 +17,7 @@
             }
         },
         computed: mapState({
-            alertMsg: state => state.com.alertMsg
+            alertMsg: state => state.common.alertMsg
         })
     }
 
