@@ -1,10 +1,10 @@
 <template>
     <div class="group">
-        <cell v-for="(item,index) in cellLists" 
-            :link="item.link" 
-            :icon-url="item.iconUrl" 
-            :text="item.text" 
-            :desc="item.desc" 
+        <cell v-for="(item,index) in cellLists"
+            :link="item.link"
+            :icon-url="item.iconUrl"
+            :text="item.text"
+            :desc="item.desc"
             :badg="item.badg"
             :more="item.more"
             :avatar="item.avatar"
@@ -25,7 +25,7 @@ export default {
     },
     data() {
         return {
-            
+
         }
     },
     methods: {
@@ -35,7 +35,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/css/function';
+@import '../assets/scss/function';
 
 .group {
     margin-bottom: px2rem(20px);

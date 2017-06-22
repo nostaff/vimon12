@@ -15,78 +15,92 @@ import UserMsg from '../pages/UserMsg'
 import Navbar from '../pages/Navbar'
 import NotFound from '../pages/NotFound'
 
+import DemoHome from '../pages/demo/Home'
+import DemoPopup from '../pages/demo/Popup'
+
 Vue.use(Router)
 
 export default new Router({
-  linkActiveClass: 'active',
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home
-    },
-    {
-      path: '/home',
-      name: 'home',
-      component: Home
-    },
-    {
-      path: '/sport',
-      name: 'sport',
-      component: Sport
-    },
-    {
-      path: '/travel',
-      name: 'travel',
-      component: Travel
-    },
-    {
-      path: '/sport/:id',
-      name: 'detail',
-      component: Detail
-    },
-    {
-      path: '/travel/:id',
-      name: 'detail',
-      component: Detail
-    },
-    {
-      path: '/user',
-      name: 'user',
-      component: User
-    },
-    {
-			path: '/user/login',
-			component: Login
-		},
-		{
-			path: '/user/regist',
-			component: Regist
-		},
-		{
-			path: '/user/info',
-			component: UserInfo
-		},
-		{
-			path: '/user/set',
-			component: Set
-		},
-		{
-			path: '/user/post',
-			component: Post
-		},
-		{
-			path: '/user/msg',
-			component: UserMsg
-		},
-    {
-			path: '/user/navbar',
-			component: Navbar
-		},
-    {
-      path: '*',
-      name: 'notfound',
-      component: NotFound
-    }
-  ]
+    linkActiveClass: 'active',
+    routes: [
+        {
+            path: '/',
+            name: 'home',
+            component: Home
+        },
+        {
+            path: '/home',
+            name: 'home',
+            component: Home
+        },
+        {
+            path: '/sport',
+            name: 'sport',
+            component: Sport
+        },
+        {
+            path: '/travel',
+            name: 'travel',
+            component: Travel
+        },
+        {
+            path: '/sport/:id',
+            name: 'detail',
+            component: Detail
+        },
+        {
+            path: '/travel/:id',
+            name: 'detail',
+            component: Detail
+        },
+        {
+            path: '/user',
+            name: 'user',
+            component: User
+        },
+        {
+            path: '/user/login',
+            component: Login
+        },
+        {
+            path: '/user/regist',
+            component: Regist
+        },
+        {
+            path: '/user/info',
+            component: UserInfo
+        },
+        {
+            path: '/user/set',
+            component: Set
+        },
+        {
+            path: '/user/post',
+            component: Post
+        },
+        {
+            path: '/user/msg',
+            component: UserMsg
+        },
+        {
+            path: '/user/navbar',
+            component: Navbar
+        },
+
+        {
+            path: '/demo/popup',
+            component: DemoPopup
+        },
+        {
+            path: '/demo',
+            component: DemoHome
+        },
+
+
+        {
+            path: '*',
+            name: 'notfound',
+            component: NotFound
+        }
+    ]
 })

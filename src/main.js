@@ -7,6 +7,8 @@ import store from './store'
 
 import sess from './utils/session'
 
+import './assets/scss/ratchet.scss'
+
 router.beforeEach(function (to, from, next) {
     store.dispatch('updateLoadingStatus', true)
     // const scrollTop = Vonic.app.pageContentScrollTop()

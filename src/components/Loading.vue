@@ -22,7 +22,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import '../assets/css/function';
+@import '../assets/scss/function';
 
 .loading {
     position: fixed;

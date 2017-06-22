@@ -28,7 +28,7 @@ export default {
     },
     data() {
         return {
-            
+
         }
     },
     methods: {
@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/css/function';
+@import '../assets/scss/function';
 
 .cell {
     background: #fff;
@@ -92,7 +92,7 @@ export default {
             }
         }
     }
-    
+
 
 }
 </style>

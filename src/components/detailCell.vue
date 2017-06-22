@@ -7,7 +7,7 @@
             <li><i class="icon">&#xe694;</i><span>是否收费：</span>否</li>
             <li><i class="icon">&#xe601;</i><span>发布人：</span>{{releaseUsername}}</li>
             <li></li>
-        </ul> 
+        </ul>
     </div>
 </template>
 
@@ -22,7 +22,7 @@ export default {
     },
     data() {
         return {
-            
+
         }
     },
     methods() {
@@ -30,7 +30,7 @@ export default {
     },
     filters: {
         formatTime (value) {
-            
+
             // let time = Date(value)
             // // return new Date(time).toLocaleString()
             // return new Date(time)
@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/css/function';
+@import '../assets/scss/function';
 
 .cell {
     background: #fff;
@@ -63,7 +63,7 @@ export default {
             margin-right: px2rem(15px);
         }
     }
-    
+
 
 }
 </style>

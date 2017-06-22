@@ -11,7 +11,7 @@
                 </router-link>
             </div>
 		</div>
-        <travel v-for="(item,index) in travelLists" :travel="item"></travel>
+        <travel v-for="(item,index) in travelLists" :travel="item" :key="item.id"></travel>
 	</div>
 </template>
 
@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../assets/css/function';
+@import '../assets/scss/function';
 
 .travel-list {
     margin-top: px2rem(15px);

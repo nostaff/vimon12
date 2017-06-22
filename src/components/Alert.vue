@@ -17,14 +17,14 @@
             }
         },
         computed: mapState({
-            alertMsg: state => state.com.alertMsg
+            alertMsg: state => state.common.alertMsg
         })
     }
 
 </script>
 
 <style lang="scss" scoped>
-    @import '../assets/css/function';
+    @import '../assets/scss/function';
     .alert {
         z-index: 1000;
         .alert-wrap {

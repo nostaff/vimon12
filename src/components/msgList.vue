@@ -1,6 +1,6 @@
 <template>
 	<div class="msg-list">
-        <msg v-for="(item,index) in msgLists"></msg>
+        <msg v-for="item in msgLists" :key="item.id"></msg>
 	</div>
 </template>
 

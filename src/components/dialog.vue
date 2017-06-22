@@ -34,12 +34,12 @@ export default {
             this.$emit('cancel')
         }
     }
-    
+
 }
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/css/function';
+@import '../assets/scss/function';
 
 .dialog {
     z-index: 100;

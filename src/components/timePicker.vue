@@ -18,13 +18,13 @@
                     <div class="picker-weekday">六</div>
                 </div>
                 <div class="picker-con">
-                    <div class="picker-day" v-for="pick in picker" 
-                        :class="{'outfocus': pick.outfocus, 
-                                'today': pick.showday, 
-                                'start': showStartEnvfun(pick.dateNum,pick.outfocus), 
-                                'end': showEndEnvfun(pick.dateNum,pick.outfocus), 
-                                'black': showBlack(pick.dateNum,pick.outfocus), 
-                                'half': showHalffun(pick.dateNum,pick.outfocus)}" 
+                    <div class="picker-day" v-for="pick in picker"
+                        :class="{'outfocus': pick.outfocus,
+                                'today': pick.showday,
+                                'start': showStartEnvfun(pick.dateNum,pick.outfocus),
+                                'end': showEndEnvfun(pick.dateNum,pick.outfocus),
+                                'black': showBlack(pick.dateNum,pick.outfocus),
+                                'half': showHalffun(pick.dateNum,pick.outfocus)}"
                         @click="checkDay(pick.dateNum,pick.outfocus)">
                         {{pick.dateNum}}
                     </div>
@@ -37,7 +37,7 @@
             </div>
             <div class="confim" @click="confimDate">确定</div>
         </div>
-        
+
     </div>
 </template>
 
@@ -286,13 +286,13 @@
             }
         },
         computed: {
-            
+
         }
     }
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/css/function';
+@import '../assets/scss/function';
 
 .picker-box {
     z-index: 100;
@@ -382,7 +382,7 @@
             line-height: px2rem(100px);
             margin: 0 auto;
             display: flex;
-            border-bottom: 1px solid #eee; 
+            border-bottom: 1px solid #eee;
             >div{
                 width: 33.33%;
                 text-align: center;

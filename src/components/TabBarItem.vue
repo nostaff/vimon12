@@ -10,7 +10,7 @@
 </template>
 
 <script>
-    import { childMixin } from '../mixins/multi-items'
+    import { childMixin } from '../utils/multi-items'
 
     export default {
         beforeMount () {
@@ -45,6 +45,6 @@
 </script>
 
 <style lang="scss">
-    @import "../assets/css/variables";
-    @import "../assets/css/bars";
+    @import "../assets/scss/variables";
+    @import "../assets/scss/bars";
 </style>

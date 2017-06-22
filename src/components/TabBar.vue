@@ -1,11 +1,11 @@
 <template>
-    <nav class="bar bar-tab" v-show="isShowTabbar">
+    <div class="bar bar-tab" v-show="isShowTabbar">
         <slot></slot>
-    </nav>
+    </div>
 </template>
 
 <script>
-    import { parentMixin } from '../mixins/multi-items'
+    import { parentMixin } from '../utils/multi-items'
 
     export default {
         mixins: [parentMixin],
@@ -21,6 +21,6 @@
 </script>
 
 <style lang="scss">
-    @import "../assets/css/variables";
-    @import "../assets/css/bars";
+    @import "../assets/scss/variables";
+    @import "../assets/scss/bars";
 </style>

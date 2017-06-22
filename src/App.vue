@@ -18,7 +18,7 @@
         </div>
 
         <tabbar slot="bottom" class="tabbar" v-show="!isTabbarDemo">
-            <tabbar-item link="/home" :selected="isDemo" badge="9">
+            <tabbar-item link="/home" :selected="true" badge="9">
                 <span slot="icon" class="icon-home"></span>
                 <span slot="label" class="tab-label">首页</span>
             </tabbar-item>
@@ -34,8 +34,15 @@
                 <span slot="icon" class="icon-person"></span>
                 <span slot="label" class="tab-label">我的</span>
             </tabbar-item>
+            <tabbar-item link="/demo">
+                <span slot="icon" class="icon-person"></span>
+                <span slot="label" class="tab-label">Demo</span>
+            </tabbar-item>
         </tabbar>
-    </div id="app">
+
+        <div class="page" :class="{'menus': menus, menuColor: '#B5B5B5', activeMenuColor: '#44CC00', onMenuClick: menuClicked}">
+        </div>
+    </div>
 </template>
 
 <script>
@@ -63,15 +70,46 @@
         },
         data () {
             return {
-
+                menus: [
+                    {
+                        iconOn: 'ion-ios-home',
+                        iconOff: 'ion-ios-home-outline',
+                        text: '首页',
+                        path: '/advanced/tabbar/home'
+                    },
+                    {
+                        iconOn: 'ion-ios-pricetags',
+                        iconOff: 'ion-ios-pricetags-outline',
+                        text: '折扣',
+                        path: '/advanced/tabbar/discount'
+                    },
+                    {
+                        iconOn: 'ion-ios-cart',
+                        iconOff: 'ion-ios-cart-outline',
+                        text: '购物车',
+                        path: '/advanced/tabbar/cart',
+                        badge: '5'
+                    },
+                    {
+                        iconOn: 'ion-ios-person',
+                        iconOff: 'ion-ios-person-outline',
+                        text: '我的',
+                        path: '/advanced/tabbar/user'
+                    }
+                ]
             }
         },
         methods: {
-            ...mapActions({ setNavState: 'setNavState' }),
+            ...mapActions({
+                setNavState: 'setNavState'
+            }),
 
             onClickMore () {
                 this.showMenu = true
             },
+            menuClicked(menuIndex) {
+                console.log(menuIndex)
+            }
         },
         computed: {
             ...mapGetters([
@@ -139,6 +177,10 @@
                     return true
                 }
                 return false
+            },
+
+            beforeDestroy() {
+                $tabbar.$emit('hideTabbar')
             }
         }
     }

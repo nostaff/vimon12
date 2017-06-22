@@ -70,7 +70,7 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import * as _ from '../util/tool'
+import * as _ from '../utils/tool'
 
 export default {
 	data () {
@@ -112,7 +112,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../assets/css/function';
+@import '../assets/scss/function';
 
 .sidebar {
 	.sidebar-con {

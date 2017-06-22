@@ -22,15 +22,15 @@ export default {
         }
     },
     computed: mapState({
-        success: state => state.com.showSuccess,
-        fail: state => state.com.showFail,
-        toastMsg: state => state.com.toastMsg
+        success: state => state.common.showSuccess,
+        fail: state => state.common.showFail,
+        toastMsg: state => state.common.toastMsg
     })
 }
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/css/function';
+@import '../assets/scss/function';
 
 .toast {
     z-index: 100;
