@@ -25,7 +25,7 @@
     import panel from '@/components/panel'
 
     import api from '../api'
-    import * as _ from '../util/tool'
+    import * as _ from '../utils/tool'
     import { mapGetters } from 'vuex'
 
     export default {
@@ -83,7 +83,7 @@
 </script>
 
 <style lang="scss" scoped>
-    @import '../assets/css/function';
+    @import '../assets/scss/function';
     .navbar {
         .nav-box {
             position: fixed;

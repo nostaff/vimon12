@@ -36,7 +36,7 @@
 <script>
 import { mapActions } from 'vuex'
 import api from '../api'
-import * as _ from '../util/tool'
+import * as _ from '../utils/tool'
 
 export default {
 
@@ -59,13 +59,13 @@ export default {
                 username: this.username,
                 password: this.password
             }
-            this.$store.dispatch('setLoadingState', true)
+            this.$store.dispatch('updateLoadingStatus', true)
             api.Login(data)
                 .then(res => {
                     console.log(res)
                     if(res.success) {
                         // let userInfo = Object.assign()
-                        this.$store.dispatch('setLoadingState', false)
+                        this.$store.dispatch('updateLoadingStatus', false)
                         this.setUserInfo(res.data)
                         this.$router.replace('/home')
                     }
@@ -79,7 +79,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/css/function';
+@import '../assets/scss/function';
 
 
 .login{

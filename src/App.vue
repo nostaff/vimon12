@@ -2,7 +2,7 @@
     <div id="app">
         <v-toast v-show="showToast"></v-toast>
         <v-alert v-show="showAlert"></v-alert>
-        <v-loading v-show="loading"></v-loading>
+        <v-loading v-show="isLoading"></v-loading>
 
         <x-header class="header" slot="header"
                   :left-options="leftOptions"
@@ -12,8 +12,8 @@
                   @on-click-more="onClickMore"></x-header>
 
         <div class="content">
-            <transition name="slide-left">
-                <router-view></router-view>
+            <transition :name="'vux-pop-' + (direction === 'forward' ? 'in' : 'out')">
+                <router-view class="router-view"></router-view>
             </transition>
         </div>
 
@@ -35,7 +35,7 @@
                 <span slot="label" class="tab-label">我的</span>
             </tabbar-item>
         </tabbar>
-    </div>
+    </div id="app">
 </template>
 
 <script>
@@ -66,36 +66,19 @@
 
             }
         },
-        watch: {
-//            path (path) {
-//                if (path === '/component/demo') {
-//                    this.$router.replace('/demo')
-//                    return
-//                }
-//                if (path === '/demo') {
-//                    setTimeout(() => {
-//                        this.box = document.querySelector('#demo_list_box')
-//                        if (this.box) {
-//                            this.box.removeEventListener('scroll', this.handler, false)
-//                            this.box.addEventListener('scroll', this.handler, false)
-//                        }
-//                    }, 1000)
-//                } else {
-//                    this.box && this.box.removeEventListener('scroll', this.handler, false)
-//                }
-//            }
-        },
         methods: {
             ...mapActions({ setNavState: 'setNavState' }),
+
             onClickMore () {
                 this.showMenu = true
             },
         },
         computed: {
             ...mapGetters([
-                'loading',
+                'isLoading',
                 'showToast',
-                'showAlert'
+                'showAlert',
+                'direction'
             ]),
             leftOptions () {
                 return {
@@ -162,23 +145,23 @@
 </script>
 
 <style lang="scss">
-    @import './assets/css/function';
+    @import 'assets/scss/function';
 
     // Variables
-    @import "./assets/css/variables.scss";
+    @import "assets/scss/variables.scss";
 
     // Mixins
-    @import "./assets/css/mixins.scss";
+    @import "assets/scss/mixins.scss";
 
     // Normalize & Base CSS
-    @import "./assets/css/normalize.scss";
-    @import "./assets/css/base.scss";
-    @import "./assets/css/type.scss";
+    @import "assets/scss/normalize.scss";
+    @import "assets/scss/base.scss";
+    @import "assets/scss/type.scss";
 
     // Ratchicons
-    @import "./assets/css/ratchicons.scss";
+    @import "assets/scss/ratchicons.scss";
 
     // Theme iOS
-    @import "./assets/css/theme-ios.scss";
+    @import "assets/scss/theme-ios.scss";
 
 </style>

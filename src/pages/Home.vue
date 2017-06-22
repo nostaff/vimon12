@@ -7,24 +7,22 @@
 					<div class="swiper-pagination" slot="pagination"></div>
 			</swiper>
 		</div>
-		<v-nav></v-nav>
 		<travel-list :travel-lists="travelListIndex"></travel-list>
 	</div>
 </template>
 
 <script>
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
-import nav from '@/components/nav'
+//import nav from '@/components/nav'
 import travelList from '@/components/travelList'
 
 import { mapGetters } from 'vuex'
 
 export default {
-	
+
 	components: {
 		swiper,
 		swiperSlide,
-		'v-nav': nav,
 		travelList
 	},
 	data() {
@@ -50,16 +48,16 @@ export default {
 		])
 	},
 	mounted(){
-		
+
     },
 	methods: {
-		
+
 	}
 }
 </script>
 
 <style scoped lang="scss">
-@import '../assets/css/function';
+@import '../assets/scss/function';
 
 .banner {
 	.swiper-box {

@@ -2,6 +2,7 @@
 export const COM_NAV_STATUS     = 'COM_NAV_STATUS'
 export const COM_HEADER_STATUS  = 'COM_HEADER_STATUS'
 export const COM_LOADING_STATUS = 'COM_LOADING_STATUS'
+export const COM_UPDATE_DIRECTION = 'COM_UPDATE_DIRECTION'
 
 export const COM_SHOW_TOAST = 'COM_SHOW_TOAST'              //显示toast
 export const COM_SHOW_SUCCESS = 'COM_SHOW_SUCCESS'          //显示成功toast

@@ -4,7 +4,8 @@ import * as types from '../mutation-types'
  * App通用配置
  */
 const state = {
-    loading: false,
+    isLoading: false,
+    direction: 'forward',
     showToast: false,
     leftNavStatus: false,
     showSuccess: true,
@@ -16,8 +17,11 @@ const state = {
 }
 
 const actions = {
-    setLoadingState({ commit }, status) {
+    updateLoadingStatus({ commit }, status) {
         commit(types.COM_LOADING_STATUS, status)
+    },
+    updateDirection (state, direction) {
+        state.direction = direction
     },
     setNavState({ commit }, status) {
         commit(types.COM_NAV_STATUS, status)
@@ -42,20 +46,24 @@ const actions = {
     },
     showTimePicker({ commit }, status) {
         commit(types.COM_SHOW_TIME_PICKER, status)
-    }
-
+    },
 }
 
 const getters = {
-    loading: state => state.loading,
+    isLoading: state => state.isLoading,
+    direction: state => state.direction,
     showToast: state => state.showToast,
-    showAlert: state => state.showAlert
+    showAlert: state => state.showAlert,
 }
 
 
 const mutations = {
     [types.COM_LOADING_STATUS](state, status) {
-        state.loading = status
+        state.isLoading = status
+    },
+
+    [types.COM_UPDATE_DIRECTION] (state, direction) {
+        state.direction = direction
     },
 
     [types.COM_SHOW_TOAST](state, status) {

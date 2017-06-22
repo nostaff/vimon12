@@ -53,12 +53,12 @@ import timePicker from '@/components/timePicker'
 
 import { mapState } from 'vuex'
 
-import * as _ from '../util/tool'
+import * as _ from '../utils/tool'
 import api from '../api'
 
-require('../util/city-picker.js')
+require('../utils/city-picker.js')
 
-import $city from '../util/city.js'
+import $city from '../utils/city.js'
 
 export default {
     components: {
@@ -119,7 +119,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/css/function';
+@import '../assets/scss/function';
 @import '../../static/css/city-picker.css';
 
 .add-activity {

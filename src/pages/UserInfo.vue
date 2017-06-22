@@ -12,7 +12,7 @@
 import group from '@/components/group'
 
 import { mapGetters } from 'vuex'
-import * as _ from '../util/tool'
+import * as _ from '../utils/tool'
 
 export default {
 
@@ -45,22 +45,22 @@ export default {
 		cellLists1 () {
 			let cellLists1 = [
 				{ link: '', iconUrl: '', text: '头像', avatar: this.userInfo.avatar, more: true},
-				{ link: '', iconUrl: '', text: '用户名', desc: this.userInfo.nickname},     
-				{ link: '', iconUrl: '', text: '性别', desc: this.userInfo.sex},     
-				{ link: '', iconUrl: '', text: '高校', desc: this.userInfo.universities},     
-				{ link: '', iconUrl: '', text: '手机', desc: this.userInfo.mobilePhoneNumber},     
-				{ link: '', iconUrl: '', text: '邮箱', desc: ''},     
-				{ link: '', iconUrl: '', text: '签名', desc: ''},     
+				{ link: '', iconUrl: '', text: '用户名', desc: this.userInfo.nickname},
+				{ link: '', iconUrl: '', text: '性别', desc: this.userInfo.sex},
+				{ link: '', iconUrl: '', text: '高校', desc: this.userInfo.universities},
+				{ link: '', iconUrl: '', text: '手机', desc: this.userInfo.mobilePhoneNumber},
+				{ link: '', iconUrl: '', text: '邮箱', desc: ''},
+				{ link: '', iconUrl: '', text: '签名', desc: ''},
 			]
 			return cellLists1
 		}
-		
+
 	}
 }
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/css/function';
+@import '../assets/scss/function';
 
 .set {
 	.set-btn {

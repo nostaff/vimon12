@@ -1,7 +1,7 @@
 import axios from 'axios'
 import qs from 'qs'
 
-import * as _ from '../util/tool'
+import * as _ from '../utils/tool'
 
 // axios 配置
 axios.defaults.timeout = 5000;
@@ -52,7 +52,7 @@ export default {
     Login(params) {
         return fetch('/users/api/userLogin', params)
     },
-    
+
     /**
      * 用户注册
      */

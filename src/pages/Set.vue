@@ -13,7 +13,7 @@ import group from '@/components/group'
 import dialog from '@/components/dialog'
 
 import { mapGetters } from 'vuex'
-import * as _ from '../util/tool'
+import * as _ from '../utils/tool'
 
 export default {
 
@@ -25,10 +25,10 @@ export default {
 		return {
 			cellLists1: [
                 { link: '', iconUrl: '', text: '消息推送', desc: '', more: true},
-                { link: '', iconUrl: '', text: '版本更新', desc: '', more: true},     
-                { link: '', iconUrl: '', text: '意见反聩', desc: '', more: true}, 
+                { link: '', iconUrl: '', text: '版本更新', desc: '', more: true},
+                { link: '', iconUrl: '', text: '意见反聩', desc: '', more: true},
                 { link: '', iconUrl: '', text: '给我评分', desc: '', more: true},
-                { link: '', iconUrl: '', text: '关于我们', desc: '', more: true}    
+                { link: '', iconUrl: '', text: '关于我们', desc: '', more: true}
             ],
 			dialog: false,
             dialogMsg: '确认退出登录?',
@@ -60,7 +60,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/css/function';
+@import '../assets/scss/function';
 
 .set {
 	.set-btn {

@@ -1,5 +1,3 @@
-// import { go } from '../libs/router'
-
 const parentMixin = {
     mounted () {
         if (this.value >= 0) {

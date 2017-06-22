@@ -30,3 +30,13 @@ export function alert(str) {
     },1500);
 }
 
+
+const nextDirection = (direction) => {
+    let el = document.querySelector('#app')
+    if (el) el.setAttribute('transition-direction', direction);
+}
+
+const setTitle = (title) => {
+    let el = document.querySelector('[von-navbar="active"] > .title > span')
+    if (el) el.textContent = title
+}

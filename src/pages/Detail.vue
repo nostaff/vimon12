@@ -6,14 +6,14 @@
             <h1>{{detail.title}}</h1>
             <router-link to="">{{detail.releaseUsername}}</router-link>
             <span>| {{detail.releaseTime}}</span>
-        </div>     	
+        </div>
         <detail-cell
             :begin-time="detail.beginTime"
             :end-time="detail.endTime"
             :cant-join-time="detail.cantJoinTime"
             :destination="detail.destination"
             :release-username="detail.releaseUsername">
-        </detail-cell>   
+        </detail-cell>
         <v-dialog v-show="dialog" :dialog-msg="dialogMsg" :link-url="linkUrl" @confirm="confirm" @cancel="cancel"></v-dialog>
         <div class="activity-details">
             <p>{{detail.content}}</p>
@@ -34,7 +34,7 @@ import dialog from '@/components/dialog'
 
 import { mapGetters } from 'vuex'
 
-import * as _ from '../util/tool'
+import * as _ from '../utils/tool'
 
 export default {
     components: {
@@ -73,7 +73,7 @@ export default {
             if(router == 'travel') {
                 el.$store.dispatch('travelClicks', id)
             }
-            
+
         },
         confirm() {
             this.dialog = false
@@ -91,7 +91,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/css/function';
+@import '../assets/scss/function';
 
 .travel-detail {
     .A-cimg {

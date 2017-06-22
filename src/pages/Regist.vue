@@ -52,7 +52,7 @@ import { mapActions } from 'vuex'
 const REG_PHONE = '/^1[34578]\d{9}$/'
 
 import api from '../api'
-import * as _ from '../util/tool'
+import * as _ from '../utils/tool'
 
 export default {
 
@@ -120,12 +120,12 @@ export default {
                 password: this.password,
                 verificode: this.verificode
             }
-            this.$store.dispatch('setLoadingState', true)
+            this.$store.dispatch('updateLoadingStatus', true)
             api.Regist(data)
                 .then(res => {
                     if(res.success) {
                         // let userInfo = Object.assign()
-                        this.$store.dispatch('setLoadingState', false)
+                        this.$store.dispatch('updateLoadingStatus', false)
                         this.setUserInfo(res.data)
                         this.$router.replace('/home')
                     }
@@ -139,7 +139,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/css/function';
+@import '../assets/scss/function';
 
 
 .login{
