@@ -1,5 +1,5 @@
-@import "variables.scss";
-@import "mixins.scss";
+@import "variables";
+@import "mixins";
 
 // Clearfix mixin for docs
 
@@ -1008,7 +1008,7 @@ hr {
 // --------------------------------------------------
 
 .platform-ios {
-  @import "theme-ios.scss";
+  @import "theme-ios";
 
   .device {
     background-position: -395px 0;
@@ -1019,7 +1019,7 @@ hr {
   }
 }
 .platform-android {
-  @import "theme-android.scss";
+  @import "theme-android";
 
   .device {
     font-family: 'Roboto', sans-serif;

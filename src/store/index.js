@@ -6,7 +6,6 @@ import user from './modules/user'
 import sport from './modules/sport'
 import travel from './modules/travel'
 import detail from './modules/detail'
-import tabbarItems from './modules/tabbarItems'
 
 
 Vue.use(Vuex)
@@ -18,7 +17,6 @@ export default new Vuex.Store({
         sport,
         travel,
         detail,
-        tabbarItems,
     },
     strict: process.env.NODE_ENV !== 'production'
 })

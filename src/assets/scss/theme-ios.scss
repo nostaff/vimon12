@@ -1,4 +1,4 @@
-@import "mixins.scss";
+@import "mixins";
 
 //
 // iOS theme
@@ -20,6 +20,7 @@ $chrome-color:   rgba(247,247,247,.98) !global;
 $default-color:  #929292 !global;
 $positive-color: #4cd964 !global;
 $negative-color: #dd524d !global;
+$background-color: #efeff4 !global;
 
 // Bars
 $bar-base-height: 44px !global;
@@ -40,13 +41,6 @@ a {
     color: darken($primary-color, 10%);
   }
 }
-
-// Content
-.content {
-  background-color: #efeff4;
-}
-
-
 // Typography
 // --------------------------------------------------
 
@@ -59,6 +53,11 @@ p {
 .h6, h6 {
   font-weight: normal;
   text-transform: uppercase;
+}
+
+// Content
+.content {
+  background-color: $background-color;
 }
 
 
@@ -298,8 +297,9 @@ p {
 
 .table-view {
   border-top: 0;
-  border-bottom: 0;
-  @include hairline(double, #c8c7cc, 0); // Double grey border.
+  //border-bottom: 0;
+  //@include hairline(double, #c8c7cc, 0); // Double grey border.
+  background-color: $background-color;
 
   .table-view-cell {
     border-bottom: 0;
@@ -318,7 +318,7 @@ p {
   .table-view-divider {
     border-top: 0;
     border-bottom: 0;
-    @include hairline(double, #c8c7cc, 0);  // Double (top and bottom) grey border with no offset.
+    @include hairline(single, #c8c7cc, 0);  // Double (top and bottom) grey border with no offset.
   }
 }
 

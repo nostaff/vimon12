@@ -120,7 +120,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '../assets/scss/function';
-@import '../../static/css/city-picker.css';
+@import '../../../../Develop/Repository/JournalX/mobile-vue/static/css/city-picker.css';
 
 .add-activity {
     position: relative;

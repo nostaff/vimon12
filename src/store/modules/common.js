@@ -6,7 +6,6 @@ import * as types from '../mutation-types'
 const state = {
     isLoading: false,
     direction: 'forward',
-    showToast: false,
     leftNavStatus: false,
     showSuccess: true,
 	showFail: false,
@@ -26,18 +25,6 @@ const actions = {
     setNavState({ commit }, status) {
         commit(types.COM_NAV_STATUS, status)
     },
-    showToast({ commit }, status) {
-        commit(types.COM_SHOW_TOAST, status)
-    },
-    showSuccess({ commit }, status) {
-        commit(types.COM_SHOW_SUCCESS, status)
-    },
-    showFail({ commit }, status) {
-        commit(types.COM_SHOW_FAIL, status)
-    },
-    toastMsg({ commit }, str) {
-        commit(types.COM_TOAST_MSG, str)
-    },
     showAlert({ commit }, status) {
         commit(types.COM_SHOW_ALERT, status)
     },
@@ -52,7 +39,6 @@ const actions = {
 const getters = {
     isLoading: state => state.isLoading,
     direction: state => state.direction,
-    showToast: state => state.showToast,
     showAlert: state => state.showAlert,
 }
 
@@ -64,22 +50,6 @@ const mutations = {
 
     [types.COM_UPDATE_DIRECTION] (state, direction) {
         state.direction = direction
-    },
-
-    [types.COM_SHOW_TOAST](state, status) {
-        state.showToast = status
-    },
-
-    [types.COM_SHOW_SUCCESS](state, status) {
-        state.showSuccess = status
-    },
-
-    [types.COM_SHOW_FAIL](state, status) {
-        state.showFail = status
-    },
-
-    [types.COM_TOAST_MSG](state, str) {
-        state.toastMsg = str
     },
 
     [types.COM_NAV_STATUS](state, status) {

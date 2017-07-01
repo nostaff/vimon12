@@ -4,12 +4,15 @@
 
 .table-view {
   padding-left: 0;
-  margin-top: 0;
-  margin-bottom: 15px;
+  margin-top: 20px;
   list-style: none; // Remove usual bullet styles from table view
-  background-color: #fff;
   //border-top: $border-default;
   border-bottom: $border-default;
+  background-color: $background-color;
+
+  &.has-divider {
+    margin-top: 8px;
+  }
 }
 
 // Pad each table view item and add dividers
@@ -17,7 +20,13 @@
   position: relative;
   padding: 11px 65px 11px 15px;
   overflow: hidden;
+  background-color: #fff;
+  //border-top: $border-default;
   border-bottom: $border-default;
+
+  &:first-child {
+    border-top: $border-default;
+  }
 
   // Remove the border from the last table view item
   &:last-child {
@@ -54,9 +63,9 @@
   font-weight: $font-weight;
   color: #999;
   font-size: 14px;
-  background-color: #fafafa;
+  //background-color: $background-color;
   //border-top: $border-default;
-  border-bottom: $border-default;
+  //border-bottom: $border-default;
 }
 
 

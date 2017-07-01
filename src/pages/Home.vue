@@ -12,18 +12,18 @@
 </template>
 
 <script>
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
+//import { swiper, swiperSlide } from 'vue-awesome-swiper'
 //import nav from '@/components/nav'
-import travelList from '@/components/travelList'
+//import travelList from '@/components/travelList'
 
 import { mapGetters } from 'vuex'
 
 export default {
 
 	components: {
-		swiper,
-		swiperSlide,
-		travelList
+//		swiper,
+//		swiperSlide,
+//		travelList
 	},
 	data() {
 		return {
@@ -55,25 +55,3 @@ export default {
 	}
 }
 </script>
-
-<style lang="scss">
-	@import '../assets/scss/function';
-
-	// Variables
-	@import "../assets/scss/variables.scss";
-
-	// Mixins
-	@import "../assets/scss/mixins.scss";
-
-	// Normalize & Base CSS
-	@import "../assets/scss/normalize.scss";
-	@import "../assets/scss/base.scss";
-	@import "../assets/scss/type.scss";
-
-	// Ratchicons
-	@import "../assets/scss/ratchicons.scss";
-
-	// Theme iOS
-	@import "../assets/scss/theme-ios.scss";
-
-</style>
