@@ -1,14 +1,14 @@
 <template>
   <div class="tab-container">
     <div :class="{
-      'buttons-tab' : style === 'default',
-      'buttons-group' : style === 'button' || style === 'button-bordered',
-      'button-bordered' : style === 'button-bordered',
+      'buttons-tab' : styles === 'default',
+      'buttons-group' : styles === 'button' || styles === 'button-bordered',
+      'button-bordered' : styles === 'button-bordered',
       'button-small': size === 'small',
       'button-large': size === 'large'
       }">
-      <m-button 
-         v-for="(item, index) in items" 
+      <m-button
+         v-for="(item, index) in items"
          :key="item.id"
          :active="index === mutableActive"
          @click.native="onClick(index)"
@@ -29,7 +29,7 @@ export default {
       type: Number,
       default: 0
     },
-    style: {
+    styles: {
       type: String,
       default: 'default' // default, button, button-bordered
     },

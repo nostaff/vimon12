@@ -1,5 +1,5 @@
 import moment from 'moment'
-import util from '../../util'
+import util from '../../lib/util'
 
 const FORMAT = 'YYYY-MM-DD'
 

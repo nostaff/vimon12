@@ -12,10 +12,9 @@ import Index from '@/pages/Index'
 // import Post from '@/pages/Post'
 // import UserMsg from '@/pages/UserMsg'
 // import Navbar from '@/pages/Navbar'
-// import NotFound from '@/pages/NotFound'
+import NotFound from '@/pages/NotFound'
 
 // demos
-import DemoIndex from './demos/Index'
 import DemoPage from './demos/Page'
 import DemoButtons from './demos/Buttons'
 import DemoColumn from './demos/Column'
@@ -102,106 +101,131 @@ const routes = [
   //   path: '/user/navbar',
   //   component: Navbar
   // },
-  {
-    path: '/demo/',
-    component: DemoIndex
-  },
-  {
-    path: '/demo/page',
-    component: DemoPage
-  },
-  {
-    path: '/demo/buttons',
-    component: DemoButtons
-  },
-  {
-    path: '/demo/column',
-    component: DemoColumn
-  },
-  {
-    path: '/demo/grid',
-    component: DemoGrid
-  },
-  {
-    path: '/demo/modal',
-    component: DemoModal
-  },
-  {
-    path: '/demo/list',
-    component: DemoList
-  },
-  {
-    path: '/demo/contacts',
-    component: DemoContacts
-  },
-  {
-    path: '/demo/form',
-    component: DemoForm
-  },
-  {
-    path: '/demo/icons',
-    component: DemoIcons
-  },
-  {
-    path: '/demo/tab',
-    component: DemoTab
-  },
-  {
-    path: '/demo/scroll',
-    component: DemoScroll
-  },
-  {
-    path: '/demo/popup',
-    component: DemoPopup
-  },
-  {
-    path: '/demo/popwindow',
-    component: DemoPopWindow
-  },
-  {
-    path: '/demo/preloader',
-    component: DemoPreloader
-  },
-  {
-    path: '/demo/toast',
-    component: DemoToast
-  },
-  {
-    path: '/demo/actions',
-    component: DemoActions
-  },
-  {
-    path: '/demo/searchbar',
-    component: DemoSearchbar
-  },
-  {
-    path: '/demo/calendar',
-    component: DemoCalendar
-  },
-  {
-    path: '/demo/result',
-    component: DemoResult
-  },
-  {
-    path: '/demo/slide',
-    component: DemoSlide
-  },
-  {
-    path: '/demo/side-panel',
-    component: DemoSidePanel
-  },
-  {
-    path: '/demo/popover',
-    component: DemoPopover
-  },
-  {
-    path: '/demo/stars',
-    component: DemoStars
-  },
-  {
-    path: '/demo/circle',
-    component: DemoCircleProgress
-  }
+    {
+        path: '/demo/page',
+        name: 'demo-page',
+        component: DemoPage
+    },
+    {
+        path: '/demo/buttons',
+        name: 'demo-buttons',
+        component: DemoButtons
+    },
+    {
+        path: '/demo/column',
+        name: 'demo-column',
+        component: DemoColumn
+    },
+    {
+        path: '/demo/grid',
+        name: 'demo-grid',
+        component: DemoGrid
+    },
+    {
+        path: '/demo/modal',
+        name: 'demo-modal',
+        component: DemoModal
+    },
+    {
+        path: '/demo/list',
+        name: 'demo-list',
+        component: DemoList
+    },
+    {
+        path: '/demo/contacts',
+        name: 'demo-contacts',
+        component: DemoContacts
+    },
+    {
+        path: '/demo/form',
+        name: 'demo-form',
+        component: DemoForm
+    },
+    {
+        path: '/demo/icons',
+        name: 'demo-icons',
+        component: DemoIcons
+    },
+    {
+        path: '/demo/tab',
+        name: 'demo-tab',
+        component: DemoTab
+    },
+    {
+        path: '/demo/scroll',
+        name: 'demo-scroll',
+        component: DemoScroll
+    },
+    {
+        path: '/demo/popup',
+        name: 'demo-popup',
+        component: DemoPopup
+    },
+    {
+        path: '/demo/popwindow',
+        name: 'demo-popwindow',
+        component: DemoPopWindow
+    },
+    {
+        path: '/demo/preloader',
+        name: 'demo-preloader',
+        component: DemoPreloader
+    },
+    {
+        path: '/demo/toast',
+        name: 'demo-toast',
+        component: DemoToast
+    },
+    {
+        path: '/demo/actions',
+        name: 'demo-actions',
+        component: DemoActions
+    },
+    {
+        path: '/demo/searchbar',
+        name: 'demo-searchbar',
+        component: DemoSearchbar
+    },
+    {
+        path: '/demo/calendar',
+        name: 'demo-calendar',
+        component: DemoCalendar
+    },
+    {
+        path: '/demo/result',
+        name: 'result',
+        component: DemoResult
+    },
+    {
+        path: '/demo/slide',
+        name: 'slide',
+        component: DemoSlide
+    },
+    {
+        path: '/demo/side-panel',
+        name: 'side-panel',
+        component: DemoSidePanel
+    },
+    {
+        path: '/demo/popover',
+        name: 'popover',
+        component: DemoPopover
+    },
+    {
+        path: '/demo/stars',
+        name: 'stars',
+        component: DemoStars
+    },
+    {
+        path: '/demo/circle',
+        name: 'circle',
+        component: DemoCircleProgress
+    },
+    {
+        path: '*',
+        name: 'notfound',
+        component: NotFound
+    }
 ]
 
 

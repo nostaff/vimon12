@@ -9,7 +9,7 @@
         <h1 class="demos-title">CSS</h1>
       </header>
       <div class="grids grids-small">
-        <router-link :to="{ path: 'page' }" class="grid">
+        <router-link to="/demo/page" class="grid">
           <div class="grid_icon">
             <img src="../assets/images/home/page.png" alt="">
           </div>
@@ -17,7 +17,7 @@
             Page
           </p>
         </router-link>
-        <router-link :to="{ path: 'buttons' }" class="grid">
+        <router-link to="/demo/buttons" class="grid">
           <div class="grid_icon">
             <img src="../assets/images/home/button.png" alt="">
           </div>
@@ -25,7 +25,7 @@
             Button
           </p>
         </router-link>
-        <router-link :to="{ path: 'column' }" class="grid">
+        <router-link to="/demo/column" class="grid">
           <div class="grid_icon">
             <img src="../assets/images/home/column.png" alt="">
           </div>
@@ -33,7 +33,7 @@
             Column
           </p>
         </router-link>
-        <router-link :to="{ path: 'grid' }" class="grid">
+        <router-link to="/demo/grid" class="grid">
           <div class="grid_icon">
             <img src="../assets/images/home/grid.png" alt="">
           </div>
@@ -41,7 +41,7 @@
             Grid
           </p>
         </router-link>
-        <router-link :to="{ path: '/list' }" class="grid">
+        <router-link to="/demo/list" class="grid">
           <div class="grid_icon">
             <img src="../assets/images/home/list.png" alt="">
           </div>
@@ -49,7 +49,7 @@
             List
           </p>
         </router-link>
-        <router-link :to="{ path: '/contacts' }" class="grid">
+        <router-link to="/demo/contacts" class="grid">
           <div class="grid_icon">
             <img src="../assets/images/home/contacts.png" alt="">
           </div>
@@ -57,7 +57,7 @@
             Contacts
           </p>
         </router-link>
-        <router-link :to="{ path: '/form' }" class="grid">
+        <router-link to="/demo/form" class="grid">
           <div class="grid_icon">
             <img src="../assets/images/home/form.png" alt="">
           </div>
@@ -65,7 +65,7 @@
             Form
           </p>
         </router-link>
-        <router-link :to="{ name: 'icons' }" class="grid">
+        <router-link to="/demo/icons" class="grid">
           <div class="grid_icon">
             <img src="../assets/images/home/toast.png" alt="">
           </div>
@@ -73,7 +73,7 @@
             Icons
           </p>
         </router-link>
-        <router-link :to="{ name: 'result' }" class="grid">
+        <router-link to="/demo/result" class="grid">
           <div class="grid_icon">
             <img src="../assets/images/home/result.png" alt="">
           </div>
@@ -81,7 +81,7 @@
             Result
           </p>
         </router-link>
-        <router-link :to="{ name: 'stars' }" class="grid">
+        <router-link to="/demo/stars" class="grid">
           <div class="grid_icon">
             <img src="../assets/images/home/star.png" alt="">
           </div>
@@ -93,7 +93,7 @@
 
       <h2 class="demos-title">Components</h2>
       <div class="grids grids-small">
-        <router-link :to="{ path: 'modal' }" class="grid">
+        <router-link to="/demo/modal" class="grid">
           <div class="grid_icon">
             <img src="../assets/images/home/modal.png" alt="">
           </div>
@@ -101,7 +101,7 @@
             Modal
           </p>
         </router-link>
-        <router-link :to="{ path: 'preloader' }" class="grid">
+        <router-link to="/demo/preloader" class="grid">
           <div class="grid_icon">
             <img src="../assets/images/home/preloader.png" alt="">
           </div>
@@ -109,7 +109,7 @@
             Preloader
           </p>
         </router-link>
-        <router-link :to="{ name: 'toast' }" class="grid">
+        <router-link to="/demo/toast" class="grid">
           <div class="grid_icon">
             <img src="../assets/images/home/toast.png" alt="">
           </div>
@@ -117,7 +117,7 @@
             Toast
           </p>
         </router-link>
-        <router-link :to="{ path: 'tab' }" class="grid">
+        <router-link to="/demo/tab" class="grid">
           <div class="grid_icon">
             <img src="../assets/images/home/tab.png" alt="">
           </div>
@@ -125,7 +125,7 @@
             Tab
           </p>
         </router-link>
-        <router-link :to="{ path: 'scroll' }" class="grid">
+        <router-link to="/demo/scroll" class="grid">
           <div class="grid_icon">
             <img src="../assets/images/home/scroll.png" alt="">
           </div>
@@ -133,7 +133,7 @@
             Scroll
           </p>
         </router-link>
-        <router-link :to="{ path: 'popup' }" class="grid">
+        <router-link to="/demo/popup" class="grid">
           <div class="grid_icon">
             <img src="../assets/images/home/window.png" alt="">
           </div>
@@ -141,7 +141,7 @@
             Popup
           </p>
         </router-link>
-        <router-link :to="{ path: 'popwindow' }" class="grid">
+        <router-link to="/demo/popwindow" class="grid">
           <div class="grid_icon">
             <img src="../assets/images/home/window.png" alt="">
           </div>
@@ -149,7 +149,7 @@
             PopWindow
           </p>
         </router-link>
-        <router-link :to="{ path: 'actions' }" class="grid">
+        <router-link to="/demo/actions" class="grid">
           <div class="grid_icon">
             <img src="../assets/images/home/menu.png" alt="">
           </div>
@@ -157,7 +157,7 @@
             Actions
           </p>
         </router-link>
-        <router-link :to="{ path: 'searchbar' }" class="grid">
+        <router-link to="/demo/searchbar" class="grid">
           <div class="grid_icon">
             <img src="../assets/images/home/search.png" alt="">
           </div>
@@ -165,7 +165,7 @@
             Searchbar
           </p>
         </router-link>
-        <router-link :to="{ path: 'calendar' }" class="grid">
+        <router-link to="/demo/calendar" class="grid">
           <div class="grid_icon">
             <img src="../assets/images/home/calendar.png" alt="">
           </div>
@@ -173,7 +173,7 @@
             Calendar
           </p>
         </router-link>
-        <router-link :to="{ path: 'slide' }" class="grid">
+        <router-link to="/demo/slide" class="grid">
           <div class="grid_icon">
             <img src="../assets/images/home/slide.png" alt="">
           </div>
@@ -181,7 +181,7 @@
             Slide
           </p>
         </router-link>
-        <router-link :to="{ path: 'side-panel' }" class="grid">
+        <router-link to="/demo/side-panel" class="grid">
           <div class="grid_icon">
             <img src="../assets/images/home/side.png" alt="">
           </div>
@@ -189,7 +189,7 @@
             SidePanel
           </p>
         </router-link>
-        <router-link :to="{ path: 'popover' }" class="grid">
+        <router-link to="/demo/popover" class="grid">
           <div class="grid_icon">
             <img src="../assets/images/home/menu.png" alt="">
           </div>
@@ -197,7 +197,7 @@
             Popover
           </p>
         </router-link>
-        <router-link :to="{ path: 'circle' }" class="grid">
+        <router-link to="/demo/circle" class="grid">
           <div class="grid_icon">
             <img src="../assets/images/home/circle.png" alt="">
           </div>

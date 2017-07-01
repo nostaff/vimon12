@@ -14,7 +14,7 @@
 
 <script>
 import Overlay from '../overlay'
-import util from '../../util'
+import util from '../../lib/util'
 
 // popover's offsetparent should be the same to trigger's
 
