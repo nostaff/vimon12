@@ -1,19 +1,34 @@
 <template>
-  <div class="my-page">
-    <simple-header title="Search"></simple-header>
-    <page-content>
-    </page-content>
+  <div class="page has-navbar" v-nav="{title: '搜索框', showBackButton: true}">
+    <div class="page-content">
+
+      <search v-model="keywords" placeholder="输入关键字" :on-search="onSearch" :on-cancel="onCancel"></search>
+
+      <div class="item" v-show="searching">
+        searching for '{{keywords}}'.
+      </div>
+
+    </div>
   </div>
 </template>
-
 <script>
-import { SimpleHeader } from '../components/header'
-import Content from '../components/content'
+  export default{
+    data(){
+      return {
+        keywords: '',
+        searching: false
+      }
+    },
 
-export default {
-  components: {
-    SimpleHeader,
-    'page-content': Content
+    methods: {
+      onSearch(keywords) {
+        this.searching = true;
+      },
+
+      onCancel() {
+        this.searching = false;
+        this.keywords = ''
+      }
+    }
   }
-}
 </script>

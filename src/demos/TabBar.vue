@@ -1,0 +1,50 @@
+<template>
+  <div class="page" v-nav="{hideNavbar: true}" v-tabbar="{'menus': menus, onMenuClick: menuClicked}">
+    <router-view></router-view>
+  </div>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        menus: [
+          {
+            iconOn: 'ion-ios-home',
+            iconOff: 'ion-ios-home-outline',
+            text: '首页',
+            path: '/demo/advanced/tabbar/home'
+          },
+          {
+            iconOn: 'ion-ios-pricetags',
+            iconOff: 'ion-ios-pricetags-outline',
+            text: '折扣',
+            path: '/demo/advanced/tabbar/discount'
+          },
+          {
+            iconOn: 'ion-ios-cart',
+            iconOff: 'ion-ios-cart-outline',
+            text: '购物车',
+            path: '/demo/advanced/tabbar/cart',
+            badge: '5'
+          },
+          {
+            iconOn: 'ion-ios-person',
+            iconOff: 'ion-ios-person-outline',
+            text: '我的',
+            path: '/demo/advanced/tabbar/user'
+          }
+        ]
+      }
+    },
+
+    methods: {
+      menuClicked(menuIndex) {
+        console.log(menuIndex)
+      }
+    },
+
+    beforeDestroy() {
+      $tabbar.$emit('hideTabbar')
+    }
+  }
+</script>

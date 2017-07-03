@@ -1,8 +1,8 @@
 {
-  "name": "vum2.0",
+  "name": "mobile-vue",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "hongxun.li <hongxun.li@ge.com>",
+  "author": "eric.w <eric.won@ge.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
@@ -12,9 +12,13 @@
   "dependencies": {
     "axios": "^0.16.2",
     "babel-runtime": "^6.23.0",
-    "css-loader": "^0.26.4",
+    "es6-promise": "^4.1.1",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "vswipe": "^1.0.1",
     "vue": "^2.2.2",
     "vue-router": "^2.2.0",
+    "vue-scroller": "^2.2.1",
     "vuex": "^2.3.1"
   },
   "devDependencies": {

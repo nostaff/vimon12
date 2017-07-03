@@ -1,53 +1,81 @@
 <template>
-  <div class="page">
-    <simple-header title="Modal" :back-link="true"></simple-header>
-    <page-content>
-      <div class='demos-content-padded'>
-        <p><m-button @click.native="$refs.alert.open()">Show Alert</m-button></p>
-        <p><m-button @click.native="$refs.confirm.open()">Show Custom Confirm</m-button></p>
-        <p><m-button @click.native="$refs.prompt.open()">Show Prompt</m-button></p>
-        <p><m-button @click.native="$refs.modal.open()">Show Custom Modal</m-button></p>
-      </div>
-    </page-content>
-
-    <alert :title="'Hello'" :content="'Hello there!'" :on-ok="log" ref="alert"></alert>
-    <confirm :title="'Hello'" :content="'Hello there!'" :on-ok="log" ref="confirm"></confirm>
-    <prompt :title="'Name'" :content="'Enter your name please!'" input="Hello!" :on-ok="log" ref="prompt"></prompt>
-    <modal @open="log('open')" @close="log('close')" ref="modal">
-      <div slot="title">Payment</div>
-      <div slot="content">Choose your payment!</div>
-      <div slot="buttons" class="modal-buttons">
-        <span class="modal-button modal-button-cancel" v-on:click="$refs.modal.close()">Cancel</span>
-        <span class="modal-button" v-on:click="log(1)">Paypay</span>
-        <span class="modal-button modal-button-bold" v-on:click="log(2)">Bankcard</span>
-      </div>
-    </modal>
+  <div class="page has-navbar" v-nav="{title: '模态窗', showBackButton: true}">
+    <div class="page-content padding padding-top">
+      <button class="button button-assertive button-block" @click="showModal()">默认</button>
+      <button class="button button-balanced button-block" @click="showMultiModal()">多个模态窗</button>
+      <button class="button button-energized button-block" @click="showPopupModal()">模态窗内弹层</button>
+    </div>
   </div>
 </template>
-
 <script>
-import { SimpleHeader } from '../components/header'
-import { Button } from '../components/buttons'
-import Content from '../components/content'
-import { Alert, Confirm, Prompt, Modal } from '../components/modal'
+  import DefaultModal from './modals/DefaultModal.vue'
+  import MultiModal from './modals/MultiModal.vue'
+  import PopupModal from './modals/PopupModal.vue'
 
-export default {
-  components: {
-    SimpleHeader,
-    'page-content': Content,
-    Alert,
-    Confirm,
-    Modal,
-    Prompt,
-    'm-button': Button
-  },
-  data () {
-    return {}
-  },
-  methods: {
-    log (m) {
-      console.log(m || 'log')
+  export default {
+    data() {
+      return {
+        modal: undefined,
+        multiModal: undefined,
+        popupModal: undefined
+      }
+    },
+
+    created() {
+      window.MultiModal = MultiModal
+    },
+
+    mounted() {
+      $modal.fromComponent(DefaultModal, {
+        title: '模态窗标题',
+        theme: 'default',
+        onHide: () => {
+          console.log('modal hide')
+        }
+      }).then((modal) => {
+        this.modal = modal
+      })
+
+      $modal.fromComponent(MultiModal, {
+        title: '模态窗标题',
+        theme: 'dark'
+      }).then((modal) => {
+        this.multiModal = modal
+      })
+
+      $modal.fromComponent(PopupModal, {
+        title: '模态窗内弹层',
+        theme: 'energized'
+      }).then((modal) => {
+        this.popupModal = modal
+      })
+    },
+
+    destroyed() {
+      if (this.modal)
+        $modal.destroy(this.modal)
+
+      if (this.multiModal)
+        $modal.destroy(this.multiModal)
+
+      if (this.popupModal)
+        $modal.destroy(this.popupModal)
+
+      window.MultiModal = undefined
+    },
+
+    methods: {
+      showModal() {
+        this.modal.show()
+      },
+
+      showMultiModal() {
+        this.multiModal.show()
+      },
+
+      showPopupModal() {
+        this.popupModal.show()
+      }
     }
   }
-}
 </script>

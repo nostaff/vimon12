@@ -1,88 +1,54 @@
 <template>
-  <div class="page">
-    <tabbar>
-      <tab-item v-bind:class="{ 'active' : currentView === 'home' }" @click.native="changeView('home')">
-        <span class="icon demo-icon-home"></span>
-        <label>主页</label>
-      </tab-item>
-      <tab-item v-bind:class="{ 'active' : currentView === 'search' }" @click.native="changeView('search')">
-        <span class="icon demo-icon-search"></span>
-        <label>打电话</label>
-      </tab-item>
-      <tab-item v-bind:class="{ 'active' : currentView === 'noti' }" @click.native="changeView('noti')">
-        <span class="icon demo-icon-noti"></span>
-        <span class="badge">2</span>
-        <label>消息</label>
-      </tab-item>
-      <tab-item v-bind:class="{ 'active' : currentView === 'about' }" @click.native="changeView('about')">
-        <span class="icon demo-icon-me"></span>
-        <label>我的</label>
-      </tab-item>
-      <tab-item v-bind:class="{ 'active' : currentView === 'demo-home' }" @click.native="changeView('demo-home')">
-        <span class="icon demo-icon-me"></span>
-        <label>Demo</label>
-      </tab-item>
-    </tabbar>
-    <keep-alive>
-      <component :is="currentView"></component>
-    </keep-alive>
-  </div>
+    <div class="page" v-tabbar="{'menus': menus, onMenuClick: menuClicked}">
+        <!--<router-view></router-view>-->
+    </div>
 </template>
 
 <script>
-  import Home from './Home'
-  import Page from '../components/page'
-  import { Footer, Item } from '../components/footer'
-  import DemoHome from '../demos/Home'
-  import Search from '../demos/Search'
-  import Noti from '../demos/Noti'
-  import About from '../demos/About'
+    export default {
+        data() {
+            return {
+                menus: [
+                    {
+                        icon: 'demo-icon-home',
+//                        simple: true,
+                        text: '首页',
+                        path: '/home'
+                    },
+                    {
+                        icon: 'demo-icon-search',
+                        text: '折扣',
+                        path: '/sport',
+                        badge: '5'
+                    },
+                    {
+                        icon: 'demo-icon-noti',
+                        text: '消息',
+                        path: '/setting',
+                        showDot: true,
+                    },
+                    {
+                        icon: 'demo-icon-me',
+                        text: '我的',
+                        path: '/user'
+                    },
+                    {
+                        icon: 'demo-icon-me',
+                        text: 'Demo',
+                        path: '/demo'
+                    }
+                ]
+            }
+        },
 
-  export default {
-    components: {
-      Page,
-      'tabbar': Footer,
-      'tab-item': Item,
-      'demo-home': DemoHome,
-      'search': Search,
-      'noti': Noti,
-      'about': About
-    },
-    data () {
-      return {
-        currentView: 'home'
-      }
-    },
-    methods: {
-      changeView (view) {
-        this.currentView = view
-      }
+        methods: {
+            menuClicked(menuIndex) {
+                console.log(menuIndex)
+            }
+        },
+
+        beforeDestroy() {
+            $tabbar.$emit('hideTabbar')
+        }
     }
-  }
 </script>
-
-<style lang="less">
-  .my-page {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    bottom: 2.8rem;
-  }
-  .demo-icon-home {
-    background-image: url("../assets/images/home/home.png");
-    background-size: 100%;
-  }
-  .demo-icon-search {
-    background-image: url("../assets/images/home/search.png");
-    background-size: 100%;
-  }
-  .demo-icon-noti {
-    background-image: url("../assets/images/home/button.png");
-    background-size: 100%;
-  }
-  .demo-icon-me {
-    background-image: url("../assets/images/home/person.png");
-    background-size: 100%;
-  }
-</style>

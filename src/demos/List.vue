@@ -1,197 +1,77 @@
 <template>
-  <div class="page">
-    <simple-header title="List" :back-link="true"></simple-header>
-    <page-content>
+  <div class="page has-navbar" v-nav="{title: '列表', showBackButton: true}">
+    <div class="page-content" style="padding-top: 54px;">
+
+      <div class="item item-divider">
+        Thin Border
+      </div>
+
+      <item>
+        normal
+      </item>
+      <item class="item-icon-left">
+        icon left
+        <i class="icon ion-social-github dark"></i>
+      </item>
+      <item class="item-icon-right">
+        icon right
+        <i class="icon ion-ios-arrow-right" style="color: #DDD;"></i>
+      </item>
+      <item class="item-icon-right">
+        Item Title
+        <span class="item-note">item note</span>
+        <i class="icon ion-ios-arrow-right" style="color: #DDD;"></i>
+      </item>
+
+      <div class="item item-divider">
+        iOS style
+      </div>
+
+      <list class="list-ios">
+        <item>
+          Item - 1
+        </item>
+        <item>
+          Item - 2
+        </item>
+        <item>
+          Item - 3
+        </item>
+      </list>
+
+      <list class="list-ios hl-list-borderless">
+        <item>
+          Item - 1
+        </item>
+        <item>
+          Item - 2
+        </item>
+        <item>
+          Item - 3
+        </item>
+      </list>
+
       <list>
-        <div slot="title">Simple List</div>
-        <list-item>
-          <div class="item-content">
-            <div class="item-title-row">
-              <div class="item-title">Title</div>
-              <div class="item-after">After</div>
-            </div>
-          </div>
-        </list-item>
-        <list-item>
-          <div class="item-content">
-            <div class="item-title-row">
-              <div class="item-title">Title</div>
-              <div class="item-after">After</div>
-            </div>
-          </div>
-        </list-item>
-        <div slot="append">
-          Append some message here.
-          Append some message here.
-          Append some message here.
-          Append some message here.
+        <item thin>
+          小标题
+        </item>
+        <item>
+          正文
+          <span class="item-note">
+            备注
+          </span>
+        </item>
+      </list>
+
+      <hl-item class="item-icon-right">
+        文字
+        <div class="item-note">
+          备注
         </div>
-      </list>
-      <list>
-        <div slot="title">List with different After Item</div>
-        <list-item>
-          <div class="item-media"><img src="../assets/images/icon-list.png" width="30"></div>
-          <div class="item-content">
-            <div class="item-title-row">
-              <div class="item-title">Title</div>
-              <div class="item-after">After</div>
-            </div>
-          </div>
-        </list-item>
-        <list-item>
-          <div class="item-media"><img src="../assets/images/icon-list.png" width="30"></div>
-          <div class="item-content">
-            <div class="item-title-row">
-              <div class="item-title">Title</div>
-              <div class="item-after"><div class="badge">32</div></div>
-            </div>
-          </div>
-        </list-item>
-        <list-item>
-          <div class="item-media"><img src="../assets/images/icon-list.png" width="30"></div>
-          <div class="item-content">
-            <div class="item-title-row">
-              <div class="item-title">Title</div>
-              <div class="item-after">
-                <switcher></switcher>
-              </div>
-            </div>
-          </div>
-        </list-item>
-      </list>
-      <list>
-        <list-item :link="true">
-          <div class="item-media"><img src="../assets/images/icon-list.png" width="44"></div>
-          <div class="item-content">
-            <div class="item-title-row">
-              <div class="item-title">Title</div>
-              <div class="item-after">After</div>
-            </div>
-            <div class="item-subtitle">
-              Subtitle
-            </div>
-          </div>
-        </list-item>
-        <list-item :link="true">
-          <div class="item-media"><img src="../assets/images/icon-list.png" width="44"></div>
-          <div class="item-content">
-            <div class="item-title-row">
-              <div class="item-title">Title</div>
-              <div class="item-after">After</div>
-            </div>
-            <div class="item-subtitle">
-              Subtitle
-            </div>
-          </div>
-        </list-item>
-      </list>
-      <list>
-        <list-item>
-          <div class="item-media"><img src="../assets/images/icon-list.png" width="88"></div>
-          <div class="item-content">
-            <div class="item-title-row">
-              <div class="item-title">Title</div>
-              <div class="item-after">After</div>
-            </div>
-            <div class="item-subtitle">
-              Subtitle
-            </div>
-            <div class="item-text">
-              Text Text Text Text Text Text Text Text Text 
-            </div>
-          </div>
-        </list-item>
-        <list-item>
-          <div class="item-media"><img src="../assets/images/icon-list.png" width="88"></div>
-          <div class="item-content">
-            <div class="item-title-row">
-              <div class="item-title">Title</div>
-              <div class="item-after">After</div>
-            </div>
-            <div class="item-subtitle">
-              Subtitle
-            </div>
-            <div class="item-text">
-              Text Text Text Text Text Text Text Text Text 
-            </div>
-          </div>
-        </list-item>
-      </list>
-      <list>
-        <div slot="title">Checkbox List</div>
-        <list-item :checkbox="true">
-          <input type="checkbox" name="name" value="A">
-          <div class="item-media"><img src="../assets/images/icon-list.png" width="44"></div>
-          <div class="item-content">
-            <div class="item-title-row">
-              <div class="item-title">Title</div>
-              <div class="item-after">After</div>
-            </div>
-            <div class="item-subtitle">
-              Subtitle
-            </div>
-          </div>
-        </list-item>
-        <list-item :checkbox="true">
-          <input type="checkbox" name="name" value="B">
-          <div class="item-media"><img src="../assets/images/icon-list.png" width="44"></div>
-          <div class="item-content">
-            <div class="item-title-row">
-              <div class="item-title">Title</div>
-              <div class="item-after">After</div>
-            </div>
-            <div class="item-subtitle">
-              Subtitle
-            </div>
-          </div>
-        </list-item>
-      </list>
-      <list>
-        <div slot="title">Radio List</div>
-        <list-item :radio="true">
-          <input type="radio" name="gender" value="1">
-          <div class="item-media"><img src="../assets/images/icon-list.png" width="44"></div>
-          <div class="item-content">
-            <div class="item-title-row">
-              <div class="item-title">Title</div>
-              <div class="item-after">After</div>
-            </div>
-            <div class="item-subtitle">
-              Subtitle
-            </div>
-          </div>
-        </list-item>
-        <list-item :radio="true">
-          <input type="radio" name="gender" value="2" checked>
-          <div class="item-media"><img src="../assets/images/icon-list.png" width="44"></div>
-          <div class="item-content">
-            <div class="item-title-row">
-              <div class="item-title">Title</div>
-              <div class="item-after">After</div>
-            </div>
-            <div class="item-subtitle">
-              Subtitle
-            </div>
-          </div>
-        </list-item>
-      </list>
-    </page-content>
+        <span class="icon ion-ios-arrow-right"></span>
+      </hl-item>
+
+      <div style="height: 100px"></div>
+    </div>
   </div>
 </template>
-
-<script>
-import { SimpleHeader } from '../components/header'
-import Content from '../components/content'
-import { List, ListItem } from '../components/list'
-import Switcher from '../components/switcher'
-
-export default {
-  components: {
-    SimpleHeader,
-    'page-content': Content,
-    List,
-    ListItem,
-    Switcher
-  }
-}
-</script>

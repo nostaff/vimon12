@@ -1,64 +1,97 @@
+import './assets/scss/ratchet.scss';
+
 import Vue from 'vue'
-import App from './App.vue'
 
-import Router from 'vue-router'
-Vue.use(Router)
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
 
-import Vum from './vum.js'
-Vue.use(Vum)
+import Vonic from './vonic'
+Vue.use(Vonic)
 
-import routes from './routes'
-import store from './store'
 
-let router = new Router({
-  routes: routes
-})
+import sess from './lib/session'
 
-import session from './lib/session'
+const beforeEach = (toRoute, fromRoute, next) => {
+    const to = toRoute.path
+    const from = fromRoute.path
+    const scrollTop = Vonic.app.pageContentScrollTop()
 
-router.beforeEach(function (to, from, next) {
-    console.log(to, from, next)
-    const _to = to.path
-    const _from = from.path
-    // const scrollTop = router.app.$el.querySelector('.page-content').scrollTop
-    const scrollTop = 0
-    const h = session.get(_to)
-    if (h && h.history || (_from && _from.indexOf(_to) === 0)) {
-        // router.app.$el.className = 'transition-reverse'
+    let h = sess.get(to)
+    if (h && h.history) {
+        Vonic.app.nextDirection('back')
         h.history = false
-        session.set(_to, h)
+        sess.set(to, h)
     } else {
-        session.set(_from, {
-            scrollTop: scrollTop,
-            history: true
+        sess.set(from || '/', {
+            history: true,
+            scrollTop: scrollTop
         })
-        // router.app.$el.className = ''
+        Vonic.app.nextDirection('forward')
     }
-    next()
-})
 
-router.afterEach(function (to, from, next) {
+    const tabbarRoutes = [
+        '/demo/advanced/tabbar/home',
+        '/demo/advanced/tabbar/discount',
+        '/demo/advanced/tabbar/cart',
+        '/demo/advanced/tabbar/user'
+    ]
+
+    if (from && tabbarRoutes.indexOf(from) > -1) {
+        sess.set(from, {
+            history: false,
+            scrollTop: scrollTop
+        })
+    }
+
+    // 某些页面定制 page transition direction
+    if (
+        (from == '/' && to == '/home') ||
+        (from == '/home' && to == '/advanced/tabbar/home') ||
+        (from == '/advanced/tabbar/user' && to == '/pageFromTabbar')
+    ) {
+        Vonic.app.nextDirection('forward')
+    }
+
+    if (
+        (to == '/' && from == '/home') ||
+        (to == '/home' && from == '/advanced/tabbar/home') ||
+        (to == '/advanced/tabbar/user' && from == '/pageFromTabbar')
+    ) {
+        Vonic.app.nextDirection('back')
+    }
+
+    next()
+}
+
+const afterEach = (toRoute, fromRoute) => {
+    const to = toRoute.path
+    const from = fromRoute.path
     // [Custom Business] Never use history scrollTop when '/' => '/home'
     if (from == '/' && to == '/home') return
 
-    const h = session.get(to.path)
+    const h = sess.get(to)
     if (h && h.scrollTop) {
         Vue.nextTick(() => {
-            console.log('should scroll to' + h.scrollTop)
-            // const _to = router.app.$el.querySelectorAll('.page-content')[1]
-            // if (_to) _to.scrollTop = h.scrollTop  // TODO:
+            Vonic.app.pageContentScrollTop(h.scrollTop)
         })
     }
+}
+
+import routes from './routes'
+
+const router = new VueRouter({
+    routes: routes
 })
 
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  router,
-  store,
-  template: '<App/>',
-  components: { App }
-})
+// register global guards
+router.beforeEach(beforeEach)
+router.afterEach(afterEach)
 
-import FastClick from 'fastclick'
-FastClick.attach(document.body)
+import store from './store'
+
+Vue.use(Vonic.app, {
+    router: router,
+    store: store,
+    pushMehod: 'push', // push, replace
+    pageTransition: 'ios'
+})

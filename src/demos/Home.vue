@@ -1,226 +1,227 @@
 <template>
-  <div class="my-page">
-    <page-header>
-      <header-link>About</header-link>
-      <header-title>VUM</header-title>
-    </page-header>
-    <page-content>
-      <header class='demos-header'>
-        <h1 class="demos-title">CSS</h1>
-      </header>
-      <div class="grids grids-small">
-        <router-link to="/demo/page" class="grid">
-          <div class="grid_icon">
-            <img src="../assets/images/home/page.png" alt="">
-          </div>
-          <p class="grid_label">
-            Page
-          </p>
-        </router-link>
-        <router-link to="/demo/buttons" class="grid">
-          <div class="grid_icon">
-            <img src="../assets/images/home/button.png" alt="">
-          </div>
-          <p class="grid_label">
-            Button
-          </p>
-        </router-link>
-        <router-link to="/demo/column" class="grid">
-          <div class="grid_icon">
-            <img src="../assets/images/home/column.png" alt="">
-          </div>
-          <p class="grid_label">
-            Column
-          </p>
-        </router-link>
-        <router-link to="/demo/grid" class="grid">
-          <div class="grid_icon">
-            <img src="../assets/images/home/grid.png" alt="">
-          </div>
-          <p class="grid_label">
-            Grid
-          </p>
-        </router-link>
-        <router-link to="/demo/list" class="grid">
-          <div class="grid_icon">
-            <img src="../assets/images/home/list.png" alt="">
-          </div>
-          <p class="grid_label">
-            List
-          </p>
-        </router-link>
-        <router-link to="/demo/contacts" class="grid">
-          <div class="grid_icon">
-            <img src="../assets/images/home/contacts.png" alt="">
-          </div>
-          <p class="grid_label">
-            Contacts
-          </p>
-        </router-link>
-        <router-link to="/demo/form" class="grid">
-          <div class="grid_icon">
-            <img src="../assets/images/home/form.png" alt="">
-          </div>
-          <p class="grid_label">
-            Form
-          </p>
-        </router-link>
-        <router-link to="/demo/icons" class="grid">
-          <div class="grid_icon">
-            <img src="../assets/images/home/toast.png" alt="">
-          </div>
-          <p class="grid_label">
-            Icons
-          </p>
-        </router-link>
-        <router-link to="/demo/result" class="grid">
-          <div class="grid_icon">
-            <img src="../assets/images/home/result.png" alt="">
-          </div>
-          <p class="grid_label">
-            Result
-          </p>
-        </router-link>
-        <router-link to="/demo/stars" class="grid">
-          <div class="grid_icon">
-            <img src="../assets/images/home/star.png" alt="">
-          </div>
-          <p class="grid_label">
-            Stars
-          </p>
-        </router-link>
-      </div>
+  <div class="page has-navbar"
+    v-nav="{
+      title: 'Components',
+      showBackButton: true,
+      onBackButtonClick: back,
+      showMenuButton: true,
+      onMenuButtonClick: toggleSidebar
+    }">
+    <div class="page-content">
+      <!-- Basic -->
+      <div class="item item-divider">基础</div>
 
-      <h2 class="demos-title">Components</h2>
-      <div class="grids grids-small">
-        <router-link to="/demo/modal" class="grid">
-          <div class="grid_icon">
-            <img src="../assets/images/home/modal.png" alt="">
-          </div>
-          <p class="grid_label">
-            Modal
-          </p>
-        </router-link>
-        <router-link to="/demo/preloader" class="grid">
-          <div class="grid_icon">
-            <img src="../assets/images/home/preloader.png" alt="">
-          </div>
-          <p class="grid_label">
-            Preloader
-          </p>
-        </router-link>
-        <router-link to="/demo/toast" class="grid">
-          <div class="grid_icon">
-            <img src="../assets/images/home/toast.png" alt="">
-          </div>
-          <p class="grid_label">
-            Toast
-          </p>
-        </router-link>
-        <router-link to="/demo/tab" class="grid">
-          <div class="grid_icon">
-            <img src="../assets/images/home/tab.png" alt="">
-          </div>
-          <p class="grid_label">
-            Tab
-          </p>
-        </router-link>
-        <router-link to="/demo/scroll" class="grid">
-          <div class="grid_icon">
-            <img src="../assets/images/home/scroll.png" alt="">
-          </div>
-          <p class="grid_label">
-            Scroll
-          </p>
-        </router-link>
-        <router-link to="/demo/popup" class="grid">
-          <div class="grid_icon">
-            <img src="../assets/images/home/window.png" alt="">
-          </div>
-          <p class="grid_label">
-            Popup
-          </p>
-        </router-link>
-        <router-link to="/demo/popwindow" class="grid">
-          <div class="grid_icon">
-            <img src="../assets/images/home/window.png" alt="">
-          </div>
-          <p class="grid_label">
-            PopWindow
-          </p>
-        </router-link>
-        <router-link to="/demo/actions" class="grid">
-          <div class="grid_icon">
-            <img src="../assets/images/home/menu.png" alt="">
-          </div>
-          <p class="grid_label">
-            Actions
-          </p>
-        </router-link>
-        <router-link to="/demo/searchbar" class="grid">
-          <div class="grid_icon">
-            <img src="../assets/images/home/search.png" alt="">
-          </div>
-          <p class="grid_label">
-            Searchbar
-          </p>
-        </router-link>
-        <router-link to="/demo/calendar" class="grid">
-          <div class="grid_icon">
-            <img src="../assets/images/home/calendar.png" alt="">
-          </div>
-          <p class="grid_label">
-            Calendar
-          </p>
-        </router-link>
-        <router-link to="/demo/slide" class="grid">
-          <div class="grid_icon">
-            <img src="../assets/images/home/slide.png" alt="">
-          </div>
-          <p class="grid_label">
-            Slide
-          </p>
-        </router-link>
-        <router-link to="/demo/side-panel" class="grid">
-          <div class="grid_icon">
-            <img src="../assets/images/home/side.png" alt="">
-          </div>
-          <p class="grid_label">
-            SidePanel
-          </p>
-        </router-link>
-        <router-link to="/demo/popover" class="grid">
-          <div class="grid_icon">
-            <img src="../assets/images/home/menu.png" alt="">
-          </div>
-          <p class="grid_label">
-            Popover
-          </p>
-        </router-link>
-        <router-link to="/demo/circle" class="grid">
-          <div class="grid_icon">
-            <img src="../assets/images/home/circle.png" alt="">
-          </div>
-          <p class="grid_label">
-            Circle
-          </p>
-        </router-link>
-      </div>
-    </page-content>
+      <list class="list-ios hl-list-borderless">
+        <item class="item-icon-right" @click.native="$router.forward('/demo/basic/button')">
+          Button <span class="item-note">按钮</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="$router.forward('/demo/basic/mdButton')">
+          MdButton <span class="item-note">Material Design 风格</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="$router.forward('/demo/basic/input')">
+          Input <span class="item-note">输入框</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="$router.forward('/demo/basic/search')">
+          Search <span class="item-note">搜索框</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="$router.forward('/demo/basic/radio')">
+          Radio <span class="item-note">单选框</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="$router.forward('/demo/basic/checkbox')">
+          Checkbox <span class="item-note">复选框</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="$router.forward('/demo/basic/toggle')">
+          Toggle <span class="item-note">开关按钮</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="$router.forward('/demo/basic/range')">
+          Range Slider <span class="item-note">滑块</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="$router.forward('/demo/basic/badge')">
+          Badge <span class="item-note">徽章</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="$router.forward('/demo/basic/dialog')">
+          Dialog <span class="item-note">对话框</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="toast()">
+          Toast <span class="item-note">文字提示</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="loading('正在加载..')">
+          Loading <span class="item-note">加载提示</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+      </list>
+
+      <!-- layout -->
+      <div class="item item-divider">布局</div>
+      <list class="list-ios hl-list-borderless">
+        <item class="item-icon-right" @click.native="$router.forward('/demo/layout/header')">
+          Header <span class="item-note">页头</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="$router.forward('/demo/layout/list')">
+          List <span class="item-note">列表</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="$router.forward('/demo/layout/cells')">
+          Cells <span class="item-note">宫格</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="$router.forward('/demo/layout/tabs')">
+          Tabs <span class="item-note">选项卡</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="$router.forward('/demo/layout/buttonbar')">
+          ButtonBar <span class="item-note">iOS 选项卡</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="$router.forward('/demo/layout/scalable')">
+          Scalable <span class="item-note">缩放</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+      </list>
+
+      <!-- advanced -->
+      <div class="item item-divider">高级</div>
+      <list class="list-ios hl-list-borderless">
+        <item class="item-icon-right" @click.native="$router.forward('/demo/advanced/swiper')">
+          Swiper <span class="item-note">轮播</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="$router.forward('/demo/advanced/vswipe')">
+          VSwipe <span class="item-note">v1.0.0</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="$router.forward('/demo/advanced/scroll')">
+          Scroll <span class="item-note">下拉刷新、无限加载</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="$router.forward('/demo/advanced/scroller')">
+          Vue Scroller <span class="item-note">v2.1.0</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="$router.forward('/demo/advanced/cascade')">
+          Cascade <span class="item-note">级联</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="$router.forward('/demo/advanced/accordion')">
+          Accordion <span class="item-note">手风琴组件</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="$router.forward('/demo/advanced/datepicker')">
+          Datepicker <span class="item-note">日期选择器</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="$router.forward('/demo/advanced/popup')">
+          Popup <span class="item-note">自定义弹层</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="$router.forward('/demo/advanced/actionsheet')">
+          ActionSheet <span class="item-note">操作列表</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="toggleSidebarRight()">
+          Sidebar <span class="item-note">侧边栏</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="$router.forward('/demo/advanced/tabbar/home')">
+          Tabbar <span class="item-note">嵌套路由使用</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="$router.forward('/demo/advanced/tabbarWithoutRoutes')">
+          Tabbar Standalone <span class="item-note">单独使用</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+        <item class="item-icon-right" @click.native="$router.forward('/demo/advanced/modal')">
+          Modal <span class="item-note">模态窗</span>
+          <i class="icon ion-ios-arrow-right"></i>
+        </item>
+      </list>
+      <div class="footer"></div>
+    </div>
   </div>
 </template>
-<script>
-import Grid from '../components/grid'
-import { Header, HeaderLink, HeaderTitle } from '../components/header'
-import Content from '../components/content'
-
-export default {
-  components: {
-    'page-header': Header,
-    HeaderLink,
-    HeaderTitle,
-    'page-content': Content,
-    Grid
+<style>
+  .footer {
+    height: 40px;
   }
-}
+</style>
+<script>
+  export default {
+    data() {
+      return {
+        sidebar: undefined,
+        sidebarRight: undefined
+      }
+    },
+
+    mounted() {
+      let template = `
+        <p style="font-size: 13px;">
+        No man is an island,<br>
+        entire of itself.<br>
+        Every man is a piece of the continent,<br>
+        a part of the main.<br>
+        If a clod be washed away by the sea,<br>
+        Europe is the less,<br>
+        as well as if a promontory were,<br>
+        as well as if a manor of thy friend's or of thine own were.<br>
+        Any man's death diminishes me.<br>
+        Because I am involved in mankind.<br>
+        And,<br>
+        therefore,<br>
+        never send to know for whom the bells tolls,<br>
+        it tolls for thee.<br>
+        </p>
+      `
+      this.sidebar = $sidebar.fromTemplate(template, {position: 'left'})
+
+      this.sidebarRight = $sidebar.fromTemplate('<h5>右边栏</h5>', {position: 'right'})
+
+      // setTimeout(() => {$app.setTitle('标题文字')}, 1000)
+
+    },
+
+    destroyed() {
+      $sidebar.destroy()
+    },
+
+    methods: {
+      back() {
+        $router.back({path: '/'})
+      },
+
+      loading(tips) {
+        $loading.show(tips)
+
+        setTimeout(() => {
+          $loading.hide()
+        }, 2000)
+      },
+
+      toast() {
+        $toast.show('发送成功', 1500).then(() => {
+          console.log('toast hide')
+        })
+      },
+
+      toggleSidebar() {
+        this.sidebar.toggle()
+      },
+
+      toggleSidebarRight() {
+        this.sidebarRight.toggle()
+      }
+    }
+  }
 </script>

@@ -6,18 +6,18 @@
 
 <script>
 
-import panelList from '@/components/panelList'
+//import panelList from '@/components/panelList'
 
 import { mapGetters } from 'vuex'
 
 export default {
 
 	components: {
-		panelList
+//		panelList
 	},
 	data() {
 		return {
-			
+
 		}
 	},
     created() {
@@ -31,10 +31,10 @@ export default {
 		])
 	},
 	mounted(){
-		
+
     },
 	methods: {
-		
+
 	}
 }
 </script>

@@ -1,70 +1,67 @@
 <template>
-  <div class="page">
-    <simple-header title="Scroll" :back-link="true"></simple-header>
-    <page-content>
-      <scroll :on-refresh="onRefresh" :on-infinite="onInfinite">
-        <div class='content-padded' id="list">
-          <h2>current time: {{time}}</h2>
-          <h3>Pull to refresh and infinite scroll</h3>
-          <p>Write some HTML, grab some JSON, create a Vue instance, that's it.</p>
-          <p>Write some HTML, grab some JSON, create a Vue instance, that's it.</p>
-          <p>Write some HTML, grab some JSON, create a Vue instance, that's it.</p>
-          <p>Write some HTML, grab some JSON, create a Vue instance, that's it.</p>
-          <p>Write some HTML, grab some JSON, create a Vue instance, that's it.</p>
-          <p>Write some HTML, grab some JSON, create a Vue instance, that's it.</p>
-          <p>Write some HTML, grab some JSON, create a Vue instance, that's it.</p>
-          <p>Write some HTML, grab some JSON, create a Vue instance, that's it.</p>
-          <p>Write some HTML, grab some JSON, create a Vue instance, that's it.</p>
-          <p>Write some HTML, grab some JSON, create a Vue instance, that's it.</p>
-          <p>Write some HTML, grab some JSON, create a Vue instance, that's it.</p>
-          <p>Write some HTML, grab some JSON, create a Vue instance, that's it.</p>
-          <p>Write some HTML, grab some JSON, create a Vue instance, that's it.</p>
-          <p>Write some HTML, grab some JSON, create a Vue instance, that's it.</p>
-          <p>Write some HTML, grab some JSON, create a Vue instance, that's it.</p>
-          <p>Write some HTML, grab some JSON, create a Vue instance, that's it.</p>
-        </div>
-      </scroll>
-    </page-content>
+  <div class="page has-navbar" v-nav="{title: '下拉刷新、无限加载', showBackButton: true}">
+    <scroll class="page-content"
+            :on-refresh="onRefresh"
+            :on-infinite="onInfinite">
+      <item v-for="(item, index) in items" :key="index" @click.native="onItemClick(index)" :class="{'item-stable': index % 2 == 0}">
+        {{ item }}
+      </item>
+
+      <div v-if="infiniteCount >= 2" slot="infinite" class="text-center">没有更多数据</div>
+    </scroll>
   </div>
+
 </template>
-
 <script>
-import { SimpleHeader } from '../components/header'
-import Content from '../components/content'
-import Scroll from '../components/scroll'
-
-export default {
-  components: {
-    SimpleHeader,
-    'page-content': Content,
-    Scroll
-  },
-  data () {
-    return {
-      time: new Date()
-    }
-  },
-  methods: {
-    onRefresh (done) {
-      let self = this
-      setTimeout(function () {
-        self.time = new Date()
-        done()  // call done
-      }, 2000)
+  export default {
+    data () {
+      return {
+        items: [],
+        infiniteCount: 0
+      }
     },
-    onInfinite (done) {
-      console.log('infinite')
-      setTimeout(function () {
-        var f = document.createDocumentFragment()
-        for (let i = 0; i < 10; i++) {
-          let p = document.createElement('p')
-          p.textContent = 'Write some HTML, grab some JSON, create a Vue instance, that\'s it.'
-          f.appendChild(p)
-        }
-        document.getElementById('list').appendChild(f)
-        done()  // call done()
-      }, 2000)
+
+    mounted() {
+      for (let i = 1; i <= 20; i++) {
+        this.items.push(i + ' - keep walking, be 2 with you.')
+      }
+      this.top = 1
+      this.bottom = 20
+    },
+
+    methods: {
+      onRefresh(done) {
+        setTimeout(() => {
+          let start = this.top - 1
+          for (let i = start; i > start - 10; i--) {
+            this.items.splice(0, 0, i + ' - keep walking, be 2 with you.')
+          }
+          this.top = this.top - 10;
+
+          done()
+        }, 1500)
+      },
+
+      onInfinite(done) {
+        setTimeout(() => {
+          if (this.infiniteCount < 2) {
+            let start = this.bottom + 1
+            for (let i = start; i < start + 10; i++) {
+              this.items.push(i + ' - keep walking, be 2 with you.')
+            }
+            this.bottom = this.bottom + 10;
+
+            this.infiniteCount++
+          }
+
+          done()
+        }, 1500)
+      },
+
+      onItemClick(index) {
+        console.log(index)
+      }
     }
+
   }
-}
 </script>

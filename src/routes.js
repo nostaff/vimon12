@@ -1,10 +1,10 @@
 // Pages
 import Index from '@/pages/Index'
-// import Home from '@/pages/Home'
-// import Sport from '@/pages/Sport'
-// import Travel from '@/pages/Travel'
+import Home from '@/pages/Home'
+import Sport from '@/pages/Sport'
+import Travel from '@/pages/Travel'
 // import Detail from '@/pages/Detail'
-// import User from '@/pages/User'
+import User from '@/pages/User'
 // import Login from '@/pages/Login'
 // import Regist from '@/pages/Regist'
 // import UserInfo from '@/pages/UserInfo'
@@ -15,218 +15,117 @@ import Index from '@/pages/Index'
 import NotFound from '@/pages/NotFound'
 
 // demos
-import DemoPage from './demos/Page'
-import DemoButtons from './demos/Buttons'
-import DemoColumn from './demos/Column'
-import DemoGrid from './demos/Grid'
-import DemoModal from './demos/Modal'
+import DemoIndex from './demos/Index'
+import DemoHome from './demos/Home'
+import DemoButton from './demos/Button'
+import DemoMdButton from './demos/MdButton'
+import DemoInput from './demos/Input'
+import DemoInputDefault from './demos/InputDefault'
+import DemoInputFloatingLabel from './demos/InputFloatingLabel'
+import DemoSearch from './demos/Search'
+import DemoRadio from './demos/Radio'
+import DemoCheckbox from './demos/Checkbox'
+import DemoToggle from './demos/Toggle'
+import DemoRangeSlider from './demos/RangeSlider'
+import DemoBadge from './demos/Badge'
+import DemoDialog from './demos/Dialog'
+
+// Layout
+import DemoHeader from './demos/Header'
 import DemoList from './demos/List'
-import DemoContacts from './demos/Contacts'
-import DemoForm from './demos/Form'
-import DemoIcons from './demos/Icons'
-import DemoTab from './demos/Tab'
+import DemoCells from './demos/Cells'
+import DemoTabs from './demos/Tabs'
+import DemoButtonBar from './demos/ButtonBar'
+import DemoScalable from './demos/Scalable'
+
+// Advanced
+import DemoSwiper from './demos/Swiper'
+import DemoSwiperDefault from './demos/SwiperDefault'
+import DemoSwiperVertical from './demos/SwiperVertical'
+import DemoVSwipe from './demos/VSwipe'
 import DemoScroll from './demos/Scroll'
+import DemoVueScroller from './demos/VueScroller'
+import DemoCascade from './demos/Cascade'
+import DemoAccordion from './demos/Accordion'
+import DemoDatepicker from './demos/DatePicker'
 import DemoPopup from './demos/Popup'
-import DemoPopWindow from './demos/PopWindow'
-import DemoPreloader from './demos/Preloader'
-import DemoActions from './demos/Actions'
-import DemoToast from './demos/Toast'
-import DemoSearchbar from './demos/Searchbar'
-import DemoCalendar from './demos/Calendar'
-import DemoResult from './demos/Result'
-import DemoSlide from './demos/Slide'
-import DemoSidePanel from './demos/SidePanel'
-import DemoPopover from './demos/Popover'
-import DemoStars from './demos/Stars'
-import DemoCircleProgress from './demos/CircleProgress'
+import DemoActionSheet from './demos/ActionSheet'
+import DemoTabbar from './demos/Tabbar'
+import DemoTabbarHome from './demos/tabbar/Home'
+import DemoTabbarDiscount from './demos/tabbar/Discount'
+import DemoTabbarCart from './demos/tabbar/Cart'
+import DemoTabbarUser from './demos/tabbar/User'
+import DemoPageFromTabbar from './demos/tabbar/PageFromTabbar'
+import DemoTabbarWithoutRoutes from './demos/TabbarWithoutRoutes'
+import DemoModal from './demos/Modal'
+
+import DemoTest from './demos/Test'
 
 const routes = [
-  {
-    path: '/',
-    name: 'index',
-    component: Index
-  },
-  // {
-  //   path: '/home',
-  //   name: 'home',
-  //   component: Home
-  // },
-  // {
-  //   path: '/sport',
-  //   name: 'sport',
-  //   component: Sport
-  // },
-  // {
-  //   path: '/travel',
-  //   component: Travel
-  // },
-  // {
-  //   path: '/sport/:id',
-  //   component: Detail
-  // },
-  // {
-  //   path: '/travel/:id',
-  //   component: Detail
-  // },
-  // {
-  //   path: '/user',
-  //   name: 'user',
-  //   component: User
-  // },
-  // {
-  //   path: '/user/login',
-  //   component: Login
-  // },
-  // {
-  //   path: '/user/regist',
-  //   component: Regist
-  // },
-  // {
-  //   path: '/user/info',
-  //   component: UserInfo
-  // },
-  // {
-  //   path: '/user/set',
-  //   component: Set
-  // },
-  // {
-  //   path: '/user/post',
-  //   component: Post
-  // },
-  // {
-  //   path: '/user/msg',
-  //   component: UserMsg
-  // },
-  // {
-  //   path: '/user/navbar',
-  //   component: Navbar
-  // },
     {
-        path: '/demo/page',
-        name: 'demo-page',
-        component: DemoPage
+        path: '/',
+        name: 'index',
+        component: Index,
+        redirect: '/home',
+        children: [
+            { path: 'home', name:'home', component: Home },
+            { path: 'sport', name:'sport', component: Sport },
+            { path: 'setting', name:'setting', component: Travel },
+            { path: 'user', name:'user', component: User },
+            { path: 'demo', name:'demo', component: DemoHome }
+        ]
     },
-    {
-        path: '/demo/buttons',
-        name: 'demo-buttons',
-        component: DemoButtons
-    },
-    {
-        path: '/demo/column',
-        name: 'demo-column',
-        component: DemoColumn
-    },
-    {
-        path: '/demo/grid',
-        name: 'demo-grid',
-        component: DemoGrid
-    },
-    {
-        path: '/demo/modal',
-        name: 'demo-modal',
-        component: DemoModal
-    },
-    {
-        path: '/demo/list',
-        name: 'demo-list',
-        component: DemoList
-    },
-    {
-        path: '/demo/contacts',
-        name: 'demo-contacts',
-        component: DemoContacts
-    },
-    {
-        path: '/demo/form',
-        name: 'demo-form',
-        component: DemoForm
-    },
-    {
-        path: '/demo/icons',
-        name: 'demo-icons',
-        component: DemoIcons
-    },
-    {
-        path: '/demo/tab',
-        name: 'demo-tab',
-        component: DemoTab
-    },
-    {
-        path: '/demo/scroll',
-        name: 'demo-scroll',
-        component: DemoScroll
-    },
-    {
-        path: '/demo/popup',
-        name: 'demo-popup',
-        component: DemoPopup
-    },
-    {
-        path: '/demo/popwindow',
-        name: 'demo-popwindow',
-        component: DemoPopWindow
-    },
-    {
-        path: '/demo/preloader',
-        name: 'demo-preloader',
-        component: DemoPreloader
-    },
-    {
-        path: '/demo/toast',
-        name: 'demo-toast',
-        component: DemoToast
-    },
-    {
-        path: '/demo/actions',
-        name: 'demo-actions',
-        component: DemoActions
-    },
-    {
-        path: '/demo/searchbar',
-        name: 'demo-searchbar',
-        component: DemoSearchbar
-    },
-    {
-        path: '/demo/calendar',
-        name: 'demo-calendar',
-        component: DemoCalendar
-    },
-    {
-        path: '/demo/result',
-        name: 'result',
-        component: DemoResult
-    },
-    {
-        path: '/demo/slide',
-        name: 'slide',
-        component: DemoSlide
-    },
-    {
-        path: '/demo/side-panel',
-        name: 'side-panel',
-        component: DemoSidePanel
-    },
-    {
-        path: '/demo/popover',
-        name: 'popover',
-        component: DemoPopover
-    },
-    {
-        path: '/demo/stars',
-        name: 'stars',
-        component: DemoStars
-    },
-    {
-        path: '/demo/circle',
-        name: 'circle',
-        component: DemoCircleProgress
-    },
-    {
-        path: '*',
-        name: 'notfound',
-        component: NotFound
-    }
-]
+    { path: '/demo/', component: DemoIndex },
+    { path: '/demo/home', component: DemoHome },
+    { path: '/demo/basic/button', component: DemoButton },
+    { path: '/demo/basic/mdButton', component: DemoMdButton },
+    { path: '/demo/basic/input', component: DemoInput },
+    { path: '/demo/basic/inputDefault', component: DemoInputDefault },
+    { path: '/demo/basic/inputFloatingLabel', component: DemoInputFloatingLabel },
+    { path: '/demo/basic/search', component: DemoSearch },
+    { path: '/demo/basic/radio', component: DemoRadio },
+    { path: '/demo/basic/checkbox', component: DemoCheckbox },
+    { path: '/demo/basic/toggle', component: DemoToggle },
+    { path: '/demo/basic/range', component: DemoRangeSlider },
+    { path: '/demo/basic/badge', component: DemoBadge },
+    { path: '/demo/basic/dialog', component: DemoDialog },
 
+    // Layout
+    { path: '/demo/layout/header', component: DemoHeader },
+    { path: '/demo/layout/list', component: DemoList },
+    { path: '/demo/layout/cells', component: DemoCells },
+    { path: '/demo/layout/tabs', component: DemoTabs },
+    { path: '/demo/layout/buttonbar', component: DemoButtonBar },
+    { path: '/demo/layout/scalable', component: DemoScalable },
+
+    // Advanced
+    { path: '/demo/advanced/swiper', component: DemoSwiper },
+    { path: '/demo/advanced/swiper/default', component: DemoSwiperDefault },
+    { path: '/demo/advanced/swiper/vertical', component: DemoSwiperVertical },
+    { path: '/demo/advanced/vswipe', component: DemoVSwipe },
+    { path: '/demo/advanced/scroll', component: DemoScroll },
+    { path: '/demo/advanced/scroller', component: DemoVueScroller },
+    { path: '/demo/advanced/cascade', component: DemoCascade },
+    { path: '/demo/advanced/accordion', component: DemoAccordion },
+    { path: '/demo/advanced/popup', component: DemoPopup },
+    { path: '/demo/advanced/actionSheet', component: DemoActionSheet },
+    {
+        path: '/demo/advanced/tabbar',
+        component: DemoTabbar,
+        children: [
+            { path: 'home', component: DemoTabbarHome },
+            { path: 'discount', component: DemoTabbarDiscount },
+            { path: 'cart', component: DemoTabbarCart },
+            { path: 'user', component: DemoTabbarUser }
+        ]
+    },
+    { path: '/demo/pageFromTabbar',component: DemoPageFromTabbar },
+    { path: '/demo/advanced/tabbarWithoutRoutes', component: DemoTabbarWithoutRoutes },
+    { path: '/demo/advanced/modal', component: DemoModal },
+    { path: '/demo/advanced/datepicker', component: DemoDatepicker },
+
+    // test
+    { path: '/demo/test', component: DemoTest }
+]
 
 export default  routes

@@ -69,7 +69,7 @@
 </template>
 
 <script>
-import group from '@/components/group'
+//import group from '@/components/group'
 
 import { mapGetters } from 'vuex'
 import api from '../api'
@@ -77,7 +77,7 @@ import api from '../api'
 export default {
 
 	components: {
-		group
+//		group
 	},
 	data() {
 		return {

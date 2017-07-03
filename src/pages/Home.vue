@@ -1,10 +1,16 @@
 <template>
 	<div class="home">
 		<div class="banner">
-			 <swiper :options="swiperOption" class="swiper-box">
-					<swiper-slide class="swiper-item"><img src="../assets/images/y-banner01.jpg" alt="..."></swiper-slide>
-					<swiper-slide class="swiper-item"><img src="../assets/images/y-banner03.jpg" alt="..."></swiper-slide>
-					<div class="swiper-pagination" slot="pagination"></div>
+				 <swiper ref="swiper"
+						 direction="horizontal"
+						 width="100%"
+						 height="150"
+						 pager-color="#ea5a49"
+						 pager-bg-color="#e5e4e3"
+						 hide-pager="false"
+				 >
+					<swiper-item class="swiper-item"><img src="../assets/images/y-banner01.jpg" alt="..."></swiper-item>
+					<swiper-item class="swiper-item"><img src="../assets/images/y-banner03.jpg" alt="..."></swiper-item>
 			</swiper>
 		</div>
 		<travel-list :travel-lists="travelListIndex"></travel-list>
@@ -12,18 +18,17 @@
 </template>
 
 <script>
-//import { swiper, swiperSlide } from 'vue-awesome-swiper'
+
+//    import { Swiper, SwiperItem } from '../components/swiper'
 //import nav from '@/components/nav'
-//import travelList from '@/components/travelList'
+import travelList from '@/components/travelList'
 
 import { mapGetters } from 'vuex'
 
 export default {
 
 	components: {
-//		swiper,
-//		swiperSlide,
-//		travelList
+		travelList
 	},
 	data() {
 		return {
