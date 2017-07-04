@@ -1,5 +1,5 @@
 <template>
-    <div class="page" v-tabbar="{'items': tabItems, onItemClick: itemClicked}">
+    <div class="content has-footer" v-tabbar="{'items': tabItems, onItemClick: itemClicked}">
         <router-view></router-view>
     </div>
 </template>

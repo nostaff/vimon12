@@ -15,8 +15,8 @@
 
 .page-enter-active,
 .page-leave-active,
-.grade-a .page-enter-active,
-.grade-a .page-leave-active
+.theme-ios .page-enter-active,
+.theme-ios .page-leave-active
 {
   @include transition-duration($ios-transition-duration);
   @include transition-timing-function($ios-transition-timing-function);
@@ -24,8 +24,8 @@
   transition-property: opacity, transform;
 }
 
-.grade-b .page-enter-active,
-.grade-b .page-leave-active
+.theme-android .page-enter-active,
+.theme-android .page-leave-active
 {
   @include transition-duration($android-transition-duration);
   @include transition-timing-function($android-transition-timing-function);

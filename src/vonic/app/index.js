@@ -14,7 +14,7 @@ const nextDirection = (direction) => {
 }
 
 const setTitle = (title) => {
-  let el = document.querySelector('[von-navbar="active"] > .title > span')
+  let el = document.querySelector('[von-navbar="active"] > .title')
   if (el) el.textContent = title
 }
 

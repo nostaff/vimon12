@@ -1,206 +1,198 @@
 <template>
-  <div von-navbar="active" class="bar bar-header bar-transparent" :class="{'cached': cached}">
-    <div class="buttons" :class="{'hide': cached}" v-if="showBack">
-      <button class="button button-icon" @click="onBackClick()">
-        <span v-html="backText">
-        </span>
+  <div von-navbar="active" :class="{'cached': cached}">
+
+    <div class="pull-left" :class="{'hide': cached}" v-if="showBack">
+      <button class="btn btn-link btn-nav" v-html="backText" @click="onBackClick()">
       </button>
     </div>
 
-    <h1 class="title">
-      <span v-text="title"></span>
-    </h1>
+    <h1 class="title" v-text="title"></h1>
 
-    <div class="buttons" :class="{'hide': cached}" v-if="showMenu">
-      <button class="button button-icon" @click="onMenuClick()">
-        <span v-html="menuText">
-        </span>
+    <div class="pull-right" :class="{'hide': cached}" v-if="showMenu">
+      <button class="btn btn-link btn-nav" v-html="menuText" @click="onMenuClick()">
       </button>
     </div>
+
   </div>
 </template>
 <script>
-  import state from '../state'
+    import state from '../state'
 
-  const TITLE_TRANSITION = () => (document.body.classList.contains('grade-a') && !state.__disable_nav_title_transition__) ?
-    // '500ms cubic-bezier(.36, .66, .04, 1)' : '0ms'
-    '500ms cubic-bezier(.15, .1, .02, 1)' : '0ms'
+    const TITLE_TRANSITION = () => (document.body.classList.contains('theme-ios') && !state.__disable_nav_title_transition__) ?
+        '500ms cubic-bezier(.15, .1, .02, 1)' : '0ms'
 
-  const DEFAULT_BACK_TEXT = '<i class="icon ion-ios-arrow-back"></i>'
-  const DEFAULT_MENU_TEXT = '<i class="icon ion-navicon"></i>'
+    const DEFAULT_BACK_TEXT = '<span class="icon icon-left-nav"></span>'
+    const DEFAULT_MENU_TEXT = '<span class="icon icon-more"></span>'
 
-  import { timeout, _body, page_in_transition } from '../utils'
+    import { timeout, _body, page_in_transition } from '../utils'
 
-  export default {
-    props: {
-      title: String,
-      showBack: {
-        type: Boolean,
-        default: false
-      },
-      backText: {
-        type: String,
-        default: DEFAULT_BACK_TEXT
-      },
-      onBack: Function,
-      showMenu: {
-        type: Boolean,
-        default: false
-      },
-      menuText: {
-        type: String,
-        default: DEFAULT_MENU_TEXT
-      },
-      onMenu: Function,
-      enableTitleTransition: Boolean,
-      renderCount: Number
-    },
+    export default {
+        props: {
+            title: String,
+            showBack: {
+                type: Boolean,
+                default: false
+            },
+            backText: {
+                type: String,
+                default: DEFAULT_BACK_TEXT
+            },
+            onBack: Function,
+            showMenu: {
+                type: Boolean,
+                default: false
+            },
+            menuText: {
+                type: String,
+                default: DEFAULT_MENU_TEXT
+            },
+            onMenu: Function,
+            enableTitleTransition: Boolean,
+            renderCount: Number
+        },
 
-    data() {
-      return {
-        cached: false
-      }
-    },
+        data() {
+            return {
+                cached: false
+            }
+        },
 
-    mounted() {
-      setTimeout(this.titleEnter, 0)
-    },
+        mounted() {
+            setTimeout(this.titleEnter, 0)
+        },
 
-    destroyed() {
-      let navContainer = document.querySelector('[von-nav] .navbar-container')
-      let cached = document.querySelectorAll('[von-navbar="cached"]')
+        destroyed() {
+            let navContainer = document.querySelector('.bar-nav')
+            console.log(navContainer)
+            let cached = document.querySelectorAll('[von-navbar="cached"]')
 
-      let i = 0
-      while (i < cached.length) {
-        navContainer.removeChild(cached[i])
-        i++
-      }
-    },
+            let i = 0
+            while (i < cached.length) {
+                navContainer.removeChild(cached[i])
+                i++
+            }
+        },
 
-    methods: {
-      onBackClick() {
-        if (this.onBack) {
-          this.onBack()
-          return
+        methods: {
+            onBackClick() {
+                if (this.onBack) {
+                    this.onBack()
+                    return
+                }
+
+                if (state.__push_method__ === 'push') {
+                    let root = document.querySelector('[von-app]')
+                    if (root) root.setAttribute('transition-direction', 'back');
+                    history.go(-1)
+                }
+            },
+
+            onMenuClick() {
+                if (this.onMenu) {
+                    this.onMenu()
+                }
+            },
+
+            cache() {
+                if (state.__disable_nav_title_transition__) {
+                    this.$destroy()
+                    return
+                }
+
+                this.cached = true
+                this.titleLeave()
+            },
+
+            isCached() {
+                return this.cached
+            },
+
+            titleEnter() {
+                let container = this.$el
+                let el = container.querySelector('.title')
+
+                let style = el.style
+                style.webkitTransition
+                style.transition = 'none'
+
+                let direction = document.querySelector('[von-app]').getAttribute('transition-direction')
+                if (direction) {
+                    style.webkitTransform =
+                        style.transform = 'translate3d(' + (direction == 'back' ? '-' : '') + ',0,0)'
+                }
+
+                timeout().then(() => {
+                    style.opacity = 1
+                    style.webkitTransform =
+                        style.transform = 'translate3d(0,0,0)'
+
+                    style.webkitTransition
+                    style.transition = (direction && this.enableTitleTransition) ? TITLE_TRANSITION() : 'none'
+
+                    if (this.renderCount == 1) {
+                        this.fixNavbar()
+                    }
+
+                    if (this.renderCount == 2) {
+                        el.addEventListener('transitionEnd', () => {}, false)
+                        el.addEventListener('webkitTransitionEnd', this._titleEnterTransitionEnd, false)
+                    }
+                })
+
+                _body.freeze()
+                let unfreezeTimer = setInterval(() => {
+                    if (!page_in_transition()) {
+                        setTimeout(_body.unfreeze, 50)
+                        clearInterval(unfreezeTimer)
+                    }
+                }, 10)
+            },
+
+            titleLeave() {
+                let container = this.$el
+                let el = this.$el.querySelector('.title')
+
+                let style = el.style
+                style.webkitTransition
+                style.transition = 'none'
+
+                timeout().then(() => {
+                    let direction = document.querySelector('[von-app]').getAttribute('transition-direction')
+                    if (direction) {
+                        style.webkitTransform =
+                            style.transform = 'translate3d(' + (direction == 'back' ? '' : '-') + ',0,0)'
+                    }
+                    style.opacity = 0
+
+                    style.webkitTransition
+                    style.transition = direction && (this.renderCount == 1 || this.enableTitleTransition) ? TITLE_TRANSITION() : 'none'
+
+                    el.addEventListener('transitionEnd', () => {}, false)
+                    el.addEventListener('webkitTransitionEnd', this._titleLeaveTransitionEnd, false)
+                })
+            },
+
+            _titleEnterTransitionEnd(e) {
+                this.fixNavbar()
+                e.target.removeEventListener('webkitTransitionEnd', this._titleEnterTransitionEnd)
+            },
+
+            _titleLeaveTransitionEnd(e) {
+                this.$destroy()
+                this.fixNavbar()
+                e.target.removeEventListener('webkitTransitionEnd', this._titleLeaveTransitionEnd)
+            },
+
+            fixNavbar() {
+                let timer = setInterval(() => {
+                    if (!page_in_transition()) {
+                        setTimeout(() => {
+                            document.querySelector('.bar-nav').style.position = 'fixed'
+                        }, 50)
+                        clearInterval(timer)
+                    }
+                }, 10)
+            }
         }
-
-        if (state.__push_method__ === 'push') {
-          let root = document.querySelector('[von-app]')
-          if (root) root.setAttribute('transition-direction', 'back');
-          history.go(-1)
-        }
-      },
-
-      onMenuClick() {
-        if (this.onMenu) {
-          this.onMenu()
-        }
-      },
-
-      cache() {
-        if (state.__disable_nav_title_transition__) {
-          this.$destroy()
-          return
-        }
-
-        this.cached = true
-        this.titleLeave()
-      },
-
-      isCached() {
-        return this.cached
-      },
-
-      titleEnter() {
-        let container = this.$el
-        let el = container.querySelector('.title')
-        let text = container.querySelector('.title > span')
-
-        let style = el.style
-        style.webkitTransition
-        style.transition = 'none'
-
-        let dist = parseInt((el.offsetWidth - text.offsetWidth) / 2) + 'px'
-        let direction = document.querySelector('[von-app]').getAttribute('transition-direction')
-        if (direction) {
-          style.webkitTransform =
-          style.transform = 'translate3d(' + (direction == 'back' ? '-' : '') + dist + ',0,0)'
-        }
-
-        timeout().then(() => {
-          style.opacity = 1
-          style.webkitTransform =
-          style.transform = 'translate3d(0,0,0)'
-
-          style.webkitTransition
-          style.transition = (direction && this.enableTitleTransition) ? TITLE_TRANSITION() : 'none'
-
-          if (this.renderCount == 1) {
-            this.fixNavbar()
-          }
-
-          if (this.renderCount == 2) {
-            el.addEventListener('transitionEnd', () => {}, false)
-            el.addEventListener('webkitTransitionEnd', this._titleEnterTransitionEnd, false)
-          }
-        })
-
-        _body.freeze()
-        let unfreezeTimer = setInterval(() => {
-          if (!page_in_transition()) {
-            setTimeout(_body.unfreeze, 50)
-            clearInterval(unfreezeTimer)
-          }
-        }, 10)
-      },
-
-      titleLeave() {
-        let container = this.$el
-        let el = this.$el.querySelector('.title')
-        let text = container.querySelector('.title > span')
-
-        let style = el.style
-        style.webkitTransition
-        style.transition = 'none'
-
-        timeout().then(() => {
-          let dist = parseInt((el.offsetWidth - text.offsetWidth) / 2) + 'px'
-          let direction = document.querySelector('[von-app]').getAttribute('transition-direction')
-          if (direction) {
-            style.webkitTransform =
-            style.transform = 'translate3d(' + (direction == 'back' ? '' : '-') + dist + ',0,0)'
-          }
-          style.opacity = 0
-
-          style.webkitTransition
-          style.transition = direction && (this.renderCount == 1 || this.enableTitleTransition) ? TITLE_TRANSITION() : 'none'
-
-          el.addEventListener('transitionEnd', () => {}, false)
-          el.addEventListener('webkitTransitionEnd', this._titleLeaveTransitionEnd, false)
-        })
-      },
-
-      _titleEnterTransitionEnd(e) {
-        this.fixNavbar()
-        e.target.removeEventListener('webkitTransitionEnd', this._titleEnterTransitionEnd)
-      },
-
-      _titleLeaveTransitionEnd(e) {
-        this.$destroy()
-        this.fixNavbar()
-        e.target.removeEventListener('webkitTransitionEnd', this._titleLeaveTransitionEnd)
-      },
-
-      fixNavbar() {
-        let timer = setInterval(() => {
-          if (!page_in_transition()) {
-            setTimeout(() => {
-              document.querySelector('[von-nav]').style.position = 'fixed'
-            }, 50)
-            clearInterval(timer)
-          }
-        }, 10)
-      }
     }
-  }
 </script>

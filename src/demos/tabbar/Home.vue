@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar has-tabbar" v-tabbar-menu-index="0">
+  <div class="page has-navbar has-tabbar" v-tabbar-item-index="0">
     <von-header theme="light">
       <span slot="title">首页</span>
     </von-header>

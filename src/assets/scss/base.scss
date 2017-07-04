@@ -44,6 +44,10 @@ a {
   overflow: auto;
   background-color: $background-color;
   -webkit-overflow-scrolling: touch;
+
+  &.has-footer {
+    padding-bottom: $bar-tab-height;
+  }
 }
 
 // Hack to force all relatively and absolutely positioned elements still render while scrolling

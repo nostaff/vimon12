@@ -35,7 +35,7 @@
         },
 
         beforeDestroy() {
-            if (document.body.classList.contains('grade-a'))
+            if (document.body.classList.contains('theme-ios'))
                 window.__disable_nav_title_transition__ = false
         },
 

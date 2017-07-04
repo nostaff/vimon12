@@ -26,23 +26,23 @@
 
     data() {
       return {
-        gradeClass: 'grade-a'
+        gradeClass: 'theme-ios'
       }
     },
 
     created() {
-      // grade-a for ios, grade-b for android & other
+      // theme-ios for ios, theme-android for android & other
       if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-        this.gradeClass = 'grade-a'
+        this.gradeClass = 'theme-ios'
       } else {
-        this.gradeClass = 'grade-b'
+        this.gradeClass = 'theme-android'
       }
 
       if (state.__page_transition__ == 'ios') {
-        this.gradeClass = 'grade-a'
+        this.gradeClass = 'theme-ios'
         state.__disable_nav_title_transition__ = false
       } else if (state.__page_transition__ == 'android') {
-        this.gradeClass = 'grade-b'
+        this.gradeClass = 'theme-android'
         state.__disable_nav_title_transition__ = true
       }
 

@@ -1,75 +1,110 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: '列表', showBackButton: true}">
-    <div class="page-content" style="padding-top: 54px;">
+  <div class="content" v-nav="{title: '列表', showBackButton: true}">
+    <div class="page-content">
 
-      <div class="item item-divider">
-        Thin Border
-      </div>
-
-      <item>
-        normal
-      </item>
-      <item class="item-icon-left">
-        icon left
-        <i class="icon ion-social-github dark"></i>
-      </item>
-      <item class="item-icon-right">
-        icon right
-        <i class="icon ion-ios-arrow-right" style="color: #DDD;"></i>
-      </item>
-      <item class="item-icon-right">
-        Item Title
-        <span class="item-note">item note</span>
-        <i class="icon ion-ios-arrow-right" style="color: #DDD;"></i>
-      </item>
-
-      <div class="item item-divider">
-        iOS style
-      </div>
-
-      <list class="list-ios">
+      <list title="Thin Border">
         <item>
-          Item - 1
+          normal
+        </item>
+        <item disabled>
+          disabled
+        </item>
+        <item is-link>
+          normal with link
         </item>
         <item>
-          Item - 2
+          normal with badge
+          <span class="badge">4</span>
+        </item>
+        <item is-link>
+          normal with badge & link
+          <span class="badge">4</span>
         </item>
         <item>
-          Item - 3
+          normal with badge & link
+          <span class="badge">4</span>
         </item>
       </list>
 
-      <list class="list-ios hl-list-borderless">
+      <list title="With Icon">
         <item>
-          Item - 1
+          <span class="media-object pull-left icon icon-trash"></span>
+          <div class="media-body">Item 1</div>
         </item>
-        <item>
-          Item - 2
+        <item is-link>
+          <span class="media-object pull-left icon icon-gear"></span>
+          <div class="media-body">Item 2</div>
         </item>
-        <item>
-          Item - 3
+        <item link="/home">
+          <span class="media-object pull-left icon icon-pages"></span>
+          <div class="media-body">Item 3</div>
+          <span class="value">Value</span>
         </item>
       </list>
 
-      <list>
-        <item thin>
-          小标题
+      <list title="With Button/Toggle">
+        <item>
+          Item 1 <button class="btn">Button</button>
         </item>
         <item>
-          正文
-          <span class="item-note">
-            备注
-          </span>
+          Item 2 <button class="btn btn-primary">Button</button>
+        </item>
+        <item>
+          Item 3 <button class="btn btn-positive">Button</button>
+        </item>
+        <item>
+          Item 1
+          <div class="toggle">
+            <div class="toggle-handle"></div>
+          </div>
+        </item>
+        <item>
+          Item 2
+          <div class="toggle active">
+            <div class="toggle-handle"></div>
+          </div>
         </item>
       </list>
 
-      <hl-item class="item-icon-right">
-        文字
-        <div class="item-note">
-          备注
-        </div>
-        <span class="icon ion-ios-arrow-right"></span>
-      </hl-item>
+      <list title="With Button">
+        <item>
+          Item 1 <button class="btn">Button</button>
+        </item>
+        <item>
+          Item 2 <button class="btn btn-primary">Button</button>
+        </item>
+        <item>
+          Item 3 <button class="btn btn-positive">Button</button>
+        </item>
+        <item>
+          Item 4 <button class="btn btn-negative">Button</button>
+        </item>
+      </list>
+
+
+      <list title="With Icon & List">
+        <item is-media>
+          <img class="media-object pull-left" src="http://placehold.it/42x42">
+          <div class="media-body">
+            Item 1
+            <p>Lorem ipsu..asdasss ssssssssss ssssssssssssss ssssssssssssss sssssssssss.</p>
+          </div>
+        </item>
+        <item is-media is-link>
+          <img class="media-object pull-left" src="http://placehold.it/42x42">
+          <div class="media-body">
+            Item 1
+            <p>Lorem ipsu..asdasss ssssssssss ssssssssssssss ssssssssssssss sssssssssss.</p>
+          </div>
+        </item>
+        <item is-media>
+          <img class="media-object pull-left" src="http://placehold.it/42x42">
+          <div class="media-body">
+            Item 1
+            <p>Lorem ipsu..asdasss ssssssssss ssssssssssssss ssssssssssssss sssssssssss.</p>
+          </div>
+        </item>
+      </list>
 
       <div style="height: 100px"></div>
     </div>

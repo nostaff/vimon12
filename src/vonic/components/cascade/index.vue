@@ -14,7 +14,7 @@
 <script>
   import axios from 'axios'
   import Vue from 'vue'
-  import HairlineList from '../list/HairlineList'
+  import HairlineList from '../list/List'
   import HairlineTop from '../list/HairlineTop'
   import HairlineBottom from '../list/HairlineBottom'
 
