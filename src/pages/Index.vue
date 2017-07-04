@@ -1,6 +1,6 @@
 <template>
-    <div class="page" v-tabbar="{'menus': menus, onMenuClick: menuClicked}">
-        <!--<router-view></router-view>-->
+    <div class="page" v-tabbar="{'items': tabItems, onItemClick: itemClicked}">
+        <router-view></router-view>
     </div>
 </template>
 
@@ -8,7 +8,7 @@
     export default {
         data() {
             return {
-                menus: [
+                tabItems: [
                     {
                         icon: 'demo-icon-home',
 //                        simple: true,
@@ -42,7 +42,7 @@
         },
 
         methods: {
-            menuClicked(menuIndex) {
+            itemClicked(menuIndex) {
                 console.log(menuIndex)
             }
         },

@@ -21,13 +21,14 @@ Vue.directive('tabbar', {
     setTimeout(() => {
       let props = {}
       let data = binding.value
-      if (data.onMenuClick) props.onMenuClick = data.onMenuClick
+      if (data.onItemClick)
+        props.onItemClick = data.onItemClick
 
       createElement('von-tabbar')
       _vm = new Vue(assign({}, Tabbar, {
         data: {
-          menus: data.menus,
-          menuIndex: 0,
+          items: data.items,
+          itemIndex: 0,
           state: 0
         },
         propsData: props
@@ -68,9 +69,9 @@ channel.$on('hideTabbar', () => {
   }
 })
 
-channel.$on('updateTabbarBadge', (menuIndex, num) => {
+channel.$on('updateTabbarBadge', (itemIndex, num) => {
   if (_vm) {
-    _vm.setBadgeNum(menuIndex, num)
+    _vm.setBadgeNum(itemIndex, num)
   }
 })
 

@@ -1,6 +1,6 @@
 <template>
   <div class="page has-navbar" v-nav="{title: 'Tabbar 单独使用', showBackButton: true}"
-    v-tabbar="{'menus': menus, onMenuClick: menuClicked}">
+    v-tabbar="{'items': tabItems, onItemClick: itemClicked}">
       <div class="page-content padding-top">
         <p class="text-center" v-if="show == 0">Home</p>
         <p class="text-center" v-if="show == 1">Discount</p>
@@ -16,7 +16,7 @@
   export default {
     data() {
       return {
-        menus: [
+          tabItems: [
           {
             iconOn: 'ion-ios-home',
             iconOff: 'ion-ios-home',
@@ -44,12 +44,12 @@
     },
 
     methods: {
-      menuClicked(menuIndex) {
-        this.show = menuIndex
+      itemClicked(itemIndex) {
+        this.show = itemIndex
       },
 
-      updateBadge(menuIndex) {
-        $tabbar.$emit('updateTabbarBadge', menuIndex, this.menus[menuIndex].badge++)
+      updateBadge(itemIndex) {
+        $tabbar.$emit('updateTabbarBadge', itemIndex, this.tabItems[itemIndex].badge++)
       }
     },
 

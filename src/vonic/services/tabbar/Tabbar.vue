@@ -1,14 +1,14 @@
 <template>
   <div class="bar bar-tab" :class="{'visible': state == 1}">
-    <a v-for="(menu, $index) in menus"
+    <a v-for="(item, $index) in items"
        class="tab-item"
-       :class="{'active': menuIndex == $index}"
-       @click="menuClicked($index)">
-      <div class="icon" v-if="!menu.simple">
-        <i :class="menu.icon"></i>
-        <badge :badge="menu.badge" :show-dot="menu.showDot"></badge>
+       :class="{'active': itemIndex == $index}"
+       @click="itemClicked($index)">
+      <div class="icon" v-if="!item.simple">
+        <i :class="item.icon"></i>
+        <badge :badge="item.badge" :show-dot="item.showDot"></badge>
       </div>
-      <span class="tab-label" v-text="menu.text"></span>
+      <span class="tab-label" v-text="item.text"></span>
     </a>
   </div>
 </template>
@@ -21,7 +21,7 @@
         },
 
         props: {
-            onMenuClick: {
+            onItemClick: {
                 type: Function
             }
         },
@@ -45,35 +45,35 @@
 
         data() {
             return {
-                menus: [],
-                menuIndex: 0,
+                items: [],
+                itemIndex: 0,
                 state: 0
             }
         },
 
         methods: {
-            menuClicked(menuIndex) {
+            itemClicked(itemIndex) {
                 window.__disable_nav_title_transition__ = true
 
-                this.menuIndex = menuIndex
-                if (this.menus[menuIndex].path)
-                    $router.forward({ path: this.menus[menuIndex].path })
+                this.itemIndex = itemIndex
+                if (this.items[itemIndex].path)
+                    $router.forward({ path: this.items[itemIndex].path })
 
-                if (this.onMenuClick) {
-                    this.onMenuClick(menuIndex)
+                if (this.onItemClick) {
+                    this.onItemClick(itemIndex)
                 }
             },
 
             activate(index) {
-                this.menuIndex = index
+                this.itemIndex = index
             },
 
             show() {
                 this.state = 1
             },
 
-            setBadgeNum(menuIndex, num) {
-                this.menus[menuIndex].bage = num
+            setBadgeNum(itemIndex, num) {
+                this.items[itemIndex].bage = num
             }
         },
     }
