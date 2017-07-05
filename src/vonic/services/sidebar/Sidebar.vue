@@ -4,9 +4,9 @@
          :class="{'click-block-hide': !opened}"
          @click="close()"
     ></div>
-    <scroller width="260" class="von-sidebar" :class="{'open': opened}">
+    <scroll width="260" class="von-sidebar" :class="{'open': opened}">
       <slot></slot>
-    </scroller>
+    </scroll>
   </div>
 </template>
 <script>

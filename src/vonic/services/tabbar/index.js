@@ -5,19 +5,6 @@ import channel from './channel'
 
 import {createElement} from '../utils'
 
-//
-// const createElement = (marker, tag) => {
-//     let el = document.createElement(tag || 'div')
-//     el.setAttribute(marker, '')
-//
-//     let vonModalClickBlock = document.querySelector('[von-modal-click-block]')
-//     vonModalClickBlock
-//         ? document.body.insertBefore(el, vonModalClickBlock)
-//         // : document.body.appendChild(el)
-//     : document.querySelector('[von-app]').appendChild(el)
-// }
-
-
 let _vm = undefined;
 
 Vue.directive('tabbar', {
@@ -25,8 +12,9 @@ Vue.directive('tabbar', {
     setTimeout(() => {
       let props = {}
       let data = binding.value
-            if (data.onItemClick)
-                props.onItemClick = data.onItemClick
+      if (data.itemColor) props.itemColor = data.itemColor
+      if (data.activeItemColor) props.activeItemColor = data.activeItemColor
+      if (data.onItemClick) props.onMenuClick = data.onItemClick
 
       createElement('von-tabbar')
       _vm = new Vue(assign({}, Tabbar, {

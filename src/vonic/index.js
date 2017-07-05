@@ -1,11 +1,8 @@
-// import './scss/vonic.scss'
+import './scss/vonic.scss'
 
 import Vue from 'vue'
 import VueScroller from 'vue-scroller'
 Vue.use(VueScroller)
-
-import VSwipe from 'vswipe'
-Vue.use(VSwipe)
 
 // Basic
 import VonInput from './components/input/Input.vue'
@@ -27,15 +24,15 @@ Vue.component('von-header', VonHeader)
 Vue.component('badge', VonBadge)
 
 // Layout
-import List from './components/list/List'
-import Item from './components/list/Item'
+import HairlineList from './components/list/HairlineList'
+import HairlineItem from './components/list/HairlineItem'
 import Cells from './components/cells'
 import Tabs from './components/tabs'
 import ButtonBar from './components/buttonbar'
 import Scalable from './components/scalable'
 
-Vue.component('list', List)
-Vue.component('item', Item)
+Vue.component('list', HairlineList)
+Vue.component('item', HairlineItem)
 Vue.component('cells', Cells)
 Vue.component('tabs', Tabs)
 Vue.component('button-bar', ButtonBar)
@@ -62,32 +59,34 @@ Vue.component('modal', Modal)
 import Plugin from './plugin'
 
 export default {
-  // Basic
-  VonInput,
-  Search,
-  VonRadio,
-  VonCheckbox,
-  VonHeader,
-  VonBadge,
+    // Basic
+    VonInput,
+    Search,
+    VonRadio,
+    VonCheckbox,
+    VonHeader,
+    VonBadge,
 
-  // Layout
-  List,
-  Item,
-  Cells,
-  Tabs,
-  ButtonBar,
-  Scalable,
+    // Layout
+    List: HairlineList,
+    Item: HairlineItem,
+    HairlineList,
+    HairlineItem,
+    Cells,
+    Tabs,
+    ButtonBar,
+    Scalable,
 
-  // Advanced
-  Swiper,
-  SwiperItem,
-  Scroll,
-  Cascade,
+    // Advanced
+    Swiper,
+    SwiperItem,
+    Scroll,
+    Cascade,
 
-  Accordion,
-  AccordionItem,
+    Accordion,
+    AccordionItem,
 
-  Modal,
+    Modal,
 
-  app: Plugin
+    app: Plugin
 }

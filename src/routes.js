@@ -15,7 +15,6 @@ import User from '@/pages/User'
 import NotFound from '@/pages/NotFound'
 
 // demos
-import DemoIndex from './demos/Index'
 import DemoHome from './demos/Home'
 import DemoButton from './demos/Button'
 import DemoInput from './demos/Input'
@@ -28,6 +27,7 @@ import DemoToggle from './demos/Toggle'
 import DemoRangeSlider from './demos/RangeSlider'
 import DemoBadge from './demos/Badge'
 import DemoDialog from './demos/Dialog'
+import DemoIcon from './demos/Icon'
 
 // Layout
 import DemoHeader from './demos/Header'
@@ -41,7 +41,6 @@ import DemoScalable from './demos/Scalable'
 import DemoSwiper from './demos/Swiper'
 import DemoSwiperDefault from './demos/SwiperDefault'
 import DemoSwiperVertical from './demos/SwiperVertical'
-import DemoVSwipe from './demos/VSwipe'
 import DemoScroll from './demos/Scroll'
 import DemoVueScroller from './demos/VueScroller'
 import DemoCascade from './demos/Cascade'
@@ -69,13 +68,11 @@ const routes = [
         children: [
             { path: 'home', name:'home', component: Home },
             { path: 'sport', name:'sport', component: Sport },
-            { path: 'setting', name:'setting', component: Travel },
+            { path: 'cart', name:'setting', component: Travel },
             { path: 'user', name:'user', component: User },
             { path: 'demo', name:'demo', component: DemoHome }
         ]
     },
-    { path: '/demo/', component: DemoIndex },
-    { path: '/demo/home', component: DemoHome },
     { path: '/demo/basic/button', component: DemoButton },
     { path: '/demo/basic/input', component: DemoInput },
     { path: '/demo/basic/inputDefault', component: DemoInputDefault },
@@ -86,6 +83,7 @@ const routes = [
     { path: '/demo/basic/toggle', component: DemoToggle },
     { path: '/demo/basic/range', component: DemoRangeSlider },
     { path: '/demo/basic/badge', component: DemoBadge },
+    { path: '/demo/basic/icons', component: DemoIcon },
     { path: '/demo/basic/dialog', component: DemoDialog },
 
     // Layout
@@ -100,7 +98,6 @@ const routes = [
     { path: '/demo/advanced/swiper', component: DemoSwiper },
     { path: '/demo/advanced/swiper/default', component: DemoSwiperDefault },
     { path: '/demo/advanced/swiper/vertical', component: DemoSwiperVertical },
-    { path: '/demo/advanced/vswipe', component: DemoVSwipe },
     { path: '/demo/advanced/scroll', component: DemoScroll },
     { path: '/demo/advanced/scroller', component: DemoVueScroller },
     { path: '/demo/advanced/cascade', component: DemoCascade },

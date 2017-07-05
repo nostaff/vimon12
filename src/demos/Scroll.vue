@@ -1,5 +1,5 @@
 <template>
-  <div class="content" v-nav="{title: '下拉刷新、无限加载', showBackButton: true}">
+  <div class="page has-navbar" v-nav="{title: '下拉刷新、无限加载', showBackButton: true}">
     <scroll class="page-content"
             :on-refresh="onRefresh"
             :on-infinite="onInfinite">

@@ -1,5 +1,5 @@
 <template>
-  <div class="content" v-nav="{hideNavbar: true}" v-tabbar="{'items': tabItems, onItemClick: itemClicked}">
+  <div class="page" v-nav="{hideNavbar: true}" v-tabbar="{'items': menus, itemColor: '#B5B5B5', activeItemColor: '#44CC00', onItemClick: menuClicked}">
     <router-view></router-view>
   </div>
 </template>
@@ -7,7 +7,7 @@
   export default {
     data() {
       return {
-          tabItems: [
+        menus: [
           {
             iconOn: 'ion-ios-home',
             iconOff: 'ion-ios-home-outline',
@@ -38,8 +38,8 @@
     },
 
     methods: {
-      itemClicked(itemIndex) {
-        console.log(itemIndex)
+      menuClicked(menuIndex) {
+        console.log(menuIndex)
       }
     },
 

@@ -1,11 +1,17 @@
 <template>
-  <span v-if="badge || showDot" v-text="badge" :class="['badge', {'badge-dot': typeof badge === 'undefined', 'badge-single': typeof badge !== 'undefined' && badge.toString().length === 1}]"></span>
+  <span class="von-badge">
+    <div v-html="num" class="von-badge-num"></div>
+  </span>
 </template>
 <script>
-    export default {
-        props: {
-            badge: [String, Number],
-            showDot: Boolean,
-        }
+  import Scalable from '../scalable'
+
+  export default {
+    components: {
+      Scalable
+    },
+    props: {
+      num: [String, Number]
     }
+  }
 </script>

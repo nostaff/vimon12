@@ -1,80 +1,113 @@
 <template>
-  <div class="bar bar-tab" :class="{'visible': state == 1}">
-    <a v-for="(item, $index) in items"
-       class="tab-item"
-       :class="{'active': itemIndex == $index}"
-       @click="itemClicked($index)">
-      <div class="icon" v-if="!item.simple">
-        <i :class="item.icon"></i>
-        <badge :badge="item.badge" :show-dot="item.showDot"></badge>
+  <div class="tabbar" :class="{'visible': state == 1}">
+    <div v-for="(menu, index) in items"
+         class="tabbar-item"
+         :style="{'color': itemIndex == index ? activeItemColor : itemColor}"
+         @click="itemClicked(index)">
+      <div class="icon-wrapper">
+        <i :class="getIconClass(menu, index)"></i>
       </div>
-      <span class="tab-label" v-text="item.text"></span>
-    </a>
+
+      <div class="text-wrapper">
+        <scalable>
+          <span v-text="menu.text"></span>
+        </scalable>
+      </div>
+
+      <badge v-if="menu.badge" :num="menu.badge"></badge>
+    </div>
   </div>
 </template>
 <script>
-    import Badge from '../../components/badge'
+  import Scalable from '../../components/scalable'
+  import Badge from '../../components/badge'
 
-    export default {
-        components: {
-            Badge
-        },
+  const re_color = /^#([0-9A-Fa-f]{3})|([0-9A-Fa-f]{6})$/;
 
-        props: {
-            onItemClick: {
-                type: Function
-            }
-        },
+  export default {
+    components: {
+      Scalable,
+      Badge
+    },
 
-        mounted() {
-            this.$el.setAttribute('von-tabbar', '')
-            this.show()
-            setTimeout(() => {
-                this.$el.classList.add('fixed')
-            }, 600)
-        },
+    props: {
+      itemColor: {
+        type: String,
+        default: '#888',
+        validator(v) {
+          return re_color.test(v)
+        }
+      },
 
-        beforeDestroy() {
-            if (document.body.classList.contains('theme-ios'))
-                window.__disable_nav_title_transition__ = false
-        },
+      activeItemColor: {
+        type: String,
+        default: '#EA5A49',
+        validator(v) {
+          return re_color.test(v)
+        }
+      },
 
-        desctoryed() {
-            document.body.removeChild(this.$el)
-        },
+      onItemClick: {
+        type: Function
+      }
+    },
 
-        data() {
-            return {
-                items: [],
-                itemIndex: 0,
-                state: 0
-            }
-        },
+    mounted() {
+      this.$el.setAttribute('von-tabbar', '')
+      this.show()
+      setTimeout(() => {
+        this.$el.classList.add('fixed')
+      }, 600)
+    },
 
-        methods: {
-            itemClicked(itemIndex) {
-                window.__disable_nav_title_transition__ = true
+    beforeDestroy() {
+      if (document.body.classList.contains('theme-ios'))
+        window.__disable_nav_title_transition__ = false
+    },
 
-                this.itemIndex = itemIndex
-                if (this.items[itemIndex].path)
-                    $router.forward({ path: this.items[itemIndex].path })
+    desctoryed() {
+      document.body.removeChild(this.$el)
+    },
 
-                if (this.onItemClick) {
-                    this.onItemClick(itemIndex)
-                }
-            },
+    data() {
+      return {
+        items: [],
+        itemIndex: 0,
+        state: 0
+      }
+    },
 
-            activate(index) {
-                this.itemIndex = index
-            },
+    methods: {
+      itemClicked(itemIndex) {
+        window.__disable_nav_title_transition__ = true
 
-            show() {
-                this.state = 1
-            },
+        this.itemIndex = itemIndex
+        if (this.items[itemIndex].path)
+          $router.forward({ path: this.items[itemIndex].path })
 
-            setBadgeNum(itemIndex, num) {
-                this.items[itemIndex].bage = num
-            }
-        },
-    }
+        if (this.onItemClick) {
+          this.onItemClick(itemIndex)
+        }
+      },
+
+      activate(index) {
+        this.itemIndex = index
+      },
+
+      show() {
+        this.state = 1
+      },
+
+      getIconClass(menu, index) {
+        let iconClass = {}
+        iconClass['icon ' + menu.iconOn] = this.itemIndex == index
+        iconClass['icon  ' + menu.iconOff] = this.itemIndex != index
+        return iconClass
+      },
+
+      setBadgeNum(itemIndex, num) {
+        this.items[itemIndex].bage = num
+      }
+    },
+  }
 </script>

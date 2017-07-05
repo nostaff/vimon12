@@ -52,7 +52,7 @@ import { mapActions } from 'vuex'
 const REG_PHONE = '/^1[34578]\d{9}$/'
 
 import api from '../api'
-import * as _ from '../utils/tool'
+//import * as _ from '../utils/tool'
 
 export default {
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="content" v-nav="{title: '级联', showBackButton: true}">
+  <div class="page has-navbar" v-nav="{title: '级联', showBackButton: true}">
     <div class="page-content padding-top">
       <div class="item item-divider">
         选择您所属的行政区划：

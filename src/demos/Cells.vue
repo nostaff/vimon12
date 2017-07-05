@@ -1,5 +1,5 @@
 <template>
-  <div class="content" v-nav="{title: '宫格', showBackButton: true}">
+  <div class="page has-navbar" v-nav="{title: '宫格', showBackButton: true}">
 
     <div class="page-content">
 

@@ -17,7 +17,7 @@
 </template>
 <script>
   import channel from './channel'
-  import HairlineItem from '../list/Item'
+  import HairlineItem from '../list/HairlineItem'
   import HairlineBottom from '../list/HairlineBottom'
 
   export default {

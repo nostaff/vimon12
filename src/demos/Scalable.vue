@@ -1,5 +1,5 @@
 <template>
-  <div class="content page-scalable" v-nav="{title: '缩放', showBackButton: true}">
+  <div class="page has-navbar page-scalable" v-nav="{title: '缩放', showBackButton: true}">
     <div class="page-content">
       <scalable width="100%" height="100" style="background-color: #FFF;">
         <p>

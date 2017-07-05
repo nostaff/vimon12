@@ -36,7 +36,7 @@
 <script>
 import { mapActions } from 'vuex'
 import api from '../api'
-import * as _ from '../utils/tool'
+//import * as _ from '../utils/tool'
 
 export default {
 

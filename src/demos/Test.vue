@@ -1,5 +1,5 @@
 <template>
-  <div class="content" v-nav="{hideNavbar: true}">
+  <div class="page" v-nav="{hideNavbar: true}">
     <div class="page-content padding">
       <button class="button button-assertive button-block"
         @click="showLoading()">Update Loading Text</button>

@@ -1,5 +1,5 @@
 <template>
-  <div class="content" v-nav="{title: '垂直', showBackButton: true}">
+  <div class="page has-navbar" v-nav="{title: '垂直', showBackButton: true}">
     <div class="page-content">
       <swiper direction="vertical">
         <swiper-item>

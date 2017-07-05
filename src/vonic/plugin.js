@@ -3,6 +3,7 @@ Promise.polyfill()
 import assign from 'object-assign'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import FastClick from 'fastclick'
 Vue.use(VueRouter)
 
 import './services/backdrop'
@@ -14,6 +15,8 @@ import './services/actionsheet/index.js'
 import './services/tabbar/index.js'
 import './services/sidebar/index.js'
 import './services/modal/index.js'
+
+import './services/storage/index.js'
 
 import VonApp from './components/app'
 
@@ -148,6 +151,8 @@ export default {
         lastTouchEnd = now
       }, false)
     }
+
+    FastClick.attach(document.body)
   },
 
   setConfig(name, value) {

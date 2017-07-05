@@ -15,7 +15,7 @@
   import axios from 'axios'
   import Vue from 'vue'
   import channel from '../app/channel'
-  import List from '../list/List'
+  import HairlineList from '../list/HairlineList'
   import HairlineTop from '../list/HairlineTop'
   import HairlineBottom from '../list/HairlineBottom'
 
@@ -41,7 +41,7 @@
 
   export default {
     components: {
-        List,
+      HairlineList,
       HairlineTop,
       HairlineBottom
     },

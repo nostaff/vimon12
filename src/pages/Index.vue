@@ -1,5 +1,5 @@
 <template>
-    <div class="content has-footer" v-tabbar="{'items': tabItems, onItemClick: itemClicked}">
+    <div class="page has-navbar  has-tabbar" v-nav="{hideNavbar: true}" v-tabbar="{'items': tabItems, itemColor: '#999', activeItemColor: '#FF4400', onItemClick: itemClicked}">
         <router-view></router-view>
     </div>
 </template>
@@ -10,33 +10,37 @@
             return {
                 tabItems: [
                     {
-                        icon: 'demo-icon-home',
-//                        simple: true,
+                        iconOn: 'ion-ios-home',
+                        iconOff: 'ion-ios-home-outline',
                         text: '首页',
                         path: '/home'
                     },
                     {
-                        icon: 'demo-icon-search',
+                        iconOn: 'ion-ios-pricetags',
+                        iconOff: 'ion-ios-pricetags-outline',
                         text: '折扣',
-                        path: '/sport',
+                        path: '/sport'
+                    },
+                    {
+                        iconOn: 'ion-ios-cart',
+                        iconOff: 'ion-ios-cart-outline',
+                        text: '购物车',
+                        path: '/cart',
                         badge: '5'
                     },
                     {
-                        icon: 'demo-icon-noti',
-                        text: '消息',
-                        path: '/setting',
-                        showDot: true,
-                    },
-                    {
-                        icon: 'demo-icon-me',
+                        iconOn: 'ion-ios-person',
+                        iconOff: 'ion-ios-person-outline',
                         text: '我的',
                         path: '/user'
                     },
                     {
-                        icon: 'demo-icon-me',
+                        iconOn: 'ion-ios-person',
+                        iconOff: 'ion-ios-person-outline',
                         text: 'Demo',
                         path: '/demo'
                     }
+
                 ]
             }
         },

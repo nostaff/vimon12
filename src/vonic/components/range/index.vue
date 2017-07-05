@@ -20,7 +20,7 @@
   </hairline-item>
 </template>
 <script>
-  import HairlineItem from '../list/Item'
+  import HairlineItem from '../list/HairlineItem'
 
   export default {
     components: {

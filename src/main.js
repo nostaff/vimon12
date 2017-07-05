@@ -1,4 +1,4 @@
-import './assets/scss/ratchet.scss';
+// import './assets/scss/ratchet.scss';
 
 import Vue from 'vue'
 

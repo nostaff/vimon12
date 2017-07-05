@@ -1,8 +1,9 @@
 <template>
-  <div von-navbar="active" :class="{'cached': cached}">
-
-    <div class="pull-left" :class="{'hide': cached}" v-if="showBack">
-      <button class="btn btn-link btn-nav" v-html="backText" @click="onBackClick()">
+  <div von-navbar="active" class="bar bar-header bar-transparent" :class="{'cached': cached}">
+    <div class="buttons" :class="{'hide': cached}" v-if="showBack">
+      <button class="button button-icon" @click="onBackClick()">
+        <span v-html="backText">
+        </span>
       </button>
     </div>
 
@@ -10,14 +11,14 @@
       <span v-text="title"></span>
     </h1>
 
-    <div class="pull-right" :class="{'hide': cached}" v-if="showMenu">
-      <button class="btn btn-link btn-nav" v-html="menuText" @click="onMenuClick()">
+    <div class="buttons" :class="{'hide': cached}" v-if="showMenu">
+      <button class="button button-icon" @click="onMenuClick()">
+        <span v-html="menuText">
+        </span>
       </button>
     </div>
-
   </div>
 </template>
-
 <script>
   import channel from './channel'
 
@@ -25,8 +26,8 @@
     // '500ms cubic-bezier(.36, .66, .04, 1)' : '0ms'
     '500ms cubic-bezier(.15, .1, .02, 1)' : '0ms'
 
-  const DEFAULT_BACK_TEXT = '<span class="icon icon-left-nav"></span>'
-  const DEFAULT_MENU_TEXT = '<span class="icon icon-more"></span>'
+  const DEFAULT_BACK_TEXT = '<i class="icon ion-ios-arrow-back"></i>'
+  const DEFAULT_MENU_TEXT = '<i class="icon ion-navicon"></i>'
 
   import { timeout, _body, page_in_transition } from './utils'
 
@@ -66,10 +67,9 @@
     },
 
     destroyed() {
-      let navContainer = document.querySelector('[von-nav]')
+      let navContainer = document.querySelector('[von-nav] .navbar-container')
       let cached = document.querySelectorAll('[von-navbar="cached"]')
 
-        console.log(navContainer)
       let i = 0
       while (i < cached.length) {
         navContainer.removeChild(cached[i])

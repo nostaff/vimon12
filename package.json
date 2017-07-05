@@ -15,7 +15,6 @@
     "es6-promise": "^4.1.1",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
-    "vswipe": "^1.0.1",
     "vue": "^2.2.2",
     "vue-router": "^2.2.0",
     "vue-scroller": "^2.2.1",

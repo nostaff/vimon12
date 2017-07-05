@@ -1,6 +1,7 @@
 <template>
-  <div von-nav class="bar bar-nav" :class="{'visible': visible}" :style="navStyle()">
-
+  <div von-nav class="navbar" :class="{'visible': visible}" :style="navStyle()">
+    <div class="navbar-container">
+    </div>
   </div>
 </template>
 <script>
@@ -63,8 +64,9 @@
       },
 
       _createHeaderDom() {
+        let container = this.$el.querySelector('.navbar-container')
         let el = document.createElement('div')
-        this.$el.appendChild(el)
+        container.appendChild(el)
         return timeout(el, 0)
       },
 

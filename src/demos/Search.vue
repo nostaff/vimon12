@@ -1,5 +1,5 @@
 <template>
-  <div class="content" v-nav="{title: '搜索框', showBackButton: true}">
+  <div class="page has-navbar" v-nav="{title: '搜索框', showBackButton: true}">
     <div class="page-content">
 
       <search v-model="keywords" placeholder="输入关键字" :on-search="onSearch" :on-cancel="onCancel"></search>

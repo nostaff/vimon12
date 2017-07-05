@@ -1,5 +1,5 @@
 <template>
-  <div class="content" v-nav="{hideNavbar: true}">
+  <div class="page has-navbar" v-nav="{hideNavbar: true}">
     <div class="page-content">
       <von-header :theme="themes[themeIndex]">
         <button class="button button-icon ion-ios-arrow-back" slot="left" @click="$router.back('/home')"></button>
