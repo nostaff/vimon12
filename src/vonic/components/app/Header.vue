@@ -66,9 +66,10 @@
     },
 
     destroyed() {
-      let navContainer = document.querySelector('[von-nav] .navbar-container')
+      let navContainer = document.querySelector('[von-nav]')
       let cached = document.querySelectorAll('[von-navbar="cached"]')
 
+        console.log(navContainer)
       let i = 0
       while (i < cached.length) {
         navContainer.removeChild(cached[i])

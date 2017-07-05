@@ -27,17 +27,15 @@ Vue.component('von-header', VonHeader)
 Vue.component('badge', VonBadge)
 
 // Layout
-import HairlineList from './components/list/HairlineList'
-import HairlineItem from './components/list/HairlineItem'
+import List from './components/list/List'
+import Item from './components/list/Item'
 import Cells from './components/cells'
 import Tabs from './components/tabs'
 import ButtonBar from './components/buttonbar'
 import Scalable from './components/scalable'
 
-Vue.component('list', HairlineList)
-Vue.component('item', HairlineItem)
-Vue.component('hl-list', HairlineList)
-Vue.component('hl-item', HairlineItem)
+Vue.component('list', List)
+Vue.component('item', Item)
 Vue.component('cells', Cells)
 Vue.component('tabs', Tabs)
 Vue.component('button-bar', ButtonBar)
@@ -73,10 +71,8 @@ export default {
   VonBadge,
 
   // Layout
-  List: HairlineList,
-  Item: HairlineItem,
-  HairlineList,
-  HairlineItem,
+  List,
+  Item,
   Cells,
   Tabs,
   ButtonBar,

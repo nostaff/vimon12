@@ -24,8 +24,8 @@
   transition-property: opacity, transform;
 }
 
-.grade-b .page-enter-active,
-.grade-b .page-leave-active
+.theme-android .page-enter-active,
+.theme-android .page-leave-active
 {
   @include transition-duration($android-transition-duration);
   @include transition-timing-function($android-transition-timing-function);
