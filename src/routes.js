@@ -18,7 +18,6 @@ import NotFound from '@/pages/NotFound'
 import DemoIndex from './demos/Index'
 import DemoHome from './demos/Home'
 import DemoButton from './demos/Button'
-import DemoMdButton from './demos/MdButton'
 import DemoInput from './demos/Input'
 import DemoInputDefault from './demos/InputDefault'
 import DemoInputFloatingLabel from './demos/InputFloatingLabel'
@@ -78,7 +77,6 @@ const routes = [
     { path: '/demo/', component: DemoIndex },
     { path: '/demo/home', component: DemoHome },
     { path: '/demo/basic/button', component: DemoButton },
-    { path: '/demo/basic/mdButton', component: DemoMdButton },
     { path: '/demo/basic/input', component: DemoInput },
     { path: '/demo/basic/inputDefault', component: DemoInputDefault },
     { path: '/demo/basic/inputFloatingLabel', component: DemoInputFloatingLabel },

@@ -11,7 +11,6 @@ import VueScroller from 'vue-scroller'
 import VSwipe from 'vswipe'
 
 // Basic Components
-import MdButton from './components/md-button'
 import VonInput from './components/input/Input.vue'
 import Search from './components/input/Search.vue'
 import VonRadio from './components/radio'
@@ -50,8 +49,6 @@ import $tabbar from './services/tabbar/index.js'
 import $sidebar from './services/sidebar/index.js'
 import $modal from './services/modal/index.js'
 
-import FastClick from 'fastclick'
-
 const is_ios = () => {
  return /iPad|iPhone|iPod/.test(navigator.userAgent)
 }
@@ -61,7 +58,6 @@ export default function install (Vue, options) {
   Vue.use(VSwipe)
 
   // Basic Components
-  Vue.component('md-button', MdButton)
   Vue.component('von-input', VonInput)
   Vue.component('search', Search)
   Vue.component('von-radio', VonRadio)
@@ -123,5 +119,4 @@ export default function install (Vue, options) {
     }, false)
   }
 
-  FastClick.attach(document.body)
 }

@@ -13,9 +13,6 @@
       <item is-link @click.native="$router.forward('/demo/basic/button')">
         Button <span class="value">按钮</span>
       </item>
-      <item is-link @click.native="$router.forward('/demo/basic/mdButton')">
-        MdButton <span class="value">Material Design 风格</span>
-      </item>
       <item is-link @click.native="$router.forward('/demo/basic/input')">
         Input <span class="value">输入框</span>
       </item>
@@ -40,7 +37,6 @@
       <item is-link @click.native="$router.forward('/demo/basic/dialog')">
         Dialog <span class="value">对话框</span>
       </item>
-      <divider title="Widget"></divider>
       <item is-link @click.native="toast()">
         Toast <span class="value">文字提示</span>
       </item>

@@ -1,5 +1,5 @@
 <template>
-  <div class="content" v-nav="{title: '列表', showBackButton: true}">
+  <div class="page" v-nav="{title: '列表', showBackButton: true}">
     <div class="page-content">
 
       <list title="Thin Border">

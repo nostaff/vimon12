@@ -87,19 +87,17 @@
 
                 let HeaderComponent = Vue.extend(Header)
                 this._createHeaderDom().then(el => {
-                    console.log(el)
-
                     let vm = new HeaderComponent({
                         propsData: props
                     }).$mount(el)
 
-          let headers = this.headers
-          let headerToCache = headers.pop()
-          if (headerToCache) {
-            headerToCache.$el.setAttribute('von-navbar', 'cached')
-            headerToCache.cache()
-          }
-          headers.push(vm)
+                    let headers = this.headers
+                    let headerToCache = headers.pop()
+                    if (headerToCache) {
+                        headerToCache.$el.setAttribute('von-navbar', 'cached')
+                        headerToCache.cache()
+                    }
+                    headers.push(vm)
                 })
             }
         }

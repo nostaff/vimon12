@@ -95,3 +95,7 @@ Vue.use(Vonic.app, {
     pushMehod: 'push', // push, replace
     pageTransition: 'ios'
 })
+
+
+import FastClick from 'fastclick'
+FastClick.attach(document.body)

@@ -6,7 +6,7 @@
       </button>
     </div>
 
-    <h1 class="title" v-text="title"></h1>
+    <h1 class="title"><span v-text="title"></span></h1>
 
     <div class="pull-right" :class="{'hide': cached}" v-if="showMenu">
       <button class="btn btn-link btn-nav" v-html="menuText" @click="onMenuClick()">
@@ -63,7 +63,6 @@
 
         destroyed() {
             let navContainer = document.querySelector('.bar-nav')
-            console.log(navContainer)
             let cached = document.querySelectorAll('[von-navbar="cached"]')
 
             let i = 0
@@ -110,15 +109,17 @@
             titleEnter() {
                 let container = this.$el
                 let el = container.querySelector('.title')
+                let text = container.querySelector('.title > span')
 
                 let style = el.style
                 style.webkitTransition
                 style.transition = 'none'
 
+                let dist = parseInt((el.offsetWidth - text.offsetWidth) / 2) + 'px'
                 let direction = document.querySelector('[von-app]').getAttribute('transition-direction')
                 if (direction) {
                     style.webkitTransform =
-                        style.transform = 'translate3d(' + (direction == 'back' ? '-' : '') + ',0,0)'
+                        style.transform = 'translate3d(' + (direction == 'back' ? '-' : '') + dist + ',0,0)'
                 }
 
                 timeout().then(() => {
@@ -151,16 +152,18 @@
             titleLeave() {
                 let container = this.$el
                 let el = this.$el.querySelector('.title')
+                let text = container.querySelector('.title > span')
 
                 let style = el.style
                 style.webkitTransition
                 style.transition = 'none'
 
                 timeout().then(() => {
+                    let dist = parseInt((el.offsetWidth - text.offsetWidth) / 2) + 'px'
                     let direction = document.querySelector('[von-app]').getAttribute('transition-direction')
                     if (direction) {
                         style.webkitTransform =
-                            style.transform = 'translate3d(' + (direction == 'back' ? '' : '-') + ',0,0)'
+                            style.transform = 'translate3d(' + (direction == 'back' ? '' : '-') + dist + ',0,0)'
                     }
                     style.opacity = 0
 

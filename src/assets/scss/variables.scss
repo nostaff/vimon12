@@ -58,3 +58,10 @@ $timing-fuction: cubic-bezier(.1,.5,.1,1) !default; // Inspired by @c2prods
 $border-default-width: 1px;
 $border-default: $border-default-width solid #ddd;
 $border-radius: 6px !default;
+
+
+$ios-transition-duration:              500ms !default;
+$ios-transition-timing-function:       cubic-bezier(.36, .66, .04, 1) !default;
+
+$android-transition-duration:          200ms !default;
+$android-transition-timing-function:   cubic-bezier(0.4, 0.6, 0.2, 1) !default;
