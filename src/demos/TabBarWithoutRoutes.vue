@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: 'Tabbar 单独使用', showBackButton: true}"
+  <div class="content" v-nav="{title: 'Tabbar 单独使用', showBackButton: true}"
     v-tabbar="{'items': tabItems, onItemClick: itemClicked}">
       <div class="page-content padding-top">
         <p class="text-center" v-if="show == 0">Home</p>

@@ -8,9 +8,8 @@
 </template>
 <script>
   import Vue from 'vue'
-  import channel from '../channel'
+  import channel from './channel'
   import Navbar from './Navbar'
-  import state from '../state'
 
   Vue.directive('nav', {
     inserted: function (el, binding) {
@@ -31,22 +30,26 @@
     },
 
     created() {
-      // theme-ios for ios, theme-android for android & other
+      // theme-ios for ios, grade-b for android & other
       if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
         this.gradeClass = 'theme-ios'
       } else {
-        this.gradeClass = 'theme-android'
+        this.gradeClass = 'grade-b'
       }
 
-      if (state.__page_transition__ == 'ios') {
+      if (window.__page_transition__ == 'ios') {
         this.gradeClass = 'theme-ios'
-        state.__disable_nav_title_transition__ = false
-      } else if (state.__page_transition__ == 'android') {
-        this.gradeClass = 'theme-android'
-        state.__disable_nav_title_transition__ = true
+        window.__disable_nav_title_transition__ = false
+      } else if (window.__page_transition__ == 'android') {
+        this.gradeClass = 'grade-b'
+        window.__disable_nav_title_transition__ = true
       }
 
       document.querySelector('body').className = this.gradeClass
+
+      channel.$on('VonicNotification', (data) => {
+        $toast.show(data.message);
+      })
     },
 
     methods: {

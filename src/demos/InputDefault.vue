@@ -1,5 +1,5 @@
 <template>
-  <div class="page" v-nav="{title: '默认输入框', showBackButton: true}">
+  <div class="content" v-nav="{title: '默认输入框', showBackButton: true}">
 
     <div class="page-content padding-top">
 

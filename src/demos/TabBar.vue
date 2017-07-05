@@ -1,5 +1,5 @@
 <template>
-  <div class="page" v-nav="{hideNavbar: true}" v-tabbar="{'items': tabItems, onItemClick: itemClicked}">
+  <div class="content" v-nav="{hideNavbar: true}" v-tabbar="{'items': tabItems, onItemClick: itemClicked}">
     <router-view></router-view>
   </div>
 </template>

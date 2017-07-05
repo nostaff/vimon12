@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: '弹层', showBackButton: true}">
+  <div class="content" v-nav="{title: '弹层', showBackButton: true}">
     <div class="page-content padding-top">
 
       <item class="item item-icon-right" @click.native="showCustomPopup()">

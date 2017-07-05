@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: '复选框', showBackButton: true}">
+  <div class="content" v-nav="{title: '复选框', showBackButton: true}">
 
     <div class="page-content">
       <div class="item item-divider">

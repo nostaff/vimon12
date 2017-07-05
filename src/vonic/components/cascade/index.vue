@@ -14,7 +14,8 @@
 <script>
   import axios from 'axios'
   import Vue from 'vue'
-  import HairlineList from '../list/List'
+  import channel from '../app/channel'
+  import HairlineList from '../list/HairlineList'
   import HairlineTop from '../list/HairlineTop'
   import HairlineBottom from '../list/HairlineBottom'
 
@@ -100,7 +101,10 @@
         let v = this.value, f = this.fields
 
         if (index > v.length) {
-          if ($toast) $toast.show('请先选择' + f[index - 1])
+          channel.$emit('VonicNotification', {
+            message: '请先选择' + f[index - 1]
+          })
+
           return
         }
 

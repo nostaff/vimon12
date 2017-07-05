@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: 'iOS 风格选项卡', showBackButton: true}">
+  <div class="content" v-nav="{title: 'iOS 风格选项卡', showBackButton: true}">
     <div class="page-content padding-top">
 
       <div class="padding light-bg">

@@ -1,10 +1,10 @@
 <template>
   <div class="list von-radio">
-    <div class="item item-borderless item-icon-left"
-           v-for="(option, i) in options" @click="onClick(i)"
+    <label class="item item-borderless item-icon-left"
+           v-for="(option, i) in options"
     >
       <hairline-top v-if="i > 0"></hairline-top>
-      <input type="radio" :name="radioId" v-model="v" :value="i">
+      <input type="radio" :name="radioId" v-model="v" :value="i" @click="onClick(i)">
       <i
         class="icon ion-ios-checkmark"
         :class="{
@@ -22,7 +22,7 @@
       <span v-text="option"></span>
 
       <hairline-bottom v-if="i < options.length - 1"></hairline-bottom>
-    </div>
+    </label>
   </div>
 </template>
 <script>

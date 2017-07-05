@@ -2,15 +2,10 @@ import './assets/scss/ratchet.scss';
 
 import Vue from 'vue'
 
-import VueRouter from 'vue-router'
-Vue.use(VueRouter)
-
 import Vonic from './vonic'
 Vue.use(Vonic)
 
-
 import sess from './lib/session'
-
 const beforeEach = (toRoute, fromRoute, next) => {
     const to = toRoute.path
     const from = fromRoute.path
@@ -30,10 +25,10 @@ const beforeEach = (toRoute, fromRoute, next) => {
     }
 
     const tabbarRoutes = [
-        '/demo/advanced/tabbar/home',
-        '/demo/advanced/tabbar/discount',
-        '/demo/advanced/tabbar/cart',
-        '/demo/advanced/tabbar/user'
+        '/advanced/tabbar/home',
+        '/advanced/tabbar/discount',
+        '/advanced/tabbar/cart',
+        '/advanced/tabbar/user'
     ]
 
     if (from && tabbarRoutes.indexOf(from) > -1) {
@@ -77,25 +72,20 @@ const afterEach = (toRoute, fromRoute) => {
     }
 }
 
+// Register beforeEach and afterEach Hooks
+Vonic.app.setConfig('beforeEach', beforeEach)
+Vonic.app.setConfig('afterEach', afterEach)
+
+// Vonic.app.setConfig('pushMethod', 'replace')
+// Vonic.app.setConfig('pageTransition', 'ios')
+
 import routes from './routes'
-
-const router = new VueRouter({
-    routes: routes
-})
-
-// register global guards
-router.beforeEach(beforeEach)
-router.afterEach(afterEach)
-
 import store from './store'
 
 Vue.use(Vonic.app, {
-    router: router,
-    store: store,
-    pushMehod: 'push', // push, replace
-    pageTransition: 'ios'
+    routes: routes,
+    store: store
 })
-
 
 import FastClick from 'fastclick'
 FastClick.attach(document.body)

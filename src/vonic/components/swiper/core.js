@@ -18,14 +18,14 @@ const extend = (target, source) => {
 function noop() {}
 function execFn(fn) { setTimeout(fn || noop, 0)}
 
-function Swiper(container, swiperOptions) {
+module.exports = function Swiper(container, swiperOptions) {
   let options = extend(DEFAULT_OPTIONS, swiperOptions)
 
   let prev = 0
   let current = 0
   let offset = 0
 
-  let items = container.querySelectorAll(options.itemClass)
+  let items =  container.querySelectorAll(options.itemClass)
   let count = items.length
 
   let width = container.getBoundingClientRect().width || container.offsetWidth
@@ -57,7 +57,7 @@ function Swiper(container, swiperOptions) {
   // Activate a item
   function activate(index) {
     offset = index * height
-    let transform = 'translate3d(0, -' + offset + 'px, 0)'
+    transform = 'translate3d(0, -' + offset + 'px, 0)'
 
     if (options.direction == 'horizontal') {
       offset = index * width;
@@ -215,5 +215,3 @@ function Swiper(container, swiperOptions) {
     }
   }
 }
-
-export default Swiper

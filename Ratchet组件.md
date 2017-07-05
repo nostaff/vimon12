@@ -22,7 +22,7 @@
 &lt;/header&gt;
 
 &lt;!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) --&gt;
-&lt;div class="page"&gt;
+&lt;div class="content"&gt;
     &lt;p class="content-padded"&gt;Thanks for downloading Ratchet...&lt;/p&gt;
     &lt;div class="card"&gt;
         &lt;ul class="table-view"&gt;
@@ -707,7 +707,7 @@ chrome浏览器要开启仿真的效果，才能看到js效果。
         &lt;h1 class="title"&gt;Modal&lt;/h1&gt;
     &lt;/header&gt;
 
-    &lt;div class="page"&gt;
+    &lt;div class="content"&gt;
         &lt;p class="content-padded"&gt;The contents of my modal ...&lt;/p&gt;
     &lt;/div&gt;
 &lt;/div&gt;

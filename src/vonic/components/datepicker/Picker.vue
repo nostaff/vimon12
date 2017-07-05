@@ -18,7 +18,9 @@
       <!-- years -->
       <scroller class="dp-list dp-years"
         ref="y_scroller"
-        :animate-duration="1"
+        :snapping="snapping"
+        :snapHeight="snapHeight"
+        :animation-duration="animationDuration"
         width="34%"
       >
         <div class="dp-item" v-for="(y, index) in years" v-text="y"></div>
@@ -27,7 +29,9 @@
       <!-- months -->
       <scroller class="dp-list dp-months"
         ref="m_scroller"
-        :animate-duration="1"
+        :snapping="snapping"
+        :snapHeight="snapHeight"
+        :animationDuration="animationDuration"
         width="33%"
       >
         <div class="dp-item" v-for="(m, index) in months" v-text="m"></div>
@@ -36,7 +40,9 @@
       <!-- dates -->
       <scroller class="dp-list dp-dates"
         ref="d_scroller"
-        :animate-duration="1"
+        :snapping="snapping"
+        :snapHeight="snapHeight"
+        :animationDuration="animationDuration"
         width="33%"
       >
         <div class="dp-item" v-for="(d, index) in dates" v-text="d"></div>
@@ -118,7 +124,12 @@
         months: defaultMonths(),
         dates: defaultDates(),
 
-        timer: undefined
+        timer: undefined,
+
+        // scroller settings
+        snapping: true,
+        snapHeight: 34,
+        animationDuration: 1
       }
     },
 

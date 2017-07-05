@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar"
+  <div class="content"
     v-nav="{
       title: 'Vue Scroller',
       showBackButton: true,

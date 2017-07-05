@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar" v-nav="{hideNavbar: true}">
+  <div class="content" v-nav="{hideNavbar: true}">
     <div class="page-content">
 
       <div class="logo"></div>
