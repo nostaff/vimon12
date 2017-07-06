@@ -1,5 +1,5 @@
 <template>
-  <div class="list list-borderless list-accordion"
+  <div class="list list-accordion"
     :style="{height: getHeight()}"
     >
     <item class="item-icon-right" @click.native="onClick()">

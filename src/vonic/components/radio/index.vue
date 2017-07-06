@@ -1,6 +1,6 @@
 <template>
   <div class="list von-radio">
-    <label class="item item-borderless item-icon-left"
+    <label class="item item-icon-left"
            v-for="(option, i) in options"
     >
         <div class="hairline-top" v-if="i >0"></div>

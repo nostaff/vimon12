@@ -2,7 +2,7 @@
   <div class="von-cascade-panel" :class="{'active': state == 1}">
     <div class="title" v-text="title"></div>
 
-    <div class="list list-borderless options">
+    <div class="list options">
       <div class="item" v-for="(option, index) in options"
         @click="optionClicked(index)">
           <div class="hairline-top"></div>

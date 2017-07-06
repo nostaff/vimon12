@@ -102,17 +102,17 @@ label > * {
 // hairline
 
 .hairline-top:before {
-  @include hairline(top);
+  @include hairline(single);
 }
 
 .hairline-bottom:after {
-  @include hairline(bottom);
+  @include hairline(single);
 }
 
 .hairline-left:before {
-  @include hairline(left);
+  //@include hairline(left);
 }
 
 .hairline-right:after {
-  @include hairline(right);
+  //@include hairline(right);
 }

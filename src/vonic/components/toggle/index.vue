@@ -1,5 +1,5 @@
 <template>
-  <div class="item item-borderless item-toggle von-toggle">
+  <div class="item item-toggle von-toggle">
       <div class="hairline-top"></div>
 
       <span v-text="text"></span>

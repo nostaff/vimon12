@@ -249,7 +249,7 @@
   }
 }
 
-@mixin hairline($position: bottom, $color:#ddd , $offset: 0px) {
+@mixin hairline1($position: bottom, $color:#ddd , $offset: 0px) {
   content: '';
   position: absolute;
   background-color: #ddd;
@@ -303,7 +303,21 @@
 
 // Misc
 // --------------------------------------------------
-@mixin hairline1($type, $color, $offset) {
+@mixin hairline($type, $color: #ddd, $offset: 0px) {
+  @if $type == single {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='1'><rect fill='#{$color}' x='0' y='0' width='100%' height='0.5'/></svg>");
+    background-position: $offset 100%;
+
+  } @else if $type == double {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='1'><rect fill='#{$color}' x='0' y='0' width='100%' height='0.5'/></svg>"),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='1'><rect fill='#{$color}' x='0' y='0' width='100%' height='0.5'/></svg>");
+    background-position: $offset 100%, $offset 0;
+  }
+  background-repeat: no-repeat;
+}
+
+
+@mixin hairline2($type, $color, $offset) {
   @if $type == single {
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='1'><rect fill='#{$color}' x='0' y='0' width='100%' height='0.5'/></svg>");
     background-position: $offset 100%;

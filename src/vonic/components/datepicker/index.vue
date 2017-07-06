@@ -1,5 +1,5 @@
 <template>
-  <div von-datepicker class="item item-borderless item-input" @click="showPicker()">
+  <div von-datepicker class="item item-input" @click="showPicker()">
     <span v-if="label != ''" class="input-label" v-text="label"></span>
     <input ref="datetime" type="datetime" :value="v">
 

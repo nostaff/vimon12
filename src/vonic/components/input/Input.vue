@@ -1,6 +1,6 @@
 <template>
   <div class="von-input-wrapper" :class="{'has-floating-label': floatingLabel == 'true'}">
-    <label class="item item-borderless item-input von-input" :class="{'item-floating-label': floatingLabel == 'true'}">
+    <label class="item item-input von-input" :class="{'item-floating-label': floatingLabel == 'true'}">
         <div class="hairline-top"></div>
 
       <span v-if="label != ''" class="input-label" :class="{'has-input': floatingLabel == 'true' && !!value}" v-text="label"></span>
