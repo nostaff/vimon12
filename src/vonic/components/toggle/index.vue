@@ -1,7 +1,8 @@
 <template>
   <div class="item item-borderless item-toggle von-toggle">
-    <hairline-top></hairline-top>
-    <span v-text="text"></span>
+      <div class="hairline-top"></div>
+
+      <span v-text="text"></span>
     <label class="toggle" :class="themeClass()">
       <input v-if="value" type="checkbox" ref="checkbox" :value="value" checked
         @click="onToggle($event.target.checked)">
@@ -12,19 +13,12 @@
         <div class="handle"></div>
       </div>
     </label>
-    <hairline-bottom></hairline-bottom>
+      <div class="hairline-bottom"></div>
+
   </div>
 </template>
 <script>
-  import HairlineTop from '../list/HairlineTop'
-  import HairlineBottom from '../list/HairlineBottom'
-
   export default{
-    components: {
-      HairlineTop,
-      HairlineBottom
-    },
-
     props: {
       text: {
         type: String,

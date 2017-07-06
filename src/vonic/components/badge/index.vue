@@ -4,12 +4,7 @@
   </span>
 </template>
 <script>
-  import Scalable from '../scalable'
-
   export default {
-    components: {
-      Scalable
-    },
     props: {
       num: [String, Number]
     }

@@ -1,8 +1,8 @@
 <template>
-  <div class="list list-ios von-checkbox">
+  <div class="list von-checkbox">
     <label class="item item-borderless item-icon-right"
            v-for="(option, i) in options">
-      <hairline-top v-if="i > 0"></hairline-top>
+        <div class="hairline-top" v-if="i > 0"></div>
 
       <input type="checkbox" :name="checkboxName" :id="checkboxName + '-' + i"
         v-model="v" :value="i" @click="onClick(i)">
@@ -20,20 +20,12 @@
       >
       </i>
 
-      <hairline-bottom v-if="i < options.length - 1"></hairline-bottom>
+        <div class="hairline-bottom" v-if="i < options.length - 1"></div>
     </label>
   </div>
 </template>
 <script>
-  import HairlineTop from '../list/HairlineTop'
-  import HairlineBottom from '../list/HairlineBottom'
-
   export default{
-    components: {
-      HairlineTop,
-      HairlineBottom
-    },
-
     props: {
       options: {
         type: Array,

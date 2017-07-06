@@ -3,8 +3,9 @@
     <label class="item item-borderless item-icon-left"
            v-for="(option, i) in options"
     >
-      <hairline-top v-if="i > 0"></hairline-top>
-      <input type="radio" :name="radioId" v-model="v" :value="i" @click="onClick(i)">
+        <div class="hairline-top" v-if="i >0"></div>
+
+        <input type="radio" :name="radioId" v-model="v" :value="i" @click="onClick(i)">
       <i
         class="icon ion-ios-checkmark"
         :class="{
@@ -21,20 +22,12 @@
       </i>
       <span v-text="option"></span>
 
-      <hairline-bottom v-if="i < options.length - 1"></hairline-bottom>
+        <div class="hairline-bottom" v-if="i < options.length - 1"></div>
     </label>
   </div>
 </template>
 <script>
-  import HairlineTop from '../list/HairlineTop'
-  import HairlineBottom from '../list/HairlineBottom'
-
   export default {
-    components: {
-      HairlineTop,
-      HairlineBottom
-    },
-
     props: {
       options: {
         type: Array,

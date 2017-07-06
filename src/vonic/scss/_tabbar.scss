@@ -39,17 +39,17 @@ $tabbar-z-index: 10;
 
     .icon-wrapper {
       @include flex(none);
-      height: 32px;
+      height: 30px;
       text-align: center;
-      font-size: 28px;
-      line-height: 32px;
+      font-size: 26px;
+      line-height: 30px;
     }
 
     .text-wrapper {
       @include flex(1);
       text-align: center;
-      font-size: 20px;
-      line-height: 20px;
+      font-size: 12px;
+      line-height: 12px;
     }
 
     .von-badge {

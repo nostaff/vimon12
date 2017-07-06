@@ -26,17 +26,15 @@ Vue.component('badge', VonBadge)
 // Layout
 import HairlineList from './components/list/HairlineList'
 import HairlineItem from './components/list/HairlineItem'
-import Cells from './components/cells'
+import Grid from './components/grid'
 import Tabs from './components/tabs'
 import ButtonBar from './components/buttonbar'
-import Scalable from './components/scalable'
 
 Vue.component('list', HairlineList)
 Vue.component('item', HairlineItem)
-Vue.component('cells', Cells)
+Vue.component('grid', Grid)
 Vue.component('tabs', Tabs)
 Vue.component('button-bar', ButtonBar)
-Vue.component('scalable', Scalable)
 
 // Advanced
 import {Swiper, SwiperItem} from './components/swiper'
@@ -70,12 +68,9 @@ export default {
     // Layout
     List: HairlineList,
     Item: HairlineItem,
-    HairlineList,
-    HairlineItem,
-    Cells,
+    Grid,
     Tabs,
     ButtonBar,
-    Scalable,
 
     // Advanced
     Swiper,

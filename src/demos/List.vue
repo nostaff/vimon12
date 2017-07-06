@@ -23,34 +23,6 @@
         <i class="icon ion-ios-arrow-right" style="color: #DDD;"></i>
       </item>
 
-      <div class="item item-divider">
-        iOS style
-      </div>
-
-      <list class="list-ios">
-        <item>
-          Item - 1
-        </item>
-        <item>
-          Item - 2
-        </item>
-        <item>
-          Item - 3
-        </item>
-      </list>
-
-      <list class="list-ios hl-list-borderless">
-        <item>
-          Item - 1
-        </item>
-        <item>
-          Item - 2
-        </item>
-        <item>
-          Item - 3
-        </item>
-      </list>
-
       <list>
         <item thin>
           小标题

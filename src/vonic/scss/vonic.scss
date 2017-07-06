@@ -1,11 +1,13 @@
-@import "base";
+@import "ionic.css";
 
 @import "variables";
 @import "mixins";
+
+@import "base";
+
 @import "scaffolding";
 
 @import "view";
-@import "page";
 
 @import "item";
 @import "button";
@@ -15,14 +17,13 @@
 @import "badge";
 @import "buttonbar";
 @import "cascade";
-@import "cells";
+@import "grid";
 @import "checkbox";
 @import "datepicker";
 @import "input";
 @import "list";
 @import "radio";
 @import "range";
-@import "scalable";
 @import "scroll";
 @import "swiper";
 @import "tabs";
@@ -34,3 +35,11 @@
 @import "sidebar";
 @import "tabbar";
 @import "icons";
+
+.theme-ios {
+  @import "theme-ios";
+}
+
+.theme-android {
+  @import "theme-android";
+}

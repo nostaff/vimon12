@@ -8,9 +8,8 @@
         :class="{'rotated': expanded}"></i>
     </item>
     <transition name="von-accordion">
-      <div v-show="expanded" class="accordion-content">
+      <div v-show="expanded" class="accordion-content hailine-bottom">
         <slot></slot>
-        <HairlineBottom></HairlineBottom>
       </div>
     </transition>
   </div>
@@ -18,12 +17,10 @@
 <script>
   import channel from './channel'
   import HairlineItem from '../list/HairlineItem'
-  import HairlineBottom from '../list/HairlineBottom'
 
   export default {
     components: {
       Item: HairlineItem,
-      HairlineBottom
     },
 
     props: {

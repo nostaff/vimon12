@@ -1,13 +1,15 @@
 <template>
-  <list class="list-ios von-cascade">
+  <list class="von-cascade">
     <label v-for="(f, index) in fields"
            class="item item-ios item-icon-right"
            @click="showCascadePanel(index)">
-      <hairline-top v-if="index > 0"></hairline-top>
-      <span v-text="f"></span>
+        <div class="hairline-top" v-if="index > 0"></div>
+
+        <span v-text="f"></span>
       <i class="icon ion-ios-arrow-right"></i>
       <span class="item-note" v-text="value[index]"></span>
-      <hairline-bottom v-if="index < fields.length - 1"></hairline-bottom>
+        <div class="hairline-bottom" v-if="index < fields.length -1"></div>
+
     </label>
   </list>
 </template>
@@ -16,8 +18,6 @@
   import Vue from 'vue'
   import channel from '../app/channel'
   import HairlineList from '../list/HairlineList'
-  import HairlineTop from '../list/HairlineTop'
-  import HairlineBottom from '../list/HairlineBottom'
 
   const filter = (filters, data) => {
     let options = []
@@ -42,8 +42,6 @@
   export default {
     components: {
       HairlineList,
-      HairlineTop,
-      HairlineBottom
     },
 
     props: {

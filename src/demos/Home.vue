@@ -8,7 +8,7 @@
       <!-- Basic -->
       <div class="item item-divider">基础</div>
 
-      <list class="list-ios hl-list-borderless">
+      <list class="hl-list-borderless">
         <item class="item-icon-right" @click.native="$router.forward('/demo/basic/button')">
           Button <span class="item-note">按钮</span>
           <i class="icon ion-ios-arrow-right"></i>
@@ -61,7 +61,7 @@
 
       <!-- layout -->
       <div class="item item-divider">布局</div>
-      <list class="list-ios hl-list-borderless">
+      <list class="hl-list-borderless">
         <item class="item-icon-right" @click.native="$router.forward('/demo/layout/header')">
           Header <span class="item-note">页头</span>
           <i class="icon ion-ios-arrow-right"></i>
@@ -70,8 +70,8 @@
           List <span class="item-note">列表</span>
           <i class="icon ion-ios-arrow-right"></i>
         </item>
-        <item class="item-icon-right" @click.native="$router.forward('/demo/layout/cells')">
-          Cells <span class="item-note">宫格</span>
+        <item class="item-icon-right" @click.native="$router.forward('/demo/layout/grid')">
+          Grid <span class="item-note">宫格</span>
           <i class="icon ion-ios-arrow-right"></i>
         </item>
         <item class="item-icon-right" @click.native="$router.forward('/demo/layout/tabs')">
@@ -82,15 +82,11 @@
           ButtonBar <span class="item-note">iOS 选项卡</span>
           <i class="icon ion-ios-arrow-right"></i>
         </item>
-        <item class="item-icon-right" @click.native="$router.forward('/demo/layout/scalable')">
-          Scalable <span class="item-note">缩放</span>
-          <i class="icon ion-ios-arrow-right"></i>
-        </item>
       </list>
 
       <!-- advanced -->
       <div class="item item-divider">高级</div>
-      <list class="list-ios hl-list-borderless">
+      <list class="hl-list-borderless">
         <item class="item-icon-right" @click.native="$router.forward('/demo/advanced/swiper')">
           Swiper <span class="item-note">轮播</span>
           <i class="icon ion-ios-arrow-right"></i>

@@ -9,9 +9,7 @@
       </div>
 
       <div class="text-wrapper">
-        <scalable>
           <span v-text="menu.text"></span>
-        </scalable>
       </div>
 
       <badge v-if="menu.badge" :num="menu.badge"></badge>
@@ -19,14 +17,12 @@
   </div>
 </template>
 <script>
-  import Scalable from '../../components/scalable'
   import Badge from '../../components/badge'
 
   const re_color = /^#([0-9A-Fa-f]{3})|([0-9A-Fa-f]{6})$/;
 
   export default {
     components: {
-      Scalable,
       Badge
     },
 
