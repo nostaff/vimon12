@@ -1,6 +1,6 @@
 <template>
   <div class="page has-navbar" v-nav="{title: 'Icons', showBackButton: true}">
-    <div class="page-content padding padding-top">
+    <div class="my-icons page-content padding padding-top">
 
 
       <span class="icon ion-alert"></span>
@@ -1473,3 +1473,12 @@
     </div>
   </div>
 </template>
+
+<style lang="scss">
+    .my-icons {
+        span.icon {
+            font-size: 30px;
+            margin: 5px;
+        }
+    }
+</style>

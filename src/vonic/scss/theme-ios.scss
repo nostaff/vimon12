@@ -181,7 +181,7 @@ p {
 .bar {
   background-color: $chrome-color;
   border-bottom: 0;
-  @include box-shadow(0 0 1px rgba(0,0,0,.85));
+  @include box-shadow(0 0 1px rgba(0,0,0,.35));
 
   // Modifier class to dock any bar below .bar-nav
   &.bar-header-secondary {
@@ -341,60 +341,27 @@ input[type="number"],
 input[type="email"],
 input[type="url"],
 input[type="tel"],
-input[type="color"],
-.input-group {
+input[type="color"] {
   height: 40px;
   padding: 10px 15px;
-  border: 1px solid rgba(0, 0, 0, .2);
+  //border: 1px solid rgba(0, 0, 0, .2);
 }
 
 // Rounded search input
-input[type="search"] {
+input[type="search1"] {
   height: 34px;
   text-align: center;
   background-color: rgba(0,0,0,.1);
   border: 0;
   border-radius: 6px;
 }
-input[type="search"]:focus {
+input[type="search1"]:focus {
   text-align: left;
 }
 select,
-textarea,
-.input-group {
+textarea {
   height: auto;
 }
-
-// Input groups (cluster multiple inputs together into a single group)
-// -------------------------------------------------------------------
-.input-group {
-  padding: 0;
-  border: 0;
-  @include hairline(double, #c8c7cc, 0); // Double grey border.
-}
-.input-group input {
-  border: 0;
-  @include hairline(single, #c8c7cc, 15px);
-}
-// Remove bottom border on last input to avoid double bottom border
-.input-group input:last-child {
-  background-image: none;
-}
-
-// Input groups with labels
-// --------------------------------------------------
-
-// To use labels with input groups, wrap a label and an input in an .input-row
-.input-row {
-  border-bottom: 0;
-  @include hairline(single, #c8c7cc, 15px); // Single grey border with a 15px offset.
-}
-// Remove bottom border on last input-row to avoid double bottom border
-.input-row:last-child,
-.input-row label + input {
-  background-image: none;
-}
-
 
 // Segmented controls
 // --------------------------------------------------

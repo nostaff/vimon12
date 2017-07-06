@@ -1,41 +1,38 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: '操作列表', showBackButton: true}">
-    <div class="page-content padding-top">
-      <item class="item-icon-right" @click.native="showActionSheet()">
-        iOS<span class="item-note">默认</span>
-        <i class="icon ion-ios-arrow-right"></i>
-      </item>
+    <div class="page has-navbar" v-nav="{title: '操作列表', showBackButton: true}">
+        <div class="page-content padding padding-top ">
+            <div class="item item-divider">
+                ACTION SHEETS
+            </div>
 
-      <item class="item-icon-right" @click.native="showActionSheet('android')">
-        Android<span class="item-note"></span>
-        <i class="icon ion-ios-arrow-right"></i>
-      </item>
+            <button class="button button-assertive button-block" @click="showActionSheet()">Show Action Sheet</button>
 
-      <item class="item-icon-right" @click.native="showActionSheet('weixin')">
-        微信<span class="item-note"></span>
-        <i class="icon ion-ios-arrow-right"></i>
-      </item>
+            <span>根据浏览器自动变换样式</span>
+
+        </div>
     </div>
-  </div>
 </template>
 <script>
-  export default {
-    methods: {
-      showActionSheet(theme) {
-        $actionSheet.show({
-          theme: theme || '',
-          title: '标题',
-          buttons: {
-            'Action - 1': () => {
-              console.log('action 1 called.')
-            },
+    export default {
+        methods: {
+            showActionSheet() {
+                $actionSheet.show({
+                    title: '标题',
+                    buttons: {
+                        'Action - 1': () => {
+                            console.log('action 1 called.')
+                        },
 
-            'Action - 2': () => {
-              console.log('action 2 called.')
+                        'Action - 2': () => {
+                            console.log('action 2 called.')
+                        },
+
+                        'Action - 3': () => {
+                            console.log('action 3 called.')
+                        }
+                    }
+                })
             }
-          }
-        })
-      }
+        }
     }
-  }
 </script>

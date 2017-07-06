@@ -35,13 +35,13 @@
         </item>
       </list>
 
-      <hl-item class="item-icon-right">
+      <item class="item-icon-right">
         文字
         <div class="item-note">
           备注
         </div>
         <span class="icon ion-ios-arrow-right"></span>
-      </hl-item>
+      </item>
 
       <div style="height: 100px"></div>
     </div>

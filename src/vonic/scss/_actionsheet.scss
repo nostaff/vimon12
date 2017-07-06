@@ -1,50 +1,145 @@
-.action-sheet-wrapper .action-sheet {
-  .action-sheet-group {
-    border-radius: 8px;
-    .action-sheet-title {
-      font-size: 14px;
-      padding: 15px;
-    }
-
-    .action-sheet-option {
-      font-size: 16px;
-      border: transparent;
-    }
-
-    &.action-sheet-cancel {
-      .button {
-        font-size: 16px;
-      }
-    }
-
-    .button.active,
-    .button.activated,
-    .button:active {
-      background: #e8e8e8;
-    }
-  }
+.action-sheet-backdrop {
+  -webkit-transition: background-color 150ms ease-in-out;
+  transition: background-color 150ms ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  width: 100%;
+  height: 100%;
+  background-color: transparent
 }
 
-[theme='android'].action-sheet-backdrop {
-  &.active {
-    background-color: rgba(0,0,0,0.2);
-  }
+.action-sheet-backdrop.active {
+  background-color: rgba(0, 0, 0, 0.4)
+}
 
-  .action-sheet-wrapper .action-sheet {
-    margin: 0;
+.action-sheet-wrapper {
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  -webkit-transition: all cubic-bezier(0.36, 0.66, 0.04, 1) 500ms;
+  transition: all cubic-bezier(0.36, 0.66, 0.04, 1) 500ms;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 500px;
+  margin: auto
+}
 
+.action-sheet-up {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0)
+}
+
+.action-sheet {
+  margin-left: 8px;
+  margin-right: 8px;
+  width: auto;
+  z-index: 11;
+  overflow: hidden
+}
+
+.action-sheet .button {
+  display: block;
+  padding: 1px;
+  width: 100%;
+  border-radius: 0;
+  border-color: #d1d3d6;
+  background-color: transparent;
+  color: #007aff;
+  font-size: 21px
+}
+
+.action-sheet .button:hover {
+  color: #007aff
+}
+
+.action-sheet .button.destructive {
+  color: #ff3b30
+}
+
+.action-sheet .button.destructive:hover {
+  color: #ff3b30
+}
+
+.action-sheet .button.active, .action-sheet .button.activated {
+  box-shadow: none;
+  border-color: #d1d3d6;
+  color: #007aff;
+  background: #e4e5e7
+}
+
+.action-sheet-has-icons .icon {
+  position: absolute;
+  left: 16px
+}
+
+.action-sheet-title {
+  padding: 16px;
+  color: #8f8f8f;
+  text-align: center;
+  font-size: 13px
+}
+
+.action-sheet-group {
+  margin-bottom: 8px;
+  border-radius: 4px;
+  background-color: #fff;
+  overflow: hidden
+}
+
+.action-sheet-group .button {
+  border-width: 1px 0px 0px 0px
+}
+
+.action-sheet-group .button:first-child:last-child {
+  border-width: 0
+}
+
+.action-sheet-options {
+  background: #f1f2f3
+}
+
+.action-sheet-cancel .button {
+  font-weight: 500
+}
+
+.action-sheet-open {
+  pointer-events: none
+}
+
+.action-sheet-open.modal-open .modal {
+  pointer-events: none
+}
+
+.action-sheet-open .action-sheet-backdrop {
+  pointer-events: auto
+}
+
+
+.action-sheet-wrapper {
+  @include transition-duration(.3s);
+  @include transition-timing-function(cubic-bezier(0.4, 0.6, 0.2, 1));
+
+  .action-sheet {
     .action-sheet-group {
-      margin: 0;
-      border-radius: 0;
-      background-color: #fafafa;
-
-      .action-sheet-title,
-      .button {
-        text-align: left;
-        border-color: transparent;
+      border-radius: 8px;
+      .action-sheet-title {
         font-size: 14px;
-        color: inherit;
-        padding-left: 15px;
+        padding: 15px;
+      }
+
+      .action-sheet-option {
+        font-size: 16px;
+        border: transparent;
+      }
+
+      &.action-sheet-cancel {
+        .button {
+          font-size: 16px;
+        }
       }
 
       .button.active,
@@ -52,15 +147,47 @@
       .button:active {
         background: #e8e8e8;
       }
+    }
+  }
+}
 
-      &.action-sheet-cancel {
-        display: none;
+.theme-android .action-sheet-backdrop {
+  &.active {
+    background-color: rgba(0,0,0,0.2);
+  }
+  .action-sheet-wrapper  {
+    @include transition-duration(.3s);
+    @include transition-timing-function(cubic-bezier(0.4, 0.6, 0.2, 1));
+
+    .action-sheet {
+      margin: 0;
+
+      .action-sheet-group {
+        margin: 0;
+        border-radius: 0;
+        background-color: #fafafa;
+
+        .action-sheet-title, .button {
+          text-align: left;
+          border-color: transparent;
+          font-size: 14px;
+          color: inherit;
+          padding-left: 15px;
+        }
+
+        .button.active, .button.activated, .button:active {
+          background: #e8e8e8;
+        }
+
+        &.action-sheet-cancel {
+          display: none;
+        }
       }
     }
   }
 }
 
-[theme='weixin'].action-sheet-backdrop {
+.theme-weixin .action-sheet-backdrop {
   &.active {
     background-color: rgba(0,0,0,0.2);
   }
@@ -92,11 +219,11 @@
         margin-top: -1px;
 
         border: none;
-        @include thin-border-before($default-border-color, 0);
+        @include thin-border-before($background-color, 0);
         &:before {
           border-left: none;
         }
-        @include thin-border-after($default-border-color, 0);
+        @include thin-border-after($background-color, 0);
         &:after {
           border-right: none;
         }
@@ -116,8 +243,7 @@
 [theme='weixin'] .action-sheet-wrapper,
 [theme='android'] .action-sheet-wrapper,
 {
-  @include transition-duration(.3s);
-  @include transition-timing-function(cubic-bezier(0.4, 0.6, 0.2, 1));
+
 }
 
 .modal-open [von-action-sheet] {

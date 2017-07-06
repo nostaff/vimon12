@@ -66,10 +66,6 @@
 
       show(options) {
         let _options = assign({}, this.defaultOptions, options)
-        let theme = _options.theme
-        if (theme == 'android' || theme == 'weixin') {
-          this.$el.setAttribute('theme', theme)
-        }
         this.title = _options.title
         this.buttons = this._buttonList(_options.buttons)
         this.cancelText = _options.cancelText

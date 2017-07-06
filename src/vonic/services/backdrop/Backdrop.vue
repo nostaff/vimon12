@@ -41,3 +41,28 @@
     }
   }
 </script>
+
+<style>
+
+    .backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 11;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        visibility: hidden;
+        opacity: 0;
+        -webkit-transition: .1s opacity linear;
+        transition: .1s opacity linear
+    }
+
+    .backdrop.visible {
+        visibility: visible
+    }
+
+    .backdrop.active {
+        opacity: 1
+    }
+</style>

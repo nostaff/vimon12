@@ -1,5 +1,3 @@
-@import "ionic.css";
-
 @import "variables";
 @import "mixins";
 
@@ -9,6 +7,7 @@
 
 @import "view";
 
+@import "list";
 @import "item";
 @import "button";
 @import "navbar";
@@ -21,7 +20,6 @@
 @import "checkbox";
 @import "datepicker";
 @import "input";
-@import "list";
 @import "radio";
 @import "range";
 @import "scroll";
@@ -32,6 +30,7 @@
 @import "loading";
 @import "modal";
 @import "popup";
+@import "popover";
 @import "sidebar";
 @import "tabbar";
 @import "icons";
@@ -41,5 +40,5 @@
 }
 
 .theme-android {
-  @import "theme-android";
+  //@import "theme-android";
 }
