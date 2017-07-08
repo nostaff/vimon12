@@ -33,6 +33,17 @@
                         备注
                     </div>
                 </item>
+                <item class="item-divider"></item>
+                <item>
+                    正文
+                    <span class="item-note">备注</span>
+                </item>
+                <item is-link>
+                    文字
+                    <div class="item-note">
+                        备注
+                    </div>
+                </item>
             </list>
 
             <div style="height: 100px"></div>

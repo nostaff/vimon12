@@ -1,8 +1,8 @@
 <template>
-    <ul class="list" :class="{'has-divider': !!title}">
+    <div class="list" :class="{'has-divider': !!title}">
         <div class="item item-divider" v-if="title" v-text="title"></div>
         <slot></slot>
-    </ul>
+    </div>
 </template>
 
 <script>

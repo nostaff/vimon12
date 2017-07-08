@@ -1,32 +1,60 @@
 <template>
-	<div class="home" v-tabbar-item-index="0">
-		<von-header theme="light">
-			<!--<button class="button button-icon ion-ios-arrow-back" slot="left" @click="$router.back('/home')"></button>-->
-			<img src="../assets/logo.png" width="30" height="30" slot="left">
-			<span slot="title">360心理</span>
-			<!--<button class="button button-icon ion-navicon" slot="right"></button>-->
-			<button class="button button-icon ion-navicon" slot="right"></button>
-		</von-header>
+    <div class="home" v-tabbar-item-index="0">
+        <von-header theme="light">
+            <!--<button class="button button-icon ion-ios-arrow-back" slot="left" @click="$router.back('/home')"></button>-->
+            <img src="../assets/logo.png" width="30" height="30" slot="left">
+            <span slot="title">360心理</span>
+            <!--<button class="button button-icon ion-navicon" slot="right"></button>-->
+            <button class="button button-icon ion-navicon" slot="right"></button>
+        </von-header>
 
-		<div class="page-content">
-				<swiper ref="swiper"
-						direction="horizontal"
-						width="100%"
-						height="180"
-						pager-color="#ea5a49"
-						pager-bg-color="#e5e4e3"
-						hide-pager="false"
-				>
-					<swiper-item class="swiper-item"><img src="../assets/images/y-banner01.jpg"></swiper-item>
-					<swiper-item class="swiper-item"><img src="../assets/images/y-banner03.jpg"></swiper-item>
-					<swiper-item class="swiper-item"><img src="../assets/images/y-banner03.jpg"></swiper-item>
-				</swiper>
+        <div class="page-content">
+            <swiper ref="swiper"
+                    direction="horizontal"
+                    width="100%"
+                    height="180"
+                    pager-color="#ea5a49"
+                    pager-bg-color="#e5e4e3"
+                    hide-pager="false"
+            >
+                <swiper-item class="swiper-item"><img src="../assets/images/y-banner01.jpg"></swiper-item>
+                <swiper-item class="swiper-item"><img src="../assets/images/y-banner03.jpg"></swiper-item>
+                <swiper-item class="swiper-item"><img src="../assets/images/y-banner03.jpg"></swiper-item>
+            </swiper>
+            <grid inner-border="false" class="features" :items="entrances" :on-cell-click="onCellClick" row="1"></grid>
 
-            <grid class="features" :items="entrances" :on-cell-click="onCellClick" row="1"></grid>
+            <div class="list-box">
+                <h3>我们的服务</h3>
+                <div class="serve_phone fl">
+                    <img src="https://static.yidianling.com/mobile/images/home_serve01.png" width="60">
+                    <h3>电话倾诉</h3>一对一私密对话<br>已有<span class="fc-darkgreen">120561</span>人连接
+                </div>
+                <div class="serve_expert fl">
+                    <div class="fl"><h3>找专家</h3>一对一预约咨询</div>
+                    <div class="fr"><img src="https://static.yidianling.com/mobile/images/home_serve02.png" width="60"></div>
+                </div>
+                <div class="serve_ask fl">
+                    <div class="fl"><h3>在线问答</h3>免费提问 专业解答</div>
+                    <div class="fr"><img src="https://static.yidianling.com/mobile/images/home_serve03.png" width="60"></div>
+                </div>
+            </div>
+            <div class="list-box">
+                <h3>帮你解决</h3>
+                <div class="items">
+                    <div class="item_area box1">婚姻恋爱<a class="link-cover" href="/experts/search?cat=1"></a></div>
+                    <div class="item_area box2">个人成长<a class="link-cover" href="/experts/search?cat=26"></a></div>
+                    <div class="item_area box3">情绪压力<a class="link-cover" href="/experts/search?cat=27"></a></div>
+                    <div class="item_area box4">孩子教育<a class="link-cover" href="/experts/search?cat=23"></a></div>
+                    <div class="item_area box5">职场发展<a class="link-cover" href="/experts/search?cat=22"></a></div>
+                    <div class="item_area box6">性心理<a class="link-cover" href="/experts/search?cat=24"></a></div>
+                </div>
+            </div>
 
-			<travel-list :travel-lists="travelListIndex"></travel-list>
-		</div>
-	</div>
+            <div class=" list-box">
+                <travel-list :travel-lists="travelListIndex"></travel-list>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -62,6 +90,9 @@
 
         },
         methods: {
+            onCellClick(cellIndex) {
+                console.log('cell ' + cellIndex + ' clicked');
+            },
 
         }
     }
@@ -89,6 +120,98 @@
                 font-size: 14px;
                 line-height: 14px;
             }
+        }
+        .link-cover {
+            display: inline-block;
+            zoom: 1;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        .fc-darkgreen {
+            color: #16c95e;
+        }
+        .list-box {
+            margin-top: 12px;
+            border-top: none;
+            border-bottom: 1px solid #efefef;
+            margin-bottom: 0;
+            background-color: #fff;
+            position: relative;
+
+            > h3 {
+                line-height: 32px;
+                font-size: 16px;
+                color: #444;
+                margin-left: 15px;
+            }
+
+            .serve_phone {
+                width: 45%;
+                border-right: 1px solid #efefef;
+                text-align: center;
+                padding: 15px 0;
+                position: relative;
+            }
+            .serve_expert, .serve_ask {
+                padding: 12px 0 12px 15px;
+                border-bottom: 1px solid #efefef;
+                width: 50%;
+            }
+            .serve_expert h3, .serve_phone h3, .serve_ask h3 {
+                font-size: 17px;
+                font-weight: bold;
+            }
+            .serve_phone h3 {
+                color: #16c95e;
+            }
+
+            .items {
+                overflow: hidden;
+                padding: 14px;
+            }
+
+            .item_area {
+                position: relative;
+                color: #fff;
+                font-size: 14px;
+                float: left;
+                width: 32%;
+                height: 40px;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;
+                border-radius: 3px;
+                text-align: center;
+                line-height: 40px;
+
+                &.box1 {
+                    background: #ff6262;
+                    margin-bottom: 10px;
+                }
+                &.box2 {
+                    background: #46c7bf;
+                    margin: 0 2%;
+                    margin-bottom: 10px;
+                }
+                &.box3 {
+                    background: #cc87f0;
+                    margin-bottom: 10px;
+                }
+                &.box4 {
+                    background: #6acf67;
+                }
+                &.box5 {
+                    background: #84baf7;
+                    margin: 0 2%;
+                }
+                &.box6 {
+                    background: #ff92d0;
+                }
+            }
+
+
 
         }
     }
