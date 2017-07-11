@@ -1,13 +1,13 @@
 <template>
     <div class="grid">
         <div class="row" v-for="(r, index) in rows">
-            <div v-if="(index != 0 && innerBorder == true) || outerBorder == true" class="hairline-top"></div>
+            <div v-if="(index != 0 && (innerBorder == true || innerBorder == 'true')) || outerBorder == true || outerBorder == 'true'" class="hairline-top"></div>
             <div class="col" v-for="c in cols" @click="cellClicked(r*cols.length + c)">
-                <div class="hairline-left" v-if="innerBorder == true && c > 0"></div>
+                <div class="hairline-left" v-if="(innerBorder == true || innerBorder == 'true') && c > 0"></div>
                 <div class="col-inner" v-html="items[r*cols.length + c]"></div>
             </div>
         </div>
-        <div v-if="outerBorder == true" class="hairline-bottom"></div>
+        <div v-if="outerBorder == true || outerBorder == 'true'" class="hairline-bottom"></div>
     </div>
 </template>
 
@@ -34,11 +34,11 @@
             },
             onCellClick: Function,
             outerBorder: {
-                type: Boolean,
+                type: [Boolean, String],
                 default: true
             },
             innerBorder: {
-                type: Boolean,
+                type: [Boolean, String],
                 default: true
             }
         },

@@ -27,8 +27,8 @@
             </form>
         </div>
         <div class="forgets">
-            <router-link to="">忘记密码?</router-link>
-            <router-link to="regist">新来的?注册</router-link>
+            <router-link to="/">忘记密码?</router-link>
+            <router-link to="/">新来的?注册</router-link>
         </div>
     </div>
 </template>

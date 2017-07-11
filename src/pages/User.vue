@@ -43,19 +43,19 @@
 			<div class="user-h-list">
 				<ul>
 					<li>
-						<router-link to="/user/navbar">
+						<router-link to="/">
 							<span class="num" v-show="loginStatus">{{pubTotravelNum + pubTosportNum}}</span>
 							<span>发布</span>
 						</router-link>
 					</li>
 					<li>
-						<router-link to="">
+						<router-link to="/">
 							<span class="num" v-show="loginStatus">{{pubTosportNum}}</span>
 							<span>约跑</span>
 						</router-link>
 					</li>
 					<li>
-						<router-link to="">
+						<router-link to="/">
 							<span class="num" v-show="loginStatus">{{pubTotravelNum}}</span>
 							<span>约行</span>
 						</router-link>
@@ -68,8 +68,8 @@
 </template>
 
 <script>
-import Login from '@/pages/Login.vue'
-import Regist from '@/pages/Regist.vue'
+//import Login from '@/pages/Login.vue'
+//import Regist from '@/pages/Regist.vue'
 
 import { mapGetters } from 'vuex'
 import api from '../api'
@@ -115,22 +115,28 @@ export default {
 		])
 	},
     mounted() {
-        $modal.fromComponent(Login, {
-            title: '用户登录',
-            theme: 'default',
-            onHide: () => {
-                console.log('modal hide')
-            }
-        }).then((modal) => {
-            this.loginModal = modal
-        })
+//        setTimeout(() => {
+//            $app.hideNavBar1()
+//            $app.setTitle('我的')
+////            $tabbar.$emit('hideTabbar')
+//        }, 0)
 
-        $modal.fromComponent(Regist, {
-            title: '新用户注册',
-            theme: 'dark'
-        }).then((modal) => {
-            this.registerModel = modal
-        })
+//        $modal.fromComponent(Login, {
+//            title: '用户登录',
+//            theme: 'default',
+//            onHide: () => {
+//                console.log('modal hide')
+//            }
+//        }).then((modal) => {
+//            this.loginModal = modal
+//        })
+//
+//        $modal.fromComponent(Regist, {
+//            title: '新用户注册',
+//            theme: 'dark'
+//        }).then((modal) => {
+//            this.registerModel = modal
+//        })
 
     },
 
@@ -144,11 +150,11 @@ export default {
     },
     methods: {
         showLogin() {
-            this.loginModal.show()
+            this.loginModal && this.loginModal.show()
         },
 
         showRegister() {
-            this.registerModel.show()
+            this.registerModel && this.registerModel.show()
         }
     }
 }

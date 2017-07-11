@@ -1,5 +1,5 @@
 <template>
-    <div class="home" v-tabbar-item-index="0">
+    <div class="home page has-navbar has-tabbar" v-tabbar-item-index="0">
         <von-header theme="light">
             <!--<button class="button button-icon ion-ios-arrow-back" slot="left" @click="$router.back('/home')"></button>-->
             <img src="../assets/logo.png" width="30" height="30" slot="left">
@@ -17,29 +17,31 @@
                     pager-bg-color="#e5e4e3"
                     hide-pager="false"
             >
-                <swiper-item class="swiper-item"><img src="../assets/images/y-banner01.jpg"></swiper-item>
-                <swiper-item class="swiper-item"><img src="../assets/images/y-banner03.jpg"></swiper-item>
-                <swiper-item class="swiper-item"><img src="../assets/images/y-banner03.jpg"></swiper-item>
+                <swiper-item><img src="../assets/images/y-banner01.jpg"></swiper-item>
+                <swiper-item><img src="../assets/images/y-banner03.jpg"></swiper-item>
+                <swiper-item><img src="../assets/images/y-banner03.jpg"></swiper-item>
             </swiper>
             <grid inner-border="false" class="features" :items="entrances" :on-cell-click="onCellClick" row="1"></grid>
 
             <div class="list-box">
                 <h3>我们的服务</h3>
-                <div class="serve_phone fl">
+                <div class="info-desc bt_line_fix"></div>
+                <div class="serve_phone fl f-12 fc-gray">
                     <img src="https://static.yidianling.com/mobile/images/home_serve01.png" width="60">
                     <h3>电话倾诉</h3>一对一私密对话<br>已有<span class="fc-darkgreen">120561</span>人连接
                 </div>
-                <div class="serve_expert fl">
+                <div class="serve_expert fl f-12 fc-gray">
                     <div class="fl"><h3>找专家</h3>一对一预约咨询</div>
                     <div class="fr"><img src="https://static.yidianling.com/mobile/images/home_serve02.png" width="60"></div>
                 </div>
-                <div class="serve_ask fl">
+                <div class="serve_ask fl f-12 fc-gray">
                     <div class="fl"><h3>在线问答</h3>免费提问 专业解答</div>
                     <div class="fr"><img src="https://static.yidianling.com/mobile/images/home_serve03.png" width="60"></div>
                 </div>
             </div>
             <div class="list-box">
                 <h3>帮你解决</h3>
+                <div class="info-desc bt_line_fix"></div>
                 <div class="items">
                     <div class="item_area box1">婚姻恋爱<a class="link-cover" href="/experts/search?cat=1"></a></div>
                     <div class="item_area box2">个人成长<a class="link-cover" href="/experts/search?cat=26"></a></div>
@@ -50,22 +52,40 @@
                 </div>
             </div>
 
-            <div class=" list-box">
-                <travel-list :travel-lists="travelListIndex"></travel-list>
+            <div class="list-box">
+                <h3>推荐专家<span class="more"><router-link class="more" to="/experts">更多</router-link></span></h3>
+                <div class="info-desc bt_line_fix"></div>
+                <div class="experts-index">
+                    <expert-list :expert-lists="travelListIndex"></expert-list>
+                    <router-link class="list-footer" to="/experts">
+                        <div class="text-center">
+                            更多专家 <i class="fa fa-angle-right"></i>
+                        </div>
+                    </router-link>
+                </div>
             </div>
+
+            <div class="list-box">
+                <h3>心理测试<span class="more"><router-link class="more" to="/experts">更多</router-link></span></h3>
+                <div class="info-desc bt_line_fix"></div>
+                <div class="experts-index">
+                    <expert-list :expert-lists="travelListIndex"></expert-list>
+                </div>
+            </div>
+
         </div>
     </div>
 </template>
 
 <script>
 
-    import travelList from '@/components/travelList'
+    import ExpertList from '../components/ExpertList'
 
     import { mapGetters } from 'vuex'
 
     export default {
         components: {
-            travelList
+            ExpertList
         },
         data() {
             return {
@@ -140,12 +160,34 @@
             margin-bottom: 0;
             background-color: #fff;
             position: relative;
+            float: left;
+            width: 100%;
 
-            > h3 {
-                line-height: 32px;
+            h3 {
+                line-height: 40px;
                 font-size: 16px;
                 color: #444;
                 margin-left: 15px;
+                margin-bottom: 0;
+
+                span {
+                    position: absolute;
+                    top: 0;
+                    right: 15px;
+                    font-size: 12px;
+                    a {
+                        color: #747474;
+                    }
+                }
+            }
+
+            .info-desc, .info-answer {
+                border-top: 1px solid #EFEFEF;
+                margin-left: 15px;
+                margin-right: 0;
+            }
+            .bt_line_fix {
+                border-bottom: none;
             }
 
             .serve_phone {
@@ -166,6 +208,16 @@
             }
             .serve_phone h3 {
                 color: #16c95e;
+            }
+
+            .serve_expert h3 {
+                color: #52a0ef;
+                margin-top: 6px;
+            }
+
+            .serve_ask h3 {
+                color: #F9A42F;
+                margin-top: 6px;
             }
 
             .items {
@@ -210,9 +262,12 @@
                     background: #ff92d0;
                 }
             }
+        }
 
-
-
+        .list-footer {
+            line-height: 60px;
+            padding-top: 0;
+            color: #698ec7;
         }
     }
 </style>

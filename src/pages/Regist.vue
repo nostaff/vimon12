@@ -39,8 +39,8 @@
             </form>
         </div>
         <div class="forgets">
-            <router-link to=""></router-link>
-            <router-link to="/user/login">已有账号?登录>></router-link>
+            <router-link to="/"></router-link>
+            <router-link to="/user">已有账号?登录>></router-link>
         </div>
     </div>
 </template>

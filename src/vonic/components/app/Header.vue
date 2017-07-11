@@ -67,7 +67,7 @@
     },
 
     destroyed() {
-      let navContainer = document.querySelector('[von-nav] .navbar-container')
+      let navContainer = document.querySelector('.bar-nav .navbar-container')
       let cached = document.querySelectorAll('[von-navbar="cached"]')
 
       let i = 0
@@ -196,7 +196,7 @@
         let timer = setInterval(() => {
           if (!page_in_transition()) {
             setTimeout(() => {
-              document.querySelector('[von-nav]').style.position = 'fixed'
+              document.querySelector('.bar-nav').style.position = 'fixed'
             }, 50)
             clearInterval(timer)
           }

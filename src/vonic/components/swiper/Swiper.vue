@@ -1,5 +1,5 @@
 <template>
-  <div style="overflow: hidden" :style="{
+  <div class="swiper-container" :style="{
     'width': w,
     'height': h
   }">

@@ -5,515 +5,35 @@
 // Use box sizing on all the things!
 * {
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, i, u, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, fieldset, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  vertical-align: baseline;
-  font: inherit;
-  font-size: 100%
-}
-
-ol, ul {
-  list-style: none
-}
-
-blockquote, q {
-  quotes: none
-}
-
-blockquote:before, blockquote:after, q:before, q:after {
-  content: '';
-  content: none
-}
-
-audio:not([controls]) {
-  display: none;
-  height: 0
-}
-
-[hidden], template {
-  display: none
-}
-
-script {
-  display: none !important
-}
-
-html {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%
-}
-
+// We fix position the body and scroll `.content`.
 body {
-  margin: 0;
-  line-height: 1
-}
-
-a, button, :focus, a:focus, button:focus, a:active, a:hover {
-  outline: 0
-}
-
-a {
-  -webkit-user-drag: none;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-tap-highlight-color: transparent
-}
-
-a[href]:hover {
-  cursor: pointer
-}
-
-b, strong {
-  font-weight: bold
-}
-
-dfn {
-  font-style: italic
-}
-
-hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0
-}
-
-code, kbd, pre, samp {
-  font-size: 1em;
-  font-family: monospace, serif
-}
-
-pre {
-  white-space: pre-wrap
-}
-
-q {
-  quotes: "\201C" "\201D" "\2018" "\2019"
-}
-
-small {
-  font-size: 80%
-}
-
-sub, sup {
-  position: relative;
-  vertical-align: baseline;
-  font-size: 75%;
-  line-height: 0
-}
-
-sup {
-  top: -0.5em
-}
-
-sub {
-  bottom: -0.25em
-}
-
-fieldset {
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-  border: 1px solid #c0c0c0
-}
-
-legend {
-  padding: 0;
-  border: 0
-}
-
-button, input, select, textarea {
-  margin: 0;
-  font-size: 100%;
-  font-family: inherit;
-  outline-offset: 0;
-  outline-style: none;
-  outline-width: 0;
-  -webkit-font-smoothing: inherit;
-  background-image: none
-}
-
-button, input {
-  line-height: normal
-}
-
-button, select {
-  text-transform: none
-}
-
-button, html input[type="button"], input[type="reset"], input[type="submit"] {
-  cursor: pointer;
-  -webkit-appearance: button
-}
-
-button[disabled], html input[disabled] {
-  cursor: default
-}
-
-input[type="search"] {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  -webkit-appearance: textfield
-}
-
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none
-}
-
-button::-moz-focus-inner, input::-moz-focus-inner {
-  padding: 0;
-  border: 0
-}
-
-textarea {
-  overflow: auto;
-  vertical-align: top
-}
-
-img {
-  -webkit-user-drag: none
-}
-
-table {
-  border-spacing: 0;
-  border-collapse: collapse
-}
-
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box
-}
-
-html {
-  overflow: hidden;
-  -ms-touch-action: pan-y;
-  touch-action: pan-y
-}
-
-body {
-  -webkit-touch-callout: none;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-  -webkit-text-size-adjust: none;
-  -moz-text-size-adjust: none;
-  text-size-adjust: none;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
+  font-family: $font-family-default;
+  font-size: $font-size-default;
+  line-height: $line-height-default;
   color: #000;
-  word-wrap: break-word;
-  font-size: 14px;
-  font-family: -apple-system;
-  font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
-  line-height: 20px;
-  text-rendering: optimizeLegibility;
-  -webkit-backface-visibility: hidden;
-  -webkit-user-drag: none;
-  -ms-content-zooming: none
-}
-
-body.theme-android, body.theme-wp {
-  text-rendering: auto
-}
-
-.content {
-  position: relative
-}
-
-.scroll-view {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  margin-top: -1px
-}
-
-.scroll-view.overflow-scroll {
-  position: relative
-}
-
-.scroll-view.scroll-x {
-  overflow-x: scroll;
-  overflow-y: hidden
-}
-
-.scroll-view.scroll-y {
-  overflow-x: hidden;
-  overflow-y: scroll
-}
-
-.scroll-view.scroll-xy {
-  overflow-x: scroll;
-  overflow-y: scroll
-}
-
-.scroll {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-touch-callout: none;
-  -webkit-text-size-adjust: none;
-  -moz-text-size-adjust: none;
-  text-size-adjust: none;
-  -webkit-transform-origin: left top;
-  transform-origin: left top
-}
-
-@-ms-viewport {
-  width: device-width
-}
-
-.has-footer {
-  bottom: 44px
-}
-
-.has-subfooter {
-  bottom: 88px
-}
-
-.has-tabs {
-  bottom: 49px
-}
-
-.has-tabs.pane {
-  bottom: 49px;
-  height: auto
-}
-
-.has-footer.has-tabs {
-  bottom: 93px
-}
-
-.pane {
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  -webkit-transition-duration: 0;
-  transition-duration: 0;
-  z-index: 1
-}
-
-.view {
-  z-index: 1
-}
-
-.pane, .view {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background-color: #fff;
-  overflow: hidden
 }
 
-.view-container {
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 100%
-}
-
-p {
-  margin: 0 0 10px
-}
-
-small {
-  font-size: 85%
-}
-
-cite {
-  font-style: normal
-}
-
-.text-left {
-  text-align: left
-}
-
-.text-right {
-  text-align: right
-}
-
-.text-center {
-  text-align: center
-}
-
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  color: #000;
-  font-weight: 700;
-  font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
-  line-height: 1.2
-}
-
-h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
-  font-weight: normal;
-  line-height: 1
-}
-
-h1, .h1, h2, .h2, h3, .h3 {
-  margin-top: 10px;
-  margin-bottom: 10px
-}
-
-h4, .h4, h5, .h5, h6, .h6 {
-  margin-top: 10px;
-  margin-bottom: 10px
-}
-
-h1, .h1 {
-  font-size: 36px
-}
-
-h2, .h2 {
-  font-size: 30px
-}
-
-h3, .h3 {
-  font-size: 24px
-}
-
-h4, .h4 {
-  font-size: 18px
-}
-
-h5, .h5 {
-  font-size: 14px
-}
-
-h6, .h6 {
-  font-size: 12px
-}
-
-h1 small, .h1 small {
-  font-size: 24px
-}
-
-h2 small, .h2 small {
-  font-size: 18px
-}
-
-h3 small, .h3 small, h4 small, .h4 small {
-  font-size: 14px
-}
-
-dl {
-  margin-bottom: 20px
-}
-
-dt, dd {
-  line-height: 1.42857
-}
-
-dt {
-  font-weight: bold
-}
-
-blockquote {
-  margin: 0 0 20px;
-  padding: 10px 20px;
-  border-left: 5px solid gray
-}
-
-blockquote p {
-  font-weight: 300;
-  font-size: 17.5px;
-  line-height: 1.25
-}
-
-blockquote p:last-child {
-  margin-bottom: 0
-}
-
-blockquote small {
-  display: block;
-  line-height: 1.42857
-}
-
-blockquote small:before {
-  content: '\2014 \00A0'
-}
-
-q:before, q:after, blockquote:before, blockquote:after {
-  content: ""
-}
-
-address {
-  display: block;
-  margin-bottom: 20px;
-  font-style: normal;
-  line-height: 1.42857
-}
-
+// Universal link styling
 a {
-  color: #4a90e2;
+  color: $primary-color;
   text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0); // Removes the dark touch outlines on links in webkit browsers.
+
+  &:active {
+    color: darken($primary-color, 10%);
+  }
 }
 
-a.subdued {
-  padding-right: 10px;
-  color: #888;
-  text-decoration: none
-}
-
-a.subdued:hover {
-  text-decoration: none
-}
-
-a.subdued:last-child {
-  padding-right: 0
-}
-
-form {
-  margin: 0 0 1.42857
-}
-
-legend {
-  display: block;
-  margin-bottom: 1.42857;
-  padding: 0;
-  width: 100%;
-  border: 1px solid #ddd;
-  color: #484746;
-  font-size: 21px;
-  line-height: 2.85714
-}
-
-legend small {
-  color: #f5f5f5;
-  font-size: 1.07143
-}
-
-label, input, button, select, textarea {
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 1.42857
-}
-
-input, button, select, textarea {
-  font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif
-}
 
 textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
   display: block;
@@ -1129,4 +649,134 @@ progress {
 
 .fr {
   float: right;
+}
+
+.f-12 {
+  font-size: 12px;
+}
+.f-16 {
+  font-size: 16px;
+}
+.fc-gray {
+  color: #999;
+}
+.fc-green {
+  color: #83b900;
+}
+
+// Wrapper to be used around all content not in .bar-title and .bar-tab
+.page {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  //width: 100%;
+  //height: 100%;
+  background-color: $background-color;
+  overflow: auto;
+
+  &.has-navbar {
+    .page-content {
+      padding-top: $bar-base-height;
+    }
+
+    &.padding-top {
+      padding-top: $bar-base-height + 10px;
+    }
+  }
+
+  &.has-tabbar {
+    .page-content {
+      margin-bottom: 44px;
+    }
+  }
+}
+
+
+/* page content */
+.page .page-content, .modal .page-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: auto;
+  height: auto;
+  background-color: $background-color;
+  -webkit-overflow-scrolling: touch;
+
+  &.no-scrolling {
+    -webkit-overflow-scrolling: auto;
+  }
+
+  &.padding-top {
+    padding-top: 54px;
+  }
+}
+
+.modal .page-content {
+  padding-top: 44px;
+}
+
+// Utility classes
+.content-padded {
+  margin: $bar-side-spacing;
+}
+.text-center {
+  text-align: center;
+}
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.clearfix {
+  @include clearfix();
+}
+
+// fix fastclick bug: https://github.com/ftlabs/fastclick/issues/60
+label > * {
+  pointer-events: none;
+}
+
+.backdrop {
+  background-color: rgba(0,0,0,0.3);
+  transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  pointer-events: auto;
+}
+
+// Safari input placeholder margin issue
+.theme-ios input::-webkit-input-placeholder {
+  line-height: 20px;
+}
+
+// button
+.button {
+  min-height: 44px;
+  &.button-small {
+    min-height: 30px;
+  }
+}
+
+// hairline
+
+.hairline-top:before {
+  @include hairline(top);
+}
+
+.hairline-bottom:after {
+  @include hairline(bottom);
+}
+
+.hairline-left:before {
+  @include hairline(left);
+}
+
+.hairline-right:after {
+  @include hairline(right);
 }

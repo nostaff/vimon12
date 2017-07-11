@@ -58,26 +58,8 @@ a {
 }
 
 // Content
-.content {
+.page {
   background-color: #f2f2f2;
-}
-// Pad top/bottom of content so it doesn't hide behind .bar-title and .bar-tab.
-// Note: For these to work, content must come after both bars in the markup
-.bar-nav ~ .content {
-  padding-top: $bar-base-height;
-}
-.bar-header-secondary ~ .content {
-  padding-top: $bar-base-height*2;
-}
-.bar-tab ~ .content {
-  padding-top: $bar-tab-height;
-  padding-bottom: 0;
-}
-.bar-footer ~ .content {
-  padding-bottom: $bar-base-height;
-}
-.bar-footer-secondary ~ .content {
-  padding-bottom: ($bar-base-height*2);
 }
 
 // Buttons

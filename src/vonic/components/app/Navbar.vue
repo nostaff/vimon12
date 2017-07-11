@@ -1,5 +1,5 @@
 <template>
-  <div von-nav class="navbar" :class="{'visible': visible}" :style="navStyle()">
+  <div class="bar-nav navbar" :class="{'visible': visible}" :style="navStyle()">
     <div class="navbar-container">
     </div>
   </div>

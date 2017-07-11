@@ -1,5 +1,5 @@
 <template>
-    <div class="page has-navbar  has-tabbar" v-nav="{hideNavbar: true}" v-tabbar="{'items': tabItems, itemColor: '#999', activeItemColor: '#FF4400', onItemClick: itemClicked}">
+    <div class="page" v-nav="{hideNavbar: true}" v-tabbar="{'items': tabItems, itemColor: '#999', activeItemColor: '#FF4400', onItemClick: itemClicked}">
         <router-view></router-view>
     </div>
 </template>
@@ -8,6 +8,7 @@
     export default {
         data() {
             return {
+                sidebar: undefined,
                 tabItems: [
                     {
                         iconOn: 'ion-ios-home',
@@ -40,7 +41,6 @@
                         text: 'Demo',
                         path: '/demo'
                     }
-
                 ]
             }
         },
@@ -48,11 +48,13 @@
         methods: {
             itemClicked(menuIndex) {
                 console.log(menuIndex)
-            }
+            },
         },
 
         beforeDestroy() {
             $tabbar.$emit('hideTabbar')
+            $sidebar.destroy()
+
         }
     }
 </script>
