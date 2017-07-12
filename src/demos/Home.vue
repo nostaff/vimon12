@@ -10,7 +10,7 @@
                 <item is-link @click.native="$router.forward('/demo/basic/button')">
                     Button <span class="item-note">按钮</span>
                 </item>
-                <item is-link @click.native="$router.forward('/demo/basic/input')">
+                <item isLink @click.native="$router.forward('/demo/basic/input')">
                     Input <span class="item-note">输入框</span>
                 </item>
                 <item is-link @click.native="$router.forward('/demo/basic/search')">

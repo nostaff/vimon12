@@ -32,7 +32,7 @@ const actions = {
 
 const getters = {
     travelsList: state => state.travelsList,
-    travelListIndex: state => state.travelsList.slice(0,4)
+    travelListIndex: state => state.travelsList.slice(0, 6)
 }
 
 const mutations = {

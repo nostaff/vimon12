@@ -52,25 +52,17 @@
                 </div>
             </div>
 
-            <div class="list-box">
-                <h3>推荐专家<span class="more"><router-link class="more" to="/experts">更多</router-link></span></h3>
-                <div class="info-desc bt_line_fix"></div>
-                <div class="experts-index">
-                    <expert-list :expert-lists="travelListIndex"></expert-list>
-                    <router-link class="list-footer" to="/experts">
-                        <div class="text-center">
-                            更多专家 <i class="fa fa-angle-right"></i>
-                        </div>
-                    </router-link>
-                </div>
+            <div class="list-box experts-index">
+                <expert-list title="推荐专家" :expert-lists="travelListIndex" more-link="/experts"></expert-list>
+                <router-link class="list-footer" to="/experts">
+                    <div class="text-center">
+                        更多专家 <i class="fa fa-angle-right"></i>
+                    </div>
+                </router-link>
             </div>
 
             <div class="list-box">
-                <h3>心理测试<span class="more"><router-link class="more" to="/experts">更多</router-link></span></h3>
-                <div class="info-desc bt_line_fix"></div>
-                <div class="experts-index">
-                    <expert-list :expert-lists="travelListIndex"></expert-list>
-                </div>
+                <expert-list title="心理测试" :expert-lists="travelListIndex" more-link="/experts"></expert-list>
             </div>
 
         </div>
@@ -201,6 +193,9 @@
                 padding: 12px 0 12px 15px;
                 border-bottom: 1px solid #efefef;
                 width: 50%;
+            }
+            .serve_ask {
+                border-bottom: none;
             }
             .serve_expert h3, .serve_phone h3, .serve_ask h3 {
                 font-size: 17px;

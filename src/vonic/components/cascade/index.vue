@@ -17,7 +17,7 @@
   import axios from 'axios'
   import Vue from 'vue'
   import channel from '../app/channel'
-  import HairlineList from '../list/HairlineList'
+  import HairlineList from '../list/List'
 
   const filter = (filters, data) => {
     let options = []

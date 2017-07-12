@@ -4,15 +4,17 @@
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 0;
-  background-color: $background-color;
-  margin-top: 38px;
   border-top: $border-default;
   border-bottom: $border-default;
+}
 
-  &.has-divider {
-    margin-top: 0;
-    border-top: 0;
-  }
+.item-divider {
+  padding-top: 12px;
+  padding-bottom: 5px;
+  min-height: 30px;
+  color: #666;
+  font-size: 14px;
+  padding-left: 15px;
 }
 
 .item {
@@ -21,7 +23,7 @@
   position: relative;
   z-index: 2;
   display: block;
-  padding: 16px;
+  padding: 12px;
   font-size: 16px;
   border-bottom: $border-default;
 
@@ -35,6 +37,116 @@
   &:last-child {
     border-bottom: 0;
   }
+
+  &.active, &.activated {
+    border-color: #ccc;
+    background-color: #D9D9D9;
+  }
+
+  h2 {
+    margin: 0 0 4px 0;
+    font-size: 16px;
+  }
+
+  h3 {
+    margin: 0 0 4px 0;
+    font-size: 14px;
+  }
+
+  h4 {
+    margin: 0 0 4px 0;
+    font-size: 12px;
+  }
+
+  h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child, p:last-child {
+    margin-bottom: 0;
+  }
+
+  p {
+    color: #666;
+    font-size: 14px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.item.active, .item.activated {
+  border-color: #ccc;
+  background-color: #D9D9D9;
+}
+
+a.item, button.item {
+  padding-right: 32px;
+}
+
+a.item:after, button.item:after, .item[href] .item-content:after {
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  display: block;
+  margin-top: -10px;
+  color: #aaa;
+  content: "\F3D3";
+  font-size: 18px;
+  font-family: 'Ionicons';
+  line-height: 1;
+  speak: none;
+}
+
+.item-avatar {
+  padding-left: 50px;
+  min-height: 50px;
+  > img:first-child, .item-image {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    max-width: 40px;
+    max-height: 40px;
+    width: 100%;
+    border-radius: 4px;
+  }
+}
+
+.item-thumbnail-left {
+  padding-left: 90px;
+  min-height: 80px;
+
+   > img:first-child, .item-image {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    max-width: 80px;
+    max-height: 80px;
+    width: 100%;
+  }
+}
+
+
+.item-button-right {
+  padding-right: 75px;
+  > .button, > .buttons {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 7.5px;
+    right: 15px;
+    min-width: 34px;
+    min-height: 34px;
+    font-size: 18px;
+    line-height: 32px;
+
+    .icon:before {
+      position: relative;
+      left: auto;
+      width: auto;
+      line-height: 31px;
+    }
+  }
+
 }
 
 .item-icon-left, .item-icon-right {
@@ -63,11 +175,10 @@
 }
 
 .item-icon-left {
-  padding-left: 54px
-}
-
-.item-icon-left .icon {
-  left: 11px
+  padding-left: 40px;
+  .icon {
+    left: 15px;
+  }
 }
 
 .item-icon-right {
@@ -77,10 +188,6 @@
   }
   .icon {
     right: 15px;
-    font-size: 20px;
-    &.ion-ios-arrow-right {
-      color: #aaa;
-    }
   }
 }
 
@@ -88,14 +195,10 @@
   right: auto
 }
 
-.item-divider {
-  padding-top: 12px;
-  padding-bottom: 8px;
-  min-height: 30px;
-  background-color: $background-color;
-  color: #222;
-  font-weight: 500
+.item-icon-left.item-icon-right .icon:last-child {
+  left: auto;
 }
+
 
 .item-note {
   float: right;
@@ -108,9 +211,6 @@
     border-top: 0;
     border-bottom: 0;
     @include hairline2(double, #c8c7cc, 0); // Double grey border.
-    &.has-divider {
-      @include hairline2(single, #c8c7cc, 0); // Double grey border.
-    }
 
     .item {
       border-bottom: 0;
