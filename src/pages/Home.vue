@@ -10,6 +10,8 @@
 
         <div class="page-content">
             <swiper ref="swiper"
+                    autoplay="true"
+                    interval="3000"
                     direction="horizontal"
                     width="100%"
                     height="180"
