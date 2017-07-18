@@ -87,5 +87,5 @@ Vue.use(Vonic.app, {
     store: store
 })
 
-import FastClick from 'fastclick'
-FastClick.attach(document.body)
+// import FastClick from 'fastclick'
+// FastClick.attach(document.body)

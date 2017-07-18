@@ -1,10 +1,10 @@
 <template>
-        <a v-if="isLink || !!link" class="item" @click="onClick($event)">
-            <slot></slot>
-        </a>
-        <div v-else class="item" @click="onClick($event)">
-            <slot></slot>
-        </div>
+    <a v-if="isLink || !!link" class="item" @click="onClick($event)">
+        <slot></slot>
+    </a>
+    <div v-else class="item">
+        <slot></slot>
+    </div>
 </template>
 
 <script>

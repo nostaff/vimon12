@@ -1,15 +1,16 @@
 <template>
-    <div class="page has-navbar" v-nav="{title: '单选框', showBackButton: true}">
+    <div class="page has-navbar" v-nav="{title: '下拉选择框', showBackButton: true}">
         <div class="page-content padding-top">
 
-            <von-radio title="请选择性别：" :options="genderOptions" v-model="gender"></von-radio>
+            <list title="选择框">
+                <von-select label="请选择性别" :options="genderOptions" v-model="gender"></von-select>
+                <von-select label="是否参与活动" :options="list2" v-model="selected"></von-select>
+            </list>
 
             <p class="padding">
                 option gender: {{ gender }}<br>
                 option selected: {{ selected }}
             </p>
-
-            <von-radio title="请选择：" :options="list2" v-model="selected"></von-radio>
 
         </div>
     </div>

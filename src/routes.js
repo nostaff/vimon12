@@ -18,9 +18,8 @@ import NotFound from '@/pages/NotFound'
 import DemoHome from './demos/Home'
 import DemoButton from './demos/Button'
 import DemoInput from './demos/Input'
-import DemoInputDefault from './demos/InputDefault'
-import DemoInputFloatingLabel from './demos/InputFloatingLabel'
 import DemoSearch from './demos/Search'
+import DemoSelect from './demos/Select'
 import DemoRadio from './demos/Radio'
 import DemoCheckbox from './demos/Checkbox'
 import DemoToggle from './demos/Toggle'
@@ -74,9 +73,8 @@ const routes = [
     },
     { path: '/demo/basic/button', component: DemoButton },
     { path: '/demo/basic/input', component: DemoInput },
-    { path: '/demo/basic/inputDefault', component: DemoInputDefault },
-    { path: '/demo/basic/inputFloatingLabel', component: DemoInputFloatingLabel },
     { path: '/demo/basic/search', component: DemoSearch },
+    { path: '/demo/basic/select', component: DemoSelect },
     { path: '/demo/basic/radio', component: DemoRadio },
     { path: '/demo/basic/checkbox', component: DemoCheckbox },
     { path: '/demo/basic/toggle', component: DemoToggle },

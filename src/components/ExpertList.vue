@@ -1,5 +1,9 @@
 <template>
-    <list :title="title" :moreLink="moreLink">
+    <list>
+        <item class="title" v-if="title" :link="moreLink">
+            {{title}}
+            <span class="item-note" v-if="moreLink">更多</span>
+        </item>
         <item class="expert" v-for="expert in expertLists" :key="expert.id" link="/expert/10001">
             <!--<div class="item-avatar">-->
                 <!--<img :src="expert.avatar" :alt="expert.title">-->

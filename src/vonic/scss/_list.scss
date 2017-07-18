@@ -4,8 +4,13 @@
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 0;
-  border-top: $border-default;
-  border-bottom: $border-default;
+  margin-bottom: 20px;
+  //border-top: $border-default;
+  //border-bottom: $border-default;
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
 }
 
 .item-divider {
@@ -23,9 +28,10 @@
   position: relative;
   z-index: 2;
   display: block;
-  padding: 12px;
+  margin: -1px;
+  padding: 15px;
   font-size: 16px;
-  border-bottom: $border-default;
+  border: $border-default;
 
   .item-stable {
     border-color: #b2b2b2;
@@ -33,9 +39,16 @@
     color: #444
   }
 
+  &.item-divider {
+    padding: 12px 16px;
+    border: none;
+    margin-top: 1px;
+    background: none;
+  }
+
   // Remove the border from the last table view item
   &:last-child {
-    border-bottom: 0;
+    //border-bottom: 0;
   }
 
   &.active, &.activated {
@@ -206,11 +219,11 @@ a.item:after, button.item:after, .item[href] .item-content:after {
   font-size: 14px
 }
 
-.theme-ios {
+.theme-ios1 {
   .list {
     border-top: 0;
     border-bottom: 0;
-    @include hairline2(double, #c8c7cc, 0); // Double grey border.
+    @include hairline2(single, #c8c7cc, 0); // Double grey border.
 
     .item {
       border-bottom: 0;

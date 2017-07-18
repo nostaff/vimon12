@@ -16,6 +16,9 @@
                 <item is-link @click.native="$router.forward('/demo/basic/search')">
                     Search <span class="item-note">搜索框</span>
                 </item>
+                <item is-link @click.native="$router.forward('/demo/basic/select')">
+                    Select <span class="item-note">选择框</span>
+                </item>
                 <item is-link @click.native="$router.forward('/demo/basic/radio')">
                     Radio <span class="item-note">单选框</span>
                 </item>

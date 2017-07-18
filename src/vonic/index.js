@@ -5,10 +5,11 @@ import VueScroller from 'vue-scroller'
 Vue.use(VueScroller)
 
 // Basic
-import VonInput from './components/input/Input.vue'
-import Search from './components/input/Search.vue'
-import VonRadio from './components/radio'
-import VonCheckbox from './components/checkbox'
+import VonInput from './components/input/Input'
+import Search from './components/input/Search'
+import VonRadio from './components/input/Radio'
+import VonCheckbox from './components/input/CheckBox'
+import VonSelect from './components/input/Select'
 import VonToggle from './components/toggle'
 import VonRange from './components/range'
 import VonHeader from './components/header'
@@ -18,6 +19,7 @@ Vue.component('von-input', VonInput)
 Vue.component('search', Search)
 Vue.component('von-radio', VonRadio)
 Vue.component('von-checkbox', VonCheckbox)
+Vue.component('von-select', VonSelect)
 Vue.component('von-toggle', VonToggle)
 Vue.component('von-range', VonRange)
 Vue.component('von-header', VonHeader)

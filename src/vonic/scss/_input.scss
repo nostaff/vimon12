@@ -13,56 +13,75 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding: 6px 0 5px 16px
-}
+  padding: 6px 0 5px 16px;
 
-.item-input input {
-  -webkit-border-radius: 0;
-  border-radius: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 220px;
-  -moz-box-flex: 1;
-  -moz-flex: 1 220px;
-  -ms-flex: 1 220px;
-  flex: 1 220px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  margin: 0;
-  padding-right: 24px;
-  background-color: transparent
-}
+  input {
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 220px;
+    -moz-box-flex: 1;
+    -moz-flex: 1 220px;
+    -ms-flex: 1 220px;
+    flex: 1 220px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+    padding-right: 24px;
+    background-color: transparent
+  }
 
-.item-input .button .icon {
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 0 24px;
-  -moz-box-flex: 0;
-  -moz-flex: 0 0 24px;
-  -ms-flex: 0 0 24px;
-  flex: 0 0 24px;
-  position: static;
-  display: inline-block;
-  height: auto;
-  text-align: center;
-  font-size: 16px
-}
+  .button .icon {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 24px;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 24px;
+    -ms-flex: 0 0 24px;
+    flex: 0 0 24px;
+    position: static;
+    display: inline-block;
+    height: auto;
+    text-align: center;
+    font-size: 16px
+  }
 
-.item-input .button-bar {
-  -webkit-border-radius: 0;
-  border-radius: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 0 220px;
-  -moz-box-flex: 1;
-  -moz-flex: 1 0 220px;
-  -ms-flex: 1 0 220px;
-  flex: 1 0 220px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none
-}
+  .button-bar {
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 220px;
+    -moz-box-flex: 1;
+    -moz-flex: 1 0 220px;
+    -ms-flex: 1 0 220px;
+    flex: 1 0 220px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none
+  }
 
-.item-input .icon {
-  min-width: 14px
+  .icon {
+    min-width: 14px
+  }
+
+  .input-clear {
+    position: absolute;
+    top: 14px;
+    right: 5px;
+    z-index: 3;
+
+    width: 24px;
+    height: 24px;
+    background-image: url(../assets/clear@3x.png);
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+
+    visibility: hidden;
+    &.active {
+      visibility: visible;
+    }
+  }
 }
 
 .item-input-inset {
@@ -141,8 +160,10 @@
 
 .item-stacked-label {
   display: block;
-  background-color: transparent;
-  box-shadow: none
+  box-shadow: none;
+  .input-clear {
+    top: 14px + 28px;
+  }
 }
 
 .item-stacked-label .input-label, .item-stacked-label .icon {
@@ -159,11 +180,6 @@
   background-color: #fff
 }
 
-.item-stacked-label input {
-  overflow: hidden;
-  height: 46px
-}
-
 .item-select.item-stacked-label select {
   position: relative;
   padding: 0px;
@@ -175,24 +191,26 @@
 
 .item-floating-label {
   display: block;
-  background-color: transparent;
-  box-shadow: none
-}
+  box-shadow: none;
 
-.item-floating-label .input-label {
-  position: relative;
-  padding: 5px 0 0 0;
-  opacity: 0;
-  top: 10px;
-  -webkit-transition: opacity 0.15s ease-in, top 0.2s linear;
-  transition: opacity 0.15s ease-in, top 0.2s linear
-}
+  .input-label {
+    position: relative;
+    padding: 5px 0 0 0;
+    opacity: 0;
+    top: 10px;
+    -webkit-transition: opacity 0.15s ease-in, top 0.2s linear;
+    transition: opacity 0.15s ease-in, top 0.2s linear;
+    &.has-input {
+      opacity: 1;
+      top: 0;
+      -webkit-transition: opacity 0.15s ease-in, top 0.2s linear;
+      transition: opacity 0.15s ease-in, top 0.2s linear
+    }
+  }
 
-.item-floating-label .input-label.has-input {
-  opacity: 1;
-  top: 0;
-  -webkit-transition: opacity 0.15s ease-in, top 0.2s linear;
-  transition: opacity 0.15s ease-in, top 0.2s linear
+  .input-clear {
+    top: 14px + 28px;
+  }
 }
 
 .item-input input, .item-input textarea {
@@ -203,58 +221,82 @@
   width: auto
 }
 
-.von-input-wrapper {
+
+.select-inline select, .item-select select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: #333;
+  text-indent: 1px;
+  text-overflow: '';
+  white-space: nowrap;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.select-inline {
   position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  background-color: #fff;
+  color: #111;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 16px;
+}
 
-  &.has-floating-label {
-    .input-clear {
-      top: 14px + 28px;
-    }
-  }
+.select-inline select {
+  padding: 6px 25px 7px 8px;
+}
 
-  .von-input {
-    height: 50px;
-    padding: 13px 15px;
-    position: relative;
+.select-inline + .select-inline {
+  margin-left: 6px;
+}
 
-    .input-label {
-      font-size: 14px;
-      line-height: 20px;
-    }
+.item-select {
+  position: relative;
+}
 
-    input {
-      font-size: 14px;
-    }
+.item-select select {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 13px 45px 15px 5px;
+  width: 100%;
+  direction: rtl;
+}
 
-  }
+.item-select select:focus {
+  min-width: 30%;
+  width: auto;
+}
 
-  .input-clear {
-    position: absolute;
-    top: 14px;
-    right: 9px;
-    z-index: 3;
+.select-inline:after, .item-select:after {
+  position: absolute;
+  top: 50%;
+  margin-top: -3px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  color: #999;
+  content: "";
+  pointer-events: none;
+}
 
-    width: 24px;
-    height: 24px;
-    background-image: url(../assets/clear@3x.png);
-    background-size: 12px 12px;
-    background-repeat: no-repeat;
-    background-position: 5px 5px;
+.select-inline:after {
+  right: 7px;
+}
 
-    visibility: hidden;
-    &.active {
-      visibility: visible;
-    }
-  }
+.item-select:after {
+  right: 15px;
+}
 
-  .item-floating-label {
-    height: 75px;
-    background: #FFF;
-    .input-label {
-      padding-top: 2px;
-      font-size: 16px;
-      line-height: 20px;
-      font-weight: 400;
-    }
-  }
+select[multiple], select[size] {
+  height: auto;
 }
