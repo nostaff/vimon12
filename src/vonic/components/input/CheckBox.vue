@@ -1,15 +1,7 @@
 <template>
     <list :title="title">
         <div class="item item-checkbox" v-for="option in processOptions">
-            <div class="checkbox" :class="{
-                      'checkbox-assertive': theme == 'assertive',
-                      'checkbox-positive': theme == 'positive',
-                      'checkbox-balanced': theme == 'balanced',
-                      'checkbox-energized': theme == 'energized',
-                      'checkbox-calm': theme == 'calm',
-                      'checkbox-royal': theme == 'royal',
-                      'checkbox-dark': theme == 'dark'
-                    }" @click="onClick(option.key)">
+            <div class="checkbox" :class="themeClass()" @click="onClick(option.key)">
                 <input type="checkbox" :name="checkboxName" v-model="v" :value="option.key">
             </div>
             <span v-text="option.value"></span>
@@ -69,6 +61,17 @@
         },
 
         methods: {
+            themeClass() {
+                return {
+                    'checkbox-assertive': this.theme == 'assertive',
+                    'checkbox-positive': this.theme == 'positive',
+                    'checkbox-balanced': this.theme == 'balanced',
+                    'checkbox-energized': this.theme == 'energized',
+                    'checkbox-calm': this.theme == 'calm',
+                    'checkbox-royal': this.theme == 'royal',
+                    'checkbox-dark': this.theme == 'dark'
+                }
+            },
             onClick(i) {
                 let index = this.v.indexOf(i)
                 if (index == -1) {
