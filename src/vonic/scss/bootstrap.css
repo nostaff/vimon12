@@ -2087,7 +2087,7 @@ a:hover, a:focus {
     /**
    * Grid
    * --------------------------------------------------
-   * Using flexbox for the grid, inspired by Philip Walton:
+   * Using flexbox for the cells, inspired by Philip Walton:
    * http://philipwalton.github.io/solved-by-flexbox/demos/grids/
    * By default each .col within a .row will evenly take up
    * available width, and the height of each .col with take
@@ -2098,8 +2098,8 @@ a:hover, a:focus {
     /* .col-* vertically aligns an individual .col */
     /* Column Offsets */
     /* Explicit Column Percent Sizes */
-    /* By default each grid column will evenly distribute */
-    /* across the grid. However, you can specify individual */
+    /* By default each cells column will evenly distribute */
+    /* across the cells. However, you can specify individual */
     /* columns to take up a certain size of the available area */
     /* Responsive Grid Classes */
     /* Adding a class of responsive-X to a row */

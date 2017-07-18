@@ -1,27 +1,177 @@
 <template>
-    <div class="page has-navbar" v-nav="{title: '宫格', showBackButton: true}">
+    <div class="page has-navbar" v-nav="{title: '栅格 非组件', showBackButton: true}">
 
         <div class="page-content content-padded">
 
-            <!-- 3 x 2 -->
-            <grid :items="entrances" :on-cell-click="onCellClick" row="2"></grid>
-
-            <!-- 3 x 3 -->
-            <grid class="cells-33" :items="getItems(9)" :on-cell-click="onCellClick"></grid>
-
-            <!-- 4 x 3 -->
-            <grid class="cells-44" :items="getItems(16)" :on-cell-click="onCellClick" row="4" col="4"></grid>
-
-            <!-- no outer border -->
             <div class="padding">
-                无外边框：
+                同等大小网格：
             </div>
-            <grid outer-border="false" class="cells-22" :items="getItems(3)" :on-cell-click="onCellClick" row="2" col="2"></grid>
+            <div class="row">
+                <div class="col">
+                    <div class="col-demo">.col</div>
+                </div>
+                <div class="col">
+                    <div class="col-demo">.col</div>
+                </div>
+                <div class="col">
+                    <div class="col-demo">.col</div>
+                </div>
+                <div class="col">
+                    <div class="col-demo">.col</div>
+                </div>
+                <div class="col">
+                    <div class="col-demo">.col</div>
+                </div>
+            </div>
 
             <div class="padding">
-                无内边框：
+                指定列宽：
             </div>
-            <grid outer-border="false" inner-border="false" class="cells-22" :items="getItems(3)" :on-cell-click="onCellClick" row="2" col="2"></grid>
+
+            <div class="row">
+                <div class="col col-50">
+                    <div class="col-demo">.col.col-50</div>
+                </div>
+                <div class="col">
+                    <div class="col-demo">.col</div>
+                </div>
+                <div class="col">
+                    <div class="col-demo">.col</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col col-75">
+                    <div class="col-demo">.col.col-75</div>
+                </div>
+                <div class="col">
+                    <div class="col-demo">.col</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="col-demo">.col</div>
+                </div>
+                <div class="col col-75">
+                    <div class="col-demo">.col.col-75</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="col-demo">.col</div>
+                </div>
+                <div class="col">
+                    <div class="col-demo">.col</div>
+                </div>
+            </div>
+
+            <div class="padding">
+                有偏移量的网格：
+            </div>
+            <div class="row">
+                <div class="col col-33 col-offset-33">
+                    <div class="col-demo">.col</div>
+                </div>
+                <div class="col">
+                    <div class="col-demo">.col</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col col-33">
+                    <div class="col-demo">.col</div>
+                </div>
+                <div class="col col-33 col-offset-33">
+                    <div class="col-demo">.col</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col col-33 col-offset-67">
+                    <div class="col-demo">.col</div>
+                </div>
+            </div>
+
+            <div class="padding">
+                纵向对齐的网格：
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="col-demo">.col</div>
+                </div>
+                <div class="col">
+                    <div class="col-demo">.col</div>
+                </div>
+                <div class="col">
+                    <div class="col-demo">.col</div>
+                </div>
+                <div class="col">
+                    <div class="col-demo">1<br>2<br>3<br>4</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col col-top">
+                    <div class="col-demo">.col-top</div>
+                </div>
+                <div class="col col-center">
+                    <div class="col-demo">.col-center</div>
+                </div>
+                <div class="col col-bottom">
+                    <div class="col-demo">.col-bottom</div>
+                </div>
+                <div class="col">
+                    <div class="col-demo">1<br>2<br>3<br>4</div>
+                </div>
+            </div>
+
+            <div class="row row-top">
+                <div class="col">
+                    <div class="col-demo">.row-top</div>
+                </div>
+                <div class="col">
+                    <div class="col-demo">.row-top</div>
+                </div>
+                <div class="col">
+                    <div class="col-demo">.row-top</div>
+                </div>
+                <div class="col">
+                    <div class="col-demo">1<br>2<br>3<br>4</div>
+                </div>
+            </div>
+
+            <div class="row row-center">
+                <div class="col">
+                    <div class="col-demo">.row-center</div>
+                </div>
+                <div class="col">
+                    <div class="col-demo">.col</div>
+                </div>
+                <div class="col">
+                    <div class="col-demo">.col</div>
+                </div>
+                <div class="col">
+                    <div class="col-demo">1<br>2<br>3<br>4</div>
+                </div>
+            </div>
+
+            <div class="row row-bottom">
+                <div class="col">
+                    <div class="col-demo">.row-bottom</div>
+                </div>
+                <div class="col">
+                    <div class="col-demo">.col</div>
+                </div>
+                <div class="col">
+                    <div class="col-demo">.col</div>
+                </div>
+                <div class="col">
+                    <div class="col-demo">1<br>2<br>3<br>4</div>
+                </div>
+            </div>
+
 
         </div>
     </div>
@@ -29,35 +179,13 @@
 
 <style lang="scss">
 
-    .entrance {
-        height: 120px;
-        padding: 35px 0;
-
-        .icon {
-            font-size: 30px;
-            line-height: 30px;
-            width: 30px;
-            height: 30px;
-            margin-bottom: 6px;
-        }
-
-        span {
-            font-size: 14px;
-            line-height: 14px;
-        }
-
-    }
-
-    .cells.cells-44 > .row > .col {
-        padding: 30px 0;
-    }
-
-    .cells-33 > .row > .col {
-        padding: 50px 0;
-    }
-
-    .cells-22 > .row > .col {
-        padding: 30px 0;
+    .col-demo {
+        padding: 5px;
+        width: 100%;
+        border: 1px solid #ddd;
+        border-radius: 2px;
+        background: #f7f7f7;
+        text-align: center;
     }
 
 </style>

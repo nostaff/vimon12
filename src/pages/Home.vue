@@ -23,7 +23,7 @@
                 <swiper-item><img src="../assets/images/y-banner03.jpg"></swiper-item>
                 <swiper-item><img src="../assets/images/y-banner03.jpg"></swiper-item>
             </swiper>
-            <grid inner-border="false" class="features" :items="entrances" :on-cell-click="onCellClick" row="1"></grid>
+            <cells inner-border="false" class="features" :items="entrances" :on-cell-click="onCellClick" row="1"></cells>
 
             <div class="list-box">
                 <h3>我们的服务</h3>

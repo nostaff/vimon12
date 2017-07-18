@@ -9,35 +9,33 @@ import ConfirmIOS from './ConfirmIOS'
 let vm = undefined
 
 class Dialog {
-  show(type, options) {
-    if (vm) return
+    show(type, options) {
+        let rnd = Math.random().toString(36).substring(3, 6)
+        let marker = `von-${type}-${rnd}`
+        createElement(marker)
+        let selector = `[${marker}]`
 
-    let rnd = Math.random().toString(36).substring(3, 6)
-    let marker = `von-${type}-${rnd}`
-    createElement(marker)
-    let selector = `[${marker}]`
+        vm = new Vue(
+            type == 'alert' ? (options.theme == 'ios' ? AlertIOS : Alert) :
+                (options.theme == 'ios' ? ConfirmIOS : Confirm)
+        ).$mount(selector)
 
-    vm = new Vue(
-      type == 'alert' ? (options.theme == 'ios' ? AlertIOS : Alert) :
-        (options.theme == 'ios' ? ConfirmIOS : Confirm)
-    ).$mount(selector)
+        vm.$el.setAttribute('von-dialog', '')
 
-    vm.$el.setAttribute('von-dialog', '')
+        return vm.show(options)
+    }
 
-    return vm.show(options)
-  }
+    alert(options) {
+        return this.show('alert', options)
+    }
 
-  alert(options) {
-    return this.show('alert', options)
-  }
+    confirm(options) {
+        return this.show('confirm', options)
+    }
 
-  confirm(options) {
-    return this.show('confirm', options)
-  }
-
-  hide() {
-    if (vm) vm.hide()
-  }
+    hide() {
+        if (vm) vm.hide()
+    }
 }
 
 window.$dialog = new Dialog()

@@ -28,13 +28,13 @@ Vue.component('badge', VonBadge)
 // Layout
 import List from './components/list/List'
 import Item from './components/list/Item'
-import Grid from './components/grid'
+import Cells from './components/cells'
 import Tabs from './components/tabs'
 import ButtonBar from './components/buttonbar'
 
 Vue.component('list', List)
 Vue.component('item', Item)
-Vue.component('grid', Grid)
+Vue.component('cells', Cells)
 Vue.component('tabs', Tabs)
 Vue.component('button-bar', ButtonBar)
 
@@ -70,7 +70,7 @@ export default {
     // Layout
     List,
     Item,
-    Grid,
+    Cells,
     Tabs,
     ButtonBar,
 

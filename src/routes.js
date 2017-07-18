@@ -31,6 +31,7 @@ import DemoIcon from './demos/Icon'
 // Layout
 import DemoHeader from './demos/Header'
 import DemoList from './demos/List'
+import DemoCells from './demos/Cells'
 import DemoGrid from './demos/Grid'
 import DemoTabs from './demos/Tabs'
 import DemoButtonBar from './demos/ButtonBar'
@@ -86,6 +87,7 @@ const routes = [
     // Layout
     { path: '/demo/layout/header', component: DemoHeader },
     { path: '/demo/layout/list', component: DemoList },
+    { path: '/demo/layout/cells', component: DemoCells },
     { path: '/demo/layout/grid', component: DemoGrid },
     { path: '/demo/layout/tabs', component: DemoTabs },
     { path: '/demo/layout/buttonbar', component: DemoButtonBar },

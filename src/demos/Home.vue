@@ -56,8 +56,11 @@
                 <item is-link @click.native="$router.forward('/demo/layout/list')">
                     List <span class="item-note">列表</span>
                 </item>
+                <item is-link @click.native="$router.forward('/demo/layout/cells')">
+                    Cells <span class="item-note">宫格</span>
+                </item>
                 <item is-link @click.native="$router.forward('/demo/layout/grid')">
-                    Grid <span class="item-note">宫格</span>
+                    Grid <span class="item-note">栅格</span>
                 </item>
                 <item is-link @click.native="$router.forward('/demo/layout/tabs')">
                     Tabs <span class="item-note">选项卡</span>

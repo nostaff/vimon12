@@ -1,42 +1,34 @@
 <template>
   <div class="page-content padding-top">
 
-    <item class="item-icon-right" @click.native="showAlert()">
+    <item is-link @click.native="showAlert()">
       Alert <span class="item-note">提示框</span>
-      <i class="icon ion-ios-arrow-right"></i>
-    </item>
-    <item class="item-icon-right" @click.native="showConfirm()">
+          </item>
+    <item is-link @click.native="showConfirm()">
       Confirm <span class="item-note">确认框</span>
-      <i class="icon ion-ios-arrow-right"></i>
-    </item>
-    <item class="item-icon-right" @click.native="showAlertIOS()">
+          </item>
+    <item is-link @click.native="showAlertIOS()">
       iOS Alert <span class="item-note">iOS 风格提示框</span>
-      <i class="icon ion-ios-arrow-right"></i>
-    </item>
-    <item class="item-icon-right" @click.native="showConfirmIOS()">
+          </item>
+    <item is-link @click.native="showConfirmIOS()">
       iOS Confirm <span class="item-note">iOS 风格确认框</span>
-      <i class="icon ion-ios-arrow-right"></i>
-    </item>
+          </item>
     <item class="item-icon-right " @click.native="multiMode()">
       Multi Mode <span class="item-note">多个同时出现</span>
-      <i class="icon ion-ios-arrow-right"></i>
-    </item>
+          </item>
 
-    <item class="item-icon-right" @click.native="showAlert('scale')">
+    <item is-link @click.native="showAlert('scale')">
       Scale Effect
-      <i class="icon ion-ios-arrow-right"></i>
-    </item>
-    <item class="item-icon-right" @click.native="showAlert('slide')">
+          </item>
+    <item is-link @click.native="showAlert('slide')">
       Slide Effect
-      <i class="icon ion-ios-arrow-right"></i>
-    </item>
+          </item>
 
     <div style="height: 10px;"></div>
 
-    <item class="item-icon-right" @click.native="showCustomPopup()">
+    <item is-link @click.native="showCustomPopup()">
       Custom Popup
-      <i class="icon ion-ios-arrow-right"></i>
-    </item>
+          </item>
 
     <div style="height: 10px;"></div>
 

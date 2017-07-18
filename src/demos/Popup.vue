@@ -4,12 +4,10 @@
 
       <item class="item item-icon-right" @click.native="showCustomPopup()">
         Custom Popup
-        <i class="icon ion-ios-arrow-right"></i>
-      </item>
-      <item class="item-icon-right" @click.native="showCustomPopup2()">
+              </item>
+      <item is-link @click.native="showCustomPopup2()">
         Custom Popup 2
-        <i class="icon ion-ios-arrow-right"></i>
-      </item>
+              </item>
 
     </div>
   </div>

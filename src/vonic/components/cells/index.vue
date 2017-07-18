@@ -1,5 +1,5 @@
 <template>
-    <div class="grid">
+    <div class="cells">
         <div class="row" v-for="(r, index) in rows">
             <div v-if="(index != 0 && (innerBorder == true || innerBorder == 'true')) || outerBorder == true || outerBorder == 'true'" class="hairline-top"></div>
             <div class="col" v-for="c in cols" @click="cellClicked(r*cols.length + c)">
