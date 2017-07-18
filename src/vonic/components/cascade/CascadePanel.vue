@@ -1,93 +1,87 @@
 <template>
-  <div class="von-cascade-panel" :class="{'active': state == 1}">
-    <div class="title" v-text="title"></div>
-
-    <div class="list options">
-      <div class="item" v-for="(option, index) in options"
-        @click="optionClicked(index)">
-          <div class="hairline-top"></div>
-
-          <span v-text="option"></span>
-          <div class="hairline-bottom" v-if="index < options.length - 1"></div>
-      </div>
+    <div class="cascade-panel" :class="{'active': state == 1}">
+        <list :title="title" class="options">
+            <item v-for="(option, index) in options" :key="index" @click.native="optionClicked(index)">
+                <span v-text="option"></span>
+            </item>
+        </list>
     </div>
-  </div>
 </template>
 <script>
-  import Vue from 'vue'
+    import Vue from 'vue'
 
-  const animation_duration = 300
-  let bus = new Vue();
+    const animation_duration = 300
+    let bus = new Vue();
 
-  export default {
-    data() {
-      return {
-        title: '',
-        options: [],
+    export default {
+        data() {
+            return {
+                title: '',
+                options: [],
 
-        state: 0, // 0: hide, 1: show
-      }
-    },
+                state: 0, // 0: hide, 1: show
+            }
+        },
 
-    destroyed() {
-      document.body.removeChild(this.$el)
-    },
+        destroyed() {
+            document.body.removeChild(this.$el)
+        },
 
-    methods: {
-      reset() {
-        this.title = ''
-        this.options = []
-        this.state = 0
-      },
+        methods: {
+            reset() {
+                this.title = ''
+                this.options = []
+                this.state = 0
+            },
 
-      show(title, options) {
-        this.reset()
-        Vue.nextTick(() => {
-          this.title = title
-          this.options = options
-          this.state = 1
-        })
+            show(title, options) {
+                this.reset()
+                Vue.nextTick(() => {
+                    this.title = title
+                    this.options = options
+                    this.state = 1
+                })
 
-        $backdrop.show(true).then(() => {
-          let backdrop = document.querySelector('[von-backdrop]')
-          backdrop.onclick = () => {
-            bus.$emit('optionClickedEvent', {optionIndex: -1})
-            backdrop.onclick = null
-          }
-        })
+                $backdrop.show(true).then(() => {
+                    let backdrop = document.querySelector('[von-backdrop]')
+                    backdrop.onclick = () => {
+                        bus.$emit('optionClickedEvent', {optionIndex: -1})
+                        backdrop.onclick = null
+                    }
+                })
 
-        document.body.classList.add('popup-open')
+                document.body.classList.add('popup-open')
 
-        return new Promise((resolve) => {
-          bus.$on('optionClickedEvent', (data) => {
-            resolve(data.optionIndex)
-            this._hide()
-          })
-        })
-      },
+                return new Promise((resolve) => {
+                    bus.$on('optionClickedEvent', (data) => {
+                        resolve(data.optionIndex)
+                        this._hide()
+                    })
+                })
+            },
 
-      _hide() {
-        this.state = 0
-        $backdrop.hide(true)
+            _hide() {
+                this.state = 0
+                $backdrop.hide(true)
 
-        document.body.classList.remove('popup-open')
+                document.body.classList.remove('popup-open')
 
-        setTimeout(() => {
-          this.$destroy()
-        }, animation_duration)
-      },
+                setTimeout(() => {
+                    this.$destroy()
+                }, animation_duration)
+            },
 
-      hide() {
-        bus.$emit('optionClickedEvent', {optionIndex: -1})
-      },
+            hide() {
+                bus.$emit('optionClickedEvent', {optionIndex: -1})
+            },
 
-      optionClicked(index) {
-        bus.$emit('optionClickedEvent', {optionIndex: index})
-      },
+            optionClicked(index) {
+                bus.$emit('optionClickedEvent', {optionIndex: index})
+            },
 
-      getState() {
-        return this.state
-      }
+            getState() {
+                return this.state
+            }
+        }
     }
-  }
 </script>

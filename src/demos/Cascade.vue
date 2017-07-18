@@ -1,10 +1,7 @@
 <template>
   <div class="page has-navbar" v-nav="{title: '级联', showBackButton: true}">
     <div class="page-content padding-top">
-      <div class="item item-divider">
-        选择您所属的行政区划：
-      </div>
-      <cascade :fields="fields" :data="cities" :value="value" :on-change="onChange"></cascade>
+      <cascade title="选择您所属的行政区划：" :fields="fields" :data="cities" :value="value" :on-change="onChange"></cascade>
 
       <!-- 使用远程数据 -->
       <!--
