@@ -23,7 +23,7 @@
 @import "swiper";
 @import "tabs";
 @import "toggle";
-@import "actionsheet";
+//@import "actionsheet";
 @import "loading";
 @import "modal";
 @import "popup";
@@ -36,6 +36,6 @@
   //@import "theme-ios";
 }
 
-.theme-android {
-  //@import "theme-android";
+.theme-md {
+  //@import "theme-md";
 }

@@ -1,44 +1,44 @@
 .action-sheet-backdrop {
-  -webkit-transition: background-color 150ms ease-in-out;
-  transition: background-color 150ms ease-in-out;
+  -webkit-transition: background-color 300ms ease-in-out;
+  -moz-transition: background-color 300ms ease-in-out;
+  transition: background-color 300ms ease-in-out;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 11;
   width: 100%;
   height: 100%;
-  background-color: transparent
+  background-color: transparent;
 }
 
 .action-sheet-backdrop.active {
-  background-color: rgba(0, 0, 0, 0.4)
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .action-sheet-wrapper {
   -webkit-transform: translate3d(0, 100%, 0);
+  -moz-transform: translate3d(0, 100%, 0);
   transform: translate3d(0, 100%, 0);
-  -webkit-transition: all cubic-bezier(0.36, 0.66, 0.04, 1) 500ms;
-  transition: all cubic-bezier(0.36, 0.66, 0.04, 1) 500ms;
+  -webkit-transition: all ease-in-out 300ms;
+  -moz-transition: all ease-in-out 300ms;
+  transition: all ease-in-out 300ms;
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
   width: 100%;
-  max-width: 500px;
-  margin: auto
 }
 
 .action-sheet-up {
   -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0)
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 .action-sheet {
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 15px;
+  margin-right: 15px;
   width: auto;
   z-index: 11;
-  overflow: hidden
+  overflow: hidden;
 }
 
 .action-sheet .button {
@@ -46,206 +46,232 @@
   padding: 1px;
   width: 100%;
   border-radius: 0;
-  border-color: #d1d3d6;
   background-color: transparent;
-  color: #007aff;
-  font-size: 21px
-}
-
-.action-sheet .button:hover {
-  color: #007aff
+  color: #4a87ee;
+  font-size: 18px;
 }
 
 .action-sheet .button.destructive {
-  color: #ff3b30
-}
-
-.action-sheet .button.destructive:hover {
-  color: #ff3b30
-}
-
-.action-sheet .button.active, .action-sheet .button.activated {
-  box-shadow: none;
-  border-color: #d1d3d6;
-  color: #007aff;
-  background: #e4e5e7
-}
-
-.action-sheet-has-icons .icon {
-  position: absolute;
-  left: 16px
+  color: #ef4e3a;
 }
 
 .action-sheet-title {
-  padding: 16px;
-  color: #8f8f8f;
+  padding: 10px;
+  color: #666666;
   text-align: center;
-  font-size: 13px
+  font-size: 12px;
 }
 
 .action-sheet-group {
-  margin-bottom: 8px;
-  border-radius: 4px;
+  margin-bottom: 5px;
+  border-radius: 3px 3px 3px 3px;
   background-color: #fff;
-  overflow: hidden
 }
 
 .action-sheet-group .button {
-  border-width: 1px 0px 0px 0px
+  border-width: 1px 0px 0px 0px;
+  border-radius: 0;
+}
+
+.action-sheet-group .button.active {
+  background-color: transparent;
+  color: inherit;
 }
 
 .action-sheet-group .button:first-child:last-child {
-  border-width: 0
+  border-width: 0;
 }
 
-.action-sheet-options {
-  background: #f1f2f3
-}
-
-.action-sheet-cancel .button {
-  font-weight: 500
+.action-sheet-button {
+  width: 100%
 }
 
 .action-sheet-open {
-  pointer-events: none
+  pointer-events: none;
 }
 
 .action-sheet-open.modal-open .modal {
-  pointer-events: none
+  pointer-events: none;
 }
 
 .action-sheet-open .action-sheet-backdrop {
-  pointer-events: auto
-}
-
-
-.action-sheet-wrapper {
-  @include transition-duration(.3s);
-  @include transition-timing-function(cubic-bezier(0.4, 0.6, 0.2, 1));
-
-  .action-sheet {
-    .action-sheet-group {
-      border-radius: 8px;
-      .action-sheet-title {
-        font-size: 14px;
-        padding: 15px;
-      }
-
-      .action-sheet-option {
-        font-size: 16px;
-        border: transparent;
-      }
-
-      &.action-sheet-cancel {
-        .button {
-          font-size: 16px;
-        }
-      }
-
-      .button.active,
-      .button.activated,
-      .button:active {
-        background: #e8e8e8;
-      }
-    }
-  }
-}
-
-.theme-android .action-sheet-backdrop {
-  &.active {
-    background-color: rgba(0,0,0,0.2);
-  }
-  .action-sheet-wrapper  {
-    @include transition-duration(.3s);
-    @include transition-timing-function(cubic-bezier(0.4, 0.6, 0.2, 1));
-
-    .action-sheet {
-      margin: 0;
-
-      .action-sheet-group {
-        margin: 0;
-        border-radius: 0;
-        background-color: #fafafa;
-
-        .action-sheet-title, .button {
-          text-align: left;
-          border-color: transparent;
-          font-size: 14px;
-          color: inherit;
-          padding-left: 15px;
-        }
-
-        .button.active, .button.activated, .button:active {
-          background: #e8e8e8;
-        }
-
-        &.action-sheet-cancel {
-          display: none;
-        }
-      }
-    }
-  }
-}
-
-.theme-weixin .action-sheet-backdrop {
-  &.active {
-    background-color: rgba(0,0,0,0.2);
-  }
-
-  .action-sheet-wrapper .action-sheet {
-    margin: 0;
-    color: #444;
-    background-color: #f5f5f5;
-
-    .action-sheet-group {
-      margin: 0;
-      border-radius: 0;
-
-      .action-sheet-title, .button {
-        font-size: 14px;
-        color: inherit;
-      }
-
-      .action-sheet-title {
-        background-color: #f5f5f5;
-        height: 30px;
-        line-height: 30px;
-        padding: 0 15px;
-      }
-
-      .button {
-        height: 44px;
-        background: #fff;
-        margin-top: -1px;
-
-        border: none;
-        @include thin-border-before($background-color, 0);
-        &:before {
-          border-left: none;
-        }
-        @include thin-border-after($background-color, 0);
-        &:after {
-          border-right: none;
-        }
-      }
-
-      .button:active {
-        background: #eee;
-      }
-
-      &.action-sheet-cancel {
-        margin-top: 8px;
-      }
-    }
-  }
-}
-
-[theme='weixin'] .action-sheet-wrapper,
-[theme='android'] .action-sheet-wrapper,
-{
-
-}
-
-.modal-open [von-action-sheet] {
   pointer-events: auto;
+}
+
+.theme-ios {
+
+  .action-sheet-container {
+    padding: 0 10px
+  }
+
+  .action-sheet-group {
+    border-radius: 13px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    background: #f9f9f9
+  }
+
+  .action-sheet-group:last-child {
+    margin-bottom: 10px
+  }
+
+  .action-sheet-title {
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 0;
+    border-bottom: .55px solid #d6d6da;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #8f8f8f;
+  }
+
+  .action-sheet-button {
+    margin: 0;
+    min-height: 5.6rem;
+    border-bottom: .5px solid #d6d6da;
+    font-size: 2rem;
+    color: #007aff;
+    background: 0 0;
+  }
+
+  .action-sheet-button:last-child {
+    border-bottom-color: transparent
+  }
+
+  .action-sheet-button.activated {
+    margin-top: -.55px;
+    border-top: .55px solid #ebebeb;
+    border-bottom-color: #ebebeb;
+    background: #ebebeb
+  }
+
+  .action-sheet-selected {
+    font-weight: 700;
+    background: #fff
+  }
+
+  .action-sheet-destructive {
+    color: #f53d3d
+  }
+
+  .action-sheet-cancel {
+    font-weight: 600;
+    background: #fff
+  }
+}
+
+
+.theme-md {
+
+  .action-sheet-selected {
+    font-weight: 700
+  }
+
+  .action-sheet-container {
+    padding: .8rem 0;
+    background: #fafafa
+  }
+
+  .action-sheet-title {
+    text-align: left;
+    text-align: start;
+    font-size: 1.6rem;
+    color: #757575;
+    padding: 11px 16px 17px
+  }
+
+  .action-sheet-button {
+    text-align: left;
+    text-align: start;
+    position: relative;
+    overflow: hidden;
+    min-height: 4.8rem;
+    font-size: 1.6rem;
+    color: #222;
+    background: 0 0;
+    padding: 0 16px
+  }
+
+  .action-sheet-button.activated {
+    background: #f1f1f1
+  }
+
+  .action-sheet-icon {
+    padding: 0;
+    text-align: center;
+    width: 2.3rem;
+    font-size: 2.4rem;
+    vertical-align: middle;
+    margin: 0 12px 0 0;
+    color: #757575;
+  }
+
+  .action-sheet-group {
+    overflow: hidden
+  }
+
+  .action-sheet-group .button-inner {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start
+  }
+
+}
+
+
+.theme-wp {
+
+  .action-sheet-wrapper {
+    -webkit-box-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, .2)
+  }
+
+  .action-sheet-title {
+    text-align: left;
+    text-align: start;
+    font-size: 2rem;
+    color: #4d4d4d;
+    padding: 11px 16px 17px
+  }
+
+  .action-sheet-button {
+    text-align: left;
+    text-align: start;
+    min-height: 4.8rem;
+    font-size: 1.5rem;
+    color: #4d4d4d;
+    background: 0 0;
+    padding: 0 16px
+  }
+
+  .action-sheet-button.activated {
+    background: #aaa
+  }
+
+  .action-sheet-icon {
+    padding: 0;
+    text-align: center;
+    width: 2.3rem;
+    font-size: 2.4rem;
+    vertical-align: middle;
+    margin: 0 20px 0 0
+  }
+
+  .action-sheet-container {
+    padding: .8rem 0;
+    background: #fff
+  }
+
+  .action-sheet-group .button-inner {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start
+  }
+
+  .action-sheet-cancel {
+    background: 0 0
+  }
+
 }

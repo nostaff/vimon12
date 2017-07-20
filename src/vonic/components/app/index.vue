@@ -30,18 +30,18 @@
     },
 
     created() {
-      // theme-ios for ios, theme-android for android & other
+      // theme-ios for ios, theme-md for android & other
       if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
         this.gradeClass = 'theme-ios'
       } else {
-        this.gradeClass = 'theme-android'
+        this.gradeClass = 'theme-md'
       }
 
       if (window.__page_transition__ == 'ios') {
         this.gradeClass = 'theme-ios'
         window.__disable_nav_title_transition__ = false
       } else if (window.__page_transition__ == 'android') {
-        this.gradeClass = 'theme-android'
+        this.gradeClass = 'theme-md'
         window.__disable_nav_title_transition__ = true
       }
 

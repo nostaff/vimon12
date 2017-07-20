@@ -2,12 +2,12 @@
   <div class="page has-navbar" v-nav="{title: '弹层', showBackButton: true}">
     <div class="page-content padding-top">
 
-      <item class="item item-icon-right" @click.native="showCustomPopup()">
+      <item  is-link @click.native="showCustomPopup()">
         Custom Popup
-              </item>
+      </item>
       <item is-link @click.native="showCustomPopup2()">
         Custom Popup 2
-              </item>
+      </item>
 
     </div>
   </div>

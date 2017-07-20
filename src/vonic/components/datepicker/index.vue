@@ -5,8 +5,6 @@
 
     <span v-text="formatedDate"></span>
 
-    <div class="hairline-top"></div>
-    <div class="hairline-bottom"></div>
   </div>
 </template>
 <script>

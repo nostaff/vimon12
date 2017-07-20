@@ -4,25 +4,72 @@
     width: 100%
 }
 
-.alert-ios .alert-checkbox-label, .alert-ios .alert-radio-label, .alert-md .alert-checkbox-label, .alert-md .alert-radio-label, .alert-wp .alert-checkbox-label, .alert-wp .alert-radio-label {
-    text-overflow: ellipsis;
-    white-space: nowrap
+hr, ion-item-options .button {
+    -webkit-box-sizing: content-box
 }
 
 .button-block, .button-block::after {
     clear: both
 }
 
-.loading-ios .spinner-crescent circle, .loading-ios .spinner-ios line, .loading-ios .spinner-ios-small line {
-    stroke: #69717d
-}
-
-.loading-ios .spinner-bubbles circle, .loading-ios .spinner-circles circle, .loading-ios .spinner-dots circle {
-    fill: #69717d
-}
-
 .item-block, .tab-button, [ion-button] {
     text-decoration: none
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    src: local("Roboto Light"), local("Roboto-Light"), url(../assets/fonts/roboto-light.woff2) format("woff2"), url(../assets/fonts/roboto-light.woff) format("woff"), url(../assets/fonts/roboto-light.ttf) format("truetype")
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Roboto"), local("Roboto-Regular"), url(../assets/fonts/roboto-regular.woff2) format("woff2"), url(../assets/fonts/roboto-regular.woff) format("woff"), url(../assets/fonts/roboto-regular.ttf) format("truetype")
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    src: local("Roboto Medium"), local("Roboto-Medium"), url(../assets/fonts/roboto-medium.woff2) format("woff2"), url(../assets/fonts/roboto-medium.woff) format("woff"), url(../assets/fonts/roboto-medium.ttf) format("truetype")
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+    src: local("Roboto Bold"), local("Roboto-Bold"), url(../assets/fonts/roboto-bold.woff2) format("woff2"), url(../assets/fonts/roboto-bold.woff) format("woff"), url(../assets/fonts/roboto-bold.ttf) format("truetype")
+}
+
+@font-face {
+    font-family: "Noto Sans";
+    font-style: normal;
+    font-weight: 300;
+    src: local("Noto Sans"), local("Noto-Sans-Regular"), url(../assets/fonts/noto-sans-regular.woff) format("woff"), url(../assets/fonts/noto-sans-regular.ttf) format("truetype")
+}
+
+@font-face {
+    font-family: "Noto Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Noto Sans"), local("Noto-Sans-Regular"), url(../assets/fonts/noto-sans-regular.woff) format("woff"), url(../assets/fonts/noto-sans-regular.ttf) format("truetype")
+}
+
+@font-face {
+    font-family: "Noto Sans";
+    font-style: normal;
+    font-weight: 500;
+    src: local("Noto Sans Bold"), local("Noto-Sans-Bold"), url(../assets/fonts/noto-sans-bold.woff) format("woff"), url(../assets/fonts/noto-sans-bold.ttf) format("truetype")
+}
+
+@font-face {
+    font-family: "Noto Sans";
+    font-style: normal;
+    font-weight: 700;
+    src: local("Noto Sans Bold"), local("Noto-Sans-Bold"), url(../assets/fonts/noto-sans-bold.woff) format("woff"), url(../assets/fonts/noto-sans-bold.ttf) format("truetype")
 }
 
 body, body a, body button, body media-switch, body:hover {
@@ -34,6 +81,7 @@ body ion-app {
 }
 
 ion-page {
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex
@@ -62,9 +110,9 @@ scroll-content {
 
 .ios .statusbar-img-ios, .md .statusbar-img-md, .wp .statusbar-img-wp {
     display: block !important;
+    height: auto;
     z-index: 999;
-    top: 0;
-    height: auto
+    top: 0
 }
 
 .ios .statusbar-img-ios {
@@ -95,372 +143,9 @@ scroll-content {
     width: 100%
 }
 
-.action-sheet-wrapper, ion-action-sheet {
-    position: absolute;
-    display: block;
-    width: 100%;
-    left: 0
-}
 
-ion-action-sheet {
-    top: 0;
-    z-index: 1000;
-    height: 100%
-}
-
-.action-sheet-wrapper {
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-    z-index: 10;
-    max-width: 500px
-}
-
-.alert-wrapper, ion-alert {
-    display: -webkit-flex;
-    display: -ms-flexbox
-}
-
-.action-sheet-button {
-    width: 100%
-}
-
-.action-sheet-ios {
-    text-align: center
-}
-
-.action-sheet-ios .action-sheet-container {
-    padding: 0 10px
-}
-
-.action-sheet-ios .action-sheet-group {
-    border-radius: 13px;
-    margin-bottom: 8px;
-    overflow: hidden;
-    background: #f9f9f9
-}
-
-.action-sheet-ios .action-sheet-group:last-child {
-    margin-bottom: 10px
-}
-
-.action-sheet-ios .action-sheet-title {
-    padding: 1.5rem;
-    text-align: center;
-    border-radius: 0;
-    border-bottom: .55px solid #d6d6da;
-    font-size: 1.3rem;
-    font-weight: 400;
-    color: #8f8f8f
-}
-
-.action-sheet-ios .action-sheet-button {
-    margin: 0;
-    padding: 18px;
-    min-height: 5.6rem;
-    border-bottom: .55px solid #d6d6da;
-    font-size: 2rem;
-    color: #007aff;
-    background: 0 0
-}
-
-.action-sheet-ios .action-sheet-button:last-child {
-    border-bottom-color: transparent
-}
-
-.action-sheet-ios .action-sheet-button.activated {
-    margin-top: -.55px;
-    border-top: .55px solid #ebebeb;
-    border-bottom-color: #ebebeb;
-    background: #ebebeb
-}
-
-.action-sheet-ios .action-sheet-selected {
-    font-weight: 700;
-    background: #fff
-}
-
-.action-sheet-ios .action-sheet-destructive {
-    color: #f53d3d
-}
-
-.action-sheet-ios .action-sheet-cancel {
-    font-weight: 600;
-    background: #fff
-}
-
-.action-sheet-md .action-sheet-selected, .action-sheet-wp .action-sheet-selected {
-    font-weight: 700
-}
-
-.action-sheet-md .action-sheet-container {
-    padding: .8rem 0;
-    background: #fafafa
-}
-
-.action-sheet-md .action-sheet-title {
-    text-align: left;
-    text-align: start;
-    font-size: 1.6rem;
-    color: #757575;
-    padding: 11px 16px 17px
-}
-
-.action-sheet-md .action-sheet-button {
-    text-align: left;
-    text-align: start;
-    position: relative;
-    overflow: hidden;
-    min-height: 4.8rem;
-    font-size: 1.6rem;
-    color: #222;
-    background: 0 0;
-    padding: 0 16px
-}
-
-.action-sheet-md .action-sheet-button.activated {
-    background: #f1f1f1
-}
-
-.action-sheet-md .action-sheet-icon {
-    padding: 0;
-    text-align: center;
-    width: 2.3rem;
-    font-size: 2.4rem;
-    vertical-align: middle;
-    margin: 0 32px 0 0
-}
-
-.action-sheet-md .action-sheet-group {
-    overflow: hidden
-}
-
-.action-sheet-md .action-sheet-group .button-inner {
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start
-}
-
-.action-sheet-wp .action-sheet-wrapper {
-    box-shadow: 0 -1px 0 rgba(0, 0, 0, .2)
-}
-
-.action-sheet-wp .action-sheet-title {
-    text-align: left;
-    text-align: start;
-    font-size: 2rem;
-    color: #4d4d4d;
-    padding: 11px 16px 17px
-}
-
-.action-sheet-wp .action-sheet-button {
-    text-align: left;
-    text-align: start;
-    min-height: 4.8rem;
-    font-size: 1.5rem;
-    color: #4d4d4d;
-    background: 0 0;
-    padding: 0 16px
-}
-
-.action-sheet-wp .action-sheet-button.activated {
-    background: #aaa
-}
-
-.action-sheet-wp .action-sheet-icon {
-    padding: 0;
-    text-align: center;
-    width: 2.3rem;
-    font-size: 2.4rem;
-    vertical-align: middle;
-    margin: 0 20px 0 0
-}
-
-.action-sheet-wp .action-sheet-container {
-    padding: .8rem 0;
-    background: #fff
-}
-
-.action-sheet-wp .action-sheet-group .button-inner {
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start
-}
-
-.action-sheet-wp .action-sheet-cancel {
-    background: 0 0
-}
-
-ion-alert {
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    position: absolute;
-    z-index: 1000;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    contain: strict
-}
-
-ion-alert.alert-top {
-    padding-top: 50px;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start
-}
-
-ion-alert input {
-    width: 100%
-}
-
-.alert-wrapper {
-    z-index: 10;
-    display: flex;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 250px;
-    max-height: 90%;
-    opacity: 0;
-    contain: content
-}
-
-.alert-title {
-    margin: 0;
-    padding: 0
-}
-
-.alert-sub-title {
-    margin: 5px 0 0;
-    padding: 0;
-    font-weight: 400
-}
-
-.alert-message {
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch
-}
-
-.alert-input {
-    padding: 10px 0;
-    border: 0;
-    background: inherit
-}
-
-.alert-input::-moz-placeholder {
-    color: #999
-}
-
-.alert-input:-ms-input-placeholder {
-    color: #999
-}
-
-.alert-input::-webkit-input-placeholder {
-    text-indent: 0;
-    color: #999
-}
-
-.alert-button-group {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row
-}
-
-.alert-button-group-vertical {
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap
-}
-
-.alert-button {
-    margin: 0;
-    z-index: 0;
-    display: block;
-    font-size: 14px;
-    line-height: 20px
-}
-
-.alert-tappable {
-    text-align: left;
-    text-align: start;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    font-size: inherit;
-    line-height: initial;
-    background: 0 0
-}
-
-.alert-ios .alert-input, .button, .fab {
-    -moz-appearance: none;
-    -webkit-appearance: none
-}
-
-.alert-ios .alert-wrapper {
-    border-radius: 13px;
-    overflow: hidden;
-    max-width: 270px;
-    background-color: #f8f8f8;
-    box-shadow: none
-}
-
-.alert-ios .alert-head {
-    text-align: center;
-    padding: 12px 16px 7px
-}
-
-.alert-ios .alert-title {
-    margin-top: 8px;
-    font-size: 17px;
-    font-weight: 600
-}
-
-.alert-ios .alert-sub-title {
-    font-size: 14px;
-    color: #666
-}
-
-.alert-ios .alert-input-group, .alert-ios .alert-message {
-    text-align: center;
-    font-size: 13px;
-    color: inherit;
-    padding: 0 16px 21px
-}
-
-.alert-ios .alert-message {
-    max-height: 240px
-}
-
-.alert-ios .alert-message:empty {
-    padding: 0 0 12px
-}
-
-.alert-ios .alert-input {
-    -ms-appearance: none;
-    appearance: none;
-    margin-top: 10px;
-    border-radius: 4px;
-    border: .55px solid #ccc;
-    background-color: #fff;
-    padding: 6px
+.button, .fab {
+    -moz-appearance: none
 }
 
 button, html input[type=button], input[type=reset], input[type=submit] {
@@ -468,527 +153,19 @@ button, html input[type=button], input[type=reset], input[type=submit] {
     cursor: pointer
 }
 
-.alert-ios .alert-checkbox-group, .alert-ios .alert-radio-group {
-    overflow: scroll;
-    max-height: 240px;
-    border-top: .55px solid #dbdbdf;
-    -webkit-overflow-scrolling: touch
-}
-
-.alert-ios .alert-tappable {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    min-height: 44px
-}
-
-.alert-ios .alert-radio-label {
-    overflow: hidden;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    color: initial;
-    padding: 13px
-}
-
-.alert-ios [aria-checked=true] .alert-radio-label {
-    color: #488aff
-}
-
-.alert-ios .alert-radio-icon {
-    position: relative;
-    -webkit-order: 1;
-    -ms-flex-order: 1;
-    order: 1;
-    min-width: 30px
-}
-
-.alert-ios [aria-checked=true] .alert-radio-inner {
-    left: 7px;
-    top: -7px;
-    position: absolute;
-    width: 6px;
-    height: 12px;
-    border-width: 0 2px 2px 0;
-    border-style: solid;
-    border-color: #488aff;
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg)
-}
-
-.alert-ios .alert-checkbox-label {
-    overflow: hidden;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    color: initial;
-    padding: 13px
-}
-
-.alert-ios [aria-checked=true] .alert-checkbox-label {
-    color: initial
-}
-
-.alert-ios .alert-checkbox-icon {
-    border-radius: 50%;
-    position: relative;
-    width: 21px;
-    height: 21px;
-    border-width: .55px;
-    border-style: solid;
-    border-color: #c8c7cc;
-    background-color: #fff;
-    margin: 10px 6px 10px 16px
-}
-
-.alert-ios [aria-checked=true] .alert-checkbox-icon {
-    border-color: #488aff;
-    background-color: #488aff
-}
-
-.alert-ios [aria-checked=true] .alert-checkbox-inner {
-    left: 7px;
-    top: 4px;
-    position: absolute;
-    width: 4px;
-    height: 9px;
-    border-width: 0 .55px .55px 0;
-    border-style: solid;
-    border-color: #fff;
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg)
-}
-
-.alert-ios .alert-button-group {
-    margin-right: -.55px;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap
-}
-
-.alert-ios .alert-button {
-    margin: 0;
-    border-radius: 0;
-    overflow: hidden;
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    min-width: 50%;
-    height: 44px;
-    border-top: .55px solid #dbdbdf;
-    border-right: .55px solid #dbdbdf;
-    font-size: 17px;
-    color: #488aff;
-    background-color: transparent
-}
-
-.alert-ios .alert-button:last-child {
-    border-right: 0;
-    font-weight: 700
-}
-
-.alert-ios .alert-button.activated {
-    background-color: #e9e9e9
-}
-
-.alert-md .alert-wrapper {
-    border-radius: 2px;
-    max-width: 280px;
-    background-color: #fafafa;
-    box-shadow: 0 16px 20px rgba(0, 0, 0, .4)
-}
-
-.alert-md .alert-head {
-    text-align: left;
-    text-align: start;
-    padding: 24px 24px 20px
-}
-
-.alert-md .alert-title {
-    font-size: 22px
-}
-
-.alert-md .alert-sub-title {
-    font-size: 16px
-}
-
-.alert-md .alert-input-group, .alert-md .alert-message {
-    color: rgba(0, 0, 0, .5);
-    padding: 0 24px 24px
-}
-
-.alert-md .alert-message {
-    max-height: 240px;
-    font-size: 15px
-}
-
-.alert-md .alert-message:empty {
-    padding: 0
-}
-
-.alert-md .alert-input {
-    margin: 5px 0;
-    border-bottom: 1px solid #dedede;
-    color: #000
-}
-
-.alert-md .alert-input:focus {
-    margin-bottom: 4px;
-    border-bottom: 2px solid #488aff
-}
-
-.alert-md .alert-checkbox-group, .alert-md .alert-radio-group {
-    position: relative;
-    overflow: auto;
-    max-height: 240px;
-    border-top: 1px solid #dedede;
-    border-bottom: 1px solid #dedede
-}
-
-.alert-md .alert-tappable {
-    position: relative;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    overflow: hidden;
-    min-height: 4.4rem
-}
-
-.alert-md .alert-radio-label {
-    overflow: hidden;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    color: initial;
-    padding: 13px 26px
-}
-
-.alert-md .alert-radio-icon {
-    left: 13px;
-    top: 0;
-    border-radius: 50%;
-    position: relative;
-    display: block;
-    width: 16px;
-    height: 16px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #787878
-}
-
-.alert-md .alert-radio-inner {
-    left: 2px;
-    top: 2px;
-    border-radius: 50%;
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background-color: #488aff;
-    -webkit-transform: scale3d(0, 0, 0);
-    transform: scale3d(0, 0, 0);
-    transition: -webkit-transform 280ms cubic-bezier(.4, 0, .2, 1);
-    transition: transform 280ms cubic-bezier(.4, 0, .2, 1);
-    transition: transform 280ms cubic-bezier(.4, 0, .2, 1), -webkit-transform 280ms cubic-bezier(.4, 0, .2, 1)
-}
-
-.alert-md [aria-checked=true] .alert-radio-label {
-    color: #488aff
-}
-
-.alert-md [aria-checked=true] .alert-radio-icon {
-    border-color: #488aff
-}
-
-.alert-md [aria-checked=true] .alert-radio-inner {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1)
-}
-
-.alert-md .alert-checkbox-label {
-    overflow: hidden;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    color: initial;
-    padding: 13px 26px
-}
-
-.alert-md [aria-checked=true] .alert-checkbox-label {
-    color: initial
-}
-
-.alert-md .alert-checkbox-icon {
-    left: 13px;
-    top: 0;
-    border-radius: 2px;
-    position: relative;
-    width: 16px;
-    height: 16px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #787878
-}
-
-.alert-md [aria-checked=true] .alert-checkbox-icon {
-    border-color: #488aff;
-    background-color: #488aff
-}
-
-.alert-md [aria-checked=true] .alert-checkbox-inner {
-    left: 3px;
-    top: 0;
-    position: absolute;
-    width: 6px;
-    height: 10px;
-    border-width: 0 2px 2px 0;
-    border-style: solid;
-    border-color: #fff;
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg)
-}
-
-.alert-md .alert-button-group {
-    -webkit-flex-wrap: wrap-reverse;
-    -ms-flex-wrap: wrap-reverse;
-    flex-wrap: wrap-reverse;
-    -webkit-justify-content: flex-end;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
-    padding: 8px 8px 8px 24px
-}
-
-.alert-md .alert-button {
-    text-align: right;
-    text-align: end;
-    border-radius: 2px;
-    position: relative;
-    overflow: hidden;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: #488aff;
-    background-color: transparent;
-    margin: 0 8px 0 0;
-    padding: 10px
-}
-
-.alert-md .alert-button.activated {
-    background-color: rgba(158, 158, 158, .2)
-}
-
-.alert-md .alert-button .button-inner {
-    -webkit-justify-content: flex-end;
-    -ms-flex-pack: end;
-    justify-content: flex-end
-}
-
-.alert-wp ion-backdrop {
-    background: #fff
-}
-
-.alert-wp .alert-wrapper {
-    border-radius: 0;
-    width: 100%;
-    max-width: 520px;
-    border: 1px solid #488aff;
-    background: #e6e6e6
-}
-
-.alert-wp .alert-head {
-    text-align: left;
-    text-align: start;
-    padding: 20px 22px 5px
-}
-
-.alert-wp .alert-title {
-    font-size: 20px;
-    font-weight: 400
-}
-
-.alert-wp .alert-sub-title {
-    font-size: 16px
-}
-
-.alert-wp .alert-input-group, .alert-wp .alert-message {
-    color: #000;
-    padding: 0 22px 8px
-}
-
-.alert-wp .alert-message {
-    max-height: 240px;
-    font-size: 13px
-}
-
-.alert-wp .alert-message:empty {
-    padding: 0
-}
-
-.alert-wp .alert-input {
-    border: 2px solid rgba(0, 0, 0, .5);
-    line-height: 3rem;
-    color: #000;
-    margin: 5px 0;
-    padding: 0 8px
-}
-
-.alert-wp .alert-input:focus {
-    border-color: #488aff
-}
-
-.alert-wp .alert-radio-icon, .alert-wp [aria-checked=true] .alert-radio-icon {
-    border-color: rgba(0, 0, 0, .5)
-}
-
-.alert-wp .alert-checkbox-group, .alert-wp .alert-radio-group {
-    position: relative;
-    overflow: auto;
-    max-height: 240px
-}
-
-.alert-wp .alert-tappable {
-    position: relative;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    overflow: hidden;
-    min-height: 4.4rem
-}
-
-.alert-wp .alert-radio-label {
-    overflow: hidden;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    color: initial;
-    padding: 13px 26px
-}
-
-.alert-wp .alert-radio-icon {
-    left: 13px;
-    top: 0;
-    margin: 0;
-    border-radius: 50%;
-    position: relative;
-    display: block;
-    width: 16px;
-    height: 16px;
-    border-width: 2px;
-    border-style: solid
-}
-
-.alert-wp .alert-radio-inner {
-    left: 2px;
-    top: 2px;
-    border-radius: 50%;
-    position: absolute;
-    display: none;
-    width: 8px;
-    height: 8px;
-    background: #488aff
-}
-
-.alert-wp [aria-checked=true] .alert-radio-label {
-    color: #000
-}
-
-.alert-wp [aria-checked=true] .alert-radio-inner {
-    display: block
-}
-
-.alert-wp .alert-checkbox-label {
-    overflow: hidden;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    color: initial;
-    padding: 13px 26px
-}
-
 pre, textarea {
     overflow: auto
 }
 
-.alert-wp [aria-checked=true] .alert-checkbox-label {
-    color: initial
-}
-
-.alert-wp .alert-checkbox-icon {
-    left: 13px;
-    top: 0;
-    border-radius: 0;
-    position: relative;
-    width: 16px;
-    height: 16px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: rgba(0, 0, 0, .5);
-    background: 0 0
-}
-
-.alert-wp [aria-checked=true] .alert-checkbox-icon {
-    border-color: #488aff;
-    background: #488aff
-}
-
-.alert-wp [aria-checked=true] .alert-checkbox-inner {
-    left: 3px;
-    top: -2px;
-    position: absolute;
-    width: 6px;
-    height: 12px;
-    border-width: 0 1px 1px 0;
-    border-style: solid;
-    border-color: #fff;
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg)
-}
-
-.alert-wp .alert-button-group {
-    -webkit-flex-wrap: wrap-reverse;
-    -ms-flex-wrap: wrap-reverse;
-    flex-wrap: wrap-reverse;
-    -webkit-justify-content: flex-end;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
-    padding: 20px 22px
-}
-
-.alert-wp .alert-button-group-vertical .alert-button {
-    margin-top: 5px;
-    width: 100%
-}
-
-.alert-wp .alert-button-group-vertical .alert-button:first-child:not(:only-child) {
-    margin-right: 0;
-    margin-top: 0
-}
-
-.alert-wp .alert-button {
-    border-radius: 0;
-    width: 49.5%;
-    font-weight: 400;
-    color: #000;
-    background: #b8b8b8;
-    padding: 5px
-}
-
 body, html {
-    width: 100%;
-    height: 100%
+    width: 100%
 }
 
 body, td, th {
     padding: 0
 }
-
-.alert-wp .alert-button:first-child:not(:only-child) {
-    margin-right: 1%
-}
-
-.alert-wp .alert-button.activated {
-    background: #a9a9a9
+.col, [col-12], [col], body, img {
+    max-width: 100%
 }
 
 audio, canvas, progress, video {
@@ -1005,7 +182,6 @@ b, strong {
 }
 
 img {
-    max-width: 100%;
     border: 0
 }
 
@@ -1083,6 +259,11 @@ button {
     text-transform: none
 }
 
+.button, .fab {
+    -webkit-appearance: none;
+    text-overflow: ellipsis
+}
+
 [tappable] {
     cursor: pointer
 }
@@ -1098,11 +279,16 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 
 input[type=checkbox], input[type=radio] {
     padding: 0;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box
 }
 
 input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
     height: auto
+}
+
+.button-inner, .ion-page, body, html, ion-backdrop {
+    height: 100%
 }
 
 input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
@@ -1136,6 +322,7 @@ table {
 .focus-outline [ion-button]:focus, .focus-outline button:focus {
     border-color: #51a7e8;
     outline: #51a7e8 solid 2px;
+    -webkit-box-shadow: 0 0 8px 1px #51a7e8;
     box-shadow: 0 0 8px 1px #51a7e8
 }
 
@@ -1167,6 +354,7 @@ ion-input :focus {
 }
 
 * {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none
@@ -1175,6 +363,7 @@ ion-input :focus {
 html {
     font-size: 62.5%;
     -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     text-size-adjust: 100%
 }
@@ -1182,7 +371,6 @@ html {
 body {
     margin: 0;
     position: fixed;
-    max-width: 100%;
     max-height: 100%;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
@@ -1192,6 +380,7 @@ body {
     touch-action: manipulation;
     word-wrap: break-word;
     -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
     -ms-text-size-adjust: none;
     text-size-adjust: none;
     -webkit-user-select: none;
@@ -1200,10 +389,8 @@ body {
     user-select: none
 }
 
-.button, .fab {
-    -webkit-font-kerning: none;
-    -moz-user-select: none;
-    text-overflow: ellipsis
+.button, .fab, .tab-button {
+    -ms-user-select: none
 }
 
 a {
@@ -1304,17 +491,12 @@ ion-tab.show-tab {
     contain: strict
 }
 
-.button, .item {
-    contain: content
-}
-
 .ion-page {
     left: 0;
     top: 0;
     position: absolute;
     display: block;
     width: 100%;
-    height: 100%;
     opacity: 0
 }
 
@@ -1332,6 +514,10 @@ ion-header {
 
 ion-footer {
     bottom: 0
+}
+
+.button, ion-badge {
+    display: inline-block
 }
 
 [text-center] {
@@ -1607,7 +793,6 @@ ion-backdrop {
     z-index: 2;
     display: block;
     width: 100%;
-    height: 100%;
     background-color: #000;
     opacity: .01;
     -webkit-transform: translateZ(0);
@@ -1625,7 +810,6 @@ ion-backdrop.backdrop-no-tappable {
 
 ion-badge {
     padding: 3px 8px;
-    display: inline-block;
     min-width: 10px;
     font-size: 1.3rem;
     font-weight: 700;
@@ -1795,16 +979,18 @@ ion-badge {
     appearance: none;
     position: relative;
     z-index: 0;
-    display: inline-block;
     text-transform: none;
     cursor: pointer;
     vertical-align: top;
     vertical-align: -webkit-baseline-middle;
+    -webkit-transition: background-color, opacity .1s linear;
     transition: background-color, opacity .1s linear;
+    -webkit-font-kerning: none;
     font-kerning: none;
     -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none
+    -moz-user-select: none;
+    user-select: none;
+    contain: content
 }
 
 .fab, .text-input {
@@ -1815,28 +1001,27 @@ ion-badge {
     vertical-align: top
 }
 
-.fab, .tab-button {
-    -ms-user-select: none
-}
-
 .button-inner {
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
     -webkit-flex-flow: row nowrap;
     -ms-flex-flow: row nowrap;
     flex-flow: row nowrap;
     -webkit-flex-shrink: 0;
     -ms-flex-negative: 0;
     flex-shrink: 0;
+    -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
-    width: 100%;
-    height: 100%
+    width: 100%
 }
 
 .button-block, .button-full {
@@ -2288,18 +1473,18 @@ ion-badge {
     font-weight: 500;
     text-transform: uppercase;
     color: #fff;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    -webkit-transition: background-color .3s cubic-bezier(.4, 0, .2, 1), color .3s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .3s cubic-bezier(.4, 0, .2, 1);
+    transition: background-color .3s cubic-bezier(.4, 0, .2, 1), color .3s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .3s cubic-bezier(.4, 0, .2, 1);
     transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1), background-color .3s cubic-bezier(.4, 0, .2, 1), color .3s cubic-bezier(.4, 0, .2, 1);
+    transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1), background-color .3s cubic-bezier(.4, 0, .2, 1), color .3s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .3s cubic-bezier(.4, 0, .2, 1);
     margin: .4rem .2rem;
     padding: 0 1.1em
 }
 
 .button-strong-md, .button-strong-wp {
     font-weight: 700
-}
-
-.fab, .item-md, .item-wp {
-    text-transform: none
 }
 
 .button-block-md, .button-full-md {
@@ -2309,6 +1494,7 @@ ion-badge {
 
 .button-md.activated {
     background-color: #427feb;
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .14), 0 3px 5px rgba(0, 0, 0, .21), 0 0 0 0 transparent;
     box-shadow: 0 3px 5px rgba(0, 0, 0, .14), 0 3px 5px rgba(0, 0, 0, .21), 0 0 0 0 transparent
 }
 
@@ -2344,6 +1530,7 @@ ion-badge {
     border-color: #488aff;
     color: #488aff;
     background-color: transparent;
+    -webkit-box-shadow: none;
     box-shadow: none
 }
 
@@ -2353,6 +1540,7 @@ ion-badge {
 
 .button-outline-md.activated {
     background-color: transparent;
+    -webkit-box-shadow: none;
     box-shadow: none;
     opacity: 1
 }
@@ -2365,12 +1553,14 @@ ion-badge {
     border-color: transparent;
     color: #488aff;
     background-color: transparent;
+    -webkit-box-shadow: none;
     box-shadow: none;
     opacity: 1
 }
 
 .button-clear-md.activated {
     background-color: rgba(158, 158, 158, .2);
+    -webkit-box-shadow: none;
     box-shadow: none
 }
 
@@ -2400,6 +1590,7 @@ ion-badge {
     display: none;
     background-color: #555;
     opacity: .2;
+    -webkit-transition-timing-function: ease-in-out;
     transition-timing-function: ease-in-out;
     pointer-events: none;
     top: 0;
@@ -2453,6 +1644,7 @@ ion-badge {
 
 .button-clear-md-primary.activated {
     background-color: rgba(158, 158, 158, .2);
+    -webkit-box-shadow: none;
     box-shadow: none
 }
 
@@ -2503,6 +1695,7 @@ ion-badge {
 
 .button-clear-md-secondary.activated {
     background-color: rgba(158, 158, 158, .2);
+    -webkit-box-shadow: none;
     box-shadow: none
 }
 
@@ -2553,6 +1746,7 @@ ion-badge {
 
 .button-clear-md-danger.activated {
     background-color: rgba(158, 158, 158, .2);
+    -webkit-box-shadow: none;
     box-shadow: none
 }
 
@@ -2603,6 +1797,7 @@ ion-badge {
 
 .button-clear-md-light.activated {
     background-color: rgba(158, 158, 158, .2);
+    -webkit-box-shadow: none;
     box-shadow: none
 }
 
@@ -2653,6 +1848,7 @@ ion-badge {
 
 .button-clear-md-dark.activated {
     background-color: rgba(158, 158, 158, .2);
+    -webkit-box-shadow: none;
     box-shadow: none
 }
 
@@ -2703,6 +1899,7 @@ ion-badge {
 
 .button-clear-md-energized.activated {
     background-color: rgba(158, 158, 158, .2);
+    -webkit-box-shadow: none;
     box-shadow: none
 }
 
@@ -2753,6 +1950,7 @@ ion-badge {
 
 .button-clear-md-royal.activated {
     background-color: rgba(158, 158, 158, .2);
+    -webkit-box-shadow: none;
     box-shadow: none
 }
 
@@ -2803,6 +2001,7 @@ ion-badge {
 
 .button-clear-md-subtle.activated {
     background-color: rgba(158, 158, 158, .2);
+    -webkit-box-shadow: none;
     box-shadow: none
 }
 
@@ -2853,6 +2052,7 @@ ion-badge {
 
 .button-clear-md-vibrant.activated {
     background-color: rgba(158, 158, 158, .2);
+    -webkit-box-shadow: none;
     box-shadow: none
 }
 
@@ -2908,6 +2108,7 @@ ion-badge {
 
 .button-clear-md-bright.activated {
     background-color: rgba(158, 158, 158, .2);
+    -webkit-box-shadow: none;
     box-shadow: none
 }
 
@@ -3439,6 +2640,7 @@ ion-card-header {
     width: calc(100% - 24px);
     font-size: 1.4rem;
     background: #fff;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
     box-shadow: 0 1px 2px rgba(0, 0, 0, .3)
 }
 
@@ -4079,6 +3281,7 @@ ion-card-header {
     width: calc(100% - 20px);
     font-size: 1.4rem;
     background: #fff;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12)
 }
 
@@ -4724,6 +3927,7 @@ ion-card-header {
     width: calc(100% - 16px);
     font-size: 1.4rem;
     background: #fff;
+    -webkit-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, .2);
     box-shadow: 0 1px 1px 1px rgba(0, 0, 0, .2)
 }
 
@@ -5257,13 +4461,13 @@ ion-card-header {
     color: #663399
 }
 
-.card-wp-vibrant .card-content-wp, .card-wp-vibrant .card-header-wp, .card-wp-vibrant .card-title-wp, .card-wp-vibrant h1, .card-wp-vibrant h2, .card-wp-vibrant h3, .card-wp-vibrant h4, .card-wp-vibrant h5, .card-wp-vibrant h6, .card-wp-vibrant p, .fab-ios {
-    color: #fff
-}
-
 .card-wp-vibrant {
     color: #fff;
     background-color: #663399
+}
+
+.card-wp-vibrant .card-content-wp, .card-wp-vibrant .card-header-wp, .card-wp-vibrant .card-title-wp, .card-wp-vibrant h1, .card-wp-vibrant h2, .card-wp-vibrant h3, .card-wp-vibrant h4, .card-wp-vibrant h5, .card-wp-vibrant h6, .card-wp-vibrant p {
+    color: #fff
 }
 
 .card-wp-vibrant .card-content-wp-primary, .card-wp-vibrant .card-header-wp-primary, .card-wp-vibrant .card-title-wp-primary, .card-wp-vibrant .text-wp-primary {
@@ -5515,8 +4719,11 @@ ion-card-header {
     border-style: solid;
     border-color: #787878;
     background-color: #fff;
+    -webkit-transition-duration: 280ms;
     transition-duration: 280ms;
+    -webkit-transition-property: background;
     transition-property: background;
+    -webkit-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
     transition-timing-function: cubic-bezier(.4, 0, .2, 1)
 }
 
@@ -5957,6 +5164,10 @@ ion-app.ios [margin-horizontal], ion-app.ios [margin-horizontal] .scroll-content
     height: initial
 }
 
+.col, .fab {
+    position: relative
+}
+
 .content-md {
     color: #000;
     background-color: #fff
@@ -6084,6 +5295,7 @@ ion-app.wp [margin-horizontal], ion-app.wp [margin-horizontal] .scroll-content {
 }
 
 ion-datetime {
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -6092,6 +5304,7 @@ ion-datetime {
 
 .datetime-text {
     overflow: hidden;
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
@@ -6131,10 +5344,6 @@ ion-datetime {
     line-height: 3rem
 }
 
-.col, .grid, [col-10], [col-11], [col-12], [col-1], [col-2], [col-3], [col-4], [col-6], [col-7], [col-8], [col-9], [col-lg-10], [col-lg-11], [col-lg-12], [col-lg-1], [col-lg-2], [col-lg-3], [col-lg-4], [col-lg-5], [col-lg-6], [col-lg-7], [col-lg-8], [col-lg-9], [col-lg], [col-md-10], [col-md-11], [col-md-12], [col-md-1], [col-md-2], [col-md-3], [col-md-4], [col-md-5], [col-md-6], [col-md-7], [col-md-8], [col-md-9], [col-md], [col-sm-10], [col-sm-11], [col-sm-12], [col-sm-1], [col-sm-2], [col-sm-3], [col-sm-4], [col-sm-5], [col-sm-6], [col-sm-7], [col-sm-8], [col-sm-9], [col-sm], [col-xl-10], [col-xl-11], [col-xl-12], [col-xl-1], [col-xl-2], [col-xl-3], [col-xl-4], [col-xl-5], [col-xl-6], [col-xl-7], [col-xl-8], [col-xl-9], [col-xl], [col] {
-    padding: 5px
-}
-
 .item-datetime .datetime-wp ion-label[floating] {
     -webkit-transform: translate3d(8px, 41px, 0);
     transform: translate3d(8px, 41px, 0)
@@ -6147,7 +5356,6 @@ ion-datetime {
 .fab {
     appearance: none;
     border-radius: 50%;
-    position: relative;
     z-index: 0;
     display: block;
     overflow: hidden;
@@ -6155,11 +5363,15 @@ ion-datetime {
     height: 56px;
     font-size: 14px;
     line-height: 56px;
+    text-transform: none;
     cursor: pointer;
+    -webkit-transition: background-color, opacity .1s linear;
     transition: background-color, opacity .1s linear;
     background-clip: padding-box;
+    -webkit-font-kerning: none;
     font-kerning: none;
     -webkit-user-select: none;
+    -moz-user-select: none;
     user-select: none;
     contain: strict
 }
@@ -6173,6 +5385,7 @@ ion-datetime {
 }
 
 .fab ion-icon {
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
@@ -6227,9 +5440,11 @@ ion-fab-list {
     margin: 66px 0;
     top: 0;
     display: none;
+    -webkit-box-orient: vertical;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
@@ -6238,6 +5453,7 @@ ion-fab-list {
 }
 
 .fab-list-active, .grid {
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox
 }
@@ -6250,6 +5466,10 @@ ion-fab-list {
     visibility: hidden;
     -webkit-transform: scale(0);
     transform: scale(0)
+}
+
+.col, .grid, [col-12] {
+    width: 100%
 }
 
 .fab-in-list.show {
@@ -6266,6 +5486,8 @@ ion-fab-list[side=left] .fab-in-list, ion-fab-list[side=right] .fab-in-list {
 ion-fab-list[side=top] {
     top: auto;
     bottom: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
     -webkit-flex-direction: column-reverse;
     -ms-flex-direction: column-reverse;
     flex-direction: column-reverse
@@ -6274,6 +5496,8 @@ ion-fab-list[side=top] {
 ion-fab-list[side=left] {
     margin: 0 66px;
     right: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
     -webkit-flex-direction: row-reverse;
     -ms-flex-direction: row-reverse;
     flex-direction: row-reverse
@@ -6282,6 +5506,8 @@ ion-fab-list[side=left] {
 ion-fab-list[side=right] {
     margin: 0 66px;
     left: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row
@@ -6299,19 +5525,18 @@ ion-fab-list[side=right] {
     opacity: 0;
     -webkit-transform: scale(.4) rotateZ(-45deg);
     transform: scale(.4) rotateZ(-45deg);
+    -webkit-transition: all ease-in-out .3s;
     transition: all ease-in-out .3s;
+    -webkit-transition-property: opacity, -webkit-transform;
     transition-property: opacity, -webkit-transform;
     transition-property: transform, opacity;
     transition-property: transform, opacity, -webkit-transform
 }
 
-.col, ion-input, ion-textarea {
-    position: relative;
-    width: 100%
-}
-
 .fab .button-inner {
+    -webkit-transition: all ease-in-out .3s;
     transition: all ease-in-out .3s;
+    -webkit-transition-property: opacity, -webkit-transform;
     transition-property: opacity, -webkit-transform;
     transition-property: transform, opacity;
     transition-property: transform, opacity, -webkit-transform
@@ -6330,6 +5555,7 @@ ion-fab-list[side=right] {
 }
 
 .fab-ios {
+    color: #fff;
     background-color: #488aff
 }
 
@@ -6340,6 +5566,7 @@ ion-fab-list[side=right] {
 .fab-ios-in-list {
     color: #000;
     background-color: #f4f4f4;
+    -webkit-transition: opacity .2s ease 10ms, -webkit-transform .2s ease 10ms;
     transition: opacity .2s ease 10ms, -webkit-transform .2s ease 10ms;
     transition: transform .2s ease 10ms, opacity .2s ease 10ms;
     transition: transform .2s ease 10ms, opacity .2s ease 10ms, -webkit-transform .2s ease 10ms
@@ -6442,21 +5669,27 @@ ion-fab-list[side=right] {
 .fab-md {
     color: #fff;
     background-color: #488aff;
+    -webkit-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, .14), 0 4px 5px rgba(0, 0, 0, .1);
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, .14), 0 4px 5px rgba(0, 0, 0, .1);
-    transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1), background-color .3s cubic-bezier(.4, 0, .2, 1), color .3s cubic-bezier(.4, 0, .2, 1)
+    -webkit-transition: background-color .3s cubic-bezier(.4, 0, .2, 1), color .3s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .3s cubic-bezier(.4, 0, .2, 1);
+    transition: background-color .3s cubic-bezier(.4, 0, .2, 1), color .3s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .3s cubic-bezier(.4, 0, .2, 1);
+    transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1), background-color .3s cubic-bezier(.4, 0, .2, 1), color .3s cubic-bezier(.4, 0, .2, 1);
+    transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1), background-color .3s cubic-bezier(.4, 0, .2, 1), color .3s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .3s cubic-bezier(.4, 0, .2, 1)
 }
 
 .fab-md.activated {
     background-color: #427feb;
+    -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .4), 0 4px 7px 0 rgba(0, 0, 0, .1);
     box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .4), 0 4px 7px 0 rgba(0, 0, 0, .1)
 }
 
 .fab-md-in-list {
     color: #000;
     background-color: #f4f4f4;
-    transition: opacity .2s ease 10ms, box-shadow .3s cubic-bezier(.4, 0, .2, 1), background-color .3s cubic-bezier(.4, 0, .2, 1), color .3s cubic-bezier(.4, 0, .2, 1), -webkit-transform .2s ease 10ms;
+    -webkit-transition: opacity .2s ease 10ms, background-color .3s cubic-bezier(.4, 0, .2, 1), color .3s cubic-bezier(.4, 0, .2, 1), -webkit-transform .2s ease 10ms, -webkit-box-shadow .3s cubic-bezier(.4, 0, .2, 1);
+    transition: opacity .2s ease 10ms, background-color .3s cubic-bezier(.4, 0, .2, 1), color .3s cubic-bezier(.4, 0, .2, 1), -webkit-transform .2s ease 10ms, -webkit-box-shadow .3s cubic-bezier(.4, 0, .2, 1);
     transition: transform .2s ease 10ms, opacity .2s ease 10ms, box-shadow .3s cubic-bezier(.4, 0, .2, 1), background-color .3s cubic-bezier(.4, 0, .2, 1), color .3s cubic-bezier(.4, 0, .2, 1);
-    transition: transform .2s ease 10ms, opacity .2s ease 10ms, box-shadow .3s cubic-bezier(.4, 0, .2, 1), background-color .3s cubic-bezier(.4, 0, .2, 1), color .3s cubic-bezier(.4, 0, .2, 1), -webkit-transform .2s ease 10ms
+    transition: transform .2s ease 10ms, opacity .2s ease 10ms, box-shadow .3s cubic-bezier(.4, 0, .2, 1), background-color .3s cubic-bezier(.4, 0, .2, 1), color .3s cubic-bezier(.4, 0, .2, 1), -webkit-transform .2s ease 10ms, -webkit-box-shadow .3s cubic-bezier(.4, 0, .2, 1)
 }
 
 .fab-md-in-list.activated {
@@ -6609,6 +5842,7 @@ ion-fab-list[side=right] {
 .fab-wp-in-list {
     color: #000;
     background-color: #f4f4f4;
+    -webkit-transition: opacity .2s ease 10ms, -webkit-transform .2s ease 10ms;
     transition: opacity .2s ease 10ms, -webkit-transform .2s ease 10ms;
     transition: transform .2s ease 10ms, opacity .2s ease 10ms;
     transition: transform .2s ease 10ms, opacity .2s ease 10ms, -webkit-transform .2s ease 10ms
@@ -6709,22 +5943,29 @@ ion-fab-list[side=right] {
 }
 
 .grid {
+    padding: 5px;
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column
 }
 
 .item-block, .row {
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox
 }
 
 .grid[no-padding], .grid[no-padding] > .row > .col {
     padding: 0
+}
+
+.col, [col-1], [col] {
+    padding: 5px
 }
 
 .row {
@@ -6747,48 +5988,56 @@ ion-fab-list[side=right] {
 }
 
 .row[align-items-start] {
+    -webkit-box-align: start;
     -webkit-align-items: flex-start;
     -ms-flex-align: start;
     align-items: flex-start
 }
 
 .row[align-items-center] {
+    -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center
 }
 
 .row[align-items-end] {
+    -webkit-box-align: end;
     -webkit-align-items: flex-end;
     -ms-flex-align: end;
     align-items: flex-end
 }
 
 .row[align-items-stretch] {
+    -webkit-box-align: stretch;
     -webkit-align-items: stretch;
     -ms-flex-align: stretch;
     align-items: stretch
 }
 
 .row[align-items-baseline] {
+    -webkit-box-align: baseline;
     -webkit-align-items: baseline;
     -ms-flex-align: baseline;
     align-items: baseline
 }
 
 .row[justify-content-start] {
+    -webkit-box-pack: start;
     -webkit-justify-content: flex-start;
     -ms-flex-pack: start;
     justify-content: flex-start
 }
 
 .row[justify-content-center] {
+    -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center
 }
 
 .row[justify-content-end] {
+    -webkit-box-pack: end;
     -webkit-justify-content: flex-end;
     -ms-flex-pack: end;
     justify-content: flex-end
@@ -6801,6 +6050,7 @@ ion-fab-list[side=right] {
 }
 
 .row[justify-content-between] {
+    -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between
@@ -6812,10 +6062,10 @@ ion-fab-list[side=right] {
     -webkit-flex-basis: 0;
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
+    -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
-    flex-grow: 1;
-    max-width: 100%
+    flex-grow: 1
 }
 
 .col[align-self-start] {
@@ -6833,14 +6083,12 @@ ion-fab-list[side=right] {
 .col[align-self-center] {
     -webkit-align-self: center;
     -ms-flex-item-align: center;
-    -ms-grid-row-align: center;
     align-self: center
 }
 
 .col[align-self-stretch] {
     -webkit-align-self: stretch;
     -ms-flex-item-align: stretch;
-    -ms-grid-row-align: stretch;
     align-self: stretch
 }
 
@@ -6854,10 +6102,14 @@ ion-fab-list[side=right] {
     -webkit-flex-basis: 0;
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
+    -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
-    flex-grow: 1;
-    max-width: 100%
+    flex-grow: 1
+}
+
+[col-1], [col-auto] {
+    -webkit-box-flex: 0
 }
 
 @media (min-width: 576px) {
@@ -6951,6 +6203,11 @@ ion-fab-list[side=right] {
     max-width: 8.33333%
 }
 
+[col-2], [col-3] {
+    padding: 5px;
+    -webkit-box-flex: 0
+}
+
 [col-2] {
     -webkit-flex: 0 0 16.66667%;
     -ms-flex: 0 0 16.66667%;
@@ -6967,6 +6224,11 @@ ion-fab-list[side=right] {
     max-width: 25%
 }
 
+[col-4], [col-5] {
+    padding: 5px;
+    -webkit-box-flex: 0
+}
+
 [col-4] {
     -webkit-flex: 0 0 33.33333%;
     -ms-flex: 0 0 33.33333%;
@@ -6976,12 +6238,16 @@ ion-fab-list[side=right] {
 }
 
 [col-5] {
-    padding: 5px;
     -webkit-flex: 0 0 41.66667%;
     -ms-flex: 0 0 41.66667%;
     flex: 0 0 41.66667%;
     width: 41.66667%;
     max-width: 41.66667%
+}
+
+[col-6], [col-7] {
+    padding: 5px;
+    -webkit-box-flex: 0
 }
 
 [col-6] {
@@ -7000,6 +6266,11 @@ ion-fab-list[side=right] {
     max-width: 58.33333%
 }
 
+[col-8], [col-9] {
+    padding: 5px;
+    -webkit-box-flex: 0
+}
+
 [col-8] {
     -webkit-flex: 0 0 66.66667%;
     -ms-flex: 0 0 66.66667%;
@@ -7014,6 +6285,11 @@ ion-fab-list[side=right] {
     flex: 0 0 75%;
     width: 75%;
     max-width: 75%
+}
+
+[col-10], [col-11] {
+    -webkit-box-flex: 0;
+    padding: 5px
 }
 
 [col-10] {
@@ -7033,11 +6309,11 @@ ion-fab-list[side=right] {
 }
 
 [col-12] {
+    padding: 5px;
+    -webkit-box-flex: 0;
     -webkit-flex: 0 0 100%;
     -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
-    width: 100%;
-    max-width: 100%
+    flex: 0 0 100%
 }
 
 [pull-0] {
@@ -7188,6 +6464,10 @@ ion-fab-list[side=right] {
     margin-left: 91.66667%
 }
 
+[col-lg-10], [col-lg-11], [col-lg-12], [col-lg-1], [col-lg-2], [col-lg-3], [col-lg-4], [col-lg-5], [col-lg-6], [col-lg-7], [col-lg-8], [col-lg-9], [col-lg], [col-md-10], [col-md-11], [col-md-12], [col-md-1], [col-md-2], [col-md-3], [col-md-4], [col-md-5], [col-md-6], [col-md-7], [col-md-8], [col-md-9], [col-md], [col-sm-10], [col-sm-11], [col-sm-12], [col-sm-1], [col-sm-2], [col-sm-3], [col-sm-4], [col-sm-5], [col-sm-6], [col-sm-7], [col-sm-8], [col-sm-9], [col-sm], [col-xl-10], [col-xl-11], [col-xl-12], [col-xl-1], [col-xl-2], [col-xl-3], [col-xl-4], [col-xl-5], [col-xl-6], [col-xl-7], [col-xl-8], [col-xl-9], [col-xl] {
+    padding: 5px
+}
+
 @media (min-width: 576px) {
     [col-lg-10], [col-lg-11], [col-lg-12], [col-lg-1], [col-lg-2], [col-lg-3], [col-lg-4], [col-lg-5], [col-lg-6], [col-lg-7], [col-lg-8], [col-lg-9], [col-lg], [col-md-10], [col-md-11], [col-md-12], [col-md-1], [col-md-2], [col-md-3], [col-md-4], [col-md-5], [col-md-6], [col-md-7], [col-md-8], [col-md-9], [col-md], [col-sm-10], [col-sm-11], [col-sm-12], [col-sm-2], [col-sm-3], [col-sm-4], [col-sm-5], [col-sm-6], [col-sm-7], [col-sm-8], [col-sm-9], [col-sm], [col-xl-10], [col-xl-11], [col-xl-12], [col-xl-1], [col-xl-2], [col-xl-3], [col-xl-4], [col-xl-5], [col-xl-6], [col-xl-7], [col-xl-8], [col-xl-9], [col-xl] {
         padding: 5px
@@ -7197,6 +6477,7 @@ ion-fab-list[side=right] {
         -webkit-flex-basis: 0;
         -ms-flex-preferred-size: 0;
         flex-basis: 0;
+        -webkit-box-flex: 1;
         -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
         flex-grow: 1;
@@ -7204,6 +6485,7 @@ ion-fab-list[side=right] {
     }
 
     [col-sm-auto] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 auto;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
@@ -7211,6 +6493,7 @@ ion-fab-list[side=right] {
     }
 
     [col-sm-1] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 8.33333%;
         -ms-flex: 0 0 8.33333%;
         flex: 0 0 8.33333%;
@@ -7219,6 +6502,7 @@ ion-fab-list[side=right] {
     }
 
     [col-sm-2] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 16.66667%;
         -ms-flex: 0 0 16.66667%;
         flex: 0 0 16.66667%;
@@ -7227,6 +6511,7 @@ ion-fab-list[side=right] {
     }
 
     [col-sm-3] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 25%;
         -ms-flex: 0 0 25%;
         flex: 0 0 25%;
@@ -7235,6 +6520,7 @@ ion-fab-list[side=right] {
     }
 
     [col-sm-4] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 33.33333%;
         -ms-flex: 0 0 33.33333%;
         flex: 0 0 33.33333%;
@@ -7243,6 +6529,7 @@ ion-fab-list[side=right] {
     }
 
     [col-sm-5] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 41.66667%;
         -ms-flex: 0 0 41.66667%;
         flex: 0 0 41.66667%;
@@ -7251,6 +6538,7 @@ ion-fab-list[side=right] {
     }
 
     [col-sm-6] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 50%;
         -ms-flex: 0 0 50%;
         flex: 0 0 50%;
@@ -7259,6 +6547,7 @@ ion-fab-list[side=right] {
     }
 
     [col-sm-7] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 58.33333%;
         -ms-flex: 0 0 58.33333%;
         flex: 0 0 58.33333%;
@@ -7267,6 +6556,7 @@ ion-fab-list[side=right] {
     }
 
     [col-sm-8] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 66.66667%;
         -ms-flex: 0 0 66.66667%;
         flex: 0 0 66.66667%;
@@ -7275,6 +6565,7 @@ ion-fab-list[side=right] {
     }
 
     [col-sm-9] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 75%;
         -ms-flex: 0 0 75%;
         flex: 0 0 75%;
@@ -7283,6 +6574,7 @@ ion-fab-list[side=right] {
     }
 
     [col-sm-10] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 83.33333%;
         -ms-flex: 0 0 83.33333%;
         flex: 0 0 83.33333%;
@@ -7291,6 +6583,7 @@ ion-fab-list[side=right] {
     }
 
     [col-sm-11] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 91.66667%;
         -ms-flex: 0 0 91.66667%;
         flex: 0 0 91.66667%;
@@ -7299,6 +6592,7 @@ ion-fab-list[side=right] {
     }
 
     [col-sm-12] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 100%;
         -ms-flex: 0 0 100%;
         flex: 0 0 100%;
@@ -7468,6 +6762,7 @@ ion-fab-list[side=right] {
         -webkit-flex-basis: 0;
         -ms-flex-preferred-size: 0;
         flex-basis: 0;
+        -webkit-box-flex: 1;
         -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
         flex-grow: 1;
@@ -7475,6 +6770,7 @@ ion-fab-list[side=right] {
     }
 
     [col-md-auto] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 auto;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
@@ -7482,6 +6778,7 @@ ion-fab-list[side=right] {
     }
 
     [col-md-1] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 8.33333%;
         -ms-flex: 0 0 8.33333%;
         flex: 0 0 8.33333%;
@@ -7490,6 +6787,7 @@ ion-fab-list[side=right] {
     }
 
     [col-md-2] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 16.66667%;
         -ms-flex: 0 0 16.66667%;
         flex: 0 0 16.66667%;
@@ -7498,6 +6796,7 @@ ion-fab-list[side=right] {
     }
 
     [col-md-3] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 25%;
         -ms-flex: 0 0 25%;
         flex: 0 0 25%;
@@ -7506,6 +6805,7 @@ ion-fab-list[side=right] {
     }
 
     [col-md-4] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 33.33333%;
         -ms-flex: 0 0 33.33333%;
         flex: 0 0 33.33333%;
@@ -7514,6 +6814,7 @@ ion-fab-list[side=right] {
     }
 
     [col-md-5] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 41.66667%;
         -ms-flex: 0 0 41.66667%;
         flex: 0 0 41.66667%;
@@ -7522,6 +6823,7 @@ ion-fab-list[side=right] {
     }
 
     [col-md-6] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 50%;
         -ms-flex: 0 0 50%;
         flex: 0 0 50%;
@@ -7530,6 +6832,7 @@ ion-fab-list[side=right] {
     }
 
     [col-md-7] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 58.33333%;
         -ms-flex: 0 0 58.33333%;
         flex: 0 0 58.33333%;
@@ -7538,6 +6841,7 @@ ion-fab-list[side=right] {
     }
 
     [col-md-8] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 66.66667%;
         -ms-flex: 0 0 66.66667%;
         flex: 0 0 66.66667%;
@@ -7546,6 +6850,7 @@ ion-fab-list[side=right] {
     }
 
     [col-md-9] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 75%;
         -ms-flex: 0 0 75%;
         flex: 0 0 75%;
@@ -7554,6 +6859,7 @@ ion-fab-list[side=right] {
     }
 
     [col-md-10] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 83.33333%;
         -ms-flex: 0 0 83.33333%;
         flex: 0 0 83.33333%;
@@ -7562,6 +6868,7 @@ ion-fab-list[side=right] {
     }
 
     [col-md-11] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 91.66667%;
         -ms-flex: 0 0 91.66667%;
         flex: 0 0 91.66667%;
@@ -7570,6 +6877,7 @@ ion-fab-list[side=right] {
     }
 
     [col-md-12] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 100%;
         -ms-flex: 0 0 100%;
         flex: 0 0 100%;
@@ -7739,6 +7047,7 @@ ion-fab-list[side=right] {
         -webkit-flex-basis: 0;
         -ms-flex-preferred-size: 0;
         flex-basis: 0;
+        -webkit-box-flex: 1;
         -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
         flex-grow: 1;
@@ -7746,6 +7055,7 @@ ion-fab-list[side=right] {
     }
 
     [col-lg-auto] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 auto;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
@@ -7753,6 +7063,7 @@ ion-fab-list[side=right] {
     }
 
     [col-lg-1] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 8.33333%;
         -ms-flex: 0 0 8.33333%;
         flex: 0 0 8.33333%;
@@ -7761,6 +7072,7 @@ ion-fab-list[side=right] {
     }
 
     [col-lg-2] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 16.66667%;
         -ms-flex: 0 0 16.66667%;
         flex: 0 0 16.66667%;
@@ -7769,6 +7081,7 @@ ion-fab-list[side=right] {
     }
 
     [col-lg-3] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 25%;
         -ms-flex: 0 0 25%;
         flex: 0 0 25%;
@@ -7777,6 +7090,7 @@ ion-fab-list[side=right] {
     }
 
     [col-lg-4] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 33.33333%;
         -ms-flex: 0 0 33.33333%;
         flex: 0 0 33.33333%;
@@ -7785,6 +7099,7 @@ ion-fab-list[side=right] {
     }
 
     [col-lg-5] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 41.66667%;
         -ms-flex: 0 0 41.66667%;
         flex: 0 0 41.66667%;
@@ -7793,6 +7108,7 @@ ion-fab-list[side=right] {
     }
 
     [col-lg-6] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 50%;
         -ms-flex: 0 0 50%;
         flex: 0 0 50%;
@@ -7801,6 +7117,7 @@ ion-fab-list[side=right] {
     }
 
     [col-lg-7] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 58.33333%;
         -ms-flex: 0 0 58.33333%;
         flex: 0 0 58.33333%;
@@ -7809,6 +7126,7 @@ ion-fab-list[side=right] {
     }
 
     [col-lg-8] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 66.66667%;
         -ms-flex: 0 0 66.66667%;
         flex: 0 0 66.66667%;
@@ -7817,6 +7135,7 @@ ion-fab-list[side=right] {
     }
 
     [col-lg-9] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 75%;
         -ms-flex: 0 0 75%;
         flex: 0 0 75%;
@@ -7825,6 +7144,7 @@ ion-fab-list[side=right] {
     }
 
     [col-lg-10] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 83.33333%;
         -ms-flex: 0 0 83.33333%;
         flex: 0 0 83.33333%;
@@ -7833,6 +7153,7 @@ ion-fab-list[side=right] {
     }
 
     [col-lg-11] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 91.66667%;
         -ms-flex: 0 0 91.66667%;
         flex: 0 0 91.66667%;
@@ -7841,6 +7162,7 @@ ion-fab-list[side=right] {
     }
 
     [col-lg-12] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 100%;
         -ms-flex: 0 0 100%;
         flex: 0 0 100%;
@@ -8010,6 +7332,7 @@ ion-fab-list[side=right] {
         -webkit-flex-basis: 0;
         -ms-flex-preferred-size: 0;
         flex-basis: 0;
+        -webkit-box-flex: 1;
         -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
         flex-grow: 1;
@@ -8017,6 +7340,7 @@ ion-fab-list[side=right] {
     }
 
     [col-xl-auto] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 auto;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
@@ -8024,6 +7348,7 @@ ion-fab-list[side=right] {
     }
 
     [col-xl-1] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 8.33333%;
         -ms-flex: 0 0 8.33333%;
         flex: 0 0 8.33333%;
@@ -8032,6 +7357,7 @@ ion-fab-list[side=right] {
     }
 
     [col-xl-2] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 16.66667%;
         -ms-flex: 0 0 16.66667%;
         flex: 0 0 16.66667%;
@@ -8040,6 +7366,7 @@ ion-fab-list[side=right] {
     }
 
     [col-xl-3] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 25%;
         -ms-flex: 0 0 25%;
         flex: 0 0 25%;
@@ -8048,6 +7375,7 @@ ion-fab-list[side=right] {
     }
 
     [col-xl-4] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 33.33333%;
         -ms-flex: 0 0 33.33333%;
         flex: 0 0 33.33333%;
@@ -8056,6 +7384,7 @@ ion-fab-list[side=right] {
     }
 
     [col-xl-5] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 41.66667%;
         -ms-flex: 0 0 41.66667%;
         flex: 0 0 41.66667%;
@@ -8064,6 +7393,7 @@ ion-fab-list[side=right] {
     }
 
     [col-xl-6] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 50%;
         -ms-flex: 0 0 50%;
         flex: 0 0 50%;
@@ -8072,6 +7402,7 @@ ion-fab-list[side=right] {
     }
 
     [col-xl-7] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 58.33333%;
         -ms-flex: 0 0 58.33333%;
         flex: 0 0 58.33333%;
@@ -8080,6 +7411,7 @@ ion-fab-list[side=right] {
     }
 
     [col-xl-8] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 66.66667%;
         -ms-flex: 0 0 66.66667%;
         flex: 0 0 66.66667%;
@@ -8088,6 +7420,7 @@ ion-fab-list[side=right] {
     }
 
     [col-xl-9] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 75%;
         -ms-flex: 0 0 75%;
         flex: 0 0 75%;
@@ -8096,6 +7429,7 @@ ion-fab-list[side=right] {
     }
 
     [col-xl-10] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 83.33333%;
         -ms-flex: 0 0 83.33333%;
         flex: 0 0 83.33333%;
@@ -8104,6 +7438,7 @@ ion-fab-list[side=right] {
     }
 
     [col-xl-11] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 91.66667%;
         -ms-flex: 0 0 91.66667%;
         flex: 0 0 91.66667%;
@@ -8112,6 +7447,7 @@ ion-fab-list[side=right] {
     }
 
     [col-xl-12] {
+        -webkit-box-flex: 0;
         -webkit-flex: 0 0 100%;
         -ms-flex: 0 0 100%;
         flex: 0 0 100%;
@@ -8399,10 +7735,13 @@ ion-icon[small] {
 }
 
 ion-input, ion-textarea {
+    position: relative;
     display: block;
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
-    flex: 1
+    flex: 1;
+    width: 100%
 }
 
 .item-input ion-input, .item-input ion-textarea {
@@ -8410,6 +7749,7 @@ ion-input, ion-textarea {
 }
 
 .item.item-textarea {
+    -webkit-box-align: stretch;
     -webkit-align-items: stretch;
     -ms-flex-align: stretch;
     align-items: stretch
@@ -8421,6 +7761,7 @@ ion-input, ion-textarea {
     appearance: none;
     border-radius: 0;
     display: inline-block;
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
@@ -8560,28 +7901,34 @@ input.text-input:-webkit-autofill {
 
 .item-md.item-input.input-has-focus .item-inner, .item-md.item-input.item-input-has-focus .item-inner, .list-md .item-input.input-has-focus:last-child, .list-md .item-input.item-input-has-focus:last-child {
     border-bottom-color: #488aff;
+    -webkit-box-shadow: inset 0 -1px 0 0 #488aff;
     box-shadow: inset 0 -1px 0 0 #488aff
 }
 
 .list-md .item-input.input-has-focus:last-child .item-inner, .list-md .item-input.item-input-has-focus:last-child .item-inner {
+    -webkit-box-shadow: none;
     box-shadow: none
 }
 
 .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child, .list-md .item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child {
     border-bottom-color: #32db64;
+    -webkit-box-shadow: inset 0 -1px 0 0 #32db64;
     box-shadow: inset 0 -1px 0 0 #32db64
 }
 
 .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child .item-inner, .list-md .item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child .item-inner {
+    -webkit-box-shadow: none;
     box-shadow: none
 }
 
 .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus):last-child {
     border-bottom-color: #f53d3d;
+    -webkit-box-shadow: inset 0 -1px 0 0 #f53d3d;
     box-shadow: inset 0 -1px 0 0 #f53d3d
 }
 
 .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus):last-child .item-inner {
+    -webkit-box-shadow: none;
     box-shadow: none
 }
 
@@ -8658,15 +8005,21 @@ input.text-input:-webkit-autofill {
     background-size: 22px
 }
 
+.item {
+    contain: content
+}
+
 .item-block {
     margin: 0;
     padding: 0;
     text-align: initial;
     display: flex;
     overflow: hidden;
+    -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
@@ -8679,21 +8032,26 @@ input.text-input:-webkit-autofill {
 }
 
 .input-wrapper, .item-inner {
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    overflow: hidden
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal
 }
 
 .item-inner {
     margin: 0;
     padding: 0;
     display: flex;
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
     -webkit-flex-direction: inherit;
     -ms-flex-direction: inherit;
     flex-direction: inherit;
+    -webkit-box-align: inherit;
     -webkit-align-items: inherit;
     -ms-flex-align: inherit;
     align-items: inherit;
@@ -8706,12 +8064,14 @@ input.text-input:-webkit-autofill {
 
 .input-wrapper {
     display: flex;
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
     -webkit-flex-direction: inherit;
     -ms-flex-direction: inherit;
     flex-direction: inherit;
+    -webkit-box-align: inherit;
     -webkit-align-items: inherit;
     -ms-flex-align: inherit;
     align-items: inherit;
@@ -8737,13 +8097,16 @@ ion-item-divider {
     margin: 0;
     padding: 0;
     z-index: 100;
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     overflow: hidden;
+    -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
@@ -8758,6 +8121,7 @@ ion-item-divider[sticky] {
 }
 
 [vertical-align-top], ion-input.item {
+    -webkit-box-align: start;
     -webkit-align-items: flex-start;
     -ms-flex-align: start;
     align-items: flex-start
@@ -8807,12 +8171,15 @@ ion-reorder {
     -webkit-transform: translate3d(160%, 0, 0);
     transform: translate3d(160%, 0, 0);
     display: none;
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
+    -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -8820,6 +8187,7 @@ ion-reorder {
     height: 100%;
     font-size: 1.7em;
     opacity: .25;
+    -webkit-transition: -webkit-transform 140ms ease-in;
     transition: -webkit-transform 140ms ease-in;
     transition: transform 140ms ease-in;
     transition: transform 140ms ease-in, -webkit-transform 140ms ease-in;
@@ -8830,6 +8198,7 @@ ion-reorder {
 .reorder-side-start ion-reorder {
     -webkit-transform: translate3d(-160%, 0, 0);
     transform: translate3d(-160%, 0, 0);
+    -webkit-box-ordinal-group: 0;
     -webkit-order: -1;
     -ms-flex-order: -1;
     order: -1
@@ -8840,6 +8209,7 @@ ion-reorder ion-icon {
 }
 
 .reorder-enabled ion-reorder {
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex
@@ -8851,6 +8221,7 @@ ion-reorder ion-icon {
 }
 
 .reorder-list-active .item, .reorder-list-active .item-wrapper {
+    -webkit-transition: -webkit-transform .3s;
     transition: -webkit-transform .3s;
     transition: transform .3s;
     transition: transform .3s, -webkit-transform .3s;
@@ -8863,8 +8234,10 @@ ion-reorder ion-icon {
 
 .item-wrapper.reorder-active, .item.reorder-active, .reorder-active {
     z-index: 4;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .4);
     box-shadow: 0 0 10px rgba(0, 0, 0, .4);
     opacity: .8;
+    -webkit-transition: none;
     transition: none;
     pointer-events: none
 }
@@ -8892,18 +8265,16 @@ ion-item-options {
     visibility: hidden;
     top: 0;
     right: 0;
+    -webkit-box-pack: end;
     -webkit-justify-content: flex-end;
     -ms-flex-pack: end;
     justify-content: flex-end
 }
 
-.item-ios, .item-md, .item-wp, .list-header-ios {
-    position: relative
-}
-
 ion-item-options[side=left] {
     right: auto;
     left: 0;
+    -webkit-box-pack: start;
     -webkit-justify-content: flex-start;
     -ms-flex-pack: start;
     justify-content: flex-start
@@ -8914,13 +8285,9 @@ ion-item-options .button {
     padding: 0 .7em;
     border-radius: 0;
     height: 100%;
+    -webkit-box-shadow: none;
     box-shadow: none;
     box-sizing: content-box
-}
-
-.item-ios h1, .item-ios h2 {
-    margin: 0 0 2px;
-    font-weight: 400
 }
 
 .list-md[inset] .item-input, .list-wp[inset] .item-input {
@@ -8928,7 +8295,16 @@ ion-item-options .button {
     padding-right: 0
 }
 
+.item-md, .item-wp {
+    text-transform: none;
+    -webkit-box-shadow: none;
+    font-weight: 400;
+    position: relative
+}
+
 ion-item-options:not([icon-left]) .button:not([icon-only]) .button-inner, ion-item-options:not([icon-start]) .button:not([icon-only]) .button-inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column
@@ -8944,6 +8320,7 @@ ion-item-sliding.active-slide .item, ion-item-sliding.active-slide .item.activat
     position: relative;
     z-index: 2;
     opacity: 1;
+    -webkit-transition: -webkit-transform .5s cubic-bezier(.36, .66, .04, 1);
     transition: -webkit-transform .5s cubic-bezier(.36, .66, .04, 1);
     transition: transform .5s cubic-bezier(.36, .66, .04, 1);
     transition: transform .5s cubic-bezier(.36, .66, .04, 1), -webkit-transform .5s cubic-bezier(.36, .66, .04, 1);
@@ -8952,12 +8329,14 @@ ion-item-sliding.active-slide .item, ion-item-sliding.active-slide .item.activat
 }
 
 ion-item-sliding.active-slide ion-item-options {
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex
 }
 
 ion-list-header, ion-loading {
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox
 }
@@ -8971,24 +8350,33 @@ button[expandable] {
     -webkit-flex-shrink: 0;
     -ms-flex-negative: 0;
     flex-shrink: 0;
+    -webkit-transition-duration: 0;
     transition-duration: 0;
+    -webkit-transition-property: none;
     transition-property: none;
+    -webkit-transition-timing-function: cubic-bezier(.65, .05, .36, 1);
     transition-timing-function: cubic-bezier(.65, .05, .36, 1)
 }
 
 ion-item-sliding.active-swipe-right button[expandable] {
+    -webkit-transition-duration: .6s;
     transition-duration: .6s;
+    -webkit-transition-property: padding-left;
     transition-property: padding-left;
     padding-left: 90%;
+    -webkit-box-ordinal-group: 2;
     -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1
 }
 
 ion-item-sliding.active-swipe-left button[expandable] {
+    -webkit-transition-duration: .6s;
     transition-duration: .6s;
+    -webkit-transition-property: padding-right;
     transition-property: padding-right;
     padding-right: 90%;
+    -webkit-box-ordinal-group: 0;
     -webkit-order: -1;
     -ms-flex-order: -1;
     order: -1
@@ -8997,23 +8385,30 @@ ion-item-sliding.active-swipe-left button[expandable] {
 .item-ios {
     padding-left: 16px;
     border-radius: 0;
+    position: relative;
     font-size: 1.7rem;
     color: #000;
     background-color: #fff;
+    -webkit-transition: background-color .2s linear;
     transition: background-color .2s linear
 }
 
 .item-ios.activated {
     background-color: #d9d9d9;
+    -webkit-transition-duration: 0s;
     transition-duration: 0s
 }
 
 .item-ios h1 {
-    font-size: 2.4rem
+    margin: 0 0 2px;
+    font-size: 2.4rem;
+    font-weight: 400
 }
 
 .item-ios h2 {
-    font-size: 1.7rem
+    margin: 0 0 2px;
+    font-size: 1.7rem;
+    font-weight: 400
 }
 
 .item-ios h3, .item-ios h4, .item-ios h5, .item-ios h6 {
@@ -9294,8 +8689,8 @@ ion-item-group .item-ios:last-child .item-inner, ion-item-group .item-wrapper:la
     padding-left: 16px;
     padding-right: 0;
     font-size: 1.6rem;
-    font-weight: 400;
     box-shadow: none;
+    -webkit-transition: background-color .3s cubic-bezier(.4, 0, .2, 1);
     transition: background-color .3s cubic-bezier(.4, 0, .2, 1)
 }
 
@@ -9592,7 +8987,6 @@ ion-item-group .item-md .item-wrapper:last-child .item-inner, ion-item-group .it
     padding-left: 16px;
     padding-right: 0;
     font-size: 1.6rem;
-    font-weight: 400;
     box-shadow: none
 }
 
@@ -9885,6 +9279,7 @@ ion-label {
     margin: 0;
     display: block;
     overflow: hidden;
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
@@ -9892,6 +9287,7 @@ ion-label {
 }
 
 .item-input ion-label {
+    -webkit-box-flex: initial;
     -webkit-flex: initial;
     -ms-flex: initial;
     flex: initial;
@@ -9904,6 +9300,7 @@ ion-label {
 }
 
 ion-label[fixed] {
+    -webkit-box-flex: 0;
     -webkit-flex: 0 0 100px;
     -ms-flex: 0 0 100px;
     flex: 0 0 100px;
@@ -9915,7 +9312,6 @@ ion-label[fixed] {
 .item-label-floating ion-label, .item-label-stacked ion-label {
     -webkit-align-self: stretch;
     -ms-flex-item-align: stretch;
-    -ms-grid-row-align: stretch;
     align-self: stretch;
     width: auto;
     max-width: 100%
@@ -9926,9 +9322,12 @@ ion-label[floating], ion-label[stacked] {
 }
 
 .item-label-floating .input-wrapper, .item-label-stacked .input-wrapper {
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column
@@ -9937,7 +9336,6 @@ ion-label[floating], ion-label[stacked] {
 .item-label-floating ion-select, .item-label-stacked ion-select {
     -webkit-align-self: stretch;
     -ms-flex-item-align: stretch;
-    -ms-grid-row-align: stretch;
     align-self: stretch;
     max-width: 100%
 }
@@ -9962,6 +9360,7 @@ ion-label[floating], ion-label[stacked] {
     transform: translate3d(0, 27px, 0);
     -webkit-transform-origin: left top;
     transform-origin: left top;
+    -webkit-transition: -webkit-transform 150ms ease-in-out;
     transition: -webkit-transform 150ms ease-in-out;
     transition: transform 150ms ease-in-out;
     transition: transform 150ms ease-in-out, -webkit-transform 150ms ease-in-out
@@ -10043,9 +9442,16 @@ ion-label[floating], ion-label[stacked] {
     transform: translate3d(0, 27px, 0);
     -webkit-transform-origin: left top;
     transform-origin: left top;
+    -webkit-transition: -webkit-transform 150ms ease-in-out;
     transition: -webkit-transform 150ms ease-in-out;
     transition: transform 150ms ease-in-out;
     transition: transform 150ms ease-in-out, -webkit-transform 150ms ease-in-out
+}
+
+.picker-ios .picker-opt, .picker-md .picker-opt {
+    -webkit-transition-timing-function: ease-out;
+    -webkit-backface-visibility: hidden;
+    line-height: 42px
 }
 
 .label-md[floating], .label-md[stacked] {
@@ -10174,9 +9580,11 @@ ion-list-header {
     padding: 0;
     display: flex;
     overflow: hidden;
+    -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
@@ -10228,15 +9636,18 @@ ion-list[inset] {
 .list-ios ion-item-options .button {
     margin: 0;
     border-radius: 0;
+    display: -webkit-inline-box;
     display: -webkit-inline-flex;
     display: -ms-inline-flexbox;
     display: inline-flex;
+    -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
     height: 100%;
     min-height: 100%;
     border: 0;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box
 }
 
@@ -10276,6 +9687,7 @@ ion-list[inset] {
 
 .list-header-ios {
     padding-left: 16px;
+    position: relative;
     border-bottom: .55px solid #c8c7cc;
     font-weight: 500;
     letter-spacing: .1rem;
@@ -10361,15 +9773,19 @@ ion-list[inset] {
 .list-md ion-item-options .button {
     margin: 1px 0;
     border-radius: 0;
+    display: -webkit-inline-box;
     display: -webkit-inline-flex;
     display: -ms-inline-flexbox;
     display: inline-flex;
+    -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
     height: calc(100% - 2px);
     border: 0;
+    -webkit-box-shadow: none;
     box-shadow: none;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box
 }
 
@@ -10492,21 +9908,29 @@ ion-list[inset] {
 .list-wp ion-item-options .button {
     margin: 1px 0;
     border-radius: 0;
+    display: -webkit-inline-box;
     display: -webkit-inline-flex;
     display: -ms-inline-flexbox;
     display: inline-flex;
+    -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
     height: calc(100% - 2px);
     border: 0;
+    -webkit-box-shadow: none;
     box-shadow: none;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box
 }
 
 .menu-inner, .modal-wrapper, ion-modal {
     height: 100%;
     contain: strict
+}
+
+.picker-col, .swiper-wrapper {
+    -webkit-box-sizing: content-box
 }
 
 .list-wp ion-item-options .button::before {
@@ -10611,9 +10035,11 @@ ion-loading {
     bottom: 0;
     z-index: 1000;
     display: flex;
+    -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -10622,9 +10048,11 @@ ion-loading {
 
 .loading-wrapper {
     z-index: 10;
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
@@ -10648,8 +10076,24 @@ ion-loading {
     font-weight: 700
 }
 
+.loading-ios .spinner-ios line, .loading-ios .spinner-ios-small line {
+    stroke: #69717d
+}
+
+.loading-ios .spinner-bubbles circle, .loading-ios .spinner-circles circle {
+    fill: #69717d
+}
+
+.loading-ios .spinner-crescent circle {
+    stroke: #69717d
+}
+
 .loading-md .spinner-crescent circle, .loading-md .spinner-ios line, .loading-md .spinner-ios-small line {
     stroke: #488aff
+}
+
+.loading-ios .spinner-dots circle {
+    fill: #69717d
 }
 
 .loading-md .spinner-bubbles circle, .loading-md .spinner-circles circle, .loading-md .spinner-dots circle {
@@ -10662,12 +10106,9 @@ ion-loading {
     max-height: 90%;
     color: rgba(0, 0, 0, .5);
     background: #fafafa;
+    -webkit-box-shadow: 0 16px 20px rgba(0, 0, 0, .4);
     box-shadow: 0 16px 20px rgba(0, 0, 0, .4);
     padding: 24px
-}
-
-.ios .menu-content-push, .ios .menu-content-reveal, .ios ion-menu[type=overlay] .menu-inner, .md .menu-content-push, .md .menu-content-reveal, .md ion-menu[type=overlay] .menu-inner {
-    box-shadow: 0 0 10px rgba(0, 0, 0, .25)
 }
 
 .loading-wp .spinner-crescent circle, .loading-wp .spinner-ios line, .loading-wp .spinner-ios-small line {
@@ -10758,6 +10199,16 @@ ion-menu[type=overlay] {
     z-index: 80
 }
 
+.ios .menu-content-push, .ios .menu-content-reveal, .ios ion-menu[type=overlay] .menu-inner {
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .25);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .25)
+}
+
+.md .menu-content-push, .md .menu-content-reveal, .md ion-menu[type=overlay] .menu-inner {
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .25);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .25)
+}
+
 .wp .menu-inner {
     background: #f2f2f2
 }
@@ -10818,6 +10269,7 @@ ion-modal {
     .md .modal-wrapper {
         border-radius: 2px;
         overflow: hidden;
+        -webkit-box-shadow: 0 28px 48px rgba(0, 0, 0, .4);
         box-shadow: 0 28px 48px rgba(0, 0, 0, .4)
     }
 }
@@ -10971,6 +10423,7 @@ ion-picker-cmp {
 }
 
 .picker-columns, .picker-wrapper {
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     contain: strict;
@@ -10992,6 +10445,8 @@ ion-picker-cmp {
     transform: translate3d(0, 100%, 0);
     z-index: 10;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
@@ -11002,6 +10457,7 @@ ion-picker-cmp {
 .picker-columns {
     position: relative;
     display: flex;
+    -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center
@@ -11009,12 +10465,15 @@ ion-picker-cmp {
 
 .picker-col {
     position: relative;
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
+    -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -11025,6 +10484,7 @@ ion-picker-cmp {
 
 .picker-opts {
     position: relative;
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
@@ -11041,6 +10501,7 @@ ion-picker-cmp {
 .picker-prefix {
     text-align: right;
     text-align: end;
+    -webkit-box-flex: 2;
     -webkit-flex: 2;
     -ms-flex: 2;
     flex: 2
@@ -11049,6 +10510,7 @@ ion-picker-cmp {
 .picker-suffix {
     text-align: left;
     text-align: start;
+    -webkit-box-flex: 2;
     -webkit-flex: 2;
     -ms-flex: 2;
     flex: 2
@@ -11076,12 +10538,14 @@ ion-picker-cmp {
 }
 
 .picker-opts-left {
+    -webkit-box-pack: start;
     -webkit-justify-content: flex-start;
     -ms-flex-pack: start;
     justify-content: flex-start
 }
 
 .picker-opts-right {
+    -webkit-box-pack: end;
     -webkit-justify-content: flex-end;
     -ms-flex-pack: end;
     justify-content: flex-end
@@ -11092,6 +10556,12 @@ ion-picker-cmp {
     pointer-events: none
 }
 
+.picker-ios .picker-toolbar, .picker-md .picker-toolbar {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox
+}
+
 .picker-ios .picker-wrapper {
     height: 260px;
     border-top: 1px solid #c8c7cc;
@@ -11099,8 +10569,6 @@ ion-picker-cmp {
 }
 
 .picker-ios .picker-toolbar {
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     height: 44px;
     border-bottom: .55px solid #c8c7cc;
@@ -11110,6 +10578,7 @@ ion-picker-cmp {
 .picker-ios .picker-toolbar-button {
     text-align: right;
     text-align: end;
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1
@@ -11160,13 +10629,11 @@ ion-picker-cmp {
     transform-origin: center center;
     height: 4.6rem;
     font-size: 20px;
-    line-height: 42px;
     color: #000;
     background: 0 0;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     transition-timing-function: ease-out;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     pointer-events: auto;
     padding: 0
@@ -11183,6 +10650,7 @@ ion-picker-cmp {
     width: 100%;
     height: 81px;
     border-bottom: 1px solid #c8c7cc;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #fff), to(rgba(255, 255, 255, .7)));
     background: linear-gradient(to bottom, #fff 20%, rgba(255, 255, 255, .7) 100%)
 }
 
@@ -11197,6 +10665,7 @@ ion-picker-cmp {
     width: 100%;
     height: 119px;
     border-top: 1px solid #c8c7cc;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(30%, #fff), to(rgba(255, 255, 255, .7)));
     background: linear-gradient(to top, #fff 30%, rgba(255, 255, 255, .7) 100%)
 }
 
@@ -11207,9 +10676,8 @@ ion-picker-cmp {
 }
 
 .picker-md .picker-toolbar {
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: end;
     -webkit-justify-content: flex-end;
     -ms-flex-pack: end;
     justify-content: flex-end;
@@ -11218,6 +10686,7 @@ ion-picker-cmp {
 }
 
 .picker-wp .picker-toolbar, ion-popover {
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox
 }
@@ -11227,6 +10696,7 @@ ion-picker-cmp {
     height: 44px;
     color: #488aff;
     background: 0 0;
+    -webkit-box-shadow: none;
     box-shadow: none
 }
 
@@ -11256,11 +10726,9 @@ ion-picker-cmp {
     margin: 0;
     height: 4.3rem;
     font-size: 22px;
-    line-height: 42px;
     color: #000;
     background: 0 0;
     transition-timing-function: ease-out;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     pointer-events: auto;
     padding: 0
@@ -11280,6 +10748,7 @@ ion-picker-cmp {
     width: 100%;
     height: 81px;
     border-bottom: 1px solid #dedede;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #fff), to(rgba(255, 255, 255, .7)));
     background: linear-gradient(to bottom, #fff 20%, rgba(255, 255, 255, .7) 100%)
 }
 
@@ -11296,6 +10765,7 @@ ion-picker-cmp {
     z-index: 11;
     height: 119px;
     border-top: 1px solid #dedede;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(30%, #fff), to(rgba(255, 255, 255, .7)));
     background: linear-gradient(to top, #fff 30%, rgba(255, 255, 255, .7) 100%)
 }
 
@@ -11307,6 +10777,7 @@ ion-picker-cmp {
 
 .picker-wp .picker-toolbar {
     display: flex;
+    -webkit-box-pack: end;
     -webkit-justify-content: flex-end;
     -ms-flex-pack: end;
     justify-content: flex-end;
@@ -11318,6 +10789,7 @@ ion-picker-cmp {
 .picker-wp .picker-toolbar-button {
     text-align: right;
     text-align: end;
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1
@@ -11334,6 +10806,7 @@ ion-picker-cmp {
     height: 44px;
     color: #488aff;
     background: 0 0;
+    -webkit-box-shadow: none;
     box-shadow: none
 }
 
@@ -11366,6 +10839,7 @@ ion-picker-cmp {
     line-height: 42px;
     color: #000;
     background: 0 0;
+    -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -11383,6 +10857,7 @@ ion-picker-cmp {
     z-index: 10;
     height: 81px;
     border-bottom: 1px solid transparent;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #fff), to(rgba(255, 255, 255, .7)));
     background: linear-gradient(to bottom, #fff 20%, rgba(255, 255, 255, .7) 100%)
 }
 
@@ -11396,6 +10871,7 @@ ion-picker-cmp {
     width: 100%;
     height: 119px;
     border-top: 1px solid transparent;
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(30%, #fff), to(rgba(255, 255, 255, .7)));
     background: linear-gradient(to top, #fff 30%, rgba(255, 255, 255, .7) 100%)
 }
 
@@ -11415,9 +10891,11 @@ ion-popover {
     position: absolute;
     z-index: 1000;
     display: flex;
+    -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center
@@ -11431,10 +10909,13 @@ ion-popover {
 .popover-content {
     position: absolute;
     z-index: 10;
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     overflow: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column
@@ -11489,11 +10970,13 @@ ion-popover {
     -webkit-transform-origin: left top;
     transform-origin: left top;
     width: 250px;
+    -webkit-box-shadow: 0 3px 12px 2px rgba(0, 0, 0, .3);
     box-shadow: 0 3px 12px 2px rgba(0, 0, 0, .3)
 }
 
 .popover-md .popover-viewport {
     opacity: 0;
+    -webkit-transition-delay: .1s;
     transition-delay: .1s
 }
 
@@ -11511,6 +10994,7 @@ ion-popover {
 
 .popover-wp .popover-viewport {
     opacity: 0;
+    -webkit-transition-delay: .1s;
     transition-delay: .1s
 }
 
@@ -11673,6 +11157,7 @@ ion-popover {
     height: 8px;
     -webkit-transform: scale3d(0, 0, 0);
     transform: scale3d(0, 0, 0);
+    -webkit-transition: -webkit-transform 280ms cubic-bezier(.4, 0, .2, 1);
     transition: -webkit-transform 280ms cubic-bezier(.4, 0, .2, 1);
     transition: transform 280ms cubic-bezier(.4, 0, .2, 1);
     transition: transform 280ms cubic-bezier(.4, 0, .2, 1), -webkit-transform 280ms cubic-bezier(.4, 0, .2, 1)
@@ -11851,6 +11336,7 @@ ion-popover {
 .item-wp .radio-wp {
     position: static;
     display: block;
+    -webkit-box-ordinal-group: 0;
     -webkit-order: -1;
     -ms-flex-order: -1;
     order: -1;
@@ -11858,6 +11344,7 @@ ion-popover {
 }
 
 .item-wp .radio-wp[item-end], .item-wp .radio-wp[item-right] {
+    -webkit-box-ordinal-group: 1;
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -11911,6 +11398,8 @@ ion-popover {
 
 .item-range .input-wrapper {
     overflow: visible;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
@@ -11924,21 +11413,23 @@ ion-popover {
 .item-range ion-range ion-label {
     -webkit-align-self: center;
     -ms-flex-item-align: center;
-    -ms-grid-row-align: center;
     align-self: center
 }
 
 ion-range {
     position: relative;
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center
 }
 
 ion-range ion-label {
+    -webkit-box-flex: initial;
     -webkit-flex: initial;
     -ms-flex: initial;
     flex: initial
@@ -11959,6 +11450,7 @@ ion-range ion-icon {
 
 .range-slider {
     position: relative;
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
@@ -12029,6 +11521,7 @@ ion-range ion-icon {
     width: 28px;
     height: 28px;
     background: #fff;
+    -webkit-box-shadow: 0 3px 1px rgba(0, 0, 0, .1), 0 4px 8px rgba(0, 0, 0, .13), 0 0 0 1px rgba(0, 0, 0, .02);
     box-shadow: 0 3px 1px rgba(0, 0, 0, .1), 0 4px 8px rgba(0, 0, 0, .13), 0 0 0 1px rgba(0, 0, 0, .02);
     pointer-events: none
 }
@@ -12056,6 +11549,7 @@ ion-range ion-icon {
     top: -20px;
     color: #000;
     background: 0 0;
+    -webkit-transition: -webkit-transform 120ms ease;
     transition: -webkit-transform 120ms ease;
     transition: transform 120ms ease;
     transition: transform 120ms ease, -webkit-transform 120ms ease;
@@ -12173,10 +11667,13 @@ ion-range ion-icon {
     background: #488aff;
     -webkit-transform: scale(.67);
     transform: scale(.67);
+    -webkit-transition-duration: 120ms;
     transition-duration: 120ms;
+    -webkit-transition-property: background-color, border, -webkit-transform;
     transition-property: background-color, border, -webkit-transform;
     transition-property: transform, background-color, border;
     transition-property: transform, background-color, border, -webkit-transform;
+    -webkit-transition-timing-function: ease;
     transition-timing-function: ease;
     pointer-events: none
 }
@@ -12207,6 +11704,7 @@ ion-range ion-icon {
     height: 28px;
     color: #fff;
     background: #488aff;
+    -webkit-transition: background-color 120ms ease, -webkit-transform 120ms ease;
     transition: background-color 120ms ease, -webkit-transform 120ms ease;
     transition: transform 120ms ease, background-color 120ms ease;
     transition: transform 120ms ease, background-color 120ms ease, -webkit-transform 120ms ease
@@ -12224,6 +11722,7 @@ ion-range ion-icon {
     content: "";
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
+    -webkit-transition: background-color 120ms ease;
     transition: background-color 120ms ease;
     border-radius: 50% 50% 50% 0
 }
@@ -12488,6 +11987,7 @@ ion-range ion-icon {
     top: -24px;
     color: #fff;
     background: #488aff;
+    -webkit-transition: -webkit-transform 120ms ease;
     transition: -webkit-transform 120ms ease;
     transition: transform 120ms ease;
     transition: transform 120ms ease, -webkit-transform 120ms ease;
@@ -12537,9 +12037,11 @@ ion-range ion-icon {
 
 ion-searchbar {
     position: relative;
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
@@ -13062,6 +12564,7 @@ ion-searchbar {
 }
 
 .searchbar-ios.searchbar-animated .searchbar-input, .searchbar-ios.searchbar-animated .searchbar-search-icon {
+    -webkit-transition: all .3s ease;
     transition: all .3s ease
 }
 
@@ -13075,6 +12578,7 @@ ion-searchbar {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     opacity: 0;
+    -webkit-transition: all .3s ease;
     transition: all .3s ease;
     pointer-events: none
 }
@@ -13121,6 +12625,7 @@ ion-searchbar {
     line-height: 3rem;
     color: #141414;
     background-color: #fff;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12)
 }
 
@@ -13159,6 +12664,7 @@ ion-searchbar {
 }
 
 .searchbar-md.searchbar-has-focus.searchbar-show-cancel .searchbar-md-cancel {
+    display: -webkit-inline-box;
     display: -webkit-inline-flex;
     display: -ms-inline-flexbox;
     display: inline-flex
@@ -13287,15 +12793,19 @@ ion-searchbar {
 }
 
 ion-segment {
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
+    -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -13314,6 +12824,7 @@ ion-segment {
 }
 
 .segment-ios .segment-button {
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
@@ -13340,16 +12851,19 @@ ion-segment {
     color: #fff;
     background-color: #488aff;
     opacity: 1;
+    -webkit-transition: .1s all linear;
     transition: .1s all linear
 }
 
 .segment-ios .segment-button:hover:not(.segment-activated) {
     background-color: rgba(72, 138, 255, .1);
+    -webkit-transition: .1s all linear;
     transition: .1s all linear
 }
 
 .segment-ios .segment-button:active:not(.segment-activated) {
     background-color: rgba(72, 138, 255, .16);
+    -webkit-transition: .1s all linear;
     transition: .1s all linear
 }
 
@@ -13670,6 +13184,7 @@ ion-segment {
 }
 
 .segment-md .segment-button {
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
@@ -13682,6 +13197,7 @@ ion-segment {
     font-weight: 500;
     color: #fff;
     opacity: .7;
+    -webkit-transition: .1s all linear;
     transition: .1s all linear
 }
 
@@ -13805,6 +13321,7 @@ ion-segment {
 }
 
 .segment-wp {
+    -webkit-box-pack: start;
     -webkit-justify-content: flex-start;
     -ms-flex-pack: start;
     justify-content: flex-start
@@ -13942,6 +13459,7 @@ ion-segment {
 }
 
 ion-select {
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -13951,6 +13469,7 @@ ion-select {
 
 .select-text {
     overflow: hidden;
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
@@ -14023,6 +13542,7 @@ ion-select {
 .select-wp {
     margin: 13px 8px;
     padding: 0 8px;
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
@@ -14043,7 +13563,6 @@ ion-select {
     position: relative;
     -webkit-align-self: center;
     -ms-flex-item-align: center;
-    -ms-grid-row-align: center;
     align-self: center;
     width: 18px;
     height: 18px
@@ -14073,6 +13592,7 @@ ion-select {
 
 .swiper-container, .swiper-wrapper {
     z-index: 1;
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     position: relative;
@@ -14093,6 +13613,8 @@ ion-select {
 }
 
 .swiper-container-vertical > .swiper-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column
@@ -14100,6 +13622,7 @@ ion-select {
 
 .swiper-wrapper {
     display: flex;
+    -webkit-transition-property: -webkit-transform;
     transition-property: -webkit-transform;
     transition-property: transform;
     transition-property: transform, -webkit-transform;
@@ -14119,32 +13642,37 @@ ion-select {
 
 .swiper-container-free-mode > .swiper-wrapper {
     margin: 0 auto;
+    -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out
 }
 
 .swiper-slide {
     text-align: center;
     position: relative;
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-flex-shrink: 0;
     -ms-flex-negative: 0;
     flex-shrink: 0;
+    -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
     width: 100%;
     height: 100%;
     font-size: 18px;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box
 }
 
-.toggle-ios, .toggle-md, .toggle-wp {
-    box-sizing: content-box
+.toggle-ios, .toggle-md {
+    -webkit-box-sizing: content-box
 }
 
 .swiper-container-autoheight, .swiper-container-autoheight .swiper-slide {
@@ -14152,9 +13680,11 @@ ion-select {
 }
 
 .swiper-container-autoheight .swiper-wrapper {
+    -webkit-box-align: start;
     -webkit-align-items: flex-start;
     -ms-flex-align: start;
     align-items: flex-start;
+    -webkit-transition-property: height, -webkit-transform;
     transition-property: height, -webkit-transform;
     transition-property: transform, height;
     transition-property: transform, height, -webkit-transform
@@ -14232,6 +13762,7 @@ ion-select {
     transform: translate3d(0, 0, 0);
     position: absolute;
     z-index: 10;
+    -webkit-transition: .3s;
     transition: .3s;
     pointer-events: none
 }
@@ -14261,6 +13792,7 @@ button.swiper-pagination-bullet {
     padding: 0;
     appearance: none;
     border: 0;
+    -webkit-box-shadow: none;
     box-shadow: none
 }
 
@@ -14371,18 +13903,22 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-container-3d .swiper-slide-shadow-left {
+    background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, .5)), to(transparent));
     background-image: linear-gradient(to left, rgba(0, 0, 0, .5), transparent)
 }
 
 .swiper-container-3d .swiper-slide-shadow-right {
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .5)), to(transparent));
     background-image: linear-gradient(to right, rgba(0, 0, 0, .5), transparent)
 }
 
 .swiper-container-3d .swiper-slide-shadow-top {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, .5)), to(transparent));
     background-image: linear-gradient(to top, rgba(0, 0, 0, .5), transparent)
 }
 
 .swiper-container-3d .swiper-slide-shadow-bottom {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, .5)), to(transparent));
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, .5), transparent)
 }
 
@@ -14434,10 +13970,6 @@ button.swiper-pagination-bullet {
     pointer-events: auto
 }
 
-.swiper-container-fade .swiper-slide .swiper-slide, .tab-disabled, ion-toast {
-    pointer-events: none
-}
-
 .swiper-container-cube .swiper-cube-shadow {
     left: 0;
     bottom: 0;
@@ -14452,11 +13984,17 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-container-fade.swiper-container-free-mode .swiper-slide {
+    -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out
 }
 
 .swiper-container-fade .swiper-slide {
+    -webkit-transition-property: opacity;
     transition-property: opacity;
+    pointer-events: none
+}
+
+.swiper-container-fade .swiper-slide .swiper-slide {
     pointer-events: none
 }
 
@@ -14464,14 +14002,21 @@ button.swiper-pagination-bullet {
     pointer-events: auto
 }
 
+.tab-disabled, ion-toast {
+    pointer-events: none
+}
+
 .swiper-zoom-container {
     text-align: center;
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -14482,6 +14027,7 @@ button.swiper-pagination-bullet {
 .swiper-zoom-container > canvas, .swiper-zoom-container > img, .swiper-zoom-container > svg {
     max-width: 100%;
     max-height: 100%;
+    -o-object-fit: contain;
     object-fit: contain
 }
 
@@ -15044,9 +14590,12 @@ ion-spinner.spinner-paused svg {
 .split-pane {
     right: 0;
     bottom: 0;
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
@@ -15067,9 +14616,11 @@ ion-spinner.spinner-paused svg {
     bottom: 0;
     position: relative;
     z-index: 0;
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
+    -webkit-box-shadow: none !important;
     box-shadow: none !important
 }
 
@@ -15077,6 +14628,7 @@ ion-spinner.spinner-paused svg {
     -webkit-flex-shrink: 0;
     -ms-flex-negative: 0;
     flex-shrink: 0;
+    -webkit-box-ordinal-group: 0;
     -webkit-order: -1;
     -ms-flex-order: -1;
     order: -1
@@ -15087,6 +14639,7 @@ ion-spinner.spinner-paused svg {
 }
 
 .split-pane-visible > ion-split-pane.split-pane-main, .split-pane-visible > ion-split-pane.split-pane-side {
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex
@@ -15096,6 +14649,7 @@ ion-spinner.spinner-paused svg {
     left: 0;
     right: 0;
     width: auto;
+    -webkit-box-shadow: none !important;
     box-shadow: none !important;
     -webkit-transform: none !important;
     transform: none !important
@@ -15106,24 +14660,28 @@ ion-spinner.spinner-paused svg {
 }
 
 .split-pane-visible > .split-pane-side[side=start] {
+    -webkit-box-ordinal-group: 0;
     -webkit-order: -1;
     -ms-flex-order: -1;
     order: -1
 }
 
 .split-pane-visible > .split-pane-side[side=end] {
+    -webkit-box-ordinal-group: 2;
     -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1
 }
 
 .split-pane-visible > .split-pane-side[side=left] {
+    -webkit-box-ordinal-group: 0;
     -webkit-order: -1;
     -ms-flex-order: -1;
     order: -1
 }
 
 .split-pane-visible > .split-pane-side[side=right] {
+    -webkit-box-ordinal-group: 2;
     -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1
@@ -15170,6 +14728,7 @@ ion-spinner.spinner-paused svg {
     bottom: 0;
     position: absolute;
     z-index: 10;
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -15196,22 +14755,28 @@ ion-spinner.spinner-paused svg {
     border-radius: 0;
     position: relative;
     z-index: 0;
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     overflow: hidden;
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
     -webkit-align-self: center;
     -ms-flex-item-align: center;
     align-self: center;
+    -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -15241,7 +14806,6 @@ ion-spinner.spinner-paused svg {
     overflow: hidden;
     -webkit-align-self: center;
     -ms-flex-item-align: center;
-    -ms-grid-row-align: center;
     align-self: center;
     min-width: 26px;
     max-width: 100%;
@@ -15263,12 +14827,15 @@ ion-spinner.spinner-paused svg {
 }
 
 [tabsLayout=icon-bottom] .tab-button .tab-button-icon {
+    -webkit-box-ordinal-group: 11;
     -webkit-order: 10;
     -ms-flex-order: 10;
     order: 10
 }
 
 [tabsLayout=icon-end] .tab-button, [tabsLayout=icon-left] .tab-button, [tabsLayout=icon-right] .tab-button, [tabsLayout=icon-start] .tab-button {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row
@@ -15284,6 +14851,7 @@ ion-spinner.spinner-paused svg {
     padding-left: 8px;
     text-align: left;
     text-align: start;
+    -webkit-box-ordinal-group: 11;
     -webkit-order: 10;
     -ms-flex-order: 10;
     order: 10
@@ -15312,6 +14880,7 @@ ion-spinner.spinner-paused svg {
 }
 
 .tabs-ios .tabbar {
+    -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -15525,6 +15094,7 @@ ion-spinner.spinner-paused svg {
 .tabs-md .tab-button-text {
     font-size: 1.2rem;
     text-transform: none;
+    -webkit-transition: -webkit-transform .3s ease-in-out;
     transition: -webkit-transform .3s ease-in-out;
     transition: transform .3s ease-in-out;
     transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
@@ -15536,6 +15106,7 @@ ion-spinner.spinner-paused svg {
 .tabs-md .tab-button[aria-selected=true] .tab-button-text {
     -webkit-transform: scale3d(1.16667, 1.16667, 1);
     transform: scale3d(1.16667, 1.16667, 1);
+    -webkit-transition: -webkit-transform .3s ease-in-out;
     transition: -webkit-transform .3s ease-in-out;
     transition: transform .3s ease-in-out;
     transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out
@@ -15555,6 +15126,7 @@ ion-spinner.spinner-paused svg {
     min-width: 2.4rem;
     font-size: 2.4rem;
     color: rgba(60, 60, 60, .7);
+    -webkit-transition: -webkit-transform .3s ease-in-out;
     transition: -webkit-transform .3s ease-in-out;
     transition: transform .3s ease-in-out;
     transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
@@ -15602,6 +15174,7 @@ ion-spinner.spinner-paused svg {
 }
 
 .tabs-md[tabsHighlight=true] .tab-highlight.animate {
+    -webkit-transition-duration: .3s;
     transition-duration: .3s
 }
 
@@ -15780,6 +15353,7 @@ ion-spinner.spinner-paused svg {
     font-size: 1.2rem;
     font-weight: 400;
     color: rgba(140, 140, 140, .7);
+    -webkit-box-shadow: none;
     box-shadow: none;
     padding: 12px 10px 5px
 }
@@ -15976,12 +15550,14 @@ ion-toast {
 }
 
 .toast-container, .toolbar {
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox
 }
 
 .toast-container {
     display: flex;
+    -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
@@ -16077,6 +15653,7 @@ ion-toast {
 }
 
 .toast-message {
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
@@ -16089,6 +15666,7 @@ ion-toast {
     position: relative;
     width: 51px;
     height: 32px;
+    box-sizing: content-box;
     contain: strict
 }
 
@@ -16099,6 +15677,7 @@ ion-toast {
     width: 100%;
     height: 100%;
     background-color: #e6e6e6;
+    -webkit-transition: background-color .3s;
     transition: background-color .3s;
     pointer-events: none
 }
@@ -16114,6 +15693,7 @@ ion-toast {
     content: "";
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
+    -webkit-transition: -webkit-transform .3s;
     transition: -webkit-transform .3s;
     transition: transform .3s;
     transition: transform .3s, -webkit-transform .3s
@@ -16127,7 +15707,9 @@ ion-toast {
     width: 28px;
     height: 28px;
     background-color: #fff;
+    -webkit-box-shadow: 0 3px 12px rgba(0, 0, 0, .16), 0 3px 1px rgba(0, 0, 0, .1);
     box-shadow: 0 3px 12px rgba(0, 0, 0, .16), 0 3px 1px rgba(0, 0, 0, .1);
+    -webkit-transition: width 120ms ease-in-out 80ms, left 110ms ease-in-out 80ms, right 110ms ease-in-out 80ms, -webkit-transform .3s;
     transition: width 120ms ease-in-out 80ms, left 110ms ease-in-out 80ms, right 110ms ease-in-out 80ms, -webkit-transform .3s;
     transition: transform .3s, width 120ms ease-in-out 80ms, left 110ms ease-in-out 80ms, right 110ms ease-in-out 80ms;
     transition: transform .3s, width 120ms ease-in-out 80ms, left 110ms ease-in-out 80ms, right 110ms ease-in-out 80ms, -webkit-transform .3s;
@@ -16216,6 +15798,7 @@ ion-toast {
     position: relative;
     width: 36px;
     height: 14px;
+    box-sizing: content-box;
     contain: strict;
     padding: 12px
 }
@@ -16227,13 +15810,9 @@ ion-toast {
     width: 100%;
     height: 100%;
     background-color: #dedede;
+    -webkit-transition: background-color .3s;
     transition: background-color .3s;
     pointer-events: none
-}
-
-.toggle-md .toggle-inner, .toggle-wp .toggle-inner {
-    transition-duration: .3s;
-    will-change: transform, background-color
 }
 
 .toggle-md .toggle-inner {
@@ -16244,10 +15823,15 @@ ion-toast {
     width: 20px;
     height: 20px;
     background-color: #fff;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+    -webkit-transition-property: background-color, -webkit-transform;
     transition-property: background-color, -webkit-transform;
     transition-property: transform, background-color;
     transition-property: transform, background-color, -webkit-transform;
+    will-change: transform, background-color;
     contain: strict
 }
 
@@ -16364,6 +15948,8 @@ ion-toast {
     position: relative;
     width: 40px;
     height: 18px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
     contain: strict
 }
 
@@ -16387,9 +15973,13 @@ ion-toast {
     width: 10px;
     height: 10px;
     background-color: #323232;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+    -webkit-transition-property: background-color, -webkit-transform;
     transition-property: background-color, -webkit-transform;
     transition-property: transform, background-color;
-    transition-property: transform, background-color, -webkit-transform
+    transition-property: transform, background-color, -webkit-transform;
+    will-change: transform, background-color
 }
 
 .toggle-wp.toggle-checked .toggle-icon {
@@ -16528,12 +16118,16 @@ ion-toolbar {
 .toolbar {
     display: flex;
     overflow: hidden;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
@@ -16555,12 +16149,15 @@ ion-toolbar {
 }
 
 ion-title {
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
+    -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
@@ -16595,6 +16192,7 @@ ion-buttons {
 }
 
 ion-navbar.toolbar {
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -16632,9 +16230,11 @@ ion-navbar.toolbar {
 }
 
 .bar-button-menutoggle {
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center
@@ -16649,9 +16249,11 @@ ion-navbar.toolbar {
 }
 
 .back-button-text {
+    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center
@@ -16688,9 +16290,11 @@ ion-navbar.toolbar {
 }
 
 .toolbar-content-ios {
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
+    -webkit-box-ordinal-group: 5;
     -webkit-order: 4;
     -ms-flex-order: 4;
     order: 4;
@@ -16717,6 +16321,7 @@ ion-navbar.toolbar {
 }
 
 .bar-buttons-ios {
+    -webkit-box-ordinal-group: 4;
     -webkit-order: 3;
     -ms-flex-order: 3;
     order: 3;
@@ -16725,6 +16330,7 @@ ion-navbar.toolbar {
 }
 
 .bar-buttons-ios[left] {
+    -webkit-box-ordinal-group: 3;
     -webkit-order: 2;
     -ms-flex-order: 2;
     order: 2
@@ -16733,6 +16339,7 @@ ion-navbar.toolbar {
 .bar-buttons-ios[end] {
     text-align: right;
     text-align: end;
+    -webkit-box-ordinal-group: 6;
     -webkit-order: 5;
     -ms-flex-order: 5;
     order: 5
@@ -16740,6 +16347,7 @@ ion-navbar.toolbar {
 
 .bar-buttons-ios[right] {
     text-align: right;
+    -webkit-box-ordinal-group: 7;
     -webkit-order: 6;
     -ms-flex-order: 6;
     order: 6
@@ -16810,6 +16418,7 @@ ion-navbar.toolbar {
     margin: 0;
     z-index: 99;
     overflow: visible;
+    -webkit-box-ordinal-group: 1;
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -16837,6 +16446,7 @@ ion-navbar.toolbar {
 .bar-button-menutoggle-ios {
     margin: 0 6px;
     padding: 0;
+    -webkit-box-ordinal-group: 2;
     -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1;
@@ -16849,6 +16459,7 @@ ion-navbar.toolbar {
 }
 
 .bar-button-menutoggle-ios[end], .bar-button-menutoggle-ios[right] {
+    -webkit-box-ordinal-group: 8;
     -webkit-order: 7;
     -ms-flex-order: 7;
     order: 7
@@ -19723,9 +19334,11 @@ ion-navbar.toolbar {
 }
 
 .toolbar-content-md {
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
+    -webkit-box-ordinal-group: 4;
     -webkit-order: 3;
     -ms-flex-order: 3;
     order: 3;
@@ -19741,6 +19354,7 @@ ion-navbar.toolbar {
 }
 
 .bar-buttons-md {
+    -webkit-box-ordinal-group: 5;
     -webkit-order: 4;
     -ms-flex-order: 4;
     order: 4;
@@ -19749,6 +19363,7 @@ ion-navbar.toolbar {
 }
 
 .bar-buttons-md[left] {
+    -webkit-box-ordinal-group: 3;
     -webkit-order: 2;
     -ms-flex-order: 2;
     order: 2
@@ -19761,6 +19376,7 @@ ion-navbar.toolbar {
 .bar-buttons-md[end] {
     text-align: right;
     text-align: end;
+    -webkit-box-ordinal-group: 6;
     -webkit-order: 5;
     -ms-flex-order: 5;
     order: 5
@@ -19768,6 +19384,7 @@ ion-navbar.toolbar {
 
 .bar-buttons-md[right] {
     text-align: right;
+    -webkit-box-ordinal-group: 7;
     -webkit-order: 6;
     -ms-flex-order: 6;
     order: 6
@@ -19836,6 +19453,7 @@ ion-navbar.toolbar {
 .back-button-md {
     margin: 0 6px;
     min-width: 44px;
+    -webkit-box-shadow: none;
     box-shadow: none
 }
 
@@ -19851,6 +19469,7 @@ ion-navbar.toolbar {
 .bar-button-menutoggle-md {
     margin: 0 6px;
     padding: 0 2px;
+    -webkit-box-ordinal-group: 2;
     -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1;
@@ -19864,6 +19483,7 @@ ion-navbar.toolbar {
 
 .bar-button-menutoggle-md[end], .bar-button-menutoggle-md[right] {
     margin: 0 2px;
+    -webkit-box-ordinal-group: 8;
     -webkit-order: 7;
     -ms-flex-order: 7;
     order: 7;
@@ -23680,9 +23300,11 @@ ion-navbar.toolbar {
 }
 
 .toolbar-content-wp {
+    -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
+    -webkit-box-ordinal-group: 4;
     -webkit-order: 3;
     -ms-flex-order: 3;
     order: 3;
@@ -23699,6 +23321,7 @@ ion-navbar.toolbar {
 }
 
 .bar-buttons-wp {
+    -webkit-box-ordinal-group: 5;
     -webkit-order: 4;
     -ms-flex-order: 4;
     order: 4;
@@ -23707,6 +23330,7 @@ ion-navbar.toolbar {
 }
 
 .bar-buttons-wp[left] {
+    -webkit-box-ordinal-group: 3;
     -webkit-order: 2;
     -ms-flex-order: 2;
     order: 2
@@ -23719,6 +23343,7 @@ ion-navbar.toolbar {
 .bar-buttons-wp[end] {
     text-align: right;
     text-align: end;
+    -webkit-box-ordinal-group: 6;
     -webkit-order: 5;
     -ms-flex-order: 5;
     order: 5
@@ -23726,6 +23351,7 @@ ion-navbar.toolbar {
 
 .bar-buttons-wp[right] {
     text-align: right;
+    -webkit-box-ordinal-group: 7;
     -webkit-order: 6;
     -ms-flex-order: 6;
     order: 6
@@ -23796,6 +23422,7 @@ ion-navbar.toolbar {
 .back-button-wp {
     margin: 0 6px;
     min-width: 44px;
+    -webkit-box-shadow: none;
     box-shadow: none
 }
 
@@ -23815,6 +23442,7 @@ ion-navbar.toolbar {
 .bar-button-menutoggle-wp {
     margin: 0 6px;
     padding: 0 2px;
+    -webkit-box-ordinal-group: 2;
     -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1;
@@ -23828,6 +23456,7 @@ ion-navbar.toolbar {
 
 .bar-button-menutoggle-wp[end], .bar-button-menutoggle-wp[right] {
     margin: 0 2px;
+    -webkit-box-ordinal-group: 8;
     -webkit-order: 7;
     -ms-flex-order: 7;
     order: 7;
@@ -27478,22 +27107,6 @@ ion-navbar.toolbar {
     }
 }
 
-.action-sheets-basic-page .ion-md-share {
-    color: #ED4248
-}
-
-.action-sheets-basic-page .ion-md-arrow-dropright-circle {
-    color: #508AE4
-}
-
-.action-sheets-basic-page .ion-md-heart-outline {
-    color: #31D55F
-}
-
-.action-sheets-basic-page .action-sheet-cancel ion-icon, .action-sheets-basic-page .action-sheet-destructive ion-icon {
-    color: #757575
-}
-
 .buttons-components-page ion-card {
     margin-bottom: 2em
 }
@@ -27719,6 +27332,7 @@ ion-card.cards-list-demo ion-card-header {
 }
 
 .icons-basic-page ion-col {
+    -webkit-box-flex: 0;
     -webkit-flex: 0 0 25%;
     -ms-flex: 0 0 25%;
     flex: 0 0 25%;
