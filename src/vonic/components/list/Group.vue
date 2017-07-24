@@ -1,16 +1,16 @@
 <template>
     <div class="list">
-        <item class="list-header" v-if="title" v-text="title"></item>
+        <div class="item list-header" v-if="title">
+            <div class="item-inner">{{title}}</div>
+        </div>
         <slot></slot>
     </div>
+
+
 </template>
 
 <script>
-    import Item from './Item'
     export default {
-        components: {
-          Item
-        },
         props: {
             title: String
         }

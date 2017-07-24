@@ -33,6 +33,8 @@
       // theme-ios for ios, theme-md for android & other
       if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
         this.gradeClass = 'theme-ios'
+      } else if (/Windows Phone/.test(navigator.userAgent)) {
+        this.gradeClass = 'theme-wp'
       } else {
         this.gradeClass = 'theme-md'
       }

@@ -72,6 +72,20 @@ button, input, select, textarea {
   -webkit-font-smoothing: inherit;
 }
 
+button {
+  border: 0;
+  font-family: inherit;
+  font-style: inherit;
+  font-variant: inherit;
+  line-height: 1;
+  text-transform: none;
+}
+
+a[disabled], button[disabled] {
+  cursor: default;
+  opacity: .4;
+  pointer-events: none
+}
 
 textarea {
   padding-left: 0
@@ -764,6 +778,17 @@ progress {
 }
 .clearfix {
   @include clearfix();
+}
+
+label {
+  margin: 0;
+  display: block;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: inherit
 }
 
 // fix fastclick bug: https://github.com/ftlabs/fastclick/issues/60

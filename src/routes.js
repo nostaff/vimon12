@@ -26,6 +26,7 @@ import DemoToggle from './demos/Toggle'
 import DemoRangeSlider from './demos/RangeSlider'
 import DemoBadge from './demos/Badge'
 import DemoDialog from './demos/Dialog'
+import DemoAlert from './demos/Alert'
 import DemoIcon from './demos/Icon'
 
 // Layout
@@ -83,6 +84,8 @@ const routes = [
     { path: '/demo/basic/badge', component: DemoBadge },
     { path: '/demo/basic/icons', component: DemoIcon },
     { path: '/demo/basic/dialog', component: DemoDialog },
+    { path: '/demo/basic/alert', component: DemoAlert },
+
 
     // Layout
     { path: '/demo/layout/header', component: DemoHeader },

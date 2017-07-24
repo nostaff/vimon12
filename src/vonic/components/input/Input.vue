@@ -1,35 +1,39 @@
 <template>
-    <div class="item item-input" :class="{'item-floating-label': floatingLabel == 'true', 'item-stacked-label': stackedLabel == 'true'}">
-        <span class="input-label" v-if="!!label" v-text="label" :class="{'has-input': floatingLabel == 'true' && !!value}"></span>
+    <div class="item item-block item-input" :class="{'item-floating-label': floatingLabel == 'true', 'item-stacked-label': stackedLabel == 'true'}">
+        <div class="item-inner">
+            <div class="input-wrapper">
+                <label class="label fixed" v-if="!!label" v-text="label" :class="{'has-input': floatingLabel == 'true' && !!value}"></label>
 
-        <i class="icon placeholder-icon" v-if="iconClass" :class="iconClass"></i>
+                <i class="icon placeholder-icon" v-if="iconClass" :class="iconClass"></i>
 
-        <input v-if="type == 'text'" type="text" :placeholder="placeholder" ref="input" :value="value"
-               @compositionstart="compositionStart($event)"
-               @compositionend="compositionEnd($event)"
-               @input="input($event)"
-               @focus="focus($event)"
-               @blur="blur($event)" >
+                <input class="text-input" v-if="type == 'text'" type="text" :placeholder="placeholder" ref="input" :value="value"
+                       @compositionstart="compositionStart($event)"
+                       @compositionend="compositionEnd($event)"
+                       @input="input($event)"
+                       @focus="focus($event)"
+                       @blur="blur($event)" >
 
-        <!-- password -->
-        <input v-if="type == 'password'" type="password" :placeholder="placeholder" ref="input" :value="value"
-               @input="updateValue($event.target.value)"
-               @focus="focus($event)"
-               @blur="blur($event)" >
+                <!-- password -->
+                <input v-if="type == 'password'" type="password" :placeholder="placeholder" ref="input" :value="value"
+                       @input="updateValue($event.target.value)"
+                       @focus="focus($event)"
+                       @blur="blur($event)" >
 
-        <!-- email -->
-        <input v-if="type == 'email'" type="email" :placeholder="placeholder" ref="input" :value="value"
-               @input="updateValue($event.target.value)"
-               @focus="focus($event)"
-               @blur="blur($event)" >
+                <!-- email -->
+                <input v-if="type == 'email'" type="email" :placeholder="placeholder" ref="input" :value="value"
+                       @input="updateValue($event.target.value)"
+                       @focus="focus($event)"
+                       @blur="blur($event)" >
 
-        <!-- tel -->
-        <input v-if="type == 'tel'" type="tel" :placeholder="placeholder" ref="input" :value="value"
-               @input="updateValue($event.target.value)"
-               @focus="focus($event)"
-               @blur="blur($event)" >
+                <!-- tel -->
+                <input v-if="type == 'tel'" type="tel" :placeholder="placeholder" ref="input" :value="value"
+                       @input="updateValue($event.target.value)"
+                       @focus="focus($event)"
+                       @blur="blur($event)" >
 
-        <span class="input-clear" :class="{'active': showClearButton}" @click="clear(value)"></span>
+                <span class="input-clear" :class="{'active': showClearButton}" @click="clear(value)"></span>
+            </div>
+        </div>
     </div>
 </template>
 <script>

@@ -1,6 +1,49 @@
 <template>
     <div class="page has-navbar" v-nav="{title: '列表', showBackButton: true}">
-        <div class="page-content">
+        <div class="page-content padding-top">
+
+
+            <div class="list">
+                <div class="group">
+                    <div class="item item-divider">
+                        <div class="item-inner">
+                            <div class="input-wrapper">
+                                <label class="label">A</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item item-block">
+                        <div class="item-inner">
+                            <div class="input-wrapper">
+                                <label class="label">Angola</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item item-block">
+                        <div class="item-inner">
+                            <div class="input-wrapper">
+                                <label class="label">Argentina</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="item item-divider">
+                        <div class="item-inner">
+                            <div class="input-wrapper">
+                                <label class="label">B</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item item-block">
+                        <div class="item-inner">
+                            <div class="input-wrapper">
+                                <label class="label">Brmenia</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <list title="基本">
                 <item>
@@ -8,72 +51,76 @@
                 </item>
                 <item>
                     正文
-                    <span class="item-note">备注</span>
+                    <span slot="right" class="note">备注</span>
                 </item>
                 <item is-link>
                     文字
-                    <div class="item-note">
-                        备注
-                    </div>
+                    <span slot="right" class="note">备注</span>
                 </item>
                 <item link="/home">
                     带link的文字
-                    <div class="item-note">
-                        vale
-                    </div>
+                    <span slot="right" class="note">vale</span>
+                </item>
+
+                <item>
+                    带badge的文字
+                    <span slot="right" class="badge badge-danger">5</span>
                 </item>
             </list>
 
             <div class="list">
                 <item is-link>
-                    <div class="item-icon-left">
-                        <i class="icon ion-ios-email"></i>
-                        Check mail
-                    </div>
+                    <i slot="left" class="icon ion-ios-email"></i>
+                    Check mail
                 </item>
 
                 <item>
-                    <div class="item-icon-left item-icon-right">
-                        <i class="icon ion-ios-chatbubble"></i>
-                        Call Ma
-                        <i class="icon ion-ios-telephone-outline"></i>
-                    </div>
+                    <i slot="left" class="icon ion-ios-chatbubble"></i>
+                    Call Ma
+                    <i slot="right" class="icon ion-ios-telephone-outline"></i>
                 </item>
                 <item is-link>
-                    <div class="item-icon-left">
-                        <i class="icon ion-mic-a"></i>
-                        Record album
-                        <span class="item-note">Grammy</span>
-                    </div>
+                    <i slot="left" class="icon ion-mic-a"></i>
+                    Record album
+                    <span slot="right" class="note">Grammy</span>
                 </item>
                 <item is-link>
-                    <div class="item-icon-left">
-                        <i class="icon ion-person-stalker"></i>
-                        Friends
-                        <span class="badge badge-assertive">0</span>
-                    </div>
+                    <i slot="left" class="icon ion-person-stalker"></i>
+                    Friends
+                    <span slot="right" class="badge badge-assertive">0</span>
                 </item>
 
                 <item>
-                    <div class="item-button-right">
-                        Call Ma
-                        <button class="button button-positive">
-                            <i class="icon ion-ios-telephone"></i>
-                        </button>
-                    </div>
+                    Call Ma
+                    <button slot="right" class="button button-positive">
+                        <i class="icon ion-ios-telephone"></i>
+                    </button>
                 </item>
 
-                <item is-link>
-                    <div class="item-avatar">
+                <item>
+                    <div slot="left" class="avatar">
                         <img src="http://ionicframework.com/img/docs/spengler.jpg">
-                        <h2>Venkman</h2>
-                        <p>Back off, man. I'm a scientist.</p>
                     </div>
+                    <h2>Finn</h2>
+                    <h3>I'm a big deal</h3>
+                    <p>Listen, I've had a pretty messed up day...</p>
+                </item>
+                <item is-link>
+                    <div slot="left" class="avatar">
+                        <img src="http://ionicframework.com/img/docs/spengler.jpg">
+                    </div>
+                    <h2>Venkman</h2>
+                    <p>Back off, man. I'm a scientist.</p>
+                    <button slot="right" class="disable-hover button button-clear">
+                        <span class="button-inner">View</span>
+                    </button>
                 </item>
 
                 <item is-link>
-                    <div class="item-thumbnail-left">
+                    <div slot="left" class="thumbnail">
                         <img src="http://ionicframework.com/img/docs/siamese-dream.jpg">
+                    </div>
+                    <div class="item-thumbnail-left">
                         <h2>Pretty Hate Machine</h2>
                         <p>Nine Inch Nails</p>
                     </div>

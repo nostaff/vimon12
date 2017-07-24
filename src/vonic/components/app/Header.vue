@@ -2,8 +2,7 @@
   <div von-navbar="active" class="bar bar-header bar-transparent" :class="{'cached': cached}">
     <div class="buttons" :class="{'hide': cached}" v-if="showBack">
       <button class="button button-icon" @click="onBackClick()">
-        <span v-html="backText">
-        </span>
+        <span class="button-inner" v-html="backText"></span>
       </button>
     </div>
 

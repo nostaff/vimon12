@@ -1,9 +1,37 @@
 <template>
-    <a v-if="isLink || !!link" class="item" @click="onClick($event)">
-        <slot></slot>
+    <button v-if="isLink" class="item item-block" @click="onClick()">
+        <slot name="left" class="item-left"></slot>
+        <div class="item-inner">
+            <div class="input-wrapper">
+                <label class="label">
+                    <slot></slot>
+                </label>
+            </div>
+            <slot name="right"></slot>
+        </div>
+        <div class="button-effect"></div>
+    </button>
+    <a v-else-if="!!link" class="item item-block" @click="onClick()">
+        <slot name="left"></slot>
+        <div class="item-inner">
+            <div class="input-wrapper">
+                <label class="label">
+                    <slot></slot>
+                </label>
+            </div>
+            <slot name="right"></slot>
+        </div>
     </a>
-    <div v-else class="item">
-        <slot></slot>
+    <div v-else class="item item-block">
+        <slot name="left"></slot>
+        <div class="item-inner">
+            <div class="input-wrapper">
+                <label class="label">
+                    <slot></slot>
+                </label>
+            </div>
+            <slot name="right"></slot>
+        </div>
     </div>
 </template>
 
@@ -21,16 +49,15 @@
         },
         methods: {
             onClick(e) {
-                e.preventDefault()
-//                let btn = e.target
-//
-//                btn.classList.add('activated')
-
                 this.link && $router.forward(this.link)
-//
-//                setTimeout(() => {
-//                    btn.classList.remove('activated')
-//                }, 200)
+            }
+        },
+        mounted () {
+            if (this.$slots.left) {
+                this.$slots.left[0].elm.classList.add('item-left')
+            }
+            if (this.$slots.right) {
+                this.$slots.right[0].elm.classList.add('item-right')
             }
         }
     }

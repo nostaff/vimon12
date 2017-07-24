@@ -2951,3 +2951,26 @@
 .ion-xbox:before {
     content: ""
 }
+
+
+.icon.icon-left, .icon.icon-start {
+  font-size: 1.4em;
+  line-height: .67;
+  pointer-events: none;
+  padding-right: .3em
+}
+
+.icon.icon-end, .icon.icon-right {
+  font-size: 1.4em;
+  line-height: .67;
+  pointer-events: none;
+  padding-left: .4em
+}
+
+
+.icon.icon-only {
+  padding: 0 .5em;
+  font-size: 1.8em;
+  line-height: .67;
+  pointer-events: none
+}
