@@ -6,9 +6,9 @@
 
     <div class="page-content padding-top">
       <p class="text-center">Discount</p>
-      <item v-for="(item, index) in items" :key="index">
+      <ion-item v-for="(item, index) in items" :key="index">
         discount item
-      </item>
+      </ion-item>
     </div>
   </div>
 </template>

@@ -2,13 +2,13 @@
     <div class="page has-navbar" v-nav="{title: '复选框', showBackButton: true}">
         <div class="page-content">
 
-            <von-checkbox title="选择感兴趣的板块:" :options="topics" v-model="chosenTopics" theme="positive"></von-checkbox>
+            <ion-checkbox title="选择感兴趣的板块:" :options="topics" v-model="chosenTopics" theme="positive"></ion-checkbox>
 
             <p class="padding">
                 chosen Topics: {{ chosenTopics }}
             </p>
 
-            <von-checkbox title="去过的省份:" :options="lists" v-model="chosenAreas" theme="royal"></von-checkbox>
+            <ion-checkbox title="去过的省份:" :options="lists" v-model="chosenAreas" theme="royal"></ion-checkbox>
 
             <p class="padding">
                 chosen Areas: {{ chosenAreas }}

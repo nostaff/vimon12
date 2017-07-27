@@ -1,34 +1,34 @@
 <template>
   <div class="page-content padding-top">
 
-    <item is-link @click.native="showAlert()">
+    <ion-item is-link @click.native="showAlert()">
       Alert <span class="item-note">提示框</span>
-          </item>
-    <item is-link @click.native="showConfirm()">
+          </ion-item>
+    <ion-item is-link @click.native="showConfirm()">
       Confirm <span class="item-note">确认框</span>
-          </item>
-    <item is-link @click.native="showAlertIOS()">
+          </ion-item>
+    <ion-item is-link @click.native="showAlertIOS()">
       iOS Alert <span class="item-note">iOS 风格提示框</span>
-          </item>
-    <item is-link @click.native="showConfirmIOS()">
+          </ion-item>
+    <ion-item is-link @click.native="showConfirmIOS()">
       iOS Confirm <span class="item-note">iOS 风格确认框</span>
-          </item>
-    <item class="item-icon-right " @click.native="multiMode()">
+          </ion-item>
+    <ion-item class="item-icon-right " @click.native="multiMode()">
       Multi Mode <span class="item-note">多个同时出现</span>
-          </item>
+          </ion-item>
 
-    <item is-link @click.native="showAlert('scale')">
+    <ion-item is-link @click.native="showAlert('scale')">
       Scale Effect
-          </item>
-    <item is-link @click.native="showAlert('slide')">
+          </ion-item>
+    <ion-item is-link @click.native="showAlert('slide')">
       Slide Effect
-          </item>
+          </ion-item>
 
     <div style="height: 10px;"></div>
 
-    <item is-link @click.native="showCustomPopup()">
+    <ion-item is-link @click.native="showCustomPopup()">
       Custom Popup
-          </item>
+          </ion-item>
 
     <div style="height: 10px;"></div>
 

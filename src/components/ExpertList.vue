@@ -1,10 +1,10 @@
 <template>
-    <list>
-        <item class="title" v-if="title" :link="moreLink">
+    <ion-list>
+        <ion-item class="title" v-if="title" :link="moreLink">
             {{title}}
             <span class="item-note" v-if="moreLink">更多</span>
-        </item>
-        <item class="expert" v-for="expert in expertLists" :key="expert.id" link="/expert/10001">
+        </ion-item>
+        <ion-item class="expert" v-for="expert in expertLists" :key="expert.id" link="/expert/10001">
             <!--<div class="item-avatar">-->
                 <!--<img :src="expert.avatar" :alt="expert.title">-->
                 <!--<h2>{{expert.name}}</h2>-->
@@ -26,8 +26,8 @@
                     个人成长：早年创伤修复，认知调整。
                     青少年：学习压力、考试焦虑、早恋心理调适。</p>
             </div>
-        </item>
-    </list>
+        </ion-item>
+    </ion-list>
 </template>
 
 <script>

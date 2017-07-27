@@ -1,48 +1,56 @@
 <template>
-    <div class="item item-block item-input" :class="{'item-floating-label': floatingLabel == 'true', 'item-stacked-label': stackedLabel == 'true'}">
+    <div class="item item-block item-input"
+         :class="{
+            'item-label-floating': floatingLabel == 'true',
+            'item-label-stacked': stackedLabel == 'true',
+            'input-has-focus': inputHasFocus,
+            'item-input-has-focus': inputHasFocus,
+            'input-has-value': inputHasValue
+        }"
+    >
         <div class="item-inner">
             <div class="input-wrapper">
-                <label class="label fixed" v-if="!!label" v-text="label" :class="{'has-input': floatingLabel == 'true' && !!value}"></label>
+                <span class="label fixed" v-if="!!label" v-text="label"
+                      :class="{'floating': floatingLabel == 'true', 'stacked': stackedLabel == 'true'}"
+                ></span>
 
-                <i class="icon placeholder-icon" v-if="iconClass" :class="iconClass"></i>
+                <template v-if="type !== 'textarea'">
+                    <i class="icon placeholder-icon" v-if="iconClass" :class="iconClass"></i>
+                    <span class="input-clear" :class="{'activated': inputHasValue}" @click="clear(value)"></span>
 
-                <input class="text-input" v-if="type == 'text'" type="text" :placeholder="placeholder" ref="input" :value="value"
-                       @compositionstart="compositionStart($event)"
-                       @compositionend="compositionEnd($event)"
-                       @input="input($event)"
-                       @focus="focus($event)"
-                       @blur="blur($event)" >
+                    <input class="text-input" :class="['text-input-'+theme]" :type="type" :placeholder="placeholder" ref="input" :value="value"
+                           @change="change($event)"
+                           @focus="focus($event)"
+                           @blur="blur($event)"
+                           @clickoutside="doCloseActive"
+                    >
 
-                <!-- password -->
-                <input v-if="type == 'password'" type="password" :placeholder="placeholder" ref="input" :value="value"
-                       @input="updateValue($event.target.value)"
-                       @focus="focus($event)"
-                       @blur="blur($event)" >
+                </template>
+                <textarea v-else class="text-input" :class="['text-input-'+theme]" ref="input" :placeholder="placeholder"
+                          @focus="active = true"
+                          @blur="active = false" :disabled="disabled" :readonly="readonly"
+                          :value="currentValue" @input="handleInput">
+                </textarea>
 
-                <!-- email -->
-                <input v-if="type == 'email'" type="email" :placeholder="placeholder" ref="input" :value="value"
-                       @input="updateValue($event.target.value)"
-                       @focus="focus($event)"
-                       @blur="blur($event)" >
-
-                <!-- tel -->
-                <input v-if="type == 'tel'" type="tel" :placeholder="placeholder" ref="input" :value="value"
-                       @input="updateValue($event.target.value)"
-                       @focus="focus($event)"
-                       @blur="blur($event)" >
-
-                <span class="input-clear" :class="{'active': showClearButton}" @click="clear(value)"></span>
             </div>
         </div>
     </div>
 </template>
 <script>
 
-    let lock = false
-
-    const is_ios = /iPad|iPhone|iPod/.test(navigator.userAgent)
+    import ThemeMixins from '../../themes/theme.mixins';
+    import Clickoutside from '../../utils/clickoutside';
+    import IonButton from '../button';
 
     export default {
+        name: 'ion-input',
+        mixins: [ThemeMixins],
+        components: {
+            IonButton
+        },
+        directives: {
+            Clickoutside
+        },
         props: {
             type: {
                 type: String,
@@ -85,7 +93,8 @@
 
         data() {
             return {
-                showClearButton: false
+                inputHasValue: false,
+                inputHasFocus: false
             }
         },
 
@@ -94,20 +103,16 @@
                 this.$refs.input.blur()
                 this.$refs.input.value = ''
                 this.$emit('input', '')
-                this.showClearButton = false
+                this.inputHasValue = false
                 this.$refs.input.focus()
             },
 
             updateValue(value) {
-                console.log('updateValue')
-
                 this.$refs.input.value = value
                 this.$emit('input', value)
             },
 
-            input($event) {
-                console.log('input')
-
+            change($event) {
                 if (lock) {
                     $event.preventDefault()
                     return
@@ -118,31 +123,26 @@
                 this.$emit('input', value)
             },
 
-            compositionStart($event) {
-                lock = true
-            },
-
-            compositionEnd($event) {
-                lock = false
-                this.$emit('input', this.$refs.input.value)
-            },
-
             focus($event) {
-                console.log('focus')
-                if (is_ios) this.showClearButton = !!this.$refs.input.value
+                this.inputHasFocus = true
             },
 
             blur($event) {
-                console.log('blur')
-
-                if (is_ios) this.showClearButton = false
+                this.inputHasFocus = false
             }
         },
 
         watch: {
             value: function (newValue) {
-                this.showClearButton = !!newValue
+                this.inputHasValue = !!newValue
             }
         }
     }
 </script>
+
+<style lang="scss">
+    @import './input.scss';
+    @import './input.ios.scss';
+    @import './input.md.scss';
+    @import './input.wp.scss';
+</style>

@@ -1,39 +1,72 @@
 import './scss/vonic.scss'
 
+import './fonts/ionicons.scss'
+
 import Vue from 'vue'
 import VueScroller from 'vue-scroller'
 Vue.use(VueScroller)
 
+const DEFAULT_CONFIG = {
+    theme: 'ios',
+    version: '0.0.1',
+    iconMode: ''
+};
+
+import util from "./utils/util";
+Vue.prototype.$ionic = util.extend(DEFAULT_CONFIG);
+
+// import VueTonch from "./utils/vue-touch";
+// Vue.use(VueTonch);
+
 // Basic
-import VonInput from './components/input/Input'
-import Search from './components/input/Search'
-import VonRadio from './components/input/Radio'
-import VonCheckbox from './components/input/CheckBox'
-import VonSelect from './components/input/Select'
-import VonToggle from './components/toggle'
+import Avatar from './components/avatar'
+import Label from './components/label'
+import Note from './components/note'
+import Icon from './components/icon'
+// import { Header, Footer, ToolBar, Title, Buttons } from "./components/header";
+import Button from './components/button'
+import Input from './components/input'
+// import Search from './components/input/Search'
+import Radio from './components/radio'
+import Checkbox from './components/checkbox'
+import Select from './components/select'
+import Toggle from './components/toggle'
+import Thumbnail from './components/thumbnail'
 import VonRange from './components/range'
 import VonHeader from './components/header'
-import VonBadge from './components/badge'
+import Badge from './components/badge'
 
-Vue.component('von-input', VonInput)
-Vue.component('search', Search)
-Vue.component('von-radio', VonRadio)
-Vue.component('von-checkbox', VonCheckbox)
-Vue.component('von-select', VonSelect)
-Vue.component('von-toggle', VonToggle)
+Vue.component(Avatar.name, Avatar)
+Vue.component(Label.name, Label)
+Vue.component(Note.name, Note)
+Vue.component(Icon.name, Icon)
+Vue.component(Button.name, Button)
+Vue.component(Input.name, Input)
+// Vue.component('search', Search)
+Vue.component('ion-radio', Radio)
+Vue.component('ion-checkbox', Checkbox)
+Vue.component('von-select', Select)
+Vue.component(Thumbnail.name, Thumbnail)
+Vue.component('ion-toggle', Toggle)
 Vue.component('von-range', VonRange)
 Vue.component('von-header', VonHeader)
-Vue.component('badge', VonBadge)
+// Vue.component(Badge.name, Badge)
 
 // Layout
-import List from './components/list/List'
-import Item from './components/list/Item'
+import {List, ListHeader} from './components/list'
+import {Item, ItemGroup, ItemOptions, ItemSliding} from './components/item'
+
 import Cells from './components/cells'
 import Tabs from './components/tabs'
 import ButtonBar from './components/buttonbar'
 
-Vue.component('list', List)
-Vue.component('item', Item)
+Vue.component(List.name, List)
+Vue.component(ListHeader.name, ListHeader)
+Vue.component(Item.name, Item)
+Vue.component(ItemGroup.name, ItemGroup)
+Vue.component(ItemOptions.name, ItemOptions)
+Vue.component(ItemSliding.name, ItemSliding)
+
 Vue.component('cells', Cells)
 Vue.component('tabs', Tabs)
 Vue.component('button-bar', ButtonBar)
@@ -60,16 +93,19 @@ import Plugin from './plugin'
 
 export default {
     // Basic
-    VonInput,
-    Search,
-    VonRadio,
-    VonCheckbox,
-    VonHeader,
-    VonBadge,
+    // Label,
+    Icon,
+    // Input,
+    // Search,
+    Radio,
+    Checkbox,
+    // Header,
+    // Badge,
 
     // Layout
-    List,
-    Item,
+    // List,
+    // ListHeader,
+    // Item,
     Cells,
     Tabs,
     ButtonBar,

@@ -4,7 +4,7 @@
       <div class="padding">
         <badge num="2"></badge>
         <badge num="35"></badge>
-        <badge num="99<sup>+</sup>"></badge>
+        <badge num="99" color="dark"></badge>
       </div>
     </div>
   </div>

@@ -22,7 +22,6 @@
   import channel from './channel'
 
   const TITLE_TRANSITION = () => (document.body.classList.contains('theme-ios') && !window.__disable_nav_title_transition__) ?
-    // '500ms cubic-bezier(.36, .66, .04, 1)' : '0ms'
     '500ms cubic-bezier(.15, .1, .02, 1)' : '0ms'
 
   const DEFAULT_BACK_TEXT = '<i class="icon ion-ios-arrow-back"></i>'

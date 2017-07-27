@@ -1,137 +1,468 @@
-.item-toggle {
-  pointer-events: none
-}
-
-.toggle {
-  position: relative;
-  display: inline-block;
-  pointer-events: auto;
-  margin: -5px;
-  padding: 5px
-}
-
-.toggle input:checked + .track {
-  border-color: #4cd964;
-  background-color: #4cd964
-}
-
-.toggle.dragging .handle {
-  background-color: #f2f2f2 !important
-}
-
-.toggle.toggle-light input:checked + .track {
-  border-color: #ddd;
-  background-color: #ddd
-}
-
-.toggle.toggle-stable input:checked + .track {
-  border-color: #b2b2b2;
-  background-color: #b2b2b2
-}
-
-.toggle.toggle-positive input:checked + .track {
-  border-color: #4a90e2;
-  background-color: #4a90e2
-}
-
-.toggle.toggle-calm input:checked + .track {
-  border-color: #11c1f3;
-  background-color: #11c1f3
-}
-
-.toggle.toggle-assertive input:checked + .track {
-  border-color: #ea5a49;
-  background-color: #ea5a49
-}
-
-.toggle.toggle-balanced input:checked + .track {
-  border-color: #4c0;
-  background-color: #4c0
-}
-
-.toggle.toggle-energized input:checked + .track {
-  border-color: #ffbd17;
-  background-color: #ffbd17
-}
-
-.toggle.toggle-royal input:checked + .track {
-  border-color: #b5b5b5;
-  background-color: #b5b5b5
-}
-
-.toggle.toggle-dark input:checked + .track {
-  border-color: #484746;
-  background-color: #484746
-}
 
 .toggle input {
   display: none
 }
 
-.toggle .track {
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  -webkit-transition-duration: .3s;
-  transition-duration: .3s;
-  -webkit-transition-property: background-color, border;
-  transition-property: background-color, border;
-  display: inline-block;
-  box-sizing: border-box;
-  width: 51px;
-  height: 31px;
-  border: solid 2px #e6e6e6;
-  border-radius: 20px;
-  background-color: #fff;
-  content: ' ';
-  cursor: pointer;
-  pointer-events: none
+.theme-ios {
+
+  .toggle {
+    position: relative;
+    width: 51px;
+    height: 32px;
+    box-sizing: content-box;
+    contain: strict;
+    -webkit-box-sizing: content-box;
+    display: inline-block;
+  }
+
+  .toggle .toggle-icon {
+    border-radius: 16px;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #e6e6e6;
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+    pointer-events: none
+  }
+
+  .toggle .toggle-icon::before {
+    left: 2px;
+    right: 2px;
+    top: 2px;
+    bottom: 2px;
+    border-radius: 16px;
+    position: absolute;
+    background-color: #fff;
+    content: "";
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    -webkit-transition: -webkit-transform .3s;
+    transition: -webkit-transform .3s;
+    transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s
+  }
+
+  .toggle .toggle-inner {
+    left: 2px;
+    top: 2px;
+    border-radius: 14px;
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 3px 12px rgba(0, 0, 0, .16), 0 3px 1px rgba(0, 0, 0, .1);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .16), 0 3px 1px rgba(0, 0, 0, .1);
+    -webkit-transition: width 120ms ease-in-out 80ms, left 110ms ease-in-out 80ms, right 110ms ease-in-out 80ms, -webkit-transform .3s;
+    transition: width 120ms ease-in-out 80ms, left 110ms ease-in-out 80ms, right 110ms ease-in-out 80ms, -webkit-transform .3s;
+    transition: transform .3s, width 120ms ease-in-out 80ms, left 110ms ease-in-out 80ms, right 110ms ease-in-out 80ms;
+    transition: transform .3s, width 120ms ease-in-out 80ms, left 110ms ease-in-out 80ms, right 110ms ease-in-out 80ms, -webkit-transform .3s;
+    will-change: transform;
+    contain: strict
+  }
+
+  .toggle-primary.toggle-checked .toggle-icon, .toggle.toggle-checked .toggle-icon {
+    background-color: #488aff
+  }
+
+  .toggle.toggle-activated .toggle-icon::before, .toggle.toggle-checked .toggle-icon::before {
+    -webkit-transform: scale3d(0, 0, 0);
+    transform: scale3d(0, 0, 0)
+  }
+
+  .toggle.toggle-checked .toggle-inner {
+    -webkit-transform: translate3d(19px, 0, 0);
+    transform: translate3d(19px, 0, 0)
+  }
+
+  .toggle.toggle-activated.toggle-checked .toggle-inner::before {
+    -webkit-transform: scale3d(0, 0, 0);
+    transform: scale3d(0, 0, 0)
+  }
+
+  .toggle.toggle-activated .toggle-inner {
+    width: 34px
+  }
+
+  .toggle.toggle-activated.toggle-checked .toggle-inner {
+    left: -4px
+  }
+
+  .item.item-toggle-disabled .label, .toggle.toggle-disabled {
+    opacity: .3;
+    pointer-events: none
+  }
+
+  .item .toggle {
+    margin: 0;
+    padding: 6px 8px 5px 16px
+  }
+
+  .item .toggle.item-left, .item .toggle.item-start {
+    padding: 6px 16px 5px 0
+  }
+
+  .toggle-secondary.toggle-checked .toggle-icon {
+    background-color: #32db64
+  }
+
+  .toggle-danger.toggle-checked .toggle-icon {
+    background-color: #f53d3d
+  }
+
+  .toggle-light.toggle-checked .toggle-icon {
+    background-color: #f4f4f4
+  }
+
+  .toggle-dark.toggle-checked .toggle-icon {
+    background-color: #222
+  }
+
+  .toggle-energized.toggle-checked .toggle-icon {
+    background-color: #ffc527
+  }
+
+  .toggle-royal.toggle-checked .toggle-icon {
+    background-color: #7e60ff
+  }
+
+  .toggle-subtle.toggle-checked .toggle-icon {
+    background-color: #444
+  }
+
+  .toggle-vibrant.toggle-checked .toggle-icon {
+    background-color: #663399
+  }
+
+  .toggle-bright.toggle-checked .toggle-icon {
+    background-color: #ffc125
+  }
+
 }
 
-.toggle .handle {
-  -webkit-transition: .3s cubic-bezier(0, 1.1, 1, 1.1);
-  transition: .3s cubic-bezier(0, 1.1, 1, 1.1);
-  -webkit-transition-property: background-color, transform;
-  transition-property: background-color, transform;
-  position: absolute;
-  display: block;
-  width: 27px;
-  height: 27px;
-  border-radius: 27px;
-  background-color: #fff;
-  top: 7px;
-  left: 7px;
-  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.35), 0 1px 1px rgba(0, 0, 0, 0.15)
-}
+.theme-md {
 
-.toggle .handle:before {
-  position: absolute;
-  top: -4px;
-  left: -21.5px;
-  padding: 18.5px 34px;
-  content: " "
-}
+  .toggle {
+    position: relative;
+    width: 36px;
+    height: 14px;
+    box-sizing: content-box;
+    contain: strict;
+    padding: 12px;
+    -webkit-box-sizing: content-box
+  }
 
-.toggle input:checked + .track .handle {
-  -webkit-transform: translate3d(20px, 0, 0);
-  transform: translate3d(20px, 0, 0);
-  background-color: #fff
-}
+  .toggle .toggle-icon {
+    border-radius: 14px;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #dedede;
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+    pointer-events: none
+  }
 
-.item-toggle.active {
-  box-shadow: none
-}
+  .toggle .toggle-inner {
+    left: 0;
+    top: -3px;
+    border-radius: 50%;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+    -webkit-transition-property: background-color, -webkit-transform;
+    transition-property: background-color, -webkit-transform;
+    transition-property: transform, background-color;
+    transition-property: transform, background-color, -webkit-transform;
+    will-change: transform, background-color;
+    contain: strict
+  }
 
-.item-toggle {
-  padding-right: 99px
-}
+  .toggle.toggle-checked .toggle-icon {
+    background-color: #c8dcff
+  }
 
-.item-toggle .toggle {
-  position: absolute;
-  top: 10px;
-  right: 16px;
-  z-index: 3
-}
+  .toggle.toggle-checked .toggle-inner {
+    -webkit-transform: translate3d(16px, 0, 0);
+    transform: translate3d(16px, 0, 0);
+    background-color: #488aff
+  }
 
-.toggle input:disabled + .track {
-  opacity: .6
+  .item.item-toggle-disabled .label, .toggle.toggle-disabled {
+    opacity: .3;
+    pointer-events: none
+  }
+
+  .toggle.toggle-disabled .radio {
+    opacity: .3
+  }
+
+  .item .toggle {
+    cursor: pointer;
+    margin: 0;
+    padding: 12px 8px 12px 16px
+  }
+
+  .item .toggle.item-left, .item .toggle.item-start {
+    padding: 12px 18px 12px 2px
+  }
+
+  .toggle-primary.toggle-checked .toggle-icon {
+    background-color: #c8dcff
+  }
+
+  .toggle-primary.toggle-checked .toggle-inner {
+    background-color: #488aff
+  }
+
+  .toggle-secondary.toggle-checked .toggle-icon {
+    background-color: #9eeeb6
+  }
+
+  .toggle-secondary.toggle-checked .toggle-inner {
+    background-color: #32db64
+  }
+
+  .toggle-danger.toggle-checked .toggle-icon {
+    background-color: #fbb6b6
+  }
+
+  .toggle-danger.toggle-checked .toggle-inner {
+    background-color: #f53d3d
+  }
+
+  .toggle-light.toggle-checked .toggle-icon {
+    background-color: #fff
+  }
+
+  .toggle-light.toggle-checked .toggle-inner {
+    background-color: #f4f4f4
+  }
+
+  .toggle-dark.toggle-checked .toggle-icon {
+    background-color: #626262
+  }
+
+  .toggle-dark.toggle-checked .toggle-inner {
+    background-color: #222
+  }
+
+  .toggle-energized.toggle-checked .toggle-icon {
+    background-color: #ffe7a7
+  }
+
+  .toggle-energized.toggle-checked .toggle-inner {
+    background-color: #ffc527
+  }
+
+  .toggle-royal.toggle-checked .toggle-icon {
+    background-color: #e5e0ff
+  }
+
+  .toggle-royal.toggle-checked .toggle-inner {
+    background-color: #7e60ff
+  }
+
+  .toggle-subtle.toggle-checked .toggle-icon {
+    background-color: #848484
+  }
+
+  .toggle-subtle.toggle-checked .toggle-inner {
+    background-color: #444
+  }
+
+  .toggle-vibrant.toggle-checked .toggle-icon {
+    background-color: #a679d2
+  }
+
+  .toggle-vibrant.toggle-checked .toggle-inner {
+    background-color: #663399
+  }
+
+  .toggle-bright.toggle-checked .toggle-icon {
+    background-color: #ffe5a5
+  }
+
+  .toggle-bright.toggle-checked .toggle-inner {
+    background-color: #ffc125
+  }
+
+  }
+
+
+.theme-wp {
+
+  .toggle {
+    position: relative;
+    width: 40px;
+    height: 18px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    contain: strict
+  }
+
+  .toggle .toggle-icon {
+    border-radius: 18px;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #323232;
+    background-color: transparent;
+    pointer-events: none;
+    contain: strict
+  }
+
+  .toggle .toggle-inner {
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #323232;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+    -webkit-transition-property: background-color, -webkit-transform;
+    transition-property: background-color, -webkit-transform;
+    transition-property: transform, background-color;
+    transition-property: transform, background-color, -webkit-transform;
+    will-change: transform, background-color
+  }
+
+  .toggle.toggle-checked .toggle-icon {
+    border-color: #488aff;
+    background-color: #488aff
+  }
+
+  .toggle.toggle-checked .toggle-inner {
+    -webkit-transform: translate3d(22px, 0, 0);
+    transform: translate3d(22px, 0, 0);
+    background-color: #fff
+  }
+
+  .toolbar-background, .title {
+    -webkit-transform: translateZ(0)
+  }
+
+  .item.item-toggle-disabled .label, .toggle.toggle-disabled {
+    opacity: .3;
+    pointer-events: none
+  }
+
+  .toggle.toggle-disabled .radio {
+    opacity: .3
+  }
+
+  .bar-button-bright-ios.activated, .bar-button-clear-ios-bright.activated, .bar-button-clear-ios-clear.activated, .bar-button-clear-ios-danger.activated, .bar-button-clear-ios-dark.activated, .bar-button-clear-ios-default.activated, .bar-button-clear-ios-energized.activated, .bar-button-clear-ios-light.activated, .bar-button-clear-ios-primary.activated, .bar-button-clear-ios-royal.activated, .bar-button-clear-ios-secondary.activated, .bar-button-clear-ios-subtle.activated, .bar-button-clear-ios-vibrant.activated, .bar-button-clear-ios.activated, .bar-button-danger-ios.activated, .bar-button-dark-ios.activated, .bar-button-default-ios.activated, .bar-button-default.bar-button-ios-bright.activated, .bar-button-default.bar-button-ios-clear.activated, .bar-button-default.bar-button-ios-danger.activated, .bar-button-default.bar-button-ios-dark.activated, .bar-button-default.bar-button-ios-default.activated, .bar-button-default.bar-button-ios-energized.activated, .bar-button-default.bar-button-ios-light.activated, .bar-button-default.bar-button-ios-primary.activated, .bar-button-default.bar-button-ios-royal.activated, .bar-button-default.bar-button-ios-secondary.activated, .bar-button-default.bar-button-ios-subtle.activated, .bar-button-default.bar-button-ios-vibrant.activated, .bar-button-energized-ios.activated, .bar-button-light-ios.activated, .bar-button-outline-ios:hover:not(.disable-hover), .bar-button-outline-md:hover:not(.disable-hover), .bar-button-outline-wp:hover:not(.disable-hover), .bar-button-primary-ios.activated, .bar-button-royal-ios.activated, .bar-button-secondary-ios.activated, .bar-button-solid-ios.activated, .bar-button-solid-ios:hover:not(.disable-hover), .bar-button-subtle-ios.activated, .bar-button-vibrant-ios.activated, .toolbar-ios-bright .bar-button-bright-ios.activated, .toolbar-ios-bright .bar-button-clear-ios-bright.activated, .toolbar-ios-bright .bar-button-clear-ios-danger.activated, .toolbar-ios-bright .bar-button-clear-ios-dark.activated, .toolbar-ios-bright .bar-button-clear-ios-energized.activated, .toolbar-ios-bright .bar-button-clear-ios-light.activated, .toolbar-ios-bright .bar-button-clear-ios-primary.activated, .toolbar-ios-bright .bar-button-clear-ios-royal.activated, .toolbar-ios-bright .bar-button-clear-ios-secondary.activated, .toolbar-ios-bright .bar-button-clear-ios-subtle.activated, .toolbar-ios-bright .bar-button-clear-ios-vibrant.activated, .toolbar-ios-bright .bar-button-danger-ios.activated, .toolbar-ios-bright .bar-button-dark-ios.activated, .toolbar-ios-bright .bar-button-default.bar-button-ios-bright.activated, .toolbar-ios-bright .bar-button-default.bar-button-ios-danger.activated, .toolbar-ios-bright .bar-button-default.bar-button-ios-dark.activated, .toolbar-ios-bright .bar-button-default.bar-button-ios-energized.activated, .toolbar-ios-bright .bar-button-default.bar-button-ios-light.activated, .toolbar-ios-bright .bar-button-default.bar-button-ios-primary.activated, .toolbar-ios-bright .bar-button-default.bar-button-ios-royal.activated, .toolbar-ios-bright .bar-button-default.bar-button-ios-secondary.activated, .toolbar-ios-bright .bar-button-default.bar-button-ios-subtle.activated, .toolbar-ios-bright .bar-button-default.bar-button-ios-vibrant.activated, .toolbar-ios-bright .bar-button-energized-ios.activated, .toolbar-ios-bright .bar-button-light-ios.activated, .toolbar-ios-bright .bar-button-primary-ios.activated, .toolbar-ios-bright .bar-button-royal-ios.activated, .toolbar-ios-bright .bar-button-secondary-ios.activated, .toolbar-ios-bright .bar-button-subtle-ios.activated, .toolbar-ios-bright .bar-button-vibrant-ios.activated, .toolbar-ios-danger .bar-button-bright-ios.activated, .toolbar-ios-danger .bar-button-clear-ios-bright.activated, .toolbar-ios-danger .bar-button-clear-ios-danger.activated, .toolbar-ios-danger .bar-button-clear-ios-dark.activated, .toolbar-ios-danger .bar-button-clear-ios-energized.activated, .toolbar-ios-danger .bar-button-clear-ios-light.activated, .toolbar-ios-danger .bar-button-clear-ios-primary.activated, .toolbar-ios-danger .bar-button-clear-ios-royal.activated, .toolbar-ios-danger .bar-button-clear-ios-secondary.activated, .toolbar-ios-danger .bar-button-clear-ios-subtle.activated, .toolbar-ios-danger .bar-button-clear-ios-vibrant.activated, .toolbar-ios-danger .bar-button-danger-ios.activated, .toolbar-ios-danger .bar-button-dark-ios.activated, .toolbar-ios-danger .bar-button-default.bar-button-ios-bright.activated, .toolbar-ios-danger .bar-button-default.bar-button-ios-danger.activated, .toolbar-ios-danger .bar-button-default.bar-button-ios-dark.activated, .toolbar-ios-danger .bar-button-default.bar-button-ios-energized.activated, .toolbar-ios-danger .bar-button-default.bar-button-ios-light.activated, .toolbar-ios-danger .bar-button-default.bar-button-ios-primary.activated, .toolbar-ios-danger .bar-button-default.bar-button-ios-royal.activated, .toolbar-ios-danger .bar-button-default.bar-button-ios-secondary.activated, .toolbar-ios-danger .bar-button-default.bar-button-ios-subtle.activated, .toolbar-ios-danger .bar-button-default.bar-button-ios-vibrant.activated, .toolbar-ios-danger .bar-button-energized-ios.activated, .toolbar-ios-danger .bar-button-light-ios.activated, .toolbar-ios-danger .bar-button-primary-ios.activated, .toolbar-ios-danger .bar-button-royal-ios.activated, .toolbar-ios-danger .bar-button-secondary-ios.activated, .toolbar-ios-danger .bar-button-subtle-ios.activated, .toolbar-ios-danger .bar-button-vibrant-ios.activated, .toolbar-ios-dark .bar-button-clear-ios-danger.activated, .toolbar-ios-dark .bar-button-clear-ios-dark.activated, .toolbar-ios-dark .bar-button-clear-ios-energized.activated, .toolbar-ios-dark .bar-button-clear-ios-light.activated, .toolbar-ios-dark .bar-button-clear-ios-primary.activated, .toolbar-ios-dark .bar-button-clear-ios-royal.activated, .toolbar-ios-dark .bar-button-clear-ios-secondary.activated, .toolbar-ios-dark .bar-button-clear-ios-subtle.activated, .toolbar-ios-dark .bar-button-clear-ios-vibrant.activated, .toolbar-ios-dark .bar-button-danger-ios.activated, .toolbar-ios-dark .bar-button-dark-ios.activated, .toolbar-ios-dark .bar-button-default.bar-button-ios-danger.activated, .toolbar-ios-dark .bar-button-default.bar-button-ios-dark.activated, .toolbar-ios-dark .bar-button-default.bar-button-ios-energized.activated, .toolbar-ios-dark .bar-button-default.bar-button-ios-light.activated, .toolbar-ios-dark .bar-button-default.bar-button-ios-primary.activated, .toolbar-ios-dark .bar-button-default.bar-button-ios-royal.activated, .toolbar-ios-dark .bar-button-default.bar-button-ios-secondary.activated, .toolbar-ios-dark .bar-button-default.bar-button-ios-subtle.activated, .toolbar-ios-dark .bar-button-default.bar-button-ios-vibrant.activated, .toolbar-ios-dark .bar-button-energized-ios.activated, .toolbar-ios-dark .bar-button-light-ios.activated, .toolbar-ios-dark .bar-button-primary-ios.activated, .toolbar-ios-dark .bar-button-royal-ios.activated, .toolbar-ios-dark .bar-button-secondary-ios.activated, .toolbar-ios-dark .bar-button-subtle-ios.activated, .toolbar-ios-dark .bar-button-vibrant-ios.activated, .toolbar-ios-energized .bar-button-bright-ios.activated, .toolbar-ios-energized .bar-button-clear-ios-bright.activated, .toolbar-ios-energized .bar-button-clear-ios-danger.activated, .toolbar-ios-energized .bar-button-clear-ios-dark.activated, .toolbar-ios-energized .bar-button-clear-ios-energized.activated, .toolbar-ios-energized .bar-button-clear-ios-light.activated, .toolbar-ios-energized .bar-button-clear-ios-primary.activated, .toolbar-ios-energized .bar-button-clear-ios-royal.activated, .toolbar-ios-energized .bar-button-clear-ios-secondary.activated, .toolbar-ios-energized .bar-button-clear-ios-subtle.activated, .toolbar-ios-energized .bar-button-clear-ios-vibrant.activated, .toolbar-ios-energized .bar-button-danger-ios.activated, .toolbar-ios-energized .bar-button-dark-ios.activated, .toolbar-ios-energized .bar-button-default.bar-button-ios-bright.activated, .toolbar-ios-energized .bar-button-default.bar-button-ios-danger.activated, .toolbar-ios-energized .bar-button-default.bar-button-ios-dark.activated, .toolbar-ios-energized .bar-button-default.bar-button-ios-energized.activated, .toolbar-ios-energized .bar-button-default.bar-button-ios-light.activated, .toolbar-ios-energized .bar-button-default.bar-button-ios-primary.activated, .toolbar-ios-energized .bar-button-default.bar-button-ios-royal.activated, .toolbar-ios-energized .bar-button-default.bar-button-ios-secondary.activated, .toolbar-ios-energized .bar-button-default.bar-button-ios-subtle.activated, .toolbar-ios-energized .bar-button-default.bar-button-ios-vibrant.activated, .toolbar-ios-energized .bar-button-energized-ios.activated, .toolbar-ios-energized .bar-button-light-ios.activated, .toolbar-ios-energized .bar-button-primary-ios.activated, .toolbar-ios-energized .bar-button-royal-ios.activated, .toolbar-ios-energized .bar-button-secondary-ios.activated, .toolbar-ios-energized .bar-button-subtle-ios.activated, .toolbar-ios-energized .bar-button-vibrant-ios.activated, .toolbar-ios-light .bar-button-bright-ios.activated, .toolbar-ios-light .bar-button-clear-ios-bright.activated, .toolbar-ios-light .bar-button-clear-ios-danger.activated, .toolbar-ios-light .bar-button-clear-ios-dark.activated, .toolbar-ios-light .bar-button-clear-ios-energized.activated, .toolbar-ios-light .bar-button-clear-ios-light.activated, .toolbar-ios-light .bar-button-clear-ios-primary.activated, .toolbar-ios-light .bar-button-clear-ios-royal.activated, .toolbar-ios-light .bar-button-clear-ios-secondary.activated, .toolbar-ios-light .bar-button-clear-ios-subtle.activated, .toolbar-ios-light .bar-button-clear-ios-vibrant.activated, .toolbar-ios-light .bar-button-danger-ios.activated, .toolbar-ios-light .bar-button-dark-ios.activated, .toolbar-ios-light .bar-button-default.bar-button-ios-bright.activated, .toolbar-ios-light .bar-button-default.bar-button-ios-danger.activated, .toolbar-ios-light .bar-button-default.bar-button-ios-dark.activated, .toolbar-ios-light .bar-button-default.bar-button-ios-energized.activated, .toolbar-ios-light .bar-button-default.bar-button-ios-light.activated, .toolbar-ios-light .bar-button-default.bar-button-ios-primary.activated, .toolbar-ios-light .bar-button-default.bar-button-ios-royal.activated, .toolbar-ios-light .bar-button-default.bar-button-ios-secondary.activated, .toolbar-ios-light .bar-button-default.bar-button-ios-subtle.activated, .toolbar-ios-light .bar-button-default.bar-button-ios-vibrant.activated, .toolbar-ios-light .bar-button-energized-ios.activated, .toolbar-ios-light .bar-button-light-ios.activated, .toolbar-ios-light .bar-button-primary-ios.activated, .toolbar-ios-light .bar-button-royal-ios.activated, .toolbar-ios-light .bar-button-secondary-ios.activated, .toolbar-ios-light .bar-button-subtle-ios.activated, .toolbar-ios-light .bar-button-vibrant-ios.activated, .toolbar-ios-primary .bar-button-bright-ios.activated, .toolbar-ios-primary .bar-button-clear-ios-bright.activated, .toolbar-ios-primary .bar-button-clear-ios-danger.activated, .toolbar-ios-primary .bar-button-clear-ios-dark.activated, .toolbar-ios-primary .bar-button-clear-ios-energized.activated, .toolbar-ios-primary .bar-button-clear-ios-light.activated, .toolbar-ios-primary .bar-button-clear-ios-primary.activated, .toolbar-ios-primary .bar-button-clear-ios-royal.activated, .toolbar-ios-primary .bar-button-clear-ios-secondary.activated, .toolbar-ios-primary .bar-button-clear-ios-subtle.activated, .toolbar-ios-primary .bar-button-clear-ios-vibrant.activated, .toolbar-ios-primary .bar-button-danger-ios.activated, .toolbar-ios-primary .bar-button-dark-ios.activated, .toolbar-ios-primary .bar-button-default.bar-button-ios-bright.activated, .toolbar-ios-primary .bar-button-default.bar-button-ios-danger.activated, .toolbar-ios-primary .bar-button-default.bar-button-ios-dark.activated, .toolbar-ios-primary .bar-button-default.bar-button-ios-energized.activated, .toolbar-ios-primary .bar-button-default.bar-button-ios-light.activated, .toolbar-ios-primary .bar-button-default.bar-button-ios-primary.activated, .toolbar-ios-primary .bar-button-default.bar-button-ios-royal.activated, .toolbar-ios-primary .bar-button-default.bar-button-ios-secondary.activated, .toolbar-ios-primary .bar-button-default.bar-button-ios-subtle.activated, .toolbar-ios-primary .bar-button-default.bar-button-ios-vibrant.activated, .toolbar-ios-primary .bar-button-energized-ios.activated, .toolbar-ios-primary .bar-button-light-ios.activated, .toolbar-ios-primary .bar-button-primary-ios.activated, .toolbar-ios-primary .bar-button-royal-ios.activated, .toolbar-ios-primary .bar-button-secondary-ios.activated, .toolbar-ios-primary .bar-button-subtle-ios.activated, .toolbar-ios-primary .bar-button-vibrant-ios.activated, .toolbar-ios-royal .bar-button-bright-ios.activated, .toolbar-ios-royal .bar-button-clear-ios-bright.activated, .toolbar-ios-royal .bar-button-clear-ios-danger.activated, .toolbar-ios-royal .bar-button-clear-ios-dark.activated, .toolbar-ios-royal .bar-button-clear-ios-energized.activated, .toolbar-ios-royal .bar-button-clear-ios-light.activated, .toolbar-ios-royal .bar-button-clear-ios-primary.activated, .toolbar-ios-royal .bar-button-clear-ios-royal.activated, .toolbar-ios-royal .bar-button-clear-ios-secondary.activated, .toolbar-ios-royal .bar-button-clear-ios-subtle.activated, .toolbar-ios-royal .bar-button-clear-ios-vibrant.activated, .toolbar-ios-royal .bar-button-danger-ios.activated, .toolbar-ios-royal .bar-button-dark-ios.activated, .toolbar-ios-royal .bar-button-default.bar-button-ios-bright.activated, .toolbar-ios-royal .bar-button-default.bar-button-ios-danger.activated, .toolbar-ios-royal .bar-button-default.bar-button-ios-dark.activated, .toolbar-ios-royal .bar-button-default.bar-button-ios-energized.activated, .toolbar-ios-royal .bar-button-default.bar-button-ios-light.activated, .toolbar-ios-royal .bar-button-default.bar-button-ios-primary.activated, .toolbar-ios-royal .bar-button-default.bar-button-ios-royal.activated, .toolbar-ios-royal .bar-button-default.bar-button-ios-secondary.activated, .toolbar-ios-royal .bar-button-default.bar-button-ios-subtle.activated, .toolbar-ios-royal .bar-button-default.bar-button-ios-vibrant.activated, .toolbar-ios-royal .bar-button-energized-ios.activated, .toolbar-ios-royal .bar-button-light-ios.activated, .toolbar-ios-royal .bar-button-primary-ios.activated, .toolbar-ios-royal .bar-button-royal-ios.activated, .toolbar-ios-royal .bar-button-secondary-ios.activated, .toolbar-ios-royal .bar-button-subtle-ios.activated, .toolbar-ios-royal .bar-button-vibrant-ios.activated, .toolbar-ios-secondary .bar-button-bright-ios.activated, .toolbar-ios-secondary .bar-button-clear-ios-bright.activated, .toolbar-ios-secondary .bar-button-clear-ios-danger.activated, .toolbar-ios-secondary .bar-button-clear-ios-dark.activated, .toolbar-ios-secondary .bar-button-clear-ios-energized.activated, .toolbar-ios-secondary .bar-button-clear-ios-light.activated, .toolbar-ios-secondary .bar-button-clear-ios-primary.activated, .toolbar-ios-secondary .bar-button-clear-ios-royal.activated, .toolbar-ios-secondary .bar-button-clear-ios-secondary.activated, .toolbar-ios-secondary .bar-button-clear-ios-subtle.activated, .toolbar-ios-secondary .bar-button-clear-ios-vibrant.activated, .toolbar-ios-secondary .bar-button-danger-ios.activated, .toolbar-ios-secondary .bar-button-dark-ios.activated, .toolbar-ios-secondary .bar-button-default.bar-button-ios-bright.activated, .toolbar-ios-secondary .bar-button-default.bar-button-ios-danger.activated, .toolbar-ios-secondary .bar-button-default.bar-button-ios-dark.activated, .toolbar-ios-secondary .bar-button-default.bar-button-ios-energized.activated, .toolbar-ios-secondary .bar-button-default.bar-button-ios-light.activated, .toolbar-ios-secondary .bar-button-default.bar-button-ios-primary.activated, .toolbar-ios-secondary .bar-button-default.bar-button-ios-royal.activated, .toolbar-ios-secondary .bar-button-default.bar-button-ios-secondary.activated, .toolbar-ios-secondary .bar-button-default.bar-button-ios-subtle.activated, .toolbar-ios-secondary .bar-button-default.bar-button-ios-vibrant.activated, .toolbar-ios-secondary .bar-button-energized-ios.activated, .toolbar-ios-secondary .bar-button-light-ios.activated, .toolbar-ios-secondary .bar-button-primary-ios.activated, .toolbar-ios-secondary .bar-button-royal-ios.activated, .toolbar-ios-secondary .bar-button-secondary-ios.activated, .toolbar-ios-secondary .bar-button-subtle-ios.activated, .toolbar-ios-secondary .bar-button-vibrant-ios.activated, .toolbar-ios-subtle .bar-button-bright-ios.activated, .toolbar-ios-subtle .bar-button-clear-ios-bright.activated, .toolbar-ios-subtle .bar-button-clear-ios-danger.activated, .toolbar-ios-subtle .bar-button-clear-ios-dark.activated, .toolbar-ios-subtle .bar-button-clear-ios-energized.activated, .toolbar-ios-subtle .bar-button-clear-ios-light.activated, .toolbar-ios-subtle .bar-button-clear-ios-primary.activated, .toolbar-ios-subtle .bar-button-clear-ios-royal.activated, .toolbar-ios-subtle .bar-button-clear-ios-secondary.activated, .toolbar-ios-subtle .bar-button-clear-ios-subtle.activated, .toolbar-ios-subtle .bar-button-clear-ios-vibrant.activated, .toolbar-ios-subtle .bar-button-danger-ios.activated, .toolbar-ios-subtle .bar-button-dark-ios.activated, .toolbar-ios-subtle .bar-button-default.bar-button-ios-bright.activated, .toolbar-ios-subtle .bar-button-default.bar-button-ios-danger.activated, .toolbar-ios-subtle .bar-button-default.bar-button-ios-dark.activated, .toolbar-ios-subtle .bar-button-default.bar-button-ios-energized.activated, .toolbar-ios-subtle .bar-button-default.bar-button-ios-light.activated, .toolbar-ios-subtle .bar-button-default.bar-button-ios-primary.activated, .toolbar-ios-subtle .bar-button-default.bar-button-ios-royal.activated, .toolbar-ios-subtle .bar-button-default.bar-button-ios-secondary.activated, .toolbar-ios-subtle .bar-button-default.bar-button-ios-subtle.activated, .toolbar-ios-subtle .bar-button-default.bar-button-ios-vibrant.activated, .toolbar-ios-subtle .bar-button-energized-ios.activated, .toolbar-ios-subtle .bar-button-light-ios.activated, .toolbar-ios-subtle .bar-button-primary-ios.activated, .toolbar-ios-subtle .bar-button-royal-ios.activated, .toolbar-ios-subtle .bar-button-secondary-ios.activated, .toolbar-ios-subtle .bar-button-subtle-ios.activated, .toolbar-ios-subtle .bar-button-vibrant-ios.activated, .toolbar-ios-vibrant .bar-button-bright-ios.activated, .toolbar-ios-vibrant .bar-button-clear-ios-bright.activated, .toolbar-ios-vibrant .bar-button-clear-ios-danger.activated, .toolbar-ios-vibrant .bar-button-clear-ios-dark.activated, .toolbar-ios-vibrant .bar-button-clear-ios-energized.activated, .toolbar-ios-vibrant .bar-button-clear-ios-light.activated, .toolbar-ios-vibrant .bar-button-clear-ios-primary.activated, .toolbar-ios-vibrant .bar-button-clear-ios-royal.activated, .toolbar-ios-vibrant .bar-button-clear-ios-secondary.activated, .toolbar-ios-vibrant .bar-button-clear-ios-subtle.activated, .toolbar-ios-vibrant .bar-button-clear-ios-vibrant.activated, .toolbar-ios-vibrant .bar-button-danger-ios.activated, .toolbar-ios-vibrant .bar-button-dark-ios.activated, .toolbar-ios-vibrant .bar-button-default.bar-button-ios-bright.activated, .toolbar-ios-vibrant .bar-button-default.bar-button-ios-danger.activated, .toolbar-ios-vibrant .bar-button-default.bar-button-ios-dark.activated, .toolbar-ios-vibrant .bar-button-default.bar-button-ios-energized.activated, .toolbar-ios-vibrant .bar-button-default.bar-button-ios-light.activated, .toolbar-ios-vibrant .bar-button-default.bar-button-ios-primary.activated, .toolbar-ios-vibrant .bar-button-default.bar-button-ios-royal.activated, .toolbar-ios-vibrant .bar-button-default.bar-button-ios-secondary.activated, .toolbar-ios-vibrant .bar-button-default.bar-button-ios-subtle.activated, .toolbar-ios-vibrant .bar-button-default.bar-button-ios-vibrant.activated, .toolbar-ios-vibrant .bar-button-energized-ios.activated, .toolbar-ios-vibrant .bar-button-light-ios.activated, .toolbar-ios-vibrant .bar-button-primary-ios.activated, .toolbar-ios-vibrant .bar-button-royal-ios.activated, .toolbar-ios-vibrant .bar-button-secondary-ios.activated, .toolbar-ios-vibrant .bar-button-subtle-ios.activated, .toolbar-ios-vibrant .bar-button-vibrant-ios.activated {
+    opacity: .4
+  }
+
+  .item .toggle {
+    margin: 0;
+    cursor: pointer;
+    padding: 12px 8px 12px 16px
+  }
+
+  .item .toggle.item-left, .item .toggle.item-start {
+    padding: 12px 18px 12px 2px
+  }
+
+  .toggle-primary.toggle-checked .toggle-icon {
+    border-color: #488aff;
+    background-color: #488aff
+  }
+
+  .toggle-primary.toggle-checked .toggle-inner {
+    background-color: #fff
+  }
+
+  .toggle-secondary.toggle-checked .toggle-icon {
+    border-color: #32db64;
+    background-color: #32db64
+  }
+
+  .toggle-secondary.toggle-checked .toggle-inner {
+    background-color: #fff
+  }
+
+  .toggle-danger.toggle-checked .toggle-icon {
+    border-color: #f53d3d;
+    background-color: #f53d3d
+  }
+
+  .toggle-danger.toggle-checked .toggle-inner {
+    background-color: #fff
+  }
+
+  .toggle-light.toggle-checked .toggle-icon {
+    border-color: #f4f4f4;
+    background-color: #f4f4f4
+  }
+
+  .toggle-light.toggle-checked .toggle-inner {
+    background-color: #000
+  }
+
+  .toggle-dark.toggle-checked .toggle-icon {
+    border-color: #222;
+    background-color: #222
+  }
+
+  .toggle-dark.toggle-checked .toggle-inner {
+    background-color: #fff
+  }
+
+  .toggle-energized.toggle-checked .toggle-icon {
+    border-color: #ffc527;
+    background-color: #ffc527
+  }
+
+  .toggle-energized.toggle-checked .toggle-inner {
+    background-color: #000
+  }
+
+  .toggle-royal.toggle-checked .toggle-icon {
+    border-color: #7e60ff;
+    background-color: #7e60ff
+  }
+
+  .toggle-royal.toggle-checked .toggle-inner {
+    background-color: #fff
+  }
+
+  .toggle-subtle.toggle-checked .toggle-icon {
+    border-color: #444;
+    background-color: #444
+  }
+
+  .toggle-subtle.toggle-checked .toggle-inner {
+    background-color: #fff
+  }
+
+  .toggle-vibrant.toggle-checked .toggle-icon {
+    border-color: #663399;
+    background-color: #663399
+  }
+
+  .toggle-vibrant.toggle-checked .toggle-inner {
+    background-color: #fff
+  }
+
+  .toggle-bright.toggle-checked .toggle-icon {
+    border-color: #ffc125;
+    background-color: #ffc125
+  }
+
+  .toggle-bright.toggle-checked .toggle-inner {
+    background-color: #000
+  }
+
 }

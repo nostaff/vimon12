@@ -2,14 +2,14 @@
     <div class="page has-navbar" v-nav="{title: '单选框', showBackButton: true}">
         <div class="page-content padding-top">
 
-            <von-radio title="请选择性别：" :options="genderOptions" v-model="gender"></von-radio>
+            <ion-radio title="请选择性别：" :options="genderOptions" v-model="gender"></ion-radio>
 
             <p class="padding">
                 option gender: {{ gender }}<br>
                 option selected: {{ selected }}
             </p>
 
-            <von-radio title="请选择：" :options="list2" v-model="selected"></von-radio>
+            <ion-radio title="请选择：" :options="list2" v-model="selected"></ion-radio>
 
         </div>
     </div>

@@ -1,17 +1,17 @@
 <template>
-    <list :title="title" class="cascade">
-        <item class="item" is-link v-for="(field, index) in fields" :key="index" @click.native="showCascadePanel(index)">
+    <ion-list :title="title" class="cascade">
+        <ion-item class="item" is-link v-for="(field, index) in fields" :key="index" @click.native="showCascadePanel(index)">
             <span v-text="field"></span>
             <span class="item-note" v-text="value[index]"></span>
-        </item>
-    </list>
+        </ion-item>
+    </ion-list>
 </template>
 <script>
     import axios from 'axios'
     import Vue from 'vue'
     import channel from '../app/channel'
-    import List from '../list/List'
-    import Item from '../list/Item'
+    import List from '../list'
+    import Item from '../item'
 
     const filter = (filters, data) => {
         let options = []

@@ -2,31 +2,31 @@
     <div class="page has-navbar" v-nav="{title: '对话框', showBackButton: true}">
         <div class="page-content padding-top">
 
-            <list title="对话框">
-                <item is-link @click.native="showAlert()">
+            <ion-list title="对话框">
+                <ion-item is-link @click.native="showAlert()">
                     Alert <span class="item-note">提示框</span>
-                </item>
-                <item is-link @click.native="showConfirm()">
+                </ion-item>
+                <ion-item is-link @click.native="showConfirm()">
                     Confirm <span class="item-note">确认框</span>
-                </item>
-                <item is-link @click.native="showAlertIOS()">
+                </ion-item>
+                <ion-item is-link @click.native="showAlertIOS()">
                     iOS Alert <span class="item-note">iOS 风格提示框</span>
-                </item>
-                <item is-link @click.native="showConfirmIOS()">
+                </ion-item>
+                <ion-item is-link @click.native="showConfirmIOS()">
                     iOS Confirm <span class="item-note">iOS 风格确认框</span>
-                </item>
-                <item is-link @click.native="multiMode()">
+                </ion-item>
+                <ion-item is-link @click.native="multiMode()">
                     Multi Mode <span class="item-note">多个同时出现</span>
-                </item>
+                </ion-item>
 
-                <item is-link @click.native="showAlert('scale')">
+                <ion-item is-link @click.native="showAlert('scale')">
                     Scale Effect
-                </item>
-                <item is-link @click.native="showAlert('slide')">
+                </ion-item>
+                <ion-item is-link @click.native="showAlert('slide')">
                     Slide Effect
-                </item>
+                </ion-item>
 
-            </list>
+            </ion-list>
             <div style="height: 50px;"></div>
 
         </div>

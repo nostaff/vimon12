@@ -16,6 +16,7 @@
   user-select: none;
   contain: content;
   display: inline-block;
+  text-decoration: none
 }
 
 .button-inner {
@@ -38,13 +39,18 @@
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 100%
+  width: 100%;
+  height: 100%;
 }
 
 .button-block, .button-full {
   display: block;
   contain: strict;
   width: 100%
+}
+
+.button-block, .button-block::after {
+  clear: both
 }
 
 .button-full.button-outline {
@@ -124,12 +130,10 @@
     border-left-width: 0
   }
 
-
   .button-round {
     border-radius: 64px;
     padding: 0 2.6rem
   }
-
 
   .button-primary {
     color: #fff;
@@ -485,7 +489,8 @@
     transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1), background-color .3s cubic-bezier(.4, 0, .2, 1), color .3s cubic-bezier(.4, 0, .2, 1);
     transition: box-shadow .3s cubic-bezier(.4, 0, .2, 1), background-color .3s cubic-bezier(.4, 0, .2, 1), color .3s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .3s cubic-bezier(.4, 0, .2, 1);
     margin: .4rem .2rem;
-    padding: 0 1.1em
+    padding: 0 1.1em;
+    overflow: hidden
   }
 
   .button-block, .button-full {

@@ -1,20 +1,20 @@
 <template>
-    <list class="list-accordion" :style="{height: getHeight()}">
-        <item class="item-icon-right" @click.native="onClick()">
+    <ion-list class="list-accordion" :style="{height: getHeight()}">
+        <ion-item class="item-icon-right" @click.native="onClick()">
             <span v-text="title"></span>
             <i class="icon ion-arrow-down-b" :class="{'rotated': expanded}"></i>
-        </item>
+        </ion-item>
         <transition name="von-accordion">
             <div v-show="expanded" class="accordion-content hairline-bottom">
                 <slot></slot>
             </div>
         </transition>
-    </list>
+    </ion-list>
 </template>
 <script>
     import channel from './channel'
-    import List from '../list/List'
-    import Item from '../list/Item'
+    import List from '../list'
+    import Item from '../item'
 
     export default {
         components: {

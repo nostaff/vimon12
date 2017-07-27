@@ -2,12 +2,12 @@
   <div class="page has-navbar" v-nav="{title: '弹层', showBackButton: true}">
     <div class="page-content padding-top">
 
-      <item  is-link @click.native="showCustomPopup()">
+      <ion-item  is-link @click.native="showCustomPopup()">
         Custom Popup
-      </item>
-      <item is-link @click.native="showCustomPopup2()">
+      </ion-item>
+      <ion-item is-link @click.native="showCustomPopup2()">
         Custom Popup 2
-      </item>
+      </ion-item>
 
     </div>
   </div>

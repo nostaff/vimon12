@@ -25,29 +25,29 @@
 
     data() {
       return {
-        gradeClass: 'theme-ios'
+//        gradeClass: 'theme-ios'
       }
     },
 
     created() {
-      // theme-ios for ios, theme-md for android & other
-      if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-        this.gradeClass = 'theme-ios'
-      } else if (/Windows Phone/.test(navigator.userAgent)) {
-        this.gradeClass = 'theme-wp'
-      } else {
-        this.gradeClass = 'theme-md'
-      }
-
-      if (window.__page_transition__ == 'ios') {
-        this.gradeClass = 'theme-ios'
-        window.__disable_nav_title_transition__ = false
-      } else if (window.__page_transition__ == 'android') {
-        this.gradeClass = 'theme-md'
-        window.__disable_nav_title_transition__ = true
-      }
-
-      document.querySelector('body').className = this.gradeClass
+//      // theme-ios for ios, theme-md for android & other
+//      if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+//        this.gradeClass = 'theme-ios'
+//      } else if (/Windows Phone/.test(navigator.userAgent)) {
+//        this.gradeClass = 'theme-wp'
+//      } else {
+//        this.gradeClass = 'theme-md'
+//      }
+//
+//      if (window.__page_transition__ == 'ios') {
+//        this.gradeClass = 'theme-ios'
+//        window.__disable_nav_title_transition__ = false
+//      } else if (window.__page_transition__ == 'android') {
+//        this.gradeClass = 'theme-md'
+//        window.__disable_nav_title_transition__ = true
+//      }
+//
+//      document.querySelector('body').className = this.gradeClass
 
       channel.$on('VonicNotification', (data) => {
         $toast.show(data.message);

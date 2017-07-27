@@ -1,5 +1,5 @@
 <template>
-  <div class="button-bar von-button-bar">
+  <div class="button-bar ion-button-bar">
     <a v-for="(tabItem, index) in tabItems"
       class="button button-small"
       :class="initButtonClass(index)"

@@ -1,12 +1,19 @@
 <template>
-  <span class="von-badge">
-    <div v-html="num" class="von-badge-num"></div>
-  </span>
+    <span class="badge" v-text="num"></span>
 </template>
+
 <script>
-  export default {
-    props: {
-      num: [String, Number]
+    export default {
+        name: 'ion-badge',
+        props: {
+            num: [String, Number]
+        }
     }
-  }
 </script>
+
+<style lang="scss">
+    @import 'badge';
+    @import 'badge.ios';
+    @import 'badge.md';
+    @import 'badge.wp';
+</style>

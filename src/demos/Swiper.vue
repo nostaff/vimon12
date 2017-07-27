@@ -2,17 +2,17 @@
     <div class="page has-navbar page-swiper" v-nav="{title: '轮播', showBackButton: true}">
         <div class="page-content padding-top">
 
-            <item is-link @click.native="$router.forward('/demo/advanced/swiper/default')">
+            <ion-item is-link @click.native="$router.forward('/demo/advanced/swiper/default')">
                 Horizontal (default)<span class="item-note">水平 (默认)</span>
-            </item>
+            </ion-item>
 
-            <item is-link  @click.native="$router.forward('/demo/advanced/swiper/vertical')">
+            <ion-item is-link  @click.native="$router.forward('/demo/advanced/swiper/vertical')">
                 Vertical <span class="item-note">垂直</span>
-            </item>
+            </ion-item>
 
-            <item is-link  @click.native="swiperInPopup()">
+            <ion-item is-link  @click.native="swiperInPopup()">
                 Swiper in Popup<span class="item-note">弹层内轮播</span>
-            </item>
+            </ion-item>
 
         </div>
     </div>

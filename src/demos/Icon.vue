@@ -2,760 +2,948 @@
   <div class="page has-navbar" v-nav="{title: 'Icons', showBackButton: true}">
     <div class="my-icons page-content">
 
+        <ion-icon name="add"></ion-icon>
+        <ion-icon name="add-circle" color="primary"></ion-icon>
+        <ion-icon name="add-circle-outline"></ion-icon>
+        <ion-icon name="add-outline" color="dark"></ion-icon>
+
         <ul id="icons">
-            <li class="ion-ionic" data-pack="default" data-tags="badass, framework, sexy, hawt"></li>
-            <li class="ion-arrow-up-a" data-pack="default" data-tags=""></li>
-            <li class="ion-arrow-right-a" data-pack="default" data-tags=""></li>
-            <li class="ion-arrow-down-a" data-pack="default" data-tags=""></li>
-            <li class="ion-arrow-left-a" data-pack="default" data-tags=""></li>
-            <li class="ion-arrow-up-b" data-pack="default" data-tags=""></li>
-            <li class="ion-arrow-right-b" data-pack="default" data-tags=""></li>
-            <li class="ion-arrow-down-b" data-pack="default" data-tags=""></li>
-            <li class="ion-arrow-left-b" data-pack="default" data-tags=""></li>
-            <li class="ion-arrow-up-c" data-pack="default" data-tags=""></li>
-            <li class="ion-arrow-right-c" data-pack="default" data-tags=""></li>
-            <li class="ion-arrow-down-c" data-pack="default" data-tags=""></li>
-            <li class="ion-arrow-left-c" data-pack="default" data-tags=""></li>
-            <li class="ion-arrow-return-right" data-pack="default" data-tags=""></li>
-            <li class="ion-arrow-return-left" data-pack="default" data-tags=""></li>
-            <li class="ion-arrow-swap" data-pack="default" data-tags="switch, flip"></li>
-            <li class="ion-arrow-shrink" data-pack="default" data-tags="pinch"></li>
-            <li class="ion-arrow-expand" data-pack="default" data-tags="fullscreen"></li>
-            <li class="ion-arrow-move" data-pack="default" data-tags="drag"></li>
-            <li class="ion-arrow-resize" data-pack="default" data-tags="drag"></li>
-            <li class="ion-chevron-up" data-pack="default" data-tags="arrow, up"></li>
-            <li class="ion-chevron-right" data-pack="default" data-tags="arrow, right"></li>
-            <li class="ion-chevron-down" data-pack="default" data-tags="arrow, down"></li>
-            <li class="ion-chevron-left" data-pack="default" data-tags="arrow, left"></li>
-            <li class="ion-navicon-round" data-pack="default" data-tags="menu, hamburger, slide menu"></li>
-            <li class="ion-navicon" data-pack="default" data-tags="menu, hamburger, slide menu"></li>
-            <li class="ion-drag" data-pack="default" data-tags="reorder, move, drag"></li>
-            <li class="ion-log-in" data-pack="default" data-tags="sign in, "></li>
-            <li class="ion-log-out" data-pack="default" data-tags="sign out"></li>
-            <li class="ion-checkmark-round" data-pack="default" data-tags="complete, finished, success, on"></li>
-            <li class="ion-checkmark" data-pack="default" data-tags="complete, finished, success, on"></li>
-            <li class="ion-checkmark-circled" data-pack="default" data-tags="complete, finished, success, on"></li>
-            <li class="ion-close-round" data-pack="default" data-tags="delete, trash, kill, x"></li>
-            <li class="ion-close" data-pack="default" data-tags="delete, trash, kill, x"></li>
-            <li class="ion-close-circled" data-pack="default" data-tags="delete, trash, kill, x"></li>
-            <li class="ion-plus-round" data-pack="default" data-tags="add, include, new, invite, +"></li>
-            <li class="ion-plus" data-pack="default" data-tags="add, include, new, invite, +"></li>
-            <li class="ion-plus-circled" data-pack="default" data-tags="add, include, new, invite, +"></li>
-            <li class="ion-minus-round" data-pack="default" data-tags="hide, remove, minimize, -"></li>
-            <li class="ion-minus" data-pack="default" data-tags="hide, remove, minimize, -"></li>
-            <li class="ion-minus-circled" data-pack="default" data-tags="hide, remove, minimize, -"></li>
-            <li class="ion-information" data-pack="default" data-tags="help, more, tooltip"></li>
-            <li class="ion-information-circled" data-pack="default" data-tags="help, more, tooltip"></li>
-            <li class="ion-help" data-pack="default" data-tags="question, ?"></li>
-            <li class="ion-help-circled" data-pack="default" data-tags="question, ?"></li>
-            <li class="ion-backspace-outline" data-pack="default" data-tags="delete, remove, back"></li>
-            <li class="ion-backspace" data-pack="default" data-tags="delete, remove, back"></li>
-            <li class="ion-help-buoy" data-pack="default" data-tags="question, ?"></li>
-            <li class="ion-asterisk" data-pack="default" data-tags="favorite, mark, star"></li>
-            <li class="ion-alert" data-pack="default" data-tags="attention, warning, notice, !, exclamation"></li>
-            <li class="ion-alert-circled" data-pack="default" data-tags="attention, warning, notice, !, exclamation"></li>
-            <li class="ion-refresh" data-pack="default" data-tags="reload, renew"></li>
-            <li class="ion-loop" data-pack="default" data-tags="refresh"></li>
-            <li class="ion-shuffle" data-pack="default" data-tags="random"></li>
-            <li class="ion-home" data-pack="default" data-tags="house"></li>
-            <li class="ion-search" data-pack="default" data-tags="magnifying glass"></li>
-            <li class="ion-flag" data-pack="default" data-tags="favorite, mark, star"></li>
-            <li class="ion-star" data-pack="default" data-tags="favorite"></li>
-            <li class="ion-heart" data-pack="default" data-tags="love"></li>
-            <li class="ion-heart-broken" data-pack="default" data-tags="love"></li>
-            <li class="ion-gear-a" data-pack="default" data-tags="settings, options, cog"></li>
-            <li class="ion-gear-b" data-pack="default" data-tags="settings, options, cog"></li>
-            <li class="ion-toggle-filled" data-pack="default" data-tags="settings, options, switch"></li>
-            <li class="ion-toggle" data-pack="default" data-tags="settings, options, switch"></li>
-            <li class="ion-settings" data-pack="default" data-tags="options, tools"></li>
-            <li class="ion-wrench" data-pack="default" data-tags="settings, options, tools"></li>
-            <li class="ion-hammer" data-pack="default" data-tags="settings, options, tools"></li>
-            <li class="ion-edit" data-pack="default" data-tags="change, update, write, type, pencil"></li>
-            <li class="ion-trash-a" data-pack="default" data-tags="delete, remove, dump"></li>
-            <li class="ion-trash-b" data-pack="default" data-tags="delete, remove, dump"></li>
-            <li class="ion-document" data-pack="default" data-tags="paper, file"></li>
-            <li class="ion-document-text" data-pack="default" data-tags="paper, file"></li>
-            <li class="ion-clipboard" data-pack="default" data-tags="write"></li>
-            <li class="ion-scissors" data-pack="default" data-tags="cut"></li>
-            <li class="ion-funnel" data-pack="default" data-tags="sort"></li>
-            <li class="ion-bookmark" data-pack="default" data-tags="favorite, tag, save"></li>
-            <li class="ion-email" data-pack="default" data-tags="snail, mail, inbox"></li>
-            <li class="ion-email-unread" data-pack="default" data-tags="snail, mail, inbox"></li>
-            <li class="ion-folder" data-pack="default" data-tags="snail, mail"></li>
-            <li class="ion-filing" data-pack="default" data-tags="mail"></li>
-            <li class="ion-archive" data-pack="default" data-tags="mail"></li>
-            <li class="ion-reply" data-pack="default" data-tags="mail, undo"></li>
-            <li class="ion-reply-all" data-pack="default" data-tags="mail"></li>
-            <li class="ion-forward" data-pack="default" data-tags="mail, redo"></li>
-            <li class="ion-share" data-pack="default" data-tags="outbound"></li>
-            <li class="ion-paper-airplane" data-pack="default" data-tags="outbound, mail, letter, send"></li>
-            <li class="ion-link" data-pack="default" data-tags="chain, anchor, href, attach"></li>
-            <li class="ion-paperclip" data-pack="default" data-tags="attach"></li>
-            <li class="ion-compose" data-pack="default" data-tags="write, compose, type"></li>
-            <li class="ion-briefcase" data-pack="default" data-tags="store, organize"></li>
-            <li class="ion-medkit" data-pack="default" data-tags="health"></li>
-            <li class="ion-at" data-pack="default" data-tags="@"></li>
-            <li class="ion-pound" data-pack="default" data-tags="hashtag, #"></li>
-            <li class="ion-quote" data-pack="default" data-tags="chat, quotation"></li>
-            <li class="ion-cloud" data-pack="default" data-tags="storage"></li>
-            <li class="ion-upload" data-pack="default" data-tags="storage, cloud"></li>
-            <li class="ion-more" data-pack="default" data-tags="circles"></li>
-            <li class="ion-grid" data-pack="default" data-tags="menu"></li>
-            <li class="ion-calendar" data-pack="default" data-tags="date, time, month, year"></li>
-            <li class="ion-clock" data-pack="default" data-tags="time, watch, hours, minutes, seconds"></li>
-            <li class="ion-compass" data-pack="default" data-tags="location, directions, navigation"></li>
-            <li class="ion-pinpoint" data-pack="default" data-tags="gps, navigation"></li>
-            <li class="ion-pin" data-pack="default" data-tags="gps, navigation"></li>
-            <li class="ion-navigate" data-pack="default" data-tags="gps, location pin"></li>
-            <li class="ion-location" data-pack="default" data-tags="gps, navigation, pin"></li>
-            <li class="ion-map" data-pack="default" data-tags="gps, navigation, pin"></li>
-            <li class="ion-lock-combination" data-pack="default" data-tags="padlock, security"></li>
-            <li class="ion-locked" data-pack="default" data-tags="padlock, security"></li>
-            <li class="ion-unlocked" data-pack="default" data-tags="padlock, security"></li>
-            <li class="ion-key" data-pack="default" data-tags="access"></li>
-            <li class="ion-arrow-graph-up-right" data-pack="default" data-tags="stats"></li>
-            <li class="ion-arrow-graph-down-right" data-pack="default" data-tags="stats"></li>
-            <li class="ion-arrow-graph-up-left" data-pack="default" data-tags="stats"></li>
-            <li class="ion-arrow-graph-down-left" data-pack="default" data-tags="stats"></li>
-            <li class="ion-stats-bars" data-pack="default" data-tags="data"></li>
-            <li class="ion-connection-bars" data-pack="default" data-tags="data, stats"></li>
-            <li class="ion-pie-graph" data-pack="default" data-tags="stats"></li>
-            <li class="ion-chatbubble" data-pack="default" data-tags="talk"></li>
-            <li class="ion-chatbubble-working" data-pack="default" data-tags="talk"></li>
-            <li class="ion-chatbubbles" data-pack="default" data-tags="talk"></li>
-            <li class="ion-chatbox" data-pack="default" data-tags="talk"></li>
-            <li class="ion-chatbox-working" data-pack="default" data-tags="talk"></li>
-            <li class="ion-chatboxes" data-pack="default" data-tags="talk"></li>
-            <li class="ion-person" data-pack="default" data-tags="users, staff, head, human"></li>
-            <li class="ion-person-add" data-pack="default" data-tags="users, staff, head, human, member, new"></li>
-            <li class="ion-person-stalker" data-pack="default" data-tags="people, human, users, staff"></li>
-            <li class="ion-woman" data-pack="default" data-tags="female, lady, girl, dudette"></li>
-            <li class="ion-man" data-pack="default" data-tags="male, guy, boy, dude"></li>
-            <li class="ion-female" data-pack="default" data-tags="lady, girl, dudette"></li>
-            <li class="ion-male" data-pack="default" data-tags="male, guy, boy, dude"></li>
-            <li class="ion-transgender" data-pack="default" data-tags=""></li>
-            <li class="ion-fork" data-pack="default" data-tags="food, drink, eat"></li>
-            <li class="ion-knife" data-pack="default" data-tags="food, drink, eat"></li>
-            <li class="ion-spoon" data-pack="default" data-tags="food, drink, eat"></li>
-            <li class="ion-soup-can-outline" data-pack="default" data-tags="food, drink, eat"></li>
-            <li class="ion-soup-can" data-pack="default" data-tags="food, drink, eat"></li>
-            <li class="ion-beer" data-pack="default" data-tags="food, drink, eat"></li>
-            <li class="ion-wineglass" data-pack="default" data-tags="food, drink, eat"></li>
-            <li class="ion-coffee" data-pack="default" data-tags="food, drink, eat, caffeine"></li>
-            <li class="ion-icecream" data-pack="default" data-tags="food, drink, eat"></li>
-            <li class="ion-pizza" data-pack="default" data-tags="food, drink, eat"></li>
-            <li class="ion-power" data-pack="default" data-tags="on, off"></li>
-            <li class="ion-mouse" data-pack="default" data-tags="computer"></li>
-            <li class="ion-battery-full" data-pack="default" data-tags=""></li>
-            <li class="ion-battery-half" data-pack="default" data-tags=""></li>
-            <li class="ion-battery-low" data-pack="default" data-tags=""></li>
-            <li class="ion-battery-empty" data-pack="default" data-tags=""></li>
-            <li class="ion-battery-charging" data-pack="default" data-tags=""></li>
-            <li class="ion-wifi" data-pack="default" data-tags="internet, connection"></li>
-            <li class="ion-bluetooth" data-pack="default" data-tags="connection, cloud"></li>
-            <li class="ion-calculator" data-pack="default" data-tags="math, arithmatic, numbers, addition, subtraction"></li>
-            <li class="ion-camera" data-pack="default" data-tags="photo"></li>
-            <li class="ion-eye" data-pack="default" data-tags="view, see, creeper"></li>
-            <li class="ion-eye-disabled" data-pack="default" data-tags="view, see, creeper"></li>
-            <li class="ion-flash" data-pack="default" data-tags="lightning, weather, whether"></li>
-            <li class="ion-flash-off" data-pack="default" data-tags=""></li>
-            <li class="ion-qr-scanner" data-pack="default" data-tags="reader"></li>
-            <li class="ion-image" data-pack="default" data-tags="photo"></li>
-            <li class="ion-images" data-pack="default" data-tags="photo"></li>
-            <li class="ion-wand" data-pack="default" data-tags="images, levels, light, dark, settings"></li>
-            <li class="ion-contrast" data-pack="default" data-tags="images, levels, light, dark, settings"></li>
-            <li class="ion-aperture" data-pack="default" data-tags="images, levels, light, dark, settings"></li>
-            <li class="ion-crop" data-pack="default" data-tags="images, levels, light, dark, settings"></li>
-            <li class="ion-easel" data-pack="default" data-tags="images, art, create, color"></li>
-            <li class="ion-paintbrush" data-pack="default" data-tags="images, art, create, color"></li>
-            <li class="ion-paintbucket" data-pack="default" data-tags="images, art, create, color"></li>
-            <li class="ion-monitor" data-pack="default" data-tags="thunderbolt, screen"></li>
-            <li class="ion-laptop" data-pack="default" data-tags="macbook, apple, osx"></li>
-            <li class="ion-ipad" data-pack="default" data-tags="tablet, mobile, apple, retina, device"></li>
-            <li class="ion-iphone" data-pack="default" data-tags="smartphone, mobile, apple, retina, device"></li>
-            <li class="ion-ipod" data-pack="default" data-tags="music, player, apple, retina, device"></li>
-            <li class="ion-printer" data-pack="default" data-tags="paper"></li>
-            <li class="ion-usb" data-pack="default" data-tags="digital, computer"></li>
-            <li class="ion-outlet" data-pack="default" data-tags="digital, computer, electricity"></li>
-            <li class="ion-bug" data-pack="default" data-tags="develop, program, hacker, error"></li>
-            <li class="ion-code" data-pack="default" data-tags="develop, program, hacker"></li>
-            <li class="ion-code-working" data-pack="default" data-tags="develop, program, hacker"></li>
-            <li class="ion-code-download" data-pack="default" data-tags="develop, program, hacker"></li>
-            <li class="ion-fork-repo" data-pack="default" data-tags="develop, program, hacker, github"></li>
-            <li class="ion-network" data-pack="default" data-tags="develop, program, hacker, github"></li>
-            <li class="ion-pull-request" data-pack="default" data-tags="develop, program, hacker, github"></li>
-            <li class="ion-merge" data-pack="default" data-tags="develop, program, hacker, github"></li>
-            <li class="ion-xbox" data-pack="default" data-tags="fun, games"></li>
-            <li class="ion-playstation" data-pack="default" data-tags="fun, games"></li>
-            <li class="ion-steam" data-pack="default" data-tags="fun, games"></li>
-            <li class="ion-closed-captioning" data-pack="default" data-tags="movie, film, television"></li>
-            <li class="ion-videocamera" data-pack="default" data-tags="movie, film, television"></li>
-            <li class="ion-film-marker" data-pack="default" data-tags="film, cut, action"></li>
-            <li class="ion-disc" data-pack="default" data-tags="cd, vinyl"></li>
-            <li class="ion-headphone" data-pack="default" data-tags="music, earbuds, beats"></li>
-            <li class="ion-music-note" data-pack="default" data-tags="songs"></li>
-            <li class="ion-radio-waves" data-pack="default" data-tags="music, sound, speaker"></li>
-            <li class="ion-speakerphone" data-pack="default" data-tags="sound, speaker, loud, amplify"></li>
-            <li class="ion-mic-a" data-pack="default" data-tags="sound, talk, speaker"></li>
-            <li class="ion-mic-b" data-pack="default" data-tags="sound, talk, speaker"></li>
-            <li class="ion-mic-c" data-pack="default" data-tags="sound, talk, speaker"></li>
-            <li class="ion-volume-high" data-pack="default" data-tags="sound, noise"></li>
-            <li class="ion-volume-medium" data-pack="default" data-tags="sound"></li>
-            <li class="ion-volume-low" data-pack="default" data-tags="sound"></li>
-            <li class="ion-volume-mute" data-pack="default" data-tags="sound"></li>
-            <li class="ion-levels" data-pack="default" data-tags="options, toggles, sound, mixer"></li>
-            <li class="ion-play" data-pack="default" data-tags="music, watch, arrow, right"></li>
-            <li class="ion-pause" data-pack="default" data-tags="music, break, hold, freeze"></li>
-            <li class="ion-stop" data-pack="default" data-tags="music, square, hold, freeze"></li>
-            <li class="ion-record" data-pack="default" data-tags="music, circle"></li>
-            <li class="ion-skip-forward" data-pack="default" data-tags="music, next"></li>
-            <li class="ion-skip-backward" data-pack="default" data-tags="music, previous"></li>
-            <li class="ion-eject" data-pack="default" data-tags="music, dvd, remove"></li>
-            <li class="ion-bag" data-pack="default" data-tags="shopping, price, cart, money, container, $"></li>
-            <li class="ion-card" data-pack="default" data-tags="credit, price, debit, money, shopping, cash, dollars, $"></li>
-            <li class="ion-cash" data-pack="default" data-tags="credit, price, debit, money, shopping, dollars, $"></li>
-            <li class="ion-pricetag" data-pack="default" data-tags="credit, debit, money, shopping, cash, dollars, $"></li>
-            <li class="ion-pricetags" data-pack="default" data-tags="credit, debit, money, shopping, cash, dollars, $"></li>
-            <li class="ion-thumbsup" data-pack="default" data-tags="like, fun, yes"></li>
-            <li class="ion-thumbsdown" data-pack="default" data-tags="dislike, boring, no"></li>
-            <li class="ion-happy-outline" data-pack="default" data-tags="good, like, fun, yes"></li>
-            <li class="ion-happy" data-pack="default" data-tags="good, like, fun, yes"></li>
-            <li class="ion-sad-outline" data-pack="default" data-tags="cry, bad, no"></li>
-            <li class="ion-sad" data-pack="default" data-tags="cry, bad, no"></li>
-            <li class="ion-bowtie" data-pack="default" data-tags="tie, shirt, dress, clothing"></li>
-            <li class="ion-tshirt-outline" data-pack="default" data-tags="tie, shirt, dress, clothing"></li>
-            <li class="ion-tshirt" data-pack="default" data-tags="tie, shirt, dress, clothing"></li>
-            <li class="ion-trophy" data-pack="default" data-tags="competition, compete, win, lose, award"></li>
-            <li class="ion-podium" data-pack="default" data-tags="competition, compete, win, lose, award"></li>
-            <li class="ion-ribbon-a" data-pack="default" data-tags="competition, compete, win, lose, award, trophy"></li>
-            <li class="ion-ribbon-b" data-pack="default" data-tags="competition, compete, win, lose, award, trophy"></li>
-            <li class="ion-university" data-pack="default" data-tags="graduate, education, school, tassle"></li>
-            <li class="ion-magnet" data-pack="default" data-tags="sticky, attraction"></li>
-            <li class="ion-beaker" data-pack="default" data-tags="mixture, potion, flask"></li>
-            <li class="ion-erlenmeyer-flask" data-pack="default" data-tags="mixture, potion, beaker, potion"></li>
-            <li class="ion-egg" data-pack="default" data-tags="birth, twitter, bird, baby"></li>
-            <li class="ion-earth" data-pack="default" data-tags="nature, globe, home, planet"></li>
-            <li class="ion-planet" data-pack="default" data-tags="nature, globe, home, planet, space"></li>
-            <li class="ion-lightbulb" data-pack="default" data-tags="idea, new, aha!"></li>
-            <li class="ion-cube" data-pack="default" data-tags="box, square, container"></li>
-            <li class="ion-leaf" data-pack="default" data-tags="green, recycle, plant, nature"></li>
-            <li class="ion-waterdrop" data-pack="default" data-tags="nature, clean, recycle, fresh, wet, rain"></li>
-            <li class="ion-flame" data-pack="default" data-tags="fire, hot, heat"></li>
-            <li class="ion-fireball" data-pack="default" data-tags="hot, heat"></li>
-            <li class="ion-bonfire" data-pack="default" data-tags="hot, heat"></li>
-            <li class="ion-umbrella" data-pack="default" data-tags="wet, rain, dry, shelter"></li>
-            <li class="ion-nuclear" data-pack="default" data-tags="danger, warning, hazard"></li>
-            <li class="ion-no-smoking" data-pack="default" data-tags="danger, warning, cigarette, cancer"></li>
-            <li class="ion-thermometer" data-pack="default" data-tags="hot, cold, heat, temperature, mercury"></li>
-            <li class="ion-speedometer" data-pack="default" data-tags="travel, accelerate"></li>
-            <li class="ion-model-s" data-pack="default" data-tags="navigation, car, drive, transportation, tesla, sexy"></li>
-            <li class="ion-plane" data-pack="default" data-tags="fly, jet"></li>
-            <li class="ion-jet" data-pack="default" data-tags="fly, plane"></li>
-            <li class="ion-load-a" data-pack="default" data-tags="spinner, waiting, refresh"></li>
-            <li class="ion-load-b" data-pack="default" data-tags="spinner, waiting, refresh"></li>
-            <li class="ion-load-c" data-pack="default" data-tags="spinner, waiting, refresh"></li>
-            <li class="ion-load-d" data-pack="default" data-tags="spinner, waiting, refresh"></li>
 
 
-            <p><!-- end default icons pack --></p>
-
-
-            <li class="ion-ios-ionic-outline" data-pack="ios" data-tags="badass, framework, sexy"></li>
-            <li class="ion-ios-arrow-back" data-pack="ios" data-tags="chevron, left"></li>
-            <li class="ion-ios-arrow-forward" data-pack="ios" data-tags="chevron, right"></li>
-            <li class="ion-ios-arrow-up" data-pack="ios" data-tags="chevron"></li>
-            <li class="ion-ios-arrow-right" data-pack="ios" data-tags="chevron"></li>
-            <li class="ion-ios-arrow-down" data-pack="ios" data-tags="chevron"></li>
-            <li class="ion-ios-arrow-left" data-pack="ios" data-tags="chevron"></li>
-            <li class="ion-ios-arrow-thin-up" data-pack="ios" data-tags="chevron"></li>
-            <li class="ion-ios-arrow-thin-right" data-pack="ios" data-tags="chevron"></li>
-            <li class="ion-ios-arrow-thin-down" data-pack="ios" data-tags="chevron"></li>
-            <li class="ion-ios-arrow-thin-left" data-pack="ios" data-tags="chevron"></li>
-            <li class="ion-ios-circle-filled" data-pack="ios" data-tags="checkmark, radio, dot, on, selected, button"></li>
-            <li class="ion-ios-circle-outline" data-pack="ios" data-tags="checkmark, radio, dot, off, button"></li>
-            <li class="ion-ios-checkmark-empty" data-pack="ios" data-tags="success, confirmed, on, finished, complete"></li>
-            <li class="ion-ios-checkmark-outline" data-pack="ios" data-tags="success, confirmed, on, finished, complete"></li>
-            <li class="ion-ios-checkmark" data-pack="ios" data-tags="success, confirmed, on, finished, complete"></li>
-            <li class="ion-ios-plus-empty" data-pack="ios" data-tags="add, include, new, invite, +"></li>
-            <li class="ion-ios-plus-outline" data-pack="ios" data-tags="add, include, new, invite, +"></li>
-            <li class="ion-ios-plus" data-pack="ios" data-tags="add, include, new, invite, +"></li>
-            <li class="ion-ios-close-empty" data-pack="ios" data-tags="delete, remove, trash, end, stop, x"></li>
-            <li class="ion-ios-close-outline" data-pack="ios" data-tags="delete, remove, trash, end, stop, x"></li>
-            <li class="ion-ios-close" data-pack="ios" data-tags="delete, remove, trash, end, stop, x"></li>
-            <li class="ion-ios-minus-empty" data-pack="ios" data-tags="hide, remove, minimize, -"></li>
-            <li class="ion-ios-minus-outline" data-pack="ios" data-tags="hide, remove, minimize, -"></li>
-            <li class="ion-ios-minus" data-pack="ios" data-tags="hide, remove, minimize, -"></li>
-            <li class="ion-ios-information-empty" data-pack="ios" data-tags="help, question"></li>
-            <li class="ion-ios-information-outline" data-pack="ios" data-tags="help, question"></li>
-            <li class="ion-ios-information" data-pack="ios" data-tags="help, question"></li>
-            <li class="ion-ios-help-empty" data-pack="ios" data-tags="question, information, ?"></li>
-            <li class="ion-ios-help-outline" data-pack="ios" data-tags="question, information, ?"></li>
-            <li class="ion-ios-help" data-pack="ios" data-tags="question, information, ?"></li>
-            <li class="ion-ios-search" data-pack="ios" data-tags="find, seek, look, magnifying glass"></li>
-            <li class="ion-ios-search-strong" data-pack="ios" data-tags="find, seek, look, magnifying glass"></li>
-            <li class="ion-ios-star" data-pack="ios" data-tags="favorite, rate"></li>
-            <li class="ion-ios-star-half" data-pack="ios" data-tags="favorite, rate"></li>
-            <li class="ion-ios-star-outline" data-pack="ios" data-tags="favorite, rate"></li>
-            <li class="ion-ios-heart" data-pack="ios" data-tags="love"></li>
-            <li class="ion-ios-heart-outline" data-pack="ios" data-tags="love"></li>
-            <li class="ion-ios-more" data-pack="ios" data-tags="menu"></li>
-            <li class="ion-ios-more-outline" data-pack="ios" data-tags="menu"></li>
-            <li class="ion-ios-home" data-pack="ios" data-tags="house"></li>
-            <li class="ion-ios-home-outline" data-pack="ios" data-tags="house"></li>
-            <li class="ion-ios-cloud" data-pack="ios" data-tags="storage, weather, whether"></li>
-            <li class="ion-ios-cloud-outline" data-pack="ios" data-tags="storage, weather, whether"></li>
-            <li class="ion-ios-cloud-upload" data-pack="ios" data-tags="storage"></li>
-            <li class="ion-ios-cloud-upload-outline" data-pack="ios" data-tags="storage"></li>
-            <li class="ion-ios-cloud-download" data-pack="ios" data-tags="storage"></li>
-            <li class="ion-ios-cloud-download-outline" data-pack="ios" data-tags="storage"></li>
-            <li class="ion-ios-upload" data-pack="ios" data-tags="share, import"></li>
-            <li class="ion-ios-upload-outline" data-pack="ios" data-tags="share, import"></li>
-            <li class="ion-ios-download" data-pack="ios" data-tags="save, export"></li>
-            <li class="ion-ios-download-outline" data-pack="ios" data-tags="save, export"></li>
-            <li class="ion-ios-refresh" data-pack="ios" data-tags="reload, renew, reset"></li>
-            <li class="ion-ios-refresh-outline" data-pack="ios" data-tags="reload, renew, reset"></li>
-            <li class="ion-ios-refresh-empty" data-pack="ios" data-tags="reload, renew"></li>
-            <li class="ion-ios-reload" data-pack="ios" data-tags="renew, reset"></li>
-            <li class="ion-ios-loop-strong" data-pack="ios" data-tags="reload, renew, reset"></li>
-            <li class="ion-ios-loop" data-pack="ios" data-tags="reload, renew, reset"></li>
-            <li class="ion-ios-bookmarks" data-pack="ios" data-tags="favorite"></li>
-            <li class="ion-ios-bookmarks-outline" data-pack="ios" data-tags="favorite"></li>
-            <li class="ion-ios-book" data-pack="ios" data-tags="favorite, read, literature"></li>
-            <li class="ion-ios-book-outline" data-pack="ios" data-tags="favorite, read, literature"></li>
-            <li class="ion-ios-flag" data-pack="ios" data-tags="marker, favorite"></li>
-            <li class="ion-ios-flag-outline" data-pack="ios" data-tags="marker, favorite"></li>
-            <li class="ion-ios-glasses" data-pack="ios" data-tags="steve, reading, look, see"></li>
-            <li class="ion-ios-glasses-outline" data-pack="ios" data-tags="steve, reading, look, see"></li>
-            <li class="ion-ios-browsers" data-pack="ios" data-tags="square"></li>
-            <li class="ion-ios-browsers-outline" data-pack="ios" data-tags="square"></li>
-            <li class="ion-ios-at" data-pack="ios" data-tags="@"></li>
-            <li class="ion-ios-at-outline" data-pack="ios" data-tags="@"></li>
-            <li class="ion-ios-pricetag" data-pack="ios" data-tags="shopping, money, items, commerce, $"></li>
-            <li class="ion-ios-pricetag-outline" data-pack="ios" data-tags="shopping, money, items, commerce, $"></li>
-            <li class="ion-ios-pricetags" data-pack="ios" data-tags="shopping, money, items, commerce, $"></li>
-            <li class="ion-ios-pricetags-outline" data-pack="ios" data-tags="shopping, money, items, commerce, $"></li>
-            <li class="ion-ios-cart" data-pack="ios" data-tags="shopping, money, items, commerce, $"></li>
-            <li class="ion-ios-cart-outline" data-pack="ios" data-tags="shopping, money, items, commerce, $"></li>
-            <li class="ion-ios-chatboxes" data-pack="ios" data-tags="talk"></li>
-            <li class="ion-ios-chatboxes-outline" data-pack="ios" data-tags="talk"></li>
-            <li class="ion-ios-chatbubble" data-pack="ios" data-tags="talk"></li>
-            <li class="ion-ios-chatbubble-outline" data-pack="ios" data-tags="talk"></li>
-            <li class="ion-ios-cog" data-pack="ios" data-tags="settings, gear, options"></li>
-            <li class="ion-ios-cog-outline" data-pack="ios" data-tags="settings, gear, options"></li>
-            <li class="ion-ios-gear" data-pack="ios" data-tags="cog, settings, options"></li>
-            <li class="ion-ios-gear-outline" data-pack="ios" data-tags="cog, settings, options"></li>
-            <li class="ion-ios-settings" data-pack="ios" data-tags="cog, settings, options"></li>
-            <li class="ion-ios-settings-strong" data-pack="ios" data-tags="cog, settings, options"></li>
-            <li class="ion-ios-toggle" data-pack="ios" data-tags="settings, options, switch"></li>
-            <li class="ion-ios-toggle-outline" data-pack="ios" data-tags="settings, options, switch"></li>
-            <li class="ion-ios-analytics" data-pack="ios" data-tags="metrics, track, data"></li>
-            <li class="ion-ios-analytics-outline" data-pack="ios" data-tags="metrics, track, data"></li>
-            <li class="ion-ios-pie" data-pack="ios" data-tags="cog, settings, options"></li>
-            <li class="ion-ios-pie-outline" data-pack="ios" data-tags="cog, settings, options"></li>
-            <li class="ion-ios-pulse" data-pack="ios" data-tags="live, hot, rate"></li>
-            <li class="ion-ios-pulse-strong" data-pack="ios" data-tags="live, hot, rate"></li>
-            <li class="ion-ios-filing" data-pack="ios" data-tags="archive"></li>
-            <li class="ion-ios-filing-outline" data-pack="ios" data-tags="archive"></li>
-            <li class="ion-ios-box" data-pack="ios" data-tags="archive"></li>
-            <li class="ion-ios-box-outline" data-pack="ios" data-tags="archive"></li>
-            <li class="ion-ios-compose" data-pack="ios" data-tags="write, type, create"></li>
-            <li class="ion-ios-compose-outline" data-pack="ios" data-tags="write, type, create"></li>
-            <li class="ion-ios-trash" data-pack="ios" data-tags="delete, remove, dispose, waste, basket, dump, kill"></li>
-            <li class="ion-ios-trash-outline" data-pack="ios" data-tags="delete, remove, dispose, waste, basket, dump, kill"></li>
-            <li class="ion-ios-copy" data-pack="ios" data-tags="duplicate, paper"></li>
-            <li class="ion-ios-copy-outline" data-pack="ios" data-tags="duplicate, paper"></li>
-            <li class="ion-ios-email" data-pack="ios" data-tags="snail, mail"></li>
-            <li class="ion-ios-email-outline" data-pack="ios" data-tags="snail, mail"></li>
-            <li class="ion-ios-undo" data-pack="ios" data-tags="reply"></li>
-            <li class="ion-ios-undo-outline" data-pack="ios" data-tags="reply"></li>
-            <li class="ion-ios-redo" data-pack="ios" data-tags="forward"></li>
-            <li class="ion-ios-redo-outline" data-pack="ios" data-tags="forward"></li>
-            <li class="ion-ios-paperplane" data-pack="ios" data-tags="send"></li>
-            <li class="ion-ios-paperplane-outline" data-pack="ios" data-tags="send"></li>
-            <li class="ion-ios-folder" data-pack="ios" data-tags="file"></li>
-            <li class="ion-ios-folder-outline" data-pack="ios" data-tags="file"></li>
-            <li class="ion-ios-paper" data-pack="ios" data-tags="feed, paper"></li>
-            <li class="ion-ios-paper-outline" data-pack="ios" data-tags="feed, paper"></li>
-            <li class="ion-ios-list" data-pack="ios" data-tags="todo, feed, paper"></li>
-            <li class="ion-ios-list-outline" data-pack="ios" data-tags="todo, feed, paper"></li>
-            <li class="ion-ios-world" data-pack="ios" data-tags="globe, earth"></li>
-            <li class="ion-ios-world-outline" data-pack="ios" data-tags="globe, earth"></li>
-            <li class="ion-ios-alarm" data-pack="ios" data-tags="wake, ring"></li>
-            <li class="ion-ios-alarm-outline" data-pack="ios" data-tags="wake, ring"></li>
-            <li class="ion-ios-speedometer" data-pack="ios" data-tags="speed, drive, level"></li>
-            <li class="ion-ios-speedometer-outline" data-pack="ios" data-tags="speed, drive, level"></li>
-            <li class="ion-ios-stopwatch" data-pack="ios" data-tags="time, speed"></li>
-            <li class="ion-ios-stopwatch-outline" data-pack="ios" data-tags="time, speed"></li>
-            <li class="ion-ios-timer" data-pack="ios" data-tags="cooking, alarm, buzz"></li>
-            <li class="ion-ios-timer-outline" data-pack="ios" data-tags="cooking, alarm, buzz"></li>
-            <li class="ion-ios-clock" data-pack="ios" data-tags="time, date, hours, minutes, seconds, watch"></li>
-            <li class="ion-ios-clock-outline" data-pack="ios" data-tags="time, date, hours, minutes, seconds, watch"></li>
-            <li class="ion-ios-time" data-pack="ios" data-tags="clock, watch, hour, minute, second"></li>
-            <li class="ion-ios-time-outline" data-pack="ios" data-tags="clock, watch, hour, minute, second"></li>
-            <li class="ion-ios-calendar" data-pack="ios" data-tags="date, time, month, year"></li>
-            <li class="ion-ios-calendar-outline" data-pack="ios" data-tags="date, time, month, year"></li>
-            <li class="ion-ios-photos" data-pack="ios" data-tags="images, stills, square"></li>
-            <li class="ion-ios-photos-outline" data-pack="ios" data-tags="images, stills, square"></li>
-            <li class="ion-ios-albums" data-pack="ios" data-tags="square, boxes, slides"></li>
-            <li class="ion-ios-albums-outline" data-pack="ios" data-tags="square, boxes, slides"></li>
-            <li class="ion-ios-camera" data-pack="ios" data-tags="picture"></li>
-            <li class="ion-ios-camera-outline" data-pack="ios" data-tags="picture"></li>
-            <li class="ion-ios-reverse-camera" data-pack="ios" data-tags="picture"></li>
-            <li class="ion-ios-reverse-camera-outline" data-pack="ios" data-tags="picture"></li>
-            <li class="ion-ios-eye" data-pack="ios" data-tags="view, see, exposed, look"></li>
-            <li class="ion-ios-eye-outline" data-pack="ios" data-tags="view, see, exposed, look"></li>
-            <li class="ion-ios-bolt" data-pack="ios" data-tags="flash, lightning"></li>
-            <li class="ion-ios-bolt-outline" data-pack="ios" data-tags="flash, lightning"></li>
-            <li class="ion-ios-color-wand" data-pack="ios" data-tags="camera, picture, edit, magic"></li>
-            <li class="ion-ios-color-wand-outline" data-pack="ios" data-tags="camera, picture, edit, magic"></li>
-            <li class="ion-ios-color-filter" data-pack="ios" data-tags="camera, picture"></li>
-            <li class="ion-ios-color-filter-outline" data-pack="ios" data-tags="camera, picture"></li>
-            <li class="ion-ios-grid-view" data-pack="ios" data-tags="camera, picture"></li>
-            <li class="ion-ios-grid-view-outline" data-pack="ios" data-tags="camera, picture"></li>
-            <li class="ion-ios-crop-strong" data-pack="ios" data-tags="camera, picture, edit"></li>
-            <li class="ion-ios-crop" data-pack="ios" data-tags="camera, picture, edit"></li>
-            <li class="ion-ios-barcode" data-pack="ios" data-tags="reader, camera"></li>
-            <li class="ion-ios-barcode-outline" data-pack="ios" data-tags="reader, camera"></li>
-            <li class="ion-ios-briefcase" data-pack="ios" data-tags="organize, folder"></li>
-            <li class="ion-ios-briefcase-outline" data-pack="ios" data-tags="organize, folder"></li>
-            <li class="ion-ios-medkit" data-pack="ios" data-tags="health, case, first aid, sick, disease"></li>
-            <li class="ion-ios-medkit-outline" data-pack="ios" data-tags="health, case, first aid, sick, disease"></li>
-            <li class="ion-ios-medical" data-pack="ios" data-tags="health, case, first aid, sick, disease"></li>
-            <li class="ion-ios-medical-outline" data-pack="ios" data-tags="health, case, first aid, sick, disease"></li>
-            <li class="ion-ios-infinite" data-pack="ios" data-tags="forever, loop"></li>
-            <li class="ion-ios-infinite-outline" data-pack="ios" data-tags="forever, loop"></li>
-            <li class="ion-ios-calculator" data-pack="ios" data-tags="math, arithmatic"></li>
-            <li class="ion-ios-calculator-outline" data-pack="ios" data-tags="math, arithmatic"></li>
-            <li class="ion-ios-keypad" data-pack="ios" data-tags="type, grid, circle"></li>
-            <li class="ion-ios-keypad-outline" data-pack="ios" data-tags="type, grid, circle"></li>
-            <li class="ion-ios-telephone" data-pack="ios" data-tags="oldschool, call"></li>
-            <li class="ion-ios-telephone-outline" data-pack="ios" data-tags="oldschool, call"></li>
-            <li class="ion-ios-drag" data-pack="ios" data-tags="reorder, move, drag"></li>
-            <li class="ion-ios-location" data-pack="ios" data-tags="navigation, map, gps, pin"></li>
-            <li class="ion-ios-location-outline" data-pack="ios" data-tags="navigation, map, gps, pin"></li>
-            <li class="ion-ios-navigate" data-pack="ios" data-tags="location, map, gps, pin"></li>
-            <li class="ion-ios-navigate-outline" data-pack="ios" data-tags="location, map, gps, pin"></li>
-            <li class="ion-ios-locked" data-pack="ios" data-tags="security, padlock, safe"></li>
-            <li class="ion-ios-locked-outline" data-pack="ios" data-tags="security, padlock, safe"></li>
-            <li class="ion-ios-unlocked" data-pack="ios" data-tags="security, padlock, safe"></li>
-            <li class="ion-ios-unlocked-outline" data-pack="ios" data-tags="security, padlock, safe"></li>
-            <li class="ion-ios-monitor" data-pack="ios" data-tags="thunderbolt, display, screen"></li>
-            <li class="ion-ios-monitor-outline" data-pack="ios" data-tags="thunderbolt, display, screen"></li>
-            <li class="ion-ios-printer" data-pack="ios" data-tags="paper"></li>
-            <li class="ion-ios-printer-outline" data-pack="ios" data-tags="paper"></li>
-            <li class="ion-ios-game-controller-a" data-pack="ios" data-tags="gaming, nintendo, play"></li>
-            <li class="ion-ios-game-controller-a-outline" data-pack="ios" data-tags="gaming, nintendo, play"></li>
-            <li class="ion-ios-game-controller-b" data-pack="ios" data-tags="gaming, nintendo, play"></li>
-            <li class="ion-ios-game-controller-b-outline" data-pack="ios" data-tags="gaming, nintendo, play"></li>
-            <li class="ion-ios-americanfootball" data-pack="ios" data-tags="nfl, games, sports, fun, play"></li>
-            <li class="ion-ios-americanfootball-outline" data-pack="ios" data-tags="nfl, games, sports, fun, play"></li>
-            <li class="ion-ios-baseball" data-pack="ios" data-tags="mlb, games, sports, fun, play"></li>
-            <li class="ion-ios-baseball-outline" data-pack="ios" data-tags="mlb, games, sports, fun, play"></li>
-            <li class="ion-ios-basketball" data-pack="ios" data-tags="nba, games, sports, fun, play"></li>
-            <li class="ion-ios-basketball-outline" data-pack="ios" data-tags="nba, games, sports, fun, play"></li>
-            <li class="ion-ios-tennisball" data-pack="ios" data-tags="games, sports, fun, play"></li>
-            <li class="ion-ios-tennisball-outline" data-pack="ios" data-tags="games, sports, fun, play"></li>
-            <li class="ion-ios-football" data-pack="ios" data-tags="mls, soccer, games, sports, fun, play"></li>
-            <li class="ion-ios-football-outline" data-pack="ios" data-tags="mls, soccer, games, sports, fun, play"></li>
-            <li class="ion-ios-body" data-pack="ios" data-tags="person, users, staff, head, human"></li>
-            <li class="ion-ios-body-outline" data-pack="ios" data-tags="person, users, staff, head, human"></li>
-            <li class="ion-ios-person" data-pack="ios" data-tags="users, staff, head, human"></li>
-            <li class="ion-ios-person-outline" data-pack="ios" data-tags="users, staff, head, human"></li>
-            <li class="ion-ios-personadd" data-pack="ios" data-tags="users, staff, head, human, new, invite"></li>
-            <li class="ion-ios-personadd-outline" data-pack="ios" data-tags="users, staff, head, human, new, invite"></li>
-            <li class="ion-ios-people" data-pack="ios" data-tags="stalker, person, users, head, human"></li>
-            <li class="ion-ios-people-outline" data-pack="ios" data-tags="stalker, person, users, head, human"></li>
-            <li class="ion-ios-musical-notes" data-pack="ios" data-tags="sound, noise, listening, play"></li>
-            <li class="ion-ios-musical-note" data-pack="ios" data-tags="sound, noise, listening, play"></li>
-            <li class="ion-ios-bell" data-pack="ios" data-tags="right, noise, alarm, sound, music"></li>
-            <li class="ion-ios-bell-outline" data-pack="ios" data-tags="right, noise, alarm, sound, music"></li>
-            <li class="ion-ios-mic" data-pack="ios" data-tags="sound, noise, speaker, talk"></li>
-            <li class="ion-ios-mic-outline" data-pack="ios" data-tags="sound, noise, speaker, talk"></li>
-            <li class="ion-ios-mic-off" data-pack="ios" data-tags="sound, noise, speaker, talk"></li>
-            <li class="ion-ios-volume-high" data-pack="ios" data-tags="sound, noise, listen, music"></li>
-            <li class="ion-ios-volume-low" data-pack="ios" data-tags="sound, noise, listen, music"></li>
-            <li class="ion-ios-play" data-pack="ios" data-tags="music, watch, arrow, right"></li>
-            <li class="ion-ios-play-outline" data-pack="ios" data-tags="music, watch, arrow, right"></li>
-            <li class="ion-ios-pause" data-pack="ios" data-tags="music, break, hold, freeze"></li>
-            <li class="ion-ios-pause-outline" data-pack="ios" data-tags="music, break, hold, freeze"></li>
-            <li class="ion-ios-recording" data-pack="ios" data-tags="film, tape, voicemail"></li>
-            <li class="ion-ios-recording-outline" data-pack="ios" data-tags="film, tape, voicemail"></li>
-            <li class="ion-ios-fastforward" data-pack="ios" data-tags="next, skip, jump"></li>
-            <li class="ion-ios-fastforward-outline" data-pack="ios" data-tags="next, skip, jump"></li>
-            <li class="ion-ios-rewind" data-pack="ios" data-tags="music, previous, back"></li>
-            <li class="ion-ios-rewind-outline" data-pack="ios" data-tags="music, previous, back"></li>
-            <li class="ion-ios-skipbackward" data-pack="ios" data-tags="music, previous"></li>
-            <li class="ion-ios-skipbackward-outline" data-pack="ios" data-tags="music, previous"></li>
-            <li class="ion-ios-skipforward" data-pack="ios" data-tags="music, next"></li>
-            <li class="ion-ios-skipforward-outline" data-pack="ios" data-tags="music, next"></li>
-            <li class="ion-ios-shuffle-strong" data-pack="ios" data-tags="music, next"></li>
-            <li class="ion-ios-shuffle" data-pack="ios" data-tags="music, next"></li>
-            <li class="ion-ios-videocam" data-pack="ios" data-tags="film, movie, camera"></li>
-            <li class="ion-ios-videocam-outline" data-pack="ios" data-tags="film, movie, camera"></li>
-            <li class="ion-ios-film" data-pack="ios" data-tags="film, movie, camera"></li>
-            <li class="ion-ios-film-outline" data-pack="ios" data-tags="film, movie, camera"></li>
-            <li class="ion-ios-flask" data-pack="ios" data-tags="options, mixer, liquid"></li>
-            <li class="ion-ios-flask-outline" data-pack="ios" data-tags="options, mixer, liquid"></li>
-            <li class="ion-ios-lightbulb" data-pack="ios" data-tags="idea, new, bright, aha!"></li>
-            <li class="ion-ios-lightbulb-outline" data-pack="ios" data-tags="idea, new, bright, aha!"></li>
-            <li class="ion-ios-wineglass" data-pack="ios" data-tags="alcohol, drink, food, glass, drunk, cheers"></li>
-            <li class="ion-ios-wineglass-outline" data-pack="ios" data-tags="alcohol, drink, food, glass, drunk, cheers"></li>
-            <li class="ion-ios-pint" data-pack="ios" data-tags="alcohol, drink, food, beer, drunk, cheers"></li>
-            <li class="ion-ios-pint-outline" data-pack="ios" data-tags="alcohol, drink, food, beer, drunk, cheers"></li>
-            <li class="ion-ios-nutrition" data-pack="ios" data-tags="health, carrot, food"></li>
-            <li class="ion-ios-nutrition-outline" data-pack="ios" data-tags="health, carrot, food"></li>
-            <li class="ion-ios-flower" data-pack="ios" data-tags="nature, spring, leaf, garden"></li>
-            <li class="ion-ios-flower-outline" data-pack="ios" data-tags="nature, spring, leaf, garden"></li>
-            <li class="ion-ios-rose" data-pack="ios" data-tags="nature, spring, leaf, garden, flower"></li>
-            <li class="ion-ios-rose-outline" data-pack="ios" data-tags="nature, spring, leaf, garden, flower"></li>
-            <li class="ion-ios-paw" data-pack="ios" data-tags="nature, animal, pet, outdoor, track"></li>
-            <li class="ion-ios-paw-outline" data-pack="ios" data-tags="nature, animal, pet, outdoor, track"></li>
-            <li class="ion-ios-flame" data-pack="ios" data-tags="fire, hot, burn"></li>
-            <li class="ion-ios-flame-outline" data-pack="ios" data-tags="fire, hot, burn"></li>
-            <li class="ion-ios-sunny" data-pack="ios" data-tags="weather, whether, light, sky"></li>
-            <li class="ion-ios-sunny-outline" data-pack="ios" data-tags="weather, whether, light, sky"></li>
-            <li class="ion-ios-partlysunny" data-pack="ios" data-tags="light, weather, whether, cloudy"></li>
-            <li class="ion-ios-partlysunny-outline" data-pack="ios" data-tags="light, weather, whether, cloudy"></li>
-            <li class="ion-ios-cloudy" data-pack="ios" data-tags="weather, whether, overcast"></li>
-            <li class="ion-ios-cloudy-outline" data-pack="ios" data-tags="weather, whether, overcast"></li>
-            <li class="ion-ios-rainy" data-pack="ios" data-tags="whether, weather, water, cloud"></li>
-            <li class="ion-ios-rainy-outline" data-pack="ios" data-tags="whether, weather, water, cloud"></li>
-            <li class="ion-ios-thunderstorm" data-pack="ios" data-tags="whether, weather, sky, lightning, rain, cloudy, overcast, storm"></li>
-            <li class="ion-ios-thunderstorm-outline" data-pack="ios" data-tags="whether, weather, sky, lightning, rain, cloudy, overcast, storm"></li>
-            <li class="ion-ios-snowy" data-pack="ios" data-tags="cold, weather, whether, overcast"></li>
-            <li class="ion-ios-moon" data-pack="ios" data-tags="sky, night, dark"></li>
-            <li class="ion-ios-moon-outline" data-pack="ios" data-tags="sky, night, dark"></li>
-            <li class="ion-ios-cloudy-night" data-pack="ios" data-tags="weather, whether, overcast"></li>
-            <li class="ion-ios-cloudy-night-outline" data-pack="ios" data-tags="weather, whether, overcast"></li>
-
-
-            <p><!-- end iOS 7-style icons pack --></p>
-
-
-            <li class="ion-android-arrow-up" data-pack="android" data-tags="chevron, navigation"></li>
-            <li class="ion-android-arrow-forward" data-pack="android" data-tags="chevron, navigation"></li>
-            <li class="ion-android-arrow-down" data-pack="android" data-tags="chevron, navigation"></li>
-            <li class="ion-android-arrow-back" data-pack="android" data-tags="chevron, navigation"></li>
-            <li class="ion-android-arrow-dropup" data-pack="android" data-tags="chevron, navigation"></li>
-            <li class="ion-android-arrow-dropup-circle" data-pack="android" data-tags="chevron, navigation"></li>
-            <li class="ion-android-arrow-dropright" data-pack="android" data-tags="chevron, navigation"></li>
-            <li class="ion-android-arrow-dropright-circle" data-pack="android" data-tags="chevron, navigation"></li>
-            <li class="ion-android-arrow-dropdown" data-pack="android" data-tags="chevron, navigation"></li>
-            <li class="ion-android-arrow-dropdown-circle" data-pack="android" data-tags="chevron, navigation"></li>
-            <li class="ion-android-arrow-dropleft" data-pack="android" data-tags="chevron, navigation"></li>
-            <li class="ion-android-arrow-dropleft-circle" data-pack="android" data-tags="chevron, navigation"></li>
-            <li class="ion-android-add" data-pack="android" data-tags="plus, include, invite"></li>
-            <li class="ion-android-add-circle" data-pack="android" data-tags="plus, include, invite"></li>
-            <li class="ion-android-remove" data-pack="android" data-tags="minus, subtract, delete"></li>
-            <li class="ion-android-remove-circle" data-pack="android" data-tags="minus, subtract, delete"></li>
-            <li class="ion-android-close" data-pack="android" data-tags="delete, remove"></li>
-            <li class="ion-android-cancel" data-pack="android" data-tags="delete, remove"></li>
-            <li class="ion-android-radio-button-off" data-pack="android" data-tags=""></li>
-            <li class="ion-android-radio-button-on" data-pack="android" data-tags=""></li>
-            <li class="ion-android-checkmark-circle" data-pack="android" data-tags=""></li>
-            <li class="ion-android-checkbox-outline-blank" data-pack="android" data-tags=""></li>
-            <li class="ion-android-checkbox-outline" data-pack="android" data-tags=""></li>
-            <li class="ion-android-checkbox-blank" data-pack="android" data-tags=""></li>
-            <li class="ion-android-checkbox" data-pack="android" data-tags=""></li>
-            <li class="ion-android-done" data-pack="android" data-tags=""></li>
-            <li class="ion-android-done-all" data-pack="android" data-tags=""></li>
-            <li class="ion-android-menu" data-pack="android" data-tags=""></li>
-            <li class="ion-android-more-horizontal" data-pack="android" data-tags="options, menu"></li>
-            <li class="ion-android-more-vertical" data-pack="android" data-tags="options, menu"></li>
-            <li class="ion-android-refresh" data-pack="android" data-tags=""></li>
-            <li class="ion-android-sync" data-pack="android" data-tags=""></li>
-            <li class="ion-android-wifi" data-pack="android" data-tags="internet,connection, bars"></li>
-            <li class="ion-android-call" data-pack="android" data-tags="telephone"></li>
-            <li class="ion-android-apps" data-pack="android" data-tags=""></li>
-            <li class="ion-android-settings" data-pack="android" data-tags="options"></li>
-            <li class="ion-android-options" data-pack="android" data-tags="settings, mixer"></li>
-            <li class="ion-android-funnel" data-pack="android" data-tags=""></li>
-            <li class="ion-android-search" data-pack="android" data-tags="magnifying glass"></li>
-            <li class="ion-android-home" data-pack="android" data-tags=""></li>
-            <li class="ion-android-cloud-outline" data-pack="android" data-tags=""></li>
-            <li class="ion-android-cloud" data-pack="android" data-tags=""></li>
-            <li class="ion-android-download" data-pack="android" data-tags=""></li>
-            <li class="ion-android-upload" data-pack="android" data-tags=""></li>
-            <li class="ion-android-cloud-done" data-pack="android" data-tags=""></li>
-            <li class="ion-android-cloud-circle" data-pack="android" data-tags=""></li>
-            <li class="ion-android-favorite-outline" data-pack="android" data-tags="favorite, like, rate"></li>
-            <li class="ion-android-favorite" data-pack="android" data-tags="favorite, like, rate"></li>
-            <li class="ion-android-star-outline" data-pack="android" data-tags="favorite, like, rate"></li>
-            <li class="ion-android-star-half" data-pack="android" data-tags="favorite, like, rate"></li>
-            <li class="ion-android-star" data-pack="android" data-tags="favorite, like, rate"></li>
-            <li class="ion-android-calendar" data-pack="android" data-tags="clock"></li>
-            <li class="ion-android-alarm-clock" data-pack="android" data-tags="clock"></li>
-            <li class="ion-android-time" data-pack="android" data-tags="clock"></li>
-            <li class="ion-android-stopwatch" data-pack="android" data-tags=""></li>
-            <li class="ion-android-watch" data-pack="android" data-tags=""></li>
-            <li class="ion-android-locate" data-pack="android" data-tags=""></li>
-            <li class="ion-android-navigate" data-pack="android" data-tags=""></li>
-            <li class="ion-android-pin" data-pack="android" data-tags=""></li>
-            <li class="ion-android-compass" data-pack="android" data-tags=""></li>
-            <li class="ion-android-map" data-pack="android" data-tags=""></li>
-            <li class="ion-android-walk" data-pack="android" data-tags=""></li>
-            <li class="ion-android-bicycle" data-pack="android" data-tags="move, bike, transportation, maps"></li>
-            <li class="ion-android-car" data-pack="android" data-tags=""></li>
-            <li class="ion-android-bus" data-pack="android" data-tags=""></li>
-            <li class="ion-android-subway" data-pack="android" data-tags=""></li>
-            <li class="ion-android-train" data-pack="android" data-tags=""></li>
-            <li class="ion-android-boat" data-pack="android" data-tags=""></li>
-            <li class="ion-android-plane" data-pack="android" data-tags=""></li>
-            <li class="ion-android-restaurant" data-pack="android" data-tags=""></li>
-            <li class="ion-android-bar" data-pack="android" data-tags="wine, drink, food, dinner"></li>
-            <li class="ion-android-cart" data-pack="android" data-tags=""></li>
-            <li class="ion-android-camera" data-pack="android" data-tags=""></li>
-            <li class="ion-android-image" data-pack="android" data-tags=""></li>
-            <li class="ion-android-film" data-pack="android" data-tags=""></li>
-            <li class="ion-android-color-palette" data-pack="android" data-tags=""></li>
-            <li class="ion-android-create" data-pack="android" data-tags=""></li>
-            <li class="ion-android-mail" data-pack="android" data-tags=""></li>
-            <li class="ion-android-drafts" data-pack="android" data-tags=""></li>
-            <li class="ion-android-send" data-pack="android" data-tags=""></li>
-            <li class="ion-android-archive" data-pack="android" data-tags=""></li>
-            <li class="ion-android-delete" data-pack="android" data-tags=""></li>
-            <li class="ion-android-attach" data-pack="android" data-tags=""></li>
-            <li class="ion-android-share" data-pack="android" data-tags=""></li>
-            <li class="ion-android-share-alt" data-pack="android" data-tags=""></li>
-            <li class="ion-android-bookmark" data-pack="android" data-tags=""></li>
-            <li class="ion-android-document" data-pack="android" data-tags=""></li>
-            <li class="ion-android-clipboard" data-pack="android" data-tags=""></li>
-            <li class="ion-android-list" data-pack="android" data-tags=""></li>
-            <li class="ion-android-folder-open" data-pack="android" data-tags=""></li>
-            <li class="ion-android-folder" data-pack="android" data-tags=""></li>
-            <li class="ion-android-print" data-pack="android" data-tags=""></li>
-            <li class="ion-android-open" data-pack="android" data-tags=""></li>
-            <li class="ion-android-exit" data-pack="android" data-tags=""></li>
-            <li class="ion-android-contract" data-pack="android" data-tags=""></li>
-            <li class="ion-android-expand" data-pack="android" data-tags=""></li>
-            <li class="ion-android-globe" data-pack="android" data-tags=""></li>
-            <li class="ion-android-chat" data-pack="android" data-tags="talk, text"></li>
-            <li class="ion-android-textsms" data-pack="android" data-tags="talk, text"></li>
-            <li class="ion-android-hangout" data-pack="android" data-tags=""></li>
-            <li class="ion-android-happy" data-pack="android" data-tags=""></li>
-            <li class="ion-android-sad" data-pack="android" data-tags=""></li>
-            <li class="ion-android-person" data-pack="android" data-tags=""></li>
-            <li class="ion-android-people" data-pack="android" data-tags=""></li>
-            <li class="ion-android-person-add" data-pack="android" data-tags=""></li>
-            <li class="ion-android-contact" data-pack="android" data-tags=""></li>
-            <li class="ion-android-contacts" data-pack="android" data-tags=""></li>
-            <li class="ion-android-playstore" data-pack="android" data-tags=""></li>
-            <li class="ion-android-lock" data-pack="android" data-tags=""></li>
-            <li class="ion-android-unlock" data-pack="android" data-tags=""></li>
-            <li class="ion-android-microphone" data-pack="android" data-tags="recorder, speak, noise, music, sound"></li>
-            <li class="ion-android-microphone-off" data-pack="android" data-tags="recorder, speak, noise, music, sound, mute"></li>
-            <li class="ion-android-notifications-none" data-pack="android" data-tags=""></li>
-            <li class="ion-android-notifications" data-pack="android" data-tags=""></li>
-            <li class="ion-android-notifications-off" data-pack="android" data-tags=""></li>
-            <li class="ion-android-volume-mute" data-pack="android" data-tags=""></li>
-            <li class="ion-android-volume-down" data-pack="android" data-tags=""></li>
-            <li class="ion-android-volume-up" data-pack="android" data-tags=""></li>
-            <li class="ion-android-volume-off" data-pack="android" data-tags=""></li>
-            <li class="ion-android-hand" data-pack="android" data-tags="stop"></li>
-            <li class="ion-android-desktop" data-pack="android" data-tags=""></li>
-            <li class="ion-android-laptop" data-pack="android" data-tags=""></li>
-            <li class="ion-android-phone-portrait" data-pack="android" data-tags=""></li>
-            <li class="ion-android-phone-landscape" data-pack="android" data-tags=""></li>
-            <li class="ion-android-bulb" data-pack="android" data-tags=""></li>
-            <li class="ion-android-sunny" data-pack="android" data-tags=""></li>
-            <li class="ion-android-alert" data-pack="android" data-tags=""></li>
-            <li class="ion-android-warning" data-pack="android" data-tags=""></li>
-
-
-            <p>
-                <!--
-
-                End Android-style icons pack.
-
-                Android-style icons originally built by Google’s [Material Design Icons](https://github.com/google/material-design-icons), used under [CC BY](http://creativecommons.org/licenses/by/4.0/) / Modified icons to fit ionicon’s grid from original.
-
-                -->
-            </p>
-
-
-            <li class="ion-social-twitter" data-pack="social" data-tags="follow, post, share"></li>
-            <li class="ion-social-twitter-outline" data-pack="social" data-tags="follow, post, share"></li>
-            <li class="ion-social-facebook" data-pack="social" data-tags="like, post, share"></li>
-            <li class="ion-social-facebook-outline" data-pack="social" data-tags="like, post, share"></li>
-            <li class="ion-social-googleplus" data-pack="social" data-tags="follow, post, share"></li>
-            <li class="ion-social-googleplus-outline" data-pack="social" data-tags="follow, post, share"></li>
-            <li class="ion-social-google" data-pack="social" data-tags="follow, post, share"></li>
-            <li class="ion-social-google-outline" data-pack="social" data-tags="follow, post, share"></li>
-            <li class="ion-social-dribbble" data-pack="social" data-tags="design"></li>
-            <li class="ion-social-dribbble-outline" data-pack="social" data-tags="design"></li>
-            <li class="ion-social-octocat" data-pack="social" data-tags="code, github, fork, merge, clone"></li>
-            <li class="ion-social-github" data-pack="social" data-tags="code, fork, merge, clone"></li>
-            <li class="ion-social-github-outline" data-pack="social" data-tags="code, fork, merge, clone"></li>
-            <li class="ion-social-instagram" data-pack="social" data-tags="photo, camera, facebook"></li>
-            <li class="ion-social-instagram-outline" data-pack="social" data-tags="photo, camera, facebook"></li>
-            <li class="ion-social-whatsapp" data-pack="social" data-tags="text, sharing, private, facebook"></li>
-            <li class="ion-social-whatsapp-outline" data-pack="social" data-tags="text, sharing, private, facebook"></li>
-            <li class="ion-social-snapchat" data-pack="social" data-tags="photos, app"></li>
-            <li class="ion-social-snapchat-outline" data-pack="social" data-tags="photos, app"></li>
-            <li class="ion-social-foursquare" data-pack="social" data-tags="checkin"></li>
-            <li class="ion-social-foursquare-outline" data-pack="social" data-tags="checkin"></li>
-            <li class="ion-social-pinterest" data-pack="social" data-tags="social"></li>
-            <li class="ion-social-pinterest-outline" data-pack="social" data-tags="social"></li>
-            <li class="ion-social-rss" data-pack="social" data-tags="blogging"></li>
-            <li class="ion-social-rss-outline" data-pack="social" data-tags="blogging"></li>
-            <li class="ion-social-tumblr" data-pack="social" data-tags="blogging"></li>
-            <li class="ion-social-tumblr-outline" data-pack="social" data-tags="blogging"></li>
-            <li class="ion-social-wordpress" data-pack="social" data-tags="blogging"></li>
-            <li class="ion-social-wordpress-outline" data-pack="social" data-tags="blogging"></li>
-            <li class="ion-social-reddit" data-pack="social" data-tags="news, upvotes, karma"></li>
-            <li class="ion-social-reddit-outline" data-pack="social" data-tags="news, upvotes, karma"></li>
-            <li class="ion-social-hackernews" data-pack="social" data-tags="discuss, upvotes, karma"></li>
-            <li class="ion-social-hackernews-outline" data-pack="social" data-tags="discuss, upvotes, karma"></li>
-            <li class="ion-social-designernews" data-pack="social" data-tags="design, post"></li>
-            <li class="ion-social-designernews-outline" data-pack="social" data-tags="design, post"></li>
-            <li class="ion-social-yahoo" data-pack="social" data-tags=""></li>
-            <li class="ion-social-yahoo-outline" data-pack="social" data-tags=""></li>
-            <li class="ion-social-buffer" data-pack="social" data-tags="share"></li>
-            <li class="ion-social-buffer-outline" data-pack="social" data-tags="share"></li>
-            <li class="ion-social-skype" data-pack="social" data-tags="call"></li>
-            <li class="ion-social-skype-outline" data-pack="social" data-tags="call"></li>
-            <li class="ion-social-linkedin" data-pack="social" data-tags="connect"></li>
-            <li class="ion-social-linkedin-outline" data-pack="social" data-tags="connect"></li>
-            <li class="ion-social-vimeo" data-pack="social" data-tags="video, watch, share, view"></li>
-            <li class="ion-social-vimeo-outline" data-pack="social" data-tags="video, watch, share, view"></li>
-            <li class="ion-social-twitch" data-pack="social" data-tags="gaming, games, live, streaming, video, watch, share, view"></li>
-            <li class="ion-social-twitch-outline" data-pack="social" data-tags="gaming, games, live, streaming, video, watch, share, view"></li>
-            <li class="ion-social-youtube" data-pack="social" data-tags="video, watch, share, view"></li>
-            <li class="ion-social-youtube-outline" data-pack="social" data-tags="video, watch, share, view"></li>
-            <li class="ion-social-dropbox" data-pack="social" data-tags="upload"></li>
-            <li class="ion-social-dropbox-outline" data-pack="social" data-tags="upload"></li>
-            <li class="ion-social-apple" data-pack="social" data-tags="mac, mobile"></li>
-            <li class="ion-social-apple-outline" data-pack="social" data-tags="mac, mobile"></li>
-            <li class="ion-social-android" data-pack="social" data-tags="mobile"></li>
-            <li class="ion-social-android-outline" data-pack="social" data-tags="mobile"></li>
-            <li class="ion-social-windows" data-pack="social" data-tags="pc"></li>
-            <li class="ion-social-windows-outline" data-pack="social" data-tags="pc"></li>
-            <li class="ion-social-html5" data-pack="social" data-tags="code, html, css, js, developer"></li>
-            <li class="ion-social-html5-outline" data-pack="social" data-tags="code, html, css, js, developer"></li>
-            <li class="ion-social-css3" data-pack="social" data-tags="code, html, css, js, developer"></li>
-            <li class="ion-social-css3-outline" data-pack="social" data-tags="code, html, css, js, developer"></li>
-            <li class="ion-social-javascript" data-pack="social" data-tags="code, html, css, js, developer"></li>
-            <li class="ion-social-javascript-outline" data-pack="social" data-tags="code, html, css, js, developer"></li>
-            <li class="ion-social-angular" data-pack="social" data-tags="code, mobile, js, angularjs, ionic"></li>
-            <li class="ion-social-angular-outline" data-pack="social" data-tags="code, mobile, js, angularjs, ionic"></li>
-            <li class="ion-social-nodejs" data-pack="social" data-tags="code, js, javascript, developer"></li>
-            <li class="ion-social-sass" data-pack="social" data-tags="code, css"></li>
-            <li class="ion-social-python" data-pack="social" data-tags="code"></li>
-            <li class="ion-social-chrome" data-pack="social" data-tags="code, mobile, js, angularjs, ionic"></li>
-            <li class="ion-social-chrome-outline" data-pack="social" data-tags="code, mobile, js, angularjs, ionic"></li>
-            <li class="ion-social-codepen" data-pack="social" data-tags="testing, js, developer"></li>
-            <li class="ion-social-codepen-outline" data-pack="social" data-tags="testing, js, developer"></li>
-            <li class="ion-social-markdown" data-pack="social" data-tags="code, testing, text, developer"></li>
-            <li class="ion-social-tux" data-pack="social" data-tags="code, linux, opensource"></li>
-            <li class="ion-social-freebsd-devil" data-pack="social" data-tags="code, opensource, unix"></li>
-            <li class="ion-social-usd" data-pack="social" data-tags="currency, trade, money, cash"></li>
-            <li class="ion-social-usd-outline" data-pack="social" data-tags="currency, trade, money, cash"></li>
-            <li class="ion-social-bitcoin" data-pack="social" data-tags="currency, trade, money"></li>
-            <li class="ion-social-bitcoin-outline" data-pack="social" data-tags="currency, trade, money"></li>
-            <li class="ion-social-yen" data-pack="social" data-tags="currency, trade, money, japanese"></li>
-            <li class="ion-social-yen-outline" data-pack="social" data-tags="currency, trade, money, japanese"></li>
-            <li class="ion-social-euro" data-pack="social" data-tags="currency, trade, money, europe"></li>
-            <li class="ion-social-euro-outline" data-pack="social" data-tags="currency, trade, money, europe"></li>
+            <li class="ion-ios-add"></li>
+            <li class="ion-ios-add-circle"></li>
+            <li class="ion-ios-add-circle-outline"></li>
+            <li class="ion-ios-add-outline"></li>
+            <li class="ion-ios-alarm"></li>
+            <li class="ion-ios-alarm-outline"></li>
+            <li class="ion-ios-albums"></li>
+            <li class="ion-ios-albums-outline"></li>
+            <li class="ion-ios-alert"></li>
+            <li class="ion-ios-alert-outline"></li>
+            <li class="ion-ios-american-football"></li>
+            <li class="ion-ios-american-football-outline"></li>
+            <li class="ion-ios-analytics"></li>
+            <li class="ion-ios-analytics-outline"></li>
+            <li class="ion-ios-aperture"></li>
+            <li class="ion-ios-aperture-outline"></li>
+            <li class="ion-ios-apps"></li>
+            <li class="ion-ios-apps-outline"></li>
+            <li class="ion-ios-appstore"></li>
+            <li class="ion-ios-appstore-outline"></li>
+            <li class="ion-ios-archive"></li>
+            <li class="ion-ios-archive-outline"></li>
+            <li class="ion-ios-arrow-back"></li>
+            <li class="ion-ios-arrow-back-outline"></li>
+            <li class="ion-ios-arrow-down"></li>
+            <li class="ion-ios-arrow-down-outline"></li>
+            <li class="ion-ios-arrow-dropdown"></li>
+            <li class="ion-ios-arrow-dropdown-circle"></li>
+            <li class="ion-ios-arrow-dropdown-circle-outline"></li>
+            <li class="ion-ios-arrow-dropdown-outline"></li>
+            <li class="ion-ios-arrow-dropleft"></li>
+            <li class="ion-ios-arrow-dropleft-circle"></li>
+            <li class="ion-ios-arrow-dropleft-circle-outline"></li>
+            <li class="ion-ios-arrow-dropleft-outline"></li>
+            <li class="ion-ios-arrow-dropright"></li>
+            <li class="ion-ios-arrow-dropright-circle"></li>
+            <li class="ion-ios-arrow-dropright-circle-outline"></li>
+            <li class="ion-ios-arrow-dropright-outline"></li>
+            <li class="ion-ios-arrow-dropup"></li>
+            <li class="ion-ios-arrow-dropup-circle"></li>
+            <li class="ion-ios-arrow-dropup-circle-outline"></li>
+            <li class="ion-ios-arrow-dropup-outline"></li>
+            <li class="ion-ios-arrow-forward"></li>
+            <li class="ion-ios-arrow-forward-outline"></li>
+            <li class="ion-ios-arrow-round-back"></li>
+            <li class="ion-ios-arrow-round-back-outline"></li>
+            <li class="ion-ios-arrow-round-down"></li>
+            <li class="ion-ios-arrow-round-down-outline"></li>
+            <li class="ion-ios-arrow-round-forward"></li>
+            <li class="ion-ios-arrow-round-forward-outline"></li>
+            <li class="ion-ios-arrow-round-up"></li>
+            <li class="ion-ios-arrow-round-up-outline"></li>
+            <li class="ion-ios-arrow-up"></li>
+            <li class="ion-ios-arrow-up-outline"></li>
+            <li class="ion-ios-at"></li>
+            <li class="ion-ios-at-outline"></li>
+            <li class="ion-ios-attach"></li>
+            <li class="ion-ios-attach-outline"></li>
+            <li class="ion-ios-backspace"></li>
+            <li class="ion-ios-backspace-outline"></li>
+            <li class="ion-ios-barcode"></li>
+            <li class="ion-ios-barcode-outline"></li>
+            <li class="ion-ios-baseball"></li>
+            <li class="ion-ios-baseball-outline"></li>
+            <li class="ion-ios-basket"></li>
+            <li class="ion-ios-basket-outline"></li>
+            <li class="ion-ios-basketball"></li>
+            <li class="ion-ios-basketball-outline"></li>
+            <li class="ion-ios-battery-charging"></li>
+            <li class="ion-ios-battery-charging-outline"></li>
+            <li class="ion-ios-battery-dead"></li>
+            <li class="ion-ios-battery-dead-outline"></li>
+            <li class="ion-ios-battery-full"></li>
+            <li class="ion-ios-battery-full-outline"></li>
+            <li class="ion-ios-beaker"></li>
+            <li class="ion-ios-beaker-outline"></li>
+            <li class="ion-ios-beer"></li>
+            <li class="ion-ios-beer-outline"></li>
+            <li class="ion-ios-bicycle"></li>
+            <li class="ion-ios-bicycle-outline"></li>
+            <li class="ion-ios-bluetooth"></li>
+            <li class="ion-ios-bluetooth-outline"></li>
+            <li class="ion-ios-boat"></li>
+            <li class="ion-ios-boat-outline"></li>
+            <li class="ion-ios-body"></li>
+            <li class="ion-ios-body-outline"></li>
+            <li class="ion-ios-bonfire"></li>
+            <li class="ion-ios-bonfire-outline"></li>
+            <li class="ion-ios-book"></li>
+            <li class="ion-ios-book-outline"></li>
+            <li class="ion-ios-bookmark"></li>
+            <li class="ion-ios-bookmark-outline"></li>
+            <li class="ion-ios-bookmarks"></li>
+            <li class="ion-ios-bookmarks-outline"></li>
+            <li class="ion-ios-bowtie"></li>
+            <li class="ion-ios-bowtie-outline"></li>
+            <li class="ion-ios-briefcase"></li>
+            <li class="ion-ios-briefcase-outline"></li>
+            <li class="ion-ios-browsers"></li>
+            <li class="ion-ios-browsers-outline"></li>
+            <li class="ion-ios-brush"></li>
+            <li class="ion-ios-brush-outline"></li>
+            <li class="ion-ios-bug"></li>
+            <li class="ion-ios-bug-outline"></li>
+            <li class="ion-ios-build"></li>
+            <li class="ion-ios-build-outline"></li>
+            <li class="ion-ios-bulb"></li>
+            <li class="ion-ios-bulb-outline"></li>
+            <li class="ion-ios-bus"></li>
+            <li class="ion-ios-bus-outline"></li>
+            <li class="ion-ios-cafe"></li>
+            <li class="ion-ios-cafe-outline"></li>
+            <li class="ion-ios-calculator"></li>
+            <li class="ion-ios-calculator-outline"></li>
+            <li class="ion-ios-calendar"></li>
+            <li class="ion-ios-calendar-outline"></li>
+            <li class="ion-ios-call"></li>
+            <li class="ion-ios-call-outline"></li>
+            <li class="ion-ios-camera"></li>
+            <li class="ion-ios-camera-outline"></li>
+            <li class="ion-ios-car"></li>
+            <li class="ion-ios-car-outline"></li>
+            <li class="ion-ios-card"></li>
+            <li class="ion-ios-card-outline"></li>
+            <li class="ion-ios-cart"></li>
+            <li class="ion-ios-cart-outline"></li>
+            <li class="ion-ios-cash"></li>
+            <li class="ion-ios-cash-outline"></li>
+            <li class="ion-ios-chatboxes"></li>
+            <li class="ion-ios-chatboxes-outline"></li>
+            <li class="ion-ios-chatbubbles"></li>
+            <li class="ion-ios-chatbubbles-outline"></li>
+            <li class="ion-ios-checkbox"></li>
+            <li class="ion-ios-checkbox-outline"></li>
+            <li class="ion-ios-checkmark"></li>
+            <li class="ion-ios-checkmark-circle"></li>
+            <li class="ion-ios-checkmark-circle-outline"></li>
+            <li class="ion-ios-checkmark-outline"></li>
+            <li class="ion-ios-clipboard"></li>
+            <li class="ion-ios-clipboard-outline"></li>
+            <li class="ion-ios-clock"></li>
+            <li class="ion-ios-clock-outline"></li>
+            <li class="ion-ios-close"></li>
+            <li class="ion-ios-close-circle"></li>
+            <li class="ion-ios-close-circle-outline"></li>
+            <li class="ion-ios-close-outline"></li>
+            <li class="ion-ios-closed-captioning"></li>
+            <li class="ion-ios-closed-captioning-outline"></li>
+            <li class="ion-ios-cloud"></li>
+            <li class="ion-ios-cloud-circle"></li>
+            <li class="ion-ios-cloud-circle-outline"></li>
+            <li class="ion-ios-cloud-done"></li>
+            <li class="ion-ios-cloud-done-outline"></li>
+            <li class="ion-ios-cloud-download"></li>
+            <li class="ion-ios-cloud-download-outline"></li>
+            <li class="ion-ios-cloud-outline"></li>
+            <li class="ion-ios-cloud-upload"></li>
+            <li class="ion-ios-cloud-upload-outline"></li>
+            <li class="ion-ios-cloudy"></li>
+            <li class="ion-ios-cloudy-night"></li>
+            <li class="ion-ios-cloudy-night-outline"></li>
+            <li class="ion-ios-cloudy-outline"></li>
+            <li class="ion-ios-code"></li>
+            <li class="ion-ios-code-download"></li>
+            <li class="ion-ios-code-download-outline"></li>
+            <li class="ion-ios-code-outline"></li>
+            <li class="ion-ios-code-working"></li>
+            <li class="ion-ios-code-working-outline"></li>
+            <li class="ion-ios-cog"></li>
+            <li class="ion-ios-cog-outline"></li>
+            <li class="ion-ios-color-fill"></li>
+            <li class="ion-ios-color-fill-outline"></li>
+            <li class="ion-ios-color-filter"></li>
+            <li class="ion-ios-color-filter-outline"></li>
+            <li class="ion-ios-color-palette"></li>
+            <li class="ion-ios-color-palette-outline"></li>
+            <li class="ion-ios-color-wand"></li>
+            <li class="ion-ios-color-wand-outline"></li>
+            <li class="ion-ios-compass"></li>
+            <li class="ion-ios-compass-outline"></li>
+            <li class="ion-ios-construct"></li>
+            <li class="ion-ios-construct-outline"></li>
+            <li class="ion-ios-contact"></li>
+            <li class="ion-ios-contact-outline"></li>
+            <li class="ion-ios-contacts"></li>
+            <li class="ion-ios-contacts-outline"></li>
+            <li class="ion-ios-contract"></li>
+            <li class="ion-ios-contract-outline"></li>
+            <li class="ion-ios-contrast"></li>
+            <li class="ion-ios-contrast-outline"></li>
+            <li class="ion-ios-copy"></li>
+            <li class="ion-ios-copy-outline"></li>
+            <li class="ion-ios-create"></li>
+            <li class="ion-ios-create-outline"></li>
+            <li class="ion-ios-crop"></li>
+            <li class="ion-ios-crop-outline"></li>
+            <li class="ion-ios-cube"></li>
+            <li class="ion-ios-cube-outline"></li>
+            <li class="ion-ios-cut"></li>
+            <li class="ion-ios-cut-outline"></li>
+            <li class="ion-ios-desktop"></li>
+            <li class="ion-ios-desktop-outline"></li>
+            <li class="ion-ios-disc"></li>
+            <li class="ion-ios-disc-outline"></li>
+            <li class="ion-ios-document"></li>
+            <li class="ion-ios-document-outline"></li>
+            <li class="ion-ios-done-all"></li>
+            <li class="ion-ios-done-all-outline"></li>
+            <li class="ion-ios-download"></li>
+            <li class="ion-ios-download-outline"></li>
+            <li class="ion-ios-easel"></li>
+            <li class="ion-ios-easel-outline"></li>
+            <li class="ion-ios-egg"></li>
+            <li class="ion-ios-egg-outline"></li>
+            <li class="ion-ios-exit"></li>
+            <li class="ion-ios-exit-outline"></li>
+            <li class="ion-ios-expand"></li>
+            <li class="ion-ios-expand-outline"></li>
+            <li class="ion-ios-eye"></li>
+            <li class="ion-ios-eye-off"></li>
+            <li class="ion-ios-eye-off-outline"></li>
+            <li class="ion-ios-eye-outline"></li>
+            <li class="ion-ios-fastforward"></li>
+            <li class="ion-ios-fastforward-outline"></li>
+            <li class="ion-ios-female"></li>
+            <li class="ion-ios-female-outline"></li>
+            <li class="ion-ios-filing"></li>
+            <li class="ion-ios-filing-outline"></li>
+            <li class="ion-ios-film"></li>
+            <li class="ion-ios-film-outline"></li>
+            <li class="ion-ios-finger-print"></li>
+            <li class="ion-ios-finger-print-outline"></li>
+            <li class="ion-ios-flag"></li>
+            <li class="ion-ios-flag-outline"></li>
+            <li class="ion-ios-flame"></li>
+            <li class="ion-ios-flame-outline"></li>
+            <li class="ion-ios-flash"></li>
+            <li class="ion-ios-flash-outline"></li>
+            <li class="ion-ios-flask"></li>
+            <li class="ion-ios-flask-outline"></li>
+            <li class="ion-ios-flower"></li>
+            <li class="ion-ios-flower-outline"></li>
+            <li class="ion-ios-folder"></li>
+            <li class="ion-ios-folder-open"></li>
+            <li class="ion-ios-folder-open-outline"></li>
+            <li class="ion-ios-folder-outline"></li>
+            <li class="ion-ios-football"></li>
+            <li class="ion-ios-football-outline"></li>
+            <li class="ion-ios-funnel"></li>
+            <li class="ion-ios-funnel-outline"></li>
+            <li class="ion-ios-game-controller-a"></li>
+            <li class="ion-ios-game-controller-a-outline"></li>
+            <li class="ion-ios-game-controller-b"></li>
+            <li class="ion-ios-game-controller-b-outline"></li>
+            <li class="ion-ios-git-branch"></li>
+            <li class="ion-ios-git-branch-outline"></li>
+            <li class="ion-ios-git-commit"></li>
+            <li class="ion-ios-git-commit-outline"></li>
+            <li class="ion-ios-git-compare"></li>
+            <li class="ion-ios-git-compare-outline"></li>
+            <li class="ion-ios-git-merge"></li>
+            <li class="ion-ios-git-merge-outline"></li>
+            <li class="ion-ios-git-network"></li>
+            <li class="ion-ios-git-network-outline"></li>
+            <li class="ion-ios-git-pull-request"></li>
+            <li class="ion-ios-git-pull-request-outline"></li>
+            <li class="ion-ios-glasses"></li>
+            <li class="ion-ios-glasses-outline"></li>
+            <li class="ion-ios-globe"></li>
+            <li class="ion-ios-globe-outline"></li>
+            <li class="ion-ios-grid"></li>
+            <li class="ion-ios-grid-outline"></li>
+            <li class="ion-ios-hammer"></li>
+            <li class="ion-ios-hammer-outline"></li>
+            <li class="ion-ios-hand"></li>
+            <li class="ion-ios-hand-outline"></li>
+            <li class="ion-ios-happy"></li>
+            <li class="ion-ios-happy-outline"></li>
+            <li class="ion-ios-headset"></li>
+            <li class="ion-ios-headset-outline"></li>
+            <li class="ion-ios-heart"></li>
+            <li class="ion-ios-heart-outline"></li>
+            <li class="ion-ios-help"></li>
+            <li class="ion-ios-help-buoy"></li>
+            <li class="ion-ios-help-buoy-outline"></li>
+            <li class="ion-ios-help-circle"></li>
+            <li class="ion-ios-help-circle-outline"></li>
+            <li class="ion-ios-help-outline"></li>
+            <li class="ion-ios-home"></li>
+            <li class="ion-ios-home-outline"></li>
+            <li class="ion-ios-ice-cream"></li>
+            <li class="ion-ios-ice-cream-outline"></li>
+            <li class="ion-ios-image"></li>
+            <li class="ion-ios-image-outline"></li>
+            <li class="ion-ios-images"></li>
+            <li class="ion-ios-images-outline"></li>
+            <li class="ion-ios-infinite"></li>
+            <li class="ion-ios-infinite-outline"></li>
+            <li class="ion-ios-information"></li>
+            <li class="ion-ios-information-circle"></li>
+            <li class="ion-ios-information-circle-outline"></li>
+            <li class="ion-ios-information-outline"></li>
+            <li class="ion-ios-ionic"></li>
+            <li class="ion-ios-ionic-outline"></li>
+            <li class="ion-ios-ionitron"></li>
+            <li class="ion-ios-ionitron-outline"></li>
+            <li class="ion-ios-jet"></li>
+            <li class="ion-ios-jet-outline"></li>
+            <li class="ion-ios-key"></li>
+            <li class="ion-ios-key-outline"></li>
+            <li class="ion-ios-keypad"></li>
+            <li class="ion-ios-keypad-outline"></li>
+            <li class="ion-ios-laptop"></li>
+            <li class="ion-ios-laptop-outline"></li>
+            <li class="ion-ios-leaf"></li>
+            <li class="ion-ios-leaf-outline"></li>
+            <li class="ion-ios-link"></li>
+            <li class="ion-ios-link-outline"></li>
+            <li class="ion-ios-list"></li>
+            <li class="ion-ios-list-box"></li>
+            <li class="ion-ios-list-box-outline"></li>
+            <li class="ion-ios-list-outline"></li>
+            <li class="ion-ios-locate"></li>
+            <li class="ion-ios-locate-outline"></li>
+            <li class="ion-ios-lock"></li>
+            <li class="ion-ios-lock-outline"></li>
+            <li class="ion-ios-log-in"></li>
+            <li class="ion-ios-log-in-outline"></li>
+            <li class="ion-ios-log-out"></li>
+            <li class="ion-ios-log-out-outline"></li>
+            <li class="ion-ios-magnet"></li>
+            <li class="ion-ios-magnet-outline"></li>
+            <li class="ion-ios-mail"></li>
+            <li class="ion-ios-mail-open"></li>
+            <li class="ion-ios-mail-open-outline"></li>
+            <li class="ion-ios-mail-outline"></li>
+            <li class="ion-ios-male"></li>
+            <li class="ion-ios-male-outline"></li>
+            <li class="ion-ios-man"></li>
+            <li class="ion-ios-man-outline"></li>
+            <li class="ion-ios-map"></li>
+            <li class="ion-ios-map-outline"></li>
+            <li class="ion-ios-medal"></li>
+            <li class="ion-ios-medal-outline"></li>
+            <li class="ion-ios-medical"></li>
+            <li class="ion-ios-medical-outline"></li>
+            <li class="ion-ios-medkit"></li>
+            <li class="ion-ios-medkit-outline"></li>
+            <li class="ion-ios-megaphone"></li>
+            <li class="ion-ios-megaphone-outline"></li>
+            <li class="ion-ios-menu"></li>
+            <li class="ion-ios-menu-outline"></li>
+            <li class="ion-ios-mic"></li>
+            <li class="ion-ios-mic-off"></li>
+            <li class="ion-ios-mic-off-outline"></li>
+            <li class="ion-ios-mic-outline"></li>
+            <li class="ion-ios-microphone"></li>
+            <li class="ion-ios-microphone-outline"></li>
+            <li class="ion-ios-moon"></li>
+            <li class="ion-ios-moon-outline"></li>
+            <li class="ion-ios-more"></li>
+            <li class="ion-ios-more-outline"></li>
+            <li class="ion-ios-move"></li>
+            <li class="ion-ios-move-outline"></li>
+            <li class="ion-ios-musical-note"></li>
+            <li class="ion-ios-musical-note-outline"></li>
+            <li class="ion-ios-musical-notes"></li>
+            <li class="ion-ios-musical-notes-outline"></li>
+            <li class="ion-ios-navigate"></li>
+            <li class="ion-ios-navigate-outline"></li>
+            <li class="ion-ios-no-smoking"></li>
+            <li class="ion-ios-no-smoking-outline"></li>
+            <li class="ion-ios-notifications"></li>
+            <li class="ion-ios-notifications-off"></li>
+            <li class="ion-ios-notifications-off-outline"></li>
+            <li class="ion-ios-notifications-outline"></li>
+            <li class="ion-ios-nuclear"></li>
+            <li class="ion-ios-nuclear-outline"></li>
+            <li class="ion-ios-nutrition"></li>
+            <li class="ion-ios-nutrition-outline"></li>
+            <li class="ion-ios-open"></li>
+            <li class="ion-ios-open-outline"></li>
+            <li class="ion-ios-options"></li>
+            <li class="ion-ios-options-outline"></li>
+            <li class="ion-ios-outlet"></li>
+            <li class="ion-ios-outlet-outline"></li>
+            <li class="ion-ios-paper"></li>
+            <li class="ion-ios-paper-outline"></li>
+            <li class="ion-ios-paper-plane"></li>
+            <li class="ion-ios-paper-plane-outline"></li>
+            <li class="ion-ios-partly-sunny"></li>
+            <li class="ion-ios-partly-sunny-outline"></li>
+            <li class="ion-ios-pause"></li>
+            <li class="ion-ios-pause-outline"></li>
+            <li class="ion-ios-paw"></li>
+            <li class="ion-ios-paw-outline"></li>
+            <li class="ion-ios-people"></li>
+            <li class="ion-ios-people-outline"></li>
+            <li class="ion-ios-person"></li>
+            <li class="ion-ios-person-add"></li>
+            <li class="ion-ios-person-add-outline"></li>
+            <li class="ion-ios-person-outline"></li>
+            <li class="ion-ios-phone-landscape"></li>
+            <li class="ion-ios-phone-landscape-outline"></li>
+            <li class="ion-ios-phone-portrait"></li>
+            <li class="ion-ios-phone-portrait-outline"></li>
+            <li class="ion-ios-photos"></li>
+            <li class="ion-ios-photos-outline"></li>
+            <li class="ion-ios-pie"></li>
+            <li class="ion-ios-pie-outline"></li>
+            <li class="ion-ios-pin"></li>
+            <li class="ion-ios-pin-outline"></li>
+            <li class="ion-ios-pint"></li>
+            <li class="ion-ios-pint-outline"></li>
+            <li class="ion-ios-pizza"></li>
+            <li class="ion-ios-pizza-outline"></li>
+            <li class="ion-ios-plane"></li>
+            <li class="ion-ios-plane-outline"></li>
+            <li class="ion-ios-planet"></li>
+            <li class="ion-ios-planet-outline"></li>
+            <li class="ion-ios-play"></li>
+            <li class="ion-ios-play-outline"></li>
+            <li class="ion-ios-podium"></li>
+            <li class="ion-ios-podium-outline"></li>
+            <li class="ion-ios-power"></li>
+            <li class="ion-ios-power-outline"></li>
+            <li class="ion-ios-pricetag"></li>
+            <li class="ion-ios-pricetag-outline"></li>
+            <li class="ion-ios-pricetags"></li>
+            <li class="ion-ios-pricetags-outline"></li>
+            <li class="ion-ios-print"></li>
+            <li class="ion-ios-print-outline"></li>
+            <li class="ion-ios-pulse"></li>
+            <li class="ion-ios-pulse-outline"></li>
+            <li class="ion-ios-qr-scanner"></li>
+            <li class="ion-ios-qr-scanner-outline"></li>
+            <li class="ion-ios-quote"></li>
+            <li class="ion-ios-quote-outline"></li>
+            <li class="ion-ios-radio"></li>
+            <li class="ion-ios-radio-button-off"></li>
+            <li class="ion-ios-radio-button-off-outline"></li>
+            <li class="ion-ios-radio-button-on"></li>
+            <li class="ion-ios-radio-button-on-outline"></li>
+            <li class="ion-ios-radio-outline"></li>
+            <li class="ion-ios-rainy"></li>
+            <li class="ion-ios-rainy-outline"></li>
+            <li class="ion-ios-recording"></li>
+            <li class="ion-ios-recording-outline"></li>
+            <li class="ion-ios-redo"></li>
+            <li class="ion-ios-redo-outline"></li>
+            <li class="ion-ios-refresh"></li>
+            <li class="ion-ios-refresh-circle"></li>
+            <li class="ion-ios-refresh-circle-outline"></li>
+            <li class="ion-ios-refresh-outline"></li>
+            <li class="ion-ios-remove"></li>
+            <li class="ion-ios-remove-circle"></li>
+            <li class="ion-ios-remove-circle-outline"></li>
+            <li class="ion-ios-remove-outline"></li>
+            <li class="ion-ios-reorder"></li>
+            <li class="ion-ios-reorder-outline"></li>
+            <li class="ion-ios-repeat"></li>
+            <li class="ion-ios-repeat-outline"></li>
+            <li class="ion-ios-resize"></li>
+            <li class="ion-ios-resize-outline"></li>
+            <li class="ion-ios-restaurant"></li>
+            <li class="ion-ios-restaurant-outline"></li>
+            <li class="ion-ios-return-left"></li>
+            <li class="ion-ios-return-left-outline"></li>
+            <li class="ion-ios-return-right"></li>
+            <li class="ion-ios-return-right-outline"></li>
+            <li class="ion-ios-reverse-camera"></li>
+            <li class="ion-ios-reverse-camera-outline"></li>
+            <li class="ion-ios-rewind"></li>
+            <li class="ion-ios-rewind-outline"></li>
+            <li class="ion-ios-ribbon"></li>
+            <li class="ion-ios-ribbon-outline"></li>
+            <li class="ion-ios-rose"></li>
+            <li class="ion-ios-rose-outline"></li>
+            <li class="ion-ios-sad"></li>
+            <li class="ion-ios-sad-outline"></li>
+            <li class="ion-ios-school"></li>
+            <li class="ion-ios-school-outline"></li>
+            <li class="ion-ios-search"></li>
+            <li class="ion-ios-search-outline"></li>
+            <li class="ion-ios-send"></li>
+            <li class="ion-ios-send-outline"></li>
+            <li class="ion-ios-settings"></li>
+            <li class="ion-ios-settings-outline"></li>
+            <li class="ion-ios-share"></li>
+            <li class="ion-ios-share-alt"></li>
+            <li class="ion-ios-share-alt-outline"></li>
+            <li class="ion-ios-share-outline"></li>
+            <li class="ion-ios-shirt"></li>
+            <li class="ion-ios-shirt-outline"></li>
+            <li class="ion-ios-shuffle"></li>
+            <li class="ion-ios-shuffle-outline"></li>
+            <li class="ion-ios-skip-backward"></li>
+            <li class="ion-ios-skip-backward-outline"></li>
+            <li class="ion-ios-skip-forward"></li>
+            <li class="ion-ios-skip-forward-outline"></li>
+            <li class="ion-ios-snow"></li>
+            <li class="ion-ios-snow-outline"></li>
+            <li class="ion-ios-speedometer"></li>
+            <li class="ion-ios-speedometer-outline"></li>
+            <li class="ion-ios-square"></li>
+            <li class="ion-ios-square-outline"></li>
+            <li class="ion-ios-star"></li>
+            <li class="ion-ios-star-half"></li>
+            <li class="ion-ios-star-half-outline"></li>
+            <li class="ion-ios-star-outline"></li>
+            <li class="ion-ios-stats"></li>
+            <li class="ion-ios-stats-outline"></li>
+            <li class="ion-ios-stopwatch"></li>
+            <li class="ion-ios-stopwatch-outline"></li>
+            <li class="ion-ios-subway"></li>
+            <li class="ion-ios-subway-outline"></li>
+            <li class="ion-ios-sunny"></li>
+            <li class="ion-ios-sunny-outline"></li>
+            <li class="ion-ios-swap"></li>
+            <li class="ion-ios-swap-outline"></li>
+            <li class="ion-ios-switch"></li>
+            <li class="ion-ios-switch-outline"></li>
+            <li class="ion-ios-sync"></li>
+            <li class="ion-ios-sync-outline"></li>
+            <li class="ion-ios-tablet-landscape"></li>
+            <li class="ion-ios-tablet-landscape-outline"></li>
+            <li class="ion-ios-tablet-portrait"></li>
+            <li class="ion-ios-tablet-portrait-outline"></li>
+            <li class="ion-ios-tennisball"></li>
+            <li class="ion-ios-tennisball-outline"></li>
+            <li class="ion-ios-text"></li>
+            <li class="ion-ios-text-outline"></li>
+            <li class="ion-ios-thermometer"></li>
+            <li class="ion-ios-thermometer-outline"></li>
+            <li class="ion-ios-thumbs-down"></li>
+            <li class="ion-ios-thumbs-down-outline"></li>
+            <li class="ion-ios-thumbs-up"></li>
+            <li class="ion-ios-thumbs-up-outline"></li>
+            <li class="ion-ios-thunderstorm"></li>
+            <li class="ion-ios-thunderstorm-outline"></li>
+            <li class="ion-ios-time"></li>
+            <li class="ion-ios-time-outline"></li>
+            <li class="ion-ios-timer"></li>
+            <li class="ion-ios-timer-outline"></li>
+            <li class="ion-ios-train"></li>
+            <li class="ion-ios-train-outline"></li>
+            <li class="ion-ios-transgender"></li>
+            <li class="ion-ios-transgender-outline"></li>
+            <li class="ion-ios-trash"></li>
+            <li class="ion-ios-trash-outline"></li>
+            <li class="ion-ios-trending-down"></li>
+            <li class="ion-ios-trending-down-outline"></li>
+            <li class="ion-ios-trending-up"></li>
+            <li class="ion-ios-trending-up-outline"></li>
+            <li class="ion-ios-trophy"></li>
+            <li class="ion-ios-trophy-outline"></li>
+            <li class="ion-ios-umbrella"></li>
+            <li class="ion-ios-umbrella-outline"></li>
+            <li class="ion-ios-undo"></li>
+            <li class="ion-ios-undo-outline"></li>
+            <li class="ion-ios-unlock"></li>
+            <li class="ion-ios-unlock-outline"></li>
+            <li class="ion-ios-videocam"></li>
+            <li class="ion-ios-videocam-outline"></li>
+            <li class="ion-ios-volume-down"></li>
+            <li class="ion-ios-volume-down-outline"></li>
+            <li class="ion-ios-volume-mute"></li>
+            <li class="ion-ios-volume-mute-outline"></li>
+            <li class="ion-ios-volume-off"></li>
+            <li class="ion-ios-volume-off-outline"></li>
+            <li class="ion-ios-volume-up"></li>
+            <li class="ion-ios-volume-up-outline"></li>
+            <li class="ion-ios-walk"></li>
+            <li class="ion-ios-walk-outline"></li>
+            <li class="ion-ios-warning"></li>
+            <li class="ion-ios-warning-outline"></li>
+            <li class="ion-ios-watch"></li>
+            <li class="ion-ios-watch-outline"></li>
+            <li class="ion-ios-water"></li>
+            <li class="ion-ios-water-outline"></li>
+            <li class="ion-ios-wifi"></li>
+            <li class="ion-ios-wifi-outline"></li>
+            <li class="ion-ios-wine"></li>
+            <li class="ion-ios-wine-outline"></li>
+            <li class="ion-ios-woman"></li>
+            <li class="ion-ios-woman-outline"></li>
+            <li class="ion-logo-android"></li>
+            <li class="ion-logo-angular"></li>
+            <li class="ion-logo-apple"></li>
+            <li class="ion-logo-bitcoin"></li>
+            <li class="ion-logo-buffer"></li>
+            <li class="ion-logo-chrome"></li>
+            <li class="ion-logo-codepen"></li>
+            <li class="ion-logo-css3"></li>
+            <li class="ion-logo-designernews"></li>
+            <li class="ion-logo-dribbble"></li>
+            <li class="ion-logo-dropbox"></li>
+            <li class="ion-logo-euro"></li>
+            <li class="ion-logo-facebook"></li>
+            <li class="ion-logo-foursquare"></li>
+            <li class="ion-logo-freebsd-devil"></li>
+            <li class="ion-logo-github"></li>
+            <li class="ion-logo-google"></li>
+            <li class="ion-logo-googleplus"></li>
+            <li class="ion-logo-hackernews"></li>
+            <li class="ion-logo-html5"></li>
+            <li class="ion-logo-instagram"></li>
+            <li class="ion-logo-javascript"></li>
+            <li class="ion-logo-linkedin"></li>
+            <li class="ion-logo-markdown"></li>
+            <li class="ion-logo-nodejs"></li>
+            <li class="ion-logo-octocat"></li>
+            <li class="ion-logo-pinterest"></li>
+            <li class="ion-logo-playstation"></li>
+            <li class="ion-logo-python"></li>
+            <li class="ion-logo-reddit"></li>
+            <li class="ion-logo-rss"></li>
+            <li class="ion-logo-sass"></li>
+            <li class="ion-logo-skype"></li>
+            <li class="ion-logo-snapchat"></li>
+            <li class="ion-logo-steam"></li>
+            <li class="ion-logo-tumblr"></li>
+            <li class="ion-logo-tux"></li>
+            <li class="ion-logo-twitch"></li>
+            <li class="ion-logo-twitter"></li>
+            <li class="ion-logo-usd"></li>
+            <li class="ion-logo-vimeo"></li>
+            <li class="ion-logo-whatsapp"></li>
+            <li class="ion-logo-windows"></li>
+            <li class="ion-logo-wordpress"></li>
+            <li class="ion-logo-xbox"></li>
+            <li class="ion-logo-yahoo"></li>
+            <li class="ion-logo-yen"></li>
+            <li class="ion-logo-youtube"></li>
+            <li class="ion-md-add"></li>
+            <li class="ion-md-add-circle"></li>
+            <li class="ion-md-alarm"></li>
+            <li class="ion-md-albums"></li>
+            <li class="ion-md-alert"></li>
+            <li class="ion-md-american-football"></li>
+            <li class="ion-md-analytics"></li>
+            <li class="ion-md-aperture"></li>
+            <li class="ion-md-apps"></li>
+            <li class="ion-md-appstore"></li>
+            <li class="ion-md-archive"></li>
+            <li class="ion-md-arrow-back"></li>
+            <li class="ion-md-arrow-down"></li>
+            <li class="ion-md-arrow-dropdown"></li>
+            <li class="ion-md-arrow-dropdown-circle"></li>
+            <li class="ion-md-arrow-dropleft"></li>
+            <li class="ion-md-arrow-dropleft-circle"></li>
+            <li class="ion-md-arrow-dropright"></li>
+            <li class="ion-md-arrow-dropright-circle"></li>
+            <li class="ion-md-arrow-dropup"></li>
+            <li class="ion-md-arrow-dropup-circle"></li>
+            <li class="ion-md-arrow-forward"></li>
+            <li class="ion-md-arrow-round-back"></li>
+            <li class="ion-md-arrow-round-down"></li>
+            <li class="ion-md-arrow-round-forward"></li>
+            <li class="ion-md-arrow-round-up"></li>
+            <li class="ion-md-arrow-up"></li>
+            <li class="ion-md-at"></li>
+            <li class="ion-md-attach"></li>
+            <li class="ion-md-backspace"></li>
+            <li class="ion-md-barcode"></li>
+            <li class="ion-md-baseball"></li>
+            <li class="ion-md-basket"></li>
+            <li class="ion-md-basketball"></li>
+            <li class="ion-md-battery-charging"></li>
+            <li class="ion-md-battery-dead"></li>
+            <li class="ion-md-battery-full"></li>
+            <li class="ion-md-beaker"></li>
+            <li class="ion-md-beer"></li>
+            <li class="ion-md-bicycle"></li>
+            <li class="ion-md-bluetooth"></li>
+            <li class="ion-md-boat"></li>
+            <li class="ion-md-body"></li>
+            <li class="ion-md-bonfire"></li>
+            <li class="ion-md-book"></li>
+            <li class="ion-md-bookmark"></li>
+            <li class="ion-md-bookmarks"></li>
+            <li class="ion-md-bowtie"></li>
+            <li class="ion-md-briefcase"></li>
+            <li class="ion-md-browsers"></li>
+            <li class="ion-md-brush"></li>
+            <li class="ion-md-bug"></li>
+            <li class="ion-md-build"></li>
+            <li class="ion-md-bulb"></li>
+            <li class="ion-md-bus"></li>
+            <li class="ion-md-cafe"></li>
+            <li class="ion-md-calculator"></li>
+            <li class="ion-md-calendar"></li>
+            <li class="ion-md-call"></li>
+            <li class="ion-md-camera"></li>
+            <li class="ion-md-car"></li>
+            <li class="ion-md-card"></li>
+            <li class="ion-md-cart"></li>
+            <li class="ion-md-cash"></li>
+            <li class="ion-md-chatboxes"></li>
+            <li class="ion-md-chatbubbles"></li>
+            <li class="ion-md-checkbox"></li>
+            <li class="ion-md-checkbox-outline"></li>
+            <li class="ion-md-checkmark"></li>
+            <li class="ion-md-checkmark-circle"></li>
+            <li class="ion-md-checkmark-circle-outline"></li>
+            <li class="ion-md-clipboard"></li>
+            <li class="ion-md-clock"></li>
+            <li class="ion-md-close"></li>
+            <li class="ion-md-close-circle"></li>
+            <li class="ion-md-closed-captioning"></li>
+            <li class="ion-md-cloud"></li>
+            <li class="ion-md-cloud-circle"></li>
+            <li class="ion-md-cloud-done"></li>
+            <li class="ion-md-cloud-download"></li>
+            <li class="ion-md-cloud-outline"></li>
+            <li class="ion-md-cloud-upload"></li>
+            <li class="ion-md-cloudy"></li>
+            <li class="ion-md-cloudy-night"></li>
+            <li class="ion-md-code"></li>
+            <li class="ion-md-code-download"></li>
+            <li class="ion-md-code-working"></li>
+            <li class="ion-md-cog"></li>
+            <li class="ion-md-color-fill"></li>
+            <li class="ion-md-color-filter"></li>
+            <li class="ion-md-color-palette"></li>
+            <li class="ion-md-color-wand"></li>
+            <li class="ion-md-compass"></li>
+            <li class="ion-md-construct"></li>
+            <li class="ion-md-contact"></li>
+            <li class="ion-md-contacts"></li>
+            <li class="ion-md-contract"></li>
+            <li class="ion-md-contrast"></li>
+            <li class="ion-md-copy"></li>
+            <li class="ion-md-create"></li>
+            <li class="ion-md-crop"></li>
+            <li class="ion-md-cube"></li>
+            <li class="ion-md-cut"></li>
+            <li class="ion-md-desktop"></li>
+            <li class="ion-md-disc"></li>
+            <li class="ion-md-document"></li>
+            <li class="ion-md-done-all"></li>
+            <li class="ion-md-download"></li>
+            <li class="ion-md-easel"></li>
+            <li class="ion-md-egg"></li>
+            <li class="ion-md-exit"></li>
+            <li class="ion-md-expand"></li>
+            <li class="ion-md-eye"></li>
+            <li class="ion-md-eye-off"></li>
+            <li class="ion-md-fastforward"></li>
+            <li class="ion-md-female"></li>
+            <li class="ion-md-filing"></li>
+            <li class="ion-md-film"></li>
+            <li class="ion-md-finger-print"></li>
+            <li class="ion-md-flag"></li>
+            <li class="ion-md-flame"></li>
+            <li class="ion-md-flash"></li>
+            <li class="ion-md-flask"></li>
+            <li class="ion-md-flower"></li>
+            <li class="ion-md-folder"></li>
+            <li class="ion-md-folder-open"></li>
+            <li class="ion-md-football"></li>
+            <li class="ion-md-funnel"></li>
+            <li class="ion-md-game-controller-a"></li>
+            <li class="ion-md-game-controller-b"></li>
+            <li class="ion-md-git-branch"></li>
+            <li class="ion-md-git-commit"></li>
+            <li class="ion-md-git-compare"></li>
+            <li class="ion-md-git-merge"></li>
+            <li class="ion-md-git-network"></li>
+            <li class="ion-md-git-pull-request"></li>
+            <li class="ion-md-glasses"></li>
+            <li class="ion-md-globe"></li>
+            <li class="ion-md-grid"></li>
+            <li class="ion-md-hammer"></li>
+            <li class="ion-md-hand"></li>
+            <li class="ion-md-happy"></li>
+            <li class="ion-md-headset"></li>
+            <li class="ion-md-heart"></li>
+            <li class="ion-md-heart-outline"></li>
+            <li class="ion-md-help"></li>
+            <li class="ion-md-help-buoy"></li>
+            <li class="ion-md-help-circle"></li>
+            <li class="ion-md-home"></li>
+            <li class="ion-md-ice-cream"></li>
+            <li class="ion-md-image"></li>
+            <li class="ion-md-images"></li>
+            <li class="ion-md-infinite"></li>
+            <li class="ion-md-information"></li>
+            <li class="ion-md-information-circle"></li>
+            <li class="ion-md-ionic"></li>
+            <li class="ion-md-ionitron"></li>
+            <li class="ion-md-jet"></li>
+            <li class="ion-md-key"></li>
+            <li class="ion-md-keypad"></li>
+            <li class="ion-md-laptop"></li>
+            <li class="ion-md-leaf"></li>
+            <li class="ion-md-link"></li>
+            <li class="ion-md-list"></li>
+            <li class="ion-md-list-box"></li>
+            <li class="ion-md-locate"></li>
+            <li class="ion-md-lock"></li>
+            <li class="ion-md-log-in"></li>
+            <li class="ion-md-log-out"></li>
+            <li class="ion-md-magnet"></li>
+            <li class="ion-md-mail"></li>
+            <li class="ion-md-mail-open"></li>
+            <li class="ion-md-male"></li>
+            <li class="ion-md-man"></li>
+            <li class="ion-md-map"></li>
+            <li class="ion-md-medal"></li>
+            <li class="ion-md-medical"></li>
+            <li class="ion-md-medkit"></li>
+            <li class="ion-md-megaphone"></li>
+            <li class="ion-md-menu"></li>
+            <li class="ion-md-mic"></li>
+            <li class="ion-md-mic-off"></li>
+            <li class="ion-md-microphone"></li>
+            <li class="ion-md-moon"></li>
+            <li class="ion-md-more"></li>
+            <li class="ion-md-move"></li>
+            <li class="ion-md-musical-note"></li>
+            <li class="ion-md-musical-notes"></li>
+            <li class="ion-md-navigate"></li>
+            <li class="ion-md-no-smoking"></li>
+            <li class="ion-md-notifications"></li>
+            <li class="ion-md-notifications-off"></li>
+            <li class="ion-md-notifications-outline"></li>
+            <li class="ion-md-nuclear"></li>
+            <li class="ion-md-nutrition"></li>
+            <li class="ion-md-open"></li>
+            <li class="ion-md-options"></li>
+            <li class="ion-md-outlet"></li>
+            <li class="ion-md-paper"></li>
+            <li class="ion-md-paper-plane"></li>
+            <li class="ion-md-partly-sunny"></li>
+            <li class="ion-md-pause"></li>
+            <li class="ion-md-paw"></li>
+            <li class="ion-md-people"></li>
+            <li class="ion-md-person"></li>
+            <li class="ion-md-person-add"></li>
+            <li class="ion-md-phone-landscape"></li>
+            <li class="ion-md-phone-portrait"></li>
+            <li class="ion-md-photos"></li>
+            <li class="ion-md-pie"></li>
+            <li class="ion-md-pin"></li>
+            <li class="ion-md-pint"></li>
+            <li class="ion-md-pizza"></li>
+            <li class="ion-md-plane"></li>
+            <li class="ion-md-planet"></li>
+            <li class="ion-md-play"></li>
+            <li class="ion-md-podium"></li>
+            <li class="ion-md-power"></li>
+            <li class="ion-md-pricetag"></li>
+            <li class="ion-md-pricetags"></li>
+            <li class="ion-md-print"></li>
+            <li class="ion-md-pulse"></li>
+            <li class="ion-md-qr-scanner"></li>
+            <li class="ion-md-quote"></li>
+            <li class="ion-md-radio"></li>
+            <li class="ion-md-radio-button-off"></li>
+            <li class="ion-md-radio-button-on"></li>
+            <li class="ion-md-rainy"></li>
+            <li class="ion-md-recording"></li>
+            <li class="ion-md-redo"></li>
+            <li class="ion-md-refresh"></li>
+            <li class="ion-md-refresh-circle"></li>
+            <li class="ion-md-remove"></li>
+            <li class="ion-md-remove-circle"></li>
+            <li class="ion-md-reorder"></li>
+            <li class="ion-md-repeat"></li>
+            <li class="ion-md-resize"></li>
+            <li class="ion-md-restaurant"></li>
+            <li class="ion-md-return-left"></li>
+            <li class="ion-md-return-right"></li>
+            <li class="ion-md-reverse-camera"></li>
+            <li class="ion-md-rewind"></li>
+            <li class="ion-md-ribbon"></li>
+            <li class="ion-md-rose"></li>
+            <li class="ion-md-sad"></li>
+            <li class="ion-md-school"></li>
+            <li class="ion-md-search"></li>
+            <li class="ion-md-send"></li>
+            <li class="ion-md-settings"></li>
+            <li class="ion-md-share"></li>
+            <li class="ion-md-share-alt"></li>
+            <li class="ion-md-shirt"></li>
+            <li class="ion-md-shuffle"></li>
+            <li class="ion-md-skip-backward"></li>
+            <li class="ion-md-skip-forward"></li>
+            <li class="ion-md-snow"></li>
+            <li class="ion-md-speedometer"></li>
+            <li class="ion-md-square"></li>
+            <li class="ion-md-square-outline"></li>
+            <li class="ion-md-star"></li>
+            <li class="ion-md-star-half"></li>
+            <li class="ion-md-star-outline"></li>
+            <li class="ion-md-stats"></li>
+            <li class="ion-md-stopwatch"></li>
+            <li class="ion-md-subway"></li>
+            <li class="ion-md-sunny"></li>
+            <li class="ion-md-swap"></li>
+            <li class="ion-md-switch"></li>
+            <li class="ion-md-sync"></li>
+            <li class="ion-md-tablet-landscape"></li>
+            <li class="ion-md-tablet-portrait"></li>
+            <li class="ion-md-tennisball"></li>
+            <li class="ion-md-text"></li>
+            <li class="ion-md-thermometer"></li>
+            <li class="ion-md-thumbs-down"></li>
+            <li class="ion-md-thumbs-up"></li>
+            <li class="ion-md-thunderstorm"></li>
+            <li class="ion-md-time"></li>
+            <li class="ion-md-timer"></li>
+            <li class="ion-md-train"></li>
+            <li class="ion-md-transgender"></li>
+            <li class="ion-md-trash"></li>
+            <li class="ion-md-trending-down"></li>
+            <li class="ion-md-trending-up"></li>
+            <li class="ion-md-trophy"></li>
+            <li class="ion-md-umbrella"></li>
+            <li class="ion-md-undo"></li>
+            <li class="ion-md-unlock"></li>
+            <li class="ion-md-videocam"></li>
+            <li class="ion-md-volume-down"></li>
+            <li class="ion-md-volume-mute"></li>
+            <li class="ion-md-volume-off"></li>
+            <li class="ion-md-volume-up"></li>
+            <li class="ion-md-walk"></li>
+            <li class="ion-md-warning"></li>
+            <li class="ion-md-watch"></li>
+            <li class="ion-md-water"></li>
+            <li class="ion-md-wifi"></li>
+            <li class="ion-md-wine"></li>
+            <li class="ion-md-woman:before"></li>
         </ul>
     </div>
   </div>

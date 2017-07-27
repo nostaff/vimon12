@@ -1,52 +1,48 @@
 <template>
-    <div class="item item-toggle">
-        <span v-text="text"></span>
-        <label class="toggle" :class="themeClass()">
-            <input v-if="value" type="checkbox" ref="checkbox" :value="value" checked
-                   @click="onToggle($event.target.checked)">
-            <input v-if="!value" type="checkbox" ref="checkbox" :value="value"
-                   @click="onToggle($event.target.checked)">
+    <div class="toggle" :class="['toggle-'+theme, checked?'toggle-checked':'']">
+        <div class="toggle-icon">
+            <div class="toggle-inner"></div>
+        </div>
 
-            <div class="track">
-                <div class="handle"></div>
-            </div>
-        </label>
+        <button class="item-cover disable-hover" role="checkbox" :checked="checked" type="button" @click="onToggle()">
+            <span class="button-inner"></span>
+            <div class="button-effect"></div>
+        </button>
     </div>
 </template>
 <script>
     export default{
+
+        created () {
+            if (typeof this.value !== 'undefined') {
+                this.checked = this.value
+            }
+        },
         props: {
-            text: {
-                type: String,
-                required: true
-            },
             value: {
                 type: Boolean,
-                required: true
+                default: false
             },
             theme: {
                 type: String,
-                default: 'balanced'
+                default: 'light'
             },
         },
-
-        methods: {
-            themeClass() {
-                return {
-                    'toggle-assertive': this.theme == 'assertive',
-                    'toggle-positive': this.theme == 'positive',
-                    'toggle-balanced': this.theme == 'balanced',
-                    'toggle-energized': this.theme == 'energized',
-                    'toggle-calm': this.theme == 'calm',
-                    'toggle-royal': this.theme == 'royal',
-                    'toggle-stable': this.theme == 'stable',
-                    'toggle-dark': this.theme == 'dark'
-                }
-            },
-
-            onToggle(value) {
-                this.$emit('input', value)
+        data () {
+            return {
+                checked: false,
             }
-        }
+        },
+        methods: {
+            onToggle() {
+                this.checked = ! this.checked
+                this.$emit('input', this.checked)
+            },
+        },
+        watch: {
+            value (val) {
+                this.checked = val
+            },
+        },
     }
 </script>

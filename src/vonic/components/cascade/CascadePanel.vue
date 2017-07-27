@@ -1,10 +1,10 @@
 <template>
     <div class="cascade-panel" :class="{'active': state == 1}">
-        <list :title="title" class="options">
-            <item v-for="(option, index) in options" :key="index" @click.native="optionClicked(index)">
+        <ion-list :title="title" class="options">
+            <ion-item v-for="(option, index) in options" :key="index" @click.native="optionClicked(index)">
                 <span v-text="option"></span>
-            </item>
-        </list>
+            </ion-item>
+        </ion-list>
     </div>
 </template>
 <script>

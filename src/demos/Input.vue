@@ -3,37 +3,37 @@
         <div class="page-content">
 
             <!-- type: text, password, email, tel -->
-            <list :title="hasLabel">
-                <von-input type="text" v-model="username" placeholder="用户名" label="用户名"></von-input>
-                <von-input type="password" v-model="password" placeholder="密码" label="密码"></von-input>
-            </list>
+            <ion-list :title="hasLabel">
+                <ion-input type="text" v-model="username" placeholder="用户名" label="用户名"></ion-input>
+                <ion-input type="password" v-model="password" placeholder="密码" label="密码"></ion-input>
+            </ion-list>
 
-            <list :title="noLabel">
-                <von-input type="tel" v-model="tel" placeholder="手机"></von-input>
-                <von-input type="tel" v-model="tel" placeholder="手机"></von-input>
-                <von-input type="tel" v-model="tel" placeholder="手机"></von-input>
-            </list>
+            <ion-list :title="noLabel">
+                <ion-input type="tel" v-model="tel" placeholder="手机"></ion-input>
+                <ion-input type="tel" v-model="tel" placeholder="手机"></ion-input>
+                <ion-input type="tel" v-model="tel" placeholder="手机"></ion-input>
+            </ion-list>
 
-            <list title="带图标:">
-                <von-input type="text" placeholder="用户名" icon-class="ion-search"></von-input>
-                <von-input type="password" placeholder="密码"  icon-class="ion-search"></von-input>
-            </list>
+            <ion-list title="带图标:">
+                <ion-input type="text" placeholder="用户名" icon-class="ion-search"></ion-input>
+                <ion-input type="password" placeholder="密码"  icon-class="ion-search"></ion-input>
+            </ion-list>
 
-            <list title="堆叠效果：">
-                <von-input type="text" v-model="username" placeholder="Username" label="Username" stacked-label="true"></von-input>
-                <von-input type="email" v-model="email" placeholder="Email" label="Email" stacked-label="true"></von-input>
-                <von-input type="tel" v-model="phone" placeholder="Phone" label="Phone" stacked-label="true"></von-input>
-            </list>
+            <ion-list title="堆叠效果：">
+                <ion-input type="text" v-model="username" placeholder="Username" label="Username" stacked-label="true"></ion-input>
+                <ion-input type="email" v-model="email" placeholder="Email" label="Email" stacked-label="true"></ion-input>
+                <ion-input type="tel" v-model="phone" placeholder="Phone" label="Phone" stacked-label="true"></ion-input>
+            </ion-list>
 
-            <list title="悬浮效果：">
-                <von-input type="text" v-model="username" placeholder="Username" label="Username" floating-label="true"></von-input>
-                <von-input type="email" v-model="email" placeholder="Email" label="Email" floating-label="true"></von-input>
-                <von-input type="tel" v-model="phone" placeholder="Phone" label="Phone" floating-label="true"></von-input>
-            </list>
+            <ion-list title="悬浮效果：">
+                <ion-input type="text" v-model="username" placeholder="Username" label="Username" floating-label="true"></ion-input>
+                <ion-input type="email" v-model="email" placeholder="Email" label="Email" floating-label="true"></ion-input>
+                <ion-input type="tel" v-model="phone" placeholder="Phone" label="Phone" floating-label="true"></ion-input>
+            </ion-list>
 
 
-            <list>
-                <item class="item-input-inset">
+            <ion-list>
+                <ion-item class="item-input-inset">
                     <label class="item-input-wrapper">
                         <i class="icon ion-ios-search placeholder-icon"></i>
                         <input type="text" placeholder="Email">
@@ -41,8 +41,8 @@
                     <button class="button button-small">
                         Submit
                     </button>
-                </item>
-            </list>
+                </ion-item>
+            </ion-list>
 
             <div class="padding">
                 <button class="button button-positive button-block">确认</button>

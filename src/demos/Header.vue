@@ -9,7 +9,7 @@
 
             <div style="height: 20px;"></div>
 
-            <von-radio :options="themes" v-model="theme"></von-radio>
+            <ion-radio :options="themes" v-model="theme"></ion-radio>
 
         </div>
     </div>

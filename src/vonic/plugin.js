@@ -7,7 +7,7 @@ Vue.use(VueRouter)
 
 import './services/backdrop'
 import './services/loading'
-import './services/alert/index.js'
+// import './services/alert/index.vue'
 import './services/popup/dialog.js'
 import './services/popup/index.js'
 import './services/cascadepanel/index.js'
@@ -16,7 +16,6 @@ import './services/tabbar/index.js'
 import './services/sidebar/index.js'
 import './services/modal/index.js'
 
-import './services/storage/index.js'
 
 import VonApp from './components/app'
 

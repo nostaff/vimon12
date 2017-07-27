@@ -1,19 +1,12 @@
 <template>
-    <div class="list">
-        <item class="list-header" v-if="title" v-text="title"></item>
+    <div class="ion-list" :class="['list-'+theme]">
         <slot></slot>
     </div>
 </template>
-
 <script>
-    import Item from './Item'
+    import ThemeMixins from '../../themes/theme.mixins';
     export default {
-        components: {
-          Item
-        },
-        props: {
-            title: String
-        }
+        name: 'ion-list',
+        mixins: [ThemeMixins]
     }
 </script>
-
