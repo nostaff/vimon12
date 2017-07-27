@@ -13,6 +13,10 @@ export default {
         }
     },
     props: {
+        title: {
+            type: String,
+            default: ''
+        },
         color: {
             type: String,
             default: 'default',

@@ -1,12 +1,18 @@
 <template>
-    <span class="badge" v-text="num"></span>
+    <span class="ion-badge" :class="['badge-'+theme, 'badge-'+theme+'-'+color]">
+        <slot></slot>
+    </span>
 </template>
 
 <script>
+    import ThemeMixins from '../../themes/theme.mixins';
+    import Item from '../item/item.vue'
+
     export default {
         name: 'ion-badge',
-        props: {
-            num: [String, Number]
+        mixins: [ThemeMixins],
+        components: {
+            'ion-item': Item
         }
     }
 </script>

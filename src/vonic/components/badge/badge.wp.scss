@@ -2,32 +2,32 @@
 
 // Windows Badge
 // --------------------------------------------------
-.theme-wp {
 
-  /// @prop - Border radius of the badge
-  $badge-wp-border-radius: 0 !default;
+/// @prop - Border radius of the badge
+$badge-wp-border-radius:            0 !default;
 
-  /// @prop - Background color of the badge
-  $badge-wp-background-color: color($colors-wp, primary) !default;
+/// @prop - Background color of the badge
+$badge-wp-background-color:         color($colors-wp, primary) !default;
 
-  /// @prop - Text color of the badge
-  $badge-wp-text-color: color-contrast($colors-wp, $badge-wp-background-color) !default;
+/// @prop - Text color of the badge
+$badge-wp-text-color:               color-contrast($colors-wp, $badge-wp-background-color) !default;
 
-  .badge {
-    border-radius: $badge-wp-border-radius;
-    color: $badge-wp-text-color;
-    background-color: $badge-wp-background-color;
+
+.badge-wp {
+  border-radius: $badge-wp-border-radius;
+  color: $badge-wp-text-color;
+  background-color: $badge-wp-background-color;
+}
+
+
+// Generate Windows Badge Colors
+// --------------------------------------------------
+
+@each $color-name, $color-base, $color-contrast in get-colors($colors-wp) {
+
+  .badge-wp-#{$color-name} {
+    color: $color-contrast;
+    background-color: $color-base;
   }
 
-  // Generate Windows Badge Colors
-  // --------------------------------------------------
-
-  @each $color-name, $color-base, $color-contrast in get-colors($colors-wp) {
-
-    .badge-#{$color-name} {
-      color: $color-contrast;
-      background-color: $color-base;
-    }
-
-  }
 }

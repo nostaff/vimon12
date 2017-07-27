@@ -1,22 +1,17 @@
 <template>
-    <div class="ion-list-header item" :class="['item-'+theme,'list-header-'+theme]">
-        <div class="item-inner">
-            <div class="input-wrapper">
-                <slot name="ion-label"></slot>
-                <ion-label ref="label" >
-                    <slot></slot>
-                </ion-label>
-                <slot name="item-content"></slot>
-            </div>
-            <slot name="item-right"></slot>
-        </div>
-        <div class="button-effect"></div>
-    </div>
+    <ion-item class="ion-list-header list-header" :color="color" :class="['list-header-'+theme]">
+        <slot></slot>
+    </ion-item>
 </template>
 <script>
-    import ItemMixin from '../item/item.mixin';
+    import ThemeMixins from '../../themes/theme.mixins';
+    import Item from '../item/item.vue'
+
     export default {
         name: 'ion-list-header',
-        mixins: [ItemMixin]
+        mixins: [ThemeMixins],
+        components: {
+            'ion-item': Item
+        }
     }
 </script>

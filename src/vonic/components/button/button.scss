@@ -5,6 +5,7 @@
 $button-round-padding : 0 2.6rem !default;
 /// @prop - Border radius of the round button
 $button-round-border-radius : 64px !default;
+
 .button {
   @include appearance(none);
   position: relative;

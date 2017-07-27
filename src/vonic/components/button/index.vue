@@ -10,7 +10,8 @@
         blockClass,
         fullClass,
         sizeClass,
-        isParentItem ? 'item-button' : '' ]">
+        isParentItem ? 'item-button' : ''
+        ]">
 		<span class="button-inner">
             <slot></slot>
         </span>
@@ -64,6 +65,7 @@
         created() {
             // 如果是在组件 buttons 下则修改前缀为 bar-button-
             let name = this.$parent.$data.componentName;
+            console.log(name)
             if (name === 'buttons') {
                 this.role = 'bar-button';
             }

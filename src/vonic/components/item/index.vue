@@ -3,12 +3,14 @@
     import ItemOptions from './item.options.vue';
     import ItemGroup from './item.group.vue';
     import ItemSliding from './item.sliding.vue';
+    import ItemDivider from './item.divider.vue';
 
     export default {
         Item,
         ItemGroup,
         ItemOptions,
-        ItemSliding
+        ItemSliding,
+        ItemDivider
     };
 </script>
 

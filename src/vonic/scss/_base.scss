@@ -793,10 +793,6 @@ progress {
   }
 }
 
-.modal .page-content {
-  padding-top: 44px;
-}
-
 // Utility classes
 .content-padded {
   margin: $bar-side-spacing;
@@ -813,28 +809,6 @@ progress {
 .clearfix {
   @include clearfix();
 }
-
-.backdrop {
-  background-color: rgba(0,0,0,0.3);
-  transition-duration: 0.2s;
-  -webkit-transition-duration: 0.2s;
-  pointer-events: auto;
-}
-
-// Safari input placeholder margin issue
-.theme-ios input::-webkit-input-placeholder {
-  line-height: 20px;
-}
-
-// button
-.button {
-  min-height: 44px;
-  &.button-small {
-    min-height: 30px;
-  }
-}
-
-// hairline
 
 .hairline-top:before {
   @include hairline(top);

@@ -50,11 +50,11 @@ Vue.component(Thumbnail.name, Thumbnail)
 Vue.component('ion-toggle', Toggle)
 Vue.component('von-range', VonRange)
 Vue.component('von-header', VonHeader)
-// Vue.component(Badge.name, Badge)
+Vue.component(Badge.name, Badge)
 
 // Layout
 import {List, ListHeader} from './components/list'
-import {Item, ItemGroup, ItemOptions, ItemSliding} from './components/item'
+import {Item, ItemGroup, ItemOptions, ItemSliding, ItemDivider} from './components/item'
 
 import Cells from './components/cells'
 import Tabs from './components/tabs'
@@ -66,6 +66,7 @@ Vue.component(Item.name, Item)
 Vue.component(ItemGroup.name, ItemGroup)
 Vue.component(ItemOptions.name, ItemOptions)
 Vue.component(ItemSliding.name, ItemSliding)
+Vue.component(ItemDivider.name, ItemDivider)
 
 Vue.component('cells', Cells)
 Vue.component('tabs', Tabs)

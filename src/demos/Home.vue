@@ -7,109 +7,109 @@
         <div class="page-content" >
             <!-- Basic -->
             <ion-list title="基础">
-                <ion-item is-link @click.native="$router.forward('/demo/basic/button')">
-                    Button <span slot="item-right" class="note">按钮</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/basic/button')">
+                    Button <ion-note slot="item-right">按钮</ion-note>
                 </ion-item>
                 <ion-item isLink @click.native="$router.forward('/demo/basic/input')">
-                    Input <span slot="item-right" class="note">输入框</span>
+                    Input <ion-note slot="item-right">输入框</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="$router.forward('/demo/basic/search')">
-                    Search <span slot="item-right" class="note">搜索框</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/basic/search')">
+                    Search <ion-note slot="item-right">搜索框</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="$router.forward('/demo/basic/select')">
-                    Select <span slot="item-right" class="note">选择框</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/basic/select')">
+                    Select <ion-note slot="item-right">选择框</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="$router.forward('/demo/basic/radio')">
-                    Radio <span slot="item-right" class="note">单选框</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/basic/radio')">
+                    Radio <ion-note slot="item-right">单选框</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="$router.forward('/demo/basic/checkbox')">
-                    Checkbox <span slot="item-right" class="note">复选框</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/basic/checkbox')">
+                    Checkbox <ion-note slot="item-right">复选框</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="$router.forward('/demo/basic/toggle')">
-                    Toggle <span slot="item-right" class="note">开关按钮</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/basic/toggle')">
+                    Toggle <ion-note slot="item-right">开关按钮</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="$router.forward('/demo/basic/range')">
-                    Range Slider <span slot="item-right" class="note">滑块</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/basic/range')">
+                    Range Slider <ion-note slot="item-right">滑块</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="$router.forward('/demo/basic/badge')">
-                    Badge <span slot="item-right" class="note">徽章</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/basic/badge')">
+                    Badge <ion-note slot="item-right">徽章</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="$router.forward('/demo/basic/icons')">
-                    Icon <span slot="item-right" class="note">图标</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/basic/icons')">
+                    Icon <ion-note slot="item-right">图标</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="$router.forward('/demo/basic/alert')">
-                    Alert <span slot="item-right" class="note">对话框</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/basic/alert')">
+                    Alert <ion-note slot="item-right">对话框</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="$router.forward('/demo/basic/dialog')">
-                    Dialog <span slot="item-right" class="note">对话框</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/basic/dialog')">
+                    Dialog <ion-note slot="item-right">对话框</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="toast()">
-                    Toast <span slot="item-right" class="note">文字提示</span>
+                <ion-item detail-push @click.native="toast()">
+                    Toast <ion-note slot="item-right">文字提示</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="loading('正在加载..')">
-                    Loading <span slot="item-right" class="note">加载提示</span>
+                <ion-item detail-push @click.native="loading('正在加载..')">
+                    Loading <ion-note slot="item-right">加载提示</ion-note>
                 </ion-item>
             </ion-list>
 
             <!-- layout -->
             <ion-list title="布局">
-                <ion-item is-link @click.native="$router.forward('/demo/layout/header')">
-                    Header <span slot="item-right" class="note">页头</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/layout/header')">
+                    Header <ion-note slot="item-right">页头</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="$router.forward('/demo/layout/list')">
-                    List <span slot="item-right" class="note">列表</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/layout/list')">
+                    List <ion-note slot="item-right">列表</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="$router.forward('/demo/layout/cells')">
-                    Cells <span slot="item-right" class="note">宫格</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/layout/cells')">
+                    Cells <ion-note slot="item-right">宫格</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="$router.forward('/demo/layout/grid')">
-                    Grid <span slot="item-right" class="note">栅格</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/layout/grid')">
+                    Grid <ion-note slot="item-right">栅格</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="$router.forward('/demo/layout/tabs')">
-                    Tabs <span slot="item-right" class="note">选项卡</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/layout/tabs')">
+                    Tabs <ion-note slot="item-right">选项卡</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="$router.forward('/demo/layout/buttonbar')">
-                    ButtonBar <span slot="item-right" class="note">iOS 选项卡</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/layout/buttonbar')">
+                    ButtonBar <ion-note slot="item-right">iOS 选项卡</ion-note>
                 </ion-item>
             </ion-list>
 
             <!-- advanced -->
             <ion-list title="高级">
-                <ion-item is-link @click.native="$router.forward('/demo/advanced/swiper')">
-                    Swiper <span slot="item-right" class="note">轮播</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/advanced/swiper')">
+                    Swiper <ion-note slot="item-right">轮播</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="$router.forward('/demo/advanced/scroll')">
-                    Scroll <span slot="item-right" class="note">下拉刷新、无限加载</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/advanced/scroll')">
+                    Scroll <ion-note slot="item-right">下拉刷新、无限加载</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="$router.forward('/demo/advanced/scroller')">
-                    Vue Scroller <span slot="item-right" class="note">v2.1.0</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/advanced/scroller')">
+                    Vue Scroller <ion-note slot="item-right">v2.1.0</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="$router.forward('/demo/advanced/cascade')">
-                    Cascade <span slot="item-right" class="note">级联</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/advanced/cascade')">
+                    Cascade <ion-note slot="item-right">级联</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="$router.forward('/demo/advanced/accordion')">
-                    Accordion <span slot="item-right" class="note">手风琴组件</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/advanced/accordion')">
+                    Accordion <ion-note slot="item-right">手风琴组件</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="$router.forward('/demo/advanced/datepicker')">
-                    Datepicker <span slot="item-right" class="note">日期选择器</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/advanced/datepicker')">
+                    Datepicker <ion-note slot="item-right">日期选择器</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="$router.forward('/demo/advanced/popup')">
-                    Popup <span slot="item-right" class="note">自定义弹层</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/advanced/popup')">
+                    Popup <ion-note slot="item-right">自定义弹层</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="$router.forward('/demo/advanced/actionsheet')">
-                    ActionSheet <span slot="item-right" class="note">操作列表</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/advanced/actionsheet')">
+                    ActionSheet <ion-note slot="item-right">操作列表</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="toggleSidebarRight()">
-                    Sidebar <span slot="item-right" class="note">侧边栏</span>
+                <ion-item detail-push @click.native="toggleSidebarRight()">
+                    Sidebar <ion-note slot="item-right">侧边栏</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="$router.forward('/demo/advanced/tabbar/home')">
-                    Tabbar <span slot="item-right" class="note">嵌套路由使用</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/advanced/tabbar/home')">
+                    Tabbar <ion-note slot="item-right">嵌套路由使用</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="$router.forward('/demo/advanced/tabbarWithoutRoutes')">
-                    Tabbar Standalone <span slot="item-right" class="note">单独使用</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/advanced/tabbarWithoutRoutes')">
+                    Tabbar Standalone <ion-note slot="item-right">单独使用</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="$router.forward('/demo/advanced/modal')">
-                    Modal <span slot="item-right" class="note">模态窗</span>
+                <ion-item detail-push @click.native="$router.forward('/demo/advanced/modal')">
+                    Modal <ion-note slot="item-right">模态窗</ion-note>
                 </ion-item>
             </ion-list>
         </div>
