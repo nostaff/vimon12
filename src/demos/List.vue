@@ -19,11 +19,6 @@
                     <ion-item>Angola</ion-item>
                     <ion-item>Argentina</ion-item>
                     <ion-item>Angola</ion-item>
-                    <ion-item>Argentina</ion-item>
-                    <ion-item>Angola</ion-item>
-                    <ion-item>Argentina</ion-item>
-                    <ion-item>Angola</ion-item>
-                    <ion-item>Argentina</ion-item>
                 </ion-item-group>
             </ion-list>
 

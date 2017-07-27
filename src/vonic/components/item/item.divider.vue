@@ -6,7 +6,7 @@
 
 <script>
     import ThemeMixins from '../../themes/theme.mixins';
-    import Item from '../item/item.vue'
+    import Item from './item.vue'
 
     export default {
         name: 'ion-item-divider',

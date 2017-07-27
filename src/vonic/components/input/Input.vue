@@ -1,43 +1,31 @@
+
+
 <template>
-    <div class="item item-block item-input"
-         :class="{
-            'item-label-floating': floatingLabel == 'true',
-            'item-label-stacked': stackedLabel == 'true',
-            'input-has-focus': inputHasFocus,
-            'item-input-has-focus': inputHasFocus,
-            'input-has-value': inputHasValue
-        }"
-    >
-        <div class="item-inner">
-            <div class="input-wrapper">
-                <span class="label fixed" v-if="!!label" v-text="label"
-                      :class="{'floating': floatingLabel == 'true', 'stacked': stackedLabel == 'true'}"
-                ></span>
-
-                <template v-if="type !== 'textarea'">
-                    <i class="icon placeholder-icon" v-if="iconClass" :class="iconClass"></i>
-                    <span class="input-clear" :class="{'activated': inputHasValue}" @click="clear(value)"></span>
-
-                    <input class="text-input" :class="['text-input-'+theme]" :type="type" :placeholder="placeholder" ref="input" :value="value"
-                           @change="change($event)"
-                           @focus="focus($event)"
-                           @blur="blur($event)"
-                           @clickoutside="doCloseActive"
-                    >
-
-                </template>
-                <textarea v-else class="text-input" :class="['text-input-'+theme]" ref="input" :placeholder="placeholder"
-                          @focus="active = true"
-                          @blur="active = false" :disabled="disabled" :readonly="readonly"
-                          :value="currentValue" @input="handleInput">
-                </textarea>
-
-            </div>
-        </div>
+    <div :class="[
+        type == 'textarea'?'ion-textarea':'ion-input',
+    ]">
+        <template v-if="type !== 'textarea'">
+            <input @change="$emit('change', currentValue)" v-clickoutside="doCloseActive" ref="input"
+                   class="text-input " :class="['text-input-'+theme]"
+                   :placeholder="placeholder"
+                   :number="type === 'number'"
+                   :type="type"
+                   @focus="active = true"
+                   @blur="active = false" :disabled="disabled"
+                   :readonly="readonly" :value="currentValue" @input="handleInput"/>
+            <ion-button v-if="!disableClear" class="text-input-clear-icon" @click.native="handleClear" type="clear"
+                        icon-only>
+                <i role="img" class="ion-icon ion-ios-close-outline"></i>
+            </ion-button>
+        </template>
+        <textarea v-else @change="$emit('change', currentValue)" v-clickoutside="doCloseActive" ref="input"
+                  class="text-input " :class="['text-input-'+theme]" :placeholder="placeholder" @focus="active = true"
+                  @blur="active = false" :disabled="disabled" :readonly="readonly"
+                  :value="currentValue" @input="handleInput">
+        </textarea>
     </div>
 </template>
 <script>
-
     import ThemeMixins from '../../themes/theme.mixins';
     import Clickoutside from '../../utils/clickoutside';
     import IonButton from '../button';
@@ -51,95 +39,74 @@
         directives: {
             Clickoutside
         },
+        data() {
+            return {
+                active: false,
+                currentValue: this.value
+            }
+        },
+        mounted() {
+            let $parent = this.$parent;
+            //input 组件必须和item 组件一起使用 如果是ionItem 则给 item 添加class
+            if ($parent.componentName === 'ionItem') {
+                $parent.addClass('item-input');
+            }
+            this.initAttr('floating');
+            this.initAttr('stacked');
+        },
         props: {
             type: {
                 type: String,
-                validator(val) {
-                    return val == 'text' || val == 'password' || val == 'email' || val == 'tel'
-                },
                 default: 'text'
             },
-            label: {
-                type: String,
-                default: ''
-            },
-            iconClass: {
-                type: String,
-                default: ''
-            },
-            placeholder: {
-                type: String,
-                default: ''
-            },
-            value:{
-                type: [String, Number],
-                required: false
-            },
-            stackedLabel: {
-                type: String,
-                default: 'false',
-                validator(val) {
-                    return val == 'true' || val == 'false'
-                }
-            },
-            floatingLabel: {
-                type: String,
-                default: 'false',
-                validator(val) {
-                    return val == 'true' || val == 'false'
-                }
-            }
+            placeholder: String,
+            readonly: Boolean,
+            disabled: Boolean,
+            disableClear: Boolean,
+            value: {},
+            attr: Object
         },
-
-        data() {
-            return {
-                inputHasValue: false,
-                inputHasFocus: false
-            }
-        },
-
         methods: {
-            clear(value) {
-                this.$refs.input.blur()
-                this.$refs.input.value = ''
-                this.$emit('input', '')
-                this.inputHasValue = false
-                this.$refs.input.focus()
+            handleInput(evt) {
+                this.currentValue = evt.target.value;
             },
-
-            updateValue(value) {
-                this.$refs.input.value = value
-                this.$emit('input', value)
+            handleClear() {
+                if (this.disabled || this.readonly) return;
+                this.currentValue = '';
             },
-
-            change($event) {
-                if (lock) {
-                    $event.preventDefault()
-                    return
+            doCloseActive() {
+                this.active = false;
+            },
+            /**
+             * 根据input 上的属性显示不同的样式　
+             */
+            initAttr(attr) {
+                let $parent = this.$parent;
+                const $el = this.$el;
+                if ($el.getAttribute(attr) != null) {
+                    ////如果input 设置了  floating  就设置 item 的class 为  item-label-floating
+                    $parent.addClass(`item-label-${attr}`);
+                    //如果 属性设置了 attr  则动态设置 属性 attr
+                    $parent.addLabelAttribute(attr);
                 }
-
-                let value = $event.target.value
-                this.$refs.input.value = value
-                this.$emit('input', value)
-            },
-
-            focus($event) {
-                this.inputHasFocus = true
-            },
-
-            blur($event) {
-                this.inputHasFocus = false
             }
         },
-
         watch: {
-            value: function (newValue) {
-                this.inputHasValue = !!newValue
+            value(val) {
+                this.currentValue = val;
+            },
+            currentValue(val) {
+                let hasValue = (val !== null && val !== undefined && val !== '');
+                this.$parent[hasValue ? 'addClass' : 'removeClass']('input-has-value');
+                this.$emit('input', val);
+            },
+            active(val) {
+                let cls = 'input-has-focus';
+                this.$parent[val ? 'addClass' : 'removeClass'](cls);
             }
         }
     }
 </script>
-
 <style lang="scss">
     @import './input.scss';
     @import './input.ios.scss';

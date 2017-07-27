@@ -3,6 +3,7 @@
         <slot name="item-left"></slot>
         <div class="item-inner">
             <div class="input-wrapper">
+                <slot name="label"></slot>
                 <ion-label ref="label" :color="color">
                     <slot></slot>
                 </ion-label>
@@ -14,14 +15,18 @@
     </div>
 </template>
 <script>
+    import ThemeMixins from '../../themes/theme.mixins';
     import util from '../../utils/util';
-    import ItemMixin from './item.mixin';
 
     export default {
         name: 'ion-item',
-        mixins: [ItemMixin],
+        mixins: [ThemeMixins],
+        data() {
+            return {
+                componentName: 'ionItem'
+            };
+        },
         mounted () {
-
             if (this.$el.classList.contains('list-header') || this.$el.classList.contains('item-divider'))
                 this.$el.classList.remove('item-block')
 
@@ -33,16 +38,10 @@
             }
         },
         methods: {
-            //设置 label 的  floating
-            addLabelAttr(attr, val = '') {
-                /*
-                 *viewLabel 为true 则没有设置 slot 为 ion-label else 则设置呢
-                 * 设置了 如下
-                 * <ion-label slot="ion-label">password</ion-label>
-                 */
-                let $labelEl = this.getText().length > 0 ? this.$refs.label.$el : this.$slots['ion-label'][0].elm;
-                if (!$labelEl.hasAttribute(attr)) {
-                    $labelEl.setAttribute(attr, val);
+            addLabelAttribute(name, value = '') {
+                let $labelEl = this.$refs.label ? this.$refs.label.$el : this.$slots['label'][0].elm;
+                if (!$labelEl.hasAttribute(name)) {
+                    $labelEl.setAttribute(name, value);
                 }
             }
         }

@@ -2,7 +2,6 @@
     <div class="page has-navbar" v-nav="{title: '输入框', showBackButton: true}">
         <div class="page-content">
 
-            <!-- type: text, password, email, tel -->
             <ion-list :title="hasLabel">
                 <ion-input type="text" v-model="username" placeholder="用户名" label="用户名"></ion-input>
                 <ion-input type="password" v-model="password" placeholder="密码" label="密码"></ion-input>
@@ -15,27 +14,30 @@
             </ion-list>
 
             <ion-list title="带图标:">
-                <ion-input type="text" placeholder="用户名" icon-class="ion-search"></ion-input>
-                <ion-input type="password" placeholder="密码"  icon-class="ion-search"></ion-input>
+                <ion-input type="text" placeholder="用户名" icon="search"></ion-input>
+                <ion-input type="password" placeholder="密码"  icon="search"></ion-input>
             </ion-list>
 
             <ion-list title="堆叠效果：">
-                <ion-input type="text" v-model="username" placeholder="Username" label="Username" stacked-label="true"></ion-input>
-                <ion-input type="email" v-model="email" placeholder="Email" label="Email" stacked-label="true"></ion-input>
-                <ion-input type="tel" v-model="phone" placeholder="Phone" label="Phone" stacked-label="true"></ion-input>
+                <ion-input type="text" v-model="username" placeholder="Username" label="Username" stacked></ion-input>
+                <ion-input type="email" v-model="email" placeholder="Email" label="Email" stacked></ion-input>
+                <ion-input type="tel" v-model="phone" placeholder="Phone" label="Phone" stacked></ion-input>
             </ion-list>
 
             <ion-list title="悬浮效果：">
-                <ion-input type="text" v-model="username" placeholder="Username" label="Username" floating-label="true"></ion-input>
-                <ion-input type="email" v-model="email" placeholder="Email" label="Email" floating-label="true"></ion-input>
-                <ion-input type="tel" v-model="phone" placeholder="Phone" label="Phone" floating-label="true"></ion-input>
+                <ion-input type="text" v-model="username" label="Username" floating></ion-input>
+                <ion-input type="email" v-model="email" label="Email" floating></ion-input>
+                <ion-input type="tel" v-model="phone" label="Phone" floating></ion-input>
             </ion-list>
 
 
             <ion-list>
-                <ion-item class="item-input-inset">
+                <ion-input type="text" v-model="username" label="Username" floating></ion-input>
+
+                <ion-item>
+
                     <label class="item-input-wrapper">
-                        <i class="icon ion-ios-search placeholder-icon"></i>
+                        <i class="icon ion-ios-search"></i>
                         <input type="text" placeholder="Email">
                     </label>
                     <button class="button button-small">

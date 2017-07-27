@@ -65,12 +65,11 @@
         created() {
             // 如果是在组件 buttons 下则修改前缀为 bar-button-
             let name = this.$parent.$data.componentName;
-            console.log(name)
             if (name === 'buttons') {
                 this.role = 'bar-button';
             }
             //如果在item 组件里 则加上class
-            if (name === 'ionItem') {
+            if (name === 'ionItem' && !this.$el.hasAttribute('text-input-clear-icon') && !this.$el.hasAttribute('searchbar-clear-icon') ) {
                 this.isParentItem = true;
             }
 

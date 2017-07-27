@@ -7,15 +7,14 @@
     </section>
 </template>
 <script>
-
     import ThemeMixins from '../../themes/theme.mixins';
-    import Item from '../item/item.divider.vue'
+    import ItemDivider from './item.divider.vue'
 
     export default {
         name: 'ion-item-group',
         mixins: [ThemeMixins],
         components: {
-            'ion-item-divider': Item
+            'ion-item-divider': ItemDivider
         }
     }
 
