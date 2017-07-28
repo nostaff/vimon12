@@ -1,8 +1,14 @@
 <template>
     <div class="page has-navbar" v-nav="{title: '列表', showBackButton: true}">
-        <div class="page-content padding-top">
+        <div class="page-content">
 
-            <ion-list title="Settings" color="danger">
+            <ion-list>
+                <ion-list-header color="primary">
+                    Settings
+                    <ion-button type="clear" icon-only slot="item-right">
+                        <ion-icon name="cog"></ion-icon>
+                    </ion-button>
+                </ion-list-header>
                 <ion-item detail-push key="index" v-for="item in ['Angola', 'Angola1', 'Angola2', 'Angola3']">
                     {{ item }}
                 </ion-item>
@@ -11,6 +17,9 @@
 
             <ion-list>
                 <ion-item-group title="A" color="primary">
+                    <ion-item>
+                        <ion-label slot="item-label">AngolaAngola00000</ion-label>
+                    </ion-item>
                     <ion-item>Angola</ion-item>
                     <ion-item>Argentina</ion-item>
                 </ion-item-group>

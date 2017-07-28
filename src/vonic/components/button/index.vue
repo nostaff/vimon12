@@ -69,7 +69,7 @@
                 this.role = 'bar-button';
             }
             //如果在item 组件里 则加上class
-            if (name === 'ionItem' && !this.$el.hasAttribute('text-input-clear-icon') && !this.$el.hasAttribute('searchbar-clear-icon') ) {
+            if (name === 'ionItem') {
                 this.isParentItem = true;
             }
 

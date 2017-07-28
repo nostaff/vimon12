@@ -14,7 +14,7 @@
                     Input <ion-note slot="item-right">输入框</ion-note>
                 </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/basic/search')">
-                    Search <ion-note slot="item-right">搜索框</ion-note>
+                    SearchBar <ion-note slot="item-right">搜索框</ion-note>
                 </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/basic/select')">
                     Select <ion-note slot="item-right">选择框</ion-note>

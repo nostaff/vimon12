@@ -1,8 +1,8 @@
 <template>
-    <span class="ion-avatar">
+    <div class="ion-avatar">
         <img :src="src" v-if="src">
         <slot></slot>
-    </span>
+    </div>
 </template>
 <script>
     export default {

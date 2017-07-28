@@ -3,7 +3,7 @@
 // --------------------------------------------------
 $list-ios-margin-top: 10px !default;
 $list-ios-margin-right: 0 !default;
-$list-ios-margin-bottom: 32px !default;
+$list-ios-margin-bottom: 0 !default;
 $list-ios-margin-left: 0 !default;
 $list-inset-ios-margin-top: 16px !default;
 $list-inset-ios-margin-right: 16px !default;
@@ -43,8 +43,7 @@ $list-ios-header-background-color: 0 0!default;
 // If the item has the no-lines attribute remove the bottom border from:
 // the item itself (for last-child items)
 // the item-inner class (if it is not last)
-.list-ios .item[no-lines],
-.list-ios .item[no-lines] .item-inner,
+.list-ios .item[no-lines], .list-ios .item[no-lines] .item-inner,
 {
     border-width: 0;
 }
@@ -92,13 +91,11 @@ $list-ios-header-background-color: 0 0!default;
     border-bottom: 0;
 }
 
-.list-ios[inset]>.item:first-child,
-.list-ios[inset]>.item-wrapper:first-child .item {
+.list-ios[inset]>.item:first-child, .list-ios[inset]>.item-wrapper:first-child .item {
     border-top: 0;
 }
 
-.list-ios[inset]>.item:last-child,
-.list-ios[inset]>.item-wrapper:last-child .item {
+.list-ios[inset]>.item:last-child, .list-ios[inset]>.item-wrapper:last-child .item {
     border-bottom: 0;
 }
 

@@ -6,17 +6,21 @@
         ]"></i>
 </template>
 <script>
-    const ICON_MODE = "ion";
+    import ThemeMixins from '../../themes/theme.mixins';
+
     export default {
         name: 'ion-icon',
+        mixins: [ThemeMixins],
         data() {
             return {
                 isParentItem: false
             }
         },
         props: {
-            name: String,
-            color: String
+            name: {
+                type: String,
+                default: ''
+            },
         },
         created() {
             let name = this.$parent.$data.componentName;
@@ -29,15 +33,13 @@
         computed: {
             nameClass() {
                 let name = this.name;
-                if (!(/^md-|^ios-|^logo-/.test(name))) {
-                    let theme = this.$ionic.theme;
-                    return `ion-${theme} ${ICON_MODE}-${theme === 'wp'?'ios':theme}-${name}`;
-                } else {
-                    return name;
+                if ((/^ion-md-|^ion-ios-|^logo-/.test(name))) {
+                    return name
                 }
+                return name ? `ion-${this.theme} ion-${this.theme === 'wp'?'ios':this.theme}-${name}` : `ion-${this.theme}` ;
             },
             colorClass() {
-                return this.color ? `icon-${this.$ionic.theme}-${this.color}` : '';
+                return this.color ? `icon-${this.theme}-${this.color}` : '';
             }
         }
     };

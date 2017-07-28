@@ -119,3 +119,7 @@ $text-input-ios-highlight-color-invalid: color($colors-ios, danger) !default;
     width: $text-input-ios-input-clear-icon-width;
     background-size: $text-input-ios-input-clear-icon-size;
 }
+
+.input-ios .text-input-clear-icon.item-button {
+  height: 100%;
+}

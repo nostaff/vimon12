@@ -39,7 +39,7 @@ $label-ios-margin : $item-ios-padding-top ($item-ios-padding-right / 2) $item-io
 
 .input-has-focus .label-ios[floating],
 .input-has-value .label-ios[floating] {
-    transform: translate3d(0, 0, 0) scale(.8);
+    transform: translate3d(0, 0, 0) scale(.9);
 }
 
 .item-ios.item-label-stacked [item-right],
