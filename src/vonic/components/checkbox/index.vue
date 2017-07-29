@@ -12,6 +12,7 @@
     import List from '../list'
 
     export default{
+        name: 'ion-checkbox',
         components: {
             List
         },

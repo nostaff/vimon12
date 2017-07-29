@@ -12,7 +12,7 @@
             <ion-list>
                 <ion-list-header>
                     Settings
-                    <ion-button icon-only item-right slot="item-right" type="clear">
+                    <ion-button icon-only item-right slot="item-right" clear>
                         <ion-icon name="cog"></ion-icon>
                     </ion-button>
                 </ion-list-header>
@@ -59,28 +59,28 @@
                 <ion-item>
                     <ion-icon name="ionic" slot="item-left" item-left color="primary"></ion-icon>
                     <ion-label>Ionic View</ion-label>
-                    <ion-button type="outline" slot="item-right" item-right>
+                    <ion-button outline slot="item-right" item-right>
                         Uninstall
                     </ion-button>
                 </ion-item>
                 <ion-item>
                     <ion-icon name="brush" slot="item-left" item-left color="primary"></ion-icon>
                     <ion-label>Ionic brush</ion-label>
-                    <ion-button type="outline" slot="item-right" item-right>
+                    <ion-button outline slot="item-right" item-right>
                         Uninstall
                     </ion-button>
                 </ion-item>
                 <ion-item>
                     <ion-icon name="logo-octocat" slot="item-left" item-left color="dark"></ion-icon>
                     <ion-label>Hubstruck</ion-label>
-                    <ion-button type="outline" slot="item-right" item-right>
+                    <ion-button outline slot="item-right" item-right>
                         Uninstall
                     </ion-button>
                 </ion-item>
                 <ion-item>
                     <ion-icon name="paw" slot="item-left" item-left color="danger"></ion-icon>
                     <ion-label>Barkpark</ion-label>
-                    <ion-button type="outline" slot="item-right" item-right>
+                    <ion-button outline slot="item-right" item-right>
                         Uninstall
                     </ion-button>
                 </ion-item>

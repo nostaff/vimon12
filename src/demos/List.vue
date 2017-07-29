@@ -5,7 +5,7 @@
             <ion-list>
                 <ion-list-header color="primary">
                     Settings
-                    <ion-button type="clear" icon-only slot="item-right">
+                    <ion-button clear icon-only slot="item-right">
                         <ion-icon name="cog"></ion-icon>
                     </ion-button>
                 </ion-list-header>
@@ -101,7 +101,7 @@
                     </ion-thumbnail>
                     <h2>My Neighbor Totoro</h2>
                     <p>Hayao Miyazaki • 1988</p>
-                    <ion-button slot="item-right" type="clear" item-right>View</ion-button>
+                    <ion-button slot="item-right" clear item-right>View</ion-button>
                 </ion-item>
             </ion-list>
 
@@ -189,7 +189,7 @@
 
                 <ion-item>
                     Call Ma
-                    <ion-button slot="item-right" type="outline" color="primary" icon-left>
+                    <ion-button slot="item-right" outline color="primary" icon-left>
                         <ion-icon name="call"></ion-icon>
                         Call
                     </ion-button>
@@ -209,7 +209,7 @@
                     </div>
                     <h2>Venkman</h2>
                     <p>Back off, man. I'm a scientist.</p>
-                    <ion-button slot="item-right" type="clear">View</ion-button>
+                    <ion-button slot="item-right" clear>View</ion-button>
                 </ion-item>
 
                 <ion-item is-link>

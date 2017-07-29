@@ -7,13 +7,13 @@
 <ion-header>
      <ion-toolbar color="primary">
           <ion-buttons slot="buttons">
-              <ion-button color="secondary" size="small" type="clear"  icon-only>
+              <ion-button color="secondary" size="small" clear  icon-only>
                   <ion-icon name="home"></ion-icon>
                </ion-button>
           </ion-buttons>
           <ion-title>header primary</ion-title>
           <ion-buttons slot="buttons" end>
-                <ion-button color="danger" size="small" type="clear"  icon-only>
+                <ion-button color="danger" size="small" clear  icon-only>
                    <ion-icon name="heart"></ion-icon>
                 </ion-button>
           </ion-buttons>

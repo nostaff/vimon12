@@ -8,6 +8,7 @@
 </template>
 <script>
     export default {
+        name: 'ion-select',
         created () {
             if (typeof this.value !== 'undefined') {
                 this.currentValue = this.value

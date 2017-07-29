@@ -13,9 +13,9 @@
 ### type Buttons
 > 主题 默认是default 具有:Outline Style Clear Style    
 ```html
-<ion-button color="light" type="outline"> default</ion-button><br/>
-<ion-button type="outline"> default</ion-button><br/>
-<ion-button type="clear"> default</ion-button><br/>
+<ion-button color="light" outline> default</ion-button><br/>
+<ion-button outline> default</ion-button><br/>
+<ion-button clear> default</ion-button><br/>
 ```
 
 ### Round Buttons

@@ -19,7 +19,7 @@
                    @focus="focus($event)"
                    @blur="blur($event)"
             >
-            <ion-button class="text-input-clear-icon" @click.native="clear()" type="clear"></ion-button>
+            <ion-button class="text-input-clear-icon" @click.native="clear()" clear></ion-button>
         </template>
         <textarea v-else slot="item-content" class="'text-input-'+theme" :class="['text-input-'+theme]" ref="input" :placeholder="placeholder"
                   @focus="active = true"

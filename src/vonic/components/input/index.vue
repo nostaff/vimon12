@@ -10,18 +10,18 @@
                    :value="value"
                    :disabled="disabled"
                    :readonly="readonly"
-                   @input="input($event)"
-                   @focus="focus($event)"
-                   @blur="blur($event)">
-            <ion-button v-if="clearInput" class="text-input-clear-icon" @click.native="clear()" type="clear"></ion-button>
+                   @input="inputChanged($event)"
+                   @focus="inputFocused($event)"
+                   @blur="inputBlurred($event)">
+            <ion-button v-if="!disableClear" class="text-input-clear-icon" @click.native="clearInput($event)" clear></ion-button>
         </template>
         <textarea v-else class="textarea-input" :class="['text-input-'+theme]" ref="input"
                   :placeholder="placeholder"
                   :disabled="disabled"
                   :readonly="readonly"
-                  @input="input($event)"
-                  @focus="focus($event)"
-                  @blur="blur($event)"
+                  @input="inputChanged($event)"
+                  @focus="inputFocused($event)"
+                  @blur="inputBlurred($event)"
         >{{value}}</textarea>
     </div>
 </template>
@@ -76,33 +76,32 @@
                 type: Boolean,
                 default: false
             },
-            clearInput: {
+            disableClear: {
                 type: Boolean,
-                default: true
+                default: false
             },
         },
 
         methods: {
-            clear() {
+            clearInput($event) {
                 if (this.disabled || this.readonly) return;
 
                 this.$refs.input.value = ''
                 this.$emit('input', '')
             },
-
-            input($event) {
+            inputChanged($event) {
                 let value = $event.target.value
                 this.$refs.input.value = value
                 this.$emit('input', value)
                 this.activated = true
             },
-
-            focus($event) {
+            inputFocused($event) {
                 this.activated = true
             },
-
-            blur($event) {
-                this.activated = false
+            inputBlurred($event) {
+                setTimeout(() => {
+                    this.activated = false
+                }, 16 * 4);
             },
             // 过parent是item，做更新
             updateParentItem() {
@@ -110,13 +109,14 @@
                 $parent.$el.classList.add('item-input');
 
                 if ($parent.$data.componentName === 'ionItem') {
+                    let $el = this.$el;
                     let attrs = ['floating', 'stacked'];
-                    for (var index in attrs) {
-                        if (this.$el.hasAttribute(attrs[index])) {
-                            $parent.addClass(`item-label-${attrs[index]}`);
-                            $parent.updateLabelAttribute(attrs[index]);
+                    attrs.forEach(function(attr){
+                        if ($el.hasAttribute(attr)) {
+                            $parent.addClass(`item-label-${attr}`);
+                            $parent.updateLabelAttribute(attr);
                         }
-                    }
+                    });
                 }
 
             }
@@ -128,9 +128,7 @@
                 this.$parent.$el.classList[hasValue ? 'add' : 'remove']('input-has-value');
             },
             activated(val) {
-                setTimeout(() => {
-                    this.$parent.$el.classList[val ? 'add' : 'remove']('input-has-focus');
-                }, 100);
+                this.$parent.$el.classList[val ? 'add' : 'remove']('input-has-focus');
             }
         },
 

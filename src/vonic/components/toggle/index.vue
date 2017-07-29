@@ -12,7 +12,7 @@
 </template>
 <script>
     export default{
-
+        name: 'ion-toggle',
         created () {
             if (typeof this.value !== 'undefined') {
                 this.checked = this.value

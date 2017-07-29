@@ -7,11 +7,11 @@
 
 
             <p>Outline Usage</p>
-            <ion-button key="index" v-for="color in ['light', 'default', 'secondary', 'danger', 'dark']" :color="color" type="outline">{{color}} outline</ion-button>
+            <ion-button key="index" v-for="color in ['light', 'default', 'secondary', 'danger', 'dark']" :color="color" outline>{{color}} outline</ion-button>
 
 
             <p>Clear Usage</p>
-            <ion-button key="index" v-for="color in ['light', 'default', 'secondary', 'danger', 'dark']" :color="color" type="clear">{{color}} clear</ion-button>
+            <ion-button key="index" v-for="color in ['light', 'default', 'secondary', 'danger', 'dark']" :color="color" clear>{{color}} clear</ion-button>
 
             <p>Round Usage</p>
             <ion-button key="index" v-for="color in ['light', 'default', 'secondary', 'danger', 'dark']" :color="color" round>{{color}} round</ion-button>
@@ -32,8 +32,8 @@
             <ion-button color="light" icon-right>Forward<ion-icon name="arrow-forward"></ion-icon></ion-button>
             <ion-button color="light" icon-left><ion-icon name="home"></ion-icon>Home</ion-button>
 
-            <ion-button type="outline" icon-left><ion-icon name="briefcase"></ion-icon>Work</ion-button>
-            <ion-button type="clear" icon-left><ion-icon name="beer"></ion-icon>Pub</ion-button>
+            <ion-button outline icon-left><ion-icon name="briefcase"></ion-icon>Work</ion-button>
+            <ion-button clear icon-left><ion-icon name="beer"></ion-icon>Pub</ion-button>
 
 
         </div>

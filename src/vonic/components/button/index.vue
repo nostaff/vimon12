@@ -1,15 +1,16 @@
 <template>
-    <button @touchstart="handleTouchStart" class="disable-hover" :class="[
-        role,
-        theme ? role +'-' + theme:'',
-        type ? role + '-' + type : '',
-        theme ? role + '-' + type + '-' + theme:'',
+    <button type="button" @touchstart="handleTouchStart" :class="[
+        'disable-hover',
+        prefix,
+        theme ? prefix +'-' + theme:'',
+        style ? prefix + '-' + style : '',
+        theme ? prefix + '-' + style + '-' + theme:'',
         colorClass,
-        isActive?'activated':'',
         roundClass,
         blockClass,
         fullClass,
         sizeClass,
+        isActive?'activated':'',
         isParentItem ? 'item-button' : ''
         ]">
 		<span class="button-inner">
@@ -23,40 +24,63 @@
     export default {
         name: 'ion-button',
         mixins: [ThemeMixins],
+        props: {
+            outline: Boolean,
+            clear: Boolean,
+            round: Boolean,
+            block: Boolean,
+            full: Boolean,
+            role: String,
+            size: {
+                type: String,
+                default: 'default',
+                validator(value) {
+                    return [
+                            'default',
+                            'small',
+                            'large'
+                        ].indexOf(value) > -1;
+                }
+            }
+        },
         data() {
             return {
-                role: 'button',
+                prefix: 'button',
+                style: 'default',
                 isActive: false,
                 //如果是在item 组件内部则为true
-                isParentItem: false
+                isParentItem: false,
+                isButtonCover: false
             }
         },
         computed: {
             colorClass: function() {
+                if (this.isButtonCover)
+                    return '';
                 let theme = this.$ionic.theme;
-                switch (this.type) {
+                switch (this.style) {
                     case 'outline':
                     case 'clear':
-                        return `${this.role}-${this.type}-${theme}-${this.color}`;
+                        return `${this.prefix}-${this.style}-${theme}-${this.color}`;
                     default:
-                        return `${this.role}-${theme}-${this.color}`;
+                        return `${this.prefix}-${theme}-${this.color}`;
                 }
             },
             roundClass: function() {
-                return this.round ? `button-round button-round-${this.theme}` : '';
+                return this.round && !this.isButtonCover ? `button-round button-round-${this.theme}` : '';
             },
             blockClass: function() {
-                return this.block ? `button-block button-block-${this.theme}` : '';
+                return this.block && !this.isButtonCover ? `button-block button-block-${this.theme}` : '';
             },
             fullClass: function() {
-                return this.full ? `button-full button-full-${this.theme}` : '';
+                return this.full && !this.isButtonCover ? `button-full button-full-${this.theme}` : '';
             },
             sizeClass: function() {
                 let size = this.size;
                 switch (this.size) {
                     case 'small':
                     case 'large':
-                        return `${this.role}-${size} ${this.role}-${size}-${this.theme}`;
+                        return `${this.prefix}-${size} ${this.prefix}-${size}-${this.theme}`;
                     default:
                         return '';
                 }
@@ -66,17 +90,17 @@
             // 如果是在组件 buttons 下则修改前缀为 bar-button-
             let name = this.$parent.$data.componentName;
             if (name === 'buttons') {
-                this.role = 'bar-button';
+                this.prefix = 'bar-button';
             }
+        },
+        mounted() {
             //如果在item 组件里 则加上class
-            if (name === 'ionItem') {
+            if (name === 'ionItem' && this.role !== 'radio') {
                 this.isParentItem = true;
             }
 
-            if (this.prefix) {
-                this.role = this.prefix;
-            }
-
+            this.style = this.clear ? 'clear' : (this.outline ? 'outline' : 'default')
+            this.isButtonCover = this.$el.classList.contains('button-cover')
         },
         methods: {
             handleTouchStart(evt) {
@@ -89,37 +113,10 @@
                 this.isActive = false;
             }
         },
-        props: {
-            // 类型 默认   outline  clear
-            type: {
-                type: String,
-                default: 'default',
-                validator(value) {
-                    return [
-                            'default',
-                            'outline',
-                            'clear'
-                        ].indexOf(value) > -1;
-                }
-            },
-            round: Boolean,
-            block: Boolean,
-            full: Boolean,
-            prefix: String,
-            size: {
-                type: String,
-                default: 'default',
-                validator(value) {
-                    return [
-                            'default',
-                            'small',
-                            'large'
-                        ].indexOf(value) > -1;
-                }
-            }
-        }
+
     };
 </script>
+
 <style lang="scss">
     @import './button.scss';
     @import './button-icon.scss';

@@ -1,20 +1,37 @@
 <template>
     <ion-list :title="title">
-        <div class="item item-radio" v-for="option in processOptions" @click="onClick(option.key)">
-            <input type="radio" :name="radioName" v-model="v" :value="option.key" checked="option.checked">
-            <div class="radio-content">
-                <div class="item-content" v-text="option.value"></div>
-                <i class="radio-icon ion-checkmark"></i>
+        <ion-item :class="[
+            'item-radio',
+            option.checked ? 'item-radio-checked' : ''
+            ]" key="index" v-for="option in processOptions" @click="onClick(option.key)">
+            {{option.value}}
+            <div slot="item-right" :checked="option.checked" :value="option.key" :class="['radio', 'radio-'+theme]">
+                <div :class="['radio-icon', option.checked?'radio-checked':'']">
+                    <div class="radio-inner"></div>
+                </div>
+                <ion-button :class="[
+                    'item-cover',
+                    'item-cover-'+theme,
+                    'item-cover-default',
+                    'item-cover-default-'+theme
+                ]" :checked="option.checked" :disabled="disabled" role="radio">
+                </ion-button>
             </div>
-        </div>
+        </ion-item>
     </ion-list>
 </template>
 <script>
-    import List from '../list'
+    import ThemeMixins from '../../themes/theme.mixins';
+    import IonList from '../list/list'
+    import IonItem from "../item/item";
+    import IonButton from "../button/index";
     export default {
-        name: 'radio',
+        name: 'ion-radio',
+        mixins: [ThemeMixins],
         components: {
-            List
+            IonButton,
+            IonItem,
+            IonList
         },
         props: {
             options: {
@@ -27,6 +44,10 @@
             value: {
                 type: [Number, String, Boolean],
                 required: true
+            },
+            disabled: {
+                type: Boolean,
+                default: false
             },
         },
         computed: {
@@ -61,3 +82,10 @@
         }
     }
 </script>
+
+
+<style lang="scss">
+    @import './radio.ios.scss';
+    @import './radio.md.scss';
+    @import './radio.wp.scss';
+</style>

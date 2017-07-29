@@ -26,7 +26,7 @@ import Icon from './components/icon'
 // import { Header, Footer, ToolBar, Title, Buttons } from "./components/header";
 import Button from './components/button'
 import Input from './components/input'
-// import Search from './components/input/Search'
+import Searchbar from './components/searchbar'
 import Radio from './components/radio'
 import Checkbox from './components/checkbox'
 import Select from './components/select'
@@ -42,12 +42,12 @@ Vue.component(Note.name, Note)
 Vue.component(Icon.name, Icon)
 Vue.component(Button.name, Button)
 Vue.component(Input.name, Input)
-// Vue.component('search', Search)
-Vue.component('ion-radio', Radio)
-Vue.component('ion-checkbox', Checkbox)
-Vue.component('von-select', Select)
+Vue.component(Searchbar.name, Searchbar)
+Vue.component(Radio.name, Radio)
+Vue.component(Checkbox.name, Checkbox)
+Vue.component(Select.name, Select)
 Vue.component(Thumbnail.name, Thumbnail)
-Vue.component('ion-toggle', Toggle)
+Vue.component(Toggle.name, Toggle)
 Vue.component('von-range', VonRange)
 Vue.component('von-header', VonHeader)
 Vue.component(Badge.name, Badge)
@@ -94,19 +94,19 @@ import Plugin from './plugin'
 
 export default {
     // Basic
-    // Label,
+    Label,
     Icon,
-    // Input,
-    // Search,
+    Input,
+    Searchbar,
     Radio,
     Checkbox,
     // Header,
-    // Badge,
+    Badge,
 
     // Layout
-    // List,
-    // ListHeader,
-    // Item,
+    List,
+    ListHeader,
+    Item,
     Cells,
     Tabs,
     ButtonBar,
