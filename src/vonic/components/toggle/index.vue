@@ -4,14 +4,13 @@
             <div class="toggle-inner"></div>
         </div>
 
-        <button class="item-cover disable-hover" role="checkbox" :checked="checked" type="button" @click="onToggle()">
-            <span class="button-inner"></span>
-            <div class="button-effect"></div>
-        </button>
+        <ion-button role="checkbox" :checked="checked" type="button" @click="onToggle()"></ion-button>
     </div>
 </template>
 <script>
+    import IonButton from "../button/index";
     export default{
+        components: {IonButton},
         name: 'ion-toggle',
         created () {
             if (typeof this.value !== 'undefined') {

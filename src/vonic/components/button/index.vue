@@ -1,5 +1,5 @@
 <template>
-    <button type="button" @touchstart="handleTouchStart" :class="[
+    <button @touchstart="handleTouchStart" :class="[
         'disable-hover',
         prefix,
         theme ? prefix +'-' + theme:'',
@@ -30,7 +30,10 @@
             round: Boolean,
             block: Boolean,
             full: Boolean,
-            role: String,
+            role: {
+                type: String,
+                default: 'button'
+            },
             size: {
                 type: String,
                 default: 'default',
@@ -92,10 +95,13 @@
             if (name === 'buttons') {
                 this.prefix = 'bar-button';
             }
+            if (this.role === 'radio' || this.role === 'checkbox') {
+                this.prefix = 'item-cover';
+            }
         },
         mounted() {
             //如果在item 组件里 则加上class
-            if (name === 'ionItem' && this.role !== 'radio') {
+            if (name === 'ionItem' && this.prefix === 'button') {
                 this.isParentItem = true;
             }
 

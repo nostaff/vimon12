@@ -37,10 +37,10 @@
         components: {
             IonButton,
         },
+
         data() {
             return {
                 activated: false,
-                isItemChild: false
             }
         },
 
@@ -106,9 +106,9 @@
             // 过parent是item，做更新
             updateParentItem() {
                 let $parent = this.$parent;
-                $parent.$el.classList.add('item-input');
-
                 if ($parent.$data.componentName === 'ionItem') {
+                    $parent.$el.classList.add('item-input');
+
                     let $el = this.$el;
                     let attrs = ['floating', 'stacked'];
                     attrs.forEach(function(attr){

@@ -86,7 +86,7 @@ $radio-wp-item-right-margin:      11px 10px 10px 0 !default;
 // -----------------------------------------
 
 .radio-wp.radio-disabled,
-.item-wp.item-radio-disabled ion-label {
+.item-wp.item-radio-disabled .ion-label {
   opacity: $radio-wp-disabled-opacity;
 
   pointer-events: none;
@@ -111,7 +111,7 @@ $radio-wp-item-right-margin:      11px 10px 10px 0 !default;
   }
 }
 
-.item-radio.item-wp ion-label {
+.item-radio.item-wp .ion-label {
   margin-left: 0;
 }
 

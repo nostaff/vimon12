@@ -85,7 +85,7 @@ $radio-md-item-right-margin:      $item-md-padding-media-top 10px $item-md-paddi
 // -----------------------------------------
 
 .radio-md.radio-disabled,
-.item-md.item-radio-disabled ion-label {
+.item-md.item-radio-disabled .ion-label {
   opacity: $radio-md-disabled-opacity;
 
   pointer-events: none;
@@ -106,7 +106,7 @@ $radio-md-item-right-margin:      $item-md-padding-media-top 10px $item-md-paddi
   }
 }
 
-.item-radio.item-md ion-label {
+.item-radio.item-md .ion-label {
   margin-left: 0;
 }
 
@@ -114,7 +114,7 @@ $radio-md-item-right-margin:      $item-md-padding-media-top 10px $item-md-paddi
 // Material Design Radio Item Label: Checked
 // -----------------------------------------
 
-.item-radio-checked.item-md ion-label {
+.item-radio-checked.item-md .ion-label {
   color: $radio-md-color-on;
 }
 
@@ -124,7 +124,7 @@ $radio-md-item-right-margin:      $item-md-padding-media-top 10px $item-md-paddi
 
 @mixin radio-theme-md($color-name, $color-base, $color-contrast) {
 
-  .item-radio-md-#{$color-name}.item-radio-checked ion-label {
+  .item-radio-md-#{$color-name}.item-radio-checked .ion-label {
     color: $color-base;
   }
 

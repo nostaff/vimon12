@@ -25,39 +25,39 @@
             <ion-list title="开关按钮">
                 <ion-item class="item-toggle">
                     Frodo Baggins
-                    <ion-toggle slot="right" theme="vibrant"></ion-toggle>
+                    <ion-toggle slot="item-right" theme="vibrant"></ion-toggle>
                 </ion-item>
                 <ion-item class="item-toggle">
                     Sam
-                    <ion-toggle slot="right" theme="energized"></ion-toggle>
+                    <ion-toggle slot="item-right" theme="energized"></ion-toggle>
                 </ion-item>
                 <ion-item class="item-toggle">
                     Éowyn
-                    <ion-toggle slot="right" theme="danger"></ion-toggle>
+                    <ion-toggle slot="item-right" theme="danger"></ion-toggle>
                 </ion-item>
                 <ion-item class="item-toggle">
                     Legolas
-                    <ion-toggle slot="right" theme="royal"></ion-toggle>
+                    <ion-toggle slot="item-right" theme="royal"></ion-toggle>
                 </ion-item>
                 <ion-item class="item-toggle">
                     Gimli
-                    <ion-toggle slot="right" :value="true" theme="danger"></ion-toggle>
+                    <ion-toggle slot="item-right" :value="true" theme="danger"></ion-toggle>
                 </ion-item>
                 <ion-item class="item-toggle">
                     Saruman
-                    <ion-toggle slot="right" theme="dark"></ion-toggle>
+                    <ion-toggle slot="item-right" theme="dark"></ion-toggle>
                 </ion-item>
                 <ion-item class="item-toggle">
                     Gandalf
-                    <ion-toggle slot="right" :value="true" theme="energized"></ion-toggle>
+                    <ion-toggle slot="item-right" :value="true" theme="energized"></ion-toggle>
                 </ion-item>
                 <ion-item class="item-toggle">
                     Arwen
-                    <ion-toggle slot="right" theme="royal"></ion-toggle>
+                    <ion-toggle slot="item-right" theme="royal"></ion-toggle>
                 </ion-item>
                 <ion-item class="item-toggle">
                     Treebeard
-                    <ion-toggle slot="right" :value="true" theme="secondary"></ion-toggle>
+                    <ion-toggle slot="item-right" :value="true" theme="secondary"></ion-toggle>
                 </ion-item>
 
             </ion-list>

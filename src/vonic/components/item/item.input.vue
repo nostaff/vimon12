@@ -32,7 +32,7 @@
     import ThemeMixins from '../../themes/theme.mixins';
     import Clickoutside from '../../utils/clickoutside';
     import IonButton from '../button';
-    import IonItem from "../item/item";
+    import IonItem from "./item";
     import IonLabel from "../label/index";
 
     export default {
@@ -135,9 +135,9 @@
 </script>
 
 <style lang="scss">
-    @import './input.scss';
-    @import './input.ios.scss';
-    @import './input.md.scss';
-    @import './input.wp.scss';
+    @import '../input/input';
+    @import '../input/input.ios';
+    @import '../input/input.md';
+    @import '../input/input.wp';
 </style>
 

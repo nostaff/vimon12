@@ -2,47 +2,57 @@
     <div class="page has-navbar" v-nav="{title: '单选框', showBackButton: true}">
         <div class="page-content padding-top">
 
-            <!--<ion-list radio-group>-->
+            <!--<ion-checker>-->
                 <!--<ion-list-header>-->
-                    <!--Language-->
+                    <!--Language: {{language}}-->
                 <!--</ion-list-header>-->
 
                 <!--<ion-item>-->
-                    <!--<ion-label>Go</ion-label>-->
-                    <!--<ion-radio checked="true" value="go"></ion-radio>-->
+                    <!--<ion-label slot="item-label">Go</ion-label>-->
+                    <!--<ion-radio slot="item-content" checked value="go"></ion-radio>-->
                 <!--</ion-item>-->
 
                 <!--<ion-item>-->
-                    <!--<ion-label>Rust</ion-label>-->
-                    <!--<ion-radio value="rust"></ion-radio>-->
+                    <!--<ion-label slot="item-label">Rust</ion-label>-->
+                    <!--<ion-radio slot="item-content" value="rust"></ion-radio>-->
                 <!--</ion-item>-->
 
                 <!--<ion-item>-->
-                    <!--<ion-label>Python</ion-label>-->
-                    <!--<ion-radio value="python" disabled="true"></ion-radio>-->
+                    <!--<ion-label slot="item-label">Python [disabled]</ion-label>-->
+                    <!--<ion-radio slot="item-content" value="python" disabled></ion-radio>-->
                 <!--</ion-item>-->
-            <!--</ion-list>-->
 
-            <ion-radio title="请选择性别：" :options="genderOptions" v-model="gender"></ion-radio>
+                <!--<ion-item>-->
+                    <!--<ion-label slot="item-label">PHP</ion-label>-->
+                    <!--<ion-radio slot="item-content" value="php"></ion-radio>-->
+                <!--</ion-item>-->
+            <!--</ion-checker>-->
+
+            <ion-radio title="请选择性别" :options="genderOptions" v-model="gender" @on-change="change"></ion-radio>
 
             <p class="padding">
                 option gender: {{ gender }}<br>
                 option selected: {{ selected }}
             </p>
 
-            <ion-radio title="请选择：" :options="list2" v-model="selected"></ion-radio>
+            <ion-radio title="请选择" :options="list2" v-model="selected" color="danger" @on-change="change"></ion-radio>
 
         </div>
     </div>
 </template>
 <script>
     export default{
-        data(){
+        data() {
             return {
                 gender: '女',
                 genderOptions: ["男", "女", "保密"],
                 selected: false,
-                list2: [{key: true, value: '是', checked: true}, {key: false, value: '否'}],
+                list2: [{value: true, label: '是'}, {value: false, label: '否'}],
+            }
+        },
+        methods: {
+            change (value) {
+                console.log('change:', value)
             }
         }
     }

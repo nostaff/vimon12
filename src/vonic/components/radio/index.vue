@@ -1,21 +1,12 @@
 <template>
     <ion-list :title="title">
-        <ion-item :class="[
-            'item-radio',
-            option.checked ? 'item-radio-checked' : ''
-            ]" key="index" v-for="option in processOptions" @click="onClick(option.key)">
-            {{option.value}}
-            <div slot="item-right" :checked="option.checked" :value="option.key" :class="['radio', 'radio-'+theme]">
-                <div :class="['radio-icon', option.checked?'radio-checked':'']">
+        <ion-item :class="['item-radio', (option.value === currentValue) ? 'item-radio-checked' : '']" key="$index" v-for="option in processOptions" @click="onChecked(option.value)">
+            {{option.label}}
+            <div slot="item-right" :class="['radio', 'radio-'+theme]">
+                <div :class="['radio-icon', (option.value === currentValue)?'radio-checked':'']">
                     <div class="radio-inner"></div>
                 </div>
-                <ion-button :class="[
-                    'item-cover',
-                    'item-cover-'+theme,
-                    'item-cover-default',
-                    'item-cover-default-'+theme
-                ]" :checked="option.checked" :disabled="disabled" role="radio">
-                </ion-button>
+                <ion-button role="radio" :disabled="option.disabled"></ion-button>
             </div>
         </ion-item>
     </ion-list>
@@ -38,54 +29,39 @@
                 type: Array,
                 required: true
             },
-            title: {
-                type: [Number, String],
-            },
             value: {
                 type: [Number, String, Boolean],
                 required: true
             },
-            disabled: {
-                type: Boolean,
-                default: false
-            },
         },
+
         computed: {
             processOptions () {
-                if (this.options.length && {}.hasOwnProperty.call(this.options[0], 'key')) {
+                if (this.options.length && {}.hasOwnProperty.call(this.options[0], 'label')) {
                     return this.options
                 } else {
                     return this.options.map(function (item) {
                         return {
-                            key: item,
-                            value: item
+                            label: item,
+                            value: item,
+//                            disabled: false
                         }
                     })
                 }
             },
-            v: function () {
+
+            currentValue: function () {
                 return this.value
             }
         },
 
-        data() {
-            return {
-                radioName: 'v-radio-' + Math.random().toString(36).substring(3, 6)
-            }
-        },
-
         methods: {
-            onClick(value) {
-                this.v = value
-                this.$emit('input', value)
+            onChecked(newVal) {
+                this.currentValue = newVal
+                this.$emit('input', newVal)
+                //this.$emit('on-change', newVal)
+//                console.log(newVal)
             }
         }
     }
 </script>
-
-
-<style lang="scss">
-    @import './radio.ios.scss';
-    @import './radio.md.scss';
-    @import './radio.wp.scss';
-</style>

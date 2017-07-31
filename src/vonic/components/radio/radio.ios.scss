@@ -58,7 +58,7 @@ $radio-ios-item-right-margin:      $item-ios-padding-media-top 11px $item-ios-pa
 // -----------------------------------------
 
 .radio-ios.radio-disabled,
-.item-ios.item-radio-disabled ion-label {
+.item-ios.item-radio-disabled .ion-label {
   opacity: $radio-ios-disabled-opacity;
 
   pointer-events: none;
@@ -79,7 +79,7 @@ $radio-ios-item-right-margin:      $item-ios-padding-media-top 11px $item-ios-pa
   }
 }
 
-.item-radio.item-ios ion-label {
+.item-radio.item-ios .ion-label {
   margin-left: 0;
 }
 
@@ -87,7 +87,7 @@ $radio-ios-item-right-margin:      $item-ios-padding-media-top 11px $item-ios-pa
 // iOS Radio Item Label: Checked
 // -----------------------------------------
 
-.item-radio-checked.item-ios ion-label {
+.item-radio-checked.item-ios .ion-label {
   color: $radio-ios-color-on;
 }
 
@@ -97,7 +97,7 @@ $radio-ios-item-right-margin:      $item-ios-padding-media-top 11px $item-ios-pa
 
 @mixin radio-theme-ios($color-name, $color-base) {
 
-  .item-radio-ios-#{$color-name}.item-radio-checked ion-label {
+  .item-radio-ios-#{$color-name}.item-radio-checked .ion-label {
     color: $color-base;
   }
 
