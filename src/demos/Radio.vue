@@ -33,9 +33,11 @@
             <p class="padding">
                 option gender: {{ gender }}<br>
                 option selected: {{ selected }}
+                option selected: {{ selected2 }}
             </p>
 
-            <ion-radio title="请选择" :options="list2" v-model="selected" color="danger" @on-change="change"></ion-radio>
+            <ion-radio title="设置整个Radio的颜色" :options="list" v-model="selected" color="danger" @on-change="change"></ion-radio>
+            <ion-radio title="设置每个Option的颜色" :options="list2" v-model="selected2" @on-change="change"></ion-radio>
 
         </div>
     </div>
@@ -47,7 +49,9 @@
                 gender: '女',
                 genderOptions: ["男", "女", "保密"],
                 selected: false,
-                list2: [{value: true, label: '是'}, {value: false, label: '否'}],
+                selected2: false,
+                list: [{value: true, label: '是'}, {value: false, label: '否'}, {value: 'true1', label: '是1', disabled: true}, {value: 'gfgfgf', label: '否2-RED'}],
+                list2: [{value: true, label: 'secondary', color: "secondary"}, {value: false, label: 'dark', color:'dark'}, {value: 'true1', label: 'disabled', disabled: true}, {value: 'gfgfgf', label: 'danger', color:'danger'}],
             }
         },
         methods: {

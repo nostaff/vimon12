@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8323a9fe-be66-40c8-a870-6d9da02c649f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/checker/checker.item.vue" afterPath="$PROJECT_DIR$/src/vonic/components/checker/checker.item.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Radio.vue" afterPath="$PROJECT_DIR$/src/demos/Radio.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/radio/index.vue" afterPath="$PROJECT_DIR$/src/vonic/components/radio/index.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -25,18 +24,18 @@
       <file leaf-file-name="Radio.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/demos/Radio.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="555">
+              <caret line="53" column="209" lean-forward="false" selection-start-line="53" selection-start-column="209" selection-end-line="53" selection-end-column="209" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/vonic/components/input/index.vue">
+      <file leaf-file-name="theme.mixins.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/vonic/themes/theme.mixins.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="43" column="13" lean-forward="true" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+            <state relative-caret-position="435">
+              <caret line="29" column="29" lean-forward="false" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -45,8 +44,8 @@
       <file leaf-file-name="index.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/vonic/components/radio/index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="93" lean-forward="false" selection-start-line="4" selection-start-column="93" selection-end-line="4" selection-end-column="93" />
+            <state relative-caret-position="315">
+              <caret line="21" column="8" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -95,9 +94,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>slot=&quot;right&quot;</find>
-      <find>.each</find>
-      <find>key</find>
       <find>w</find>
       <find>watc</find>
       <find>processOptions</find>
@@ -125,6 +121,9 @@
       <find>watch</find>
       <find>onChecked</find>
       <find>radio-</find>
+      <find>body, body a, body button, body media-switch, body:hover</find>
+      <find>body, body a, body button, body media-switch,body:hover</find>
+      <find>body:hover</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;ion-note slot=&quot;item_right&quot;&gt;note&lt;/ion-note&gt;</replace>
@@ -224,8 +223,8 @@
         <option value="$PROJECT_DIR$/src/vonic/components/radio/radio.button.vue" />
         <option value="$PROJECT_DIR$/src/vonic/components/radio/list.radio.vue" />
         <option value="$PROJECT_DIR$/src/vonic/index.js" />
-        <option value="$PROJECT_DIR$/src/demos/Radio.vue" />
         <option value="$PROJECT_DIR$/src/vonic/components/checker/checker.item.vue" />
+        <option value="$PROJECT_DIR$/src/demos/Radio.vue" />
         <option value="$PROJECT_DIR$/src/vonic/components/radio/index.vue" />
       </list>
     </option>
@@ -1241,12 +1240,12 @@
       <workItem from="1501153776934" duration="48307000" />
       <workItem from="1501494909900" duration="1257000" />
       <workItem from="1501496745276" duration="215000" />
-      <workItem from="1501499217681" duration="820000" />
+      <workItem from="1501499217681" duration="2284000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="482502000" />
+    <option name="totallyTimeSpent" value="483966000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1438,13 +1437,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/themes/theme.mixins.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="29" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/vonic/lib/ionic/src/components/loading/test/tabs/app-module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -1618,22 +1610,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/demos/Radio.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/input/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="43" column="13" lean-forward="true" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/vonic/components/checker/checker.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-348">
@@ -1658,10 +1634,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/vonic/components/input/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="30" column="47" lean-forward="false" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vonic/themes/theme.mixins.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="29" lean-forward="false" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/demos/Radio.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="53" column="209" lean-forward="false" selection-start-line="53" selection-start-column="209" selection-end-line="53" selection-end-column="209" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/vonic/components/radio/index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="93" lean-forward="false" selection-start-line="4" selection-start-column="93" selection-end-line="4" selection-end-column="93" />
+        <state relative-caret-position="315">
+          <caret line="21" column="8" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
           <folding />
         </state>
       </provider>
