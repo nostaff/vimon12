@@ -2,14 +2,16 @@
     <ion-list :title="title">
         <ion-item :class="[
             'item-radio',
-            'item-radio-'+theme+'-'+radioColor(option.color),
+            'item-radio-'+theme+'-'+getColor(option.color),
+            option.disabled?'item-radio-disabled':'',
             (option.value === currentValue) ? 'item-radio-checked' : ''
             ]" key="idx" v-for="option in processOptions" @click.native="onChecked(option.value, option.disabled)">
             {{option.label}}
             <div slot="item-right" :class="[
                 'radio',
                 'radio-'+theme,
-                'radio-'+theme+'-'+radioColor(option.color)
+                'radio-'+theme+'-'+getColor(option.color),
+                 option.disabled?'radio-disabled':''
                 ]">
                 <div :class="['radio-icon', (option.value === currentValue)?'radio-checked':'']">
                     <div class="radio-inner"></div>
@@ -73,7 +75,7 @@
             },
 
             // option的颜色优先
-            radioColor: function (optionColor) {
+            getColor: function (optionColor) {
                 return typeof optionColor != 'undefined' ? optionColor : this.color;
             }
         },
