@@ -58,6 +58,7 @@ Vue.component(FABs.name, FABs)
 import {List, ListHeader} from './components/list'
 import {Item, ItemGroup, ItemOptions, ItemSliding, ItemDivider} from './components/item'
 
+import {Grid, Row, Col} from './components/grid'
 import Cells from './components/cells'
 import Tabs from './components/tabs'
 import ButtonBar from './components/buttonbar'
@@ -69,6 +70,10 @@ Vue.component(ItemGroup.name, ItemGroup)
 Vue.component(ItemOptions.name, ItemOptions)
 Vue.component(ItemSliding.name, ItemSliding)
 Vue.component(ItemDivider.name, ItemDivider)
+
+Vue.component(Grid.name, Grid)
+Vue.component(Row.name, Row)
+Vue.component(Col.name, Col)
 
 Vue.component('cells', Cells)
 Vue.component('tabs', Tabs)

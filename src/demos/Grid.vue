@@ -3,182 +3,293 @@
 
         <div class="page-content content-padded">
 
-            <div class="padding">
-                同等大小网格：
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="col-demo">.col</div>
-                </div>
-                <div class="col">
-                    <div class="col-demo">.col</div>
-                </div>
-                <div class="col">
-                    <div class="col-demo">.col</div>
-                </div>
-                <div class="col">
-                    <div class="col-demo">.col</div>
-                </div>
-                <div class="col">
-                    <div class="col-demo">.col</div>
-                </div>
-            </div>
+            <p padding="">
+                Equal-width columns
+            </p>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <div class="col-demo">1 of 2</div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="col-demo">2 of 2</div>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <div class="col-demo">1 of 3</div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="col-demo">2 of 3</div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="col-demo">3 of 3</div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
 
-            <div class="padding">
-                指定列宽：
-            </div>
+            <p padding="">
+                Setting one column width
+            </p>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <div class="col-demo">1 of 3</div>
+                    </ion-col>
+                    <ion-col col-6="">
+                        <div class="col-demo">2 of 3 (wider)</div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="col-demo">3 of 3</div>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6="">
+                        <div class="col-demo">1 of 3 (wider)</div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="col-demo">2 of 3</div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="col-demo">3 of 3</div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
 
-            <div class="row">
-                <div class="col col-50">
-                    <div class="col-demo">.col.col-50</div>
-                </div>
-                <div class="col">
-                    <div class="col-demo">.col</div>
-                </div>
-                <div class="col">
-                    <div class="col-demo">.col</div>
-                </div>
-            </div>
+            <p padding="">
+                Variable-width columns
+            </p>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <div class="col-demo">1 of 3</div>
+                    </ion-col>
+                    <ion-col col-auto="">
+                        <div class="col-demo">Variable width content</div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="col-demo">3 of 3</div>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <div class="col-demo">1 of 4</div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="col-demo">2 of 4</div>
+                    </ion-col>
+                    <ion-col col-auto="">
+                        <div class="col-demo"><ion-icon name="globe" role="img" class="icon icon-ios ion-ios-globe" aria-label="globe"></ion-icon></div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="col-demo">4 of 4</div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
 
-            <div class="row">
-                <div class="col col-75">
-                    <div class="col-demo">.col.col-75</div>
-                </div>
-                <div class="col">
-                    <div class="col-demo">.col</div>
-                </div>
-            </div>
+            <p padding="">
+                Offsetting columns
+            </p>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <div class="col-demo">1 of 2</div>
+                    </ion-col>
+                    <ion-col offset-4="">
+                        <div class="col-demo">2 of 2</div>
+                    </ion-col>
+                </ion-row>
 
-            <div class="row">
-                <div class="col">
-                    <div class="col-demo">.col</div>
-                </div>
-                <div class="col col-75">
-                    <div class="col-demo">.col.col-75</div>
-                </div>
-            </div>
+                <ion-row>
+                    <ion-col offset-4="">
+                        <div class="col-demo">1 of 2</div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="col-demo">2 of 2</div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
 
-            <div class="row">
-                <div class="col">
-                    <div class="col-demo">.col</div>
-                </div>
-                <div class="col">
-                    <div class="col-demo">.col</div>
-                </div>
-            </div>
+            <p padding="">
+                Push and pull
+            </p>
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-9="" push-3="">
+                        <div class="col-demo">1 of 2</div>
+                    </ion-col>
+                    <ion-col col-3="" pull-9="">
+                        <div class="col-demo">2 of 2</div>
+                    </ion-col>
+                </ion-row>
 
-            <div class="padding">
-                有偏移量的网格：
-            </div>
-            <div class="row">
-                <div class="col col-33 col-offset-33">
-                    <div class="col-demo">.col</div>
-                </div>
-                <div class="col">
-                    <div class="col-demo">.col</div>
-                </div>
-            </div>
+                <ion-row>
+                    <ion-col col-6="" push-3="">
+                        <div class="col-demo">1 of 3</div>
+                    </ion-col>
+                    <ion-col col-3="" push-3="">
+                        <div class="col-demo">2 of 3</div>
+                    </ion-col>
+                    <ion-col col-3="" pull-9="">
+                        <div class="col-demo">3 of 3</div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
 
-            <div class="row">
-                <div class="col col-33">
-                    <div class="col-demo">.col</div>
-                </div>
-                <div class="col col-33 col-offset-33">
-                    <div class="col-demo">.col</div>
-                </div>
-            </div>
+            <p padding="">
+                Setting all column widths<br>
+            </p>
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-4="">
+                        <div class="col-demo">1 of 3</div>
+                    </ion-col>
+                    <ion-col col-3="">
+                        <div class="col-demo">2 of 3</div>
+                    </ion-col>
+                    <ion-col col-5="">
+                        <div class="col-demo">3 of 3</div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
 
-            <div class="row">
-                <div class="col col-33 col-offset-67">
-                    <div class="col-demo">.col</div>
-                </div>
-            </div>
+            <p padding="">
+                Vertical alignment
+            </p>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <div class="col-demo">1 of 4</div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="col-demo">2 of 4 <br>#</div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="col-demo">3 of 4 <br>#<br>#</div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="col-demo">4 of 4 <br>#<br>#<br>#</div>
+                    </ion-col>
+                </ion-row>
 
-            <div class="padding">
-                纵向对齐的网格：
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="col-demo">.col</div>
-                </div>
-                <div class="col">
-                    <div class="col-demo">.col</div>
-                </div>
-                <div class="col">
-                    <div class="col-demo">.col</div>
-                </div>
-                <div class="col">
-                    <div class="col-demo">1<br>2<br>3<br>4</div>
-                </div>
-            </div>
+                <ion-row align-items-start="">
+                    <ion-col>
+                        <div class="col-demo">1 of 4</div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="col-demo">2 of 4</div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="col-demo">3 of 4</div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="col-demo">4 of 4 <br>#<br>#<br>#</div>
+                    </ion-col>
+                </ion-row>
 
-            <div class="row">
-                <div class="col col-top">
-                    <div class="col-demo">.col-top</div>
-                </div>
-                <div class="col col-center">
-                    <div class="col-demo">.col-center</div>
-                </div>
-                <div class="col col-bottom">
-                    <div class="col-demo">.col-bottom</div>
-                </div>
-                <div class="col">
-                    <div class="col-demo">1<br>2<br>3<br>4</div>
-                </div>
-            </div>
+                <ion-row align-items-center="">
+                    <ion-col>
+                        <div class="col-demo">1 of 4</div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="col-demo">2 of 4</div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="col-demo">3 of 4</div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="col-demo">4 of 4 <br>#<br>#<br>#</div>
+                    </ion-col>
+                </ion-row>
 
-            <div class="row row-top">
-                <div class="col">
-                    <div class="col-demo">.row-top</div>
-                </div>
-                <div class="col">
-                    <div class="col-demo">.row-top</div>
-                </div>
-                <div class="col">
-                    <div class="col-demo">.row-top</div>
-                </div>
-                <div class="col">
-                    <div class="col-demo">1<br>2<br>3<br>4</div>
-                </div>
-            </div>
+                <ion-row align-items-end="">
+                    <ion-col>
+                        <div class="col-demo">1 of 4</div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="col-demo">2 of 4</div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="col-demo">3 of 4</div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="col-demo">4 of 4 <br>#<br>#<br>#</div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
 
-            <div class="row row-center">
-                <div class="col">
-                    <div class="col-demo">.row-center</div>
-                </div>
-                <div class="col">
-                    <div class="col-demo">.col</div>
-                </div>
-                <div class="col">
-                    <div class="col-demo">.col</div>
-                </div>
-                <div class="col">
-                    <div class="col-demo">1<br>2<br>3<br>4</div>
-                </div>
-            </div>
+            <ion-grid>
+                <ion-row>
+                    <ion-col align-self-start="">
+                        <div class="col-demo">1 of 4</div>
+                    </ion-col>
+                    <ion-col align-self-center="">
+                        <div class="col-demo">2 of 4</div>
+                    </ion-col>
+                    <ion-col align-self-end="">
+                        <div class="col-demo">3 of 4</div>
+                    </ion-col>
+                    <ion-col>
+                        <div class="col-demo">4 of 4 <br>#<br>#<br>#</div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
 
-            <div class="row row-bottom">
-                <div class="col">
-                    <div class="col-demo">.row-bottom</div>
-                </div>
-                <div class="col">
-                    <div class="col-demo">.col</div>
-                </div>
-                <div class="col">
-                    <div class="col-demo">.col</div>
-                </div>
-                <div class="col">
-                    <div class="col-demo">1<br>2<br>3<br>4</div>
-                </div>
-            </div>
+            <p padding="">
+                Horizontal Alignment
+            </p>
+            <ion-grid>
+                <ion-row justify-content-start="">
+                    <ion-col col-3="">
+                        <div class="col-demo">1 of 2</div>
+                    </ion-col>
+                    <ion-col col-3="">
+                        <div class="col-demo">2 of 2</div>
+                    </ion-col>
+                </ion-row>
 
+                <ion-row justify-content-center="">
+                    <ion-col col-3="">
+                        <div class="col-demo">1 of 2</div>
+                    </ion-col>
+                    <ion-col col-3="">
+                        <div class="col-demo">2 of 2</div>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row justify-content-end="">
+                    <ion-col col-3="">
+                        <div class="col-demo">1 of 2</div>
+                    </ion-col>
+                    <ion-col col-3="">
+                        <div class="col-demo">2 of 2</div>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row justify-content-around="">
+                    <ion-col col-3="">
+                        <div class="col-demo">1 of 2</div>
+                    </ion-col>
+                    <ion-col col-3="">
+                        <div class="col-demo">2 of 2</div>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row justify-content-between="">
+                    <ion-col col-3="">
+                        <div class="col-demo">1 of 2</div>
+                    </ion-col>
+                    <ion-col col-3="">
+                        <div class="col-demo">2 of 2</div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
 
         </div>
     </div>
 </template>
 
 <style lang="scss">
-
     .col-demo {
         padding: 5px;
         width: 100%;
@@ -189,57 +300,3 @@
     }
 
 </style>
-<script>
-    export default{
-        data(){
-            return {
-                icons: [
-                    'ion-android-arrow-up',
-                    'ion-android-arrow-down',
-                    'ion-android-arrow-back',
-                    'ion-android-arrow-forward',
-
-                    'ion-ios-arrow-up',
-                    'ion-ios-arrow-down',
-                    'ion-ios-arrow-left',
-                    'ion-ios-arrow-right',
-
-                    'ion-ios-arrow-thin-up',
-                    'ion-ios-arrow-thin-down',
-                    'ion-ios-arrow-thin-left',
-                    'ion-ios-arrow-thin-right',
-
-                    'ion-android-arrow-up',
-                    'ion-android-arrow-down',
-                    'ion-android-arrow-back',
-                    'ion-android-arrow-forward',
-                ],
-
-                entrances: [
-                    '<div class="entrance assertive"><i class="icon ion-ios-flame"></i><br><span>热门</span></div>',
-                    '<div class="entrance energized"><i class="icon ion-ios-star"></i><br><span>好评</span></div>',
-                    '<div class="entrance balanced"><i class="icon ion-ios-location"></i><br><span>附近</span></div>',
-                    '<div class="entrance positive"><i class="icon ion-ios-search"></i><br><span>搜索</span></div>',
-                ]
-            }
-        },
-
-        methods: {
-            onCellClick(cellIndex) {
-                console.log('cell ' + cellIndex + ' clicked');
-            },
-
-            getIcon(iconName, color) {
-                return '<i class="' + iconName + '"></i>'
-            },
-
-            getItems(n) {
-                let items = []
-                for (let i = 0; i < n; i++) {
-                    items.push(this.getIcon(this.icons[i]))
-                }
-                return items
-            }
-        }
-    }
-</script>
