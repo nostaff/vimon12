@@ -153,7 +153,7 @@ $alert-wp-checkbox-icon-border-style : solid !default;
 $alert-wp-checkbox-icon-border-color : color-contrast($colors-wp, $alert-wp-checkbox-background-on) !default;
 /// @prop - Transform of the icon in the checkbox alert
 $alert-wp-checkbox-icon-transform : rotate(45deg) !default;
-.alert-wp ion-backdrop {
+.alert-wp .ion-backdrop {
     background: $alert-wp-backdrop-background;
 }
 

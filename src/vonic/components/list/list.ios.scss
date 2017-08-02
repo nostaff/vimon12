@@ -67,7 +67,7 @@ $list-ios-header-background-color: 0 0!default;
     margin: 0 auto;
 }
 
-.list-ios:not([inset])+.list-ios:not([inset]) ion-list-header {
+.list-ios:not([inset])+.list-ios:not([inset]) .ion-list-header {
     margin-top: -$list-ios-margin-top;
     padding-top: 0;
 }
@@ -79,7 +79,7 @@ $list-ios-header-background-color: 0 0!default;
     border-radius: $list-inset-ios-border-radius;
 }
 
-.list-ios[inset] ion-list-header {
+.list-ios[inset] .ion-list-header {
     background-color: $list-ios-background-color;
 }
 

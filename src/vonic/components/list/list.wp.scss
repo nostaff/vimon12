@@ -35,7 +35,7 @@ $list-wp-header-color : $list-wp-text-color !default;
 
 .list-wp>.item-block:last-child,
 .list-wp>.item-wrapper:last-child {
-    ion-label,
+    .ion-label,
     .item-inner {
         border-bottom: 0;
     }
@@ -45,7 +45,7 @@ $list-wp-header-color : $list-wp-text-color !default;
     left: 0;
 }
 
-.list-wp ion-item-options .button {
+.list-wp .ion-item-options .button {
     display: inline-flex;
     align-items: center;
     margin: 1px 0;
@@ -56,7 +56,7 @@ $list-wp-header-color : $list-wp-text-color !default;
     box-sizing: border-box;
 }
 
-.list-wp ion-item-options .button::before {
+.list-wp .ion-item-options .button::before {
     margin: 0 auto;
 }
 
@@ -68,7 +68,7 @@ $list-wp-header-color : $list-wp-text-color !default;
     border-width: 0;
 }
 
-.list-wp+ion-list ion-list-header {
+.list-wp+ion-list .ion-list-header {
     margin-top: -$list-wp-margin-top;
     padding-top: 0;
 }
@@ -101,7 +101,7 @@ $list-wp-header-color : $list-wp-text-color !default;
     margin-top: 0;
 }
 
-.list-wp[inset] ion-list-header {
+.list-wp[inset] .ion-list-header {
     background-color: $list-wp-background-color;
 }
 
@@ -115,7 +115,7 @@ $list-wp-header-color : $list-wp-text-color !default;
 // Windows List Header / Divider
 // --------------------------------------------------
 .list-header-wp,
-.list-wp ion-item-divider {
+.list-wp .ion-item-divider {
     margin-left: 0;
     padding-left: $list-wp-header-padding-left;
     border-bottom: 1px solid $list-wp-border-color;

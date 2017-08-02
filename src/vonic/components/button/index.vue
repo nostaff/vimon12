@@ -13,6 +13,7 @@
         isActive?'activated':'',
         isParentItem ? 'item-button' : ''
         ]">
+        <slot name="backup"></slot>
 		<span class="button-inner">
             <slot></slot>
         </span>
@@ -91,17 +92,19 @@
         },
         created() {
             // 如果是在组件 buttons 下则修改前缀为 bar-button-
-            let name = this.$parent.$data.componentName;
-            if (name === 'buttons') {
+            if (this.$parent.$data.componentName === 'buttons') {
                 this.prefix = 'bar-button';
             }
             if (this.role === 'radio' || this.role === 'checkbox') {
                 this.prefix = 'item-cover';
             }
+            if (this.role === 'fab') {
+                this.prefix = 'fab'
+            }
         },
         mounted() {
             //如果在item 组件里 则加上class
-            if (name === 'ionItem' && this.prefix === 'button') {
+            if (this.$parent.$data.componentName === 'ionItem' && this.prefix === 'button') {
                 this.isParentItem = true;
             }
 

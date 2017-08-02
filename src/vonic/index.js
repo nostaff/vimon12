@@ -35,6 +35,7 @@ import Thumbnail from './components/thumbnail'
 import VonRange from './components/range'
 import VonHeader from './components/header'
 import Badge from './components/badge'
+import FABs from './components/fab'
 
 Vue.component(Avatar.name, Avatar)
 Vue.component(Label.name, Label)
@@ -51,6 +52,7 @@ Vue.component(Toggle.name, Toggle)
 Vue.component('von-range', VonRange)
 Vue.component('von-header', VonHeader)
 Vue.component(Badge.name, Badge)
+Vue.component(FABs.name, FABs)
 
 // Layout
 import {List, ListHeader} from './components/list'

@@ -37,6 +37,9 @@
                 <ion-item detail-push @click.native="$router.forward('/demo/basic/icons')">
                     Icon <ion-note slot="item-right">图标</ion-note>
                 </ion-item>
+                <ion-item detail-push @click.native="$router.forward('/demo/basic/fabs')">
+                    FABs <ion-note slot="item-right">浮动按钮</ion-note>
+                </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/basic/alert')">
                     Alert <ion-note slot="item-right">对话框</ion-note>
                 </ion-item>

@@ -33,7 +33,7 @@
         computed: {
             nameClass() {
                 let name = this.name;
-                if ((/^ion-md-|^ion-ios-|^logo-/.test(name))) {
+                if ((/^ion-md-|^ion-ios-|^ion-logo-/.test(name))) {
                     return name
                 }
                 return name ? `ion-${this.theme} ion-${this.theme === 'wp'?'ios':this.theme}-${name}` : `ion-${this.theme}` ;

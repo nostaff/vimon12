@@ -27,7 +27,7 @@
 }
 
 
-.alert-wrapper, ion-alert {
+.alert-wrapper, .ion-alert {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox
@@ -561,7 +561,7 @@ ion-alert input {
 }
 .alert-wp {
 
-  ion-backdrop {
+  .ion-backdrop {
     background: #fff
   }
 
