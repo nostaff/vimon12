@@ -1,8 +1,8 @@
 import Vue from 'vue'
-import Backdrop from './Backdrop'
+import Backdrop from './backdrop'
 import {createElement} from '../utils'
 
-class VonicBackdrop {
+class IonBackdrop {
   constructor() {
     this._vm = undefined
   }
@@ -40,4 +40,4 @@ class VonicBackdrop {
   }
 }
 
-window.$backdrop = new VonicBackdrop()
+window.$backdrop = new IonBackdrop()

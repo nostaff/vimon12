@@ -97,9 +97,8 @@
             }
             if (this.role === 'radio' || this.role === 'checkbox') {
                 this.prefix = 'item-cover';
-            }
-            if (this.role === 'fab') {
-                this.prefix = 'fab'
+            } else if (this.role) {
+                this.prefix = this.role
             }
         },
         mounted() {

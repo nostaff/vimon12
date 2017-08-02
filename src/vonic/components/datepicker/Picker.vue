@@ -155,7 +155,7 @@
     methods: {
       show() {
         $backdrop.show().then(() => {
-          let backdrop = document.querySelector('[von-backdrop]')
+          let backdrop = document.querySelector('[ion-backdrop]')
           backdrop.onclick = () => {
             channel.$emit('PickerCancelEvent')
             backdrop.onclick = null

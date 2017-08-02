@@ -1,13 +1,11 @@
 <template>
     <div class="page has-navbar" v-nav="{title: '操作列表', showBackButton: true}">
-        <div class="page-content padding padding-top action-sheets-basic-page">
-            <div class="item item-divider">
-                ACTION SHEETS
+        <div class="page-content">
+            <div class="padding-top scroll-content action-sheets-basic-page">
+                <ion-button block @click.native="showActionSheet()">Show Action Sheet</ion-button>
+
+                <span>根据浏览器自动变换样式</span>
             </div>
-
-            <button class="button button-assertive button-block" @click="showActionSheet()">Show Action Sheet</button>
-
-            <span>根据浏览器自动变换样式</span>
 
         </div>
     </div>
@@ -66,7 +64,6 @@
 </script>
 
 <style>
-
 
     .action-sheets-basic-page .ion-android-share {
         color: #ED4248

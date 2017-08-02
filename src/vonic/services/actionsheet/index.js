@@ -1,18 +1,18 @@
 import Vue from 'vue'
-import ActionSheet from './ActionSheet'
+import ActionSheet from './action-sheet.vue'
 
 import {createElement} from '../utils'
 
-class VonicActionSheet {
+class IonActionSheet {
     constructor() {
         this._vm = undefined
     }
 
     show(option) {
-        createElement('von-action-sheet')
+        createElement('ion-action-sheet')
 
         this._vm = new Vue(ActionSheet)
-        this._vm.$mount('[von-action-sheet]')
+        this._vm.$mount('[ion-action-sheet]')
 
         setTimeout(() => {
             this._vm.show(option)
@@ -28,4 +28,4 @@ class VonicActionSheet {
     }
 }
 
-window.$actionSheet = new VonicActionSheet()
+window.$actionSheet = new IonActionSheet()

@@ -43,7 +43,7 @@
                 })
 
                 $backdrop.show(true).then(() => {
-                    let backdrop = document.querySelector('[von-backdrop]')
+                    let backdrop = document.querySelector('[ion-backdrop]')
                     backdrop.onclick = () => {
                         bus.$emit('optionClickedEvent', {optionIndex: -1})
                         backdrop.onclick = null
