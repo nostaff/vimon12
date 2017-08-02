@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8323a9fe-be66-40c8-a870-6d9da02c649f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/vonic/services/actionsheet/action-sheet.vue" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/vonic/services/actionsheet/ActionSheet.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/vonic/services/actionsheet/action.sheet.vue" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vonic/services/backdrop/Backdrop.vue" afterPath="$PROJECT_DIR$/src/vonic/services/backdrop/backdrop.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/ActionSheet.vue" afterPath="$PROJECT_DIR$/src/demos/ActionSheet.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/button/index.vue" afterPath="$PROJECT_DIR$/src/vonic/components/button/index.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/cascade/CascadePanel.vue" afterPath="$PROJECT_DIR$/src/vonic/components/cascade/CascadePanel.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/datepicker/Picker.vue" afterPath="$PROJECT_DIR$/src/vonic/components/datepicker/Picker.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/services/actionsheet/action-sheet.scss" afterPath="$PROJECT_DIR$/src/vonic/services/actionsheet/action-sheet.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/services/actionsheet/index.js" afterPath="$PROJECT_DIR$/src/vonic/services/actionsheet/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/services/backdrop/index.js" afterPath="$PROJECT_DIR$/src/vonic/services/backdrop/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/services/actionsheet/action-sheet.vue" afterPath="$PROJECT_DIR$/src/vonic/services/actionsheet/action-sheet.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -43,14 +34,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>grid</find>
-      <find>onCellClick</find>
-      <find>entrances</find>
-      <find>class=&quot;grid&quot;</find>
-      <find>$backdrop</find>
-      <find>&lt;!----&gt;</find>
-      <find>von-backdrop</find>
-      <find>s</find>
       <find>shert</find>
       <find>sher</find>
       <find>she</find>
@@ -67,12 +50,20 @@
       <find>enter-active</find>
       <find>vux-actionsheet-mask</find>
       <find>von-accordion</find>
-      <find>-webkit-transition</find>
       <find>preventDefault</find>
       <find>ion-action-sheet-fade</find>
       <find>currentValue</find>
       <find>getactivated</find>
       <find>VonicActionSheet</find>
+      <find>-webkit-transition</find>
+      <find>transition</find>
+      <find>ion-action-sheet-fadeup</find>
+      <find>cra</find>
+      <find>cr</find>
+      <find>crea</find>
+      <find>create</find>
+      <find>transition name</find>
+      <find>value</find>
     </findStrings>
     <replaceStrings>
       <replace>attr</replace>
@@ -164,7 +155,6 @@
         <option value="$PROJECT_DIR$/src/vonic/index.js" />
         <option value="$PROJECT_DIR$/src/demos/Grid.vue" />
         <option value="$PROJECT_DIR$/src/vonic/components/grid/index.vue" />
-        <option value="$PROJECT_DIR$/src/vonic/services/backdrop/backdrop.scss" />
         <option value="$PROJECT_DIR$/src/vonic/components/cascade/CascadePanel.vue" />
         <option value="$PROJECT_DIR$/src/demos/ActionSheet.vue" />
         <option value="$PROJECT_DIR$/src/vonic/services/backdrop/index.js" />
@@ -172,9 +162,10 @@
         <option value="$PROJECT_DIR$/src/vonic/services/backdrop/backdrop.vue" />
         <option value="$PROJECT_DIR$/src/vonic/components/button/index.vue" />
         <option value="$PROJECT_DIR$/src/vonic/services/actionsheet/ActionSheet.vue" />
+        <option value="$PROJECT_DIR$/src/vonic/services/actionsheet/index.js" />
         <option value="$PROJECT_DIR$/src/vonic/services/actionsheet/action-sheet.scss" />
         <option value="$PROJECT_DIR$/src/vonic/services/actionsheet/action-sheet.vue" />
-        <option value="$PROJECT_DIR$/src/vonic/services/actionsheet/index.js" />
+        <option value="$PROJECT_DIR$/src/vonic/services/backdrop/backdrop.scss" />
       </list>
     </option>
   </component>
@@ -345,6 +336,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="popup" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile-vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile-vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vonic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backdrop" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -640,7 +657,55 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="vonic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile-vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile-vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="demos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile-vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile-vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="demos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tabbar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -839,12 +904,12 @@
       <workItem from="1501153776934" duration="48307000" />
       <workItem from="1501494909900" duration="1257000" />
       <workItem from="1501496745276" duration="215000" />
-      <workItem from="1501499217681" duration="32270000" />
+      <workItem from="1501499217681" duration="33451000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="513952000" />
+    <option name="totallyTimeSpent" value="515133000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -922,22 +987,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/item/item.wp.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3513">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/item/item-media.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="642">
-          <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/vonic/components/item/item-reorder.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -1157,14 +1206,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/services/backdrop/backdrop.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="32" lean-forward="false" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/vonic/services/backdrop/backdrop.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="507">
@@ -1293,14 +1334,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/services/actionsheet/action-sheet.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="24" lean-forward="false" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/demos/ActionSheet.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1333,10 +1366,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/demos/tabbar/Discount.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="4" lean-forward="false" selection-start-line="23" selection-start-column="4" selection-end-line="27" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vonic/services/backdrop/backdrop.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vonic/components/app/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="57" column="6" lean-forward="false" selection-start-line="57" selection-start-column="6" selection-end-line="59" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/vonic/services/actionsheet/action-sheet.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1425">
-          <caret line="95" column="9" lean-forward="true" selection-start-line="95" selection-start-column="9" selection-end-line="95" selection-end-column="9" />
+        <state relative-caret-position="210">
+          <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vonic/services/actionsheet/action-sheet.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -1,8 +1,8 @@
 <template>
     <div role="dialog" class="ion-action-sheet" :class="['action-sheet-'+theme]" style="z-index: 10001;">
         <ion-backdrop @click.native="hide(-1)" ref="backdrop"></ion-backdrop>
-        <transition name="ion-action-sheet-fadeup">
-            <div class="action-sheet-wrapper action-sheet-up">
+        <transition name="ion-action-sheet-fadeup" v-on:before-enter="beforePageEnter">
+            <div class="action-sheet-wrapper">
                 <div class="action-sheet-container">
                     <div class="action-sheet-group">
                         <div class="action-sheet-title" v-text="title"></div>
@@ -49,10 +49,6 @@
             }
         },
 
-        props: {
-            value: {}
-        },
-
         methods: {
             show(options) {
                 let _options = objectAssign({}, this.defaultOptions, options)
@@ -66,6 +62,7 @@
                     }
                     return button
                 })
+
                 this.activated = true
 
                 this.$refs.backdrop.setStyle('opacity', '0.4');
@@ -92,6 +89,10 @@
                     item.handler();
                 }
                 this.onClose();
+            },
+
+            beforePageEnter(el) {
+                 console.log('beforePageEnter time:', +new Date())
             }
         }
     };
@@ -104,17 +105,17 @@
     @import './action-sheet.wp.scss';
 
     .ion-action-sheet-fadeup-enter-active {
-        transition: transform .4s cubic-bezier(.36, .66, .04, 1);
-        transform: translate3d(0, 0, 0);
+            transition: transform .4s cubic-bezier(.36, .66, .04, 1);
+            transform: translate3d(0, 0, 0);
     }
 
     .ion-action-sheet-fadeup-leave-active {
-        transition: transform .3s cubic-bezier(.36, .66, .04, 1);
-        transform: translate3d(0, 100%, 0);
+            transition: transform .3s cubic-bezier(.36, .66, .04, 1);
+            transform: translate3d(0, 100%, 0);
     }
 
     .ion-action-sheet-fadeup-enter,
     .ion-action-sheet-fadeup-leave-to {
-        transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
     }
 </style>
