@@ -1,35 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8323a9fe-be66-40c8-a870-6d9da02c649f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/vonic/themes/ionic.build.dark.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/vonic/themes/ionic.build.default.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/vonic/themes/ionic.theme.dark.ios.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/vonic/themes/ionic.theme.dark.md.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/vonic/themes/ionic.theme.dark.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/vonic/themes/ionic.theme.dark.wp.scss" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Toggle.vue" afterPath="$PROJECT_DIR$/src/demos/Toggle.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/icon/icon.ios.scss" afterPath="$PROJECT_DIR$/src/vonic/components/icon/icon.ios.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/icon/icon.md.scss" afterPath="$PROJECT_DIR$/src/vonic/components/icon/icon.md.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/icon/icon.wp.scss" afterPath="$PROJECT_DIR$/src/vonic/components/icon/icon.wp.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/list/list.ios.scss" afterPath="$PROJECT_DIR$/src/vonic/components/list/list.ios.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/toggle/index.vue" afterPath="$PROJECT_DIR$/src/vonic/components/toggle/index.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/themes/ionic.functions.scss" afterPath="$PROJECT_DIR$/src/vonic/themes/ionic.functions.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/themes/ionic.globals.ios.scss" afterPath="$PROJECT_DIR$/src/vonic/themes/ionic.globals.ios.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/themes/ionic.globals.md.scss" afterPath="$PROJECT_DIR$/src/vonic/themes/ionic.globals.md.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/themes/ionic.globals.scss" afterPath="$PROJECT_DIR$/src/vonic/themes/ionic.globals.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/themes/ionic.globals.wp.scss" afterPath="$PROJECT_DIR$/src/vonic/themes/ionic.globals.wp.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/themes/ionic.mixins.scss" afterPath="$PROJECT_DIR$/src/vonic/themes/ionic.mixins.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/themes/ionic.theme.default.ios.scss" afterPath="$PROJECT_DIR$/src/vonic/themes/ionic.theme.default.ios.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/themes/ionic.theme.default.md.scss" afterPath="$PROJECT_DIR$/src/vonic/themes/ionic.theme.default.md.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/themes/ionic.theme.default.scss" afterPath="$PROJECT_DIR$/src/vonic/themes/ionic.theme.default.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/themes/ionic.theme.default.wp.scss" afterPath="$PROJECT_DIR$/src/vonic/themes/ionic.theme.default.wp.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/themes/license.scss" afterPath="$PROJECT_DIR$/src/vonic/themes/license.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/themes/normalize.scss" afterPath="$PROJECT_DIR$/src/vonic/themes/normalize.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/themes/util.scss" afterPath="$PROJECT_DIR$/src/vonic/themes/util.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/utils/util.js" afterPath="$PROJECT_DIR$/src/vonic/utils/util.js" />
-    </list>
+    <list default="true" id="8323a9fe-be66-40c8-a870-6d9da02c649f" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -993,12 +965,12 @@
       <workItem from="1501153776934" duration="48307000" />
       <workItem from="1501494909900" duration="1257000" />
       <workItem from="1501496745276" duration="215000" />
-      <workItem from="1501499217681" duration="10653000" />
+      <workItem from="1501499217681" duration="10677000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="492335000" />
+    <option name="totallyTimeSpent" value="492359000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
