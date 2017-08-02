@@ -9,55 +9,48 @@
             </div>
 
             <div class="item item-divider">其他主题色</div>
-            <ion-toggle theme="primary"></ion-toggle>
-            <ion-toggle theme="primary" v-model="values[0]"></ion-toggle>
-            <ion-toggle theme="secondary" v-model="values[1]"></ion-toggle>
-            <ion-toggle theme="danger" v-model="values[2]"></ion-toggle>
-            <ion-toggle theme="light" v-model="values[3]"></ion-toggle>
-            <ion-toggle theme="dark" v-model="values[4]"></ion-toggle>
-            <ion-toggle theme="energized" v-model="values[5]"></ion-toggle>
-            <ion-toggle theme="royal" v-model="values[5]"></ion-toggle>
-            <ion-toggle theme="subtle" v-model="values[5]"></ion-toggle>
-            <ion-toggle theme="bright" v-model="values[5]"></ion-toggle>
-            <ion-toggle theme="vibrant" v-model="values[5]"></ion-toggle>
-
+            <ion-toggle color="primary" v-model="values[0]"></ion-toggle>
+            <ion-toggle color="secondary" v-model="values[1]"></ion-toggle>
+            <ion-toggle color="danger" v-model="values[2]"></ion-toggle>
+            <ion-toggle color="light" v-model="values[3]"></ion-toggle>
+            <ion-toggle color="dark" v-model="values[4]"></ion-toggle>
 
             <ion-list title="开关按钮">
                 <ion-item class="item-toggle">
                     Frodo Baggins
-                    <ion-toggle slot="item-right" theme="vibrant"></ion-toggle>
+                    <ion-toggle slot="item-right" color="primary"></ion-toggle>
                 </ion-item>
                 <ion-item class="item-toggle">
                     Sam
-                    <ion-toggle slot="item-right" theme="energized"></ion-toggle>
+                    <ion-toggle slot="item-right" :value="true" color="secondary"></ion-toggle>
                 </ion-item>
                 <ion-item class="item-toggle">
                     Éowyn
-                    <ion-toggle slot="item-right" theme="danger"></ion-toggle>
+                    <ion-toggle slot="item-right" :value="true" color="danger" :disabled="true"></ion-toggle>
                 </ion-item>
                 <ion-item class="item-toggle">
                     Legolas
-                    <ion-toggle slot="item-right" theme="royal"></ion-toggle>
+                    <ion-toggle slot="item-right" color="light"></ion-toggle>
                 </ion-item>
                 <ion-item class="item-toggle">
                     Gimli
-                    <ion-toggle slot="item-right" :value="true" theme="danger"></ion-toggle>
+                    <ion-toggle slot="item-right" :value="true" color="dark"></ion-toggle>
                 </ion-item>
                 <ion-item class="item-toggle">
                     Saruman
-                    <ion-toggle slot="item-right" theme="dark"></ion-toggle>
+                    <ion-toggle slot="item-right" color="primary"></ion-toggle>
                 </ion-item>
                 <ion-item class="item-toggle">
                     Gandalf
-                    <ion-toggle slot="item-right" :value="true" theme="energized"></ion-toggle>
+                    <ion-toggle slot="item-right" :value="true" color="secondary"></ion-toggle>
                 </ion-item>
                 <ion-item class="item-toggle">
                     Arwen
-                    <ion-toggle slot="item-right" theme="royal"></ion-toggle>
+                    <ion-toggle slot="item-right" color="danger"></ion-toggle>
                 </ion-item>
                 <ion-item class="item-toggle">
                     Treebeard
-                    <ion-toggle slot="item-right" :value="true" theme="secondary"></ion-toggle>
+                    <ion-toggle slot="item-right" :value="true" color="light"></ion-toggle>
                 </ion-item>
 
             </ion-list>

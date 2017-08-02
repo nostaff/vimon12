@@ -1,17 +1,24 @@
 <template>
-    <div class="toggle" :class="['toggle-'+theme, checked?'toggle-checked':'']">
+    <div :class="[
+        'toggle',
+        'toggle-'+theme,
+        'toggle-'+theme+'-'+color,
+        checked?'toggle-checked':'',
+        disabled?'toggle-disabled':''
+        ]" @click="onToggle()">
         <div class="toggle-icon">
             <div class="toggle-inner"></div>
         </div>
-
-        <ion-button role="checkbox" :checked="checked" type="button" @click="onToggle()"></ion-button>
+        <ion-button role="checkbox" :disabled="disabled" :checked="checked"></ion-button>
     </div>
 </template>
 <script>
+    import ThemeMixins from '../../themes/theme.mixins';
     import IonButton from "../button/index";
     export default{
-        components: {IonButton},
         name: 'ion-toggle',
+        mixins: [ThemeMixins],
+        components: {IonButton},
         created () {
             if (typeof this.value !== 'undefined') {
                 this.checked = this.value
@@ -22,9 +29,9 @@
                 type: Boolean,
                 default: false
             },
-            theme: {
-                type: String,
-                default: 'light'
+            disabled: {
+                type: Boolean,
+                default: false
             },
         },
         data () {
@@ -34,8 +41,10 @@
         },
         methods: {
             onToggle() {
+                if (this.disabled) return;
                 this.checked = ! this.checked
                 this.$emit('input', this.checked)
+                this.$emit('on-change', this.checked)
             },
         },
         watch: {
@@ -45,3 +54,10 @@
         },
     }
 </script>
+
+
+<style lang="scss">
+    @import './toggle.ios.scss';
+    @import './toggle.md.scss';
+    @import './toggle.wp.scss';
+</style>
