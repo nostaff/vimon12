@@ -18,6 +18,9 @@
             showActionSheet() {
                 $actionSheet.show({
                     title: '标题',
+                    buttonClicked: function (itemIndex) {
+                        console.log(itemIndex)
+                    },
                     buttons: [
                         {
                             text: 'Delete',
@@ -49,7 +52,7 @@
                             }
                         },
                         {
-                            text: 'Cancel1111',
+                            text: 'Cancel',
                             role: 'cancel', // will always sort to be on the bottom
                             icon: is_md ? 'ion-android-close' : null,
                             handler: () => {

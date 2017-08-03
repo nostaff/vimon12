@@ -1,18 +1,19 @@
 <template>
     <div role="dialog" class="ion-action-sheet" :class="['action-sheet-'+theme]" style="z-index: 10001;">
-        <ion-backdrop @click.native="hide(-1)" ref="backdrop"></ion-backdrop>
-        <transition name="ion-action-sheet-fadeup" v-on:before-enter="beforePageEnter">
-            <div class="action-sheet-wrapper">
+            <ion-backdrop @click.native="close(-1)" ref="backdrop" v-show="activated"></ion-backdrop>
+        </transition>
+        <transition name="ion-action-sheet-fadeup">
+            <div class="action-sheet-wrapper" v-show="activated">
                 <div class="action-sheet-container">
                     <div class="action-sheet-group">
                         <div class="action-sheet-title" v-text="title"></div>
-                        <ion-button role="action-sheet-button" v-for="(button, index) in buttons" :class="'action-sheet-'+ (button.role ? button.role : 'default')" @click.native="hide(index)">
+                        <ion-button role="action-sheet-button" key="idx" v-for="(button, index) in buttons" :class="'action-sheet-'+ (button.role ? button.role : 'default')" @click.native="close(index)">
                             <ion-icon class="action-sheet-icon icon" :name="button.icon" v-if="button.icon"></ion-icon>
                             {{button.text}}
                         </ion-button>
                     </div>
                     <div class="action-sheet-group">
-                        <ion-button role="action-sheet-button" class="action-sheet-cancel" @click.native="hide(-1)">
+                        <ion-button role="action-sheet-button" class="action-sheet-cancel" @click.native="close(-1)">
                             <ion-icon class="action-sheet-icon icon" :name="cancelIcon" v-if="cancelIcon"></ion-icon>
                             {{cancelText}}
                         </ion-button>
@@ -41,36 +42,42 @@
                 defaultOptions: {
                     title: '',
                     buttons: {},
+                    buttonClicked: null
                 },
                 buttons: [],
+                buttonClicked: null,
                 cancelText: 'Cancel',
                 cancelIcon: 'ion-android-close',
-                activated: 0
+                cancelClicked: null,
+                activated: false,
             }
         },
 
         methods: {
             show(options) {
                 let _options = objectAssign({}, this.defaultOptions, options)
-                this.title = _options.title
+                this.title = _options.title;
+                this.buttonClicked = _options.buttonClicked;
                 let that = this
                 this.buttons = _options.buttons.filter(function (button) {
                     if (button.role == 'cancel') {
                         that.cancelText = button.text
                         that.cancelIcon = button.icon
-                        return ''
+                        that.cancelClicked = button.handler
+                        return null;
                     }
-                    return button
+                    return button;
                 })
 
-                this.activated = true
-
-                this.$refs.backdrop.setStyle('opacity', '0.4');
+                this.activated = true;
             },
 
-            hide(buttonIndex) {
-                this.activated = false
+            close(buttonIndex) {
+                this.activated = false;
 
+                if (buttonIndex == -1 && typeof this.cancelClicked === 'function') {
+                    this.cancelClicked();
+                }
                 if (buttonIndex > -1) {
                     let handler = this.buttons[buttonIndex].handler;
                     if (handler && typeof handler === 'function') {
@@ -78,22 +85,14 @@
                     }
                 }
 
-                setTimeout(() => {
-                    this.$refs.backdrop.setStyle('opacity', '0.01');
-                    this.$el.remove();
-                }, 150);
-            },
-
-            itemClick(item) {
-                if (item.handler && typeof item.handler === 'function') {
-                    item.handler();
+                if (typeof this.buttonClicked === 'function') {
+                    this.buttonClicked(buttonIndex);
                 }
-                this.onClose();
-            },
 
-            beforePageEnter(el) {
-                 console.log('beforePageEnter time:', +new Date())
-            }
+                setTimeout(() => {
+                    this.$el.remove();
+                }, 400);
+            },
         }
     };
 </script>
@@ -103,19 +102,4 @@
     @import './action-sheet.ios.scss';
     @import './action-sheet.md.scss';
     @import './action-sheet.wp.scss';
-
-    .ion-action-sheet-fadeup-enter-active {
-            transition: transform .4s cubic-bezier(.36, .66, .04, 1);
-            transform: translate3d(0, 0, 0);
-    }
-
-    .ion-action-sheet-fadeup-leave-active {
-            transition: transform .3s cubic-bezier(.36, .66, .04, 1);
-            transform: translate3d(0, 100%, 0);
-    }
-
-    .ion-action-sheet-fadeup-enter,
-    .ion-action-sheet-fadeup-leave-to {
-            transform: translate3d(0, 100%, 0);
-    }
 </style>
