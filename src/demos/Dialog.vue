@@ -4,77 +4,201 @@
 
             <ion-list title="对话框">
                 <ion-item is-link @click.native="showAlert()">
-                    Alert <span class="item-note">提示框</span>
+                    Alert <ion-note slot="item-right">提示框</ion-note>
+                </ion-item>
+                <ion-item is-link @click.native="showAlert2()">
+                    Alert <ion-note slot="item-right">多个按钮提示框</ion-note>
                 </ion-item>
                 <ion-item is-link @click.native="showConfirm()">
-                    Confirm <span class="item-note">确认框</span>
+                    Confirm <ion-note slot="item-right">确认框</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="showAlertIOS()">
-                    iOS Alert <span class="item-note">iOS 风格提示框</span>
+                <ion-item is-link @click.native="showPrompt()">
+                    Prompt <ion-note slot="item-right">带文本输入的提示框</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="showConfirmIOS()">
-                    iOS Confirm <span class="item-note">iOS 风格确认框</span>
+                <ion-item is-link @click.native="showRadio()">
+                    Alert Radio <ion-note slot="item-right">带单选框的提示框</ion-note>
                 </ion-item>
-                <ion-item is-link @click.native="multiMode()">
-                    Multi Mode <span class="item-note">多个同时出现</span>
+                <ion-item is-link @click.native="showCheckbox()">
+                    Alert Chekckbox <ion-note slot="item-right">带复选框的提示框</ion-note>
                 </ion-item>
-
-                <ion-item is-link @click.native="showAlert('scale')">
-                    Scale Effect
-                </ion-item>
-                <ion-item is-link @click.native="showAlert('slide')">
-                    Slide Effect
-                </ion-item>
-
             </ion-list>
-            <div style="height: 50px;"></div>
-
         </div>
     </div>
 </template>
 <script>
+    import IonNote from "../vonic/components/note/index";
     export default {
+        components: {IonNote},
         methods: {
-            showAlert(effect) {
+            showAlert() {
                 $dialog.alert({
-                    content: 'Hello!',
-                    okTheme: 'positive',
-                    effect: effect || 'default'
-                }).then(() => {
-                    console.log('alert hide.')
+                    title: 'Hello!',
+                    message: 'positive',
+                    buttons: [
+                        {
+                            text: '确定',
+                            handler: () => {
+                                console.log('OK clicked');
+                            }
+                        }
+                    ]
+                }).then((res) => {
+                    console.log('alert hide.', res)
                 })
+            },
 
-                // setTimeout($dialog.hide, 2000)
+            showAlert2() {
+                $dialog.alert({
+                    title: 'Hello!',
+                    message: 'positive',
+                    buttons: [
+                        {
+                            text: 'OK',
+                            handler: () => {
+                                console.log('OK clicked');
+                            }
+                        },
+                        {text: 'OK2'},
+                        {text: 'OK3'},
+                    ]
+                }).then((res) => {
+                    console.log('alert hide.', res)
+                })
             },
 
             showConfirm() {
                 $dialog.confirm({
-                    content: '在"微信"中打开链接吗?',
-                    okText: '打开'
-                }).then((res) => {
-                    console.log('confirm result: ', res)
-                })
-            },
-
-            showAlertIOS() {
-                $dialog.alert({
-                    theme: 'ios',
-                    title: '无法打开网页',
-                    content: 'Safari打不开网页，因为网址无效。',
-                    okText: '好'
-                }).then(() => {
-                    console.log('alert hide.')
-                })
-            },
-
-            showConfirmIOS() {
-                $dialog.confirm({
-                    theme: 'ios',
                     title: '在"微信"中打开链接吗?',
-                    cancelText: '取消',
-                    okText: '打开'
+                    message: '即将启动"微信",并在微信中打开连接',
+                    buttons: [
+                        {text: '取消'},
+                        {
+                            text: '打开',
+                            handler: () => {
+                                console.log('OK clicked');
+                            }
+                        },
+
+                    ]
                 }).then((res) => {
                     console.log('confirm result: ', res)
+                })
+            },
+
+            showPrompt() {
+                $dialog.prompt({
+                    title: 'Login',
+                    message: "Enter a name for this new album you're so keen on adding",
+                    inputs: [
+                        {
+                            name: 'title',
+                            placeholder: 'Title',
+                            value: 'valjue1'
+                        },
+                        {
+                            name: 'title1',
+                            placeholder: 'Title'
+                        },
+                    ],
+                    buttons: [
+                        {
+                            text: 'Cancel',
+                            handler: data => {
+                                console.log('Cancel clicked');
+                            }
+                        },
+                        {
+                            text: 'Save',
+                            handler: data => {
+                                console.log('Saved clicked', data);
+                            }
+                        }
+                    ]
+                }).then((data) => {
+                    console.log('alert hide.', data)
+                })
+            },
+
+            showRadio() {
+                $dialog.radio({
+                    title: 'Login',
+                    inputs: [
+                        {
+                            label: 'title',
+                            value: 'valjue1'
+                        },
+                        {
+                            label: 'title1',
+                            value: 'Title'
+                        },
+                        {
+                            label: 'title33',
+                            value: 'valjue133',
+                            checked: 'false'
+                        },
+                        {
+                            label: 'title133',
+                            value: 'Title333'
+                        },
+                    ],
+                    buttons: [
+                        {
+                            text: 'Cancel',
+                            handler: data => {
+                                console.log('Cancel clicked');
+                            }
+                        },
+                        {
+                            text: 'Save',
+                            handler: data => {
+                                console.log('Saved clicked', data);
+                            }
+                        }
+                    ]
+                }).then((data) => {
+                    console.log('alert hide.', data)
+                })
+            },
+
+            showCheckbox() {
+                $dialog.checkbox({
+                    title: 'Login',
+                    inputs: [
+                        {
+                            label: 'title',
+                            value: 'valjue1',
+                            checked: true
+                        },
+                        {
+                            label: 'title1',
+                            value: 'Title'
+                        },
+                        {
+                            label: 'title33',
+                            value: 'valjue133',
+                            checked: 'true'
+                        },
+                        {
+                            label: 'title133',
+                            value: 'Title333'
+                        },
+                    ],
+                    buttons: [
+                        {
+                            text: 'Cancel',
+                            handler: data => {
+                                console.log('Cancel clicked');
+                            }
+                        },
+                        {
+                            text: 'Save',
+                            handler: data => {
+                                console.log('Saved clicked', data);
+                            }
+                        }
+                    ]
+                }).then((data) => {
+                    console.log('alert hide.', data)
                 })
             },
 

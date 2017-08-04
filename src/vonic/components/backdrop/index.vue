@@ -32,9 +32,6 @@
                 this.activated = true
                 return timeout(duration)
             },
-            setStyle(attr, val) {
-                this.$el.style[attr] = val;
-            },
             disableClick() {
                 let $el = this.$el;
                 util.hasClass($el, enableCls) && util.removeClass($el, enableCls);

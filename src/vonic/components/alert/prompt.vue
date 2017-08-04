@@ -1,7 +1,7 @@
 <template>
-    <div class="ion-alert" :class="['alert-'+theme, cssClass]" role="dialog" style="z-index: 10010;">
+    <div class="ion-alert alert-top" :class="['alert-'+theme, cssClass]" role="dialog" style="z-index: 9999;">
         <ion-backdrop role="presentation" v-show="activated"
-                      @click.native="backdropClick"></ion-backdrop>
+                      @click.native="hide"></ion-backdrop>
         <transition name="ion-alert-fadeup">
             <div class="alert-wrapper" v-show="activated">
                 <div class="alert-head">
@@ -10,20 +10,25 @@
                 <div class="alert-message">
                     {{ message }}
                 </div>
-                <template v-if="buttons.length > 2">
-                    <div class="alert-button-group" key="idx" v-for="(button, index) in buttons" >
-                        <ion-button role="alert-button":class="button.cssClass" @click.native="hide(index)">{{button.text}}</ion-button>
+                <div class="alert-input-group" v-if="inputs">
+                    <div class="alert-input-wrapper" key="idx" v-for="(input, index) in inputs">
+                        <input class="alert-input" type="text"
+                               :name="input.name"
+                               :placeholder="input.title"
+                               :value="input.value"
+                               @input="inputChanged($event)">
                     </div>
-                </template>
-                <template v-else>
-                    <div class="alert-button-group">
-                        <ion-button role="alert-button" key="idx" v-for="(button, index) in buttons" :class="button.cssClass" @click.native="hide(index)">{{button.text}}</ion-button>
-                    </div>
-                </template>
+                </div>
+                <div class="alert-button-group">
+                    <ion-button role="alert-button" key="idx" v-for="(button, index) in buttons"
+                                :class="button.cssClass" @click.native="hide(index)">{{button.text}}
+                    </ion-button>
+                </div>
             </div>
         </transition>
     </div>
 </template>
+
 <script>
     import objectAssign from 'object-assign'
     import ThemeMixins from '../../themes/theme.mixins';
@@ -40,15 +45,18 @@
                 defaultOptions: {
                     title: '',
                     message: '',
-                    buttons: [{text: 'OK'}],
+                    inputs: [{name: 'title',placeholder: 'Title'},],
+                    buttons: [{text: 'Cancel'}, {text: 'Save'}],
                 },
 
                 message: '',
+                inputs: [],
                 buttons: [],
                 enableBackdropDismiss: true,
                 cssClass: '',
 
-                activated: false
+                activated: false,
+                values : []
             }
         },
         methods: {
@@ -70,11 +78,24 @@
                     return button;
                 })
 
+                this.inputs = _options.inputs.filter(input => {
+                    if (typeof button === 'string') {
+                        input = {title: input, name: input};
+                    }
+                    if (!input.cssClass) {
+                        input.cssClass = '';
+                    }
+                    if (!!input.value) {
+                        that.values[input.name] = input.value
+                    }
+                    return input;
+                })
+
                 this.activated = true;
 
                 return new Promise((resolve, reject) => {
-                    this.$on('onHideEvent', (res) => {
-                        resolve(res)
+                    this.$on('onHideEvent', data => {
+                        resolve(data)
                     })
                 });
 
@@ -86,11 +107,12 @@
                 if (buttonIndex > -1) {
                     let handler = this.buttons[buttonIndex].handler;
                     if (handler && typeof handler === 'function') {
-                        handler();
+                        handler(this.values);
                     }
                 }
 
-                this.$emit('onHideEvent', buttonIndex);
+                // 返回输入框的值
+                this.$emit('onHideEvent', {index: buttonIndex, values:this.values});
                 setTimeout(() => {
                     this.$el.remove();
                 }, 400);
@@ -100,7 +122,14 @@
                 if (this.enableBackdropDismiss) {
                     this.hide(-1);
                 }
-            }
+            },
+
+            inputChanged($event) {
+                let value = $event.target.value
+                let name = $event.target.name
+
+                this.values[name] = value
+            },
         }
     }
 </script>
@@ -110,19 +139,4 @@
     @import './alert.ios';
     @import './alert.md';
     @import './alert.wp';
-
-    // transition fadeup
-    .ion-alert-fadeup-enter-active {
-        transition: transform .4s ease-in-out;
-        transition: opacity .35s ease-in-out;
-        transform: scale(1);
-    }
-
-    .ion-alert-fadeup-leave-active {
-        transition: transform .35s  ease-in-out;
-    }
-
-    .ion-alert-fadeup-enter, .ion-alert-fadeup-leave-to {
-        transform: scale(0.9);
-    }
 </style>

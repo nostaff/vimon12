@@ -38,4 +38,4 @@ class Dialog {
     }
 }
 
-window.$dialog1 = new Dialog()
+window.$dialog = new Dialog()

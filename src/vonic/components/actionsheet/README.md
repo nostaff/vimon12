@@ -1,12 +1,9 @@
-Usage:
+##Usage
 
 ```
 
 $actionSheet.show({
                     title: '标题',
-                    buttonClicked: function (itemIndex) {
-                        console.log(itemIndex)
-                    },
                     enableBackdropDismiss: true,
                     cssClass: 'a   b',
                     buttons: [
@@ -48,25 +45,39 @@ $actionSheet.show({
                                      }
                                  }
                              ]
-                });
+                }).then((res) => {
+                                      console.log('button clicked: ', res)
+                                  });
                 
 ```
 
+## Instance Members
 
-###ActionSheet create options
+ 
+```
+$actionSheet.show(opts)
+```
+Open an action sheet with a title, subTitle, and an array of buttons
+
+Param | Type | Details
+------|------|------
+opts | ActionSheetOptions | Action sheet options
+
+
+## Advanced
+
+ActionSheet create options
 
 Option | Type | Description
 ---------- |--------------|------
 title | string | The title for the Action Sheet.
-subTitle | string | The sub-title for the Action Sheet.
 cssClass | string | Additional classes for custom styles, separated by spaces.
 enableBackdropDismiss | boolean | If the Action Sheet should close when the user taps the backdrop.
 buttons | array<any> | An array of buttons to display.
-buttonClicked | function | Optional, callback function for every buttons.
 
 
 
-### ActionSheet button options
+ActionSheet button options
 
 Option | Type | Description
 ---------- |--------------|------

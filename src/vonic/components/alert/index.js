@@ -1,54 +1,67 @@
-import Vue from 'vue';
-import utils from 'src/utils/util';
-const AlertConstructor = Vue.extend(require('./src/alert.vue'));
+import Vue from 'vue'
+import Alert from './alert.vue'
+import Prompt from './prompt.vue'
+import AlertRadio from './alert.radio.vue'
+import AlertCheckbox from './alert.checkbox.vue'
 
-let instance;
-let instances = [];
-let speed = 1;
+import {createElement} from '../../services/utils'
 
-/**
- * 
- * alert 消息框
- * @param {any} options  可以传入单个objec 或者单个消息
- */
-function Alert(options) {
-    options = options || {};
-    if (utils.isString(options)) {
-        options = {
-            message: options
-        };
+let vm = undefined
+
+class IonDialog {
+
+    show(type, options) {
+        let rnd = Math.random().toString(36).substring(3, 6)
+        let marker = `ion-${type}-${rnd}`
+        createElement(marker)
+        let selector = `[${marker}]`
+
+
+        let component = Alert
+        switch (type) {
+            case 'alert':
+                component = Alert;
+            case 'prompt':
+                component = Prompt;
+                break;
+            case 'radio':
+                component = AlertRadio;
+                break;
+            case 'checkbox':
+                component = AlertCheckbox;
+                break;
+        }
+
+        vm = new Vue(component).$mount(selector)
+
+        vm.$el.setAttribute('ion-dialog', '')
+        return vm.show(options)
     }
 
-    let id = 'ion_alert_' + speed;
-    let userOnClose = options.onClose;
+    alert(options) {
+        return this.show('alert', options)
+    }
 
-    options.close = function() {
-        Alert.close(id, userOnClose);
-    };
+    confirm(options) {
+        return this.show('alert', options)
+    }
 
-    instance = new AlertConstructor({
-        data: options
-    });
-    instance.id = id;
-    instance.vm = instance.$mount();
-    instance.dom = instance.vm.$el;
-    document.body.appendChild(instance.dom);
-    instance.vm.open();
-    instances.push(instance);
+    prompt(options) {
+        return this.show('prompt', options)
+    }
+
+    radio(options) {
+        return this.show('radio', options)
+    }
+
+    checkbox(options) {
+        return this.show('checkbox', options)
+    }
+
+    hide(buttonIndex) {
+        if(vm) vm.hide(buttonIndex)
+    }
 
 }
 
-Alert.close = function(id, userOnClose) {
-    for (let i = 0, len = instances.length; i < len; i++) {
-        let instance = instances[i];
-        if (id === instance.id) {
-            if (utils.isFunction(userOnClose)) {
-                userOnClose(instance);
-            }
-            instances.splice(i, 1);
-            break;
-        }
-    }
-};
-
-export default Alert;
+window.$dialog = new IonDialog()
