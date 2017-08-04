@@ -11,7 +11,7 @@
         fullClass,
         sizeClass,
         isActive?'activated':'',
-        isParentItem ? 'item-button' : ''
+        isParentItem && prefix == 'button' ? 'item-button' : ''
         ]">
         <slot name="backup"></slot>
 		<span class="button-inner">
@@ -91,22 +91,23 @@
             }
         },
         created() {
+            let parentName = this.$parent.$data.componentName;
+            //如果在item 组件里 则加上class
+            if (parentName === 'ionItem') {
+                this.isParentItem = true;
+            }
+
             // 如果是在组件 buttons 下则修改前缀为 bar-button-
-            if (this.$parent.$data.componentName === 'buttons') {
+            if (parentName === 'ionButtons' || parentName === 'ionToolbar') {
                 this.prefix = 'bar-button';
             }
             if (this.role === 'radio' || this.role === 'checkbox') {
                 this.prefix = 'item-cover';
-            } else if (this.role) {
+            } else if (this.role !== 'button') {
                 this.prefix = this.role
             }
         },
         mounted() {
-            //如果在item 组件里 则加上class
-            if (this.$parent.$data.componentName === 'ionItem' && this.prefix === 'button') {
-                this.isParentItem = true;
-            }
-
             this.style = this.clear ? 'clear' : (this.outline ? 'outline' : 'default')
             this.isButtonCover = this.$el.classList.contains('button-cover')
         },

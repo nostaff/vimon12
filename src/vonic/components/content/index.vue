@@ -1,10 +1,10 @@
 <template>
-    <section class="ion-content" :class="['content-'+theme]">
+    <div class="ion-content" :class="['content-'+theme]">
         <div class="scroll-content">
             <slot></slot>
         </div>
         <slot name="ion-refresher"></slot>
-    </section>
+    </div>
 </template>
 <script>
     import ThemeMixins from '../../themes/theme.mixins';

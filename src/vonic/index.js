@@ -55,6 +55,8 @@ Vue.component(Badge.name, Badge)
 Vue.component(FABs.name, FABs)
 
 // Layout
+import {Header, Footer, Toolbar, Navbar, BarTitle, BarButtons} from './components/toolbar'
+import Content from './components/content'
 import {List, ListHeader} from './components/list'
 import {Item, ItemGroup, ItemOptions, ItemSliding, ItemDivider} from './components/item'
 
@@ -63,6 +65,14 @@ import Cells from './components/cells'
 import Tabs from './components/tabs'
 import ButtonBar from './components/buttonbar'
 
+Vue.component(Header.name, Header)
+Vue.component(Footer.name, Footer)
+Vue.component(Toolbar.name, Toolbar)
+Vue.component(Navbar.name, Navbar)
+Vue.component(BarTitle.name, BarTitle)
+Vue.component(BarButtons.name, BarButtons)
+
+Vue.component(Content.name, Content)
 Vue.component(List.name, List)
 Vue.component(ListHeader.name, ListHeader)
 Vue.component(Item.name, Item)

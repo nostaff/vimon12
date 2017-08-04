@@ -53,6 +53,9 @@
 
             <!-- layout -->
             <ion-list title="布局">
+                <ion-item detail-push @click.native="$router.forward('/demo/layout/toolbar')">
+                    Toolbar <ion-note slot="item-right">工具条</ion-note>
+                </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/layout/header')">
                     Header <ion-note slot="item-right">页头</ion-note>
                 </ion-item>

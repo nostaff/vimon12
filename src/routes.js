@@ -30,6 +30,7 @@ import DemoIcon from './demos/Icon'
 import DemoFabs from './demos/FABs'
 
 // Layout
+import DemoToolbar from './demos/Toolbar'
 import DemoHeader from './demos/Header'
 import DemoList from './demos/List'
 import DemoCells from './demos/Cells'
@@ -88,6 +89,7 @@ const routes = [
 
 
     // Layout
+    { path: '/demo/layout/toolbar', component: DemoToolbar },
     { path: '/demo/layout/header', component: DemoHeader },
     { path: '/demo/layout/list', component: DemoList },
     { path: '/demo/layout/cells', component: DemoCells },

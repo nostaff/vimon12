@@ -32,15 +32,8 @@
                 this.activated = true
                 return timeout(duration)
             },
-            disableClick() {
-                let $el = this.$el;
-                util.hasClass($el, enableCls) && util.removeClass($el, enableCls);
-                util.addClass($el, disableCls);
-            },
-            enableClick() {
-                let $el = this.$el;
-                util.hasClass($el, disableCls) && util.removeClass($el, disableCls);
-                util.addClass($el, enableCls);
+            getState() {
+                return this.activated;
             }
         }
     };

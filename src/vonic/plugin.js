@@ -5,7 +5,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
-import './services/backdrop'
+import './components/backdrop'
 import './services/loading'
 // import './services/alert/radio.button.vue'
 // import './services/popup/dialog.js'
@@ -13,10 +13,11 @@ import './services/popup/index.js'
 import './services/cascadepanel/index.js'
 import './services/tabbar/index.js'
 import './services/sidebar/index.js'
-import './services/modal/index.js'
+// import './services/modal/index.js'
 
 import './components/actionsheet/index.js'
 import './components/alert/index.js'
+import './components/modal/index.js'
 
 
 

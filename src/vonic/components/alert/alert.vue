@@ -27,7 +27,7 @@
 <script>
     import objectAssign from 'object-assign'
     import ThemeMixins from '../../themes/theme.mixins';
-    import IonBackdrop from "../backdrop/index";
+    import IonBackdrop from "../backdrop/backdrop";
     import IonButton from "../button/index";
     export default {
         mixins: [ThemeMixins],
@@ -110,19 +110,4 @@
     @import './alert.ios';
     @import './alert.md';
     @import './alert.wp';
-
-    // transition fadeup
-    .ion-alert-fadeup-enter-active {
-        transition: transform .4s ease-in-out;
-        transition: opacity .35s ease-in-out;
-        transform: scale(1);
-    }
-
-    .ion-alert-fadeup-leave-active {
-        transition: transform .35s  ease-in-out;
-    }
-
-    .ion-alert-fadeup-enter, .ion-alert-fadeup-leave-to {
-        transform: scale(0.9);
-    }
 </style>

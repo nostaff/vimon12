@@ -33,7 +33,7 @@
 <script>
     import objectAssign from 'object-assign'
     import ThemeMixins from '../../themes/theme.mixins';
-    import IonBackdrop from "../backdrop/index";
+    import IonBackdrop from "../backdrop/backdrop";
     import IonButton from "../button/index";
     export default {
         mixins: [ThemeMixins],
