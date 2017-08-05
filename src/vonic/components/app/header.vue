@@ -83,7 +83,7 @@
                 }
 
                 if (window.__push_method__ === 'push') {
-                    let root = document.querySelector('[ion-app]')
+                    let root = document.querySelector('.ion-nav')
                     if (root) root.setAttribute('transition-direction', 'back');
                     history.go(-1)
                 }
@@ -113,14 +113,14 @@
             titleEnter() {
                 let container = this.$el
                 console.log(container)
-                let el = container.querySelector('.toolbar-content')
-                let text = container.querySelector('.toolbar-content > .toolbar-title')
+                let el = container.querySelector('.toolbar-title')
+                let text = container.querySelector('.toolbar-title > span')
 
                 let style = el.style
                 style.webkitTransition = style.transition = 'none'
 
                 let dist = parseInt((el.offsetWidth - text.offsetWidth) / 2) + 'px'
-                let direction = document.querySelector('[ion-app]').getAttribute('transition-direction')
+                let direction = document.querySelector('.ion-nav').getAttribute('transition-direction')
                 if (direction) {
                     style.webkitTransform =
                         style.transform = 'translate3d(' + (direction == 'back' ? '-' : '') + dist + ',0,0)'
@@ -154,8 +154,8 @@
 
             titleLeave() {
                 let container = this.$el
-                let el = this.$el.querySelector('.title')
-                let text = container.querySelector('.title > span')
+                let el = container.querySelector('.toolbar-title')
+                let text = container.querySelector('.toolbar-title > span')
 
                 let style = el.style
                 style.webkitTransition
@@ -163,7 +163,7 @@
 
                 timeout().then(() => {
                     let dist = parseInt((el.offsetWidth - text.offsetWidth) / 2) + 'px'
-                    let direction = document.querySelector('[ion-app]').getAttribute('transition-direction')
+                    let direction = document.querySelector('.ion-nav').getAttribute('transition-direction')
                     if (direction) {
                         style.webkitTransform =
                             style.transform = 'translate3d(' + (direction == 'back' ? '' : '-') + dist + ',0,0)'

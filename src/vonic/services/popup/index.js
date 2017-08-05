@@ -50,7 +50,7 @@ class VonicPopup {
     if (!wrapper) {
       wrapper = document.createElement('div')
       wrapper.setAttribute('von-popups', '')
-      document.querySelector('[ion-app]').appendChild(wrapper)
+      document.querySelector('.ion-app').appendChild(wrapper)
     }
 
     wrapper.innerHTML = '<popup show-close="' + showClose + '" css-class="' + cssClass

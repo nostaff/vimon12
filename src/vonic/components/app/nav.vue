@@ -2,7 +2,7 @@
     <div class="ion-nav">
         <div nav-viewport=""></div>
         <slot></slot>
-        <div class="nav-decor"></div>
+        <!--<div class="nav-decor"></div>-->
     </div>
 </template>
 <script>

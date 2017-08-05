@@ -46,12 +46,12 @@ let VonicAppConfig = {
 }
 
 const nextDirection = (direction) => {
-    let el = document.querySelector('[ion-app]')
+    let el = document.querySelector('.ion-nav')
     if (el) el.setAttribute('transition-direction', direction);
 }
 
 const setTitle = (title) => {
-    let el = document.querySelector('[von-navbar="active"] > .title > span')
+    let el = document.querySelector('[von-navbar="active"] > .ion-title > span')
     if (el) el.textContent = title
 }
 
@@ -165,12 +165,8 @@ export default {
 
     nextDirection: nextDirection,
 
-    root() {
-        return document.querySelector('[ion-app]')
-    },
-
     pageContentScrollTop(scrollTop) {
-        const root = document.querySelector('[ion-app]')
+        const root = document.querySelector('.ion-app')
         if (typeof scrollTop == 'number') {
             const pages = root && root.querySelectorAll('.page .page-content')
             const content = pages[pages.length - 1]

@@ -26,7 +26,7 @@ class VonicSidebar {
     let wrapper = document.createElement('div')
     wrapper.setAttribute('von-sidebar-container', '')
     wrapper.setAttribute('von-sidebar-container-' + refId, '')
-    document.querySelector('[ion-app]').appendChild(wrapper)
+    document.querySelector('.ion-app').appendChild(wrapper)
     wrapper.innerHTML = `<sidebar position='${position}' ref='${refId}'>${template}</sidebar>`
 
     let vm = new Vue({
@@ -55,7 +55,7 @@ class VonicSidebar {
 
       let wrapper = document.querySelector(`[von-sidebar-container-${refId}]`)
       wrapper.innerHTML = ''
-      document.querySelector('[ion-app]').removeChild(wrapper)
+      document.querySelector('.ion-app').removeChild(wrapper)
     }
     _sidebars = {}
   }
