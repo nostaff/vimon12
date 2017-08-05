@@ -1,6 +1,6 @@
 <template>
-    <div class="page has-navbar" v-nav="{title: '工具条', showBackButton: true}">
-        <div class="page-content">
+    <ion-page v-nav="{title: '工具条', showBackButton: true}">
+            <ion-content>
             <!--<ion-header>-->
                 <!--<ion-navbar :color="theme">-->
                     <!--<ion-button icon-only slot="left-item">-->
@@ -19,7 +19,6 @@
                 <!--</ion-navbar>-->
             <!--</ion-header>-->
 
-            <ion-content>
 
                 <ion-toolbar :color="theme">
                     <ion-button icon-only slot="left-item">
@@ -114,8 +113,7 @@
                 <!--<button class="button button-icon ion-navicon" slot="right"></button>-->
             <!--</von-header>-->
 
-        </div>
-    </div>
+    </ion-page>
 </template>
 <script>
     import IonToolbar from "../vonic/components/toolbar/toolbar";

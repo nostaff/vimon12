@@ -1,11 +1,11 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: '模态窗', showBackButton: true}">
-    <div class="page-content padding padding-top">
+  <ion-page v-nav="{title: '模态窗', showBackButton: true}">
+    <ion-content class="page-content padding padding-top">
       <button class="button button-assertive button-block" @click="showModal()">默认</button>
       <button class="button button-balanced button-block" @click="showMultiModal()">多个模态窗</button>
       <button class="button button-energized button-block" @click="showPopupModal()">模态窗内弹层</button>
-    </div>
-  </div>
+    </ion-content>
+  </ion-page>
 </template>
 <script>
   import DefaultModal from './modals/DefaultModal.vue'

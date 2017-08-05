@@ -26,7 +26,7 @@
         type: String,
         default: 'positive'
       },
-      onTabClick: Function
+      onItemClick: Function
     },
 
     computed: {
@@ -44,7 +44,7 @@
       },
 
       tabClicked(index) {
-        if (this.onTabClick) this.onTabClick(index)
+        if (this.onItemClick) this.onItemClick(index)
       }
     }
   }

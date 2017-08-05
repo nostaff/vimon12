@@ -1,7 +1,7 @@
 <template>
-  <div class="page" v-nav="{hideNavbar: true}" v-tabbar="{'items': menus, itemColor: '#B5B5B5', activeItemColor: '#44CC00', onItemClick: menuClicked}">
+  <ion-page class="page" v-nav="{hideNavbar: true}" v-tabbar="{'items': menus, itemColor: '#B5B5B5', activeItemColor: '#44CC00', onItemClick: menuClicked}">
     <router-view></router-view>
-  </div>
+  </ion-page>
 </template>
 <script>
   export default {

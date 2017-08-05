@@ -58,8 +58,6 @@ import DemoPageFromTabbar from './demos/tabbar/PageFromTabbar'
 import DemoTabbarWithoutRoutes from './demos/TabbarWithoutRoutes'
 import DemoModal from './demos/Modal'
 
-import DemoTest from './demos/Test'
-
 const routes = [
     {
         path: '/',
@@ -122,8 +120,6 @@ const routes = [
     { path: '/demo/advanced/modal', component: DemoModal },
     { path: '/demo/advanced/datepicker', component: DemoDatepicker },
 
-    // test
-    { path: '/demo/test', component: DemoTest }
 ]
 
 export default  routes

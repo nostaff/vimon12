@@ -1,10 +1,8 @@
 <template>
-    <div class="page has-navbar has-tabbar"  v-tabbar-item-index="4">
-        <von-header theme="light">
-            <span slot="title">Voinc组件</span>
-        </von-header>
+    <ion-page v-tabbar-item-index="4">
+        <ion-navbar title="Vonic组件"></ion-navbar>
 
-        <div class="page-content" >
+        <ion-content>
             <!-- Basic -->
             <ion-list title="基础">
                 <ion-item detail-push @click.native="$router.forward('/demo/basic/button')">
@@ -115,16 +113,20 @@
                     Modal <ion-note slot="item-right">模态窗</ion-note>
                 </ion-item>
             </ion-list>
-        </div>
-    </div>
+
+        </ion-content>
+    </ion-page>
 </template>
-<style>
-    .footer {
-        height: 40px;
-    }
-</style>
+
 <script>
+    import IonPage from "../vonic/components/page/page";
+    import IonHeader from "../vonic/components/app/header";
+    import IonNavbar from "../vonic/components/toolbar/navbar";
     export default {
+        components: {
+            IonNavbar,
+            IonHeader,
+            IonPage},
         data() {
             return {
                 sidebar: undefined,

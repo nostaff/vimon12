@@ -1,12 +1,13 @@
 <template>
-	<div class="travels page has-navbar has-tabbar" v-tabbar-item-index="2">
-        <von-header theme="light">
-            <span slot="title">购物车</span>
-        </von-header>
-        <div class="page-content">
-		<travel-list :travel-lists="travelsList"></travel-list>
-        </div>
-	</div>
+	<ion-page class="travels" v-tabbar-item-index="2">
+
+        <ion-navbar title="购物车"></ion-navbar>
+        <ion-content>
+
+		    <travel-list :travel-lists="travelsList"></travel-list>
+
+        </ion-content>
+	</ion-page>
 </template>
 
 <script>
@@ -14,11 +15,15 @@
 import travelList from '@/components/travelList'
 
 import { mapGetters } from 'vuex'
+import IonContent from "../vonic/components/content/index";
+import IonNavbar from "../vonic/components/toolbar/navbar";
 
 export default {
 
 	components: {
-		travelList
+        IonNavbar,
+        IonContent,
+        travelList
 	},
     created() {
         if (this.travelsList.length == 0) {

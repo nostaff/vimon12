@@ -1,10 +1,12 @@
 <template>
-	<div class="sports page has-navbar has-tabbar" v-tabbar-item-index="1">
-        <von-header theme="light">
-            <span slot="title">折扣</span>
-        </von-header>
-		<panel-list :sport-list="sportsList"></panel-list>
-	</div>
+	<ion-page class="sports" v-tabbar-item-index="1">
+        <ion-navbar title="折扣"></ion-navbar>
+        <ion-content>
+
+            <panel-list :sport-list="sportsList"></panel-list>
+
+        </ion-content>
+	</ion-page>
 </template>
 
 <script>
@@ -12,10 +14,14 @@
 //import panelList from '@/components/panelList'
 
 import { mapGetters } from 'vuex'
+import IonContent from "../vonic/components/content/index";
+import IonPage from "../vonic/components/page/page";
 
 export default {
 
 	components: {
+        IonPage,
+        IonContent
 //		panelList
 	},
 	data() {

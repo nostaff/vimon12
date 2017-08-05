@@ -1,6 +1,6 @@
 <template>
-	<div class="page has-tabbar" v-tabbar-item-index="3">
-		<div class="page-content">
+	<ion-page v-tabbar-item-index="3">
+		<ion-content>
 			<div v-if="!loginStatus">
 				<div class="user-h">
 					<div class="avatar u-avatar">
@@ -63,8 +63,8 @@
 				</ul>
 			</div>
 
-		</div>
-	</div>
+        </ion-content>
+    </ion-page>
 </template>
 
 <script>
@@ -73,10 +73,14 @@
 
 import { mapGetters } from 'vuex'
 import api from '../api'
+import IonPage from "../vonic/components/page/page";
+import IonContent from "../vonic/components/content/index";
 
 export default {
 
 	components: {
+        IonContent,
+        IonPage
 //		group
 	},
 	data() {

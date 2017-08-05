@@ -13,7 +13,8 @@ class IonDialog {
     show(type, options) {
         let rnd = Math.random().toString(36).substring(3, 6)
         let marker = `ion-${type}-${rnd}`
-        createElement(marker)
+        let container = document.querySelector('.ion-app') || document.body;
+        createElement(marker, container)
         let selector = `[${marker}]`
 
 
@@ -21,6 +22,7 @@ class IonDialog {
         switch (type) {
             case 'alert':
                 component = Alert;
+                break;
             case 'prompt':
                 component = Prompt;
                 break;

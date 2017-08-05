@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: 'Tabbar 单独使用', showBackButton: true}"
+  <div v-nav="{title: 'Tabbar 单独使用', showBackButton: true}"
     v-tabbar="{'items': menus, itemColor: '#999', activeItemColor: '#FF4400', onMenuClick: menuClicked}">
       <div class="page-content padding-top">
         <p class="text-center" v-if="show == 0">Home</p>
@@ -48,8 +48,8 @@
         this.show = menuIndex
       },
 
-      updateBadge(menuIndex) {
-        $tabbar.$emit('updateTabbarBadge', menuIndex, this.menus[menuIndex].badge++)
+      updateBadge(itemIndex) {
+        $tabbar.$emit('updateTabBadge', itemIndex, this.menus[itemIndex].badge++)
       }
     },
 

@@ -21,7 +21,7 @@ import './components/modal/index.js'
 
 
 
-import VonApp from './components/app'
+import IonApp from './components/app'
 
 const is_ios = () => {
     return /iPad|iPhone|iPod/.test(navigator.userAgent)
@@ -43,13 +43,10 @@ let VonicAppConfig = {
     routerOptions: {},
 
     pushMethod: 'push',
-
-    // Page Transition
-    pageTransition: undefined
 }
 
 const nextDirection = (direction) => {
-    let el = document.querySelector('[von-app]')
+    let el = document.querySelector('[ion-app]')
     if (el) el.setAttribute('transition-direction', direction);
 }
 
@@ -65,7 +62,7 @@ class VonicApp {
     }
 
     start() {
-        const App = Vue.extend(VonApp)
+        const App = Vue.extend(IonApp)
 
         let routerOptions = assign(
             {},
@@ -84,15 +81,14 @@ class VonicApp {
         if (typeof VonicAppConfig.afterEach == 'function')
             router.afterEach(VonicAppConfig.afterEach)
 
-        window.__page_transition__ = VonicAppConfig.pageTransition
-
-        window.__disable_nav_title_transition__ = VonicAppConfig.disableNavTitleTransition || false
-        if (!is_ios()) window.__disable_nav_title_transition__ = true
+        window.__disable_nav_title_transition__ = false
+        if (!is_ios())
+            window.__disable_nav_title_transition__ = true
 
         let appOptions = {
             router,
             components: {
-                VonApp
+                IonApp
             },
             propsData: {
                 meta: {
@@ -106,7 +102,7 @@ class VonicApp {
 
         if (this.store) appOptions.store = this.store
 
-        const app = new Vue(appOptions).$mount('von-app')
+        const app = new Vue(appOptions).$mount('ion-app')
 
         window.$app = app
 
@@ -170,11 +166,11 @@ export default {
     nextDirection: nextDirection,
 
     root() {
-        return document.querySelector('[von-app]')
+        return document.querySelector('[ion-app]')
     },
 
     pageContentScrollTop(scrollTop) {
-        const root = document.querySelector('[von-app]')
+        const root = document.querySelector('[ion-app]')
         if (typeof scrollTop == 'number') {
             const pages = root && root.querySelectorAll('.page .page-content')
             const content = pages[pages.length - 1]

@@ -1,12 +1,8 @@
 <template>
     <div class="home page has-navbar has-tabbar" v-tabbar-item-index="0">
-        <von-header theme="light">
-            <!--<button class="button button-icon ion-ios-arrow-back" slot="left" @click="$router.back('/home')"></button>-->
-            <img src="../assets/logo.png" width="30" height="30" slot="left">
-            <span slot="title">360心理</span>
-            <!--<button class="button button-icon ion-navicon" slot="right"></button>-->
-            <button class="button button-icon ion-navicon" slot="right"></button>
-        </von-header>
+        <ion-navbar title="心理无忧">
+            <img src="../assets/logo.png" width="30" height="30" slot="left-item">
+        </ion-navbar>
 
         <div class="page-content">
             <swiper ref="swiper"
@@ -76,9 +72,11 @@
     import ExpertList from '../components/ExpertList'
 
     import { mapGetters } from 'vuex'
+    import IonNavbar from "../vonic/components/toolbar/navbar";
 
     export default {
         components: {
+            IonNavbar,
             ExpertList
         },
         data() {

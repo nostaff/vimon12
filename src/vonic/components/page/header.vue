@@ -3,6 +3,7 @@
         <slot></slot>
     </header>
 </template>
+
 <script>
     import ThemeMixins from '../../themes/theme.mixins';
     export default {

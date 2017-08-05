@@ -1,6 +1,6 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: '选项卡', showBackButton: true}">
-    <tabs :tab-items="tabs" :tab-index="tabIndex" :on-tab-click="onTabClick"></tabs>
+  <div v-nav="{title: '选项卡', showBackButton: true}">
+    <tabs :tab-items="tabs" :tab-index="tabIndex" :on-tab-click="onItemClick"></tabs>
 
     <div class="page-content">
       <p>
@@ -56,7 +56,7 @@
     },
 
     methods: {
-      onTabClick(index) {
+      onItemClick(index) {
         console.log(index)
         this.tabIndex = index
       },

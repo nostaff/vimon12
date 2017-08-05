@@ -1,6 +1,6 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: '滑块', showBackButton: true}">
-    <div class="page-content padding-top">
+  <ion-page v-nav="{title: '滑块', showBackButton: true}">
+    <ion-content class="padding-top">
       <von-range
         v-model="volume"
         :min="min"
@@ -28,8 +28,8 @@
       <div class="padding">
         Note: Theming capabilities are not available in Chrome due to this <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=582301">issues</a>
       </div>
-    </div>
-  </div>
+    </ion-content>
+  </ion-page>
 </template>
 <script>
   export default {

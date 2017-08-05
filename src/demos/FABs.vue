@@ -1,6 +1,6 @@
 <template>
-    <div class="page has-navbar" v-nav="{title: '浮动按钮', showBackButton: true}">
-        <div class="page-content padding-top">
+    <ion-page v-nav="{title: '浮动按钮', showBackButton: true}">
+        <ion-content class="padding-top">
 
                 <ion-fabs top right mini icon="add" :options="downItems" @on-item-clicked="onClick"></ion-fabs>
 
@@ -8,8 +8,8 @@
 
                 <ion-fabs top left icon="arrow-dropright" :options="rightItems" color="danger" @on-item-clicked="onClick"></ion-fabs>
 
-        </div>
-    </div>
+        </ion-content>
+    </ion-page>
 </template>
 <script>
     export default {

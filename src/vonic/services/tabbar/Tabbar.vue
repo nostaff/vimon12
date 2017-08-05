@@ -1,48 +1,60 @@
 <template>
-    <div class="tabbar" :class="{'visible': state == 1}">
-        <div v-for="(menu, index) in items"
-             class="tabbar-item"
-             :style="{'color': itemIndex == index ? activeItemColor : itemColor}"
-             @click="itemClicked(index)">
-            <div class="icon-wrapper">
-                <i :class="getIconClass(menu, index)"></i>
-            </div>
-
-            <div class="text-wrapper">
-                <span v-text="menu.text"></span>
-            </div>
-
-            <badge v-if="menu.badge" :num="menu.badge"></badge>
+    <div class="tabs" style="z-index:20"
+         :class="['tabs-'+theme, colorClass]"
+         :selectedIndex="selectedIndex"
+         :tabslayout="tabsLayout"
+         :tabsplacement="tabsPlacement"
+         :tabshighlight="tabsHighlight">
+        <div class="tabbar" :class="[state?'show-tabbar':'']" role="tablist" style="z-index:20">
+            <a role="tab" class="disable-hover tab-button" href="#" :aria-selected="index===selectedIndex" v-for="(item, index) in items"
+               :class="[item.text?'has-title':'', item.icon?'has-icon':'', item.badge?'has-badge':'']"
+               @click="itemClicked(index)">
+                <ion-icon class="tab-button-icon" :name="item.icon" v-if="item.icon"></ion-icon>
+                <span class="tab-button-text">{{item.text}}</span>
+                <ion-badge class="tab-badge" :color="item.badgeColor?item.badgeColor:'danger'" v-if="item.badge">{{item.badge}}</ion-badge>
+                <div class="button-effect"></div>
+            </a>
         </div>
+        <div tab-portal=""></div>
     </div>
 </template>
 <script>
-    import Badge from '../../components/badge'
+    import ThemeMixins from '../../themes/theme.mixins';
+
+    import IonIcon from '../../components/icon'
+    import IonBadge from "../../components/badge";
 
     const re_color = /^#([0-9A-Fa-f]{3})|([0-9A-Fa-f]{6})$/;
 
     export default {
+        mixins: [ThemeMixins],
+
         components: {
-            Badge
+            IonBadge,
+            IonIcon
+        },
+
+        data() {
+            return {
+                items: [],
+                selectedIndex: 0,
+                state: 0
+            }
         },
 
         props: {
-            itemColor: {
-                type: String,
-                default: '#888',
-                validator(v) {
-                    return re_color.test(v)
-                }
+            tabsHighlight: {
+                type: Boolean,
+                default: false
             },
-
-            activeItemColor: {
+            tabsLayout: {
                 type: String,
-                default: '#EA5A49',
-                validator(v) {
-                    return re_color.test(v)
-                }
+                default: 'icon-top'      // icon-top, icon-start, icon-end, icon-bottom, icon-hide, title-hide
             },
-
+            tabsPlacement: {
+                type: String,
+                default: 'bottom'       //top, bottom.
+            },
             onItemClick: {
                 type: Function
             }
@@ -57,55 +69,50 @@
         },
 
         beforeDestroy() {
-//      if (document.body.classList.contains('theme-ios'))
-//        window.__disable_nav_title_transition__ = false
             if (this.$ionic.theme == 'ios')
                 window.__disable_nav_title_transition__ = false
 
         },
 
         desctoryed() {
+            console.log("tabbar desctoryed")
             document.body.removeChild(this.$el)
         },
 
-        data() {
-            return {
-                items: [],
-                itemIndex: 0,
-                state: 0
-            }
-        },
-
         methods: {
-            itemClicked(itemIndex) {
+            itemClicked(index) {
                 window.__disable_nav_title_transition__ = true
 
-                this.itemIndex = itemIndex
-                if (this.items[itemIndex].path)
-                    $router.forward({ path: this.items[itemIndex].path })
+                this.selectedIndex = index
+                if (this.items[index].path)
+                    $router.forward({ path: this.items[index].path })
 
                 if (this.onItemClick) {
-                    this.onItemClick(itemIndex)
+                    this.onItemClick(index)
                 }
             },
 
-            activate(index) {
-                this.itemIndex = index
+            selectedItem(index) {
+                this.selectedIndex = index
             },
 
             show() {
                 this.state = 1
             },
 
-            getIconClass(menu, index) {
-                let iconClass = {}
-                iconClass['icon ' + menu.iconOn] = this.itemIndex == index
-                iconClass['icon  ' + menu.iconOff] = this.itemIndex != index
-                return iconClass
-            },
-
             setBadgeNum(itemIndex, num) {
                 this.items[itemIndex].bage = num
+            }
+        },
+
+        computed: {
+            colorClass: function() {
+                switch (this.color) {
+                    case 'default':
+                        return '';
+                    default:
+                        return `tabs-${this.theme}-${this.color}`;
+                }
             }
         },
     }

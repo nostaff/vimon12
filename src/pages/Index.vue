@@ -1,5 +1,5 @@
 <template>
-    <div class="page" v-nav="{hideNavbar: true}" v-tabbar="{'items': tabItems, itemColor: '#999', activeItemColor: '#FF4400', onItemClick: itemClicked}">
+    <div class="ion-tabs" v-tabbar="{'items': tabItems, color: 'secondary', onItemClick: itemClicked}">
         <router-view></router-view>
     </div>
 </template>
@@ -8,36 +8,30 @@
     export default {
         data() {
             return {
-                sidebar: undefined,
                 tabItems: [
                     {
-                        iconOn: 'ion-ios-home',
-                        iconOff: 'ion-ios-home-outline',
+                        icon: 'home',
                         text: '首页',
                         path: '/home'
                     },
                     {
-                        iconOn: 'ion-ios-pricetags',
-                        iconOff: 'ion-ios-pricetags-outline',
+                        icon: 'pricetags',
                         text: '折扣',
                         path: '/sport'
                     },
                     {
-                        iconOn: 'ion-ios-cart',
-                        iconOff: 'ion-ios-cart-outline',
+                        icon: 'cart',
                         text: '购物车',
                         path: '/cart',
                         badge: '5'
                     },
                     {
-                        iconOn: 'ion-ios-person',
-                        iconOff: 'ion-ios-person-outline',
+                        icon: 'person',
                         text: '我的',
                         path: '/user'
                     },
                     {
-                        iconOn: 'ion-ios-person',
-                        iconOff: 'ion-ios-person-outline',
+                        icon: 'person',
                         text: 'Demo',
                         path: '/demo'
                     }
@@ -52,9 +46,8 @@
         },
 
         beforeDestroy() {
+            console.log('index beforeDestroy')
             $tabbar.$emit('hideTabbar')
-            $sidebar.destroy()
-
         }
     }
 </script>

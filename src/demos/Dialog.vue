@@ -1,6 +1,6 @@
 <template>
-    <div class="page has-navbar" v-nav="{title: '对话框', showBackButton: true}">
-        <div class="page-content padding-top">
+    <ion-page v-nav="{title: '对话框', showBackButton: true}">
+        <ion-content class="padding-top">
 
             <ion-list title="对话框">
                 <ion-item is-link @click.native="showAlert()">
@@ -22,8 +22,8 @@
                     Alert Chekckbox <ion-note slot="item-right">带复选框的提示框</ion-note>
                 </ion-item>
             </ion-list>
-        </div>
-    </div>
+        </ion-content>
+    </ion-page>
 </template>
 <script>
     import IonNote from "../vonic/components/note/index";
@@ -32,8 +32,8 @@
         methods: {
             showAlert() {
                 $dialog.alert({
-                    title: 'Hello!',
-                    message: 'positive',
+                    title: 'New Friend!',
+                    message: 'Your friend, Obi wan Kenobi, just accepted your friend request!',
                     buttons: [
                         {
                             text: '确定',
@@ -49,8 +49,8 @@
 
             showAlert2() {
                 $dialog.alert({
-                    title: 'Hello!',
-                    message: 'positive',
+                    title: 'New Friend!',
+                    message: 'Your friend, Obi wan Kenobi, just accepted your friend request!',
                     buttons: [
                         {
                             text: 'OK',

@@ -1,6 +1,6 @@
 <template>
-    <div class="page has-navbar" v-nav="{title: '复选框', showBackButton: true}">
-        <div class="page-content">
+    <ion-page v-nav="{title: '复选框', showBackButton: true}">
+        <ion-content>
 
             <ion-checkbox title="选择感兴趣的板块:" :options="topics" v-model="chosenTopics" @on-change="change"></ion-checkbox>
 
@@ -20,8 +20,8 @@
                 chosen Areas: {{ chosenAreas2 }}
             </p>
 
-        </div>
-    </div>
+        </ion-content>
+    </ion-page>
 </template>
 <script>
     export default{

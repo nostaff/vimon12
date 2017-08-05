@@ -1,6 +1,6 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: 'Icons', showBackButton: true}">
-    <div class="my-icons page-content">
+  <ion-page v-nav="{title: 'Icons', showBackButton: true}">
+    <ion-content class="my-icons">
 
         <ion-icon name="add"></ion-icon>
         <ion-icon name="add-circle" color="primary"></ion-icon>
@@ -945,8 +945,8 @@
             <li class="ion-md-wine"></li>
             <li class="ion-md-woman:before"></li>
         </ul>
-    </div>
-  </div>
+    </ion-content>
+  </ion-page>
 </template>
 
 <style lang="scss">

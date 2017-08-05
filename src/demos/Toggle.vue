@@ -1,6 +1,6 @@
 <template>
-    <div class="page has-navbar" v-nav="{title: '开关按钮', showBackButton: true}">
-        <div class="page-content padding-top">
+    <ion-page v-nav="{title: '开关按钮', showBackButton: true}">
+        <ion-content class="padding-top">
             <ion-toggle v-model="pushNotification"></ion-toggle>
             <div class="item item-divider">开关状态: <span>{{ pushNotification ? '开启' : '关闭' }}</span></div>
 
@@ -54,9 +54,9 @@
                 </ion-item>
 
             </ion-list>
-        </div>
+        </ion-content>
 
-    </div>
+    </ion-page>
 </template>
 <script>
     export default {

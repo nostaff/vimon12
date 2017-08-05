@@ -1,7 +1,7 @@
 <template>
-    <div class="page has-navbar" v-nav="{title: '栅格 非组件', showBackButton: true}">
+    <ion-page v-nav="{title: '栅格 非组件', showBackButton: true}">
 
-        <div class="page-content content-padded">
+        <ion-content class="content-padded">
 
             <p padding="">
                 Equal-width columns
@@ -285,8 +285,8 @@
                 </ion-row>
             </ion-grid>
 
-        </div>
-    </div>
+        </ion-content>
+    </ion-page>
 </template>
 
 <style lang="scss">

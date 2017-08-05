@@ -1,6 +1,6 @@
 <template>
-    <div class="page has-navbar" v-nav="{title: '搜索框', showBackButton: true}">
-        <div class="page-content">
+    <ion-page v-nav="{title: '搜索框', showBackButton: true}">
+        <ion-content>
 
             <ion-searchbar v-model="keywords" placeholder="输入关键字" :on-change="onChange"
                            :on-cancel="onCancel"></ion-searchbar>
@@ -9,8 +9,8 @@
                 searching for '{{keywords}}'.
             </div>
 
-        </div>
-    </div>
+        </ion-content>
+    </ion-page>
 </template>
 <script>
     export default{

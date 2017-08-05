@@ -1,6 +1,6 @@
 <template>
-    <div class="page has-navbar" v-nav="{title: '列表', showBackButton: true}">
-        <div class="page-content">
+    <ion-page v-nav="{title: '列表', showBackButton: true}">
+        <ion-content>
 
             <ion-list>
                 <ion-list-header color="primary">
@@ -223,6 +223,6 @@
             </ion-list>
 
             <div style="height: 100px"></div>
-        </div>
-    </div>
+        </ion-content>
+    </ion-page>
 </template>

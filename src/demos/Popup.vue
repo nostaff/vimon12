@@ -1,6 +1,6 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: '弹层', showBackButton: true}">
-    <div class="page-content padding-top">
+  <ion-page v-nav="{title: '弹层', showBackButton: true}">
+    <ion-content class="padding-top">
 
       <ion-item  is-link @click.native="showCustomPopup()">
         Custom Popup
@@ -9,8 +9,8 @@
         Custom Popup 2
       </ion-item>
 
-    </div>
-  </div>
+    </ion-content>
+  </ion-page>
 </template>
 <script>
   export default {

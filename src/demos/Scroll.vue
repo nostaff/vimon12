@@ -1,5 +1,5 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: '下拉刷新、无限加载', showBackButton: true}">
+  <ion-page v-nav="{title: '下拉刷新、无限加载', showBackButton: true}">
     <scroll class="page-content"
             :on-refresh="onRefresh"
             :on-infinite="onInfinite">
@@ -9,12 +9,14 @@
 
       <div v-if="infiniteCount >= 2" slot="infinite" class="text-center">没有更多数据</div>
     </scroll>
-  </div>
+  </ion-page>
 
 </template>
 <script>
+    import IonPage from "../vonic/components/page/page";
   export default {
-    data () {
+      components: {IonPage},
+      data () {
       return {
         items: [],
         infiniteCount: 0

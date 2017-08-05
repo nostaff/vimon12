@@ -1,6 +1,6 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: 'iOS 风格选项卡', showBackButton: true}">
-    <div class="page-content padding-top">
+  <ion-page v-nav="{title: 'iOS 风格选项卡', showBackButton: true}">
+    <ion-content class="padding-top">
 
       <div class="padding light-bg">
         <button-bar theme="assertive" :tab-items="tabs" :tab-index="tab_0"
@@ -36,9 +36,9 @@
         选中: {{ promotions[promotionIndex] }}
       </div>
 
-    </div>
+    </ion-content>
 
-  </div>
+  </ion-page>
 </template>
 <script>
   export default {
@@ -62,7 +62,7 @@
     },
 
     methods: {
-      onTabClick(index) {
+      onItemClick(index) {
         this.tab_0 = index
       }
     }

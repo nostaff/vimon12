@@ -1,6 +1,6 @@
 <template>
-    <div class="page has-navbar" v-nav="{title: '单选框', showBackButton: true}">
-        <div class="page-content padding-top">
+    <ion-page v-nav="{title: '单选框', showBackButton: true}">
+        <ion-content class="padding-top">
 
             <!--<ion-checker>-->
                 <!--<ion-list-header>-->
@@ -39,8 +39,8 @@
             <ion-radio title="设置整个Radio的颜色" :options="list" v-model="selected" color="danger" @on-change="change"></ion-radio>
             <ion-radio title="设置每个Option的颜色" :options="list2" v-model="selected2" @on-change="change"></ion-radio>
 
-        </div>
-    </div>
+        </ion-content>
+    </ion-page>
 </template>
 <script>
     export default{

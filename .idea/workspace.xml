@@ -2,35 +2,78 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8323a9fe-be66-40c8-a870-6d9da02c649f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/vonic/components/header11/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/vonic/components/header11/src/toolbar.ios.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/vonic/components/header11/src/toolbar.md.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/vonic/components/header11/src/toolbar.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/vonic/components/header11/src/toolbar.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/vonic/components/header11/src/toolbar.wp.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/vonic/components/toolbar/buttons.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/vonic/components/toolbar/title.vue" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vonic/components/backdrop/index.vue" afterPath="$PROJECT_DIR$/src/vonic/components/backdrop/backdrop.vue" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vonic/components/header11/README.md" afterPath="$PROJECT_DIR$/src/vonic/components/toolbar/README.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vonic/components/header11/src/footer.vue" afterPath="$PROJECT_DIR$/src/vonic/components/toolbar/footer.vue" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vonic/components/header11/src/header.vue" afterPath="$PROJECT_DIR$/src/vonic/components/toolbar/header.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/vonic/components/app/nav.vue" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/demos/Test.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/vonic/components/app/Navbar.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/vonic/components/toolbar/footer.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/vonic/components/toolbar/header.vue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/vonic/scss/_toggle.o.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/vonic/scss/main.css" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/vonic/components/app/Header.vue" afterPath="$PROJECT_DIR$/src/vonic/components/app/header.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Accordion.vue" afterPath="$PROJECT_DIR$/src/demos/Accordion.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/ActionSheet.vue" afterPath="$PROJECT_DIR$/src/demos/ActionSheet.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Badge.vue" afterPath="$PROJECT_DIR$/src/demos/Badge.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Button.vue" afterPath="$PROJECT_DIR$/src/demos/Button.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/ButtonBar.vue" afterPath="$PROJECT_DIR$/src/demos/ButtonBar.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Cascade.vue" afterPath="$PROJECT_DIR$/src/demos/Cascade.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Cells.vue" afterPath="$PROJECT_DIR$/src/demos/Cells.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Checkbox.vue" afterPath="$PROJECT_DIR$/src/demos/Checkbox.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Datepicker.vue" afterPath="$PROJECT_DIR$/src/demos/Datepicker.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Dialog.vue" afterPath="$PROJECT_DIR$/src/demos/Dialog.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/FABs.vue" afterPath="$PROJECT_DIR$/src/demos/FABs.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Grid.vue" afterPath="$PROJECT_DIR$/src/demos/Grid.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Header.vue" afterPath="$PROJECT_DIR$/src/demos/Header.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Home.vue" afterPath="$PROJECT_DIR$/src/demos/Home.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Icon.vue" afterPath="$PROJECT_DIR$/src/demos/Icon.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Input.vue" afterPath="$PROJECT_DIR$/src/demos/Input.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/List.vue" afterPath="$PROJECT_DIR$/src/demos/List.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Modal.vue" afterPath="$PROJECT_DIR$/src/demos/Modal.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Popup.vue" afterPath="$PROJECT_DIR$/src/demos/Popup.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Radio.vue" afterPath="$PROJECT_DIR$/src/demos/Radio.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/RangeSlider.vue" afterPath="$PROJECT_DIR$/src/demos/RangeSlider.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Scroll.vue" afterPath="$PROJECT_DIR$/src/demos/Scroll.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Search.vue" afterPath="$PROJECT_DIR$/src/demos/Search.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Select.vue" afterPath="$PROJECT_DIR$/src/demos/Select.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Swiper.vue" afterPath="$PROJECT_DIR$/src/demos/Swiper.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/SwiperDefault.vue" afterPath="$PROJECT_DIR$/src/demos/SwiperDefault.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/SwiperVertical.vue" afterPath="$PROJECT_DIR$/src/demos/SwiperVertical.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/TabBar.vue" afterPath="$PROJECT_DIR$/src/demos/TabBar.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/TabBarWithoutRoutes.vue" afterPath="$PROJECT_DIR$/src/demos/TabBarWithoutRoutes.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Tabs.vue" afterPath="$PROJECT_DIR$/src/demos/Tabs.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Toggle.vue" afterPath="$PROJECT_DIR$/src/demos/Toggle.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Toolbar.vue" afterPath="$PROJECT_DIR$/src/demos/Toolbar.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/VueScroller.vue" afterPath="$PROJECT_DIR$/src/demos/VueScroller.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/tabbar/Cart.vue" afterPath="$PROJECT_DIR$/src/demos/tabbar/Cart.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/tabbar/Discount.vue" afterPath="$PROJECT_DIR$/src/demos/tabbar/Discount.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/tabbar/Home.vue" afterPath="$PROJECT_DIR$/src/demos/tabbar/Home.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/tabbar/PageFromTabbar.vue" afterPath="$PROJECT_DIR$/src/demos/tabbar/PageFromTabbar.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/tabbar/User.vue" afterPath="$PROJECT_DIR$/src/demos/tabbar/User.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/Home.vue" afterPath="$PROJECT_DIR$/src/pages/Home.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/Index.vue" afterPath="$PROJECT_DIR$/src/pages/Index.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/Sport.vue" afterPath="$PROJECT_DIR$/src/pages/Sport.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/Travel.vue" afterPath="$PROJECT_DIR$/src/pages/Travel.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/User.vue" afterPath="$PROJECT_DIR$/src/pages/User.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes.js" afterPath="$PROJECT_DIR$/src/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/actionsheet/action-sheet.vue" afterPath="$PROJECT_DIR$/src/vonic/components/actionsheet/action-sheet.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/alert/alert.checkbox.vue" afterPath="$PROJECT_DIR$/src/vonic/components/alert/alert.checkbox.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/alert/alert.radio.vue" afterPath="$PROJECT_DIR$/src/vonic/components/alert/alert.radio.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/alert/alert.scss" afterPath="$PROJECT_DIR$/src/vonic/components/alert/alert.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/alert/alert.vue" afterPath="$PROJECT_DIR$/src/vonic/components/alert/alert.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/alert/prompt.vue" afterPath="$PROJECT_DIR$/src/vonic/components/alert/prompt.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/alert/index.js" afterPath="$PROJECT_DIR$/src/vonic/components/alert/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/app/index.vue" afterPath="$PROJECT_DIR$/src/vonic/components/app/index.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/button/index.vue" afterPath="$PROJECT_DIR$/src/vonic/components/button/index.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/app/utils.js" afterPath="$PROJECT_DIR$/src/vonic/components/app/utils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/buttonbar/index.vue" afterPath="$PROJECT_DIR$/src/vonic/components/buttonbar/index.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/content/content.scss" afterPath="$PROJECT_DIR$/src/vonic/components/content/content.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/content/index.vue" afterPath="$PROJECT_DIR$/src/vonic/components/content/index.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/tabs/index.vue" afterPath="$PROJECT_DIR$/src/vonic/components/tabs/index.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/toolbar/index.vue" afterPath="$PROJECT_DIR$/src/vonic/components/toolbar/index.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/toolbar/navbar.vue" afterPath="$PROJECT_DIR$/src/vonic/components/toolbar/navbar.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/index.js" afterPath="$PROJECT_DIR$/src/vonic/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/plugin.js" afterPath="$PROJECT_DIR$/src/vonic/plugin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/scss/_base.scss" afterPath="$PROJECT_DIR$/src/vonic/scss/_base.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/scss/vonic.scss" afterPath="$PROJECT_DIR$/src/vonic/scss/vonic.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/services/popup/index.js" afterPath="$PROJECT_DIR$/src/vonic/services/popup/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/services/sidebar/index.js" afterPath="$PROJECT_DIR$/src/vonic/services/sidebar/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/services/tabbar/Tabbar.vue" afterPath="$PROJECT_DIR$/src/vonic/services/tabbar/Tabbar.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/services/tabbar/index.js" afterPath="$PROJECT_DIR$/src/vonic/services/tabbar/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/services/utils.js" afterPath="$PROJECT_DIR$/src/vonic/services/utils.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/themes/ionic.globals.scss" afterPath="$PROJECT_DIR$/src/vonic/themes/ionic.globals.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/themes/ionic.theme.default.scss" afterPath="$PROJECT_DIR$/src/vonic/themes/ionic.theme.default.scss" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -48,21 +91,103 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Toolbar.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/demos/Toolbar.vue">
+      <file leaf-file-name="header.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/vonic/components/app/header.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1515">
-              <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+            <state relative-caret-position="-2114">
+              <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/vonic/index.js">
+      <file leaf-file-name="page.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/vonic/components/page/page.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
-              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <caret line="1" column="35" lean-forward="false" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navbar.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/vonic/components/toolbar/navbar.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="642">
+              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/vonic/components/app/app.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="492">
+              <caret line="283" column="12" lean-forward="false" selection-start-line="283" selection-start-column="12" selection-end-line="283" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/vonic/components/alert/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="24" column="22" lean-forward="false" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+              <folding>
+                <marker date="1501952207000" expanded="true" signature="637:694" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="alert.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/vonic/components/alert/alert.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="27" lean-forward="true" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="prompt.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/vonic/components/alert/prompt.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Sport.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/Sport.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="27" lean-forward="false" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/User.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Travel.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/Travel.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -81,50 +206,38 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ionic.</find>
-      <find>ionic.t</find>
-      <find>ion</find>
-      <find>ion-</find>
-      <find>ionic.th</find>
-      <find>BarButtons</find>
+      <find>demosTest</find>
+      <find>demos/Test</find>
+      <find>DemoTest</find>
+      <find>&lt;header</find>
+      <find>UpdateNavbar</find>
+      <find>hideTabbarhideTabbar</find>
+      <find>hideTabbarhideTabba</find>
+      <find>createHeader</find>
+      <find>-apple-system, &quot;Helvetica Neue&quot;, &quot;Roboto&quot;, sans-serif</find>
+      <find>$font-family-base</find>
+      <find>$font-family-ios-base</find>
+      <find>binding\.value\n            console\.log\(\'directive nav\: \'\, data\)\n            channel\.\$emit\(\'UpdateNavbar\'\, data\)\n        \}\n    \}\)\n\n    export default \{\n        components\: \{\n            IonNav\n        \}\,\n\n        data\(\) \{\n            return \{\n                gradeClass\: \'ios\'\n            \}\n        \}\,\n\n        created\(\) \{\n            \/\/ theme\-ios for ios\, theme\-md for android \&amp; other\n            if \(\/iPad\|iPhone\|iPod\/\.test\(navigator\.userAgent\)\) \{\n                this\.gradeClass \= \'ios\'\n            \} else if \(\/Windows Phone\/\.test\(navigator\.userAgent\)\) \{\n                this\.gradeClass \= \'wp\'\n            \} else \{\n                this\.gradeClass \= \'md\'\n            \}\n\n\/\/            document\.querySelector\(\'\.ion\-app\'\)\.classList\.add\(this\.gradeClass\)\n</find>
+      <find>.i</find>
+      <find>.ios</find>
+      <find>nav-decor</find>
       <find>.</find>
-      <find>.ion</find>
-      <find>.ion-na</find>
-      <find>.ion-nav</find>
-      <find>.ion-navba</find>
-      <find>IonButtons</find>
-      <find>isParentItem</find>
-      <find>prefix</find>
-      <find>IonToolbar</find>
-      <find>ion-header</find>
-      <find>ion-</find>
-      <find>no-border</find>
-      <find>\nimport \'\.\/fonts\/ionicons\.scss\'\n\nimport Vue from \'vue\'\nimport VueScroller from \'vue\-scroller\'\nVue\.use\(VueScroller\)\n\nconst DEFAULT_CONFIG \= \{\n    theme\: \'ios\'\,\n    version\: \'0\.0\.1\'\,\n    iconMode\: \'\'\n\}\;\n\nimport util from \&quot;\.\/utils</find>
-      <find>.bar-button</find>
-      <find>.bar-button</find>
-      <find>no</find>
-      <find>norma</find>
-      <find>normalli</find>
-      <find>normall</find>
-      <find>normal</find>
-      <find>normalize.sc</find>
-      <find>normalize.s</find>
-      <find>normalize.</find>
-      <find>normalize</find>
+      <find>.ios</find>
+      <find>beforeDestroy</find>
+      <find>.ion-header</find>
+      <find>hideTabbar</find>
+      <find>$tabbar</find>
+      <find>vmReady</find>
+      <find>$tabbar.</find>
+      <find>.ion-page</find>
+      <find>alert-input-group</find>
+      <find>c</find>
+      <find>cart</find>
+      <find>/cart</find>
+      <find>Travel</find>
+      <find>DEFAULT_BACK_TEXT</find>
     </findStrings>
     <replaceStrings>
-      <replace>label</replace>
-      <replace>getColor</replace>
-      <replace>item</replace>
-      <replace>color</replace>
-      <replace>.ion</replace>
-      <replace>.ion-fab-list</replace>
-      <replace>ion-</replace>
-      <replace>ion-action-sheet-fade</replace>
-      <replace>ion-action-sheet</replace>
-      <replace>onItemClick</replace>
-      <replace>ion-backdrop-fade</replace>
-      <replace>IonActionSheet</replace>
       <replace>close</replace>
       <replace>ion-alert-fadeup</replace>
       <replace>hide</replace>
@@ -137,12 +250,24 @@
       <replace>|</replace>
       <replace>modal</replace>
       <replace>ion</replace>
-      <replace>.ion</replace>
       <replace>.ion-</replace>
       <replace>ion-backdrop</replace>
       <replace>ionButtons</replace>
       <replace>ionToolbar</replace>
+      <replace>ion-app</replace>
+      <replace>IonApp</replace>
       <replace>.ion-</replace>
+      <replace>item</replace>
+      <replace>iconClass</replace>
+      <replace>icon</replace>
+      <replace>onItemClick</replace>
+      <replace>selectedItem</replace>
+      <replace />
+      <replace>ion-content class=&quot;padding-top&quot;</replace>
+      <replace>ion-content class=&quot;padding&quot;</replace>
+      <replace>ion-content class=&quot;content-padded&quot;</replace>
+      <replace>ion-content</replace>
+      <replace>onTabClick</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/components-vux/x-textarea</dir>
@@ -153,8 +278,8 @@
       <dir>$PROJECT_DIR$/src/vonic/components1/app</dir>
       <dir>$PROJECT_DIR$/src/vonic/fonts</dir>
       <dir>$PROJECT_DIR$/src/vonic/components/header11</dir>
-      <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/src/vonic/utils</dir>
+      <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -163,57 +288,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/vonic/services/popup/dialog.js" />
-        <option value="$PROJECT_DIR$/src/vonic/services/popup/mixin.js" />
-        <option value="$PROJECT_DIR$/src/vonic/components/actionsheet/action-sheet.vue" />
-        <option value="$PROJECT_DIR$/src/vonic/components/actionsheet/index.js" />
-        <option value="$PROJECT_DIR$/src/demos/ActionSheet.vue" />
-        <option value="$PROJECT_DIR$/src/vonic/components/alert/confirm.vue" />
-        <option value="$PROJECT_DIR$/src/vonic/components/alert/prompt.vue" />
-        <option value="$PROJECT_DIR$/src/demos/Dialog.vue" />
-        <option value="$PROJECT_DIR$/src/vonic/components/alert/alert.radio.vue" />
-        <option value="$PROJECT_DIR$/src/vonic/components/alert/alert.checkbox.vue" />
-        <option value="$PROJECT_DIR$/src/vonic/components/actionsheet/README.md" />
-        <option value="$PROJECT_DIR$/src/vonic/components/alert/README.md" />
-        <option value="$PROJECT_DIR$/src/vonic/components/alert/index.js" />
-        <option value="$PROJECT_DIR$/src/vonic/components/backdrop/backdrop.vue" />
-        <option value="$PROJECT_DIR$/src/vonic/components/backdrop/index.js" />
-        <option value="$PROJECT_DIR$/src/vonic/plugin.js" />
-        <option value="$PROJECT_DIR$/src/vonic/components/modal/modal.md.scss" />
-        <option value="$PROJECT_DIR$/src/vonic/components/modal/modal.ios.scss" />
-        <option value="$PROJECT_DIR$/src/vonic/components/alert/alert.vue" />
-        <option value="$PROJECT_DIR$/src/vonic/components/alert/alert.scss" />
-        <option value="$PROJECT_DIR$/src/vonic/components/modal/modal.scss" />
-        <option value="$PROJECT_DIR$/src/vonic/components/modal/modal.vue" />
-        <option value="$PROJECT_DIR$/src/vonic/components/header11/src/title.vue" />
-        <option value="$PROJECT_DIR$/src/vonic/components/toolbar/title.vue" />
-        <option value="$PROJECT_DIR$/src/vonic/components/toolbar/header.vue" />
-        <option value="$PROJECT_DIR$/src/vonic/components/toolbar/footer.vue" />
-        <option value="$PROJECT_DIR$/src/vonic/components/toolbar/toolbar-item.vue" />
-        <option value="$PROJECT_DIR$/src/vonic/components/modal/index.js" />
-        <option value="$PROJECT_DIR$/src/vonic/components/content/content.scss" />
-        <option value="$PROJECT_DIR$/src/vonic/themes/ionic.globals.scss" />
-        <option value="$PROJECT_DIR$/src/vonic/themes/ionic.theme.default.scss" />
-        <option value="$PROJECT_DIR$/src/vonic/components/toolbar/toolbar.scss" />
-        <option value="$PROJECT_DIR$/src/vonic/components/toolbar/toolbar.md.scss" />
-        <option value="$PROJECT_DIR$/src/vonic/components/toolbar/toolbar.ios.scss" />
-        <option value="$PROJECT_DIR$/src/vonic/components/toolbar/toolbar.wp.scss" />
-        <option value="$PROJECT_DIR$/src/vonic/components/toolbar/toolbar-button.vue" />
-        <option value="$PROJECT_DIR$/src/vonic/components/toolbar/toolbar.button.vue" />
-        <option value="$PROJECT_DIR$/src/demos/Home.vue" />
-        <option value="$PROJECT_DIR$/src/routes.js" />
-        <option value="$PROJECT_DIR$/src/vonic/components/toolbar/navbar.vue" />
-        <option value="$PROJECT_DIR$/src/vonic/components/toolbar/toolbar.title.vue" />
-        <option value="$PROJECT_DIR$/src/vonic/components/button/index.vue" />
-        <option value="$PROJECT_DIR$/src/vonic/components/app/index.vue" />
-        <option value="$PROJECT_DIR$/src/vonic/components/app/app.scss" />
-        <option value="$PROJECT_DIR$/src/vonic/components/app/app.ios.scss" />
-        <option value="$PROJECT_DIR$/src/vonic/components/app/app.md.scss" />
-        <option value="$PROJECT_DIR$/src/vonic/components/app/app.wp.scss" />
-        <option value="$PROJECT_DIR$/src/vonic/components/toolbar/toolbar.vue" />
-        <option value="$PROJECT_DIR$/src/vonic/components/toolbar/index.vue" />
-        <option value="$PROJECT_DIR$/src/vonic/index.js" />
+        <option value="$PROJECT_DIR$/src/demos/Datepicker.vue" />
+        <option value="$PROJECT_DIR$/src/demos/FABs.vue" />
+        <option value="$PROJECT_DIR$/src/demos/Grid.vue" />
+        <option value="$PROJECT_DIR$/src/demos/Input.vue" />
+        <option value="$PROJECT_DIR$/src/demos/List.vue" />
+        <option value="$PROJECT_DIR$/src/demos/Modal.vue" />
+        <option value="$PROJECT_DIR$/src/demos/Radio.vue" />
+        <option value="$PROJECT_DIR$/src/demos/Search.vue" />
+        <option value="$PROJECT_DIR$/src/demos/Select.vue" />
+        <option value="$PROJECT_DIR$/src/demos/TabBar.vue" />
+        <option value="$PROJECT_DIR$/src/demos/Toggle.vue" />
         <option value="$PROJECT_DIR$/src/demos/Toolbar.vue" />
+        <option value="$PROJECT_DIR$/src/vonic/components/tabs/tabs.ios.scss" />
+        <option value="$PROJECT_DIR$/src/demos/Accordion.vue" />
+        <option value="$PROJECT_DIR$/src/demos/Badge.vue" />
+        <option value="$PROJECT_DIR$/src/demos/Cells.vue" />
+        <option value="$PROJECT_DIR$/src/demos/ActionSheet.vue" />
+        <option value="$PROJECT_DIR$/src/demos/Icon.vue" />
+        <option value="$PROJECT_DIR$/src/demos/Popup.vue" />
+        <option value="$PROJECT_DIR$/src/demos/RangeSlider.vue" />
+        <option value="$PROJECT_DIR$/src/demos/Swiper.vue" />
+        <option value="$PROJECT_DIR$/src/demos/SwiperDefault.vue" />
+        <option value="$PROJECT_DIR$/src/demos/SwiperVertical.vue" />
+        <option value="$PROJECT_DIR$/src/demos/tabbar/Home.vue" />
+        <option value="$PROJECT_DIR$/src/demos/tabbar/Discount.vue" />
+        <option value="$PROJECT_DIR$/src/demos/tabbar/Cart.vue" />
+        <option value="$PROJECT_DIR$/src/demos/tabbar/PageFromTabbar.vue" />
+        <option value="$PROJECT_DIR$/src/demos/tabbar/User.vue" />
+        <option value="$PROJECT_DIR$/src/demos/Scroll.vue" />
+        <option value="$PROJECT_DIR$/src/routes.js" />
+        <option value="$PROJECT_DIR$/src/vonic/components/app/index.o.vue" />
+        <option value="$PROJECT_DIR$/src/vonic/themes/ionic.globals.scss" />
+        <option value="$PROJECT_DIR$/src/vonic/services/tabbar/Tabbar.vue" />
+        <option value="$PROJECT_DIR$/src/vonic/services/tabbar/index.js" />
+        <option value="$PROJECT_DIR$/src/vonic/components/content/content.scss" />
+        <option value="$PROJECT_DIR$/src/vonic/services/tabbar/header.js" />
+        <option value="$PROJECT_DIR$/src/vonic/components/app/index.vue" />
+        <option value="$PROJECT_DIR$/src/pages/Index.vue" />
+        <option value="$PROJECT_DIR$/src/vonic/components/app/nav.vue" />
+        <option value="$PROJECT_DIR$/src/demos/Home.vue" />
+        <option value="$PROJECT_DIR$/src/vonic/components/page/page.vue" />
+        <option value="$PROJECT_DIR$/src/vonic/components/app/app.scss" />
+        <option value="$PROJECT_DIR$/src/vonic/components/alert/index.js" />
+        <option value="$PROJECT_DIR$/src/demos/Dialog.vue" />
+        <option value="$PROJECT_DIR$/src/pages/Sport.vue" />
+        <option value="$PROJECT_DIR$/src/pages/User.vue" />
+        <option value="$PROJECT_DIR$/src/pages/Travel.vue" />
+        <option value="$PROJECT_DIR$/src/pages/Home.vue" />
+        <option value="$PROJECT_DIR$/src/vonic/components/navbar/navbar.vue" />
+        <option value="$PROJECT_DIR$/src/vonic/components/toolbar/navbar.vue" />
+        <option value="$PROJECT_DIR$/src/vonic/components/app/header.vue" />
       </list>
     </option>
   </component>
@@ -379,19 +504,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ionic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
+              <option name="myItemId" value="services" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -413,23 +526,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
+              <option name="myItemId" value="services" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ionic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="toolbar" />
+              <option name="myItemId" value="tabbar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -451,23 +552,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
+              <option name="myItemId" value="services" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ionic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="modal" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -489,81 +578,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="toolbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile-vue" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile-vue" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vonic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile-vue" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile-vue" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vonic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="radio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile-vue" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobile-vue" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vonic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
+              <option name="myItemId" value="services" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -593,7 +608,151 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="toolbar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile-vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile-vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vonic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile-vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile-vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vonic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile-vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile-vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vonic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="header" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile-vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile-vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vonic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile-vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile-vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vonic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile-vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile-vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -625,7 +784,69 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile-vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile-vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile-vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile-vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="types" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile-vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile-vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vue" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -645,19 +866,19 @@
     <property name="jsx.switch.disabled" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/vonic/components/toolbar" />
-      <recent name="$PROJECT_DIR$/src/demos" />
-      <recent name="$PROJECT_DIR$/src/vonic/components/backdrop" />
-      <recent name="$PROJECT_DIR$/src/vonic/components/alert" />
-      <recent name="$PROJECT_DIR$/src/vonic/services/backdrop" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/vonic/components/toolbar" />
+      <recent name="$PROJECT_DIR$/src/vonic/components/navbar" />
       <recent name="$PROJECT_DIR$/src/vonic/components/alert" />
       <recent name="$PROJECT_DIR$/src/vonic/components" />
       <recent name="$PROJECT_DIR$/src/vonic/components/fab" />
-      <recent name="$PROJECT_DIR$/src/vonic/components/radio" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/vonic/services/tabbar" />
+      <recent name="$PROJECT_DIR$/src/vonic/components/toolbar" />
+      <recent name="$PROJECT_DIR$/src/vonic/components/tabs" />
+      <recent name="$PROJECT_DIR$/src/vonic/components/app" />
+      <recent name="$PROJECT_DIR$/src/demos" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -825,12 +1046,13 @@
       <workItem from="1501153776934" duration="48307000" />
       <workItem from="1501494909900" duration="1257000" />
       <workItem from="1501496745276" duration="215000" />
-      <workItem from="1501499217681" duration="70781000" />
+      <workItem from="1501499217681" duration="77069000" />
+      <workItem from="1501859310672" duration="28328000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="552463000" />
+    <option name="totallyTimeSpent" value="587079000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -889,153 +1111,31 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/content/content.wp.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/themes/ionic.functions.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/content/content.ios.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/content/content.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="31" lean-forward="true" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/themes/ionic.globals.md.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/themes/ionic.theme.default.wp.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/themes/ionic.theme.default.md.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/toolbar/toolbar.md.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-881">
-          <caret line="296" column="48" lean-forward="false" selection-start-line="296" selection-start-column="48" selection-end-line="296" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/toolbar/toolbar.wp.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="276" column="39" lean-forward="false" selection-start-line="276" selection-start-column="36" selection-end-line="276" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/toolbar/toolbar-button.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="20" lean-forward="true" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/toolbar/toolbar-button.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/radio/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="56" lean-forward="false" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/toolbar/toolbar.button.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="14" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/toolbar/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="420">
-            <caret line="28" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-            <folding>
-              <marker date="1501302716000" expanded="true" signature="159:723" ph="..." />
-              <marker date="1501302716000" expanded="true" signature="194:708" ph="..." />
-              <marker date="1501302716000" expanded="true" signature="233:414" ph="..." />
-              <marker date="1501302716000" expanded="true" signature="308:389" ph="..." />
-              <marker date="1501302716000" expanded="true" signature="505:688" ph="..." />
-              <marker date="1501302716000" expanded="true" signature="579:663" ph="..." />
-            </folding>
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/toolbar/footer.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/toolbar/header.vue">
+    <entry file="file://$PROJECT_DIR$/src/demos/TabBar.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" column="64" lean-forward="false" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="64" />
+          <caret line="1" column="11" lean-forward="false" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/demos/FABs.vue">
+    <entry file="file://$PROJECT_DIR$/src/demos/TabBarWithoutRoutes.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/demos/Tabs.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" column="38" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <caret line="1" column="6" lean-forward="false" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/demos/Header.vue">
+    <entry file="file://$PROJECT_DIR$/src/demos/Test.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1043,244 +1143,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes.js">
+    <entry file="file://$PROJECT_DIR$/src/demos/Toggle.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="91" column="33" lean-forward="false" selection-start-line="91" selection-start-column="33" selection-end-line="91" selection-end-column="33" />
+        <state relative-caret-position="15">
+          <caret line="1" column="13" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/index.js">
+    <entry file="file://$PROJECT_DIR$/src/demos/VueScroller.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="15">
+          <caret line="1" column="6" lean-forward="false" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/demos/Home.vue">
+    <entry file="file://$PROJECT_DIR$/src/demos/tabbar/Home.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="55" column="90" lean-forward="false" selection-start-line="55" selection-start-column="83" selection-end-line="55" selection-end-column="90" />
-          <folding>
-            <marker date="1501826526000" expanded="true" signature="7158:7174" ph="..." />
-            <marker date="1501826526000" expanded="true" signature="7175:7749" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/item/item.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="77" column="10" lean-forward="true" selection-start-line="67" selection-start-column="8" selection-end-line="77" selection-end-column="10" />
+        <state relative-caret-position="15">
+          <caret line="1" column="11" lean-forward="false" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/button/index.vue">
+    <entry file="file://$PROJECT_DIR$/src/demos/tabbar/Discount.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+        <state relative-caret-position="15">
+          <caret line="1" column="11" lean-forward="false" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/toolbar/toolbar.title.vue">
+    <entry file="file://$PROJECT_DIR$/src/demos/tabbar/Cart.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="11" lean-forward="false" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/demos/tabbar/PageFromTabbar.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="82" lean-forward="false" selection-start-line="2" selection-start-column="82" selection-end-line="2" selection-end-column="82" />
+          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/backdrop/backdrop.vue">
+    <entry file="file://$PROJECT_DIR$/src/demos/tabbar/User.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        <state relative-caret-position="75">
+          <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/app/app.md.scss">
+    <entry file="file://$PROJECT_DIR$/src/demos/Scroll.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="41" lean-forward="false" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
+        <state relative-caret-position="165">
+          <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/app/app.wp.scss">
+    <entry file="file://$PROJECT_DIR$/src/vonic/components/app/index.o.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/toolbar/toolbar.ios.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1090">
-          <caret line="79" column="21" lean-forward="false" selection-start-line="79" selection-start-column="12" selection-end-line="79" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/app/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="66" column="17" lean-forward="true" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/app/app.ios.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/backdrop/backdrop.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="37" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/lib/ionic/src/components/toolbar/toolbar.ios.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="83" column="12" lean-forward="false" selection-start-line="83" selection-start-column="12" selection-end-line="83" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/app/app-root.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/demos/ButtonBar.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/toolbar/toolbar.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-648">
-          <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/toolbar/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="18" lean-forward="true" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/toolbar/navbar.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="37" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/toolbar/toolbar.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="10" lean-forward="false" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="10" />
+        <state relative-caret-position="225">
+          <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/vonic/themes/ionic.theme.default.scss">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="17" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vonic/components/app/app.ios.scss">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="13" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/themes/ionic.globals.ios.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/demos/Toolbar.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1515">
-          <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+          <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/vonic/themes/ionic.theme.default.ios.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="22" lean-forward="true" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        <state relative-caret-position="180">
+          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/themes/ionic.mixins.scss">
+    <entry file="file://$PROJECT_DIR$/src/vonic/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="20" lean-forward="true" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/app/app.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/app/app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/lib/ionic/src/components/app/app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/themes/normalize.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/themes/ionic.globals.wp.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-6">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -1288,24 +1249,279 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/vonic/themes/ionic.globals.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        <state relative-caret-position="546">
+          <caret line="41" column="36" lean-forward="false" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/toolbar/toolbar.button.scss">
+    <entry file="file://$PROJECT_DIR$/src/vonic/services/tabbar/Tabbar.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="77" column="32" lean-forward="false" selection-start-line="77" selection-start-column="32" selection-end-line="77" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/vue/types/vue.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="64" column="30" lean-forward="false" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vonic/components/content/content.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="12" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/vue/dist/vue.common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="4681" column="24" lean-forward="false" selection-start-line="4681" selection-start-column="24" selection-end-line="4681" selection-end-column="24" />
+          <folding>
+            <marker date="1496897487000" expanded="true" signature="253287:253296" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/vue/dist/vue.runtime.esm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="4701" column="9" lean-forward="false" selection-start-line="4701" selection-start-column="9" selection-end-line="4701" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMCore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="503" column="47" lean-forward="false" selection-start-line="503" selection-start-column="39" selection-end-line="503" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/vue/dist/vue.runtime.common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="4699" column="4" lean-forward="false" selection-start-line="4699" selection-start-column="4" selection-end-line="4699" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vonic/components/page/index.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/index.js">
+    <entry file="file://$PROJECT_DIR$/src/vonic/services/tabbar/header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vonic/components/app/nav.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vonic/services/tabbar/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="54" column="30" lean-forward="true" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/demos/Toolbar.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="19" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vonic/components/content/content.ios.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vonic/components/page/header.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vonic/components/toolbar/toolbar.title.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="3" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/demos/Home.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="25" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding>
+            <marker date="1501952948000" expanded="true" signature="7287:7303" ph="..." />
+            <marker date="1501952948000" expanded="true" signature="7304:7878" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vonic/components/app/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="35" column="8" lean-forward="false" selection-start-line="35" selection-start-column="8" selection-end-line="36" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vonic/components/page/page.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="35" lean-forward="false" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vonic/components/app/app.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="283" column="12" lean-forward="false" selection-start-line="283" selection-start-column="12" selection-end-line="283" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vonic/services/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="37" lean-forward="false" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vonic/components/alert/alert.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="27" lean-forward="true" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vonic/components/alert/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="24" column="22" lean-forward="false" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+          <folding>
+            <marker date="1501952207000" expanded="true" signature="637:694" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/demos/Dialog.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vonic/components/alert/prompt.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Sport.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="27" lean-forward="false" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/User.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="69" column="61" lean-forward="false" selection-start-line="69" selection-start-column="55" selection-end-line="69" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Home.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="44" lean-forward="false" selection-start-line="48" selection-start-column="44" selection-end-line="48" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Travel.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vonic/components/toolbar/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vonic/components/toolbar/navbar.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="642">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vonic/components/app/header.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2114">
+          <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="27" />
           <folding />
         </state>
       </provider>

@@ -1,6 +1,6 @@
 <template>
-    <div class="page has-navbar" v-nav="{hideNavbar: true}">
-        <div class="page-content">
+    <ion-page v-nav="{hideNavbar: true}">
+        <ion-content>
             <von-header :theme="theme">
                 <button class="button button-icon ion-ios-arrow-back" slot="left" @click="$router.back('/demo')"></button>
                 <span slot="title">标题文字</span>
@@ -11,11 +11,16 @@
 
             <ion-radio :options="themes" v-model="theme"></ion-radio>
 
-        </div>
-    </div>
+        </ion-content>
+    </ion-page>
 </template>
 <script>
+    import IonPage from "../vonic/components/page/page";
+    import IonContent from "../vonic/components/content/index";
     export default {
+        components: {
+            IonContent,
+            IonPage},
         data() {
             return {
                 themes: [

@@ -1,14 +1,14 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: '日期选择器', showBackButton: true}">
-    <div class="page-content padding-top">
+  <ion-page v-nav="{title: '日期选择器', showBackButton: true}">
+    <ion-content class="padding-top">
 
       <datepicker v-model="birthday" label="生日" date-format="yyyy-mm-dd"></datepicker>
 
       <div class="padding">
         value: {{ birthday }}
       </div>
-    </div>
-  </div>
+    </ion-content>
+  </ion-page>
 </template>
 <script>
   export default {

@@ -1,6 +1,6 @@
 <template>
-    <div class="page has-navbar page-swiper" v-nav="{title: '轮播', showBackButton: true}">
-        <div class="page-content padding-top">
+    <ion-page class="page-swiper" v-nav="{title: '轮播', showBackButton: true}">
+        <ion-content class="padding-top">
 
             <ion-item is-link @click.native="$router.forward('/demo/advanced/swiper/default')">
                 Horizontal (default)<span class="item-note">水平 (默认)</span>
@@ -14,8 +14,8 @@
                 Swiper in Popup<span class="item-note">弹层内轮播</span>
             </ion-item>
 
-        </div>
-    </div>
+        </ion-content>
+    </ion-page>
 </template>
 <style lang="scss">
 

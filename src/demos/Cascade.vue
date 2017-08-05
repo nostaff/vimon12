@@ -1,6 +1,6 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: '级联', showBackButton: true}">
-    <div class="page-content padding-top">
+  <ion-page v-nav="{title: '级联', showBackButton: true}">
+    <ion-content class="padding-top">
       <cascade title="选择您所属的行政区划：" :fields="fields" :data="cities" :value="value" :on-change="onChange"></cascade>
 
       <!-- 使用远程数据 -->
@@ -13,8 +13,8 @@
       ></cascade>
       -->
 
-    </div>
-  </div>
+    </ion-content>
+  </ion-page>
 </template>
 <script>
   export default {

@@ -1,6 +1,6 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: '手风琴组件', showBackButton: true}">
-    <div class="page-content padding-top">
+  <ion-page v-nav="{title: '手风琴组件', showBackButton: true}">
+    <ion-content class="padding-top">
       <accordion default-index="0">
         <accordion-item title="农夫" content-height="108">
           <p>
@@ -23,8 +23,8 @@
           </p>
         </accordion-item>
       </accordion>
-    </div>
-  </div>
+    </ion-content>
+  </ion-page>
 </template>
 <style scoped>
   p {

@@ -1,6 +1,6 @@
 <template>
-  <div class="page has-navbar" v-nav="{title: '垂直', showBackButton: true}">
-    <div class="page-content">
+  <ion-page v-nav="{title: '垂直', showBackButton: true}">
+    <ion-content>
       <swiper direction="vertical">
         <swiper-item>
           <h1>Item 1</h1>
@@ -14,8 +14,8 @@
           <h1>Item 3</h1>
         </swiper-item>
       </swiper>
-    </div>
-  </div>
+    </ion-content>
+  </ion-page>
 </template>
 <style lang='scss' scoped>
 

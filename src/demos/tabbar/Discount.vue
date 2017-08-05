@@ -1,16 +1,16 @@
 <template>
-  <div class="page has-navbar has-tabbar" v-tabbar-item-index="1">
+  <ion-page v-tabbar-item-index="1">
     <von-header theme="light">
         <span slot="title">折扣</span>
     </von-header>
 
-    <div class="page-content padding-top">
+    <ion-content class="padding-top">
       <p class="text-center">Discount</p>
       <ion-item v-for="(item, index) in items" :key="index">
         discount item
       </ion-item>
-    </div>
-  </div>
+    </ion-content>
+  </ion-page>
 </template>
 
 <script>

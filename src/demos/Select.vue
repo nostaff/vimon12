@@ -1,6 +1,6 @@
 <template>
-    <div class="page has-navbar" v-nav="{title: '下拉选择框', showBackButton: true}">
-        <div class="page-content padding-top">
+    <ion-page v-nav="{title: '下拉选择框', showBackButton: true}">
+        <ion-content class="padding-top">
 
             <ion-list title="选择框">
                 <von-select label="请选择性别" :options="genderOptions" v-model="gender"></von-select>
@@ -12,8 +12,8 @@
                 option selected: {{ selected }}
             </p>
 
-        </div>
-    </div>
+        </ion-content>
+    </ion-page>
 </template>
 <script>
     export default{

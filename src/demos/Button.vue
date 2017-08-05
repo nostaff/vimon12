@@ -1,6 +1,6 @@
 <template>
-    <div class="page has-navbar" v-nav="{title: '按钮', showBackButton: true}">
-        <div class="page-content padding">
+    <ion-page v-nav="{title: '按钮', showBackButton: true}">
+        <ion-content class="padding">
 
             <p>Basic Usage</p>
             <ion-button key="index" v-for="color in ['light', 'default', 'secondary', 'danger', 'dark']" :color="color">{{color}}</ion-button>
@@ -36,6 +36,6 @@
             <ion-button clear icon-left><ion-icon name="beer"></ion-icon>Pub</ion-button>
 
 
-        </div>
-    </div>
+        </ion-content>
+    </ion-page>
 </template>

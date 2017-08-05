@@ -1,6 +1,6 @@
 <template>
-    <div class="page has-navbar" v-nav="{title: '操作列表', showBackButton: true}">
-        <div class="page-content">
+    <ion-page v-nav="{title: '操作列表', showBackButton: true}">
+        <ion-content>
             <div class="padding scroll-content action-sheets-basic-page">
                 <ion-button block @click.native="normal()">点击背景关闭</ion-button>
                 <p></p>
@@ -9,8 +9,8 @@
                 <span>根据浏览器自动变换样式</span>
             </div>
 
-        </div>
-    </div>
+        </ion-content>
+    </ion-page>
 </template>
 <script>
     const is_md = /Android/.test(navigator.userAgent)

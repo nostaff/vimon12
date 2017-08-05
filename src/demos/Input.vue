@@ -1,6 +1,6 @@
 <template>
-    <div class="page has-navbar" v-nav="{title: '输入框', showBackButton: true}">
-        <div class="page-content">
+    <ion-page v-nav="{title: '输入框', showBackButton: true}">
+        <ion-content>
 
             <p>输入的内容</p>
             {{ username }}
@@ -107,8 +107,8 @@
             </ion-list>
 
 
-        </div>
-    </div>
+        </ion-content>
+    </ion-page>
 </template>
 <script>
     import IonItemDivider from "../vonic/components/item/item";

@@ -1,63 +1,73 @@
 <template>
-  <div von-app>
-    <navbar></navbar>
-    <transition name="page" v-on:before-enter="beforePageEnter">
-      <router-view></router-view>
-    </transition>
-  </div>
+    <div class="ion-app" :class="gradeClass">
+        <ion-nav>
+            <transition name="page" v-on:before-enter="beforePageEnter">
+                <router-view></router-view>
+            </transition>
+        </ion-nav>
+    </div>
 </template>
 <script>
-  import Vue from 'vue'
-  import channel from './channel'
-  import Navbar from './Navbar'
+    import Vue from 'vue'
+    import channel from './channel'
+    import IonNav from './nav'
 
-  Vue.directive('nav', {
-    inserted: function (el, binding) {
-      let data = binding.value
-      channel.$emit('UpdateNavbar', data)
+    Vue.directive('nav', {
+        inserted: function (el, binding) {
+            console.log(binding);
+
+            let data = binding.value
+            console.log('directive nav: ', data)
+            channel.$emit('UpdateNavbar', el, data)
+        }
+    })
+
+    export default {
+        components: {
+            IonNav
+        },
+
+        data() {
+            return {
+                gradeClass: 'ios'
+            }
+        },
+
+        created() {
+            console.log('app created')
+
+            // theme-ios for ios, theme-md for android & other
+            if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+                this.gradeClass = 'ios'
+            } else if (/Windows Phone/.test(navigator.userAgent)) {
+                this.gradeClass = 'wp'
+            } else {
+                this.gradeClass = 'md'
+            }
+
+//            document.querySelector('.ion-app').classList.add(this.gradeClass)
+
+            channel.$on('VonicNotification', (data) => {
+                $toast.show(data.message);
+            })
+        },
+
+        mounted() {
+            console.log('app mounted')
+        },
+
+        methods: {
+            beforePageEnter(el) {
+                 console.log('beforePageEnter time:', +new Date())
+            }
+        }
     }
-  })
-
-  export default {
-    components: {
-      Navbar
-    },
-
-    data() {
-      return {
-//        gradeClass: 'theme-ios'
-      }
-    },
-
-    created() {
-//      // theme-ios for ios, theme-md for android & other
-//      if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-//        this.gradeClass = 'theme-ios'
-//      } else if (/Windows Phone/.test(navigator.userAgent)) {
-//        this.gradeClass = 'theme-wp'
-//      } else {
-//        this.gradeClass = 'theme-md'
-//      }
-//
-//      if (window.__page_transition__ == 'ios') {
-//        this.gradeClass = 'theme-ios'
-//        window.__disable_nav_title_transition__ = false
-//      } else if (window.__page_transition__ == 'android') {
-//        this.gradeClass = 'theme-md'
-//        window.__disable_nav_title_transition__ = true
-//      }
-//
-//      document.querySelector('body').className = this.gradeClass
-
-      channel.$on('VonicNotification', (data) => {
-        $toast.show(data.message);
-      })
-    },
-
-    methods: {
-      beforePageEnter(el) {
-        // console.log('beforePageEnter time:', +new Date())
-      }
-    }
-  }
 </script>
+
+
+<style lang="scss">
+    @import './app';
+    @import './app.ios';
+    @import './app.md';
+    @import './app.wp';
+</style>
