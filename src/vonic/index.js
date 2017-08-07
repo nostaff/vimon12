@@ -13,6 +13,7 @@ const DEFAULT_CONFIG = {
 };
 
 import util from "./utils/util";
+DEFAULT_CONFIG.theme = util.theme();
 Vue.prototype.$ionic = util.extend(DEFAULT_CONFIG);
 
 // import VueTonch from "./utils/vue-touch";
@@ -33,7 +34,6 @@ import Select from './components/select'
 import Toggle from './components/toggle'
 import Thumbnail from './components/thumbnail'
 import VonRange from './components/range'
-import VonHeader from './components/header'
 import Badge from './components/badge'
 import FABs from './components/fab'
 
@@ -50,7 +50,6 @@ Vue.component(Select.name, Select)
 Vue.component(Thumbnail.name, Thumbnail)
 Vue.component(Toggle.name, Toggle)
 Vue.component('von-range', VonRange)
-Vue.component('von-header', VonHeader)
 Vue.component(Badge.name, Badge)
 Vue.component(FABs.name, FABs)
 

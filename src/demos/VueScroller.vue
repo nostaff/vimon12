@@ -3,7 +3,7 @@
        v-nav="{
       title: 'Vue Scroller',
       showBackButton: true,
-      showMenuButton: true,
+      showMoreButton: true,
       menuButtonText: menuButtonText,
       onMenuButtonClick: toVueScrollerRepo
     }">

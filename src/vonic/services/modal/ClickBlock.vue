@@ -2,7 +2,7 @@
   <div von-modal-click-block class="click-block" :class="{'click-block-hide': state == 0}"></div>
 </template>
 <script>
-  import channel from './channel'
+  import channel from '../channel'
 
   export default {
     data() {

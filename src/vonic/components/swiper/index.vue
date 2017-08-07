@@ -1,8 +1,12 @@
 <script>
-  import Swiper from './Swiper.vue'
-  import SwiperItem from './SwiperItem.vue'
+  import Swiper from './swiper.vue'
+  import SwiperItem from './swiper-item.vue'
   export default {
     Swiper,
     SwiperItem
   }
 </script>
+
+<style lang="scss">
+    @import "./swiper.scss";
+</style>

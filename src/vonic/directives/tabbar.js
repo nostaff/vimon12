@@ -1,9 +1,9 @@
 import assign from 'object-assign'
 import Vue from 'vue'
-import Tabbar from './Tabbar.vue'
-import channel from './channel'
+import Tabbar from '../components/tabbar/index.vue'
+import channel from '../services/channel'
 
-import {createElement} from '../utils'
+import {createElement} from '../services/utils'
 
 let _vm = undefined;
 
@@ -59,7 +59,7 @@ Vue.directive('tabbar-item-index', {
 })
 
 channel.$on('hideTabbar', () => {
-    console.log('hideTabbar', _vm.$el)
+    // console.log('on hideTabbar')
     if (_vm) {
         _vm.$destroy()
         _container.removeChild(_vm.$el)

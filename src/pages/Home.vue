@@ -1,10 +1,10 @@
 <template>
-    <div class="home page has-navbar has-tabbar" v-tabbar-item-index="0">
+    <ion-page class="home" v-tabbar-item-index="0">
         <ion-navbar title="心理无忧">
             <img src="../assets/logo.png" width="30" height="30" slot="left-item">
         </ion-navbar>
 
-        <div class="page-content">
+        <ion-content class="">
             <swiper ref="swiper"
                     autoplay="true"
                     interval="3000"
@@ -63,8 +63,8 @@
                 <expert-list title="心理测试" :expert-lists="travelListIndex" more-link="/experts"></expert-list>
             </div>
 
-        </div>
-    </div>
+        </ion-content>
+    </ion-page>
 </template>
 
 <script>

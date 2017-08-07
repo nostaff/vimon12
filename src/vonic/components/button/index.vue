@@ -61,13 +61,12 @@
             colorClass: function() {
                 if (this.isButtonCover)
                     return '';
-                let theme = this.$ionic.theme;
                 switch (this.style) {
                     case 'outline':
                     case 'clear':
-                        return `${this.prefix}-${this.style}-${theme}-${this.color}`;
+                        return `${this.prefix}-${this.style}-${this.theme}-${this.color}`;
                     default:
-                        return `${this.prefix}-${theme}-${this.color}`;
+                        return `${this.prefix}-${this.theme}-${this.color}`;
                 }
             },
             roundClass: function() {

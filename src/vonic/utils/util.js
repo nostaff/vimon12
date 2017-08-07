@@ -197,6 +197,16 @@ export default {
             return false;
         }
         return val;
+    },
+    theme() {
+        // theme-ios for ios, theme-md for android & other
+        if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+            return 'ios'
+        } else if (/Windows Phone/.test(navigator.userAgent)) {
+            return 'wp'
+        } else {
+            return 'md'
+        }
     }
 
 };

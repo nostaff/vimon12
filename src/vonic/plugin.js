@@ -5,15 +5,17 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
+import './directives/tabbar.js'
+import './directives/navgation.js'
+
 import './components/backdrop'
 import './services/loading'
 // import './services/alert/radio.button.vue'
 // import './services/popup/dialog.js'
 import './services/popup/index.js'
 import './services/cascadepanel/index.js'
-import './services/tabbar/index.js'
 import './services/sidebar/index.js'
-// import './services/modal/index.js'
+// import './services/modal/tabbar.js'
 
 import './components/actionsheet/index.js'
 import './components/alert/index.js'
@@ -41,12 +43,10 @@ let VonicAppConfig = {
 
     // Router Options
     routerOptions: {},
-
-    pushMethod: 'push',
 }
 
 const nextDirection = (direction) => {
-    let el = document.querySelector('.ion-nav')
+    let el = document.querySelector('.ion-app')
     if (el) el.setAttribute('transition-direction', direction);
 }
 
@@ -90,11 +90,11 @@ class VonicApp {
             components: {
                 IonApp
             },
-            propsData: {
-                meta: {
-                    pushMethod: VonicAppConfig.pushMethod
-                }
-            },
+            // propsData: {
+            //     meta: {
+            //         pushMethod: VonicAppConfig.pushMethod
+            //     }
+            // },
             methods: {
                 setTitle: setTitle,
             }
@@ -106,17 +106,17 @@ class VonicApp {
 
         window.$app = app
 
-        let pushMethod = window.__push_method__ = VonicAppConfig.pushMethod
-        router['_' + pushMethod] = router[pushMethod]
+        // let pushMethod = window.__push_method__ = VonicAppConfig.pushMethod
+        // router['_' + pushMethod] = router[pushMethod]
 
-        router.forward = router[pushMethod] = (target) => {
+        router.forward = (target) => {
             nextDirection('forward')
-            setTimeout(() => { router['_' + pushMethod](target) })
+            setTimeout(() => { router.push(target) })
         }
 
         router.back = (target) => {
             nextDirection('back')
-            setTimeout(() => { router['_' + pushMethod](target) })
+            setTimeout(() => { router.push(target) })
         }
 
         window.$router = router
@@ -154,7 +154,7 @@ export default {
 
     setConfig(name, value) {
         if (CONFIG_LIST.indexOf(name) == -1) throw 'Unknown config name.'
-        if (name == 'pushMethod' && value != 'push' && value != 'replace') throw 'Wrong value for config [pushMethod]'
+        // if (name == 'pushMethod' && value != 'push' && value != 'replace') throw 'Wrong value for config [pushMethod]'
         VonicAppConfig[name] = value
     },
 

@@ -1,11 +1,11 @@
 <template>
-    <div class="tabs" style="z-index:20"
-         :class="['tabs-'+theme, colorClass]"
+    <div style="z-index:20"
+         :class="['tabs', 'tabs-'+theme, colorClass]"
          :selectedIndex="selectedIndex"
          :tabslayout="tabsLayout"
          :tabsplacement="tabsPlacement"
          :tabshighlight="tabsHighlight">
-        <div class="tabbar" :class="[state?'show-tabbar':'']" role="tablist" style="z-index:20">
+        <div class="tabbar" :class="[state?'show-tabbar':'']" role="tablist">
             <a role="tab" class="disable-hover tab-button" href="#" :aria-selected="index===selectedIndex" v-for="(item, index) in items"
                :class="[item.text?'has-title':'', item.icon?'has-icon':'', item.badge?'has-badge':'']"
                @click="itemClicked(index)">
@@ -61,22 +61,12 @@
         },
 
         mounted() {
-            this.$el.setAttribute('von-tabbar', '')
             this.show()
-            setTimeout(() => {
-                this.$el.classList.add('fixed')
-            }, 600)
-        },
-
-        beforeDestroy() {
-            if (this.$ionic.theme == 'ios')
-                window.__disable_nav_title_transition__ = false
-
         },
 
         desctoryed() {
             console.log("tabbar desctoryed")
-            document.body.removeChild(this.$el)
+//            document.body.removeChild(this.$el)
         },
 
         methods: {

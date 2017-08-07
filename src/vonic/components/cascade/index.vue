@@ -9,7 +9,7 @@
 <script>
     import axios from 'axios'
     import Vue from 'vue'
-    import channel from '../app/channel'
+    import channel from '../../services/channel'
     import List from '../list'
     import Item from '../item'
 

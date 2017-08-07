@@ -120,6 +120,8 @@ const routes = [
     { path: '/demo/advanced/modal', component: DemoModal },
     { path: '/demo/advanced/datepicker', component: DemoDatepicker },
 
+    {path: '*', component: NotFound}
+
 ]
 
 export default  routes

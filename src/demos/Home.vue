@@ -1,6 +1,6 @@
 <template>
-    <ion-page v-tabbar-item-index="4">
-        <ion-navbar title="Vonic组件"></ion-navbar>
+    <ion-page v-tabbar-item-index="4" v-nav="{title: 'Vonic组件', showBackButton: false, showMoreButton: true}">
+        <!--<ion-navbar title="Vonic组件"></ion-navbar>-->
 
         <ion-content>
             <!-- Basic -->
@@ -119,14 +119,7 @@
 </template>
 
 <script>
-    import IonPage from "../vonic/components/page/page";
-    import IonHeader from "../vonic/components/app/header";
-    import IonNavbar from "../vonic/components/toolbar/navbar";
     export default {
-        components: {
-            IonNavbar,
-            IonHeader,
-            IonPage},
         data() {
             return {
                 sidebar: undefined,

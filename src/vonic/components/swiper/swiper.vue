@@ -17,7 +17,7 @@
 <script>
     import Vue from 'vue'
     import Swiper from './core.js'
-    import SwiperPagination from './SwiperPagination'
+    import SwiperPagination from './swiper-pagination'
 
     const re = /^[\d]+(\%)?$/
 

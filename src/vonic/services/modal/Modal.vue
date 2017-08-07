@@ -34,7 +34,7 @@
 </template>
 <script>
   import Vue from 'vue'
-  import channel from './channel'
+  import channel from '../channel'
 
   const show_modal_animate_dur = 400
   const hide_modal_animate_dur = 250

@@ -1,6 +1,8 @@
 <template>
     <div class="ion-tabs" v-tabbar="{'items': tabItems, color: 'secondary', onItemClick: itemClicked}">
+    <div class="ion-tab show-tab">
         <router-view></router-view>
+    </div>
     </div>
 </template>
 
@@ -46,7 +48,7 @@
         },
 
         beforeDestroy() {
-            console.log('index beforeDestroy')
+//            console.log('index beforeDestroy')
             $tabbar.$emit('hideTabbar')
         }
     }
