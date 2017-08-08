@@ -51,7 +51,7 @@ const nextDirection = (direction) => {
 }
 
 const setTitle = (title) => {
-    let el = document.querySelector('[von-navbar="active"] > .ion-title > span')
+    let el = document.querySelector('.ion-navbar .toolbar-title')
     if (el) el.textContent = title
 }
 
@@ -81,20 +81,11 @@ class VonicApp {
         if (typeof VonicAppConfig.afterEach == 'function')
             router.afterEach(VonicAppConfig.afterEach)
 
-        window.__disable_nav_title_transition__ = false
-        if (!is_ios())
-            window.__disable_nav_title_transition__ = true
-
         let appOptions = {
             router,
             components: {
                 IonApp
             },
-            // propsData: {
-            //     meta: {
-            //         pushMethod: VonicAppConfig.pushMethod
-            //     }
-            // },
             methods: {
                 setTitle: setTitle,
             }
@@ -123,8 +114,7 @@ class VonicApp {
     }
 }
 
-const CONFIG_LIST = ['beforeEach', 'afterEach', 'routerOptions', 'pushMethod',
-    'disableNavTitleTransition', 'pageTransition']
+const CONFIG_LIST = ['beforeEach', 'afterEach', 'routerOptions']
 
 export default {
     install(Vue, options) {

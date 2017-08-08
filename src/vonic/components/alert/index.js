@@ -4,7 +4,7 @@ import Prompt from './prompt.vue'
 import AlertRadio from './alert.radio.vue'
 import AlertCheckbox from './alert.checkbox.vue'
 
-import {createElement} from '../../services/utils'
+import {createElement} from '../../utils/utils'
 
 let vm = undefined
 

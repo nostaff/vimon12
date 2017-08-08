@@ -1,8 +1,16 @@
 <template>
-    <div class="ion-tabs" v-tabbar="{'items': tabItems, color: 'secondary', onItemClick: itemClicked}">
-    <div class="ion-tab show-tab">
-        <router-view></router-view>
-    </div>
+    <!--<div class="app-root" v-tabbar="{'items': tabItems, color: 'secondary', onItemClick: itemClicked}">-->
+        <!--<ion-tab slot="tab-content" role="tabpanel">-->
+        <!--<router-view></router-view>-->
+        <!--</ion-tab>-->
+    <!--</div>-->
+    <div class="app-root">
+        <ion-tabs color="secondary">
+            <ion-tabbar :items="tabItems" :onItemClick="itemClicked"></ion-tabbar>
+            <ion-tab role="tabpanel">
+                <router-view></router-view>
+            </ion-tab>
+        </ion-tabs>
     </div>
 </template>
 
@@ -43,12 +51,11 @@
 
         methods: {
             itemClicked(menuIndex) {
-                console.log(menuIndex)
+                console.log('itemClicked', menuIndex)
             },
         },
 
         beforeDestroy() {
-//            console.log('index beforeDestroy')
             $tabbar.$emit('hideTabbar')
         }
     }

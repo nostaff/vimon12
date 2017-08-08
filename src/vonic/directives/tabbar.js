@@ -1,17 +1,14 @@
 import assign from 'object-assign'
 import Vue from 'vue'
 import Tabbar from '../components/tabbar/index.vue'
-import channel from '../services/channel'
+import channel from '../utils/channel'
 
-import {createElement} from '../services/utils'
+import {createElement} from '../utils/utils'
 
 let _vm = undefined;
 
-let _container = undefined;
-
 Vue.directive('tabbar', {
     inserted: function (el, binding) {
-        _container = el;
         setTimeout(() => {
             let props = {}
             let data = binding.value
@@ -19,7 +16,7 @@ Vue.directive('tabbar', {
             if (data.color) props.color = data.color
             if (data.onItemClick) props.onItemClick = data.onItemClick
 
-            createElement('ion-tabbar', el)
+            createElement('ion-tabbar', el, true)
 
             _vm = new Vue(assign({}, Tabbar, {
                 data: {
@@ -52,24 +49,27 @@ function vmReady() {
 
 Vue.directive('tabbar-item-index', {
     inserted: function (el, binding) {
-        vmReady().then(() => {
-            _vm.selectedItem(binding.value)
-        })
+        channel.$emit('selectedItem', binding.value)
+        // vmReady().then(() => {
+        //     _vm.selectedItem(binding.value)
+        // })
     }
 })
+//
+// channel.$on('hideTabbar', () => {
+//     if (_vm) {
+//         _vm.$destroy()
+//         // _container.removeChild(_vm.$el)
+//         _vm.$el.parentNode.removeChild(_vm.$el)
+//
+//     }
+// })
+//
+// channel.$on('setBadgeNum', (index, num) => {
+//     if (_vm) {
+//         _vm.setBadgeNum(index, num)
+//     }
+// })
 
-channel.$on('hideTabbar', () => {
-    // console.log('on hideTabbar')
-    if (_vm) {
-        _vm.$destroy()
-        _container.removeChild(_vm.$el)
-    }
-})
-
-channel.$on('updateTabbarBadge', (itemIndex, num) => {
-    if (_vm) {
-        _vm.setBadgeNum(itemIndex, num)
-    }
-})
 
 window.$tabbar = channel

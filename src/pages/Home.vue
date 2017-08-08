@@ -98,9 +98,7 @@
                 'travelListIndex'
             ])
         },
-        mounted(){
 
-        },
         methods: {
             onCellClick(cellIndex) {
                 console.log('cell ' + cellIndex + ' clicked');

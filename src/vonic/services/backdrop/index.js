@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Backdrop from './backdrop'
-import {createElement} from '../utils'
+import {createElement} from '../../utils/utils'
 
 class IonBackdrop {
   constructor() {

@@ -19,7 +19,7 @@
             <div class="toolbar-content" :class="['toolbar-content-'+theme]">
                 <slot>
                     <div class="ion-title" :class="['title-'+theme]">
-                        <div class="toolbar-title" :class="['toolbar-title-'+theme]"><span v-text="title"></span></div>
+                        <div class="toolbar-title" :class="['toolbar-title-'+theme]">{{title}}</div>
                     </div>
                 </slot>
             </div>

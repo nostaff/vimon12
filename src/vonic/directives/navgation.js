@@ -1,18 +1,17 @@
 import assign from 'object-assign'
 import Vue from 'vue'
 import Navbar from '../components/toolbar/navbar.vue'
-import channel from '../services/channel'
+import channel from '../utils/channel'
+
+import {createElement} from '../utils/utils'
 
 let _vm = undefined;
-let _container = undefined;
 
 Vue.directive('nav', {
     inserted: function (el, binding) {
-
-        _container = el
         setTimeout(() => {
-            let element = document.createElement('div')
-            _container.insertBefore(element, _container.firstChild)
+
+            createElement('ion-navigation', el, true)
 
             let props = {
                 showBack: false,
@@ -36,7 +35,7 @@ Vue.directive('nav', {
                     state: 1
                 },
                 propsData: props
-            })).$mount(element)
+            })).$mount('[ion-navigation]')
         })
     }
 })
@@ -45,7 +44,8 @@ channel.$on('hideNavbar', () => {
     console.log('hideNavbar', _vm.$el)
     if (_vm) {
         _vm.$destroy()
-        _container.removeChild(_vm.$el)
+        _vm.$el.parentNode.removeChild(_vm.$el)
+        // _container.removeChild(_vm.$el)
     }
 })
 

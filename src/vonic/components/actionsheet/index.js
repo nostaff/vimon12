@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import ActionSheet from './action-sheet.vue'
 
-import {createElement} from '../../services/utils'
+import {createElement} from '../../utils/utils'
 
 class IonActionSheet {
     constructor() {

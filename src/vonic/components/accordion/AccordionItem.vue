@@ -12,7 +12,7 @@
     </ion-list>
 </template>
 <script>
-    import channel from './channel'
+    import channel from '../../utils/channel'
     import List from '../list'
     import Item from '../item'
 

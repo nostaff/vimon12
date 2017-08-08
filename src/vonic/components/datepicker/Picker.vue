@@ -52,7 +52,7 @@
   </div>
 </template>
 <script>
-  import channel from './channel'
+  import channel from '../../utils/channel'
 
   const defaultYears = () => {
     let years = ['','','']

@@ -2,7 +2,7 @@
     <div class="ion-tabs tabs"
          :class="['tabs-'+theme, colorClass]"
          :color="color"
-         :selectedindex="selectedindex"
+         :selectedindex="selectedIndex"
          :tabslayout="tabsLayout"
          :tabsplacement="tabsPlacement"
          :tabshighlight="tabsHighlight">
@@ -27,7 +27,7 @@
             },
             tabsHighlight: {
                 type: Boolean,
-                default: false
+                default: true
             },
             tabsLayout: {
                 type: String,
@@ -47,14 +47,6 @@
                         return `tabs-${this.theme}-${this.color}`;
                 }
             }
-        },
-        mounted () {
-            if (this.$slots['left-item']) {
-                this.$slots['left-item'][0].elm.setAttribute('start', '')
-            }
-            if (this.$slots['right-item']) {
-                this.$slots['right-item'][0].elm.setAttribute('end', '')
-            }
-        },
+        }
     }
 </script>

@@ -19,6 +19,8 @@
     }
 
     export default {
+        name: 'cells',
+
         props: {
             row: {
                 type: [Number, String],

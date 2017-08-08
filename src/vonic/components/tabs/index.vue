@@ -1,10 +1,12 @@
 <script>
     import Tabs from './tabs.vue';
-    import TabItem from './tab-item.vue';
+    import Tab from './tab.vue';
+    import Tabbar from './tabbar.vue';
 
     export default {
         Tabs,
-        TabItem,
+        Tab,
+        Tabbar,
     };
 </script>
 

@@ -119,6 +119,8 @@
 </template>
 
 <script>
+    import channel from '../vonic/utils/channel'
+
     export default {
         data() {
             return {
@@ -128,29 +130,36 @@
         },
 
         mounted() {
-            let template = `
-        <p style="font-size: 13px;">
-        No man is an island,<br>
-        entire of itself.<br>
-        Every man is a piece of the continent,<br>
-        a part of the main.<br>
-        If a clod be washed away by the sea,<br>
-        Europe is the less,<br>
-        as well as if a promontory were,<br>
-        as well as if a manor of thy friend's or of thine own were.<br>
-        Any man's death diminishes me.<br>
-        Because I am involved in mankind.<br>
-        And,<br>
-        therefore,<br>
-        never send to know for whom the bells tolls,<br>
-        it tolls for thee.<br>
-        </p>
-      `
+
+//            let template = `
+//        <p style="font-size: 13px;">
+//        No man is an island,<br>
+//        entire of itself.<br>
+//        Every man is a piece of the continent,<br>
+//        a part of the main.<br>
+//        If a clod be washed away by the sea,<br>
+//        Europe is the less,<br>
+//        as well as if a promontory were,<br>
+//        as well as if a manor of thy friend's or of thine own were.<br>
+//        Any man's death diminishes me.<br>
+//        Because I am involved in mankind.<br>
+//        And,<br>
+//        therefore,<br>
+//        never send to know for whom the bells tolls,<br>
+//        it tolls for thee.<br>
+//        </p>
+//      `
 //            this.sidebar = $sidebar.fromTemplate(template, {position: 'left'})
 
 //            this.sidebarRight = $sidebar.fromTemplate('<h5>右边栏</h5>', {position: 'right'})
 
-            // setTimeout(() => {$app.setTitle('标题文字')}, 1000)
+//             setTimeout(() => {$app.setTitle('标题文字')}, 100)
+
+            channel.$emit('selectedItem', 4)
+
+            channel.$emit('VonicNotification', {
+                message: '请先选择'
+            })
 
         },
 

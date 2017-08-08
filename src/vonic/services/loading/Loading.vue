@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-  import {removeElement} from '../utils'
+  import {removeElement} from '../../utils/utils'
 
   function preventDefault (e) {
     e.preventDefault()

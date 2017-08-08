@@ -10,7 +10,7 @@
 <script>
   import Vue from 'vue'
   import Picker from './Picker.vue'
-  import channel from './channel'
+  import channel from '../../utils/channel'
 
   const formatDate = (value, format) => {
     switch(format) {

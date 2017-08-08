@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import {createElement, timeout} from '../utils'
+import {createElement, timeout} from '../../utils/utils'
 import CascadePanel from '../../components/cascade/CascadePanel.vue'
 
 class CascadePanelService {

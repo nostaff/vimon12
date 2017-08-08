@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Loading from './Loading'
-import {createElement, timeout} from '../utils'
+import {createElement, timeout} from '../../utils/utils'
 
 function VonicLoading() {
   let vm = undefined

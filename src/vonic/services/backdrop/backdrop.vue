@@ -2,7 +2,7 @@
     <div class="ion-backdrop visible" :class="{'active': state == 1}"></div>
 </template>
 <script>
-    import {timeout, removeElement} from '../utils'
+    import {timeout, removeElement} from '../../utils/utils'
 
     // transition duration
     const duration = 200

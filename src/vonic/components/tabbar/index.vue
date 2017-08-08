@@ -1,6 +1,6 @@
 <template>
-    <div style="z-index:20"
-         :class="['tabs', 'tabs-'+theme, colorClass]"
+    <div class="ion-tabs tabs"
+         :class="['tabs-'+theme, colorClass]"
          :selectedIndex="selectedIndex"
          :tabslayout="tabsLayout"
          :tabsplacement="tabsPlacement"
@@ -15,6 +15,7 @@
                 <div class="button-effect"></div>
             </a>
         </div>
+        <slot name="tab-content"></slot>
         <div tab-portal=""></div>
     </div>
 </template>
@@ -53,7 +54,7 @@
             },
             tabsPlacement: {
                 type: String,
-                default: 'bottom'       //top, bottom.
+                default: 'bottom'       // top, bottom.
             },
             onItemClick: {
                 type: Function
@@ -64,15 +65,8 @@
             this.show()
         },
 
-        desctoryed() {
-            console.log("tabbar desctoryed")
-//            document.body.removeChild(this.$el)
-        },
-
         methods: {
             itemClicked(index) {
-                window.__disable_nav_title_transition__ = true
-
                 this.selectedIndex = index
                 if (this.items[index].path)
                     $router.forward({ path: this.items[index].path })
@@ -83,6 +77,7 @@
             },
 
             selectedItem(index) {
+                console.log('selectedItem', index)
                 this.selectedIndex = index
             },
 
@@ -93,6 +88,7 @@
             setBadgeNum(itemIndex, num) {
                 this.items[itemIndex].bage = num
             }
+
         },
 
         computed: {
@@ -104,6 +100,9 @@
                         return `tabs-${this.theme}-${this.color}`;
                 }
             }
+        },
+        destroyed() {
+            this.$el.parentNode.removeChild(this.$el)
         },
     }
 </script>

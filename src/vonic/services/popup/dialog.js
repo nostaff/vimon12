@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import {createElement} from '../utils'
+import {createElement} from '../../utils/utils'
 
 import Alert from './Alert'
 import AlertIOS from './AlertIOS'

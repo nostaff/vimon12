@@ -1,9 +1,14 @@
 
 
-const createElement = (marker, parent) => {
+const createElement = (marker, parent, setFirstChild = false) => {
     let el = document.createElement('div')
     el.setAttribute(marker, '')
-    parent ? parent.appendChild(el) : document.body.appendChild(el)
+
+    let container = parent || document.body;
+    if (setFirstChild)
+        container.insertBefore(el, container.firstChild)
+    else
+        container.appendChild(el)
 }
 
 const removeElement = (marker) => {

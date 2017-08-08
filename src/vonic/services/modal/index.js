@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import ClickBlock from './ClickBlock'
 import Modal from './Modal.vue'
-import channel from '../channel'
+import channel from '../../utils/channel'
 
 const createElement = (marker, root, tag) => {
   let target = document.querySelector(root) || document.body

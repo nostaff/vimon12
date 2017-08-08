@@ -6,23 +6,16 @@
     </div>
 </template>
 <script>
-    import Vue from 'vue'
+    import channel from '../../utils/channel'
     import ThemeMixins from '../../themes/theme.mixins';
-
-    let vm = new Vue();
 
     export default {
         name: 'ion-index',
         mixins: [ThemeMixins],
 
         created() {
-//            console.log('app created')
-            vm.$on('VonicNotification', (data) => {
+            channel.$on('VonicNotification', (data) => {
                 $toast.show(data.message);
-            })
-
-            vm.$on('UpdateNavbar', (el, data) => {
-                console.log('UpdateNavbar', data)
             })
         },
 

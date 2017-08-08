@@ -1,109 +1,83 @@
 <template>
-    <div class="toolbar" :class="['toolbar-'+theme, colorClass]">
-        <div class="toolbar-background" :class="['toolbar-background-'+theme]"></div>
-        <slot name="left-item"></slot>
-        <slot name="right-item"></slot>
-        <div class="toolbar-content" :class="['toolbar-content-'+theme]">
-            <slot></slot>
-        </div>
-    </div>
-
-    <div class="ion-tabs tabs"
-         :class="['tabs-'+theme, colorClass]"
-         :color="color"
-         :selectedindex="selectedindex"
-         :tabslayout="tabsLayout"
-         :tabsplacement="tabsPlacement"
-         :tabshighlight="tabsHighlight"
-    >
-        <div class="tabbar" role="tablist">
-            <a class="tab-button has-title has-icon has-badge disable-hover"
-                                                     href="#" role="tab" id="tab-t3-0" aria-controls="tabpanel-t3-0"
-                                                     aria-selected="false">
-            <ion-icon class="tab-button-icon icon icon-ios ion-ios-call-outline" role="img"
-                      aria-label="call outline"></ion-icon><span class="tab-button-text">Recents</span>
-            <ion-badge class="tab-badge badge badge-ios badge-ios-light">47</ion-badge>
+    <div class="ion-tabbar tabbar" :class="[state?'show-tabbar':'']" role="tablist">
+        <a role="tab" class="disable-hover tab-button" href="#" :aria-selected="index===selectedIndex" v-for="(item, index) in items"
+           :class="[item.text?'has-title':'', item.icon?'has-icon':'', item.badge?'has-badge':'']"
+           @click="itemClicked(index)">
+            <ion-icon class="tab-button-icon" :name="item.icon" v-if="item.icon"></ion-icon>
+            <span class="tab-button-text">{{item.text}}</span>
+            <ion-badge class="tab-badge" :color="item.badgeColor?item.badgeColor:'danger'" v-if="item.badge">{{item.badge}}</ion-badge>
             <div class="button-effect"></div>
         </a>
-            <a class="tab-button has-title has-icon disable-hover" href="#" role="tab" id="tab-t3-1"
-               aria-controls="tabpanel-t3-1" aria-selected="true">
-            <ion-icon class="tab-button-icon icon icon-ios ion-ios-heart" role="img" aria-label="heart"></ion-icon>
-            <span class="tab-button-text">Favorites</span>
-            <div class="button-effect"></div>
-        </a><a class="tab-button has-title has-icon disable-hover" href="#" role="tab" id="tab-t3-2"
-               aria-controls="tabpanel-t3-2" aria-selected="false">
-            <ion-icon class="tab-button-icon icon icon-ios ion-ios-settings-outline" role="img"
-                      aria-label="settings outline"></ion-icon><span class="tab-button-text">Settings</span>
-
-            <div class="button-effect"></div>
-        </a>
-            <div class="tab-highlight"></div>
-        </div>
-        <ion-tab role="tabpanel" tabbadge="47" tabbadgestyle="light" tabicon="call" tabtitle="Recents"
-                 id="tabpanel-t3-0" aria-labelledby="tab-t3-0" aria-hidden="true">
-            <div></div>
-            <div class="nav-decor"></div>
-        </ion-tab>
-        <ion-tab role="tabpanel" tabicon="heart" tabtitle="Favorites" id="tabpanel-t3-1" aria-labelledby="tab-t3-1"
-                 class="show-tab" aria-hidden="false">
-            <div></div>
-            <tab-page class="ion-page show-page" style="z-index: 100;">
-                <div>johnny utah</div>
-            </tab-page>
-            <div class="nav-decor"></div>
-        </ion-tab>
-        <ion-tab role="tabpanel" tabicon="settings" tabtitle="Settings" id="tabpanel-t3-2" aria-labelledby="tab-t3-2"
-                 aria-hidden="true">
-            <div></div>
-            <div class="nav-decor"></div>
-        </ion-tab>
-        <div tab-portal=""></div>
     </div>
 </template>
 <script>
-    import ThemeMixins from '../../themes/theme.mixins';
+    import channel from '../../utils/channel'
+    import IonIcon from '../../components/icon'
+    import IonBadge from "../../components/badge";
+
+    const re_color = /^#([0-9A-Fa-f]{3})|([0-9A-Fa-f]{6})$/;
+
     export default {
-        name: 'ion-tabs',
-        mixins: [ThemeMixins],
+        name: 'ion-tabbar',
+
+        components: {
+            IonBadge,
+            IonIcon
+        },
+
         data() {
             return {
-                componentName: 'ionTabs'
-            };
+                state: true,
+                selectedIndex: 0,
+            }
         },
+
         props: {
-            selectedIndex: {
-                type: [String, Number],
-                default: 0
+            items: {
+                type: Array,
+                required: true
             },
-            tabsHighlight: {
-                type: Boolean,
-                default: false
-            },
-            tabsLayout: {
-                type: String,
-                default: 'icon-top'      // icon-top, icon-start, icon-end, icon-bottom, icon-hide, title-hide
-            },
-            tabsPlacement: {
-                type: String,
-                default: 'bottom'       //top, bottom.
-            },
+
+            onItemClick: {
+                type: Function
+            }
         },
-        computed: {
-            colorClass: function() {
-                switch (this.color) {
-                    case 'default':
-                        return '';
-                    default:
-                        return `tabs-${this.theme}-${this.color}`;
+
+        mounted() {
+            channel.$on('hideTabbar', () => {
+                this.hide()
+            })
+
+            channel.$on('setBadgeNum', (index, num) => {
+                this.setBadgeNum(index, num)
+            })
+
+            channel.$on('selectedItem', (index) => {
+                this.selectedItem(index)
+            })
+        },
+
+        methods: {
+            itemClicked(index) {
+                this.selectedIndex = index
+                if (this.items[index].path)
+                    $router.forward({ path: this.items[index].path })
+
+                if (this.onItemClick) {
+                    this.onItemClick(index)
                 }
-            }
-        },
-        mounted () {
-            if (this.$slots['left-item']) {
-                this.$slots['left-item'][0].elm.setAttribute('start', '')
-            }
-            if (this.$slots['right-item']) {
-                this.$slots['right-item'][0].elm.setAttribute('end', '')
+            },
+
+            selectedItem(index) {
+                this.selectedIndex = index
+            },
+
+            hide() {
+                this.state = false
+            },
+
+            setBadgeNum(itemIndex, num) {
+                this.items[itemIndex].bage = num
             }
         },
     }
