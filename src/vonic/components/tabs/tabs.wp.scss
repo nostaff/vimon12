@@ -138,10 +138,20 @@ $tabs-wp-tab-icon-size:                 2.4rem !default;
 .tabs-wp[tabsLayout=icon-hide] .tab-button,
 .tabs-wp[tabsLayout=title-hide] .tab-button,
 .tabs-wp .tab-button.icon-only,
-.tabs-wp .tab-button.has-title-only {
+.tabs-wp .tab-button.title-only {
   @include padding(6px, 10px);
 }
 
+
+//
+
+.tabs-wp .scroll-content {
+  margin-bottom: $tabs-wp-tab-min-height;
+}
+
+.tabs-wp[tabsPlacement=top] .scroll-content {
+  margin-top: $tabs-wp-tab-min-height;
+}
 
 // Windows Tabbar Color Mixin
 // --------------------------------------------------

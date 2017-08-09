@@ -1,10 +1,7 @@
 <template>
     <div class="ion-tabs tabs"
          :class="['tabs-'+theme, colorClass]"
-         :selectedIndex="selectedIndex"
-         :tabslayout="tabsLayout"
-         :tabsplacement="tabsPlacement"
-         :tabshighlight="tabsHighlight">
+         :selectedIndex="selectedIndex">
         <div class="tabbar" :class="[state?'show-tabbar':'']" role="tablist">
             <a role="tab" class="disable-hover tab-button" href="#" :aria-selected="index===selectedIndex" v-for="(item, index) in items"
                :class="[item.text?'has-title':'', item.icon?'has-icon':'', item.badge?'has-badge':'']"
@@ -44,18 +41,6 @@
         },
 
         props: {
-            tabsHighlight: {
-                type: Boolean,
-                default: false
-            },
-            tabsLayout: {
-                type: String,
-                default: 'icon-top'      // icon-top, icon-start, icon-end, icon-bottom, icon-hide, title-hide
-            },
-            tabsPlacement: {
-                type: String,
-                default: 'bottom'       // top, bottom.
-            },
             onItemClick: {
                 type: Function
             }

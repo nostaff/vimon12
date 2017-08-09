@@ -1,5 +1,5 @@
 <template>
-    <header class="ion-header header" :class="['header-'+theme]">
+    <header class="ion-header header" :class="['header-'+theme]" v-show="state">
         <div class="ion-navbar toolbar" :class="['toolbar-'+theme, colorClass]">
             <div class="toolbar-background" :class="['toolbar-background-'+theme]"></div>
             <slot name="left-item">
@@ -34,7 +34,8 @@
         mixins: [ThemeMixins],
         data() {
             return {
-                componentName: 'ionToolbar'
+                componentName: 'ionToolbar',
+                state: 1
             };
         },
         props: {

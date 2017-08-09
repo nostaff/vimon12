@@ -9,10 +9,6 @@ $content-ios-outer-background:          #efeff4 !default;
 /// @prop - Background color of the content when making transition
 $content-ios-transition-background:     #000 !default;
 
-.header-ios ~ .content-ios {
-  margin-top: $toolbar-ios-height;
-}
-
 .content-ios {
   color: $text-ios-color;
   background-color: $background-ios-color;
@@ -60,4 +56,18 @@ $content-ios-transition-background:     #000 !default;
 
 .content-ios:not([no-bounce]) > .scroll-content::after {
   top: -1px;
+}
+
+
+// After a Header Toolbar
+
+.header-ios ~ .content-ios > .scroll-content {
+  margin-top: $toolbar-ios-height;
+}
+
+
+// In a Tabs
+
+.tabs-ios .scroll-content {
+
 }

@@ -18,5 +18,8 @@
                 default: true
             },
         },
+        mounted () {
+            console.log(this.$parent)
+        }
     }
 </script>

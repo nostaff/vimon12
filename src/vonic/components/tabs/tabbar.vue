@@ -1,11 +1,11 @@
 <template>
     <div class="ion-tabbar tabbar" :class="[state?'show-tabbar':'']" role="tablist">
-        <a role="tab" class="disable-hover tab-button" href="#" :aria-selected="index===selectedIndex" v-for="(item, index) in items"
-           :class="[item.text?'has-title':'', item.icon?'has-icon':'', item.badge?'has-badge':'']"
+        <a role="tab" class="disable-hover tab-button" :aria-selected="index === selectedIndex" v-for="(item, index) in items"
+           :class="[hasTitle(item)?'has-title':'icon-only', hasIcon(item)?'has-icon':'title-only', item.badge?'has-badge':'']"
            @click="itemClicked(index)">
-            <ion-icon class="tab-button-icon" :name="item.icon" v-if="item.icon"></ion-icon>
-            <span class="tab-button-text">{{item.text}}</span>
-            <ion-badge class="tab-badge" :color="item.badgeColor?item.badgeColor:'danger'" v-if="item.badge">{{item.badge}}</ion-badge>
+            <ion-icon class="tab-button-icon" :name="item.icon" v-if="hasIcon(item)"></ion-icon>
+            <span class="tab-button-text" v-if="hasTitle(item)">{{item.text}}</span>
+            <ion-badge class="tab-badge" :color="badgeColor(item)" v-if="item.badge">{{item.badge}}</ion-badge>
             <div class="button-effect"></div>
         </a>
     </div>
@@ -14,8 +14,6 @@
     import channel from '../../utils/channel'
     import IonIcon from '../../components/icon'
     import IonBadge from "../../components/badge";
-
-    const re_color = /^#([0-9A-Fa-f]{3})|([0-9A-Fa-f]{6})$/;
 
     export default {
         name: 'ion-tabbar',
@@ -28,7 +26,7 @@
         data() {
             return {
                 state: true,
-                selectedIndex: 0,
+                selectedIndex: this.value
             }
         },
 
@@ -36,6 +34,21 @@
             items: {
                 type: Array,
                 required: true
+            },
+
+            iconOnly: {
+                type: Boolean,
+                default: false
+            },
+
+            titleOnly: {
+                type: Boolean,
+                default: false
+            },
+
+            value: {
+                type: Number,
+                default: 0
             },
 
             onItemClick: {
@@ -58,10 +71,20 @@
         },
 
         methods: {
+            hasIcon (item) {
+                return item.icon && !this.titleOnly
+            },
+
+            hasTitle (item) {
+                return item.text && !this.iconOnly
+            },
+
+            badgeColor (item) {
+                return item.badgeColor || 'default'
+            },
+
             itemClicked(index) {
                 this.selectedIndex = index
-                if (this.items[index].path)
-                    $router.forward({ path: this.items[index].path })
 
                 if (this.onItemClick) {
                     this.onItemClick(index)
@@ -79,6 +102,12 @@
             setBadgeNum(itemIndex, num) {
                 this.items[itemIndex].bage = num
             }
+        },
+
+        watch: {
+            value (newValue) {
+                this.selectedIndex = newValue
+            },
         },
     }
 </script>

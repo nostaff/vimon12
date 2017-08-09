@@ -30,9 +30,7 @@ Vue.directive('nav', {
 
             _vm = new Vue(assign({}, Navbar, {
                 data: {
-                    items: options.items,
-                    selectedIndex: options.selectedIndex,
-                    state: 1
+                    state: options.hideNavbar && options.hideNavbar == true ? 0 : 1
                 },
                 propsData: props
             })).$mount('[ion-navigation]')

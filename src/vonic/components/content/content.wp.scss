@@ -27,3 +27,12 @@
 // --------------------------------------------------
 
 @include content-margin($content-wp-margin);
+
+
+
+.header-wp ~ .content-wp > .scroll-content {
+  margin-top: $toolbar-wp-height;
+}
+
+
+

@@ -1,6 +1,6 @@
 import assign from 'object-assign'
 import Vue from 'vue'
-import Tabbar from '../components/tabbar/index.vue'
+import Tabbar from '../components/tabs/tabbar.vue'
 import channel from '../utils/channel'
 
 import {createElement} from '../utils/utils'

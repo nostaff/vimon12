@@ -6,7 +6,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 import './directives/tabbar.js'
-import './directives/navgation.js'
+import './directives/navigation.js'
 
 import './components/backdrop'
 import './services/loading'
@@ -62,7 +62,7 @@ class VonicApp {
     }
 
     start() {
-        const App = Vue.extend(IonApp)
+        // const App = Vue.extend(IonApp)
 
         let routerOptions = assign(
             {},

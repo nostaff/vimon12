@@ -275,7 +275,7 @@ $tabs-md-tab-icon-size:                       2.4rem !default;
 .tabs-md[tabsLayout=icon-hide] .tab-button,
 .tabs-md[tabsLayout=title-hide] .tab-button,
 .tabs-md .tab-button.icon-only,
-.tabs-md .tab-button.has-title-only {
+.tabs-md .tab-button.title-only {
   @include padding(0, 10px);
 }
 
@@ -306,6 +306,15 @@ $tabs-md-tab-icon-size:                       2.4rem !default;
   top: 0;
 }
 
+//
+
+.tabs-md .scroll-content {
+  margin-bottom: $tabs-md-tab-min-height;
+}
+
+.tabs-md[tabsPlacement=top] .scroll-content {
+  margin-top: $tabs-md-tab-min-height;
+}
 
 // Material Design Tabs Color Mixin
 // --------------------------------------------------
