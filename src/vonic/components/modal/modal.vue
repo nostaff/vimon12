@@ -14,6 +14,7 @@
     import ThemeMixins from '../../themes/theme.mixins';
     import IonBackdrop from "../backdrop/backdrop";
     export default {
+        name:'ion-modal',
         mixins: [ThemeMixins],
         components: {
             IonBackdrop

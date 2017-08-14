@@ -1,45 +1,66 @@
 <template>
-  <ion-page v-nav="{title: '滑块', showBackButton: true}">
-    <ion-content class="padding-top">
-      <von-range
-        v-model="volume"
-        :min="min"
-        :max="max"
-      ></von-range>
+    <ion-page v-nav="{title: '滑块', showBackButton: true}">
+        <ion-content class="padding-top outer-content">
 
-      <div class="padding">
-        value: {{ volume }}
-      </div>
+            <ion-list>
+                <ion-list-header>
+                    Brightness
+                    <ion-badge slot="item-end">{{brightness}}</ion-badge>
+                </ion-list-header>
+                <ion-item>
+                    <ion-range slot="item-content" v-model="brightness">
+                        <ion-icon slot="range-left" small name="sunny"></ion-icon>
+                        <ion-icon slot="range-right" name="sunny"></ion-icon>
+                    </ion-range>
+                </ion-item>
+            </ion-list>
 
-      <von-range
-        v-model="volume2"
-        :min="min"
-        :max="max"
-        theme="balanced"
-      >
-        <i class="icon ion-volume-low" slot="text-left"></i>
-        <i class="icon ion-volume-high" slot="text-right"></i>
-      </von-range>
+            <ion-list>
+                <ion-list-header>
+                    Saturation
+                    <ion-badge slot="item-end" color="secondary">{{saturation}}</ion-badge>
+                </ion-list-header>
+                <ion-item>
+                    <ion-range slot="item-content" v-model="saturation" color="secondary" :min="-200" :max="200"></ion-range>
+                </ion-item>
+            </ion-list>
 
-      <div class="padding">
-        volume: {{ volume2 }}
-      </div>
+            <ion-list>
+                <ion-list-header>
+                    Warmth
+                    <ion-badge slot="item-end" color="danger">{{temperature}}</ion-badge>
+                </ion-list-header>
+                <ion-item>
+                    <ion-range slot="item-content" v-model="temperature" :snaps="true" :step="100" :min="1000" :max="2000" color="danger">
+                        <ion-icon slot="range-left" small name="thermometer" color="danger"></ion-icon>
+                        <ion-icon slot="range-right" name="thermometer" color="danger"></ion-icon>
+                    </ion-range>
+                </ion-item>
+            </ion-list>
 
-      <div class="padding">
-        Note: Theming capabilities are not available in Chrome due to this <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=582301">issues</a>
-      </div>
-    </ion-content>
-  </ion-page>
+            <ion-list>
+                <ion-list-header>
+                    Structure
+                    <ion-badge slot="item-end" color="dark">{{structure.lower}}</ion-badge>
+                    <ion-badge slot="item-end" color="dark">{{structure.upper}}</ion-badge>
+                </ion-list-header>
+                <ion-item>
+                    <ion-range slot="item-content" v-model="structure" :dual="true" :pin="true" :step="1" :min="0" :max="100" color="dark"> </ion-range>
+                </ion-item>
+            </ion-list>
+
+        </ion-content>
+    </ion-page>
 </template>
 <script>
-  export default {
-    data() {
-      return {
-        volume: 33,
-        volume2: 66,
-        min: 0,
-        max: 100
-      }
+    export default {
+        data() {
+            return {
+                brightness: 35,
+                saturation: 88,
+                temperature: 1300,
+                structure: {lower: 33, upper: 60},
+            }
+        }
     }
-  }
 </script>

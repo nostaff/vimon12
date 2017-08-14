@@ -7,10 +7,49 @@
     </div>
 </template>
 <script>
+    import Vue from 'vue'
     import ThemeMixins from '../../themes/theme.mixins';
     export default {
         name: 'ion-content',
-        mixins: [ThemeMixins]
+        mixins: [ThemeMixins],
+
+        created() {
+            console.log(this.components)
+        },
+
+        mounted() {
+//            console.debug('content mounted')
+            Vue.nextTick(() => {
+                let header = document.querySelector('.ion-header')
+                console.log(header)
+//                let container = this.$el.querySelector('.swiper')
+//                let swiper = new Swiper(container, {
+//                    direction: this.direction,
+//                    autoplay: (this.autoplay == true || this.autoplay == "true"),
+//                    interval: this.interval,
+//                    transitionEnd: (prev, current) => {
+//                        this.activeIndex = current
+//                        if (this.$refs.pagination) {
+//                            this.$refs.pagination.activate(current)
+//                        }
+//
+//                        // add callback
+//                        if (this.callback) {
+//                            this.callback(prev, current)
+//                        }
+//                    }
+//                })
+//
+//                this.swiper = swiper
+//                this.itemCount = swiper.count
+//
+//                Vue.nextTick(() => {
+//                    if (this.$refs.pagination) {
+//                        this.$refs.pagination.init()
+//                    }
+//                })
+            })
+        },
     }
 </script>
 <style lang="scss">

@@ -81,8 +81,8 @@ $text-input-wp-highlight-color-invalid : color($colors-wp, danger) !default;
     top: 27px;
 }
 
-.item-wp.item-label-stacked [item-right],
-.item-wp.item-label-floating [item-right] {
+.item-wp.item-label-stacked [item-end],
+.item-wp.item-label-floating [item-end] {
     align-self: flex-end;
 }
 

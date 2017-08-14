@@ -103,7 +103,7 @@
                     this.activated = false
                 }, 16 * 4);
             },
-            // 过parent是item，做更新
+            // 如果parent是item，做更新
             updateParentItem() {
                 let $parent = this.$parent;
                 if ($parent.$data.componentName === 'ionItem') {

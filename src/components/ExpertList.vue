@@ -2,7 +2,7 @@
     <ion-list>
         <ion-item class="title" v-if="title" :link="moreLink">
             {{title}}
-            <ion-note slot="item-right" v-if="moreLink">更多</ion-note>
+            <ion-note slot="item-end" v-if="moreLink">更多</ion-note>
         </ion-item>
         <ion-item class="expert" v-for="expert in expertLists" :key="expert.id" link="/expert/10001">
             <!--<div class="item-avatar">-->
@@ -13,7 +13,7 @@
                 <!--<p>{{expert.desc}}</p>-->
             <!--</div>-->
 
-            <ion-avatar class="expert-avatar" slot="item-left">
+            <ion-avatar class="expert-avatar" slot="item-start">
                 <img src="http://ionicframework.com/img/docs/blue-album.jpg" alt="心理咨询师王新爱">
             </ion-avatar>
             <h2>王新爱</h2>

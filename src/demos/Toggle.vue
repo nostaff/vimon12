@@ -18,39 +18,39 @@
             <ion-list title="开关按钮">
                 <ion-item class="item-toggle">
                     Frodo Baggins
-                    <ion-toggle slot="item-right" color="primary"></ion-toggle>
+                    <ion-toggle slot="item-end" color="primary"></ion-toggle>
                 </ion-item>
                 <ion-item class="item-toggle">
                     Sam
-                    <ion-toggle slot="item-right" :value="true" color="secondary"></ion-toggle>
+                    <ion-toggle slot="item-end" :value="true" color="secondary"></ion-toggle>
                 </ion-item>
                 <ion-item class="item-toggle">
                     Éowyn
-                    <ion-toggle slot="item-right" :value="true" color="danger" :disabled="true"></ion-toggle>
+                    <ion-toggle slot="item-end" :value="true" color="danger" :disabled="true"></ion-toggle>
                 </ion-item>
                 <ion-item class="item-toggle">
                     Legolas
-                    <ion-toggle slot="item-right" color="light"></ion-toggle>
+                    <ion-toggle slot="item-end" color="light"></ion-toggle>
                 </ion-item>
                 <ion-item class="item-toggle">
                     Gimli
-                    <ion-toggle slot="item-right" :value="true" color="dark"></ion-toggle>
+                    <ion-toggle slot="item-end" :value="true" color="dark"></ion-toggle>
                 </ion-item>
                 <ion-item class="item-toggle">
                     Saruman
-                    <ion-toggle slot="item-right" color="primary"></ion-toggle>
+                    <ion-toggle slot="item-end" color="primary"></ion-toggle>
                 </ion-item>
                 <ion-item class="item-toggle">
                     Gandalf
-                    <ion-toggle slot="item-right" :value="true" color="secondary"></ion-toggle>
+                    <ion-toggle slot="item-end" :value="true" color="secondary"></ion-toggle>
                 </ion-item>
                 <ion-item class="item-toggle">
                     Arwen
-                    <ion-toggle slot="item-right" color="danger"></ion-toggle>
+                    <ion-toggle slot="item-end" color="danger"></ion-toggle>
                 </ion-item>
                 <ion-item class="item-toggle">
                     Treebeard
-                    <ion-toggle slot="item-right" :value="true" color="light"></ion-toggle>
+                    <ion-toggle slot="item-end" :value="true" color="light"></ion-toggle>
                 </ion-item>
 
             </ion-list>

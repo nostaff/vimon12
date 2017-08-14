@@ -25,8 +25,8 @@
     const re_color = /^#([0-9A-Fa-f]{3})|([0-9A-Fa-f]{6})$/;
 
     export default {
+        name:'ion-tabbar',
         mixins: [ThemeMixins],
-
         components: {
             IonBadge,
             IonIcon

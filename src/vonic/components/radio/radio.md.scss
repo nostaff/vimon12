@@ -101,7 +101,7 @@ $radio-md-item-right-margin:      $item-md-padding-media-top 10px $item-md-paddi
 
   margin: $radio-md-item-right-margin;
 
-  &[item-left] {
+  &[item-start] {
     margin: $radio-md-item-left-margin;
   }
 }

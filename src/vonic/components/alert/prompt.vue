@@ -35,6 +35,7 @@
     import IonBackdrop from "../backdrop/backdrop";
     import IonButton from "../button/index";
     export default {
+        name:'ion-prompt',
         mixins: [ThemeMixins],
         components: {
             IonButton,

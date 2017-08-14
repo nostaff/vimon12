@@ -2,12 +2,13 @@
     <ion-list :title="title">
         <ion-item :class="[
             'item-radio',
+            'item-radio-'+theme,
             'item-radio-'+theme+'-'+getColor(option.color),
             option.disabled?'item-radio-disabled':'',
             (option.value === currentValue) ? 'item-radio-checked' : ''
             ]" key="idx" v-for="option in processOptions" @click.native="onChecked(option.value, option.disabled)">
             {{option.label}}
-            <div slot="item-right" :class="[
+            <div slot="item-end" :class="[
                 'radio',
                 'radio-'+theme,
                 'radio-'+theme+'-'+getColor(option.color),

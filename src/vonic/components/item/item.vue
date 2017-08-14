@@ -1,44 +1,44 @@
 <template>
     <router-link v-if="!!link" class="item item-block" :class="['item-'+theme]" :to="link" >
-        <slot name="item-left"></slot>
+        <slot name="item-start"></slot>
         <div class="item-inner">
             <div class="input-wrapper">
                 <slot name="item-label"></slot>
-                <ion-label ref="label" :color="color">
+                <ion-label ref="label" :color="color" v-if="noItemLabel">
                     <slot></slot>
                 </ion-label>
                 <slot name="item-content"></slot>
             </div>
-            <slot name="item-right"></slot>
+            <slot name="item-end"></slot>
         </div>
     </router-link>
 
     <button v-else-if="!!isLink" class="item item-block" :class="['item-'+theme]">
-        <slot name="item-left"></slot>
+        <slot name="item-start"></slot>
         <div class="item-inner">
             <div class="input-wrapper">
                 <slot name="item-label"></slot>
-                <ion-label ref="label" :color="color">
+                <ion-label ref="label" :color="color" v-if="noItemLabel">
                     <slot></slot>
                 </ion-label>
                 <slot name="item-content"></slot>
             </div>
-            <slot name="item-right"></slot>
+            <slot name="item-end"></slot>
         </div>
         <div class="button-effect"></div>
     </button>
 
     <div v-else class="item item-block" :class="['item-'+theme]">
-        <slot name="item-left"></slot>
+        <slot name="item-start"></slot>
         <div class="item-inner">
             <div class="input-wrapper">
                 <slot name="item-label"></slot>
-                <ion-label ref="label" :color="color">
+                <ion-label ref="label" :color="color" v-if="noItemLabel">
                     <slot></slot>
                 </ion-label>
                 <slot name="item-content"></slot>
             </div>
-            <slot name="item-right"></slot>
+            <slot name="item-end"></slot>
         </div>
     </div>
 
@@ -65,15 +65,20 @@
                 componentName: 'ionItem'
             };
         },
+        computed: {
+            noItemLabel: function () {
+                return typeof this.$slots['item-label'] === 'undefined';
+            },
+        },
         mounted () {
             if (this.$el.classList.contains('item-divider'))
                 this.$el.classList.remove('item-block')
 
-            if (this.$slots['item-left']) {
-                this.$slots['item-left'][0].elm.setAttribute('item-left', '')
+            if (this.$slots['item-start']) {
+                this.$slots['item-start'][0].elm.setAttribute('item-start', '')
             }
-            if (this.$slots['item-right']) {
-                this.$slots['item-right'][0].elm.setAttribute('item-right', '')
+            if (this.$slots['item-end']) {
+                this.$slots['item-end'][0].elm.setAttribute('item-end', '')
             }
         },
         methods: {
@@ -91,10 +96,9 @@
                 }
             },
             updateLabelAttribute(name, value = '') {
-                if (this.$refs.label.$el.length != 0) {   // 空==0，不为空 != 0 ，非大于0
+                if (this.$refs.label && this.$refs.label.$el.length != 0) {   // 空==0，不为空 != 0 ，非大于0
                     this.$refs['label'].$el.setAttribute(name, value);
-                }
-                if (this.$slots['item-label']) {
+                } else if (this.$slots['item-label']) {
                     this.$slots['item-label'][0].elm.setAttribute(name, value);
                 }
             },

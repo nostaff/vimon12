@@ -30,6 +30,7 @@
     import IonBackdrop from "../backdrop/backdrop";
     import IonButton from "../button/index";
     export default {
+        name:'ion-alert',
         mixins: [ThemeMixins],
         components: {
             IonButton,

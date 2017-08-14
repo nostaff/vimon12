@@ -4,7 +4,7 @@
         <ion-content class="content-padded">
 
             <!-- 3 x 2 -->
-            <cells :items="entrances" :on-cell-click="onCellClick" row="2"></cells>
+            <ion-cells :items="entrances" :on-cell-click="onCellClick" row="2"></ion-cells>
             <div class="padding-top"></div>
             <!-- 3 x 3 -->
             <cells class="cells-33" :items="getItems(9)" :on-cell-click="onCellClick"></cells>

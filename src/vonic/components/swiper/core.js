@@ -171,7 +171,7 @@ function Swiper(container, swiperOptions) {
 
     // bind events
     function bind() {
-        container.addEventListener('touchstart', events.start)
+        container.addEventListener('touchstart', events.start, )
         container.addEventListener('touchmove', events.move)
         container.addEventListener('touchend', events.end)
         container.addEventListener('transitionEnd', noop)

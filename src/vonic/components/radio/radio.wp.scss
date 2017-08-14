@@ -104,7 +104,7 @@ $radio-wp-item-right-margin:      11px 10px 10px 0 !default;
 
   margin: $radio-wp-item-left-margin;
 
-  &[item-right] {
+  &[item-end] {
     order: 0;
 
     margin: $radio-wp-item-right-margin;

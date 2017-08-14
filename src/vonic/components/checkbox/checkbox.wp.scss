@@ -154,7 +154,6 @@ $checkbox-wp-item-end-margin-start:      0 !default;
   }
 }
 
-.item.item-wp .checkbox-wp[item-right], // deprecated
 .item.item-wp .checkbox-wp[item-end] {
   @include deprecated-variable(margin, $checkbox-wp-item-right-margin) {
     @include margin($checkbox-wp-item-end-margin-top, $checkbox-wp-item-end-margin-end, $checkbox-wp-item-end-margin-bottom, $checkbox-wp-item-end-margin-start);

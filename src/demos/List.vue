@@ -5,7 +5,7 @@
             <ion-list>
                 <ion-list-header color="primary">
                     Settings
-                    <ion-button clear icon-only slot="item-right">
+                    <ion-button clear icon-only slot="item-end">
                         <ion-icon name="cog"></ion-icon>
                     </ion-button>
                 </ion-list-header>
@@ -39,15 +39,15 @@
 
             <ion-list>
                 <ion-item>
-                    <ion-icon slot="item-left" name="leaf" item-left></ion-icon>
+                    <ion-icon slot="item-start" name="leaf" item-start></ion-icon>
                     Herbology
-                    <ion-icon slot="item-right" name="rose" item-end></ion-icon>
+                    <ion-icon slot="item-end" name="rose" item-end></ion-icon>
                 </ion-item>
             </ion-list>
 
             <ion-list>
                 <ion-item detail-push>
-                    <ion-avatar slot="item-left" item-left>
+                    <ion-avatar slot="item-start" item-start>
                         <img src="http://ionicframework.com/dist/preview-app/www/assets/img/spengler.jpg">
                     </ion-avatar>
                     <h2>Cher</h2>
@@ -57,7 +57,7 @@
 
             <ion-list>
                 <ion-item>
-                    <ion-avatar slot="item-left">
+                    <ion-avatar slot="item-start">
                         <img src="http://ionicframework.com/dist/preview-app/www/assets/img/spengler.jpg">
                     </ion-avatar>
                     <h2>Finn</h2>
@@ -70,7 +70,7 @@
             <ion-list>
                 <ion-item-sliding>
                     <ion-item>
-                        <ion-avatar slot="item-left">
+                        <ion-avatar slot="item-start">
                             <img src="http://ionicframework.com/dist/preview-app/www/assets/img/spengler.jpg">
                         </ion-avatar>
                         <h2>Slimer</h2>
@@ -96,12 +96,12 @@
 
             <ion-list>
                 <ion-item>
-                    <ion-thumbnail slot="item-left">
+                    <ion-thumbnail slot="item-start">
                         <img src="http://ionicframework.com/dist/preview-app/www/assets/img/thumbnail-rotla.png">
                     </ion-thumbnail>
                     <h2>My Neighbor Totoro</h2>
                     <p>Hayao Miyazaki • 1988</p>
-                    <ion-button slot="item-right" clear item-right>View</ion-button>
+                    <ion-button slot="item-end" clear item-end>View</ion-button>
                 </ion-item>
             </ion-list>
 
@@ -111,18 +111,18 @@
                         Other Settings
                     </ion-item>
                     <ion-item>
-                        <ion-icon slot="item-left" name="plane" color="danger"></ion-icon>
+                        <ion-icon slot="item-start" name="plane" color="danger"></ion-icon>
                         Airplane Mode
                     </ion-item>
                     <ion-item>
                         哈哈哈
-                        <ion-icon slot="item-left" name="wifi" color="primary"></ion-icon>
-                        <ion-note slot="item-right">note</ion-note>
+                        <ion-icon slot="item-start" name="wifi" color="primary"></ion-icon>
+                        <ion-note slot="item-end">note</ion-note>
                     </ion-item>
                     <ion-item type="link">
-                        <ion-icon slot="item-left" name="bluetooth" color="primary"></ion-icon>
+                        <ion-icon slot="item-start" name="bluetooth" color="primary"></ion-icon>
                         Bluetooth
-                        <ion-note slot="item-right">off</ion-note>
+                        <ion-note slot="item-end">off</ion-note>
                     </ion-item>
                 </ion-item-group>
 
@@ -131,18 +131,18 @@
                         Other Settings
                     </ion-item>
                     <ion-item>
-                        <ion-icon slot="item-left" name="plane" color="danger"></ion-icon>
+                        <ion-icon slot="item-start" name="plane" color="danger"></ion-icon>
                         Airplane Mode
                     </ion-item>
                     <ion-item>
-                        <ion-icon slot="item-left" name="wifi" color="primary"></ion-icon>
+                        <ion-icon slot="item-start" name="wifi" color="primary"></ion-icon>
                         哈哈哈
-                        <ion-note slot="item-right">note</ion-note>
+                        <ion-note slot="item-end">note</ion-note>
                     </ion-item>
                     <ion-item>
-                        <ion-icon slot="item-left" name="bluetooth" color="primary"></ion-icon>
+                        <ion-icon slot="item-start" name="bluetooth" color="primary"></ion-icon>
                         Bluetooth
-                        <ion-note slot="item-right">off</ion-note>
+                        <ion-note slot="item-end">off</ion-note>
                     </ion-item>
                 </ion-item-group>
             </ion-list>
@@ -153,50 +153,50 @@
                 </ion-item>
                 <ion-item>
                     正文
-                    <ion-note slot="item-right">note</ion-note>
+                    <ion-note slot="item-end">note</ion-note>
                 </ion-item>
                 <ion-item  detail-push>
                     文字
-                    <ion-note slot="item-right">note</ion-note>
+                    <ion-note slot="item-end">note</ion-note>
                 </ion-item>
                 <ion-item link="/home">
                     带link的文字
-                    <ion-note slot="item-right">note</ion-note>
+                    <ion-note slot="item-end">note</ion-note>
                 </ion-item>
 
                 <ion-item>
                     带badge的文字
-                    <ion-badge slot="item-right" color="primary">5</ion-badge>
+                    <ion-badge slot="item-end" color="primary">5</ion-badge>
                 </ion-item>
             </ion-list>
 
             <ion-list>
                 <ion-list-header>List Header</ion-list-header>
                 <ion-item  detail-push>
-                    <ion-icon slot="item-left" name="mail" color="primary"></ion-icon>
+                    <ion-icon slot="item-start" name="mail" color="primary"></ion-icon>
                     Check mail
                 </ion-item>
                 <ion-item  detail-push>
-                    <ion-icon slot="item-left" name="mic" color=""secondary></ion-icon>
+                    <ion-icon slot="item-start" name="mic" color=""secondary></ion-icon>
                     Record album
                     <ion-note slot="item_right">Grammy</ion-note>
                 </ion-item>
                 <ion-item  detail-push>
-                    <ion-icon slot="item-left" name="person"></ion-icon>
+                    <ion-icon slot="item-start" name="person"></ion-icon>
                     Friends
-                    <ion-badge slot="item-right" color="light">0</ion-badge>
+                    <ion-badge slot="item-end" color="light">0</ion-badge>
                 </ion-item>
 
                 <ion-item>
                     Call Ma
-                    <ion-button slot="item-right" outline color="primary" icon-left>
+                    <ion-button slot="item-end" outline color="primary" icon-left>
                         <ion-icon name="call"></ion-icon>
                         Call
                     </ion-button>
                 </ion-item>
 
                 <ion-item>
-                    <div slot="item-left" class="avatar">
+                    <div slot="item-start" class="avatar">
                         <img src="http://ionicframework.com/img/docs/spengler.jpg">
                     </div>
                     <h2>Finn</h2>
@@ -204,16 +204,16 @@
                     <p>Listen, I've had a pretty messed up day...</p>
                 </ion-item>
                 <ion-item  detail-push>
-                    <div slot="item-left" class="avatar">
+                    <div slot="item-start" class="avatar">
                         <img src="http://ionicframework.com/img/docs/spengler.jpg">
                     </div>
                     <h2>Venkman</h2>
                     <p>Back off, man. I'm a scientist.</p>
-                    <ion-button slot="item-right" clear>View</ion-button>
+                    <ion-button slot="item-end" clear>View</ion-button>
                 </ion-item>
 
                 <ion-item is-link>
-                    <ion-thumbnail slot="item-left">
+                    <ion-thumbnail slot="item-start">
                         <img src="http://ionicframework.com/img/docs/siamese-dream.jpg">
                     </ion-thumbnail>
                     <h2>Pretty Hate Machine</h2>

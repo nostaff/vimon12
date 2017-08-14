@@ -54,8 +54,8 @@ $item-md-body-text-line-height : 1.5 !default;
     transform: translate3d(0, 0, 0) scale(.9);
 }
 
-.item-md.item-label-stacked [item-right],
-.item-md.item-label-floating [item-right] {
+.item-md.item-label-stacked [item-end],
+.item-md.item-label-floating [item-end] {
     margin-top: $item-md-padding-media-top - 2;
     margin-bottom: $item-md-padding-media-bottom - 2;
 }

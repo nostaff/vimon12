@@ -19,7 +19,7 @@
     }
 
     export default {
-        name: 'cells',
+        name: 'ion-cells',
 
         props: {
             row: {

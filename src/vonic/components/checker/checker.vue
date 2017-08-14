@@ -8,7 +8,7 @@
     import ThemeMixins from '../../themes/theme.mixins';
 
     export default {
-        name: 'ion-radio-group',
+        name: 'ion-checker',
         mixins: [ThemeMixins],
 //        mounted() {
 //            if (this.$parent.$data.componentName === 'ionItem') {

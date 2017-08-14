@@ -33,7 +33,7 @@ import Checkbox from './components/checkbox'
 import Select from './components/select'
 import Toggle from './components/toggle'
 import Thumbnail from './components/thumbnail'
-import VonRange from './components/range'
+import Range from './components/range'
 import Badge from './components/badge'
 import FABs from './components/fab'
 
@@ -49,7 +49,7 @@ Vue.component(Checkbox.name, Checkbox)
 Vue.component(Select.name, Select)
 Vue.component(Thumbnail.name, Thumbnail)
 Vue.component(Toggle.name, Toggle)
-Vue.component('von-range', VonRange)
+Vue.component(Range.name, Range)
 Vue.component(Badge.name, Badge)
 Vue.component(FABs.name, FABs)
 

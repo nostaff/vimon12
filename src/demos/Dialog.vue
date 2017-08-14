@@ -4,22 +4,22 @@
 
             <ion-list title="对话框">
                 <ion-item is-link @click.native="showAlert()">
-                    Alert <ion-note slot="item-right">提示框</ion-note>
+                    Alert <ion-note slot="item-end">提示框</ion-note>
                 </ion-item>
                 <ion-item is-link @click.native="showAlert2()">
-                    Alert <ion-note slot="item-right">多个按钮提示框</ion-note>
+                    Alert <ion-note slot="item-end">多个按钮提示框</ion-note>
                 </ion-item>
                 <ion-item is-link @click.native="showConfirm()">
-                    Confirm <ion-note slot="item-right">确认框</ion-note>
+                    Confirm <ion-note slot="item-end">确认框</ion-note>
                 </ion-item>
                 <ion-item is-link @click.native="showPrompt()">
-                    Prompt <ion-note slot="item-right">带文本输入的提示框</ion-note>
+                    Prompt <ion-note slot="item-end">带文本输入的提示框</ion-note>
                 </ion-item>
                 <ion-item is-link @click.native="showRadio()">
-                    Alert Radio <ion-note slot="item-right">带单选框的提示框</ion-note>
+                    Alert Radio <ion-note slot="item-end">带单选框的提示框</ion-note>
                 </ion-item>
                 <ion-item is-link @click.native="showCheckbox()">
-                    Alert Chekckbox <ion-note slot="item-right">带复选框的提示框</ion-note>
+                    Alert Chekckbox <ion-note slot="item-end">带复选框的提示框</ion-note>
                 </ion-item>
             </ion-list>
         </ion-content>

@@ -36,6 +36,7 @@
     import IonBackdrop from "../backdrop/backdrop";
     import IonButton from "../button/index";
     export default {
+        name:'ion-alert-checkbox',
         mixins: [ThemeMixins],
         components: {
             IonButton,

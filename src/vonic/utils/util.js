@@ -122,14 +122,14 @@ export default {
         return child;
     },
 
-    hasClass(element, className) {
+    hasClass: function(element, className) {
         if (! element || element.classList)
             return false;
 
         return element.classList.contains(className);
     },
 
-    addClass(element, className) {
+    addClass: function(element, className) {
         if (typeof className === 'undefined') {
             return;
         }
@@ -145,7 +145,7 @@ export default {
      * @param {any} el
      * @param {any} cls
      */
-    removeClass(element, className) {
+    removeClass: function(element, className) {
         if (! element || element.classList)
             return;
 
@@ -155,40 +155,47 @@ export default {
         }
     },
 
-    toggleClass(element, className) {
+    toggleClass: function(element, className) {
         var classes = className.split(' ');
         for (var i = 0; i < classes.length; i++) {
             element.classList.toggle(classes[i]);
         }
     },
-    isUndefined(value) {
+    isUndefined: function(value) {
         return value === undefined;
     },
-    isString(val) {
+    isString: function(val) {
         return typeof val === 'string';
     },
-    isNumber(val) {
+    isNumber: function(val) {
         return typeof val === 'number';
     },
-    isFunction(val) {
+    isFunction: function(val) {
         return typeof val === 'function';
     },
-    isDefined(val) {
+    isDefined: function(val) {
         return typeof val !== 'undefined';
     },
-    isPresent(val) {
+    isPresent: function(val) {
         return val !== undefined && val !== null;
     },
-    isBlank(val) {
+    isBlank: function(val) {
         return val === undefined || val === null;
     },
-    isObject(val) {
+    isObject: function(val) {
         return typeof val === 'object';
     },
-    isArray(val) {
+    isArray: function(val) {
         return Array.isArray(val);
     },
-    booleanify(val) {
+    isTrueProperty: function(val) {
+        if (typeof val === 'string') {
+            val = val.toLowerCase().trim();
+            return (val === 'true' || val === 'on' || val === '');
+        }
+        return !!val;
+    },
+    booleanify: function(val) {
         if (val === "true" || val == 1) {
             return true;
         }
@@ -198,7 +205,7 @@ export default {
         }
         return val;
     },
-    theme() {
+    theme: function() {
         // theme-ios for ios, theme-md for android & other
         if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
             return 'ios'

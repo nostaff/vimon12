@@ -6,7 +6,7 @@
                     <slot></slot>
                 </ion-label>
             </div>
-            <slot name="item-right"></slot>
+            <slot name="item-end"></slot>
         </div>
     </div>
 </template>
@@ -24,8 +24,8 @@
         },
 
         mounted () {
-            if (this.$slots['item-right']) {
-                this.$slots['item-right'][0].elm.setAttribute('item-right', '')
+            if (this.$slots['item-end']) {
+                this.$slots['item-end'][0].elm.setAttribute('item-end', '')
             }
         },
     }

@@ -19,6 +19,10 @@
             })
         },
 
+        mounted() {
+//            console.debug('app mounted')
+        },
+
         methods: {
             beforePageEnter(el) {
 //                 console.log('beforePageEnter time:', +new Date())

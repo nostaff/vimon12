@@ -8,7 +8,7 @@
             ]" key="idx" v-for="option in processOptions" @click.native="onChecked(option.value, option.disabled)">
             {{option.label}}
 
-            <div :slot="labelPosition==='right'?'item-left':'item-right'" :class="[
+            <div :slot="labelPosition==='right'?'item-start':'item-end'" :class="[
                 'checkbox',
                 'checkbox-'+theme,
                 'checkbox-'+theme+'-'+getColor(option.color),
