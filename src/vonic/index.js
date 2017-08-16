@@ -3,6 +3,10 @@
 import './fonts/ionicons.scss'
 
 import Vue from 'vue'
+
+import VueEvents from 'vue-events'
+Vue.use(VueEvents)
+
 import VueScroller from 'vue-scroller'
 Vue.use(VueScroller)
 

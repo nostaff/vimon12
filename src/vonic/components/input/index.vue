@@ -51,8 +51,8 @@
         props: {
             type: {
                 type: String,
-                validator(val) {
-                    return val == 'text' || val == 'password' || val == 'email' || val == 'tel'  || val == 'textarea'
+                validator (value) {
+                    return ['text', 'password', 'email', 'number', 'tel', 'datetime-local', 'date', 'time'].indexOf(value) > -1;
                 },
                 default: 'text'
             },

@@ -135,6 +135,8 @@
             if (this.$slots['range-right']) {
                 this.$slots['range-right'][0].elm.setAttribute('range-right', '')
             }
+
+            this.$el.events
         },
         methods: {
             pointerDown(ev) {

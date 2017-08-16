@@ -1,11 +1,8 @@
 import assign from 'object-assign'
 import Vue from 'vue'
 import Navbar from '../components/toolbar/navbar.vue'
-import channel from '../utils/channel'
 
 import {createElement} from '../utils/utils'
-
-let _vm = undefined;
 
 Vue.directive('nav', {
     inserted: function (el, binding) {
@@ -28,7 +25,7 @@ Vue.directive('nav', {
             if (options.menuButtonIcon) props.moreIcon = options.menuButtonIcon
             if (options.menuButtonText) props.moreText = options.menuButtonText
 
-            _vm = new Vue(assign({}, Navbar, {
+            window.$navbar = new Vue(assign({}, Navbar, {
                 data: {
                     state: options.hideNavbar && options.hideNavbar == true ? 0 : 1
                 },
@@ -37,14 +34,3 @@ Vue.directive('nav', {
         })
     }
 })
-
-channel.$on('hideNavbar', () => {
-    console.log('hideNavbar', _vm.$el)
-    if (_vm) {
-        _vm.$destroy()
-        _vm.$el.parentNode.removeChild(_vm.$el)
-        // _container.removeChild(_vm.$el)
-    }
-})
-
-window.$navbar = channel

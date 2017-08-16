@@ -65,7 +65,7 @@ class ModalManager {
 
     // remove click block
     if (document.querySelectorAll('[von-modal]').length == 0) {
-      channel.$emit('RemoveClickBlock')
+        this.$events.$emit('RemoveClickBlock')
     }
   }
 }

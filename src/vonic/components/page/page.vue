@@ -5,15 +5,13 @@
 </template>
 
 <script>
-    import channel from '../../utils/channel'
-
     import ThemeMixins from '../../themes/theme.mixins';
     export default {
         name: 'ion-page',
         mixins: [ThemeMixins],
 
         created() {
-            channel.$on('VonicNotification', (data) => {
+            this.$events.$on('VonicNotification', (data) => {
                 $toast.show(data.message);
             })
         },

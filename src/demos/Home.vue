@@ -119,8 +119,6 @@
 </template>
 
 <script>
-    import channel from '../vonic/utils/channel'
-
     export default {
         data() {
             return {
@@ -155,9 +153,9 @@
 
 //             setTimeout(() => {$app.setTitle('标题文字')}, 100)
 
-            channel.$emit('selectedItem', 4)
+            this.$events.$emit('selectedItem', 4)
 
-            channel.$emit('VonicNotification', {
+            this.$events.$emit('VonicNotification', {
                 message: '请先选择'
             })
 

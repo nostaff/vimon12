@@ -6,7 +6,6 @@
     </div>
 </template>
 <script>
-    import channel from '../../utils/channel'
     import ThemeMixins from '../../themes/theme.mixins';
 
     export default {
@@ -14,7 +13,7 @@
         mixins: [ThemeMixins],
 
         created() {
-            channel.$on('VonicNotification', (data) => {
+            this.$events.$on('VonicNotification', (data) => {
                 $toast.show(data.message);
             })
         },

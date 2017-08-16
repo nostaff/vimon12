@@ -1,7 +1,6 @@
 import assign from 'object-assign'
 import Vue from 'vue'
 import Tabbar from '../components/tabs/tabbar.vue'
-import channel from '../utils/channel'
 
 import {createElement} from '../utils/utils'
 
@@ -49,27 +48,11 @@ function vmReady() {
 
 Vue.directive('tabbar-item-index', {
     inserted: function (el, binding) {
-        channel.$emit('selectedItem', binding.value)
-        // vmReady().then(() => {
-        //     _vm.selectedItem(binding.value)
-        // })
+        this.$events.$emit('selectedItem', binding.value)
+        vmReady().then(() => {
+            _vm.selectedItem(binding.value)
+        })
     }
 })
-//
-// channel.$on('hideTabbar', () => {
-//     if (_vm) {
-//         _vm.$destroy()
-//         // _container.removeChild(_vm.$el)
-//         _vm.$el.parentNode.removeChild(_vm.$el)
-//
-//     }
-// })
-//
-// channel.$on('setBadgeNum', (index, num) => {
-//     if (_vm) {
-//         _vm.setBadgeNum(index, num)
-//     }
-// })
 
-
-window.$tabbar = channel
+window.$tabbar = _vm

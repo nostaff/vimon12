@@ -68,7 +68,7 @@
         },
 
         beforeDestroy() {
-            $tabbar.$emit('hideTabbar')
+            this.$events.$emit('hideTabbar')
         }
     }
 </script>

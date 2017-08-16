@@ -122,7 +122,7 @@ export default {
 //        setTimeout(() => {
 //            $app.hideNavBar1()
 //            $app.setTitle('我的')
-////            $tabbar.$emit('hideTabbar')
+////            this.$events.$emit('hideTabbar')
 //        }, 0)
 
 //        $modal.fromComponent(Login, {

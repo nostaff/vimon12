@@ -9,7 +9,6 @@
 <script>
     import axios from 'axios'
     import Vue from 'vue'
-    import channel from '../../utils/channel'
     import List from '../list'
     import Item from '../item'
 
@@ -97,7 +96,7 @@
                 let v = this.value, f = this.fields
 
                 if (index > v.length) {
-                    channel.$emit('VonicNotification', {
+                    this.$events.$emit('VonicNotification', {
                         message: '请先选择' + f[index - 1]
                     })
 

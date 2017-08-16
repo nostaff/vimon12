@@ -20,6 +20,7 @@ import './services/sidebar/index.js'
 import './components/actionsheet/index.js'
 import './components/alert/index.js'
 import './components/modal/index.js'
+import './components/picker/index.js'
 
 
 

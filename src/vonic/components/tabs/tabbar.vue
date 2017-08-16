@@ -11,7 +11,6 @@
     </div>
 </template>
 <script>
-    import channel from '../../utils/channel'
     import IonIcon from '../../components/icon'
     import IonBadge from "../../components/badge";
 
@@ -57,15 +56,15 @@
         },
 
         mounted() {
-            channel.$on('hideTabbar', () => {
+            this.$events.$on('hideTabbar', () => {
                 this.hide()
             })
 
-            channel.$on('setBadgeNum', (index, num) => {
+            this.$events.$on('setBadgeNum', (index, num) => {
                 this.setBadgeNum(index, num)
             })
 
-            channel.$on('selectedItem', (index) => {
+            this.$events.$on('selectedItem', (index) => {
                 this.selectedItem(index)
             })
         },

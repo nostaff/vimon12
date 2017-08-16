@@ -49,12 +49,12 @@
       },
 
       updateBadge(itemIndex) {
-        $tabbar.$emit('updateTabBadge', itemIndex, this.menus[itemIndex].badge++)
+          this.$events.$emit('updateTabBadge', itemIndex, this.menus[itemIndex].badge++)
       }
     },
 
     beforeDestroy() {
-      $tabbar.$emit('hideTabbar')
+        this.$events.$emit('hideTabbar')
     }
   }
 </script>
