@@ -7,15 +7,18 @@
  */
 const Animate = require('./animate');
 
-var Scroller = function (content, options) {
+var Scroller = function (component, content, options) {
     var self = this;
+
+    if (!component) return;
 
     options = options || {};
 
     self.options = {
         onSelect () {
         },
-        itemHeight: 38
+        itemHeight: 38,
+        itemCount: 10,
     };
 
     for (var key in options) {
@@ -26,6 +29,12 @@ var Scroller = function (content, options) {
 
     self.__content = content;
     self.__itemHeight = self.options.itemHeight;
+
+    self.__callback = options.callback || function (top) {
+        content.style.webkitTransform = 'translate3d(0, ' + (-top) + 'px, 0)'
+    }
+
+    self.__setDimensions(component.clientHeight, content.offsetHeight)
 
     // const supportTouch = (window.Modernizr && !!window.Modernizr.touch) || (function () {
     //         return !!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch);
@@ -80,6 +89,27 @@ var Scroller = function (content, options) {
 
 };
 
+// Easing Equations (c) 2003 Robert Penner, all rights reserved.
+// Open source under the BSD License.
+
+/**
+ * @param pos {Number} position between 0 (start of effect) and 1 (end of effect)
+ **/
+var easeOutCubic = function(pos) {
+    return (Math.pow((pos - 1), 3) + 1);
+};
+
+/**
+ * @param pos {Number} position between 0 (start of effect) and 1 (end of effect)
+ **/
+var easeInOutCubic = function(pos) {
+    if ((pos /= 0.5) < 1) {
+        return 0.5 * Math.pow(pos, 3);
+    }
+
+    return 0.5 * (Math.pow((pos - 2), 3) + 2);
+};
+
 var members = {
     value: null,
     __prevValue: null,
@@ -90,7 +120,6 @@ var members = {
     __isDragging: false,
     __isDecelerating: false,
     __isAnimating: false,
-    __clientTop: 0,
     __clientHeight: 0,
     __contentHeight: 0,
     __itemHeight: 0,
@@ -105,16 +134,16 @@ var members = {
     __maxDecelerationScrollTop: null,
     __decelerationVelocityY: null,
 
-    setDimensions (clientHeight, contentHeight, totalItemCount) {
+    __setDimensions (clientHeight, contentHeight) {
         var self = this
 
         self.__clientHeight = clientHeight
         self.__contentHeight = contentHeight
 
-        var clientItemCount = Math.round(self.__clientHeight / self.__itemHeight)
+        self.__maxScrollTop = Math.max(self.__contentHeight - self.__itemHeight, 0);
 
-        self.__minScrollTop = -self.__itemHeight * (clientItemCount / 2)
-        self.__maxScrollTop = self.__minScrollTop + totalItemCount * self.__itemHeight - 0.1
+        // Refresh scroll position
+        self.scrollTo(self.__scrollTop, true);
     },
 
     selectByIndex (index, animate) {
@@ -162,6 +191,10 @@ var members = {
             return
         }
         self.__publish(top, 250)
+    },
+
+    destroy () {
+        this.__component.parentNode && this.__component.parentNode.removeChild(this.__component)
     },
 
     __selectItem (selectedItem) {
@@ -392,19 +425,6 @@ var members = {
         self.__positions.length = 0
     },
 
-    // Easing Equations (c) 2003 Robert Penner, all rights reserved.
-    // Open source under the BSD License.
-    __easeOutCubic (pos) {
-        return (Math.pow((pos - 1), 3) + 1)
-    },
-
-    __easeInOutCubic (pos) {
-        if ((pos /= 0.5) < 1) {
-            return 0.5 * Math.pow(pos, 3)
-        }
-        return 0.5 * (Math.pow((pos - 2), 3) + 2)
-    },
-
     // Applies the scroll position to the content element
     __publish (top, animationDuration) {
         var self = this
@@ -426,8 +446,8 @@ var members = {
             var step = function (percent, now, render) {
                 self.__scrollTop = oldTop + (diffTop * percent)
                 // Push values out
-                if (self.options.callback) {
-                    self.options.callback(self.__scrollTop, self.__isDragging)
+                if (self.__callback) {
+                    self.__callback(self.__scrollTop)
                 }
             }
 
@@ -445,12 +465,12 @@ var members = {
             }
 
             // When continuing based on previous animation we choose an ease-out animation instead of ease-in-out
-            self.__isAnimating = Animate.start(step, verify, completed, animationDuration, wasAnimating ? self.__easeOutCubic : self.__easeInOutCubic)
+            self.__isAnimating = Animate.start(step, verify, completed, animationDuration, wasAnimating ? easeOutCubic : easeInOutCubic);
         } else {
             self.__scheduledTop = self.__scrollTop = top
             // Push values out
-            if (self.options.callback) {
-                self.options.callback(top, self.__isDragging)
+            if (self.__callback) {
+                self.__callback(self.__scrollTop)
             }
         }
     },
