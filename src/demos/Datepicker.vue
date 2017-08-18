@@ -25,9 +25,18 @@
         },
         {
             text: 'OK',
+            role: 'ok',
             cssClass: 'adasdasd',
             handler: () => {
                 console.log('Share clicked');
+            }
+        },
+        {
+            text: 'Submit',
+            role: 'submit',
+            handler: () => {
+                console.log('Share clicked');
+                return false;       // 不关闭对话框
             }
         }
     ];
@@ -37,12 +46,20 @@
         {
             name: 'Year',
             align: 'left',
-            options: []
+            defaultValue: '1980',
+            options: [],
+            onChange: (option) => {
+                console.log('Year onChange', option)
+            }
         },
         {
             name: 'Month',
             align: 'left',
-            options: []
+            defaultValue: '12',
+            options: [],
+            onChange: (option) => {
+                console.log('Month onChange', option)
+            }
         },
     ];
 

@@ -1,5 +1,5 @@
 <template>
-    <div class="picker-col"
+    <div class="picker-col" :data-name="column.name"
          :class="{'picker-opts-left': column.align=='left', 'picker-opts-right': column.align=='right'}"
          :style="{width: column.columnWidth}" >
         <div v-if="column.prefix" class="picker-prefix" :style="{width: column.prefixWidth}">{{column.prefix}}</div>
@@ -10,20 +10,16 @@
     </div>
 </template>
 <script>
-    import objectAssign from 'object-assign'
     import Scroller from './scroller';
-    import ThemeMixins from '../../themes/theme.mixins';
     import IonButton from "../button/index";
     export default {
         name: 'ion-picker-column',
-        mixins: [ThemeMixins],
         components: {
             IonButton,
         },
         data() {
             return {
                 optHeight: 0,
-                currentValue: this.value
             }
         },
 
@@ -32,12 +28,11 @@
                 type: Object,
                 required: true
             },
-            value: {
-                type: String,
-                required: false
-            },
         },
 
+        created () {
+//            console.log(this.column)
+        },
         mounted() {
             // get the height of one option
             this.optHeight = (this.$refs.button[0] ? this.$refs.button[0].clientHeight : 0);
@@ -46,23 +41,20 @@
         },
 
         methods: {
-
             render() {
-                const self = this;
+                const _this = this;
 
                 const  component = this.$el;
                 const  content = this.$refs['picker-opts'];
 
                 this.scroller = new Scroller(component, content, {
                     itemHeight: this.optHeight,
-                    onSelect(value) {
-                        console.log('onSelect', value);
-                        self.currentValue = value
+                    defaultValue: this.column.defaultValue,
+                    onSelect(value, index) {
+                        _this.$emit('on-change', {name: _this.column.name, value: value, index: index})
                     }
                 });
-
-                this.scroller.select(this.currentValue, false);
-            },
+            }
         }
     };
 </script>

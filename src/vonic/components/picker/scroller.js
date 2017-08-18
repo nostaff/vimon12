@@ -18,7 +18,8 @@ var Scroller = function (component, content, options) {
         onSelect () {
         },
         itemHeight: 38,
-        itemCount: 10,
+        defaultValue: '',
+        selectedItemClass: 'picker-opt-selected'
     };
 
     for (var key in options) {
@@ -35,6 +36,8 @@ var Scroller = function (component, content, options) {
     }
 
     self.__setDimensions(component.clientHeight, content.offsetHeight)
+
+    self.select(self.options.defaultValue, false);
 
     // const supportTouch = (window.Modernizr && !!window.Modernizr.touch) || (function () {
     //         return !!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch);
@@ -200,6 +203,14 @@ var members = {
     __selectItem (selectedItem) {
         var self = this;
 
+        // picker-opt-selected
+        var selectedItemClass = self.options.selectedItemClass
+        var lastSelectedElem = self.__content.querySelector('.' + selectedItemClass)
+        if (lastSelectedElem) {
+            lastSelectedElem.classList.remove(selectedItemClass)
+        }
+        selectedItem.classList.add(selectedItemClass)
+
         if (self.value !== null) {
             self.__prevValue = self.value
         }
@@ -210,12 +221,12 @@ var members = {
     __scrollingComplete () {
         var self = this
 
-        var index = Math.round((self.__scrollTop - self.__minScrollTop - self.__itemHeight / 2) / self.__itemHeight)
+        var index = Math.abs(Math.round((self.__scrollTop - self.__minScrollTop - self.__itemHeight / 2) / self.__itemHeight))
 
         self.__selectItem(self.__content.children[index])
 
         if (self.__prevValue !== null && self.__prevValue !== self.value) {
-            self.options.onSelect(self.value)
+            self.options.onSelect(self.value, index)
         }
     },
 

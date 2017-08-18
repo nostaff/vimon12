@@ -1,27 +1,18 @@
 <template>
     <div role="dialog" class="ion-picker-cmp" :class="['picker-'+theme, cssClass]" style="z-index: 9999;">
-        <ion-backdrop @click.native="backdropClick()" ref="backdrop" v-show="activated"></ion-backdrop>
+        <ion-backdrop @click.native="bdClick()" ref="backdrop" v-show="activated"></ion-backdrop>
         <transition name="ion-picker-fadeup">
             <div class="picker-wrapper" v-show="activated">
                 <div class="picker-toolbar">
                     <div v-for="(button, index) in buttons" class="picker-toolbar-button" :class="button.cssRole">
-                        <ion-button @click.native="btnClick(index)" :class="button.cssClass" class="picker-button" clear>
+                        <ion-button @click.native="btnClick(button)" :class="button.cssClass" class="picker-button" clear>
                             {{button.text}}
                         </ion-button>
                     </div>
                 </div>
                 <div class="picker-columns">
                     <div class="picker-above-highlight"></div>
-                    <ion-picker-column key="idx" v-for="(column, i) in columns" :column="column" @on-change.native="colChange($event, i)"></ion-picker-column>
-                    <!--<div class="picker-col" v-for="(col, index) in columns" :class="{'picker-opts-left': col.align=='left', 'picker-opts-right': col.align=='right'}" :style="{width: col.columnWidth}" >-->
-                        <!--<div v-if="col.prefix" class="picker-prefix" :style="{width: col.prefixWidth}">{{col.prefix}}</div>-->
-                        <!--<div class="picker-opts" :style="{'max-width': col.optionsWidth}">-->
-                            <!--<ion-button class="picker-opt" v-for="(option, i) in col.options" :class="{'picker-opt-disabled':option.disabled}" disable-activated  @click.native="optClick($event, i)">-->
-                                <!--{{option.text}}-->
-                            <!--</ion-button>-->
-                        <!--</div>-->
-                        <!--<div v-if="col.suffix" class="picker-prefix" :style="{width: col.suffixWidth}">{{col.suffixWidth}}</div>-->
-                    <!--</div>-->
+                    <ion-picker-column key="idx" v-for="(column, i) in columns" :column="column" @on-change="colChange"></ion-picker-column>
                     <div class="picker-below-highlight"></div>
                 </div>
             </div>
@@ -104,57 +95,63 @@
                 this.activated = true;
 
                 return new Promise((resolve, reject) => {
-                    this.$on('onChangeEvent', (buttonIndex) => {
-                        resolve(buttonIndex)
+                    this.$on('onDismissEvent', (data) => {
+                        resolve(data)
                     })
                 });
             },
 
-            btnClick(buttonIndex) {
-                this.activated = false;
+            btnClick(button) {
+                let shouldDismiss = true;
 
-                if (buttonIndex > -1) {
-                    let handler = this.buttons[buttonIndex].handler;
-                    if (handler && typeof handler === 'function') {
-                        handler();
+                if (button.handler && typeof button.handler === 'function') {
+                    // a handler has been provided, execute it
+                    // pass the handler the values from the inputs
+                    if (button.handler(this.getSelected()) === false) {
+                        // if the return value of the handler is false then do not dismiss
+                        shouldDismiss = false;
                     }
                 }
 
-                this.$emit('onChangeEvent', buttonIndex)
-
-                setTimeout(() => {
-                    this.$el.remove();
-                }, 400);
-            },
-
-            colChange1() {
-                // one of the columns has changed its selected index
-                this.$emit('onChangeEvent', this.getSelected());
-            },
-
-            colChange($event, buttonIndex) {
-                this.activated = false;
-
-                if (buttonIndex == -1 && typeof this.cancelButton.handler === 'function') {
-                    this.cancelButton.handler();
+                if (shouldDismiss) {
+                    this.dismiss(button.role);
                 }
-                if (buttonIndex > -1) {
-                    let handler = this.buttons[buttonIndex].handler;
-                    if (handler && typeof handler === 'function') {
-                        handler();
-                    }
-                }
-
-                this.$emit('onChangeEvent', buttonIndex)
-
-                setTimeout(() => {
-                    this.$el.remove();
-                }, 400);
             },
 
-            backdropClick () {
+            bdClick() {
                 if (this.enableBackdropDismiss) {
-                    this.btnClick(-1);
+                    this.dismiss('backdrop');
+                }
+            },
+
+            dismiss(role) {
+                this.activated = false;
+
+                this.$emit('onDismissEvent', {role: role, selected: this.getSelected()})
+
+                setTimeout(() => {
+                    this.$el.remove();
+                }, 400);
+            },
+
+            getSelected() {
+                let selected = [];
+                this.columns.forEach((col, index) => {
+                    let selectedColumn = col.options[col.selectedIndex];
+                    selected[col.name] = {
+                        text: selectedColumn ? selectedColumn.text : null,
+                        value: selectedColumn ? selectedColumn.value : null,
+                        index: index,
+                    };
+                });
+                return selected;
+            },
+
+            // one of the columns has changed its selected index
+            colChange(option) {
+                let column = this.columns.find(col => col.name === option.name);
+                if (column && column.onChange && typeof column.onChange === 'function') {
+                    column.onChange(option);
                 }
             }
         }
