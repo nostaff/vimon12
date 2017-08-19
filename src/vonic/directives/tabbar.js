@@ -2,6 +2,9 @@ import assign from 'object-assign'
 import Vue from 'vue'
 import Tabbar from '../components/tabs/tabbar.vue'
 
+import VueEvents from 'vue-events'
+Vue.use(VueEvents)
+
 import {createElement} from '../utils/utils'
 
 let _vm = undefined;
@@ -45,6 +48,8 @@ function vmReady() {
         }, 10)
     })
 }
+
+console.log(this.$events)
 
 Vue.directive('tabbar-item-index', {
     inserted: function (el, binding) {

@@ -2,7 +2,17 @@
     <ion-page v-nav="{title: '日期选择器', showBackButton: true}">
         <ion-content class="padding-top">
 
-            <datepicker v-model="birthday" label="生日" date-format="yyyy-mm-dd"></datepicker>
+            <ion-list title="Datetime">
+                <ion-item>
+                    <ion-label slot="item-label">Birthday</ion-label>
+                    <ion-datetime slot="item-content" displayFormat="h:mm A" v-model="birthday" placeholder="Birthday"></ion-datetime>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label slot="item-label">Birthday</ion-label>
+                    <ion-datetime slot="item-content" v-model="birthday" label="生日" date-format="yyyy-mm-dd" text="2016-07-10"></ion-datetime>
+                </ion-item>
+            </ion-list>
 
             <div class="padding">
                 value: {{ birthday }}

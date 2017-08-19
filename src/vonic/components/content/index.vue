@@ -13,15 +13,11 @@
         name: 'ion-content',
         mixins: [ThemeMixins],
 
-        created() {
-            console.log(this.components)
-        },
-
-        mounted() {
+//        mounted() {
 //            console.debug('content mounted')
-            Vue.nextTick(() => {
-                let header = document.querySelector('.ion-header')
-                console.log(header)
+//            Vue.nextTick(() => {
+//                let header = document.querySelector('.ion-header')
+//                console.log(header)
 //                let container = this.$el.querySelector('.swiper')
 //                let swiper = new Swiper(container, {
 //                    direction: this.direction,
@@ -48,8 +44,8 @@
 //                        this.$refs.pagination.init()
 //                    }
 //                })
-            })
-        },
+//            })
+//        },
     }
 </script>
 <style lang="scss">

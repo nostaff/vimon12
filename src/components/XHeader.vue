@@ -1,13 +1,13 @@
 <template>
   <header class="bar bar-nav">
     <slot name="overwrite-left">
-      <a class="btn btn-link btn-nav pull-left" v-show="_leftOptions.showBack" @click.preventDefault="onClickBack">
+      <a class="btn btn-link btn-nav pull-left" v-show="_leftOptions.showBack" @click.prevent="onClickBack">
         <span class="icon" :class="_leftOptions.backIcon"></span>
         {{typeof _leftOptions.backText === 'undefined' ? 'Back' : _leftOptions.backText}}
       </a>
     </slot>
     <slot name="left"></slot>
-    <a class="btn btn-link btn-nav pull-right" v-show="_rightOptions.showMore" @click.preventDefault="$emit('on-click-right')">
+    <a class="btn btn-link btn-nav pull-right" v-show="_rightOptions.showMore" @click.prevent="$emit('on-click-right')">
       {{typeof _rightOptions.moreText === 'undefined' ? 'More' : _rightOptions.moreText}}
       <span class="icon" :class="_rightOptions.moreIcon"></span>
     </a>

@@ -40,6 +40,7 @@ import Thumbnail from './components/thumbnail'
 import Range from './components/range'
 import Badge from './components/badge'
 import FABs from './components/fab'
+import Datetime from './components/datetime'
 
 Vue.component(Avatar.name, Avatar)
 Vue.component(Label.name, Label)
@@ -56,6 +57,7 @@ Vue.component(Toggle.name, Toggle)
 Vue.component(Range.name, Range)
 Vue.component(Badge.name, Badge)
 Vue.component(FABs.name, FABs)
+Vue.component(Datetime.name, Datetime)
 
 // Layout
 import {Page, Header, Footer} from './components/page'
