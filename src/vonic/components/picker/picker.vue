@@ -146,12 +146,43 @@
             // one of the columns has changed its selected index
             colChange(option) {
                 let column = this.columns.find(col => col.name === option.name);
-                column.selectedIndex = option.index;
 
-                if (column && column.onChange && typeof column.onChange === 'function') {
-                    column.onChange(option);
+                if (column) {
+                    column.selectedIndex = option.index;
+
+                    if (column.onChange && typeof column.onChange === 'function') {
+                        column.onChange(option);
+                    }
                 }
-            }
+            },
+
+            renderChain (i) {
+                if (!this.columns) {
+                    return
+                }
+
+                // do not render for last scroller
+                if (i > this.count - 1) {
+                    return
+                }
+
+                const _this = this
+                let ID = this.getId(i)
+                // destroy old one
+                this.scroller[i].destroy()
+                let list = this.store.getChildren(_this.getValue()[i - 1])
+                this.scroller[i] = new Scroller(ID, {
+                    data: list,
+                    itemClass: _this.item_class,
+                    onSelect (value) {
+                        _this.$set(_this.currentValue, i, value)
+                        _this.$emit('on-change', _this.getValue())
+                        _this.renderChain(i + 1)
+                    }
+                })
+                this.$set(this.currentValue, i, list[0].value)
+                this.renderChain(i + 1)
+            },
         }
     };
 </script>

@@ -91,8 +91,8 @@
                 <ion-item detail-push @click.native="$router.forward('/demo/advanced/accordion')">
                     Accordion <ion-note slot="item-end">手风琴组件</ion-note>
                 </ion-item>
-                <ion-item detail-push @click.native="$router.forward('/demo/advanced/datepicker')">
-                    Datepicker <ion-note slot="item-end">日期选择器</ion-note>
+                <ion-item detail-push @click.native="$router.forward('/demo/advanced/picker')">
+                    Picker <ion-note slot="item-end">选择器</ion-note>
                 </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/advanced/popup')">
                     Popup <ion-note slot="item-end">自定义弹层</ion-note>

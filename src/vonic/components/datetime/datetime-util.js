@@ -353,7 +353,6 @@ export function updateDate(newData) {
             if (isPresent(newData.ampm) && isPresent(newData.hour)) {
                 if (newData.ampm === 'pm') {
                     newData.hour = (newData.hour === 12 ? 12 : newData.hour + 12);
-
                 } else {
                     newData.hour = (newData.hour === 12 ? 0 : newData.hour);
                 }
@@ -432,6 +431,15 @@ export function convertDataToISO(data) {
     let rtn = '';
 
     if (isPresent(data)) {
+        // do some magic for 12-hour values
+        if (isPresent(data.ampm) && isPresent(data.hour)) {
+            if (data.ampm === 'pm') {
+                data.hour = (data.hour === 12 ? 12 : data.hour + 12);
+            } else {
+                data.hour = (data.hour === 12 ? 0 : data.hour);
+            }
+        }
+
         if (isPresent(data.year)) {
             // YYYY
             rtn = fourDigit(data.year);

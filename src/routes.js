@@ -46,7 +46,7 @@ import DemoScroll from './demos/Scroll'
 import DemoVueScroller from './demos/VueScroller'
 import DemoCascade from './demos/Cascade'
 import DemoAccordion from './demos/Accordion'
-import DemoDatepicker from './demos/DatePicker'
+import DemoPicker from './demos/Picker'
 import DemoPopup from './demos/Popup'
 import DemoActionSheet from './demos/ActionSheet'
 import DemoTabbar from './demos/Tabbar'
@@ -118,7 +118,7 @@ const routes = [
     { path: '/demo/pageFromTabbar',component: DemoPageFromTabbar },
     { path: '/demo/advanced/tabbarWithoutRoutes', component: DemoTabbarWithoutRoutes },
     { path: '/demo/advanced/modal', component: DemoModal },
-    { path: '/demo/advanced/datepicker', component: DemoDatepicker },
+    { path: '/demo/advanced/picker', component: DemoPicker },
 
     {path: '*', component: NotFound}
 

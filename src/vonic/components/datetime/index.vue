@@ -316,9 +316,12 @@
                     width = Math.max(columnsWidth[0], columnsWidth[1]);
                     pickerColumns[0].align = 'right';
                     pickerColumns[1].align = 'left';
+//                    pickerColumns[0].optionsWidth = pickerColumns[1].optionsWidth = `${width * 17}px`;
                 } else if (columnsWidth.length === 3) {
                     width = Math.max(columnsWidth[0], columnsWidth[2]);
                     pickerColumns[0].align = 'right';
+//                    pickerColumns[1].columnWidth = `${columnsWidth[1] * 17}px`;
+//                    pickerColumns[0].optionsWidth = pickerColumns[2].optionsWidth = `${width * 17}px`;
                     pickerColumns[2].align = 'left';
                 }
             },
@@ -389,6 +392,8 @@
         watch: {
             currentValue: function (value) {
                 this.updateText();
+                this.$emit('input', convertDataToISO(value))
+//                this.$emit('input', getValueFromFormat(value, this.displayFormat || DEFAULT_FORMAT))
             },
 
             value: function (value) {
