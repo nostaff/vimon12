@@ -59,10 +59,10 @@
                     ],
                     columns: [],
                 },
-                currentText: '',
-                currentValue: updateDate('', this.value),
-                min: this.minDate,
-                max: this.maxDate,
+                text: '',
+                currentValue: updateDate(this.value),
+                min: {},
+                max: {},
                 picker: Object,
                 pickerOptions: {},
                 columns: [],
@@ -73,9 +73,15 @@
         props: {
             value: String,
             placeholder: String,
-            text: String,
+            /**
+             * Value must be a date string
+             * following the
+             * [ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime),
+             * such as `1996-12-19`.
+             */
             minDate: String,
             maxDate: String,
+
             displayFormat: String,
             cancelText: {
                 type: String,
@@ -102,6 +108,8 @@
             ['monthNames', 'monthShortNames', 'dayNames', 'dayShortNames'].forEach(type => {
                 this.locale[type] = convertToArrayOfStrings((this)[type], type);
             });
+
+            this.updateText();
         },
 
         methods: {
@@ -110,45 +118,17 @@
                 if (this.disabled) {
                     return;
                 }
-                console.log('datetime, open picker');
-
 
                 let pickerOptions = objectAssign({}, this.defaultOptions, this.pickerOptions)
 
-
-//                // Configure picker under the hood
-//                const picker = this.picker = this.pickerCtrl.create(pickerOptions);
-//                picker.addButton({
-//                    text: this.cancelText,
-//                    role: 'cancel',
-//                    handler: () => this.ionCancel.emit(this)
-//                });
-//                picker.addButton({
-//                    text: this.doneText,
-//                    handler: (data) => this.value = data,
-//                });
-//
-//                picker.ionChange.subscribe(() => {
-//                    this.validate();
-//                    picker.refresh();
-//                });
 
                 // Update picker status before presenting
                 this.generate();
                 this.validate();
 
-
                 pickerOptions.columns = this.columns;
                 this.picker = $picker.show(pickerOptions);
                 this.columns = [];
-
-
-                // Present picker
-//                this.fireFocus();
-//                picker.present(pickerOptions);
-//                picker.onDidDismiss(() => {
-//                    this.fireBlur();
-//                });
             },
 
             generate() {
@@ -188,7 +168,6 @@
 
                         const column = {
                             name: key,
-//                            selectedIndex: 0,
                             options: values.map(val => {
                                 return {
                                     value: val,
@@ -199,7 +178,7 @@
 
                         // cool, we've loaded up the columns with options
                         // preselect the option for this column
-                        const optValue = getValueFromFormat(this.getValue(), format);
+                        const optValue = getValueFromFormat(this.currentValue, format);
                         const selectedIndex = column.options.findIndex(opt => opt.value === optValue);
                         if (selectedIndex >= 0) {
                             // set the select index for this column's options
@@ -208,7 +187,6 @@
                         }
 
                         // add our newly created column to the picker
-//                        picker.addColumn(column);
                         this.columns.push(column);
                     });
 
@@ -338,13 +316,9 @@
                     width = Math.max(columnsWidth[0], columnsWidth[1]);
                     pickerColumns[0].align = 'right';
                     pickerColumns[1].align = 'left';
-                    pickerColumns[0].optionsWidth = pickerColumns[1].optionsWidth = `${width * 17}px`;
-
                 } else if (columnsWidth.length === 3) {
                     width = Math.max(columnsWidth[0], columnsWidth[2]);
                     pickerColumns[0].align = 'right';
-                    pickerColumns[1].columnWidth = `${columnsWidth[1] * 17}px`;
-                    pickerColumns[0].optionsWidth = pickerColumns[2].optionsWidth = `${width * 17}px`;
                     pickerColumns[2].align = 'left';
                 }
             },
@@ -352,41 +326,33 @@
             updateText() {
                 // create the text of the formatted data
                 const template = this.displayFormat || DEFAULT_FORMAT;
-                this.currentText = renderDateTime(template, this.getValue(), this.locale);
-            },
-
-            getValue() {
-                return this.value;
-            },
-
-            hasValue() {
-                const val = this.value;
-                return isPresent(val)
-                    && isObject(val)
-                    && Object.keys(val).length > 0;
+                this.text = renderDateTime(template, this.currentValue, this.locale);
             },
 
             calcMinMax(now) {
                 const todaysYear = (now || new Date()).getFullYear();
+                let minDate = this.minDate;
+                let maxDate = this.maxDate;
+
                 if (isPresent(this.yearValues)) {
                     var years = convertToArrayOfNumbers(this.yearValues, 'year');
-                    if (isBlank(this.min)) {
-                        this.min = Math.min.apply(Math, years);
+                    if (isBlank(minDate)) {
+                        minDate = Math.min.apply(Math, years);
                     }
-                    if (isBlank(this.max)) {
-                        this.max = Math.max.apply(Math, years);
+                    if (isBlank(maxDate)) {
+                        maxDate = Math.max.apply(Math, years);
                     }
                 } else {
-                    if (isBlank(this.min)) {
-                        this.min = (todaysYear - 100).toString();
+                    if (isBlank(minDate)) {
+                        minDate = (todaysYear - 100).toString();
                     }
-                    if (isBlank(this.max)) {
-                        this.max = todaysYear.toString();
+                    if (isBlank(maxDate)) {
+                        maxDate = todaysYear.toString();
                     }
                 }
 
-                const min = this.min = parseDate(this.min);
-                const max = this.max = parseDate(this.max);
+                const min = this.min = parseDate(minDate);
+                const max = this.max = parseDate(maxDate);
 
                 min.year = min.year || todaysYear;
                 max.year = max.year || todaysYear;
@@ -418,6 +384,17 @@
                 }
 
             },
+        },
+
+        watch: {
+            currentValue: function (value) {
+                this.updateText();
+            },
+
+            value: function (value) {
+                this.currentValue = updateDate(value)
+                this.updateText();
+            }
         }
     };
 

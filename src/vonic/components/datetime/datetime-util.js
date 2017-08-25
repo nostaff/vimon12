@@ -123,6 +123,7 @@ export function renderDateTime(template, value, locale) {
     });
 
     if (!hasText) {
+        console.warn(`Error date format: "${template}". `);
         return '';
     }
 
@@ -135,7 +136,6 @@ export function renderDateTime(template, value, locale) {
 
 
 export function renderTextFormat(format, value, date, locale) {
-
     if (format === FORMAT_DDDD || format === FORMAT_DDD) {
         try {
             value = (new Date(date.year, date.month - 1, date.day)).getDay();
@@ -273,6 +273,10 @@ export function isLeapYear(year) {
 const ISO_8601_REGEXP = /^(\d{4}|[+\-]\d{6})(?:-(\d{2})(?:-(\d{2}))?)?(?:T(\d{2}):(\d{2})(?::(\d{2})(?:\.(\d{3}))?)?(?:(Z)|([+\-])(\d{2})(?::(\d{2}))?)?)?$/;
 const TIME_REGEXP = /^((\d{2}):(\d{2})(?::(\d{2})(?:\.(\d{3}))?)?(?:(Z)|([+\-])(\d{2})(?::(\d{2}))?)?)?$/;
 
+/**
+ * @param val
+ * @returns DatetimeData
+ */
 export function parseDate(val) {
     // manually parse IS0 cuz Date.parse cannot be trusted
     // ISO 8601 format: 1994-12-15T13:47:20Z
@@ -329,7 +333,7 @@ export function parseDate(val) {
 }
 
 
-export function updateDate(existingData, newData) {
+export function updateDate(newData) {
     if (isPresent(newData) && newData !== '') {
 
         if (isString(newData)) {
@@ -338,8 +342,7 @@ export function updateDate(existingData, newData) {
             newData = parseDate(newData);
             if (newData) {
                 // successfully parsed the ISO string to our DateTimeData
-                Object.assign(existingData, newData);
-                return true;
+                return newData;
             }
 
         } else if ((isPresent(newData.year) || isPresent(newData.hour) || isPresent(newData.month) || isPresent(newData.day) || isPresent(newData.minute) || isPresent(newData.second))) {
@@ -348,33 +351,21 @@ export function updateDate(existingData, newData) {
 
             // do some magic for 12-hour values
             if (isPresent(newData.ampm) && isPresent(newData.hour)) {
-                if (newData.ampm.value === 'pm') {
-                    newData.hour.value = (newData.hour.value === 12 ? 12 : newData.hour.value + 12);
+                if (newData.ampm === 'pm') {
+                    newData.hour = (newData.hour === 12 ? 12 : newData.hour + 12);
 
                 } else {
-                    newData.hour.value = (newData.hour.value === 12 ? 0 : newData.hour.value);
+                    newData.hour = (newData.hour === 12 ? 0 : newData.hour);
                 }
             }
 
-            // merge new values from the picker's selection
-            // to the existing DateTimeData values
-            for (const k in newData) {
-                (existingData)[k] = newData[k].value;
-            }
-
-            return true;
+            return newData;
         }
 
         // eww, invalid data
         console.warn(`Error parsing date: "${newData}". Please provide a valid ISO 8601 datetime format: https://www.w3.org/TR/NOTE-datetime`);
-
-    } else {
-        // blank data, clear everything out
-        for (const k in existingData) {
-            delete (existingData)[k];
-        }
     }
-    return false;
+    return {};
 }
 
 
@@ -408,7 +399,6 @@ export function parseTemplate(template) {
         });
     });
 
-    console.log('formats', formats)
     return formats;
 }
 
@@ -433,7 +423,10 @@ export function convertFormatToKey(format) {
     return null;
 }
 
-
+/**
+ * @param data DatetimeData
+ * @returns {string}
+ */
 export function convertDataToISO(data) {
     // https://www.w3.org/TR/NOTE-datetime
     let rtn = '';

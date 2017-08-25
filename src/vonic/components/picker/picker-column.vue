@@ -30,9 +30,6 @@
             },
         },
 
-        created () {
-//            console.log(this.column)
-        },
         mounted() {
             // get the height of one option
             this.optHeight = (this.$refs.button[0] ? this.$refs.button[0].clientHeight : 0);

@@ -196,3 +196,113 @@ export function assert(actual, reason) {
         throw new Error(message);
     }
 }
+
+
+export function each (obj, fn) {
+    for (var key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            if (fn.call(obj[key], key, obj[key]) === false) {
+                break
+            }
+        }
+    }
+}
+
+export function trimZero (val) {
+    val = String(val)
+    val = val ? parseFloat(val.replace(/^0+/g, '')) : ''
+    val = val || 0
+    val = val + ''
+    return val
+}
+
+export function addZero (val) {
+    val = String(val)
+    return val.length < 2 ? '0' + val : val
+}
+
+export function isLeapYear (year) {
+    return year % 100 !== 0 && year % 4 === 0 || year % 400 === 0
+}
+
+export function getMaxDay (year, month) {
+    year = parseFloat(year)
+    month = parseFloat(month)
+    if (month === 2) {
+        return isLeapYear(year) ? 29 : 28
+    }
+    return [4, 6, 9, 11].indexOf(month) >= 0 ? 30 : 31
+}
+
+export function parseRow (tmpl, value) {
+    return tmpl.replace(/\{value\}/g, value)
+}
+
+// parse Date String
+export function parseDate (format, value) {
+    const formatParts = format.split(/[^A-Za-z]+/)
+    let valueParts = value.split(/\D+/)
+    if (formatParts.length !== valueParts.length) {
+        // if it is error date, use current date
+        const date = formater(new Date(), format)
+        valueParts = date.split(/\D+/)
+    }
+
+    let result = {}
+
+    for (let i = 0; i < formatParts.length; i++) {
+        if (formatParts[i]) {
+            result[formatParts[i]] = valueParts[i]
+        }
+    }
+    return result
+}
+
+export function getElement (expr) {
+    return (typeof expr === 'string') ? document.querySelector(expr) : expr
+}
+
+export function toElement (html) {
+    const tempContainer = document.createElement('div')
+    tempContainer.innerHTML = html
+    return tempContainer.firstElementChild
+}
+
+export function removeElement (el) {
+    el && el.parentNode.removeChild(el)
+}
+
+
+function formater (date, fmt = 'YYYY-MM-DD HH:mm:ss') {
+    var o = {
+        'M+': date.getMonth() + 1,
+        'D+': date.getDate(),
+        'h+': date.getHours() % 12 === 0 ? 12 : date.getHours() % 12,
+        'H+': date.getHours(),
+        'm+': date.getMinutes(),
+        's+': date.getSeconds(),
+        'q+': Math.floor((date.getMonth() + 3) / 3),
+        'S': date.getMilliseconds()
+    }
+    var week = {
+        '0': '\u65e5',
+        '1': '\u4e00',
+        '2': '\u4e8c',
+        '3': '\u4e09',
+        '4': '\u56db',
+        '5': '\u4e94',
+        '6': '\u516d'
+    }
+    if (/(Y+)/.test(fmt)) {
+        fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length))
+    }
+    if (/(E+)/.test(fmt)) {
+        fmt = fmt.replace(RegExp.$1, ((RegExp.$1.length > 1) ? (RegExp.$1.length > 2 ? '\u661f\u671f' : '\u5468') : '') + week[date.getDay() + ''])
+    }
+    for (var k in o) {
+        if (new RegExp('(' + k + ')').test(fmt)) {
+            fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? (o[k]) : (('00' + o[k]).substr(('' + o[k]).length)))
+        }
+    }
+    return fmt
+}

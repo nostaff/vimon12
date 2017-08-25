@@ -4,18 +4,20 @@
 
             <ion-list title="Datetime">
                 <ion-item>
-                    <ion-label slot="item-label">Birthday</ion-label>
-                    <ion-datetime slot="item-content" displayFormat="h:mm A" v-model="birthday" placeholder="Birthday"></ion-datetime>
+                    <ion-label slot="item-label">Time</ion-label>
+                    <ion-datetime slot="item-content" displayFormat="h:mm A" v-model="time"
+                                  placeholder="time"></ion-datetime>
                 </ion-item>
 
                 <ion-item>
                     <ion-label slot="item-label">Birthday</ion-label>
-                    <ion-datetime slot="item-content" v-model="birthday" label="生日" date-format="yyyy-mm-dd" text="2016-07-10"></ion-datetime>
+                    <ion-datetime slot="item-content" v-model="birthday" placeholder="birthday" minDate="2002-02-01"
+                                  displayFormat="YYYY-MM-DD"></ion-datetime>
                 </ion-item>
             </ion-list>
 
             <div class="padding">
-                value: {{ birthday }}
+                value: {{ time }} {{ birthday }}
             </div>
 
             <ion-button block @click.native="normal()">点我弹出</ion-button>
@@ -73,20 +75,19 @@
         },
     ];
 
-    for (var i=1970;i<=2017;i++)
-    {
+    for (var i = 1970; i <= 2017; i++) {
         columnItems[0].options.push({text: i, value: i});
     }
 
-    for (var i=1;i<=12;i++)
-    {
+    for (var i = 1; i <= 12; i++) {
         columnItems[1].options.push({text: i, value: i});
     }
 
     export default {
         data() {
             return {
-                birthday: '2012-06-26'
+                time: '18:21',
+                birthday: '2012-06-26',
             }
         },
         methods: {

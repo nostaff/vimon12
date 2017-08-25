@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import ActionSheet from './picker.vue'
+import Picker from './picker.vue'
 
 import {createElement} from '../../utils/utils'
 
@@ -12,7 +12,7 @@ class IonPicker {
         let container = document.querySelector('.ion-app') || document.body;
         createElement('ion-picker', container)
 
-        this._vm = new Vue(ActionSheet)
+        this._vm = new Vue(Picker)
         this._vm.$mount('[ion-picker]')
 
         return this._vm.show(option)

@@ -3,7 +3,7 @@
         <ion-backdrop @click.native="bdClick()" ref="backdrop" v-show="activated"></ion-backdrop>
         <transition name="ion-picker-fadeup">
             <div class="picker-wrapper" v-show="activated">
-                <div class="picker-toolbar">
+                <div class="picker-toolbar" v-if="buttons">
                     <div v-for="(button, index) in buttons" class="picker-toolbar-button" :class="button.cssRole">
                         <ion-button @click.native="btnClick(button)" :class="button.cssClass" class="picker-button" clear>
                             {{button.text}}
@@ -135,14 +135,10 @@
             },
 
             getSelected() {
-                let selected = [];
+                let selected = {};
                 this.columns.forEach((col, index) => {
                     let selectedColumn = col.options[col.selectedIndex];
-                    selected[col.name] = {
-                        text: selectedColumn ? selectedColumn.text : null,
-                        value: selectedColumn ? selectedColumn.value : null,
-                        index: index,
-                    };
+                    selected[col.name] = selectedColumn ? selectedColumn.value : null;
                 });
                 return selected;
             },
@@ -150,6 +146,8 @@
             // one of the columns has changed its selected index
             colChange(option) {
                 let column = this.columns.find(col => col.name === option.name);
+                column.selectedIndex = option.index;
+
                 if (column && column.onChange && typeof column.onChange === 'function') {
                     column.onChange(option);
                 }
