@@ -97,7 +97,7 @@
             },
             updateLabelAttribute(name, value = '') {
                 if (this.$refs.label && this.$refs.label.$el.length != 0) {   // 空==0，不为空 != 0 ，非大于0
-                    this.$refs['label'].$el.setAttribute(name, value);
+                    this.$refs.label.$el.setAttribute(name, value);
                 } else if (this.$slots['item-label']) {
                     this.$slots['item-label'][0].elm.setAttribute(name, value);
                 }

@@ -1,6 +1,6 @@
 <template>
     <ion-page v-nav="{title: '选择器', showBackButton: true}">
-        <ion-content class="padding-top">
+        <ion-content>
 
             <ion-list title="Datetime">
                 <ion-item>
@@ -27,16 +27,49 @@
                                   displayFormat="DD/MM/YY"></ion-datetime>
                 </ion-item>
             </ion-list>
-
-            <div class="padding">
-                value: {{ time }} {{ birthday }}
+            <div padding-horizontal>
+                <ion-button block @click.native="setDate()" color="secondary">设置日期为 2012-06-25</ion-button>
             </div>
+            <br>
+            <br>
+            <p><span>当前日期为：{{birthday}} 当前时间为：{{time}}</span></p>
+            <br>
+            <ion-list title="Address">
+                <ion-item>
+                    <ion-label slot="item-label">Value</ion-label>
+                    <ion-note slot="item-content">{{areaValue}}</ion-note>
+                </ion-item>
 
-            <ion-button block @click.native="normal()">点我弹出</ion-button>
-            <br>
-            <br>
-            <br>
-            <ion-button block @click.native="chain()">地址联动</ion-button>
+                <ion-item>
+                    <ion-label slot="item-label">Text</ion-label>
+                    <ion-address slot="item-content" :level="2" v-model="areaValue" placeholder="Select Address"></ion-address>
+                </ion-item>
+
+                <ion-item>
+                </ion-item>
+                <ion-item>
+                    <ion-label slot="item-label">Value</ion-label>
+                    <ion-note slot="item-content">{{areaValue1}}</ion-note>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label slot="item-label">Text</ion-label>
+                    <ion-address slot="item-content" :level="3" v-model="areaValue1" placeholder="Select Address"></ion-address>
+                </ion-item>
+            </ion-list>
+
+            <div padding-horizontal>
+                <ion-button block @click.native="setAddress()" color="secondary">设置地址为 ['广东省', '深圳市', '南山区'] </ion-button>
+                <br>
+                <br>
+                <br>
+                <ion-button block @click.native="normal()">点我弹出</ion-button>
+                <br>
+                <ion-button block @click.native="chain()">地址联动</ion-button>
+                <br>
+                <br>
+                <br>
+            </div>
 
         </ion-content>
     </ion-page>
@@ -74,7 +107,7 @@
         {
             name: 'Year',
             align: 'left',
-            defaultValue: '1980',
+            selectedIndex: 30,
             options: [],
             onChange: (option) => {
                 console.log('Year onChange', option)
@@ -83,7 +116,7 @@
         {
             name: 'Month',
             align: 'left',
-            defaultValue: '12',
+            selectedIndex: 5,
             options: [],
             onChange: (option) => {
                 console.log('Month onChange', option)
@@ -101,59 +134,59 @@
 
 
     const areas = [{
-        name: '中国',
+        text: '中国',
         value: 'china',
         parent: 0
     }, {
-        name: '美国',
+        text: '美国',
         value: 'USA',
         parent: 0
     }, {
-        name: '广东',
+        text: '广东',
         value: 'china001',
         parent: 'china'
     }, {
-        name: '广西',
+        text: '广西',
         value: 'china002',
         parent: 'china'
     }, {
-        name: '美国001',
+        text: '美国001',
         value: 'usa001',
         parent: 'USA'
     }, {
-        name: '美国002',
+        text: '美国002',
         value: 'usa002',
         parent: 'USA'
     }, {
-        name: '广州',
+        text: '广州',
         value: 'gz',
         parent: 'china001'
     }, {
-        name: '深圳',
+        text: '深圳',
         value: 'sz',
         parent: 'china001'
     }, {
-        name: '广西001',
+        text: '广西001',
         value: 'gz',
         parent: 'china002'
     }, {
-        name: '广西002',
+        text: '广西002',
         value: 'sz',
         parent: 'china002'
     }, {
-        name: '美国001_001',
+        text: '美国001_001',
         value: '0003',
         parent: 'usa001'
     }, {
-        name: '美国001_002',
+        text: '美国001_002',
         value: '0004',
         parent: 'usa001'
     }, {
-        name: '美国002_001',
+        text: '美国002_001',
         value: '0005',
         parent: 'usa002'
     }, {
-        name: '美国002_002',
+        text: '美国002_002',
         value: '0006',
         parent: 'usa002'
     }];
@@ -161,10 +194,12 @@
     export default {
         data() {
             return {
-                time: '18:21',
+                time: '18:05',
                 birthday: '2012-06-26',
 
-                areasValue: [],
+                areaValue: ['天津市', '市辖区', '和平区'],
+                areaValue1: ['430000', '430400', '430407'],
+
             }
         },
         methods: {
@@ -182,10 +217,21 @@
                 $picker.show({
                     buttons: buttonItems,
                     columns: areas,
+                    isChain: true,
+                    deep: 3
                 }).then((res) => {
                     console.log('button clicked: ', res)
                 });
             },
+
+            setAddress () {
+                this.areaValue1 = ['广东省', '深圳市', '南山区'];
+            },
+
+            setDate () {
+                this.birthday = '2012-06-25';
+            },
+
 
         }
     }

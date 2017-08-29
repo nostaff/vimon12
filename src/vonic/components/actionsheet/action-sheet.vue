@@ -1,6 +1,6 @@
 <template>
     <div role="dialog" class="ion-action-sheet" :class="['action-sheet-'+theme, cssClass]" style="z-index: 10001;">
-        <ion-backdrop @click.native="backdropClick()" ref="backdrop" v-show="activated"></ion-backdrop>
+        <ion-backdrop @click.native="backdropClick()" v-show="activated"></ion-backdrop>
         <transition name="ion-action-sheet-fadeup">
             <div class="action-sheet-wrapper" v-show="activated">
                 <div class="action-sheet-container">

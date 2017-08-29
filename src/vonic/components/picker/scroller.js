@@ -7,29 +7,42 @@
  */
 const Animate = require('./animate');
 
-var Scroller = function (component, content, options) {
-    var self = this;
+const TEMPLATE = `<div class="picker-opts" data-role="content"></div>`
 
-    if (!component) return;
+var Scroller = function (component, options) {
+    var self = this
 
-    options = options || {};
+    options = options || {}
 
     self.options = {
-        onSelect () {
-        },
-        itemHeight: 38,
-        defaultValue: '',
+        options: [],
+        onSelect() {},
+        itemClass: 'picker-opt',
+        selectedIndex: 0,
+        // defaultValue: '',
         selectedItemClass: 'picker-opt-selected'
-    };
+    }
 
     for (var key in options) {
         if (options[key] !== undefined) {
-            self.options[key] = options[key];
+            self.options[key] = options[key]
         }
     }
 
-    self.__content = content;
-    self.__itemHeight = self.options.itemHeight;
+    var container = document.createElement('div')
+    container.innerHTML = options.template || TEMPLATE
+
+    var content = self.__content = container.querySelector('[data-role=content]')
+
+    var html = ''
+    self.options.options.forEach(function (row) {
+        html += '<div class="' + self.options.itemClass + '" data-value="' + row.value + '">' + row.text + '</div>'
+    })
+    content.innerHTML = html
+
+    component.appendChild(content)
+
+    self.__itemHeight = parseInt(content.querySelector('div').clientHeight)
 
     self.__callback = options.callback || function (top) {
         content.style.webkitTransform = 'translate3d(0, ' + (-top) + 'px, 0)'
@@ -37,7 +50,7 @@ var Scroller = function (component, content, options) {
 
     self.__setDimensions(component.clientHeight, content.offsetHeight)
 
-    self.select(self.options.defaultValue, false);
+    self.selectByIndex(self.options.selectedIndex, false);
 
     // const supportTouch = (window.Modernizr && !!window.Modernizr.touch) || (function () {
     //         return !!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch);
@@ -98,14 +111,14 @@ var Scroller = function (component, content, options) {
 /**
  * @param pos {Number} position between 0 (start of effect) and 1 (end of effect)
  **/
-var easeOutCubic = function(pos) {
+var easeOutCubic = function (pos) {
     return (Math.pow((pos - 1), 3) + 1);
 };
 
 /**
  * @param pos {Number} position between 0 (start of effect) and 1 (end of effect)
  **/
-var easeInOutCubic = function(pos) {
+var easeInOutCubic = function (pos) {
     if ((pos /= 0.5) < 1) {
         return 0.5 * Math.pow(pos, 3);
     }
@@ -137,19 +150,16 @@ var members = {
     __maxDecelerationScrollTop: null,
     __decelerationVelocityY: null,
 
-    __setDimensions (clientHeight, contentHeight) {
+    __setDimensions(clientHeight, contentHeight) {
         var self = this
 
         self.__clientHeight = clientHeight
         self.__contentHeight = contentHeight
 
         self.__maxScrollTop = Math.max(self.__contentHeight - self.__itemHeight, 0);
-
-        // Refresh scroll position
-        self.scrollTo(self.__scrollTop, true);
     },
 
-    selectByIndex (index, animate) {
+    selectByIndex(index, animate) {
         var self = this
         if (index < 0 || index > self.__content.childElementCount - 1) {
             return
@@ -161,7 +171,7 @@ var members = {
         self.__selectItem(self.__content.children[index])
     },
 
-    select (value, animate) {
+    select(value, animate) {
         var self = this
 
         var children = self.__content.children
@@ -175,7 +185,7 @@ var members = {
         self.selectByIndex(0, animate)
     },
 
-    scrollTo (top, animate) {
+    scrollTo(top, animate) {
         var self = this
 
         animate = (animate === undefined) ? true : animate
@@ -196,19 +206,21 @@ var members = {
         self.__publish(top, 250)
     },
 
-    destroy () {
-        this.__component.parentNode && this.__component.parentNode.removeChild(this.__component)
+    destroy() {
+        this.__content.parentNode && this.__content.parentNode.removeChild(this.__content)
     },
 
-    __selectItem (selectedItem) {
+    __selectItem(selectedItem) {
         var self = this;
 
         // picker-opt-selected
         var selectedItemClass = self.options.selectedItemClass
         var lastSelectedElem = self.__content.querySelector('.' + selectedItemClass)
         if (lastSelectedElem) {
+            console.log('lastSelectedElem', lastSelectedElem)
             lastSelectedElem.classList.remove(selectedItemClass)
         }
+        console.log('selectedItem', selectedItem)
         selectedItem.classList.add(selectedItemClass)
 
         if (self.value !== null) {
@@ -218,7 +230,7 @@ var members = {
         self.value = selectedItem.dataset.value
     },
 
-    __scrollingComplete () {
+    __scrollingComplete() {
         var self = this
 
         var index = Math.abs(Math.round((self.__scrollTop - self.__minScrollTop - self.__itemHeight / 2) / self.__itemHeight))
@@ -230,7 +242,7 @@ var members = {
         }
     },
 
-    __doTouchStart (ev, timeStamp) {
+    __doTouchStart(ev, timeStamp) {
         const touches = ev.touches
         const self = this
         const target = ev.touches ? ev.touches[0] : ev
@@ -281,7 +293,7 @@ var members = {
         self.__positions = []
     },
 
-    __doTouchMove (ev, timeStamp, scale) {
+    __doTouchMove(ev, timeStamp, scale) {
         const self = this
         const touches = ev.touches
         const target = ev.touches ? ev.touches[0] : ev
@@ -369,7 +381,7 @@ var members = {
         self.__lastScale = scale
     },
 
-    __doTouchEnd (timeStamp) {
+    __doTouchEnd(timeStamp) {
         var self = this
 
         if (timeStamp instanceof Date) {
@@ -437,7 +449,7 @@ var members = {
     },
 
     // Applies the scroll position to the content element
-    __publish (top, animationDuration) {
+    __publish(top, animationDuration) {
         var self = this
 
         // Remember whether we had an animation, then we try to continue based on the current "drive" of the animation
@@ -487,7 +499,7 @@ var members = {
     },
 
     // Called when a touch sequence end and the speed of the finger was high enough to switch into deceleration mode.
-    __startDeceleration (timeStamp) {
+    __startDeceleration(timeStamp) {
         var self = this
 
         self.__minDecelerationScrollTop = self.__minScrollTop
@@ -527,7 +539,7 @@ var members = {
     },
 
     // Called on every step of the animation
-    __stepThroughDeceleration (render) {
+    __stepThroughDeceleration(render) {
         var self = this
 
         var scrollTop = self.__scrollTop + self.__decelerationVelocityY

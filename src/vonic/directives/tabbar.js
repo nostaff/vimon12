@@ -49,8 +49,6 @@ function vmReady() {
     })
 }
 
-console.log(this.$events)
-
 Vue.directive('tabbar-item-index', {
     inserted: function (el, binding) {
         this.$events.$emit('selectedItem', binding.value)

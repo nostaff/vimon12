@@ -493,6 +493,59 @@ export function convertDataToISO(data) {
 }
 
 /**
+ * @param data Object
+ * @returns DatetimeData
+ */
+export function convertToDatetimeData(data) {
+    let rtn = {};
+
+    if (isPresent(data)) {
+        // do some magic for 12-hour values
+        if (isPresent(data.ampm) && isPresent(data.hour)) {
+            if (data.ampm.value === 'pm') {
+                data.hour.value = (data.hour.value === 12 ? 12 : data.hour.value + 12);
+            } else {
+                data.hour.value = (data.hour.value === 12 ? 0 : data.hour.value);
+            }
+        }
+
+        if (isPresent(data.year)) {
+            // YYYY
+            rtn.year = parseInt(data.year.value);
+        }
+
+        if (isPresent(data.month)) {
+            // YYYY-MM
+            rtn.month = parseInt(data.month.value);
+        }
+
+        if (isPresent(data.day)) {
+            // YYYY-MM-DD
+            rtn.day = parseInt(data.day.value);
+        }
+
+        if (isPresent(data.hour)) {
+            // YYYY-MM-DD HH:mm:SS
+            rtn.hour = parseInt(data.hour.value);
+        }
+
+        if (isPresent(data.minute)) {
+            rtn.minute = parseInt(data.minute.value)
+        }
+
+        if (isPresent(data.second)) {
+            rtn.second = parseInt(data.second.value)
+        }
+
+        if (isPresent(data.millisecond)) {
+            rtn.millisecond = parseInt(data.millisecond.value)
+        }
+    }
+
+    return rtn;
+}
+
+/**
  * Use to convert a string of comma separated numbers or
  * an array of numbers, and clean up any user input
  */

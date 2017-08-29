@@ -16,6 +16,7 @@
     import { assert, clamp, deepCopy, isArray, isBlank, isObject, isPresent, isString } from './util';
     import {
         convertDataToISO,
+        convertToDatetimeData,
         convertFormatToKey,
         dateDataSortValue,
         dateSortValue,
@@ -53,7 +54,7 @@
                             text: this.doneText,
                             role: 'done',
                             handler: (data) => {
-                                this.currentValue = data
+                                this.currentValue = convertToDatetimeData(data);
                             },
                         }
                     ],
@@ -127,6 +128,7 @@
                 this.validate();
 
                 pickerOptions.columns = this.columns;
+
                 this.picker = $picker.show(pickerOptions);
                 this.columns = [];
             },
@@ -179,10 +181,11 @@
                         // cool, we've loaded up the columns with options
                         // preselect the option for this column
                         const optValue = getValueFromFormat(this.currentValue, format);
-                        const selectedIndex = column.options.findIndex(opt => opt.value === optValue);
+                        const selectedIndex = column.options.findIndex(opt => {
+                            return opt.value === optValue
+                        });
                         if (selectedIndex >= 0) {
                             // set the select index for this column's options
-                            column.defaultValue = optValue;
                             column.selectedIndex = selectedIndex;
                         }
 
@@ -393,7 +396,6 @@
             currentValue: function (value) {
                 this.updateText();
                 this.$emit('input', convertDataToISO(value))
-//                this.$emit('input', getValueFromFormat(value, this.displayFormat || DEFAULT_FORMAT))
             },
 
             value: function (value) {

@@ -62,7 +62,6 @@
             },
 
             selectedItem(index) {
-                console.log('selectedItem', index)
                 this.selectedIndex = index
             },
 
