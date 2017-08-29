@@ -213,14 +213,14 @@ var members = {
     __selectItem(selectedItem) {
         var self = this;
 
+        if (!selectedItem)
+            return;
+
         // picker-opt-selected
         var selectedItemClass = self.options.selectedItemClass
         var lastSelectedElem = self.__content.querySelector('.' + selectedItemClass)
-        if (lastSelectedElem) {
-            console.log('lastSelectedElem', lastSelectedElem)
+        if (lastSelectedElem)
             lastSelectedElem.classList.remove(selectedItemClass)
-        }
-        console.log('selectedItem', selectedItem)
         selectedItem.classList.add(selectedItemClass)
 
         if (self.value !== null) {
@@ -493,7 +493,7 @@ var members = {
             self.__scheduledTop = self.__scrollTop = top
             // Push values out
             if (self.__callback) {
-                self.__callback(self.__scrollTop)
+                self.__callback(top)
             }
         }
     },

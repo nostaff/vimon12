@@ -34,14 +34,13 @@
                             text: this.cancelText,
                             role: 'cancel',
                             handler: () => {
-                                console.log('Cancel clicked');
+                                console.debug('Cancel clicked');
                             }
                         },
                         {
                             text: this.doneText,
                             role: 'done',
                             handler: (data) => {
-                                console.log('data', data, this.currentValue)
                                 this.currentValue = this.convertToArray(data)
                             },
                         }
