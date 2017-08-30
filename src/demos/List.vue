@@ -1,5 +1,5 @@
 <template>
-    <ion-page v-nav="{title: '列表', showBackButton: true}">
+    <ion-page v-nav="{title: 'Loading', showBackButton: true}">
         <ion-content>
 
             <ion-list>

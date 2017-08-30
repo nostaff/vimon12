@@ -28,6 +28,8 @@ import DemoBadge from './demos/Badge'
 import DemoDialog from './demos/Dialog'
 import DemoIcon from './demos/Icon'
 import DemoFabs from './demos/FABs'
+import DemoToast from './demos/Toast'
+import DemoLoading from './demos/Loading'
 
 // Layout
 import DemoToolbar from './demos/Toolbar'
@@ -84,6 +86,8 @@ const routes = [
     { path: '/demo/basic/fabs', component: DemoFabs },
     { path: '/demo/basic/icons', component: DemoIcon },
     { path: '/demo/basic/dialog', component: DemoDialog },
+    { path: '/demo/basic/toast', component: DemoToast },
+    { path: '/demo/basic/loading', component: DemoLoading },
 
 
     // Layout

@@ -282,42 +282,6 @@
                 })
             },
 
-            getColumns(value) {
-                // check is data contains the values
-                if (value.length > 0) {
-                    const matchCount = this.optionColumns.filter((item) => {
-                        return value.indexOf(item.value) > -1
-                    }).length
-                    if (matchCount < value.length) {
-                        value = []
-                    }
-                }
-                var datas = []
-                const level = this.level || 8
-                for (var i = 0; i < level; i++) {
-                    if (i === 0) {
-                        datas.push(this.getRootColumn())
-                    } else {
-                        // 没有数据时，取得上一级的第一个
-                        if (!value[i]) {
-                            if (typeof datas[i - 1][0] === 'undefined') {
-                                break
-                            } else {
-                                const topValue = datas[i - 1][0].value
-                                datas.push(this.getChildren(topValue))
-                            }
-                        } else {
-                            datas.push(this.getChildren(value[i - 1]))
-                        }
-                    }
-                }
-                const list = datas.filter((item) => {
-                    return item.length > 0
-                })
-                // correct the column
-                this.count = list.length
-                return list
-            }
         }
     };
 </script>

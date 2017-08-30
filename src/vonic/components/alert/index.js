@@ -17,7 +17,6 @@ class IonDialog {
         createElement(marker, container)
         let selector = `[${marker}]`
 
-
         let component = Alert
         switch (type) {
             case 'alert':

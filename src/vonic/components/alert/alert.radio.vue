@@ -1,7 +1,7 @@
 <template>
     <div class="ion-alert" :class="['alert-'+theme, cssClass]" role="dialog" style="z-index: 9999;">
         <ion-backdrop role="presentation" v-show="activated"
-                      @click.native="hide"></ion-backdrop>
+                      @click.native="hide" :class="{'backdrop-no-tappable':!enableBackdropDismiss}"></ion-backdrop>
         <transition name="ion-alert-fadeup">
             <div class="alert-wrapper" v-show="activated">
                 <div class="alert-head">

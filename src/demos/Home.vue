@@ -41,10 +41,10 @@
                 <ion-item detail-push @click.native="$router.forward('/demo/basic/dialog')">
                     Dialog <ion-note slot="item-end">对话框</ion-note>
                 </ion-item>
-                <ion-item detail-push @click.native="toast()">
+                <ion-item detail-push @click.native="$router.forward('/demo/basic/toast')">
                     Toast <ion-note slot="item-end">文字提示</ion-note>
                 </ion-item>
-                <ion-item detail-push @click.native="loading('正在加载..')">
+                <ion-item detail-push @click.native="$router.forward('/demo/basic/loading')">
                     Loading <ion-note slot="item-end">加载提示</ion-note>
                 </ion-item>
             </ion-list>

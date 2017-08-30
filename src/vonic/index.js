@@ -42,6 +42,7 @@ import Badge from './components/badge'
 import FABs from './components/fab'
 import Datetime from './components/datetime'
 import Address from './components/address'
+import Spinner from './components/spinner'
 
 Vue.component(Avatar.name, Avatar)
 Vue.component(Label.name, Label)
@@ -60,6 +61,7 @@ Vue.component(Badge.name, Badge)
 Vue.component(FABs.name, FABs)
 Vue.component(Datetime.name, Datetime)
 Vue.component(Address.name, Address)
+Vue.component(Spinner.name, Spinner)
 
 // Layout
 import {Page, Header, Footer} from './components/page'

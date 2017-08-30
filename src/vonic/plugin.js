@@ -9,20 +9,19 @@ import './directives/tabbar.js'
 import './directives/navigation.js'
 
 import './components/backdrop'
-import './services/loading'
+// import './services/loading'
 // import './services/alert/radio.button.vue'
 // import './services/popup/dialog.js'
-import './services/popup/index.js'
-import './services/cascadepanel/index.js'
-import './services/sidebar/index.js'
+// import './services/popup/index.js'
+// import './services/cascadepanel/index.js'
+// import './services/sidebar/index.js'
 // import './services/modal/tabbar.js'
 
 import './components/actionsheet/index.js'
 import './components/alert/index.js'
+import './components/loading/index.js'
 import './components/modal/index.js'
 import './components/picker/index.js'
-
-
 
 import IonApp from './components/app'
 
