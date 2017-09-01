@@ -1,7 +1,7 @@
 <template>
     <ion-page v-nav="{title: '操作列表', showBackButton: true}">
         <ion-content>
-            <div class="padding scroll-content action-sheets-basic-page">
+            <div padding class="action-sheets-basic-page">
                 <ion-button block @click.native="normal()">点击背景关闭</ion-button>
                 <p></p>
                 <ion-button block color="secondary" @click.native="disableBackdrop()">背景不可点击</ion-button>

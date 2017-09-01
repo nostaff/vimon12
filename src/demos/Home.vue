@@ -1,6 +1,5 @@
 <template>
-    <ion-page v-tabbar-item-index="4" v-nav="{title: 'Vonic组件', showBackButton: false, showMoreButton: true}">
-        <!--<ion-navbar title="Vonic组件"></ion-navbar>-->
+    <ion-page v-tabbar-item-index="4" v-nav="{title: 'Vonic组件', showBackButton: false}">
 
         <ion-content>
             <!-- Basic -->
@@ -95,12 +94,12 @@
                     Picker <ion-note slot="item-end">选择器</ion-note>
                 </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/advanced/popup')">
-                    Popup <ion-note slot="item-end">自定义弹层</ion-note>
+                    Popup / Popover<ion-note slot="item-end">自定义弹层</ion-note>
                 </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/advanced/actionsheet')">
                     ActionSheet <ion-note slot="item-end">操作列表</ion-note>
                 </ion-item>
-                <ion-item detail-push @click.native="toggleSidebarRight()">
+                <ion-item detail-push @click.native="$router.forward('/demo/advanced/sidebar')">
                     Sidebar <ion-note slot="item-end">侧边栏</ion-note>
                 </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/advanced/tabbar/home')">
@@ -160,37 +159,5 @@
             })
 
         },
-
-        destroyed() {
-            $sidebar.destroy()
-        },
-
-        methods: {
-            back() {
-                $router.back({path: '/'})
-            },
-
-            loading(tips) {
-                $loading.show(tips)
-
-                setTimeout(() => {
-                    $loading.hide()
-                }, 2000)
-            },
-
-            toast() {
-                $toast.show('发送成功', 1500).then(() => {
-                    console.log('toast hide')
-                })
-            },
-
-            toggleSidebar() {
-                this.sidebar.toggle()
-            },
-
-            toggleSidebarRight() {
-                this.sidebarRight.toggle()
-            }
-        }
     }
 </script>

@@ -2,10 +2,6 @@
     <ion-page v-nav="{title: '输入框', showBackButton: true}">
         <ion-content>
 
-            <p>输入的内容</p>
-            {{ username }}
-            {{ password }}
-
             <ion-list title="有标签-定宽">
                 <ion-item>
                     <ion-label slot="item-label" fixed>Username</ion-label>
