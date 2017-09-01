@@ -161,40 +161,6 @@ export default {
             element.classList.toggle(classes[i]);
         }
     },
-    isUndefined: function(value) {
-        return value === undefined;
-    },
-    isString: function(val) {
-        return typeof val === 'string';
-    },
-    isNumber: function(val) {
-        return typeof val === 'number';
-    },
-    isFunction: function(val) {
-        return typeof val === 'function';
-    },
-    isDefined: function(val) {
-        return typeof val !== 'undefined';
-    },
-    isPresent: function(val) {
-        return val !== undefined && val !== null;
-    },
-    isBlank: function(val) {
-        return val === undefined || val === null;
-    },
-    isObject: function(val) {
-        return typeof val === 'object';
-    },
-    isArray: function(val) {
-        return Array.isArray(val);
-    },
-    isTrueProperty: function(val) {
-        if (typeof val === 'string') {
-            val = val.toLowerCase().trim();
-            return (val === 'true' || val === 'on' || val === '');
-        }
-        return !!val;
-    },
     booleanify: function(val) {
         if (val === "true" || val == 1) {
             return true;

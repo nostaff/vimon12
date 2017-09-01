@@ -13,7 +13,7 @@
     import IonButton from "../button/index";
     import IonPicker from '../picker/picker';
 
-    import { assert, clamp, deepCopy, isArray, isBlank, isObject, isPresent, isString } from './util';
+    import { assert, clamp, deepCopy, isArray, isBlank, isObject, isPresent, isString } from '../../utils/utils';
     import {
         convertDataToISO,
         convertToDatetimeData,

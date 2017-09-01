@@ -24,3 +24,24 @@ $backdrop-color: #000 !default;
 .ion-backdrop.backdrop-no-tappable {
   cursor: auto;
 }
+
+
+.ion-backdrop-fade-enter-active {
+  transition: opacity .35s
+}
+
+.ion-backdrop-fade-leave-active {
+  transition: opacity .35s
+}
+
+.ion-backdrop-fade-enter, .ion-backdrop-fade-leave-to {
+  opacity: 0.01;
+}
+
+.pointer--none {
+  pointer-events: none;
+}
+
+.pointer--auto {
+  pointer-events: auto;
+}

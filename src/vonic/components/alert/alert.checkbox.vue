@@ -1,7 +1,6 @@
 <template>
     <div class="ion-alert" :class="['alert-'+theme, cssClass]" role="dialog" style="z-index: 9999;">
-        <ion-backdrop role="presentation" v-show="activated"
-                      @click.native="hide" :class="{'backdrop-no-tappable':!enableBackdropDismiss}"></ion-backdrop>
+        <ion-backdrop :class="{'backdrop-no-tappable':!enableBackdropDismiss}" v-show="activated" @click.native="bdClick()"></ion-backdrop>
         <transition name="ion-alert-fadeup">
             <div class="alert-wrapper" v-show="activated">
                 <div class="alert-head">
@@ -33,7 +32,7 @@
 <script>
     import objectAssign from 'object-assign'
     import ThemeMixins from '../../themes/theme.mixins';
-    import IonBackdrop from "../backdrop/backdrop";
+    import IonBackdrop from "../backdrop/index";
     import IonButton from "../button/index";
     export default {
         name:'ion-alert-checkbox',
@@ -117,7 +116,7 @@
                 }, 400);
             },
 
-            backdropClick () {
+            bdClick () {
                 if (this.enableBackdropDismiss) {
                     this.hide(-1);
                 }

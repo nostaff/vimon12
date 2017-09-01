@@ -1,6 +1,6 @@
 <template>
     <transition name="ion-backdrop-fade">
-        <div class="ion-backdrop" v-show="activated"></div>
+        <div class="ion-backdrop" role="presentation" v-show="activated"></div>
     </transition>
 </template>
 <script>
@@ -40,24 +40,4 @@
 </script>
 <style lang="scss">
     @import './backdrop.scss';
-
-    .ion-backdrop-fade-enter-active {
-        transition: opacity .4s
-    }
-
-    .ion-backdrop-fade-leave-active {
-        transition: opacity .3s
-    }
-
-    .ion-backdrop-fade-enter, .ion-backdrop-fade-leave-to {
-        opacity: 0.01;
-    }
-
-    .pointer--none {
-        pointer-events: none;
-    }
-
-    .pointer--auto {
-        pointer-events: auto;
-    }
 </style>

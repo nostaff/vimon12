@@ -35,7 +35,7 @@
 </template>
 <script>
     import ThemeMixins from '../../themes/theme.mixins';
-    import util from '../../utils/util'
+    import util from '../../utils/util';
     export default {
         name: 'ion-range',
         mixins: [ThemeMixins],
@@ -130,10 +130,14 @@
             }
 
             if (this.$slots['range-left']) {
-                this.$slots['range-left'][0].elm.setAttribute('range-left', '')
+                this.$slots['range-left'].forEach(function (item) {
+                    item.elm.setAttribute('range-left', '')
+                })
             }
             if (this.$slots['range-right']) {
-                this.$slots['range-right'][0].elm.setAttribute('range-right', '')
+                this.$slots['range-right'].forEach(function (item) {
+                    item.elm.setAttribute('range-right', '')
+                })
             }
 
             this.$el.events

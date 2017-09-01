@@ -1,7 +1,6 @@
 <template>
     <div class="ion-loading" :class="['loading-'+theme, cssClass]" role="dialog">
-        <ion-backdrop role="presentation" v-show="activated" v-if="showBackdrop" @click.native="bdClick()"
-                      :class="{'backdrop-no-tappable':!enableBackdropDismiss}"></ion-backdrop>
+        <ion-backdrop :class="{'backdrop-no-tappable':!enableBackdropDismiss}" v-show="activated" v-if="showBackdrop" @click.native="bdClick()"></ion-backdrop>
         <transition name="ion-loading-fadeup">
             <div class="loading-wrapper" v-show="activated">
                 <div v-if="spinner" class="loading-spinner">
@@ -15,7 +14,7 @@
 <script>
     import objectAssign from 'object-assign'
     import ThemeMixins from '../../themes/theme.mixins';
-    import IonBackdrop from "../backdrop/backdrop";
+    import IonBackdrop from "../backdrop/index";
     import IonSpinner from '../spinner/index'
     export default {
         name:'ion-loading',

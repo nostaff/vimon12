@@ -1,8 +1,8 @@
 <template>
     <div class="ion-modal show-page" :class="['alert-'+theme, cssClass]" role="dialog" style="z-index: 10010;">
-        <ion-backdrop role="presentation" v-show="activated"
-                      @click.native="backdropClick"></ion-backdrop>
-        <transition name="ion-modal-fadeup">
+        <ion-backdrop v-show="activated"
+                      @click.native="bdClick"></ion-backdrop>
+        <transition name="modal-fadeup">
             <div class="modal-wrapper" v-show="activated">
 
             </div>
@@ -12,7 +12,7 @@
 <script>
     import objectAssign from 'object-assign'
     import ThemeMixins from '../../themes/theme.mixins';
-    import IonBackdrop from "../backdrop/backdrop";
+    import IonBackdrop from "../backdrop/index";
     export default {
         name:'ion-modal',
         mixins: [ThemeMixins],
@@ -80,7 +80,7 @@
                 }, 400);
             },
 
-            backdropClick () {
+            bdClick () {
                 if (this.enableBackdropDismiss) {
                     this.hide(-1);
                 }

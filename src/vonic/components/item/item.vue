@@ -75,10 +75,14 @@
                 this.$el.classList.remove('item-block')
 
             if (this.$slots['item-start']) {
-                this.$slots['item-start'][0].elm.setAttribute('item-start', '')
+                this.$slots['item-start'].forEach(function (item) {
+                    item.elm.setAttribute('item-start', '')
+                })
             }
             if (this.$slots['item-end']) {
-                this.$slots['item-end'][0].elm.setAttribute('item-end', '')
+                this.$slots['item-end'].forEach(function (item) {
+                    item.elm.setAttribute('item-end', '')
+                })
             }
         },
         methods: {
@@ -99,7 +103,9 @@
                 if (this.$refs.label && this.$refs.label.$el.length != 0) {   // 空==0，不为空 != 0 ，非大于0
                     this.$refs.label.$el.setAttribute(name, value);
                 } else if (this.$slots['item-label']) {
-                    this.$slots['item-label'][0].elm.setAttribute(name, value);
+                    this.$slots['item-label'].forEach(item => {
+                        item.elm.setAttribute(name, value)
+                    })
                 }
             },
         }

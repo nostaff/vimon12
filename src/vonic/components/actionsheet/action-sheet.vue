@@ -1,6 +1,6 @@
 <template>
     <div role="dialog" class="ion-action-sheet" :class="['action-sheet-'+theme, cssClass]" style="z-index: 10001;">
-        <ion-backdrop @click.native="backdropClick()" :class="{'backdrop-no-tappable':!enableBackdropDismiss}" v-show="activated"></ion-backdrop>
+        <ion-backdrop @click.native="bdClick()" :class="{'backdrop-no-tappable':!enableBackdropDismiss}" v-show="activated"></ion-backdrop>
         <transition name="ion-action-sheet-fadeup">
             <div class="action-sheet-wrapper" v-show="activated">
                 <div class="action-sheet-container">
@@ -25,7 +25,7 @@
 <script>
     import objectAssign from 'object-assign'
     import ThemeMixins from '../../themes/theme.mixins';
-    import IonBackdrop from "../backdrop/backdrop";
+    import IonBackdrop from "../backdrop/index";
     import IonButton from "../button/index";
     import IonIcon from "../icon/index";
     export default {
@@ -111,7 +111,7 @@
                 }, 400);
             },
 
-            backdropClick () {
+            bdClick () {
                 if (this.enableBackdropDismiss) {
                     this.hide(-1);
                 }

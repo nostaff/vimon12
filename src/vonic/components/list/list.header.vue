@@ -25,7 +25,9 @@
 
         mounted () {
             if (this.$slots['item-end']) {
-                this.$slots['item-end'][0].elm.setAttribute('item-end', '')
+                this.$slots['item-end'].forEach(function (item) {
+                    item.elm.setAttribute('item-end', '')
+                })
             }
         },
     }

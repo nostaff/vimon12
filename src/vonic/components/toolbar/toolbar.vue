@@ -30,10 +30,14 @@
         },
         mounted () {
             if (this.$slots['left-item']) {
-                this.$slots['left-item'][0].elm.setAttribute('start', '')
+                this.$slots['left-item'].forEach(function (item) {
+                    item.elm.setAttribute('start', '')
+                })
             }
             if (this.$slots['right-item']) {
-                this.$slots['right-item'][0].elm.setAttribute('end', '')
+                this.$slots['right-item'].forEach(function (item) {
+                    item.elm.setAttribute('end', '')
+                })
             }
         },
     }

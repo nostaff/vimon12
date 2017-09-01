@@ -6,7 +6,7 @@
         </ion-button>
 
         <div class="ion-fab-list" :side="key" v-for="(items, key) in options">
-            <ion-button role="fab" class="fab fab-ios fab-in-list" :color="item.color" :class="['fab-'+theme+'-in-list', activated?'show':'']" @click.native="onItemClicked(item.name)" key="idx" v-for="item in items">
+            <ion-button role="fab" class="fab fab-ios fab-in-list" :color="item.color" :class="['fab-'+theme+'-in-list']" @click.native="onItemClicked(item.name)" key="idx" v-for="item in items">
                 <ion-icon :name="item.icon"></ion-icon>
             </ion-button>
         </div>
