@@ -78,7 +78,7 @@ class VonicPopup {
         }
 
         let wrapper = document.querySelector('[von-popups]')
-        wrapper.innerHTML = ''
+        wrapper.parentNode.removeChild(wrapper);
     }
 }
 

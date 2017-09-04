@@ -4,7 +4,7 @@
 // --------------------------------------------------
 
 
-ion-popover {
+.ion-popover {
   @include position(0, 0, 0, 0);
 
   position: absolute;
@@ -20,7 +20,7 @@ ion-popover {
 .popover-wrapper {
   z-index: $z-index-overlay-wrapper;
 
-  opacity: 0;
+  opacity: 1;
 }
 
 .popover-content {
@@ -34,11 +34,26 @@ ion-popover {
   flex-direction: column;
 }
 
-.popover-content ion-content,
+.popover-content .ion-content,
 .popover-content .scroll-content {
   contain: none;
 }
 
 .popover-content .scroll-content {
   position: relative;
+}
+
+.ion-popover .ion-backdrop {
+  opacity: .08;
+}
+
+// transition fadeup
+.ion-popover-fadeup-enter-active, .ion-popover-fadeup-leave-active {
+  transition: opacity .15s ease;
+  opacity: 1;
+}
+
+.ion-popover-fadeup-enter, .ion-popover-fadeup-leave-to {
+  opacity: 0;
+  transition: opacity ease .15s;
 }

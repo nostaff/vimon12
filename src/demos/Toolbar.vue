@@ -94,7 +94,7 @@
 
                 <div style="height: 20px;"></div>
 
-                <ion-radio :options="themes" v-model="theme"></ion-radio>
+                <ion-radio-group :options="themes" v-model="theme"></ion-radio-group>
 
             </ion-content>
 

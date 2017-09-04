@@ -10,7 +10,7 @@
             </slot>
             <slot name="right-item">
                 <ion-buttons end v-if="showMore">
-                    <ion-button :icon-only="!moreText" @click.native="onMoreClick($event)">
+                    <ion-button :icon-only="!moreText" @click.native="onMenuClick($event)">
                         <ion-icon :class="['more-button-icon','more-button-icon-'+theme]" :name="moreIcon" v-if="moreIcon"></ion-icon>
                         <span :class="['more-button-text','more-button-text-'+theme]" v-if="moreText" v-text="moreText"></span>
                     </ion-button>
@@ -95,20 +95,19 @@
                 ev.stopPropagation();
 
                 if (this.onBack) {
-                    this.onBack()
-                    return
+                    return this.onBack(ev)
                 }
 
                 let root = document.querySelector('.ion-app')
                 if (root) root.setAttribute('transition-direction', 'back');
                 history.go(-1)
             },
-            onMoreClick(ev) {
+            onMenuClick(ev) {
                 ev.preventDefault();
                 ev.stopPropagation();
 
                 if (this.onMenu) {
-                    this.onMenu()
+                    this.onMenu(ev)
                 }
             },
         }

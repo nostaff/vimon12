@@ -14,5 +14,51 @@
         components: {
             IonListHeader,
         },
+        data() {
+            return {
+                componentName: 'ionList',
+
+                radioComponentList: [],
+                timer: null
+            };
+        },
+
+        props: {
+            radioGroup: Boolean,
+            value: String,
+        },
+        watch: {
+            value (val) {
+                this.radioComponentList.forEach((radio) => {
+                    radio.setChecked(val)
+                })
+            },
+        },
+
+        methods: {
+
+            // called by radio where checked
+            onRadioChange (value) {
+                this.radioComponentList.forEach((radio) => {
+                    radio.setChecked(value)
+                })
+                this.isSendOut = true
+                this.$emit('input', value)
+                this.$emit('onChange', value)
+            },
+
+
+            updateRadioList (radio) {
+                this.radioComponentList.push(radio)
+
+                this.timer && clearTimeout(this.timer)
+                this.timer = setTimeout(() => {
+                    this.radioComponentList.forEach((radio) => {
+                        radio.setChecked(this.value)
+                    });
+                }, 0);
+            }
+        },
+
     }
 </script>

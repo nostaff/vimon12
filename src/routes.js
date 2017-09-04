@@ -50,6 +50,7 @@ import DemoCascade from './demos/Cascade'
 import DemoAccordion from './demos/Accordion'
 import DemoPicker from './demos/Picker'
 import DemoPopup from './demos/Popup'
+import DemoPopover from './demos/Popover'
 import DemoActionSheet from './demos/ActionSheet'
 import DemoTabbar from './demos/Tabbar'
 import DemoTabbarHome from './demos/tabbar/Home'
@@ -108,6 +109,7 @@ const routes = [
     { path: '/demo/advanced/cascade', component: DemoCascade },
     { path: '/demo/advanced/accordion', component: DemoAccordion },
     { path: '/demo/advanced/popup', component: DemoPopup },
+    { path: '/demo/advanced/popover', component: DemoPopover },
     { path: '/demo/advanced/actionSheet', component: DemoActionSheet },
     {
         path: '/demo/advanced/tabbar',
