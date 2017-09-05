@@ -2,22 +2,90 @@
     <ion-page v-nav="{title: '复选框', showBackButton: true}">
         <ion-content>
 
-            <ion-checkbox title="选择感兴趣的板块:" :options="topics" v-model="chosenTopics" @on-change="change"></ion-checkbox>
+            <ion-checkbox-group title="选择感兴趣的板块:" :options="topics" v-model="chosenTopics" @on-change="change"></ion-checkbox-group>
 
             <p class="padding">
                 chosen Topics: {{ chosenTopics }}
             </p>
 
-            <ion-checkbox title="去过的省份:" label-position="left" color="secondary" :options="lists" v-model="chosenAreas" @on-change="change"></ion-checkbox>
+            <ion-checkbox-group title="去过的省份:" label-position="left" color="secondary" :options="lists" v-model="chosenAreas" @on-change="change"></ion-checkbox-group>
 
             <p class="padding">
                 chosen Areas: {{ chosenAreas }}
             </p>
 
-            <ion-checkbox title="设置选项的颜色:" :options="lists2" v-model="chosenAreas2" @on-change="change"></ion-checkbox>
+            <ion-checkbox-group title="设置选项的颜色:" :options="lists2" v-model="chosenAreas2" @on-change="change"></ion-checkbox-group>
 
             <p class="padding">
                 chosen Areas: {{ chosenAreas2 }}
+            </p>
+
+            <ion-list title="Data">
+
+                <ion-item>
+                    <ion-checkbox slot="item-start" v-model="data.jon"></ion-checkbox>
+                    <ion-label slot="item-label">Jon Snow</ion-label>
+                </ion-item>
+
+                <ion-item>
+                    <ion-checkbox slot="item-start" v-model="data.daenerys" color="danger"></ion-checkbox>
+                    <ion-label slot="item-label">Daenerys Targaryen</ion-label>
+                </ion-item>
+
+                <ion-item>
+                    <ion-checkbox slot="item-start" v-model="data.arya" disabled></ion-checkbox>
+                    <ion-label slot="item-label">Arya Stark</ion-label>
+                </ion-item>
+
+                <ion-item>
+                    <ion-checkbox slot="item-start" v-model="data.tyroin" color="secondary"></ion-checkbox>
+                    <ion-label slot="item-label">Tyrion Lannister</ion-label>
+                </ion-item>
+
+                <ion-item>
+                    <ion-checkbox slot="item-start" v-model="data.sansa" color="danger"></ion-checkbox>
+                    <ion-label slot="item-label">Sansa Stark</ion-label>
+                </ion-item>
+
+                <ion-item>
+                    <ion-checkbox slot="item-start" v-model="data.khal"></ion-checkbox>
+                    <ion-label slot="item-label">Khal Drogo</ion-label>
+                </ion-item>
+
+                <ion-item>
+                    <ion-checkbox slot="item-start" v-model="data.cersei" color="dark"></ion-checkbox>
+                    <ion-label slot="item-label">Cersei Lannister</ion-label>
+                </ion-item>
+
+                <ion-item>
+                    <ion-checkbox slot="item-start" v-model="data.stannis"></ion-checkbox>
+                    <ion-label slot="item-label">Stannis Baratheon</ion-label>
+                </ion-item>
+
+                <ion-item>
+                    <ion-checkbox slot="item-start" v-model="data.petyr" disabled></ion-checkbox>
+                    <ion-label slot="item-label">Petyr Baelish</ion-label>
+                </ion-item>
+
+                <ion-item>
+                    <ion-checkbox slot="item-start" v-model="data.hodor" color="dark"></ion-checkbox>
+                    <ion-label slot="item-label">Hodor</ion-label>
+                </ion-item>
+
+                <ion-item>
+                    <ion-checkbox slot="item-start" v-model="data.catelyn" color="secondary"></ion-checkbox>
+                    <ion-label slot="item-label">Catelyn Stark</ion-label>
+                </ion-item>
+
+                <ion-item>
+                    <ion-checkbox slot="item-start" v-model="data.bronn" color="danger"></ion-checkbox>
+                    <ion-label slot="item-label">Bronn</ion-label>
+                </ion-item>
+
+            </ion-list>
+
+            <p class="padding">
+                chosen Data: {{ data }}
             </p>
 
         </ion-content>
@@ -33,7 +101,20 @@
                 topics: ["娱乐", "电影", "减肥", "搞笑", "科技"],
                 lists: [{value: 'gd', label: '广东'}, {value: 'gx', label: '广西'}, {value: 'sd', label: '山东'}, {value: 'sx', label: '山西'}],
                 lists2: [{value: 'bj', label: '北京', color: 'dark'}, {value: 'gd', label: '广东', color: 'primary'}, {value: 'gx', label: '广西', color: 'secondary'}, {value: 'sd', label: '山东', color: 'light', disabled: true}, {value: 'sx', label: '山西', color: 'danger'}],
-
+                data: {
+                    jon: true,
+                    daenerys: true,
+                    arya: false,
+                    tyroin: false,
+                    sansa: true,
+                    khal: false,
+                    cersei: true,
+                    stannis: true,
+                    petyr: false,
+                    hodor: true,
+                    catelyn: true,
+                    bronn: false
+                }
             }
         },
         methods: {

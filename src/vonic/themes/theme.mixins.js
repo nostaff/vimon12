@@ -7,7 +7,6 @@ export default {
         return {
             theme: 'ios',
             elelmentId: 'ion-' + Math.random().toString(36).substring(3, 8),
-            // components: [],
         };
     },
     created() {

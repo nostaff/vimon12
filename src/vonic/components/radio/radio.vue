@@ -67,7 +67,7 @@
                     this.isChecked = isChecked
                     this.isChecked && this.$emit('onSelect', this.value)
 
-                    this.itemComponent && this.itemComponent.$el.classList[this.isChecked ? 'add' : 'remove']('item-checkbox-checked');
+                    this.itemComponent && this.itemComponent.$el.classList[this.isChecked ? 'add' : 'remove']('item-radio-checked');
                 }
             },
 
