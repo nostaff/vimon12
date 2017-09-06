@@ -2,7 +2,7 @@
     <ion-page v-nav="{title: '搜索框', showBackButton: true}">
         <ion-content>
 
-            <ion-searchbar v-model="keywords" placeholder="输入关键字" :on-change="onChange"
+            <ion-searchbar v-model="keywords" placeholder="输入关键字" :onChange="onChange"
                            :on-cancel="onCancel"></ion-searchbar>
 
             <div class="item" v-show="searching">

@@ -59,8 +59,8 @@ class IonDialog {
         return this.show('checkbox', options)
     }
 
-    hide(buttonIndex) {
-        if(vm) vm.hide(buttonIndex)
+    dismiss(buttonIndex) {
+        if(vm) vm.dismiss(buttonIndex)
     }
 
 }

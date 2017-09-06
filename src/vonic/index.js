@@ -34,7 +34,7 @@ import Input from './components/input'
 import Searchbar from './components/searchbar'
 import {Radio, RadioGroup} from './components/radio'
 import {Checkbox, CheckboxGroup} from './components/checkbox'
-import Select from './components/select'
+import {Select, Option} from './components/select'
 import Toggle from './components/toggle'
 import Thumbnail from './components/thumbnail'
 import Range from './components/range'
@@ -56,6 +56,7 @@ Vue.component(Radio.name, Radio)
 Vue.component(Checkbox.name, Checkbox)
 Vue.component(CheckboxGroup.name, CheckboxGroup)
 Vue.component(Select.name, Select)
+Vue.component(Option.name, Option)
 Vue.component(Thumbnail.name, Thumbnail)
 Vue.component(Toggle.name, Toggle)
 Vue.component(Range.name, Range)

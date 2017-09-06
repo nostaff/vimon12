@@ -6,13 +6,13 @@
                 <div class="action-sheet-container">
                     <div class="action-sheet-group">
                         <div class="action-sheet-title" v-text="title"></div>
-                        <ion-button role="action-sheet-button" key="idx" v-for="(button, index) in buttons" :class="button.cssClass" @click.native="hide(index)">
+                        <ion-button role="action-sheet-button" key="idx" v-for="(button, index) in buttons" :disabled="button.disabled" :class="button.cssClass" @click.native="dismiss(index, button.disabled)">
                             <ion-icon class="action-sheet-icon icon" :name="button.icon" v-if="button.icon"></ion-icon>
                             {{button.text}}
                         </ion-button>
                     </div>
                     <div class="action-sheet-group">
-                        <ion-button role="action-sheet-button" class="action-sheet-cancel" :class="cancelButton.cssClass" @click.native="hide(-1)">
+                        <ion-button role="action-sheet-button" class="action-sheet-cancel" :class="cancelButton.cssClass" :disabled="cancelButton.disabled" @click.native="dismiss(-1, cancelButton.disabled)">
                             <ion-icon class="action-sheet-icon icon" :name="cancelButton.icon" v-if="cancelButton.icon"></ion-icon>
                             {{cancelButton.text}}
                         </ion-button>
@@ -85,13 +85,14 @@
                 this.activated = true
 
                 return new Promise((resolve, reject) => {
-                    this.$on('onHideEvent', (buttonIndex) => {
+                    this.$on('onDismissEvent', (buttonIndex) => {
                         resolve(buttonIndex)
                     })
                 });
             },
 
-            hide(buttonIndex) {
+            dismiss(buttonIndex, disabled) {
+                if (disabled) return;
                 this.activated = false;
 
                 if (buttonIndex == -1 && typeof this.cancelButton.handler === 'function') {
@@ -104,7 +105,7 @@
                     }
                 }
 
-                this.$emit('onHideEvent', buttonIndex)
+                this.$emit('onDismissEvent', buttonIndex)
 
                 setTimeout(() => {
                     this.$el.remove();
@@ -113,7 +114,7 @@
 
             bdClick () {
                 if (this.enableBackdropDismiss) {
-                    this.hide(-1);
+                    this.dismiss(-1);
                 }
             }
         }

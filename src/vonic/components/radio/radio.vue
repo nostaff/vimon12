@@ -30,7 +30,6 @@
             }
         },
 
-
         props: {
             value: {
                 type: [Number, String, Boolean],
@@ -100,3 +99,9 @@
         }
     }
 </script>
+
+<style lang="scss">
+    @import './radio.ios.scss';
+    @import './radio.md.scss';
+    @import './radio.wp.scss';
+</style>

@@ -1,7 +1,7 @@
 <template>
   <ion-page v-nav="{title: '级联', showBackButton: true}">
     <ion-content class="padding-top">
-      <cascade title="选择您所属的行政区划：" :fields="fields" :data="cities" :value="value" :on-change="onChange"></cascade>
+      <cascade title="选择您所属的行政区划：" :fields="fields" :data="cities" :value="value" :onChange="onChange"></cascade>
 
       <!-- 使用远程数据 -->
       <!--
@@ -9,7 +9,7 @@
         :fields="fields"
         ajax-url="path/to/data"
         :value="value"
-        :on-change="onChange"
+        :onChange="onChange"
       ></cascade>
       -->
 

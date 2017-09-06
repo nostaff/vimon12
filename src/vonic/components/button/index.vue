@@ -54,12 +54,12 @@
                 isActive: false,
                 //如果是在item 组件内部则为true
                 isParentItem: false,
-                isButtonCover: false
+                isItemCover: false
             }
         },
         computed: {
             colorClass: function() {
-                if (this.isButtonCover)
+                if (this.isItemCover)
                     return '';
                 switch (this.style) {
                     case 'outline':
@@ -70,13 +70,13 @@
                 }
             },
             roundClass: function() {
-                return this.round && !this.isButtonCover ? `button-round button-round-${this.theme}` : '';
+                return this.round && !this.isItemCover ? `button-round button-round-${this.theme}` : '';
             },
             blockClass: function() {
-                return this.block && !this.isButtonCover ? `button-block button-block-${this.theme}` : '';
+                return this.block && !this.isItemCover ? `button-block button-block-${this.theme}` : '';
             },
             fullClass: function() {
-                return this.full && !this.isButtonCover ? `button-full button-full-${this.theme}` : '';
+                return this.full && !this.isItemCover ? `button-full button-full-${this.theme}` : '';
             },
             sizeClass: function() {
                 let size = this.size;
@@ -100,15 +100,14 @@
             if (parentName === 'ionButtons' || parentName === 'ionToolbar') {
                 this.prefix = 'bar-button';
             }
-            if (this.role === 'radio' || this.role === 'checkbox') {
+            if (this.role === 'radio' || this.role === 'checkbox' || this.role === 'select') {
                 this.prefix = 'item-cover';
             } else if (this.role !== 'button') {
                 this.prefix = this.role
             }
-        },
-        mounted() {
+
             this.style = this.clear ? 'clear' : (this.outline ? 'outline' : 'default')
-            this.isButtonCover = this.$el.classList.contains('button-cover')
+            this.isItemCover = this.prefix === 'item-cover'
         },
         methods: {
             handleTouchStart(evt) {

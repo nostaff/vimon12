@@ -39,17 +39,17 @@ $select-popover-list-margin-start:       $select-popover-list-margin-left !defau
   white-space: nowrap;
 }
 
-.item-multiple-inputs ion-select {
+.item-multiple-inputs .ion-select {
   position: relative;
 }
 
 .select-disabled,
-.item-select-disabled ion-label {
+.item-select-disabled .ion-label {
   opacity: .4;
 
   pointer-events: none;
 }
 
-.select-popover ion-list {
+.select-popover .ion-list {
   @include margin($select-popover-list-margin-top, $select-popover-list-margin-end, $select-popover-list-margin-bottom, $select-popover-list-margin-start);
 }

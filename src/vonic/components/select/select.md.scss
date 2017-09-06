@@ -34,7 +34,7 @@ $select-md-placeholder-color:   $select-md-icon-color !default;
   color: $select-md-placeholder-color;
 }
 
-.select-md .item-select ion-label {
+.select-md .item-select .ion-label {
   @include margin-horizontal(0, null);
 }
 

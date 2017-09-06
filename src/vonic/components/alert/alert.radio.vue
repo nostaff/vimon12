@@ -10,7 +10,8 @@
                     <ion-button class="alert-tappable" role="alert-radio" key="idx" v-for="(input, index) in inputs"
                                 :value="input.value"
                                 :aria-checked="input.value === currentValue"
-                                @click.native="onCheck(input.value)
+                                :disabled="input.disabled"
+                                @click.native="onCheck(input.value, input.disabled)
                            ">
                         <div class="alert-radio-icon">
                             <div class="alert-radio-inner"></div>
@@ -20,7 +21,7 @@
                 </div>
                 <div class="alert-button-group">
                     <ion-button role="alert-button" key="idx" v-for="(button, index) in buttons"
-                                :class="button.cssClass" @click.native="hide(index)">
+                                :class="button.cssClass" @click.native="dismiss(index)">
                         {{button.text}}
                     </ion-button>
                 </div>
@@ -99,7 +100,7 @@
 
             },
 
-            hide(buttonIndex) {
+            dismiss(buttonIndex) {
                 this.activated = false;
 
                 if (buttonIndex > -1) {
@@ -118,11 +119,13 @@
 
             bdClick () {
                 if (this.enableBackdropDismiss) {
-                    this.hide(-1);
+                    this.dismiss(-1);
                 }
             },
 
-            onCheck(value) {
+            onCheck(value, disabled) {
+                if (disabled)
+                    return
                 this.currentValue = value
             },
         }

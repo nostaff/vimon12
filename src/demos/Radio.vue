@@ -2,7 +2,7 @@
     <ion-page v-nav="{title: '单选框', showBackButton: true}">
         <ion-content class="padding-top">
 
-            <ion-radio-group title="请选择性别" :options="genderOptions" v-model="gender" @on-change="change"></ion-radio-group>
+            <ion-radio-group title="请选择性别" :options="genderOptions" v-model="gender" @onChange="change"></ion-radio-group>
 
             <p class="padding">
                 option gender: {{ gender }}<br>
@@ -10,8 +10,8 @@
                 option selected: {{ selected2 }}
             </p>
 
-            <ion-radio-group title="设置整个Radio的颜色" :options="list" v-model="selected" color="danger" @on-change="change"></ion-radio-group>
-            <ion-radio-group title="设置每个Option的颜色" :options="list2" v-model="selected2" @on-change="change"></ion-radio-group>
+            <ion-radio-group title="设置整个Radio的颜色" :options="list" v-model="selected" color="danger" @onChange="change"></ion-radio-group>
+            <ion-radio-group title="设置每个Option的颜色" :options="list2" v-model="selected2" @onChange="change"></ion-radio-group>
 
 
             <ion-list radio-group v-model="language">

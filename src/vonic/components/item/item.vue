@@ -45,7 +45,6 @@
 </template>
 <script>
     import ThemeMixins from '../../themes/theme.mixins';
-    import util from '../../utils/util';
 
     export default {
         name: 'ion-item',
@@ -62,7 +61,7 @@
         },
         data() {
             return {
-                componentName: 'ionItem'
+                componentName: 'ionItem',
             };
         },
         computed: {
@@ -88,16 +87,10 @@
         methods: {
             // 给子组件用的方法
             addClass(className) {
-                let $el = this.$el;
-                if (!util.hasClass($el, className)) {
-                    util.addClass($el, className);
-                }
+                this.$el.classList.add(className)
             },
             removeClass(className) {
-                let $el = this.$el;
-                if (util.hasClass($el, className)) {
-                    util.removeClass($el, className);
-                }
+                this.$el.classList.remove(className)
             },
             updateLabelAttribute(name, value = '') {
                 if (this.$refs.label && this.$refs.label.$el.length != 0) {   // 空==0，不为空 != 0 ，非大于0
@@ -108,6 +101,14 @@
                     })
                 }
             },
+            getLabelText () {
+                if (this.$refs.label && this.$refs.label.$el.length != 0) {   // 空==0，不为空 != 0 ，非大于0
+                    return this.$refs.label.$el.innerText;
+                } else if (this.$slots['item-label']) {
+                    return this.$slots['item-label'][0].elm.innerText;
+                }
+                return ''
+            }
         }
     }
 </script>

@@ -20,7 +20,7 @@
                 </div>
                 <div class="alert-button-group">
                     <ion-button role="alert-button" key="idx" v-for="(button, index) in buttons"
-                                :class="button.cssClass" @click.native="hide(index)">{{button.text}}
+                                :class="button.cssClass" @click.native="dismiss(index)">{{button.text}}
                     </ion-button>
                 </div>
             </div>
@@ -101,7 +101,7 @@
 
             },
 
-            hide(buttonIndex) {
+            dismiss(buttonIndex) {
                 this.activated = false;
 
                 if (buttonIndex > -1) {
@@ -120,7 +120,7 @@
 
             bdClick () {
                 if (this.enableBackdropDismiss) {
-                    this.hide(-1);
+                    this.dismiss(-1);
                 }
             },
 

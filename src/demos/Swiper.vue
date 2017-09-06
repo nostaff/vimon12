@@ -2,11 +2,11 @@
     <ion-page class="page-swiper" v-nav="{title: '轮播', showBackButton: true}">
         <ion-content class="padding-top">
 
-            <ion-item is-link @click.native="$router.forward('/demo/advanced/swiper/default')">
+            <ion-item is-link @click.native="$router.forward('/demo/swiper/default')">
                 Horizontal (default)<span class="item-note">水平 (默认)</span>
             </ion-item>
 
-            <ion-item is-link  @click.native="$router.forward('/demo/advanced/swiper/vertical')">
+            <ion-item is-link  @click.native="$router.forward('/demo/swiper/vertical')">
                 Vertical <span class="item-note">垂直</span>
             </ion-item>
 

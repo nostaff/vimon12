@@ -2,19 +2,19 @@
     <ion-page v-nav="{title: '复选框', showBackButton: true}">
         <ion-content>
 
-            <ion-checkbox-group title="选择感兴趣的板块:" :options="topics" v-model="chosenTopics" @on-change="change"></ion-checkbox-group>
+            <ion-checkbox-group title="选择感兴趣的板块:" :options="topics" v-model="chosenTopics" @onChange="change"></ion-checkbox-group>
 
             <p class="padding">
                 chosen Topics: {{ chosenTopics }}
             </p>
 
-            <ion-checkbox-group title="去过的省份:" label-position="left" color="secondary" :options="lists" v-model="chosenAreas" @on-change="change"></ion-checkbox-group>
+            <ion-checkbox-group title="去过的省份:" label-position="left" color="secondary" :options="lists" v-model="chosenAreas" @onChange="change"></ion-checkbox-group>
 
             <p class="padding">
                 chosen Areas: {{ chosenAreas }}
             </p>
 
-            <ion-checkbox-group title="设置选项的颜色:" :options="lists2" v-model="chosenAreas2" @on-change="change"></ion-checkbox-group>
+            <ion-checkbox-group title="设置选项的颜色:" :options="lists2" v-model="chosenAreas2" @onChange="change"></ion-checkbox-group>
 
             <p class="padding">
                 chosen Areas: {{ chosenAreas2 }}

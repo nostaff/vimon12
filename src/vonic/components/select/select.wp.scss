@@ -60,7 +60,7 @@ $select-wp-placeholder-color:   $select-wp-icon-color !default;
   color: $select-wp-placeholder-color;
 }
 
-.item-wp.item-select ion-label {
+.item-wp.item-select .ion-label {
   @include margin-horizontal(0, null);
 }
 

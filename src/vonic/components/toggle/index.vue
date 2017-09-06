@@ -44,7 +44,7 @@
                 if (this.disabled) return;
                 this.checked = ! this.checked
                 this.$emit('input', this.checked)
-                this.$emit('on-change', this.checked)
+                this.$emit('onChange', this.checked)
             },
         },
         watch: {

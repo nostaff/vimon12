@@ -11,12 +11,12 @@
                 </div>
                 <template v-if="buttons.length > 2">
                     <div class="alert-button-group" key="idx" v-for="(button, index) in buttons" >
-                        <ion-button role="alert-button":class="button.cssClass" @click.native="hide(index)">{{button.text}}</ion-button>
+                        <ion-button role="alert-button":class="button.cssClass" @click.native="dismiss(index)">{{button.text}}</ion-button>
                     </div>
                 </template>
                 <template v-else>
                     <div class="alert-button-group">
-                        <ion-button role="alert-button" key="idx" v-for="(button, index) in buttons" :class="button.cssClass" @click.native="hide(index)">{{button.text}}</ion-button>
+                        <ion-button role="alert-button" key="idx" v-for="(button, index) in buttons" :class="button.cssClass" @click.native="dismiss(index)">{{button.text}}</ion-button>
                     </div>
                 </template>
             </div>
@@ -80,7 +80,7 @@
 
             },
 
-            hide(buttonIndex) {
+            dismiss(buttonIndex) {
                 this.activated = false;
 
                 if (buttonIndex > -1) {
@@ -98,7 +98,7 @@
 
             bdClick () {
                 if (this.enableBackdropDismiss) {
-                    this.hide(-1);
+                    this.dismiss(-1);
                 }
             }
         }

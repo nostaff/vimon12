@@ -70,7 +70,7 @@
                 if (disabled) return;
                 this.currentValue = newVal
                 this.$emit('input', newVal)
-                this.$emit('on-change', newVal)
+                this.$emit('onChange', newVal)
             },
 
             // option的颜色优先
@@ -80,3 +80,9 @@
         }
     }
 </script>
+
+<style lang="scss">
+    @import './radio.ios.scss';
+    @import './radio.md.scss';
+    @import './radio.wp.scss';
+</style>

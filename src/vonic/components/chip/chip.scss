@@ -65,7 +65,7 @@ ion-chip .button {
   }
 }
 
-ion-chip ion-icon {
+.ion-chip .ion-icon {
   @include text-align($chip-icon-text-align);
   @include border-radius($chip-icon-border-radius);
 
@@ -76,7 +76,7 @@ ion-chip ion-icon {
   line-height: $chip-icon-size;
 }
 
-ion-chip ion-avatar {
+.ion-chip .ion-avatar {
   @include border-radius($chip-avatar-border-radius);
 
   width: $chip-avatar-size;
@@ -85,7 +85,7 @@ ion-chip ion-avatar {
   min-height: $chip-avatar-size;
 }
 
-ion-chip ion-avatar img {
+.ion-chip .ion-avatar img {
   @include border-radius($chip-avatar-border-radius);
 
   display: block;

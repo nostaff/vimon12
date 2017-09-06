@@ -69,13 +69,13 @@ $chip-md-icon-text-color:            color-contrast($colors-md, $chip-md-icon-ba
   }
 }
 
-.chip-md > ion-label {
+.chip-md > .ion-label {
   @include deprecated-variable(margin, $chip-md-label-margin) {
     @include margin($chip-md-label-margin-top, $chip-md-label-margin-end, $chip-md-label-margin-bottom, $chip-md-label-margin-start);
   }
 }
 
-.chip-md > ion-icon {
+.chip-md > .ion-icon {
   color: $chip-md-icon-text-color;
   background-color: $chip-md-icon-background-color;
 }

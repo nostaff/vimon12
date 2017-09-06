@@ -32,7 +32,7 @@
 
     <div style="height: 10px;"></div>
 
-    <cascade :fields="fields" :data="cities" :value="value" :on-change="onChange"></cascade>
+    <cascade :fields="fields" :data="cities" :value="value" :onChange="onChange"></cascade>
 
   </div>
 </template>

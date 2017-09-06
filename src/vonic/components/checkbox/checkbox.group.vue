@@ -87,7 +87,7 @@
                 }
                 this.currentValue.sort()
 
-                this.$emit('on-change', this.currentValue)
+                this.$emit('onChange', this.currentValue)
             },
 
             // option的颜色优先
