@@ -3,7 +3,6 @@
         'ion-select',
         'select',
         'select-'+theme,
-//        'select-'+theme+'-'+color,
          isDisabled?'select-disabled':''
         ]">
         <div v-if="!text" class="select-placeholder select-text">{{placeholder}}</div>
@@ -11,7 +10,7 @@
         <div class="select-icon">
             <div class="select-icon-inner"></div>
         </div>
-        <ion-button role="select" ref="button" :disabled="isDisabled" @click.native="onPointerDownHandler"></ion-button>
+        <ion-button role="select" ref="button" :disabled="isDisabled" @click.native="onClickHandler"></ion-button>
         <slot></slot>
     </div>
 </template>
@@ -22,7 +21,6 @@
     import IonButton from "../button/index.vue";
     import SelectPopover from "./select.popover.vue";
 
-    let id = 0
     export default {
         name: 'ion-select',
         mixins: [ThemeMixins],
@@ -32,16 +30,13 @@
             return {
                 componentName: 'ionSelect',
 
-                // id
-                itemComponent: null,            // item组件实例
-                optionComponents: [],           // Select子组件Option的集合
+                itemComponent: null,
+                optionComponents: [],
 
                 isDisabled: isTrueProperty(this.disabled),
-                id: `rb-${id++}`,
-                texts: [],                      // 回显的数组
-                text: null,                     // 回显的string, 已texts为基
-                timer: null,                    // setTimeout
-                values: []                     // options中所有选中的value数组
+                text: null,
+                timer: null,
+                values: []
             }
         },
         props: {
@@ -74,25 +69,65 @@
                 }
             },
             selectedText: String,
-            value: [Object, String, Array, Number]
+            value: [String, Array, Number]
+        },
+        created() {
+            if (!isBlank(this.value)) {
+                this.values = isArray(this.value) ? this.value : [this.value];
+            }
+        },
+        mounted() {
+            // if parent is item
+            if (this.$parent.$data.componentName === 'ionItem') {
+                this.itemComponent = this.$parent;
+                let cssClass = this.itemComponent.$el.classList.contains('item-select') ? 'item-multiple-inputs' : 'item-select';
+                this.itemComponent.$el.classList.add(cssClass)
+            }
         },
         watch: {
             disabled(val) {
                 this.setDisabled(isTrueProperty(val))
             }
         },
-//        computed: {
-//            buttonElement () {
-//                return this.$refs.button
-//            }
-//        },
         methods: {
             setDisabled(disabled) {
                 this.isDisabled = disabled
                 this.itemComponent && this.itemComponent.$el.classList[this.isDisabled ? 'add' : 'remove']('item-select-disabled');
             },
 
-            onPointerDownHandler(ev) {
+            updateText() {
+                let texts = [];
+
+                if (this.optionComponents) {
+                    this.optionComponents.forEach(option => {
+                        // check this option if the option's value is in the values array
+                        option.isSelected = this.values.some(selectValue => {
+                            return isCheckedProperty(selectValue, option.optionValue)
+                        });
+
+                        if (option.isSelected) {
+                            texts.push(option.label);
+                        }
+                    });
+                }
+
+                this.text = texts.join(', ');
+            },
+
+            updateOptionList(option) {
+                this.optionComponents.push(option);
+
+                this.timer && clearTimeout(this.timer)
+                this.timer = setTimeout(() => {
+                    if (isBlank(this.value)) {
+                        this.values = this.optionComponents.filter(o => o.isSelected).map(o => o.optionValue)
+                    }
+
+                    this.updateText()
+                }, 0)
+            },
+
+            onClickHandler(ev) {
                 ev.preventDefault()
                 ev.stopPropagation()
 
@@ -141,7 +176,6 @@
                 var selectCssClass
                 if (this.interface === 'action-sheet') {
                     selectOptions.buttons = selectOptions.buttons.concat(options.map(input => {
-                        console.log(input)
                         return {
                             role: (input.isSelected ? 'selected' : ''),
                             text: input.label,
@@ -149,8 +183,8 @@
                             handler: () => {
                                 this.onChange(input.optionValue)
 
-                                console.log(input)
                                 this.$emit('onChange', input.optionValue)
+                                this.$emit('onSelect', input.optionValue)
                                 this.$emit('input', input.optionValue)
                             }
                         }
@@ -166,7 +200,6 @@
 
                 } else if (this.interface === 'popover') {
                     let popoverOptions = options.map(input => {
-                        console.log(input);
                         return {
                             text: input.label,
                             checked: input.isSelected,
@@ -177,7 +210,6 @@
 
                                 this.$emit('onChange', input.optionValue)
                                 this.$emit('input', input.optionValue)
-                                console.log(input)
                             }
                         }
                     });
@@ -187,19 +219,13 @@
                     // If the user passed a cssClass for the select, add it
                     popoverCssClass += selectOptions.cssClass ? ' ' + selectOptions.cssClass : '';
 
-//                    overlay = new Popover(this._app, SelectPopover, {
-//                        options: popoverOptions
-//                    }, {
-//                        cssClass: popoverCssClass
-//                    }, this.config, this.deepLinker);
-//
-//                    // ev.target is readonly.
-//                    // place popover regarding to ion-select instead of .button-inner
-//                    Object.defineProperty(ev, 'target', {value: ev.currentTarget});
+                    // ev.target is readonly.
+                    // place popover regarding to ion-select instead of .button-inner
+                    Object.defineProperty(ev, 'target', { value: ev.currentTarget.parentNode });
                     selectOptions.ev = ev;
                     selectOptions.template = SelectPopover;
-
-                    console.log(selectOptions)
+                    selectOptions.cssClass = popoverCssClass;
+                    selectOptions.propsData = {options: popoverOptions};
 
                     $popover.show(selectOptions);
 
@@ -216,14 +242,6 @@
                             value: input.optionValue,
                             checked: input.isSelected,
                             disabled: input.isDisabled,
-                            handler: (selectedOption) => {
-                                // Only emit the select event if it is being checked
-                                // For multi selects this won't emit when unchecking
-                                if (selectedOption.isSelected) {
-                                    this.$emit('onSelect', input.optionValue)
-                                    console.log(selectedOption)
-                                }
-                            }
                         }
                     })
 
@@ -255,54 +273,8 @@
                 console.log('select, onChange value:', value)
                 this.values = (isArray(value) ? value : isBlank(value) ? [] : [value])
                 this.updateText();
-
-//                this.$emit('onChange', value)
-//                this.$emit('input', value)
-            },
-
-            updateText() {
-                this.texts = [];
-
-                if (this.optionComponents) {
-                    this.optionComponents.forEach(option => {
-                        // check this option if the option's value is in the values array
-                        option.isSelected = this.values.some(selectValue => {
-                            return isCheckedProperty(selectValue, option.optionValue)
-                        });
-
-                        if (option.isSelected) {
-                            this.texts.push(option.label);
-                        }
-                    });
-                }
-
-                this.text = this.texts.join(', ');
-            },
-
-            recordOption(option) {
-                this.optionComponents.push(option);
-                if (isBlank(this.value)) {
-                    this.values = this.optionComponents.filter(o => o.isSelected).map(o => o.optionValue)
-                }
-                this.timer && clearTimeout(this.timer)
-                this.timer = setTimeout(() => {
-                    this.updateText()
-                }, 0)
             }
-        },
-        mounted() {
-            // if parent is item
-            if (this.$parent.$data.componentName === 'ionItem') {
-                this.itemComponent = this.$parent;
-                let cssClass = this.itemComponent.$el.classList.contains('item-select') ? 'item-multiple-inputs' : 'item-select';
-                this.itemComponent.$el.classList.add(cssClass)
-            }
-
-            if (!isBlank(this.value)) {
-                this.values.push(this.value)
-            }
-
-            console.log('this.values', this.values)
         }
+
     }
 </script>

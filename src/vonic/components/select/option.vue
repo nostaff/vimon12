@@ -32,13 +32,14 @@
                 return ''
             }
         },
+
         mounted () {
             this.label = this.getText()
 
             // if parent is select
             if (this.$parent.$data.componentName === 'ionSelect') {
                 this.selectComponent = this.$parent;
-                this.selectComponent.recordOption(this)
+                this.selectComponent.updateOptionList(this)
             }
 
             console.assert(this.selectComponent, 'Option组件必须在Select组件之内使用!')

@@ -42,7 +42,6 @@
                 this.radioComponentList.forEach((radio) => {
                     radio.setChecked(value)
                 })
-                this.isSendOut = true
                 this.$emit('input', value)
                 this.$emit('onChange', value)
             },

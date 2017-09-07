@@ -86,7 +86,9 @@
         },
         created () {
             this.background = this.getColorName(this.contentEle.style.backgroundColor);
-            this.setFontFamily();
+            if (this.contentEle.style.fontFamily) {
+                this.fontFamily = this.contentEle.style.fontFamily.replace(/'/g, '');
+            }
         },
         methods: {
 
@@ -104,20 +106,14 @@
                 return colorName;
             },
 
-            setFontFamily() {
-                if (this.contentEle.style.fontFamily) {
-                    this.fontFamily = this.contentEle.style.fontFamily.replace(/'/g, '');
-                }
-            },
-
             changeBackground(color) {
                 this.background = color;
                 this.contentEle.style.backgroundColor = this.colors[color].bg;
                 this.contentEle.style.color = this.colors[color].fg;
             },
 
-            changeFontSize(direction) {
-                this.contentEle.style.fontSize = direction;
+            changeFontSize(fontSize) {
+                this.contentEle.style.fontSize = fontSize;
             },
 
             changeFontFamily() {

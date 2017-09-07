@@ -1,8 +1,8 @@
 <template>
-    <ion-list radio-group>
+    <ion-list radio-group v-model="checkedValue" @onChange="onRadioChange($event)">
         <ion-item v-for="option in options" key="idx">
             <ion-label slot="item-label">{{option.text}}</ion-label>
-            <ion-radio slot="item-content" :checked="option.checked" :value="option.value" :disabled="option.disabled"></ion-radio>
+            <ion-radio slot="item-content" :value="option.value" :disabled="option.disabled"></ion-radio>
         </ion-item>
     </ion-list>
 </template>
@@ -23,27 +23,30 @@
         },
         data () {
             return {
-                currentValue: this.value
+                checkedValue: this.getValue()
             }
         },
         props: {
-            value: [Object, String, Array],
             options: Array,
         },
-        methods: {
-            getValue() {
-                let checkedOption = this.options.find(option => option.checked);
-
-                return checkedOption ? checkedOption.value : undefined;
-            },
-
-            setValue(value) {
+        watch: {
+            checkedValue (value) {
                 let checkedOption = this.options.find(option => option.value === value);
                 if (checkedOption && checkedOption.handler) {
                     checkedOption.handler();
                 }
-//                this.viewController.dismiss(value);
-            }
+            },
         },
+        methods: {
+            onRadioChange (value) {
+                $popover.dismiss(this.checkedValue)
+            },
+
+            getValue() {
+                let checkedOption = this.options.find(option => option.checked);
+
+                return checkedOption ? checkedOption.value : undefined;
+            }
+        }
     }
 </script>

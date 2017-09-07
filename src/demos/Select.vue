@@ -12,16 +12,12 @@
                     </ion-select>
                 </ion-item>
 
-                <ion-item>Value: {{gender}}</ion-item>
-
                 <ion-item>
                     <ion-label slot="item-label">Hair Color</ion-label>
                     <ion-select slot="item-content" v-model="hairColor" okText="Okay" cancelText="Dismiss" @onChange="onChange">
-                        <ion-option v-for="o in hairColorData" key="idx" :value="o">{{o.text}}</ion-option>
+                        <ion-option v-for="o in hairColorData" key="idx" :value="o.value">{{o.text}}</ion-option>
                     </ion-select>
                 </ion-item>
-                <ion-item>Value: {{hairColor}}</ion-item>
-
 
                 <ion-item>
                     <ion-label slot="item-label">Gaming</ion-label>
@@ -34,7 +30,6 @@
                         <ion-option value="snes">SNES</ion-option>
                     </ion-select>
                 </ion-item>
-                <ion-item>Value: {{gaming}}</ion-item>
 
                 <ion-item>
                     <ion-label slot="item-label">Date</ion-label>
@@ -67,7 +62,14 @@
                     </ion-select>
                 </ion-item>
 
-
+                <ion-item>
+                    <ion-label slot="item-label">Disabled</ion-label>
+                    <ion-select slot="item-content" disabled="true" @onChange="onChange">
+                        <ion-option>I'm not disabled</ion-option>
+                        <ion-option selected="true">I'm disabled</ion-option>
+                        <ion-option>I'm not disabled, either</ion-option>
+                    </ion-select>
+                </ion-item>
             </ion-list>
 
             <ion-list>
@@ -80,7 +82,6 @@
                         <ion-option value="m">Male</ion-option>
                     </ion-select>
                 </ion-item>
-                <ion-item>Value: {{gender}}</ion-item>
 
                 <ion-item>
                     <ion-label slot="item-label">Gaming</ion-label>
@@ -93,7 +94,6 @@
                         <ion-option value="snes">SNES</ion-option>
                     </ion-select>
                 </ion-item>
-                <ion-item>Value: {{gaming}}</ion-item>
 
                 <ion-item>
                     <ion-label slot="item-label">Date</ion-label>
@@ -146,7 +146,6 @@
                         <ion-option value="Spinach">Spinach</ion-option>
                     </ion-select>
                 </ion-item>
-                <ion-item>Value: {{toppings}}</ion-item>
 
                 <ion-item>
                     <ion-label slot="item-label">Pets</ion-label>
@@ -154,24 +153,22 @@
                         <ion-option v-for="o in petData" key="idx" :value="o.value">{{o.text}}</ion-option>
                     </ion-select>
                 </ion-item>
-                <ion-item>Value: {{pets}}</ion-item>
 
                 <ion-item>
                     <ion-label slot="item-label">Skittles</ion-label>
-                    <ion-select slot="item-content" v-model="skittles" multiple="true" okText="Okay" cancelText="Dismiss"
-                                :compareWith="compareFn" @onChange="onChange">
-                        <ion-option v-for="o in skittlesData" key="idx" :value="o">{{o.text}}</ion-option>
+                    <ion-select slot="item-content" v-model="skittles" multiple="true" okText="Okay" cancelText="Dismiss" @onChange="onChange">
+                        <ion-option v-for="o in skittlesData" key="idx" :value="o.value">{{o.text}}</ion-option>
                     </ion-select>
                 </ion-item>
-                <ion-item>Value: {{skittles}}</ion-item>
 
                 <ion-item>
                     <ion-label slot="item-label">Disabled</ion-label>
-                    <ion-select slot="item-content" disabled="true" @onChange="onChange">
-                        <ion-option selected="true">I'm disabled</ion-option>
+                    <ion-select slot="item-content"  disabled="true" multiple="true" @onChange="onChange">
+                        <ion-option>disabled0</ion-option>
+                        <ion-option selected="true">disabled1 ad</ion-option>
+                        <ion-option>disabled2</ion-option>
                     </ion-select>
                 </ion-item>
-                <ion-item>Value: {{gender}}</ion-item>
 
             </ion-list>
 
@@ -187,7 +184,6 @@
                         <ion-option value="mute_inf">Until I turn it back on</ion-option>
                     </ion-select>
                 </ion-item>
-                <ion-item>Value: {{notifications}}</ion-item>
 
                 <ion-item>
                     <ion-label slot="item-label">Rating</ion-label>
@@ -199,7 +195,6 @@
                         <ion-option value="5">5 Stars</ion-option>
                     </ion-select>
                 </ion-item>
-                <ion-item>Value: {{rating}}</ion-item>
 
             </ion-list>
         </ion-content>
@@ -253,7 +248,7 @@
             ];
 
             // Pre-selected object with different object reference
-            this.hairColor = {text: 'Brown', value: 'brown'};
+            this.hairColor = ['brown'];
 
             this.skittlesData = [
                 {text: 'Red', value: 'red'},
@@ -263,11 +258,7 @@
                 {text: 'Purple', value: 'purple'}
             ];
 
-            // Pre-selected object with different object reference
-            this.skittles = [
-                {text: 'Red', value: 'red'},
-                {text: 'Purple', value: 'purple'}
-            ];
+            this.skittles = ['red', 'purple'];
 
             this.pets = ['cat', 'dog'];
         },

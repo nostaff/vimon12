@@ -163,18 +163,12 @@
                 let popoverWidth = popoverDim.width;
                 let popoverHeight = popoverDim.height;
 
-                console.log('popoverDim rect', popoverEle, popoverDim);
-
                 // Window body width and height
                 let bodyWidth = document.documentElement.clientWidth;
                 let bodyHeight = document.documentElement.clientHeight;
 
-                console.log(bodyWidth, bodyHeight, popoverWidth, popoverHeight)
-
                 // If ev was passed, use that for target element
                 let targetDim = ev && ev.target && ev.target.getBoundingClientRect();
-
-                console.log('targetDim rect', targetDim)
 
                 let targetTop = (targetDim && 'top' in targetDim) ? targetDim.top : (bodyHeight / 2) - (popoverHeight / 2);
                 let targetLeft = (targetDim && 'left' in targetDim) ? targetDim.left : (bodyWidth / 2);

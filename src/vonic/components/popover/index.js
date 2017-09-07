@@ -35,7 +35,7 @@ class IonPopover {
             this._vm = new PopoverComponent().$mount('[ion-popover]')
 
             let ContentComponent = Vue.extend(template)
-            let content = new ContentComponent({data: options.data})
+            let content = new ContentComponent({propsData: options.propsData})
             content.$mount(this._vm.$el.querySelector('.popover-viewport'))
         }
 
