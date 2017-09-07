@@ -7,8 +7,6 @@
             <div class="popover-wrapper" v-show="activated">
                 <div class="popover-arrow" ref="popoverArrow"></div>
                 <div class="popover-content" ref="popoverContent">
-                <!--<div class="popover-arrow" ref="popoverArrow" style="top: 38px; left: 346.391px;"></div>-->
-                <!--<div class="popover-content" ref="popoverContent" style="top: 47px; left: 173px; transform-origin: right top 0px;">-->
                     <div class="popover-viewport" ref="popoverViewport">
                         <slot></slot>
                     </div>

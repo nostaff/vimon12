@@ -1,0 +1,48 @@
+<template>
+    <ion-page>
+
+        <ion-header>
+
+            <ion-navbar>
+                <ion-buttons end>
+                    <ion-button @click.native="dismiss()">Close</ion-button>
+                </ion-buttons>
+                <ion-title>Modals</ion-title>
+            </ion-navbar>
+
+        </ion-header>
+
+
+        <ion-content padding>
+            <div v-if="!myParam">
+                <h5>Parameters passed:</h5>
+
+                <pre style="background-color: #f8f8f8">selections: {{myParam}}</pre>
+
+            </div>
+            <div v-if="myParam">
+                <p>No parameters passed.</p>
+            </div>
+            <ion-button color="danger" full @click.native="dismiss()">Close Modal</ion-button>
+
+        </ion-content>
+    </ion-page>
+</template>
+
+<script>
+    import ModalPage from './ModalPage.vue'
+
+    export default {
+        data() {
+            return {
+                myParam: [],
+            }
+        },
+
+        methods: {
+            dismiss() {
+                $modal.dismiss();
+            }
+        }
+    }
+</script>
