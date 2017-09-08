@@ -160,3 +160,145 @@ export function timeout (duration = 0) {
 export function uuid() {
     return Math.random().toString(36).substr(3, 8)
 }
+
+
+/**
+ * transitionEnd事件注册，绑定的函数触发后会自动解绑
+ * @param {HTMLElement} el      - 绑定的元素
+ * @param {Function} callbackFn   - 绑定的函数
+ * @return {Function}           - 取消绑定的函数
+ * */
+export function transitionEnd (el, callbackFn) {
+    const unRegs = []
+
+    function unregister () {
+        unRegs.forEach(function (unReg) {
+            unReg && unReg()
+        })
+    }
+
+    function onTransitionEnd (ev) {
+        if (el === ev.target) {
+            callbackFn && callbackFn(ev)
+            unregister()
+        }
+    }
+
+    if (el) {
+        registerListener(el, 'webkitTransitionEnd', onTransitionEnd, {}, unRegs)
+        registerListener(el, 'transitionend', onTransitionEnd, {}, unRegs)
+    }
+
+    return unregister
+}
+
+/**
+ * hashChange，hash变化后执行回调, 并自动解绑
+ * @param {function} callback - 回调函数
+ * @return {function} - 解绑函数
+ * */
+export function hashChange (callback) {
+    let unReg = null
+
+    const onHashChange = (ev) => {
+        unReg && unReg()
+        callback(ev)
+    }
+
+    unReg = registerListener(window, 'hashchange', onHashChange, {})
+    return unReg
+}
+
+/**
+ * urlChange(popstate)注册，绑定的函数触发后会自动解绑
+ * @param {function} callback - 回调函数
+ * @return {function} - 解绑函数
+ * */
+export function urlChange (callback) {
+    let unReg = null
+    const onStateChange = (ev) => {
+        unReg && unReg()
+        callback(ev)
+    }
+    unReg = registerListener(window, 'popstate', onStateChange, {})
+    return unReg
+}
+
+/**
+ *
+ * 给addEventListener增加passive属性, 如果不支持将降级使用!!opts.capture, 事件的关闭需要自己手动解除, 切记!!
+ * @param {any} ele                               - 监听的元素
+ * @param {string} eventName                      - 监听的名称
+ * @param {function} callback                     - 回调
+ * @param {object} [opts]                         - addEventListener的第三个参数 EventListenerOptions
+ * @param {object} [opts.capture]                 - capture
+ * @param {object} [opts.passive]                 - passive
+ * @param {array} [unregisterListenersCollection] - 如果提供Function[], 则unReg将压如这个列表中
+ * @return {Function}                             - 返回removeEventListener的函数
+ */
+export function registerListener (ele, eventName, callback, opts = {}, unregisterListenersCollection) {
+    // use event listener options when supported
+    // otherwise it's just a boolean for the "capture" arg
+    const listenerOpts = isPassive() ? {
+        'capture': !!opts.capture,
+        'passive': !!opts.passive
+    } : !!opts.capture
+
+    // use the native addEventListener
+    ele['addEventListener'](eventName, callback, listenerOpts)
+
+    let unReg = function unregisterListener () {
+        ele['removeEventListener'](eventName, callback, listenerOpts)
+    }
+
+    if (unregisterListenersCollection && Array.isArray(unregisterListenersCollection)) {
+        unregisterListenersCollection.push(unReg)
+    }
+
+    return unReg
+}
+
+/**
+ * 判断的当前浏览器是否支持isPassive属性
+ * @return {Boolean}
+ * */
+export function isPassive () {
+    var supportsPassiveOption = false
+    try {
+        window.addEventListener('test', null, Object.defineProperty({}, 'passive', {
+            get: function () {
+                supportsPassiveOption = true
+            }
+        }))
+    } catch (e) {}
+    return supportsPassiveOption
+}
+
+/**
+ * document的ready事件监听
+ * @param {Function} [callback] - 回调函数
+ * @return {Promise} - 返回promise，completed后自动解绑
+ * */
+export function docReady (callback) {
+    let promise = null // Promise;
+
+    if (!callback) {
+        // a callback wasn't provided, so let's return a promise instead
+        promise = new Promise(function (resolve) { callback = resolve })
+    }
+
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        callback()
+    } else {
+        document.addEventListener('DOMContentLoaded', completed, false)
+        window.addEventListener('load', completed, false)
+    }
+
+    return promise
+
+    function completed () {
+        document.removeEventListener('DOMContentLoaded', completed, false)
+        window.removeEventListener('load', completed, false)
+        callback()
+    }
+}

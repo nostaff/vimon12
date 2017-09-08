@@ -4,14 +4,20 @@
                       v-if="showBackdrop"
                       v-show="activated"
                       @click.native="bdClick"></ion-backdrop>
-        <transition name="modal-fadeup">
+        <transition name="modal-fadeup"
+                    @before-enter="beforeEnter"
+                    @after-enter="afterEnter"
+                    @before-leave="beforeLeave"
+                    @after-leave="afterLeave">
             <div class="modal-wrapper" v-show="activated">
-                <div class="modal-viewport"></div>
+                <div class="modal-viewport" ref="viewPort"></div>
             </div>
         </transition>
     </div>
 </template>
 <script>
+    import Vue from 'vue'
+    import {isFunction, isTrueProperty, urlChange} from '../../utils/utils'
     import objectAssign from 'object-assign'
     import ThemeMixins from '../../themes/theme.mixins';
     import IonBackdrop from "../backdrop/index";
@@ -24,9 +30,15 @@
         data() {
             return {
                 defaultOptions: {
+                    component: null,
+                    data: {},
                     showBackdrop: true,
                     enableBackdropDismiss: true,
+                    onDismiss: () => {},
                 },
+
+                component: null,
+                data: {},
 
                 showBackdrop: true,
                 enableBackdropDismiss: true,
@@ -36,11 +48,27 @@
                 activated: false
             }
         },
+        created() {
+            if (this.dismissOnPageChange) {
+                urlChange(() => {
+                    this.activated && this.dismiss(-1)
+                })
+            }
+        },
+
         methods: {
-            show1(options) {
+
+            show(options) {
                 let _options = objectAssign({}, this.defaultOptions, options)
+                // Sync to sub component
+                this.component = _options.component;
+                this.data = _options.data;
+
+                this.cssClass = _options.cssClass;
                 this.showBackdrop = isTrueProperty(_options.showBackdrop);
                 this.enableBackdropDismiss = isTrueProperty(_options.enableBackdropDismiss);
+                if (isFunction(_options.onDismiss))
+                    this.onDismiss = _options.onDismiss
 
                 this.activated = true;
 
@@ -52,55 +80,14 @@
 
             },
 
-            show(options) {
-                let _options = objectAssign({}, this.defaultOptions, options)
-                if (typeof _options.showBackdrop === 'boolean')
-                    this.enableBackdropDismiss = _options.showBackdrop;
-                if (typeof _options.enableBackdropDismiss === 'boolean')
-                    this.enableBackdropDismiss = _options.enableBackdropDismiss;
-                this.cssClass = _options.cssClass;
-                this.ev = _options.ev;
+            dismiss(role) {
+                this.onDismiss && this.onDismiss(role)
 
-                this.activated = true;
+                this.$nextTick(() => {
+                    this.$emit('onDismissEvent', role);
 
-                return new Promise((resolve, reject) => {
-                    this.$on('onHideEvent', (res) => {
-                        resolve(res)
-                    })
-                });
-            },
-
-            dismiss(buttonIndex) {
-                this.activated = false;
-
-                if (buttonIndex > -1) {
-                    let handler = this.buttons[buttonIndex].handler;
-                    if (handler && typeof handler === 'function') {
-                        handler();
-                    }
-                }
-
-                this.$emit('onDismissEvent', buttonIndex);
-                setTimeout(() => {
-                    this.$el.remove();
-                }, 400);
-            },
-
-            dismiss1 (dataBack) {
-                if (this.isActive) {
-                    this.isActive = false
-                    this.onDismiss && this.onDismiss(dataBack)
-                    if (!this.enabled) {
-                        this.$nextTick(() => {
-                            this.dismissCallback()
-                            this.$el.remove()
-                            this.enabled = true
-                        })
-                    }
-                    return new Promise((resolve) => { this.dismissCallback = resolve })
-                } else {
-                    return new Promise((resolve) => { resolve() })
-                }
+                    this.$el.remove()
+                })
             },
 
             bdClick () {

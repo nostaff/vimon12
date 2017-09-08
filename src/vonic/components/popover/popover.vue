@@ -17,6 +17,7 @@
 </template>
 
 <script>
+    import {isFunction, isTrueProperty, urlChange} from '../../utils/utils'
     import objectAssign from 'object-assign'
     import ThemeMixins from '../../themes/theme.mixins';
     import IonBackdrop from "../backdrop/index";
@@ -41,9 +42,18 @@
                 ev: null,
                 showBackdrop: true,
                 enableBackdropDismiss: true,
+                dismissOnPageChange: true,
                 cssClass: '',
 
                 activated: false
+            }
+        },
+
+        created() {
+            if (this.dismissOnPageChange) {
+                urlChange(() => {
+                    this.activated && this.dismiss(-1)
+                })
             }
         },
 
@@ -54,10 +64,8 @@
         methods: {
             show(options) {
                 let _options = objectAssign({}, this.defaultOptions, options)
-                if (typeof _options.showBackdrop === 'boolean')
-                    this.enableBackdropDismiss = _options.showBackdrop;
-                if (typeof _options.enableBackdropDismiss === 'boolean')
-                    this.enableBackdropDismiss = _options.enableBackdropDismiss;
+                this.enableBackdropDismiss = isTrueProperty(_options.showBackdrop);
+                this.enableBackdropDismiss = isTrueProperty(_options.enableBackdropDismiss);
                 this.cssClass = _options.cssClass;
                 this.ev = _options.ev;
 

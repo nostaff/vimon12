@@ -85,6 +85,8 @@
             }
         },
         created () {
+            this.contentEle = this.$options.$data.contentEle;
+
             this.background = this.getColorName(this.contentEle.style.backgroundColor);
             if (this.contentEle.style.fontFamily) {
                 this.fontFamily = this.contentEle.style.fontFamily.replace(/'/g, '');

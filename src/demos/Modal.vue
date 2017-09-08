@@ -42,14 +42,23 @@
 
         methods: {
             openBasicModal() {
-//                let myModal = this.modalCtrl.create(ModalPage);
-//                myModal.present();
-                $modal.show(ModalPage);
+                $modal.show({
+                    template: ModalPage,
+                    onDismiss (data) {
+                        console.log(data)
+                    }
+                });
             },
             openModalWithParams() {
-//                let myModal = this.modalCtrl.create(ModalPage, { 'myParam': this.myParam });
-//                myModal.present();
-                $modal.show(ModalPage, { 'myParam': this.myParam });
+                $modal.show({
+                    template: ModalPage,
+                    data: {
+                        myParam: this.myParam,
+                    },
+                    onDismiss (data) {
+                        console.log(data)
+                    }
+                });
 
             }
         }

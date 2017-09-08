@@ -225,7 +225,7 @@
                     selectOptions.ev = ev;
                     selectOptions.template = SelectPopover;
                     selectOptions.cssClass = popoverCssClass;
-                    selectOptions.propsData = {options: popoverOptions};
+                    selectOptions.data = {options: popoverOptions};
 
                     $popover.show(selectOptions);
 

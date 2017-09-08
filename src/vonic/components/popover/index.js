@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Popover from './popover.vue'
 
-import {createElement, extend, isObject, isString, uuid} from '../../utils/utils'
+import {createElement, isObject, isString} from '../../utils/utils'
 
 class IonPopover {
     constructor() {
@@ -9,7 +9,6 @@ class IonPopover {
     }
 
     show(options) {
-        let refId = uuid()
         let components = (options && options.components) ? options.components : {}
         let template = (options && options.template) ? options.template : {}
 
@@ -19,25 +18,26 @@ class IonPopover {
         }
 
         let container = document.querySelector('.ion-app');
-        let wrapper = container.querySelector('[ion-popover]') || createElement('ion-popover', container)
+        container.querySelector('[ion-popover]') || createElement('ion-popover', container)
 
+        let PopoverComponent = Vue.extend(Popover);
+        this._vm = new PopoverComponent().$mount('[ion-popover]');
+
+        let ContentComponent;
         if (isString(template)) {
-            wrapper.innerHTML = '<ion-popover ref="' + refId + '">' + template + '</ion-popover>';
-
-            this._vm = new Vue({
-                components: extend({'ion-popover': Popover}, components),
-                el: '[ion-popover]'
-            }).$refs[refId];
+            ContentComponent = Vue.extend({
+                template: '<div>' + template + '</div>',
+                components: components
+            });
+        } else if (isObject(template)) {
+            ContentComponent = Vue.extend(template);
         }
 
-        else if (isObject(template)) {
-            let PopoverComponent = Vue.extend(Popover)
-            this._vm = new PopoverComponent().$mount('[ion-popover]')
+        // create an instance of Profile and mount it on an element
+        new ContentComponent({
+            $data: options.data     // send to component, get by this.$options.$data
+        }).$mount(this._vm.$el.querySelector('.popover-viewport'));
 
-            let ContentComponent = Vue.extend(template)
-            let content = new ContentComponent({propsData: options.propsData})
-            content.$mount(this._vm.$el.querySelector('.popover-viewport'))
-        }
 
         return this._vm.show(options);
     }

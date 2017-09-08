@@ -14,13 +14,13 @@
 
 
         <ion-content padding>
-            <div v-if="!myParam">
+            <div v-if="!!myParam">
                 <h5>Parameters passed:</h5>
 
                 <pre style="background-color: #f8f8f8">selections: {{myParam}}</pre>
 
             </div>
-            <div v-if="myParam">
+            <div v-if="!myParam">
                 <p>No parameters passed.</p>
             </div>
             <ion-button color="danger" full @click.native="dismiss()">Close Modal</ion-button>
@@ -30,18 +30,19 @@
 </template>
 
 <script>
-    import ModalPage from './ModalPage.vue'
 
     export default {
         data() {
             return {
-                myParam: [],
+                myParam: null,
             }
         },
-
+        created() {
+            this.myParam = this.$options.$data.myParam;
+        },
         methods: {
             dismiss() {
-                $modal.dismiss();
+                $modal.dismiss('dismiss return by modal page' + this.myParam);
             }
         }
     }

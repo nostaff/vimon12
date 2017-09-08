@@ -8,10 +8,9 @@ class IonModal {
         this._vm = undefined
     }
 
-    show(component, options) {
-        let refId = uuid()
+    show(options) {
         let components = (options && options.components) ? options.components : {}
-        // let template = (options && options.template) ? options.template : {}
+        let template = (options && options.template) ? options.template : {}
 
         if (this._vm) {
             this._vm.$destroy()
@@ -19,25 +18,26 @@ class IonModal {
         }
 
         let container = document.querySelector('.ion-app');
-        let wrapper = container.querySelector('[ion-modal]') || createElement('ion-modal', container)
+        container.querySelector('[ion-modal]') || createElement('ion-modal', container)
 
-        if (isString(component)) {
-            wrapper.innerHTML = '<ion-modal ref="' + refId + '">' + component + '</ion-modal>';
+        let ModalComponent = Vue.extend(Modal);
+        this._vm = new ModalComponent().$mount('[ion-modal]');
 
-            this._vm = new Vue({
-                components: extend({'ion-modal': Modal}, components),
-                el: '[ion-popover]'
-            }).$refs[refId];
+        let ContentComponent;
+        if (isString(template)) {
+            ContentComponent = Vue.extend({
+                template: '<div>' + template + '</div>',
+                components: components
+            });
+        } else if (isObject(template)) {
+            ContentComponent = Vue.extend(template);
         }
 
-        else if (isObject(component)) {
-            let ModalComponent = Vue.extend(Modal)
-            this._vm = new ModalComponent().$mount('[ion-modal]')
+        // create an instance of Profile and mount it on an element
+        new ContentComponent({
+            $data: options.data     // send to component, get by this.$options.$data
+        }).$mount(this._vm.$el.querySelector('.modal-viewport'));
 
-            let ContentComponent = Vue.extend(component)
-            let content = new ContentComponent({propsData: {}})
-            content.$mount(this._vm.$el.querySelector('.modal-viewport'))
-        }
 
         return this._vm.show(options);
     }

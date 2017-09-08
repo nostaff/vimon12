@@ -23,28 +23,27 @@
         },
         data () {
             return {
-                checkedValue: this.getValue()
+                options: [],
+                checkedValue: null
             }
         },
-        props: {
-            options: Array,
+        created() {
+            this.options = this.$options.$data.options;
+
+            this.checkedValue = this.getValue();
         },
-        watch: {
-            checkedValue (value) {
+        methods: {
+            onRadioChange (value) {
                 let checkedOption = this.options.find(option => option.value === value);
                 if (checkedOption && checkedOption.handler) {
                     checkedOption.handler();
                 }
-            },
-        },
-        methods: {
-            onRadioChange (value) {
-                $popover.dismiss(this.checkedValue)
+
+                $popover.dismiss(value)
             },
 
             getValue() {
                 let checkedOption = this.options.find(option => option.checked);
-
                 return checkedOption ? checkedOption.value : undefined;
             }
         }
