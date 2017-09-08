@@ -64,7 +64,8 @@
         methods: {
             show(options) {
                 let _options = objectAssign({}, this.defaultOptions, options)
-                this.enableBackdropDismiss = isTrueProperty(_options.showBackdrop);
+                this.showBackdrop = isTrueProperty(_options.showBackdrop);
+                this.dismissOnPageChange = isTrueProperty(_options.dismissOnPageChange);
                 this.enableBackdropDismiss = isTrueProperty(_options.enableBackdropDismiss);
                 this.cssClass = _options.cssClass;
                 this.ev = _options.ev;

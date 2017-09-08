@@ -4,11 +4,7 @@
                       v-if="showBackdrop"
                       v-show="activated"
                       @click.native="bdClick"></ion-backdrop>
-        <transition name="modal-fadeup"
-                    @before-enter="beforeEnter"
-                    @after-enter="afterEnter"
-                    @before-leave="beforeLeave"
-                    @after-leave="afterLeave">
+        <transition name="modal-fadeup">
             <div class="modal-wrapper" v-show="activated">
                 <div class="modal-viewport" ref="viewPort"></div>
             </div>
@@ -42,6 +38,7 @@
 
                 showBackdrop: true,
                 enableBackdropDismiss: true,
+                dismissOnPageChange: true,
                 cssClass: '',
                 onDismiss: () => {},
 
@@ -66,6 +63,7 @@
 
                 this.cssClass = _options.cssClass;
                 this.showBackdrop = isTrueProperty(_options.showBackdrop);
+                this.dismissOnPageChange = isTrueProperty(_options.dismissOnPageChange);
                 this.enableBackdropDismiss = isTrueProperty(_options.enableBackdropDismiss);
                 if (isFunction(_options.onDismiss))
                     this.onDismiss = _options.onDismiss

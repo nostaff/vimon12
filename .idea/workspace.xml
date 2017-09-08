@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8323a9fe-be66-40c8-a870-6d9da02c649f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Modal.vue" afterPath="$PROJECT_DIR$/src/demos/Modal.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/ModalPage.vue" afterPath="$PROJECT_DIR$/src/demos/ModalPage.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demos/Popage.vue" afterPath="$PROJECT_DIR$/src/demos/Popage.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/alert/alert.checkbox.vue" afterPath="$PROJECT_DIR$/src/vonic/components/alert/alert.checkbox.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/alert/alert.radio.vue" afterPath="$PROJECT_DIR$/src/vonic/components/alert/alert.radio.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/alert/alert.vue" afterPath="$PROJECT_DIR$/src/vonic/components/alert/alert.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/alert/prompt.vue" afterPath="$PROJECT_DIR$/src/vonic/components/alert/prompt.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/modal/index.js" afterPath="$PROJECT_DIR$/src/vonic/components/modal/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/modal/modal.vue" afterPath="$PROJECT_DIR$/src/vonic/components/modal/modal.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/popover/index.js" afterPath="$PROJECT_DIR$/src/vonic/components/popover/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/popover/popover.vue" afterPath="$PROJECT_DIR$/src/vonic/components/popover/popover.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/select/select.popover.vue" afterPath="$PROJECT_DIR$/src/vonic/components/select/select.popover.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/components/select/select.vue" afterPath="$PROJECT_DIR$/src/vonic/components/select/select.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vonic/utils/utils.js" afterPath="$PROJECT_DIR$/src/vonic/utils/utils.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,18 +24,58 @@
       <file leaf-file-name="alert.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/vonic/components/alert/alert.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="563">
+            <state relative-caret-position="855">
               <caret line="57" column="21" lean-forward="true" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/vonic/utils/utils.js">
+      <file leaf-file-name="modal.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/vonic/components/modal/modal.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1088">
-              <caret line="237" column="3" lean-forward="true" selection-start-line="237" selection-start-column="3" selection-end-line="237" selection-end-column="3" />
+            <state relative-caret-position="90">
+              <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModalPage.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/demos/ModalPage.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="31" column="20" lean-forward="true" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Modal.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/demos/Modal.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="501">
+              <caret line="55" column="31" lean-forward="false" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="popover.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/vonic/components/popover/popover.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="597">
+              <caret line="67" column="86" lean-forward="false" selection-start-line="67" selection-start-column="67" selection-end-line="67" selection-end-column="86" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="prompt.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/vonic/components/alert/prompt.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1170">
+              <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -66,8 +94,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>open</find>
-      <find>disabled</find>
       <find>fontFamily</find>
       <find>console.log</find>
       <find>select-popover</find>
@@ -96,6 +122,8 @@
       <find>checkedValue</find>
       <find>beforeeach</find>
       <find>beforeRouteLeave</find>
+      <find>dismissOnPageChange</find>
+      <find>this.$options.$data</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;ion-label slot=&quot;item-label&quot;&gt;</replace>
@@ -188,20 +216,20 @@
         <option value="$PROJECT_DIR$/src/demos/Modal.vue" />
         <option value="$PROJECT_DIR$/src/vonic/components/popover/index.js" />
         <option value="$PROJECT_DIR$/src/vonic/components/modal/index.js" />
-        <option value="$PROJECT_DIR$/src/demos/ModalPage.vue" />
         <option value="$PROJECT_DIR$/src/demos/Popage.vue" />
         <option value="$PROJECT_DIR$/src/vonic/utils/utils.js" />
         <option value="$PROJECT_DIR$/src/vonic/components/alert/prompt.vue" />
         <option value="$PROJECT_DIR$/src/vonic/components/alert/alert.radio.vue" />
         <option value="$PROJECT_DIR$/src/vonic/components/alert/alert.checkbox.vue" />
-        <option value="$PROJECT_DIR$/src/vonic/components/popover/popover.vue" />
-        <option value="$PROJECT_DIR$/src/vonic/components/modal/modal.vue" />
         <option value="$PROJECT_DIR$/src/vonic/components/select/select.vue" />
         <option value="$PROJECT_DIR$/src/vonic/components/select/select.popover.vue" />
         <option value="$PROJECT_DIR$/src/main.js" />
         <option value="$PROJECT_DIR$/src/vonic/plugin.js" />
         <option value="$PROJECT_DIR$/src/demos/Dialog.vue" />
         <option value="$PROJECT_DIR$/src/vonic/components/alert/alert.vue" />
+        <option value="$PROJECT_DIR$/src/vonic/components/popover/popover.vue" />
+        <option value="$PROJECT_DIR$/src/vonic/components/modal/modal.vue" />
+        <option value="$PROJECT_DIR$/src/demos/ModalPage.vue" />
       </list>
     </option>
   </component>
@@ -360,14 +388,6 @@
               <item name="vonic" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="popover" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="vonic" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="select" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
@@ -589,12 +609,12 @@
       <workItem from="1503979607135" duration="38322000" />
       <workItem from="1504115582501" duration="43364000" />
       <workItem from="1504460466688" duration="25546000" />
-      <workItem from="1504660704825" duration="48270000" />
+      <workItem from="1504660704825" duration="48977000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="944775000" />
+    <option name="totallyTimeSpent" value="945482000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -837,14 +857,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/demos/ModalPage.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/vonic/components/modal/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
@@ -860,14 +872,6 @@
           <folding>
             <marker date="1504510784000" expanded="true" signature="4661:5099" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/demos/Modal.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="58" column="40" lean-forward="false" selection-start-line="58" selection-start-column="40" selection-end-line="58" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -899,30 +903,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/modal/modal.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-519">
-          <caret line="19" column="49" lean-forward="false" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/popover/popover.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="39" column="18" lean-forward="true" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/components/alert/prompt.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="70" column="8" lean-forward="false" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -1055,18 +1035,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/vonic/utils/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1185">
+          <caret line="190" column="0" lean-forward="true" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/vonic/components/alert/alert.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
+        <state relative-caret-position="855">
           <caret line="57" column="21" lean-forward="true" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vonic/utils/utils.js">
+    <entry file="file://$PROJECT_DIR$/src/vonic/components/popover/popover.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="237" column="3" lean-forward="true" selection-start-line="237" selection-start-column="3" selection-end-line="237" selection-end-column="3" />
+        <state relative-caret-position="597">
+          <caret line="67" column="86" lean-forward="false" selection-start-line="67" selection-start-column="67" selection-end-line="67" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vonic/components/alert/prompt.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vonic/components/modal/modal.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/demos/Modal.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="55" column="31" lean-forward="false" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/demos/ModalPage.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="20" lean-forward="true" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
           <folding />
         </state>
       </provider>

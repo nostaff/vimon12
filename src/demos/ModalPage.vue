@@ -14,13 +14,11 @@
 
 
         <ion-content padding>
-            <div v-if="!!myParam">
+            <div v-if="myParam">
                 <h5>Parameters passed:</h5>
-
                 <pre style="background-color: #f8f8f8">selections: {{myParam}}</pre>
-
             </div>
-            <div v-if="!myParam">
+            <div v-else>
                 <p>No parameters passed.</p>
             </div>
             <ion-button color="danger" full @click.native="dismiss()">Close Modal</ion-button>
@@ -38,7 +36,7 @@
             }
         },
         created() {
-            this.myParam = this.$options.$data.myParam;
+            this.myParam = this.$options.$data ? this.$options.$data.myParam : null;
         },
         methods: {
             dismiss() {
