@@ -4,14 +4,14 @@ import Prompt from './prompt.vue'
 import AlertRadio from './alert.radio.vue'
 import AlertCheckbox from './alert.checkbox.vue'
 
-import {createElement} from '../../utils/utils'
+import {createElement, uuid} from '../../utils/utils'
 
 let vm = undefined
 
 class IonDialog {
 
     show(type, options) {
-        let rnd = Math.random().toString(36).substring(3, 6)
+        let rnd = uuid()
         let marker = `ion-${type}-${rnd}`
         let container = document.querySelector('.ion-app') || document.body;
         createElement(marker, container)

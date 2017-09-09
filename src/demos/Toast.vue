@@ -1,81 +1,70 @@
 <template>
-  <ion-page v-nav="{title: '模态窗', showBackButton: true}">
-    <ion-content class="page-content padding padding-top">
-      <button class="button button-assertive button-block" @click="showModal()">默认</button>
-      <button class="button button-balanced button-block" @click="showMultiModal()">多个模态窗</button>
-      <button class="button button-energized button-block" @click="showPopupModal()">模态窗内弹层</button>
-    </ion-content>
-  </ion-page>
+    <ion-page v-nav="{title: 'Toast', showBackButton: true}">
+
+        <ion-content padding>
+
+            <ion-button block @click.native="showToast('bottom')">Show Toast Bottom Position</ion-button>
+            <ion-button block @click.native="showToast('top')">Show Toast Top Position</ion-button>
+            <ion-button block @click.native="showToast('middle')">Show Toast Middle Position</ion-button>
+            <ion-button block margin-bottom @click.native="showLongToast()">Show Long Toast</ion-button>
+
+            <ion-button block @click.native="showDismissDurationToast()">Show Custom Duration Toast</ion-button>
+            <ion-button block @click.native="showToastWithCloseButton()">Show Close Button Toast</ion-button>
+
+        </ion-content>
+    </ion-page>
 </template>
 <script>
-  import DefaultModal from './modals/DefaultModal.vue'
-  import MultiModal from './modals/MultiModal.vue'
-  import PopupModal from './modals/PopupModal.vue'
+    export default {
+        created() {
+        },
 
-  export default {
-    data() {
-      return {
-        modal: undefined,
-        multiModal: undefined,
-        popupModal: undefined
-      }
-    },
+        mounted() {
+        },
 
-    created() {
-      window.MultiModal = MultiModal
-    },
+        methods: {
+            showToast(position) {
+                $toast.show({
+                    message: 'Top was added successfully',
+                    duration: 3000,
+                    position: position,
+                    dismissOnPageChange: true,
+                    onDismiss () {
+                        console.debug('Toast onDidDismiss()')
+                    }
+                });
+            },
 
-    mounted() {
-      $modal.fromComponent(DefaultModal, {
-        title: '模态窗标题',
-        theme: 'default',
-        onHide: () => {
-          console.log('modal hide')
+            showLongToast() {
+                $toast.show({
+                    message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea voluptatibus quibusdam eum nihil optio, ullam accusamus magni, nobis suscipit reprehenderit, sequi quam amet impedit. Accusamus dolorem voluptates laborum dolor obcaecati.',
+                    duration: 3000,
+                    onDismiss () {
+                        console.debug('Toast onDidDismiss()')
+                    }
+                });
+            },
+
+            showDismissDurationToast() {
+                $toast.show({
+                    message: 'I am dismissed after 1.5 seconds',
+                    duration: 1500,
+                    onDismiss () {
+                        console.debug('Toast onDidDismiss()')
+                    }
+                });
+            },
+
+            showToastWithCloseButton() {
+                $toast.show({
+                    message: 'Your internet connection appears to be offline. Data integrity is not guaranteed.',
+                    showCloseButton: true,
+                    closeButtonText: 'Ok',
+                    onDismiss () {
+                        console.debug('Toast onDidDismiss()')
+                    }
+                });
+            }
         }
-      }).then((modal) => {
-        this.modal = modal
-      })
-
-      $modal.fromComponent(MultiModal, {
-        title: '模态窗标题',
-        theme: 'dark'
-      }).then((modal) => {
-        this.multiModal = modal
-      })
-
-      $modal.fromComponent(PopupModal, {
-        title: '模态窗内弹层',
-        theme: 'energized'
-      }).then((modal) => {
-        this.popupModal = modal
-      })
-    },
-
-    destroyed() {
-      if (this.modal)
-        $modal.destroy(this.modal)
-
-      if (this.multiModal)
-        $modal.destroy(this.multiModal)
-
-      if (this.popupModal)
-        $modal.destroy(this.popupModal)
-
-      window.MultiModal = undefined
-    },
-
-    methods: {
-      showModal() {
-        this.modal.show()
-      },
-
-      showMultiModal() {
-        this.multiModal.show()
-      },
-
-      showPopupModal() {
-        this.popupModal.show()
-      }
     }
-  }
 </script>
