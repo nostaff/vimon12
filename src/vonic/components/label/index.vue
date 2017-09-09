@@ -1,7 +1,7 @@
 <template>
-	<label class="ion-label" v-if="viewLabel" :class="['label-'+theme, colorClass]">
+	<div class="ion-label" v-if="viewLabel" :class="['label-'+theme, colorClass]">
         <slot></slot>
-    </label>
+    </div>
 </template>
 <script>
     import ThemeMixins from '../../themes/theme.mixins';

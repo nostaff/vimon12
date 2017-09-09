@@ -1,41 +1,36 @@
 <template>
     <ion-page v-nav="{title: '按钮', showBackButton: true}">
-        <ion-content class="padding">
-
-            <p>Basic Usage</p>
-            <ion-button key="index" v-for="color in ['light', 'default', 'secondary', 'danger', 'dark']" :color="color">{{color}}</ion-button>
-
-
-            <p>Outline Usage</p>
-            <ion-button key="index" v-for="color in ['light', 'default', 'secondary', 'danger', 'dark']" :color="color" outline>{{color}} outline</ion-button>
-
-
-            <p>Clear Usage</p>
-            <ion-button key="index" v-for="color in ['light', 'default', 'secondary', 'danger', 'dark']" :color="color" clear>{{color}} clear</ion-button>
-
-            <p>Round Usage</p>
-            <ion-button key="index" v-for="color in ['light', 'default', 'secondary', 'danger', 'dark']" :color="color" round>{{color}} round</ion-button>
-
-            <p>Block Buttons</p>
-            <ion-button key="index" v-for="color in ['light', 'default', 'secondary', 'danger', 'dark']" :color="color" block>{{color}} block</ion-button>
-
-            <p>Full Buttons</p>
-            <ion-button key="index" v-for="color in ['light', 'default', 'secondary', 'danger', 'dark']" :color="color" full>{{color}} full</ion-button>
-
-            <p>Button Sizes</p>
-            <ion-button key="index" v-for="size in ['small', 'default', 'large']" :size="size">{{size}}</ion-button>
-
-            <p>Icon Buttons</p>
-            <ion-button color="light" icon-left><ion-icon name="arrow-back"></ion-icon>Back</ion-button>
-            <ion-button color="light" icon-only><ion-icon name="arrow-down"></ion-icon></ion-button>
-            <ion-button color="light" icon-only><ion-icon name="arrow-up"></ion-icon></ion-button>
-            <ion-button color="light" icon-right>Forward<ion-icon name="arrow-forward"></ion-icon></ion-button>
-            <ion-button color="light" icon-left><ion-icon name="home"></ion-icon>Home</ion-button>
-
-            <ion-button outline icon-left><ion-icon name="briefcase"></ion-icon>Work</ion-button>
-            <ion-button clear icon-left><ion-icon name="beer"></ion-icon>Pub</ion-button>
-
-
+        <ion-content text-center>
+            <h4>Colors</h4>
+            <ion-button>Default</ion-button>
+            <ion-button color="secondary">Secondary</ion-button>
+            <ion-button color="danger">Danger</ion-button>
+            <ion-button color="light">Light</ion-button>
+            <ion-button color="dark">Dark</ion-button>
+            <h4>Shapes</h4>
+            <ion-button full>Full ion-button</ion-button>
+            <ion-button block>Block ion-button</ion-button>
+            <ion-button round>Round ion-button</ion-button>
+            <h4>Outlines</h4>
+            <ion-button color="secondary" full outline>Outline + Full</ion-button>
+            <ion-button color="secondary" block outline>Outline + Block</ion-button>
+            <ion-button color="secondary" round outline>Outline + Round</ion-button>
+            <h4>Icons</h4>
+            <ion-button icon-start color="dark">
+                <ion-icon name="star"></ion-icon>
+                Left Icon
+            </ion-button>
+            <ion-button icon-end color="dark">
+                Right Icon
+                <ion-icon name="star"></ion-icon>
+            </ion-button>
+            <ion-button icon-only color="dark">
+                <ion-icon name="star"></ion-icon>
+            </ion-button>
+            <h4>Sizes</h4>
+            <ion-button color="light" size="large">Large</ion-button>
+            <ion-button color="light">Default</ion-button>
+            <ion-button color="light" size="small">Small</ion-button>
         </ion-content>
     </ion-page>
 </template>

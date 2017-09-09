@@ -6,14 +6,10 @@
 
 <script>
     import ThemeMixins from '../../themes/theme.mixins';
-    import Item from '../item/item.vue'
 
     export default {
         name: 'ion-badge',
         mixins: [ThemeMixins],
-        components: {
-            'ion-item': Item
-        }
     }
 </script>
 

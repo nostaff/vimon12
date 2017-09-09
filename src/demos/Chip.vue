@@ -1,0 +1,83 @@
+<template>
+    <ion-page v-nav="{title: 'Chip', showBackButton: true}">
+        <ion-content padding text-center>
+            <h2>Text Chips</h2>
+            <ion-chip>
+                <ion-label>Default</ion-label>
+            </ion-chip>
+            <ion-chip>
+                <ion-label color="secondary">Secondary Label</ion-label>
+            </ion-chip>
+            <ion-chip>
+                <ion-label>Another With Longer Text</ion-label>
+            </ion-chip>
+            <h2>Color Chips</h2>
+            <ion-chip color="primary">
+                <ion-icon name="heart" color="dark"></ion-icon>
+                <ion-label>Primary</ion-label>
+            </ion-chip>
+            <ion-chip color="secondary">
+                <ion-label color="dark">Secondary w/ Dark label</ion-label>
+            </ion-chip>
+            <ion-chip color="danger">
+                <ion-label>Danger</ion-label>
+            </ion-chip>
+            <h2>Icon Chips</h2>
+            <ion-chip>
+                <ion-icon name="pin"></ion-icon>
+                <ion-label>Default</ion-label>
+            </ion-chip>
+            <ion-chip>
+                <ion-label>Secondary</ion-label>
+                <ion-icon name="pin" color="secondary"></ion-icon>
+            </ion-chip>
+            <h2>Avatar Chips</h2>
+            <ion-chip>
+                <ion-avatar>
+                    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+                </ion-avatar>
+                <ion-label>Default</ion-label>
+            </ion-chip>
+            <ion-chip>
+                <ion-label>Right Avatar</ion-label>
+                <ion-avatar>
+                    <img src="https://gravatar.com/avatar/d249a09fecac4da036d26c5002af2c94?d=identicon&f=y">
+                </ion-avatar>
+            </ion-chip>
+            <h2>Delete Chips</h2>
+            <ion-chip id="chip1">
+                <ion-label>Default</ion-label>
+                <ion-button clear @click.native="deleteElm('chip1')">
+                    <ion-icon name="close-circle"></ion-icon>
+                </ion-button>
+            </ion-chip>
+            <ion-chip id="chip2">
+                <ion-icon name="pin" color="primary"></ion-icon>
+                <ion-label>With Icon</ion-label>
+                <ion-button clear @click.native="deleteElm('chip2')">
+                    <ion-icon name="close-circle"></ion-icon>
+                </ion-button>
+            </ion-chip>
+            <ion-chip id="chip3">
+                <ion-avatar>
+                    <img src="https://gravatar.com/avatar/83b4748bf7e821165ecccd4c090d96e1?d=identicon&f=y">
+                </ion-avatar>
+                <ion-label>With Avatar</ion-label>
+                <ion-button clear color="dark" @click.native="deleteElm('chip3')">
+                    <ion-icon name="close-circle"></ion-icon>
+                </ion-button>
+            </ion-chip>
+        </ion-content>
+    </ion-page>
+</template>
+
+<script>
+    export default{
+        methods: {
+            deleteElm(chip) {
+                let el = this.$el.querySelector('#'+chip);
+                el.parentNode.removeChild(el);
+            }
+        }
+    }
+</script>

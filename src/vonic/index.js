@@ -28,8 +28,8 @@ import Avatar from './components/avatar'
 import Label from './components/label'
 import Note from './components/note'
 import Icon from './components/icon'
-// import { Header, Footer, ToolBar, Title, Buttons } from "./components/header";
 import Button from './components/button'
+import Chip from './components/chip/index.vue'
 import Input from './components/input'
 import Searchbar from './components/searchbar'
 import {Radio, RadioGroup} from './components/radio'
@@ -49,6 +49,7 @@ Vue.component(Label.name, Label)
 Vue.component(Note.name, Note)
 Vue.component(Icon.name, Icon)
 Vue.component(Button.name, Button)
+Vue.component(Chip.name, Chip)
 Vue.component(Input.name, Input)
 Vue.component(Searchbar.name, Searchbar)
 Vue.component(RadioGroup.name, RadioGroup)
