@@ -1,16 +1,74 @@
 <template>
     <ion-page v-nav="{title: 'Loading', showBackButton: true}">
-        <ion-content>
-
+        <ion-content class="outer-content">
             <ion-list>
-                <ion-list-header color="primary">
+                <ion-list-header>
                     Settings
                     <ion-button clear icon-only slot="item-end">
                         <ion-icon name="cog"></ion-icon>
                     </ion-button>
                 </ion-list-header>
-                <ion-item detail-push key="index" v-for="item in ['Angola', 'Angola1', 'Angola2', 'Angola3']">
-                    {{ item }}
+                <ion-item>
+                    <ion-icon name="plane" slot="item-start" color="danger"></ion-icon>
+                    <ion-label slot="item-label">Airplane Mode</ion-label>
+                    <ion-toggle slot="item-end" color="secondary"></ion-toggle>
+                </ion-item>
+                <ion-item>
+                    <ion-icon name="wifi" slot="item-start" color="primary"></ion-icon>
+                    <ion-label slot="item-label">Wi-Fi</ion-label>
+                    <ion-note slot="item-end">The Interwebz</ion-note>
+                </ion-item>
+                <ion-item>
+                    <ion-icon name="bluetooth" slot="item-start" color="primary"></ion-icon>
+                    <ion-label slot="item-label">Bluetooth</ion-label>
+                    <ion-note slot="item-end">Off</ion-note>
+                </ion-item>
+                <ion-item>
+                    <ion-icon name="call" slot="item-start" color="secondary"></ion-icon>
+                    <ion-label slot="item-label">Cellular</ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-icon name="link" slot="item-start" color="secondary"></ion-icon>
+                    <ion-label slot="item-label">Personal Hotspot</ion-label>
+                    <ion-note slot="item-end">Off</ion-note>
+                </ion-item>
+            </ion-list>
+            <ion-list radio-group>
+                <ion-list-header>
+                    Silence Phone
+                </ion-list-header>
+                <ion-item>
+                    <ion-label slot="item-label" color="dark">Always</ion-label>
+                    <ion-radio slot="item-content" value="always" checked></ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label slot="item-label" color="dark">Only while phone is locked</ion-label>
+                    <ion-radio slot="item-content" value="locked"></ion-radio>
+                </ion-item>
+            </ion-list>
+            <ion-list>
+                <ion-list-header>
+                    Apps Installed
+                </ion-list-header>
+                <ion-item>
+                    <ion-icon name="ionic" slot="item-start" color="primary"></ion-icon>
+                    <ion-label slot="item-label">Ionic View</ion-label>
+                    <ion-button outline slot="item-end">Uninstall</ion-button>
+                </ion-item>
+                <ion-item>
+                    <ion-icon name="brush" slot="item-start" color="primary"></ion-icon>
+                    <ion-label slot="item-label">Ionic Creator</ion-label>
+                    <ion-button outline slot="item-end">Uninstall</ion-button>
+                </ion-item>
+                <ion-item>
+                    <ion-icon name="logo-octocat" slot="item-start" color="dark"></ion-icon>
+                    <ion-label slot="item-label">Hubstruck</ion-label>
+                    <ion-button outline slot="item-end">Uninstall</ion-button>
+                </ion-item>
+                <ion-item>
+                    <ion-icon name="paw" slot="item-start" color="danger"></ion-icon>
+                    <ion-label slot="item-label">Barkpark</ion-label>
+                    <ion-button outline slot="item-end">Uninstall</ion-button>
                 </ion-item>
             </ion-list>
 
@@ -39,15 +97,15 @@
 
             <ion-list>
                 <ion-item>
-                    <ion-icon slot="item-start" name="leaf" item-start></ion-icon>
+                    <ion-icon slot="item-start" name="leaf"></ion-icon>
                     Herbology
-                    <ion-icon slot="item-end" name="rose" item-end></ion-icon>
+                    <ion-icon slot="item-end" name="rose"></ion-icon>
                 </ion-item>
             </ion-list>
 
             <ion-list>
                 <ion-item detail-push>
-                    <ion-avatar slot="item-start" item-start>
+                    <ion-avatar slot="item-start">
                         <img src="http://ionicframework.com/dist/preview-app/www/assets/img/spengler.jpg">
                     </ion-avatar>
                     <h2>Cher</h2>
@@ -101,7 +159,7 @@
                     </ion-thumbnail>
                     <h2>My Neighbor Totoro</h2>
                     <p>Hayao Miyazaki • 1988</p>
-                    <ion-button slot="item-end" clear item-end>View</ion-button>
+                    <ion-button slot="item-end">View</ion-button>
                 </ion-item>
             </ion-list>
 

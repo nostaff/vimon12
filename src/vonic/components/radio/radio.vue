@@ -12,6 +12,7 @@
     </div>
 </template>
 <script>
+    import { isTrueProperty } from '../../utils/utils'
     import ThemeMixins from '../../themes/theme.mixins';
     import IonButton from "../button/index";
     export default {
@@ -23,8 +24,8 @@
 
         data() {
             return {
-                isChecked: false,
-                isDisabled: this.disabled,
+                isChecked: isTrueProperty(this.checked),
+                isDisabled: isTrueProperty(this.disabled),
                 itemComponent: null,
                 radioGroupComponent: null,
             }
@@ -36,7 +37,11 @@
                 required: true
             },
             disabled: {
-                type: Boolean,
+                type: [Boolean, String],
+                default: false
+            },
+            checked: {
+                type: [Boolean, String],
                 default: false
             }
         },
@@ -60,8 +65,8 @@
                 this.itemComponent && this.itemComponent.$el.classList[disabled ? 'add' : 'remove']('item-radio-disabled');
             },
 
-            setChecked (checked) {
-                let isChecked = checked === this.value
+            setChecked (checkedValue) {
+                let isChecked = checkedValue === this.value
                 if (this.isChecked !== isChecked) {
                     this.isChecked = isChecked
                     this.isChecked && this.$emit('onSelect', this.value)

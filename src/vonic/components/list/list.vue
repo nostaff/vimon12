@@ -5,6 +5,7 @@
     </div>
 </template>
 <script>
+    import { isBlank } from '../../utils/utils'
     import ThemeMixins from '../../themes/theme.mixins';
     import IonListHeader from "./list.header";
 
@@ -29,6 +30,7 @@
         },
         watch: {
             value (val) {
+                console.log(val)
                 this.radioComponentList.forEach((radio) => {
                     radio.setChecked(val)
                 })
@@ -48,7 +50,10 @@
 
 
             updateRadioList (radio) {
-                this.radioComponentList.push(radio)
+                this.radioComponentList.push(radio);
+                if (isBlank(this.value) && radio.isChecked) {
+                    this.value = radio.value;
+                }
 
                 this.timer && clearTimeout(this.timer)
                 this.timer = setTimeout(() => {
