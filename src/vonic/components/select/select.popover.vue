@@ -1,5 +1,5 @@
 <template>
-    <ion-list radio-group v-model="checkedValue" @onChange="onRadioChange($event)">
+    <ion-list radio-group v-model="checkedValue" @onChange="onRadioChecked($event)">
         <ion-item v-for="option in options" key="idx">
             <ion-label slot="item-label">{{option.text}}</ion-label>
             <ion-radio slot="item-content" :value="option.value" :disabled="option.disabled"></ion-radio>
@@ -33,7 +33,7 @@
             this.checkedValue = this.getValue();
         },
         methods: {
-            onRadioChange (value) {
+            onRadioChecked (value) {
                 let checkedOption = this.options.find(option => option.value === value);
                 if (checkedOption && checkedOption.handler) {
                     checkedOption.handler();

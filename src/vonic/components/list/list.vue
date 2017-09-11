@@ -1,6 +1,6 @@
 <template>
     <div class="ion-list" :class="['list-'+theme]">
-        <ion-list-header :color="color" v-if="title">{{title}}</ion-list-header>
+        <ion-list-header v-if="title">{{title}}</ion-list-header>
         <slot></slot>
     </div>
 </template>
@@ -19,7 +19,8 @@
             return {
                 componentName: 'ionList',
 
-                radioComponentList: [],
+                checkedValue: this.value,
+                radioButtons: [],
                 timer: null
             };
         },
@@ -30,37 +31,58 @@
         },
         watch: {
             value (val) {
-                console.log(val)
-                this.radioComponentList.forEach((radio) => {
-                    radio.setChecked(val)
+                this.checkedValue = val;
+                console.log(this.checkedValue)
+            },
+            checkedValue (val) {
+                this.radioButtons.forEach((button) => {
+                    button.setChecked(val);
                 })
             },
         },
 
         methods: {
 
-            // called by radio where checked
-            onRadioChange (value) {
-                this.radioComponentList.forEach((radio) => {
-                    radio.setChecked(value)
-                })
+            // called by radio button where checked
+            onRadioChecked (value) {
+                // loop through each of the radiobuttons
+                this.radioButtons.forEach(button => {
+                    button.setChecked(value)
+                });
+
                 this.$emit('input', value)
                 this.$emit('onChange', value)
             },
 
+            addRadioButton (button) {
+                this.radioButtons.push(button);
 
-            updateRadioList (radio) {
-                this.radioComponentList.push(radio);
-                if (isBlank(this.value) && radio.isChecked) {
-                    this.value = radio.value;
+                if (isBlank(this.checkedValue) && button.isChecked) {
+                    this.checkedValue = button.value;
                 }
+
+                // listen for radiobutton select events
+                button.$on('onSelect', (val) => {
+                    // this radiobutton has been selected
+                    this.onRadioChecked(val);
+                });
 
                 this.timer && clearTimeout(this.timer)
                 this.timer = setTimeout(() => {
-                    this.radioComponentList.forEach((radio) => {
-                        radio.setChecked(this.value)
+                    this.radioButtons.forEach((button) => {
+                        button.setChecked(this.checkedValue)
                     });
                 }, 0);
+            },
+
+            removeRadioButton(button) {
+                let index = this.radioButtons.indexOf(button);
+                if (index > -1) {
+                    if (button.value === this.checkedValue) {
+                        this.checkedValue = null;
+                    }
+                    this.radioButtons.splice(index, 1);
+                }
             }
         },
 

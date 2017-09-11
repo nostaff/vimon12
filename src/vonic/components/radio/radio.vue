@@ -26,8 +26,8 @@
             return {
                 isChecked: isTrueProperty(this.checked),
                 isDisabled: isTrueProperty(this.disabled),
-                itemComponent: null,
-                radioGroupComponent: null,
+                item: null,
+                radioGroup: null,
             }
         },
 
@@ -57,50 +57,53 @@
         },
 
         methods: {
-
             setDisabled (disabled) {
                 this.setChecked(null)
                 this.isDisabled = disabled
 
-                this.itemComponent && this.itemComponent.$el.classList[disabled ? 'add' : 'remove']('item-radio-disabled');
+                this.item && this.item.$el.classList[disabled ? 'add' : 'remove']('item-radio-disabled');
             },
 
             setChecked (checkedValue) {
                 let isChecked = checkedValue === this.value
                 if (this.isChecked !== isChecked) {
                     this.isChecked = isChecked
-                    this.isChecked && this.$emit('onSelect', this.value)
 
-                    this.itemComponent && this.itemComponent.$el.classList[this.isChecked ? 'add' : 'remove']('item-radio-checked');
+                    this.item && this.item.$el.classList[this.isChecked ? 'add' : 'remove']('item-radio-checked');
                 }
             },
 
             onChecked (ev) {
                 ev.preventDefault()
                 ev.stopPropagation()
-                !this.isDisabled && this.radioGroupComponent && this.radioGroupComponent.onRadioChange(this.value)
+
+                !this.isDisabled && this.$emit('onSelect', this.value)
             },
 
             init () {
                 // if parent is item
                 if (this.$parent.$data.componentName === 'ionItem') {
-                    this.itemComponent = this.$parent;
-                    this.itemComponent.$el.classList.add('item-radio')
+                    this.item = this.$parent;
+                    this.item.$el.classList.add('item-radio')
                 }
 
                 // if parent's parent is list
                 if (this.$parent.$parent.$data.componentName === 'ionList') {
                     let node = this.$parent.$parent
                     if (node.radioGroup) {
-                        this.radioGroupComponent = node
-                        this.radioGroupComponent.updateRadioList(this)
+                        this.radioGroup = node
+                        this.radioGroup.addRadioButton(this)
                     }
-                    console.assert(this.radioGroupComponent, 'Radio组件需要在List组件中加上`radio-group`属性才能正常使用v-model指令!')
+                    console.assert(this.radioGroup, 'Radio组件需要在List组件中加上`radio-group`属性才能正常使用v-model指令!')
                 }
 
                 // 初始化禁用状态
-                this.setDisabled(this.disabled)
+                this.setDisabled(isTrueProperty(this.disabled))
             }
+        },
+
+        destroyed () {
+            this.radioGroup && this.radioGroup.removeRadioButton(this);
         }
     }
 </script>

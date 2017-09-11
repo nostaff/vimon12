@@ -1,10 +1,20 @@
 <template>
-    <span class="ion-note">
+    <span class="ion-note" :class="['note-'+theme, 'note-'+theme+'-'+color]">
         <slot></slot>
     </span>
 </template>
+
 <script>
+    import ThemeMixins from '../../themes/theme.mixins';
     export default {
-        name: 'ion-note'
+        name: 'ion-note',
+        mixins: [ThemeMixins],
     }
 </script>
+
+
+<style lang="scss">
+    @import './note.ios.scss';
+    @import './note.md.scss';
+    @import './note.wp.scss';
+</style>
