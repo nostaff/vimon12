@@ -1,5 +1,5 @@
 <template>
-    <div class="ion-item-options">
+    <div class="ion-item-options" :side="side">
         <slot></slot>
     </div>
 </template>
@@ -9,6 +9,12 @@
         data() {
             return {
                 componentName: 'ionItemOptions'
+            }
+        },
+        props: {
+            side: {
+                type: String,
+                default: 'right'
             }
         },
         methods: {

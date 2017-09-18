@@ -84,7 +84,7 @@
                 // if parent is item
                 if (this.$parent.$data.componentName === 'ionItem') {
                     this.item = this.$parent;
-                    this.item.$el.classList.add('item-radio')
+                    this.item.setClass('item-radio', true)
                 }
 
                 // if parent's parent is list

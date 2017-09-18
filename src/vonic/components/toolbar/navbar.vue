@@ -1,5 +1,5 @@
 <template>
-    <header class="ion-header header" :class="['header-'+theme]" v-show="state">
+    <div class="ion-header header" :class="['header-'+theme]" v-show="activated">
         <div class="ion-navbar toolbar" :class="['toolbar-'+theme, colorClass]">
             <div class="toolbar-background" :class="['toolbar-background-'+theme]"></div>
             <slot name="left-item">
@@ -24,7 +24,7 @@
                 </slot>
             </div>
         </div>
-    </header>
+    </div>
 </template>
 
 <script>
@@ -35,7 +35,7 @@
         data() {
             return {
                 componentName: 'ionToolbar',
-                state: 1
+                activated: true
             };
         },
         props: {

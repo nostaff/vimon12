@@ -1,7 +1,15 @@
 <template>
-    <ion-item class="ion-item-divider item-divider" :color="color" :class="['list-divider-'+theme]">
-        <slot></slot>
-    </ion-item>
+    <div class="item item-divider ion-item-divider" :class="['item-'+theme, 'item-divider-'+theme, 'item-divider-'+theme+'-'+color]">
+        <div class="item-inner">
+            <div class="input-wrapper">
+                <slot name="item-label"></slot>
+                <ion-label ref="label" v-if="noItemLabel">
+                    <slot></slot>
+                </ion-label>
+            </div>
+            <slot name="item-end"></slot>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -13,6 +21,23 @@
         mixins: [ThemeMixins],
         components: {
             'ion-item': Item
+        },
+        data() {
+            return {
+                componentName: 'ionItem',
+            };
+        },
+        computed: {
+            noItemLabel: function () {
+                return typeof this.$slots['item-label'] === 'undefined';
+            },
+        },
+        mounted () {
+            if (this.$slots['item-end']) {
+                this.$slots['item-end'].forEach(function (item) {
+                    item.elm.setAttribute('item-end', '')
+                })
+            }
         }
     }
 </script>

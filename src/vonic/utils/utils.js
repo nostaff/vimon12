@@ -375,3 +375,20 @@ export function docReady (callback) {
         callback()
     }
 }
+
+export function hasClass (element, name) {
+    return element.className.match(new RegExp('(\\s|^)' + name + '(\\s|$)'))
+}
+
+export function addClass (element, name) {
+    if (!hasClass(element, name)) {
+        element.className += ' ' + name
+    }
+}
+
+export function removeClass (element, name) {
+    if (hasClass(element, name)) {
+        var reg = new RegExp('(\\s|^)' + name + '(\\s|$)')
+        element.className = element.className.replace(reg, ' ').trim()
+    }
+}

@@ -4,7 +4,7 @@
         <div class="item-inner">
             <div class="input-wrapper">
                 <slot name="item-label"></slot>
-                <ion-label ref="label" :color="color" v-if="noItemLabel">
+                <ion-label ref="label" v-if="noItemLabel">
                     <slot></slot>
                 </ion-label>
                 <slot name="item-content"></slot>
@@ -18,7 +18,7 @@
         <div class="item-inner">
             <div class="input-wrapper">
                 <slot name="item-label"></slot>
-                <ion-label ref="label" :color="color" v-if="noItemLabel">
+                <ion-label ref="label" v-if="noItemLabel">
                     <slot></slot>
                 </ion-label>
                 <slot name="item-content"></slot>
@@ -33,20 +33,25 @@
         <div class="item-inner">
             <div class="input-wrapper">
                 <slot name="item-label"></slot>
-                <ion-label ref="label" :color="color" v-if="noItemLabel">
+                <ion-label ref="label" v-if="noItemLabel">
                     <slot></slot>
                 </ion-label>
                 <slot name="item-content"></slot>
             </div>
-            <slot name="item-end"></slot>
+            <slot name="item-end">
+                <ion-reorder v-if="hasReorder"></ion-reorder>
+            </slot>
         </div>
     </div>
 
 </template>
 <script>
+    import { isUndefined } from '../../utils/utils'
     import ThemeMixins from '../../themes/theme.mixins';
+    import IonReorder from "./item.reorder.vue";
 
     export default {
+        components: {IonReorder},
         name: 'ion-item',
         mixins: [ThemeMixins],
         props: {
@@ -62,12 +67,15 @@
         data() {
             return {
                 componentName: 'ionItem',
+
+                noItemLabel: false,
+                hasReorder: false
             };
         },
-        computed: {
-            noItemLabel: function () {
-                return typeof this.$slots['item-label'] === 'undefined';
-            },
+        created () {
+            this.noItemLabel = isUndefined(this.$slots['item-label']);
+
+            this.hasReorder = this.$parent.$data.componentName === 'ionItemGroup' && this.$parent.allowReorder;
         },
         mounted () {
             if (this.$el.classList.contains('item-divider'))
@@ -86,11 +94,8 @@
         },
         methods: {
             // 给子组件用的方法
-            addClass(className) {
-                this.$el.classList.add(className)
-            },
-            removeClass(className) {
-                this.$el.classList.remove(className)
+            setClass(className, add = true) {
+                this.$el.classList[add ? 'add': 'remove'](className)
             },
             updateLabelAttribute(name, value = '') {
                 if (this.$refs.label && this.$refs.label.$el.length != 0) {   // 空==0，不为空 != 0 ，非大于0
@@ -108,6 +113,9 @@
                     return this.$slots['item-label'][0].elm.innerText;
                 }
                 return ''
+            },
+            getNativeElement() {
+                return this.$el;
             }
         }
     }

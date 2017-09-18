@@ -1,7 +1,7 @@
 <template>
-    <footer class="ion-footer footer" :class="['footer-'+theme]">
+    <div class="ion-footer footer" :class="['footer-'+theme]">
        <slot></slot>
-    </footer>
+    </div>
 </template>
 <script>
     import ThemeMixins from '../../themes/theme.mixins';

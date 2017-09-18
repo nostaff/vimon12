@@ -1,7 +1,7 @@
 <template>
-    <header class="ion-header header" :class="['header-'+theme]">
+    <div class="ion-header header" :class="['header-'+theme]">
         <slot></slot>
-    </header>
+    </div>
 </template>
 
 <script>

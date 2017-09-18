@@ -1,6 +1,7 @@
 <template>
-    <ion-page v-nav="{title: 'Loading', showBackButton: true}">
+    <ion-page v-nav="{title: 'List 列表', showBackButton: true}">
         <ion-content class="outer-content">
+
             <ion-list>
                 <ion-list-header>
                     Settings
@@ -202,26 +203,37 @@
                 </ion-item-sliding>
             </ion-list>
 
-            <ion-list class="Reorder">
+            <ion-list class="chat-sliding-demo">
                 <ion-list-header>
-                    Playlist
+                    Reorder
                     <ion-button slot="item-end" outline @click.native="toggleEdit()">{{editButton}}</ion-button>
                 </ion-list-header>
-                <ion-item-group :reorder="editing" @onItemReorder="reorderData($event)">
+                <ion-item-group reorder="true" :reorderEnabled="editing" @onItemReorder="reorderData($event)">
                     <ion-item v-for="song in songs" key="index">
                         <h2>{{ song.title }}</h2>
                         <p>{{ song.band }} • {{ song.album }}</p>
                     </ion-item>
                 </ion-item-group>
             </ion-list>
-
         </ion-content>
+
+        <ion-footer>
+            <ion-toolbar>
+                <ion-title>Scrolls with the content</ion-title>
+            </ion-toolbar>
+        </ion-footer>
     </ion-page>
 </template>
 
 
 <script>
+    import { reorderArray } from '../vonic/utils/utils'
+    import IonFooter from "../vonic/components/page/footer.vue";
+    import IonToolbar from "../vonic/components/toolbar/toolbar.vue";
     export default{
+        components: {
+            IonToolbar,
+            IonFooter},
         data() {
             return {
                 editing: false,
@@ -306,6 +318,7 @@
             },
             reorderData(indexes) {
                 this.songs = reorderArray(this.songs, indexes.from, indexes.to);
+                console.log(this.songs)
             }
         }
     }

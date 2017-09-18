@@ -88,7 +88,7 @@ $list-ios-header-background-color: 0 0!default;
 }
 
 .list-ios[inset] .item-inner {
-    border-bottom: 0;
+    border-bottom: 0!important;
 }
 
 .list-ios[inset]>.item:first-child, .list-ios[inset]>.item-wrapper:first-child .item {

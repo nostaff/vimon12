@@ -28,6 +28,7 @@
 
 
 <script>
+    import { isPresent } from '../../utils/utils'
     import ThemeMixins from '../../themes/theme.mixins';
     import IonButton from '../button';
 
@@ -41,11 +42,9 @@
         data() {
             return {
                 activated: false,
-            }
-        },
 
-        mounted() {
-            this.updateParentItem();
+                parentItem: null,   // if Parent is item component, get it
+            }
         },
 
         props: {
@@ -82,6 +81,25 @@
             },
         },
 
+        created() {
+            if (this.$parent.$data.componentName === 'ionItem') {
+                this.parentItem = this.$parent;
+            }
+        },
+
+        mounted() {
+            if (isPresent(this.parentItem)) {
+                this.parentItem.setClass('item-input', true);
+
+                ['floating', 'stacked'].forEach((attr) => {
+                    if (this.$el.hasAttribute(attr)) {
+                        this.parentItem.setClass(`item-label-${attr}`, true);
+                        this.parentItem.updateLabelAttribute(attr);
+                    }
+                });
+            }
+        },
+
         methods: {
             clearInput($event) {
                 if (this.disabled || this.readonly) return;
@@ -103,32 +121,18 @@
                     this.activated = false
                 }, 16 * 4);
             },
-            // 如果parent是item，做更新
-            updateParentItem() {
-                let $parent = this.$parent;
-                if ($parent.$data.componentName === 'ionItem') {
-                    $parent.$el.classList.add('item-input');
-
-                    let $el = this.$el;
-                    let attrs = ['floating', 'stacked'];
-                    attrs.forEach(function(attr){
-                        if ($el.hasAttribute(attr)) {
-                            $parent.addClass(`item-label-${attr}`);
-                            $parent.updateLabelAttribute(attr);
-                        }
-                    });
-                }
-
-            }
         },
 
         watch: {
             value: function (val) {
                 let hasValue = !!val;
-                this.$parent.$el.classList[hasValue ? 'add' : 'remove']('input-has-value');
+                this.parentItem && this.parentItem.setClass('input-has-value', hasValue)
+//                this.$parent.$el.classList[hasValue ? 'add' : 'remove']();
             },
             activated(val) {
-                this.$parent.$el.classList[val ? 'add' : 'remove']('input-has-focus');
+                this.parentItem && this.parentItem.setClass('input-has-focus', val)
+
+//                this.$parent.$el.classList[val ? 'add' : 'remove']('input-has-focus');
             }
         },
 
