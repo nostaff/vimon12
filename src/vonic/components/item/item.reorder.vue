@@ -83,7 +83,7 @@
                 this.offset = pointerCoord(ev);
                 this.offset.y += this.lastScrollPosition;
 
-                this.selectedItem.setClass(ITEM_REORDER_ACTIVE, true);
+                this.selectedItem.setElementClass(ITEM_REORDER_ACTIVE, true);
                 this.reorderList.reorderStart();
                 return true;
             },

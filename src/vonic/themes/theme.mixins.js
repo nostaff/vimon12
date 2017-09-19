@@ -33,5 +33,16 @@ export default {
                     ].indexOf(value) > -1;
             }
         }
+    },
+    methods: {
+        getNativeElement() {
+            return this.$el;
+        },
+        setElementClass(classname, add = true) {
+            this.$el.classList[add ? 'add' : 'remove'](classname);
+        },
+        setElementStyle(name, value) {
+            this.$el.style[name] = value;
+        }
     }
 }

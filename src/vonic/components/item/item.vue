@@ -93,10 +93,6 @@
             }
         },
         methods: {
-            // 给子组件用的方法
-            setClass(className, add = true) {
-                this.$el.classList[add ? 'add': 'remove'](className)
-            },
             updateLabelAttribute(name, value = '') {
                 if (this.$refs.label && this.$refs.label.$el.length != 0) {   // 空==0，不为空 != 0 ，非大于0
                     this.$refs.label.$el.setAttribute(name, value);
@@ -113,9 +109,6 @@
                     return this.$slots['item-label'][0].elm.innerText;
                 }
                 return ''
-            },
-            getNativeElement() {
-                return this.$el;
             }
         }
     }

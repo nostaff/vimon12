@@ -475,7 +475,7 @@
 
     }
 
-    export function updateImgs(imgs, viewableTop, contentHeight, scrollDirectionY, requestableBuffer, renderableBuffer) {
+    function updateImgs(imgs, viewableTop, contentHeight, scrollDirectionY, requestableBuffer, renderableBuffer) {
         // ok, so it's time to see which images, if any, should be requested and rendered
         // ultimately, if we're scrolling fast then don't bother requesting or rendering
         // when scrolling is done, then it needs to do a check to see which images are

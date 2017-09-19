@@ -14,19 +14,18 @@
         props: {
             side: {
                 type: String,
-                default: 'right'
+                default: 'right',
+                validator(value) {
+                    return [
+                        'left',
+                        'right'
+                    ].indexOf(value) > -1;
+                }
             }
         },
         methods: {
             width() {
-                let elRef = this.$slots.default || [];
-                let width = 0;
-                for (const el of elRef) {
-                    if (el.tag != undefined) {
-                        width += el.elm.getBoundingClientRect().width;
-                    }
-                }
-                return width;
+                return this.$el.offsetWidth;
             }
         }
     }

@@ -89,11 +89,11 @@
 
         mounted() {
             if (isPresent(this.parentItem)) {
-                this.parentItem.setClass('item-input', true);
+                this.parentItem.setElementClass('item-input', true);
 
                 ['floating', 'stacked'].forEach((attr) => {
                     if (this.$el.hasAttribute(attr)) {
-                        this.parentItem.setClass(`item-label-${attr}`, true);
+                        this.parentItem.setElementClass(`item-label-${attr}`, true);
                         this.parentItem.updateLabelAttribute(attr);
                     }
                 });
@@ -126,11 +126,11 @@
         watch: {
             value: function (val) {
                 let hasValue = !!val;
-                this.parentItem && this.parentItem.setClass('input-has-value', hasValue)
+                this.parentItem && this.parentItem.setElementClass('input-has-value', hasValue)
 //                this.$parent.$el.classList[hasValue ? 'add' : 'remove']();
             },
             activated(val) {
-                this.parentItem && this.parentItem.setClass('input-has-focus', val)
+                this.parentItem && this.parentItem.setElementClass('input-has-focus', val)
 
 //                this.$parent.$el.classList[val ? 'add' : 'remove']('input-has-focus');
             }

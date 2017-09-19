@@ -90,7 +90,6 @@
             },
 
             reorderMove(fromIndex, toIndex, itemHeight) {
-                console.log(fromIndex, toIndex, itemHeight)
                 if (this.lastToIndex === -1) {
                     this.lastToIndex = fromIndex;
                 }
@@ -117,9 +116,6 @@
                         }
                     }
                 }
-            },
-            setElementClass(classname, add) {
-                this.$el.classList[add ? 'add' : 'remove'](classname);
             }
         }
     }

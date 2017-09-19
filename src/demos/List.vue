@@ -167,7 +167,7 @@
                 </ion-item>
             </ion-list>
 
-            <ion-list title="item sliding - todo">
+            <ion-list title="item sliding">
                 <ion-item-sliding v-for="chat in chats" key="index">
                     <ion-item>
                         <ion-avatar slot="item-start">
@@ -180,24 +180,23 @@
                         </ion-note>
                     </ion-item>
                     <ion-item-options>
-                        <ion-button color="secondary">
+                        <ion-button color="secondary" @click.native="optionClicked($event)">
                             <ion-icon name="menu"></ion-icon>
                             More
                         </ion-button>
-                        <ion-button color="dark">
+                        <ion-button color="dark" @click.native="optionClicked($event)">
                             <ion-icon name="volume-off"></ion-icon>
                             Mute
                         </ion-button>
-                        <ion-button color="danger">
+                        <ion-button color="danger" @click.native="optionClicked($event)">
                             <ion-icon name="trash"></ion-icon>
                             Delete
                         </ion-button>
                     </ion-item-options>
                     <ion-item-options side="left">
-                        <ion-button color="primary">
+                        <ion-button color="primary" @click1.native="optionClicked($event)">
                             <ion-icon name="archive" class="expand-hide"></ion-icon>
                             <div class="expand-hide">Archive</div>
-                            <ion-spinner id="archive-spinner"></ion-spinner>
                         </ion-button>
                     </ion-item-options>
                 </ion-item-sliding>
@@ -228,12 +227,7 @@
 
 <script>
     import { reorderArray } from '../vonic/utils/utils'
-    import IonFooter from "../vonic/components/page/footer.vue";
-    import IonToolbar from "../vonic/components/toolbar/toolbar.vue";
     export default{
-        components: {
-            IonToolbar,
-            IonFooter},
         data() {
             return {
                 editing: false,
@@ -308,6 +302,9 @@
             }
         },
         methods: {
+            optionClicked (ev) {
+                console.log(ev.target)
+            },
             toggleEdit() {
                 this.editing = !this.editing;
                 if (this.editing) {
@@ -318,7 +315,6 @@
             },
             reorderData(indexes) {
                 this.songs = reorderArray(this.songs, indexes.from, indexes.to);
-                console.log(this.songs)
             }
         }
     }
