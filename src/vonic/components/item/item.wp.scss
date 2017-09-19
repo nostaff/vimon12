@@ -69,10 +69,6 @@ $item-wp-sliding-content-background: $list-wp-background-color !default;
   box-shadow: none;
 }
 
-.item-wp.activated {
-  background-color: $list-wp-activated-background-color;
-}
-
 .item-wp[no-lines] {
   border-width: 0;
 }
@@ -134,6 +130,10 @@ $item-wp-sliding-content-background: $list-wp-background-color !default;
 
     background-repeat: no-repeat;
     background-size: 14px 14px;
+  }
+
+  .item-wp[detail-push]:active, button.item-wp:not([detail-none]):active, a.item-wp:not([detail-none]):active {
+    background-color: $list-wp-activated-background-color;
   }
 }
 

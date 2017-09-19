@@ -64,10 +64,6 @@ $item-md-sliding-content-background: $list-md-background-color !default;
   transition: background-color 300ms cubic-bezier(.4, 0, .2, 1);
 }
 
-.item-md.activated {
-  background-color: $list-md-activated-background-color;
-}
-
 .item-md[no-lines] {
   border-width: 0;
 }
@@ -129,6 +125,10 @@ $item-md-sliding-content-background: $list-md-background-color !default;
 
     background-repeat: no-repeat;
     background-size: 14px 14px;
+  }
+
+  .item-md[detail-push]:active, button.item-md:not([detail-none]):active, a.item-md:not([detail-none]):active {
+    background-color: $list-md-activated-background-color;
   }
 }
 
