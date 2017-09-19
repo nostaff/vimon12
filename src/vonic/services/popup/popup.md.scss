@@ -92,7 +92,7 @@ $popup-md-option-selected-color:             color($colors-md, primary) !default
 }
 
 .popup-md .popup-button,
-.popup-md .popup-button.activated {
+.popup-md .popup-button:active {
   @include margin(0);
 
   height: $popup-md-button-height;

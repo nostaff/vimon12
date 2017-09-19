@@ -59,7 +59,7 @@ $searchbar-wp-input-clear-icon-size:     22px !default;
   background-size: $searchbar-wp-input-search-icon-size;
 }
 
-.searchbar-wp .searchbar-search-icon.activated {
+.searchbar-wp .searchbar-search-icon:active {
   background-color: transparent;
 }
 
@@ -106,7 +106,7 @@ $searchbar-wp-input-clear-icon-size:     22px !default;
   background-size: $searchbar-wp-input-clear-icon-size;
 }
 
-.searchbar-wp .searchbar-clear-icon.activated {
+.searchbar-wp .searchbar-clear-icon:active {
   background-color: transparent;
 }
 

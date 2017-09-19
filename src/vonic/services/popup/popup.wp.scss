@@ -106,7 +106,7 @@ $popup-wp-option-selected-color:             color($colors-wp, primary) !default
 }
 
 .popup-wp .popup-button,
-.popup-wp .popup-button.activated {
+.popup-wp .popup-button:active {
   @include margin(0);
 
   height: $popup-wp-button-height;

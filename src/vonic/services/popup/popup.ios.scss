@@ -109,7 +109,7 @@ $popup-button-ios-strong-font-weight:         600 !default;
 }
 
 .popup-ios .popup-button,
-.popup-ios .popup-button.activated {
+.popup-ios .popup-button:active {
   @include margin(0);
 
   height: $popup-ios-button-height;

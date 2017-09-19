@@ -1,6 +1,6 @@
 <template>
-    <button @touchstart="handleTouchStart" :class="[
-        'disable-hover',
+    <button :class="[
+        'disable-hover ion-button',
         prefix,
         theme ? prefix +'-' + theme:'',
         style ? prefix + '-' + style : '',
@@ -10,7 +10,6 @@
         blockClass,
         fullClass,
         sizeClass,
-        isActive?'activated':'',
         isParentItem && prefix == 'button' ? 'item-button' : ''
         ]">
         <slot name="backup"></slot>
@@ -51,7 +50,6 @@
             return {
                 prefix: 'button',
                 style: 'default',
-                isActive: false,
                 //如果是在item 组件内部则为true
                 isParentItem: false,
                 isItemCover: false
@@ -111,10 +109,10 @@
         },
         methods: {
             handleTouchStart(evt) {
-                this.isActive = true;
-                this.$emit('touchstart', evt);
-                window.addEventListener('touchend', this.handleTouchMove);
-                window.addEventListener('touchmove', this.handleTouchMove);
+//                this.isActive = true;
+//                this.$emit('touchstart', evt);
+//                window.addEventListener('touchend', this.handleTouchMove);
+//                window.addEventListener('touchmove', this.handleTouchMove);
             },
             handleTouchMove(e) {
                 this.isActive = false;

@@ -27,7 +27,7 @@ $fab-wp-in-list-background-color-activated: color-shade($fab-wp-in-list-backgrou
   background-color: $fab-wp-background-color;
 }
 
-.fab-wp.activated {
+.fab-wp:active {
   background-color: $fab-wp-background-color-activated;
 }
 
@@ -36,7 +36,7 @@ $fab-wp-in-list-background-color-activated: color-shade($fab-wp-in-list-backgrou
   background-color: $fab-wp-in-list-background-color;
 }
 
-.fab-wp.fab-in-list.activated {
+.fab-wp.fab-in-list:active {
   background-color: $fab-wp-in-list-background-color-activated;
 }
 
@@ -55,7 +55,7 @@ $fab-wp-in-list-background-color-activated: color-shade($fab-wp-in-list-backgrou
     background-color: $background-color;
   }
 
-  .fab-wp.fab-wp-#{$color-name}.activated {
+  .fab-wp.fab-wp-#{$color-name}:active {
     background-color: $background-color-activated;
   }
 }

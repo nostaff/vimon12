@@ -80,7 +80,7 @@ $tabs-wp-tab-icon-size:                 2.4rem !default;
   color: $tabs-wp-tab-color-active;
 }
 
-.tabs-wp .tab-button.activated {
+.tabs-wp .tab-button:active {
   background: $tabs-wp-tab-background-activated;
 }
 

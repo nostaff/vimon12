@@ -207,7 +207,7 @@ $toolbar-button-wp-strong-font-weight:   bold !default;
     opacity: .4;
   }
 
-  &.activated {
+  &:active {
     color: color-contrast($colors-wp, $toolbar-wp-button-color, wp);
     background-color: $toolbar-wp-button-color;
   }
@@ -221,7 +221,7 @@ $toolbar-button-wp-strong-font-weight:   bold !default;
     color: $fg-color;
     background-color: transparent;
 
-    &.activated {
+    &:active {
       color: $color-contrast;
       background-color: $fg-color;
     }
@@ -241,7 +241,7 @@ $toolbar-button-wp-strong-font-weight:   bold !default;
     color: color-contrast($colors-wp, $toolbar-wp-button-color, wp);
   }
 
-  &.activated {
+  &:active {
     color: color-contrast($colors-wp, $toolbar-wp-button-color, wp);
     background-color: color-shade($toolbar-wp-button-color);
   }
@@ -253,7 +253,7 @@ $toolbar-button-wp-strong-font-weight:   bold !default;
     color: $color-contrast;
     background-color: $color-base;
 
-    &.activated {
+    &:active {
       color: $color-contrast;
       background-color: color-shade($color-base);
     }

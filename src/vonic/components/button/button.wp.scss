@@ -213,7 +213,7 @@ $button-wp-strong-font-weight:                            bold !default;
   background-color: $button-wp-background-color;
 }
 
-.button-wp.activated {
+.button-wp:active {
   background-color: $button-wp-background-color-activated;
 }
 
@@ -236,7 +236,7 @@ $button-wp-strong-font-weight:                            bold !default;
     background-color: $bg-color;
   }
 
-  .button-wp-#{$color-name}.activated {
+  .button-wp-#{$color-name}:active {
     background-color: $bg-color-activated;
   }
 }
@@ -302,7 +302,7 @@ $button-wp-strong-font-weight:                            bold !default;
   background-color: $button-wp-clear-background-color-hover;
 }
 
-.button-outline-wp.activated {
+.button-outline-wp:active {
   background-color: rgba($button-wp-outline-background-color-activated, $button-wp-outline-background-color-opacity-activated);
 }
 
@@ -324,7 +324,7 @@ $button-wp-strong-font-weight:                            bold !default;
     background-color: $button-wp-clear-background-color-hover;
   }
 
-  .button-outline-wp-#{$color-name}.activated {
+  .button-outline-wp-#{$color-name}:active {
     background-color: rgba($fg-color, $button-wp-outline-background-color-opacity-activated);
   }
 }
@@ -338,7 +338,7 @@ $button-wp-strong-font-weight:                            bold !default;
   background-color: $button-wp-clear-background-color;
 }
 
-.button-clear-wp.activated {
+.button-clear-wp:active {
   background-color: $button-wp-clear-background-color-activated;
 }
 
@@ -358,7 +358,7 @@ $button-wp-strong-font-weight:                            bold !default;
     background-color: $button-wp-clear-background-color;
   }
 
-  .button-clear-wp-#{$color-name}.activated {
+  .button-clear-wp-#{$color-name}:active {
     background-color: $button-wp-clear-background-color-activated;
   }
 

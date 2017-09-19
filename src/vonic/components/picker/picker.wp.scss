@@ -106,7 +106,7 @@ $picker-wp-option-selected-color:             color($colors-wp, primary) !defaul
 }
 
 .picker-wp .picker-button,
-.picker-wp .picker-button.activated {
+.picker-wp .picker-button:active {
   @include margin(0);
 
   height: $picker-wp-button-height;

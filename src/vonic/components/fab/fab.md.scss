@@ -39,7 +39,7 @@ $fab-md-in-list-background-color-activated: color-shade($fab-md-in-list-backgrou
   //            color $button-md-transition-duration $button-md-transition-timing-function;
 }
 
-.fab-md.activated {
+.fab-md:active {
   background-color: $fab-md-background-color-activated;
   box-shadow: $fab-md-box-shadow-activated;
 }
@@ -49,7 +49,7 @@ $fab-md-in-list-background-color-activated: color-shade($fab-md-in-list-backgrou
   background-color: $fab-md-in-list-background-color;
 }
 
-.fab-md.fab-wp.fab-in-list.activated {
+.fab-md.fab-wp.fab-in-list:active {
   background-color: $fab-md-in-list-background-color-activated;
 }
 
@@ -68,7 +68,7 @@ $fab-md-in-list-background-color-activated: color-shade($fab-md-in-list-backgrou
     background-color: $background-color;
   }
 
-  .fab-md.fab-md-#{$color-name}.activated {
+  .fab-md.fab-md-#{$color-name}:active {
     background-color: $background-color-activated;
   }
 }

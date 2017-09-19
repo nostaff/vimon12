@@ -129,7 +129,7 @@ $action-sheet-wp-icon-margin-start:               0 !default;
   }
 }
 
-.action-sheet-wp .action-sheet-button.activated {
+.action-sheet-wp .action-sheet-button:active {
   background: $action-sheet-wp-button-background-activated;
 }
 
