@@ -1,8 +1,8 @@
 import assign from 'object-assign'
 import Vue from 'vue'
-import Navbar from '../components/toolbar/navbar.vue'
+import Navbar from './nav.vue'
 
-import {createElement, isFunction, isTrueProperty} from '../utils/utils'
+import {createElement, isFunction, isTrueProperty} from '../../utils/utils'
 
 Vue.directive('nav', {
     inserted: function (el, binding) {
@@ -10,7 +10,7 @@ Vue.directive('nav', {
 
         let props = {
             showBack: false,
-            showMore: false,
+            showMenu: false,
         }
         let options = binding.value
         if (options.title)
@@ -26,7 +26,7 @@ Vue.directive('nav', {
             props.onBack = options.onBackButtonClick
 
         if (options.showMenuButton)
-            props.showMore = options.showMenuButton
+            props.showMenu = options.showMenuButton
         if (options.menuButtonIcon)
             props.moreIcon = options.menuButtonIcon
         if (options.menuButtonText)

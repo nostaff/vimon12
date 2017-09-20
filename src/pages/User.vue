@@ -1,5 +1,5 @@
 <template>
-	<ion-page v-tabbar-item-index="3">
+	<ion-page>
 		<ion-content>
 			<div v-if="!loginStatus">
 				<div class="user-h">

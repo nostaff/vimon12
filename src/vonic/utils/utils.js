@@ -392,3 +392,11 @@ export function removeClass (element, name) {
         element.className = element.className.replace(reg, ' ').trim()
     }
 }
+
+export function parsePxUnit(val) {
+    return (val.indexOf('px') > 0) ? parseInt(val, 10) : 0;
+}
+
+export function cssFormat(val) {
+    return (val > 0 ? val + 'px' : '');
+}

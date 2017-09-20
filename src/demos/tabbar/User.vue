@@ -1,5 +1,5 @@
 <template>
-  <ion-page v-tabbar-item-index="3">
+  <ion-page>
     <von-header theme="light">
         <span slot="title">折扣</span>
     </von-header>

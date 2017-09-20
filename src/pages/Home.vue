@@ -1,5 +1,5 @@
 <template>
-    <ion-page class="home" v-tabbar-item-index="0">
+    <ion-page class="home">
         <ion-navbar title="心理无忧">
             <img src="../assets/logo.png" width="30" height="30" slot="left-item">
         </ion-navbar>
@@ -72,11 +72,9 @@
     import ExpertList from '../components/ExpertList'
 
     import { mapGetters } from 'vuex'
-    import IonNavbar from "../vonic/components/toolbar/navbar";
 
     export default {
         components: {
-            IonNavbar,
             ExpertList
         },
         data() {

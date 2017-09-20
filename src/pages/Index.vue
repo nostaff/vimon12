@@ -5,11 +5,10 @@
         <!--</ion-tab>-->
     <!--</div>-->
     <div class="app-root">
-        <ion-tabs color="secondary">
-            <ion-tabbar :items="tabItems" :on-item-click="itemClicked"></ion-tabbar>
-            <ion-tab role="tabpanel">
+        <ion-tabs color="danger" :tabs="tabItems">
+            <div role="tabpanel" class="ion-tab show-tab" ref="tabsContentWrap">
                 <router-view></router-view>
-            </ion-tab>
+            </div>
         </ion-tabs>
     </div>
 </template>
@@ -22,23 +21,28 @@
                     {
                         icon: 'home',
                         text: '首页',
+                        path: '/home'
                     },
                     {
                         icon: 'pricetags',
                         text: '折扣',
+                        path: '/sport'
                     },
                     {
                         icon: 'cart',
                         text: '购物车',
-                        badge: '5'
+                        badge: '5',
+                        path: '/cart'
                     },
                     {
                         icon: 'person',
                         text: '我的',
+                        path: '/user'
                     },
                     {
                         icon: 'person',
                         text: 'Demo',
+                        path: '/demo'
                     }
                 ]
             }
@@ -46,24 +50,7 @@
 
         methods: {
             itemClicked(menuIndex) {
-                switch (menuIndex) {
-                    default:
-                    case 0:
-                        $router.forward('/home');
-                        break;
-                    case 1:
-                        $router.forward('/sport');
-                        break;
-                    case 2:
-                        $router.forward('/cart');
-                        break;
-                    case 3:
-                        $router.forward('/user');
-                        break;
-                    case 4:
-                        $router.forward('/demo');
-                        break;
-                }
+                console.log(menuIndex)
             }
         },
 

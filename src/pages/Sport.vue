@@ -1,5 +1,5 @@
 <template>
-	<ion-page class="sports" v-tabbar-item-index="1">
+	<ion-page class="sports">
         <ion-navbar title="折扣"></ion-navbar>
         <ion-content>
 

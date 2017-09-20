@@ -12,7 +12,7 @@
     </div>
 </template>
 <script>
-    import { isPresent, transitionEnd, isString, isBoolean, isTrueProperty, removeArrayItem, hasClass } from '../../utils/utils'
+    import { isPresent, transitionEnd, isString, isBoolean, isTrueProperty, removeArrayItem, hasClass, parsePxUnit, cssFormat } from '../../utils/utils'
     import { ScrollView } from './scroll-view'
     import ThemeMixins from '../../themes/theme.mixins';
 
@@ -91,7 +91,6 @@
             this._hasRefresher = this.$slots && isPresent(this.$slots['refresher']);
         },
         mounted () {
-
             if (this.$slots && this.$slots['fixed']) {
                 this.$slots['fixed'].forEach((item) => {
                     item.elm.setAttribute('fixed', '')
@@ -321,8 +320,10 @@
                     } else if (hasClass(ele, 'ion-header')) {
                         scrollEvent.headerElement = ele;
 
+
                         // ******** DOM READ ****************
                         this._hdrHeight = ele.clientHeight;
+                        console.log( this._hdrHeight, ele.offsetHeight)
                     } else if (hasClass(ele, 'ion-footer')) {
                         scrollEvent.footerElement = ele;
 
@@ -371,6 +372,7 @@
                     this._cBottom !== this.contentBottom
                 );
 
+                console.log(this._cTop, this._cBottom)
                 this._scroll.init(this.getScrollElement(), this._cTop, this._cBottom);
 
                 // initial imgs refresh
@@ -570,14 +572,6 @@
             return 1;
         }
         return 0;
-    }
-
-    function parsePxUnit(val) {
-        return (val.indexOf('px') > 0) ? parseInt(val, 10) : 0;
-    }
-
-    function cssFormat(val) {
-        return (val > 0 ? val + 'px' : '');
     }
 </script>
 <style lang="scss">

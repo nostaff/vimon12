@@ -1,5 +1,5 @@
 <template>
-	<ion-page class="travels" v-tabbar-item-index="2">
+	<ion-page class="travels">
 
         <ion-navbar title="购物车"></ion-navbar>
         <ion-content>
@@ -15,14 +15,10 @@
 import travelList from '@/components/travelList'
 
 import { mapGetters } from 'vuex'
-import IonContent from "../vonic/components/content/index";
-import IonNavbar from "../vonic/components/toolbar/navbar";
 
 export default {
 
 	components: {
-        IonNavbar,
-        IonContent,
         travelList
 	},
     created() {

@@ -5,8 +5,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
-import './directives/tabbar.js'
-import './directives/navigation.js'
+import './components/nav/nav.js'
 
 // import './components/backdrop'
 import './services/popup/index.js'
@@ -50,7 +49,7 @@ const nextDirection = (direction) => {
 }
 
 const setTitle = (title) => {
-    let el = document.querySelector('.ion-navbar .toolbar-title')
+    let el = document.querySelector('.ion-nav .toolbar-title')
     if (el) el.textContent = title
 }
 
