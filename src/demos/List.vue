@@ -194,9 +194,9 @@
                         </ion-button>
                     </ion-item-options>
                     <ion-item-options side="left">
-                        <ion-button color="primary" @click1.native="optionClicked($event)">
-                            <ion-icon name="archive" class="expand-hide"></ion-icon>
-                            <div class="expand-hide">Archive</div>
+                        <ion-button color="primary" @click.native="optionClicked($event)">
+                            <ion-icon name="archive"></ion-icon>
+                            Archive
                         </ion-button>
                     </ion-item-options>
                 </ion-item-sliding>

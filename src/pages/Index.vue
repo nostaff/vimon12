@@ -1,13 +1,14 @@
 <template>
-    <!--<div class="app-root" v-tabbar="{'items': tabItems, color: 'secondary', onItemClick: itemClicked}">-->
-        <!--<ion-tab slot="tab-content" role="tabpanel">-->
-        <!--<router-view></router-view>-->
-        <!--</ion-tab>-->
-    <!--</div>-->
     <div class="app-root">
-        <ion-tabs color="danger" :tabs="tabItems">
-            <div role="tabpanel" class="ion-tab show-tab" ref="tabsContentWrap">
+        <ion-tabs selectedIndex="2" color="secondary" @onTabChange="onTabChange" >
+            <ion-tab tabTitle="Location" tabIcon="navigate" tabUrlPath="/home" @on-tab-select="itemClicked"></ion-tab>
+            <ion-tab tabTitle="Favorites" tabIcon="star" tabUrlPath="/cart" tabBadge="12" tabBadgeStyle="dark" @on-tab-select="itemClicked"></ion-tab>
+            <ion-tab tabTitle="Radio" tabIcon="person" tabUrlPath="/user" @on-tab-select="itemClicked"></ion-tab>
+            <ion-tab tabTitle="Demo" tabIcon="musical-notes" tabUrlPath="/demo" @on-tab-select="itemClicked"></ion-tab>
+
+            <div slot="tab-content" class="ion-tab show-tab" role="tabpanel">
                 <router-view></router-view>
+                <div class="nav-decor"></div>
             </div>
         </ion-tabs>
     </div>
@@ -32,6 +33,7 @@
                         icon: 'cart',
                         text: '购物车',
                         badge: '5',
+                        badgeStyle: 'danger',
                         path: '/cart'
                     },
                     {
@@ -49,13 +51,16 @@
         },
 
         methods: {
+            onTabChange(menuIndex) {
+                console.log(menuIndex)
+            },
             itemClicked(menuIndex) {
                 console.log(menuIndex)
             }
         },
 
         beforeDestroy() {
-            this.$events.$emit('hideTabbar')
+            this.$events && this.$events.$emit('hideTabbar')
         }
     }
 </script>

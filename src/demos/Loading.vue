@@ -41,14 +41,6 @@
 <script>
 
     export default {
-        data() {
-            return {
-                modal: undefined,
-                multiModal: undefined,
-                popupModal: undefined
-            }
-        },
-
         methods: {
             showLoading(name, duration) {
                 $loading.show({

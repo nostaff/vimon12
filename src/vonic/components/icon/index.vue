@@ -2,6 +2,7 @@
     <i class="ion-icon" role="img" :class="['icon', 'icon-'-theme, colorClass]"></i>
 </template>
 <script>
+    import {isTrueProperty} from '../../utils/utils'
     import ThemeMixins from '../../themes/theme.mixins';
 
     export default {
@@ -9,7 +10,8 @@
         mixins: [ThemeMixins],
         data() {
             return {
-                css: ''
+                css: '',
+                isActive: isTrueProperty(this.active)
             }
         },
         props: {
@@ -19,6 +21,7 @@
             },
             ios: String,
             md: String,
+            active: [String, Boolean]
         },
         computed: {
             iconName() {
@@ -35,7 +38,9 @@
             }
         },
         watch: {
-            isActive(val) {
+            active(val) {
+                this.isActive = isTrueProperty(val);
+
                 this.update();
             }
         },
@@ -63,7 +68,6 @@
                     iconName = this.iconName;
                 }
 
-                console.log(iconName)
                 let iconMode = iconName.split('-', 2)[0];
                 if (iconMode === 'ios' && this.isActive && iconName.indexOf('logo-') < 0 && iconName.indexOf('-outline') < 0) {
                     iconName += '-outline';

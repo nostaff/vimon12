@@ -2,7 +2,7 @@
     <ion-page v-nav="{title: '工具条', showBackButton: true}">
             <ion-content>
             <!--<ion-header>-->
-                <!--<ion-navbar :color="theme">-->
+                <!--<ion-nav :color="theme">-->
                     <!--<ion-button icon-only slot="left-item">-->
                         <!--<ion-icon name="menu"></ion-icon>-->
                     <!--</ion-button>-->
@@ -16,7 +16,7 @@
                             <!--<ion-icon name="options"></ion-icon>-->
                         <!--</ion-button>-->
                     <!--</ion-buttons>-->
-                <!--</ion-navbar>-->
+                <!--</ion-nav>-->
             <!--</ion-header>-->
 
 

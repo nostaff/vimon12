@@ -1,5 +1,5 @@
 <template>
-    <ion-page v-tabbar-item-index="4" v-nav="{title: 'Vonic组件', showBackButton: false}">
+    <ion-page v-nav="{title: 'Vonic组件', showBackButton: false}">
 
         <ion-content>
             <!-- Basic -->

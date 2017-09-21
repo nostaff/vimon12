@@ -76,7 +76,7 @@ import {Item, ItemGroup, ItemOptions, ItemSliding, ItemDivider} from './componen
 
 import {Grid, Row, Col} from './components/grid'
 import Cells from './components/cells'
-import {Tabs, Tab, Tabbar} from './components/tabs'
+import {Tabs, Tab} from './components/tabs'
 import ButtonBar from './components/buttonbar'
 
 Vue.component(Page.name, Page)
@@ -103,7 +103,6 @@ Vue.component(Col.name, Col)
 Vue.component(Cells.name, Cells)
 Vue.component(Tabs.name, Tabs)
 Vue.component(Tab.name, Tab)
-Vue.component(Tabbar.name, Tabbar)
 Vue.component('button-bar', ButtonBar)
 
 // Advanced

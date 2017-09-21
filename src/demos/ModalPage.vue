@@ -4,7 +4,7 @@
         <ion-header>
 
             <ion-navbar>
-                <ion-buttons end>
+                <ion-buttons slot="right-item">
                     <ion-button @click.native="dismiss()">Close</ion-button>
                 </ion-buttons>
                 <ion-title>Modals</ion-title>

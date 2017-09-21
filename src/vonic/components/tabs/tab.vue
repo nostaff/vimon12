@@ -1,6 +1,7 @@
 <template>
-    <a class="tab-button" @click="tabClickHandler($event)"
+    <a class="tab-button" @click="onClickHandler"
        :id="tabId"
+       :aria-selected="isSelected"
        :class="{
            'has-title':hasTitle,
            'has-icon':hasIcon,
@@ -9,12 +10,11 @@
            'has-badge':hasBadge,
            'tab-disabled':isDisabled,
            'tab-hidden':isHidden,
-           'tab-active':isActive,
-           'aria-selected':isSelected
        }">
-        <ion-icon v-if="tabIcon" :name="tabIcon" :isActive="isActive" class="tab-button-icon"></ion-icon>
+        <ion-icon v-if="tabIcon" :name="tabIcon" :active="isSelected" class="tab-button-icon"></ion-icon>
         <span v-if="tabTitle" class="tab-button-text">{{tabTitle}}</span>
         <ion-badge v-if="tabBadge" class="tab-badge" :color="tabBadgeStyle">{{tabBadge}}</ion-badge>
+        <div class="button-effect"></div>
     </a>
 </template>
 <script type="text/javascript">
@@ -31,21 +31,21 @@
             IonBadge
         },
         props: {
-            to: {
-                type: Object,
-                required: true
-            },
+            tabUrlPath: String,
             tabTitle: String,
             tabIcon: String,
             tabBadge: String,
-            tabBadgeStyle: String,
-            disabled: {
-                type: [Boolean, String],
-                default: false
+            tabBadgeStyle: {
+                type: String,
+                default: 'default'
             },
             hidden: {
                 type: [Boolean, String],
                 default: false
+            },
+            enabled: {
+                type: [Boolean, String],
+                default: true
             },
             selected: {
                 type: [Boolean, String],
@@ -55,7 +55,10 @@
         data () {
             return {
                 index: ++_tabId,
-                isActive: false, // 这个值具有滞后性, 只代表当前的页面的状态, 不能用于其他
+
+                tabsCmp: null,
+
+                layout: '',
 
                 isHidden: isTrueProperty(this.hidden),
                 isDisabled: isTrueProperty(this.disabled),
@@ -63,14 +66,14 @@
             }
         },
         computed: {
-            hasTitle () {
-                return this.tabTitle
-            },
             tabId () {
                 return `tabId-${this.index}`
             },
+            hasTitle () {
+                return !!this.tabTitle
+            },
             hasIcon () {
-                return this.tabIcon
+                return !!this.tabIcon && this.layout !== 'icon-hide'
             },
             hasTitleOnly () {
                 return this.tabTitle && !this.tabIcon
@@ -79,31 +82,37 @@
                 return this.tabIcon && !this.tabTitle
             },
             hasBadge () {
-                return this.tabBadge
-            }
-        },
-        watch: {
-            $route () {
-                console.log('$route change')
-                this.refreshMatchState()
+                return !!this.tabBadge
             }
         },
         created () {
+            if (this.$parent.$data.componentName === 'ionTabs') {
+                this.tabsCmp = this.$parent;
+            } else {
+                console.error('Tab component must combine with Tabs')
+            }
+        },
+        mounted () {
+            this.tabsCmp.addTab(this);
+
+            this.layout = this.tabsCmp.getTabsLayout();
+
             this.refreshMatchState()
-            console.assert(this.$parent.$data.componentName === 'ionTabs', 'Tab component must combine with Tabs')
         },
         methods: {
-            isMatch () {
-                return this.to.name === this.$route.name || this.to.path === this.$route.path
-            },
-            tabClickHandler () {
-                if (!this.isDisabled) {
-                    this.$router.replace(this.to)
+            onClickHandler (ev) {
+                if (!this.isDisabled && !this.isSelected) {
+                    this.isSelected = true;
+                    this.tabsCmp.selectTab(this);
+                    this.$router.replace({'path': this.tabUrlPath});
                     this.$emit('onTabSelect', this)
                 }
             },
             refreshMatchState () {
-                this.isActive = this.isMatch()
+                this.isSelected = (this.tabUrlPath === this.$route.path)
+            },
+            updateSelected (selected) {
+                this.isSelected = selected;
             }
         }
 
