@@ -1,5 +1,6 @@
 <template>
     <div :class="['ion-tabs', 'tabs', 'tabs-'+theme, colorClass]"
+         :id="id"
          :tabsLayout="tabsLayout"
          :tabsHighlight="tabsHighlight"
          :tabsPlacement="tabsPlacement">
@@ -22,7 +23,7 @@
         mixins: [ThemeMixins],
         props: {
             selectedIndex: {
-                type: String,
+                type: [String, Number],
                 default: 0
             },
             tabsHighlight: {
@@ -33,7 +34,7 @@
                 type: String,
                 default: 'icon-top',
                 validator(value) {
-                    return ['icon-top', 'icon-left', 'icon-right', 'icon-bottom', 'icon-hide', 'title-hide'].indexOf(value) > -1;
+                    return ['icon-top', 'icon-start', 'icon-end', 'icon-bottom', 'icon-hide', 'title-hide'].indexOf(value) > -1;
                 }
             },
             tabsPlacement: {
@@ -53,7 +54,7 @@
                 ids: -1,
                 tabs: [],
 
-                selectedTabIndex: 0,
+                selectedTabIndex: -1,
             }
         },
         computed: {
@@ -67,32 +68,19 @@
             }
         },
         created() {
-            this.id = 't' + (++tabIds);
+            this.id = 't-' + (++tabIds);
 
-            // get the selected index from the input
-            // otherwise default it to use the first index
             this.selectedTabIndex = (isBlank(this.selectedIndex) ? 0 : parseInt(this.selectedIndex, 10));
-
         },
         mounted() {
-            this.initTabs();
+            if (this.selectedTabIndex > this.length())
+                this.selectedTabIndex = 0;
         },
         methods: {
-            initTabs() {
-                // get the selected index from the tab
-                if (this.selectedTabIndex > this.length())
-                    this.selectedTabIndex = 0;
-
-                let selectedTab = this.tabs.find(t => t.isSelected && !t.isDisabled && !t.isHidden);
-                if (!selectedTab) {
-                    this.selectTab(selectedTab);
-                }
-            },
-
             addTab(tab) {
                 this.tabs.push(tab);
 
-                return this.id + '-' + (++this.ids);
+                return `${this.id}-${++this.ids}`;
             },
 
             selectTab(tabOrIndex) {
@@ -125,21 +113,9 @@
                 return this.tabs.length;
             },
 
-            setTabbarPosition(top, bottom) {
-                if (this._top !== top || this._bottom !== bottom) {
-                    var tabbarEle = this._tabbar.nativeElement;
-                    tabbarEle.style.top = (top > -1 ? top + 'px' : '');
-                    tabbarEle.style.bottom = (bottom > -1 ? bottom + 'px' : '');
-                    tabbarEle.classList.add('show-tabbar');
-
-                    this._top = top;
-                    this._bottom = bottom;
-                }
-            },
-
             getTabsLayout () {
                 return this.tabsLayout;
             }
-        },
+        }
     }
 </script>

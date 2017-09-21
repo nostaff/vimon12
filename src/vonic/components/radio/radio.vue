@@ -61,7 +61,7 @@
                 this.setChecked(null)
                 this.isDisabled = disabled
 
-                this.item && this.item.$el.classList[disabled ? 'add' : 'remove']('item-radio-disabled');
+                this.item.setElementClass('item-radio-disabled', disabled);
             },
 
             setChecked (checkedValue) {
@@ -69,7 +69,7 @@
                 if (this.isChecked !== isChecked) {
                     this.isChecked = isChecked
 
-                    this.item && this.item.$el.classList[this.isChecked ? 'add' : 'remove']('item-radio-checked');
+                    this.item.setElementClass('item-radio-checked', isChecked);
                 }
             },
 

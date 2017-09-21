@@ -1,5 +1,5 @@
 <template>
-    <a class="tab-button" @click="onClickHandler"
+    <a class="disable-hover tab-button" @click="onClickHandler"
        :id="tabId"
        :aria-selected="isSelected"
        :class="{
@@ -11,18 +11,18 @@
            'tab-disabled':isDisabled,
            'tab-hidden':isHidden,
        }">
-        <ion-icon v-if="tabIcon" :name="tabIcon" :active="isSelected" class="tab-button-icon"></ion-icon>
+        <ion-icon v-if="tabIcon" :name="tabIcon" class="tab-button-icon"></ion-icon>
         <span v-if="tabTitle" class="tab-button-text">{{tabTitle}}</span>
         <ion-badge v-if="tabBadge" class="tab-badge" :color="tabBadgeStyle">{{tabBadge}}</ion-badge>
         <div class="button-effect"></div>
     </a>
 </template>
 <script type="text/javascript">
-    import { isTrueProperty } from '../../utils/utils';
+    import { isTrueProperty, isBlank } from '../../utils/utils';
     import ThemeMixins from '../../themes/theme.mixins';
     import IonIcon from '../icon';
     import IonBadge from '../badge';
-    let _tabId = -1
+
     export default{
         name: 'ion-tab',
         mixins: [ThemeMixins],
@@ -54,10 +54,8 @@
         },
         data () {
             return {
-                index: ++_tabId,
-
+                index: '',
                 tabsCmp: null,
-
                 layout: '',
 
                 isHidden: isTrueProperty(this.hidden),
@@ -91,25 +89,24 @@
             } else {
                 console.error('Tab component must combine with Tabs')
             }
-        },
-        mounted () {
-            this.tabsCmp.addTab(this);
+
+            this.index = this.tabsCmp.addTab(this);
 
             this.layout = this.tabsCmp.getTabsLayout();
-
-            this.refreshMatchState()
+        },
+        mounted () {
+            this.isSelected = (!isBlank(this.tabUrlPath) && this.tabUrlPath === this.$route.path);
+            if (this.isSelected)
+                this.tabsCmp.selectTab(this);
         },
         methods: {
             onClickHandler (ev) {
                 if (!this.isDisabled && !this.isSelected) {
                     this.isSelected = true;
                     this.tabsCmp.selectTab(this);
-                    this.$router.replace({'path': this.tabUrlPath});
-                    this.$emit('onTabSelect', this)
+                    if (!isBlank(this.tabUrlPath))
+                        this.$router.replace({'path': this.tabUrlPath});
                 }
-            },
-            refreshMatchState () {
-                this.isSelected = (this.tabUrlPath === this.$route.path)
             },
             updateSelected (selected) {
                 this.isSelected = selected;

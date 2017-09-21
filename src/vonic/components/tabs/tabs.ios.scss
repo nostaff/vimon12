@@ -43,7 +43,7 @@ $tabs-ios-tab-icon-color-active:    $tabs-ios-tab-color-active !default;
 $tabs-ios-tab-font-size:            10px !default;
 
 /// @prop - Size of the tab button icon
-$tabs-ios-tab-icon-size:            26px !default;
+$tabs-ios-tab-icon-size:            30px !default;
 
 
 .tabs-ios .tabbar {
@@ -85,7 +85,7 @@ $tabs-ios-tab-icon-size:            26px !default;
   min-height: $tabs-ios-tab-font-size + 1;
 }
 
-.tabs-ios .title-only .tab-button-text {
+.tabs-ios .has-title-only .tab-button-text {
   font-size: $tabs-ios-tab-font-size + 2;
 }
 
@@ -104,8 +104,6 @@ $tabs-ios-tab-icon-size:            26px !default;
   vertical-align: top;
 }
 
-.tabs-ios[tabsLayout=icon-right] .tab-button .tab-button-text, // deprecated
-.tabs-ios[tabsLayout=icon-left] .tab-button .tab-button-text, // deprecated
 .tabs-ios[tabsLayout=icon-end] .tab-button .tab-button-text,
 .tabs-ios[tabsLayout=icon-start] .tab-button .tab-button-text {
   font-size: 1.4rem;
@@ -121,12 +119,12 @@ $tabs-ios-tab-icon-size:            26px !default;
 }
 
 .tabs-ios[tabsLayout=icon-hide] .tab-button,
-.tabs-ios .tab-button.title-only {
+.tabs-ios .tab-button.has-title-only {
   min-height: $tabs-ios-tab-min-height - 8;
 }
 
 .tabs-ios[tabsLayout=icon-hide] .tab-button .tab-button-text,
-.tabs-ios .tab-button.title-only .tab-button-text {
+.tabs-ios .tab-button.has-title-only .tab-button-text {
   @include margin(2px, 0);
 
   font-size: 1.4rem;
@@ -138,15 +136,6 @@ $tabs-ios-tab-icon-size:            26px !default;
   min-height: $tabs-ios-tab-min-height - 8;
 }
 
-//
-
-.tabs-ios .scroll-content {
-  margin-bottom: $tabs-ios-tab-min-height;
-}
-
-.tabs-ios[tabsPlacement=top] .scroll-content {
-  margin-top: $tabs-ios-tab-min-height;
-}
 
 // iOS Tabbar Color Mixin
 // --------------------------------------------------

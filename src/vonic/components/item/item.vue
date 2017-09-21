@@ -79,7 +79,7 @@
         },
         mounted () {
             if (this.$el.classList.contains('item-divider'))
-                this.$el.classList.remove('item-block')
+                this.setElementClass('item-block', false)
 
             if (this.$slots['item-start']) {
                 this.$slots['item-start'].forEach(function (item) {

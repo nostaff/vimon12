@@ -246,7 +246,6 @@ $tabs-md-tab-icon-size:                       2.4rem !default;
 }
 
 // Tab layout: icon-end
-.tabs-md[tabsLayout=icon-right] .tab-button[aria-selected=true] .tab-button-icon, // deprecated
 .tabs-md[tabsLayout=icon-end] .tab-button[aria-selected=true] .tab-button-icon {
   @include deprecated-variable(transform, $tabs-md-tab-icon-end-transform-active) {
     @include transform(translate3d($tabs-md-tab-icon-right-transform-x-active, $tabs-md-tab-icon-right-transform-y-active, $tabs-md-tab-icon-right-transform-z-active));
@@ -261,7 +260,6 @@ $tabs-md-tab-icon-size:                       2.4rem !default;
 }
 
 // Tab layout: icon-start
-.tabs-md[tabsLayout=icon-left] .tab-button[aria-selected=true] .tab-button-icon, // deprecated
 .tabs-md[tabsLayout=icon-start] .tab-button[aria-selected=true] .tab-button-icon {
   @include deprecated-variable(transform, $tabs-md-tab-icon-start-transform-active) {
     @include transform(translate3d($tabs-md-tab-icon-left-transform-x-active, $tabs-md-tab-icon-left-transform-y-active, $tabs-md-tab-icon-left-transform-z-active));
@@ -275,7 +273,7 @@ $tabs-md-tab-icon-size:                       2.4rem !default;
 .tabs-md[tabsLayout=icon-hide] .tab-button,
 .tabs-md[tabsLayout=title-hide] .tab-button,
 .tabs-md .tab-button.icon-only,
-.tabs-md .tab-button.title-only {
+.tabs-md .tab-button.has-title-only {
   @include padding(0, 10px);
 }
 
@@ -306,15 +304,6 @@ $tabs-md-tab-icon-size:                       2.4rem !default;
   top: 0;
 }
 
-//
-
-.tabs-md .scroll-content {
-  margin-bottom: $tabs-md-tab-min-height;
-}
-
-.tabs-md[tabsPlacement=top] .scroll-content {
-  margin-top: $tabs-md-tab-min-height;
-}
 
 // Material Design Tabs Color Mixin
 // --------------------------------------------------

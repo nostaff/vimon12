@@ -45,7 +45,6 @@
         watch: {
             value (val) {
                 this.checkedValue = val;
-                console.log(this.checkedValue)
             },
             checkedValue (val) {
                 this.radioButtons.forEach((button) => {
