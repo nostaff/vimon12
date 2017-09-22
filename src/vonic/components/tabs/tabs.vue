@@ -59,12 +59,7 @@
         },
         computed: {
             colorClass: function() {
-                switch (this.color) {
-                    case 'default':
-                        return '';
-                    default:
-                        return `tabs-${this.theme}-${this.color}`;
-                }
+                return this.color ? `tabs-${this.theme}-${this.color}` : ''
             }
         },
         created() {

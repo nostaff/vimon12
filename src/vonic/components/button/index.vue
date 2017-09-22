@@ -1,17 +1,5 @@
 <template>
-    <button :class="[
-        'disable-hover ion-button',
-        prefix,
-        theme ? prefix +'-' + theme:'',
-        style ? prefix + '-' + style : '',
-        theme ? prefix + '-' + style + '-' + theme:'',
-        colorClass,
-        roundClass,
-        blockClass,
-        fullClass,
-        sizeClass,
-        isParentItem && prefix == 'button' ? 'item-button' : ''
-        ]">
+    <button class="disable-hover ion-button" :class="[themeClass, itemClass]">
         <slot name="backup"></slot>
 		<span class="button-inner">
             <slot></slot>
@@ -20,105 +8,141 @@
     </button>
 </template>
 <script>
+    import { isTrueProperty } from '../../utils/utils'
     import ThemeMixins from '../../themes/theme.mixins';
     export default {
         name: 'ion-button',
         mixins: [ThemeMixins],
         props: {
-            outline: Boolean,
-            clear: Boolean,
-            round: Boolean,
-            block: Boolean,
-            full: Boolean,
             role: {
                 type: String,
                 default: 'button'
             },
-            size: {
-                type: String,
-                default: 'default',
-                validator(value) {
-                    return [
-                            'default',
-                            'small',
-                            'large'
-                        ].indexOf(value) > -1;
-                }
-            }
+            outline: Boolean,
+            clear: Boolean,
+            solid: Boolean,
+
+            // shape
+            round: Boolean,
+
+            // display
+            block: Boolean,
+            full: Boolean,
+            menuToggle: Boolean,
+
+            // size
+            small: Boolean,
+            default: Boolean,
+            large: Boolean,
         },
         data() {
             return {
-                prefix: 'button',
-                style: 'default',
-                //如果是在item 组件内部则为true
-                isParentItem: false,
+                itemClass: '',
+
+                roleName: this.role,
+
+                size: null,         // large/small/default
+                style: 'default',   // outline/clear/solid
+                shape: null,        // round/fab
+                display: null,      // block/full
+                decorator: null,    // strong
+
                 isItemCover: false
             }
         },
         computed: {
-            colorClass: function() {
-                if (this.isItemCover)
-                    return '';
-                switch (this.style) {
-                    case 'outline':
-                    case 'clear':
-                        return `${this.prefix}-${this.style}-${this.theme}-${this.color}`;
-                    default:
-                        return `${this.prefix}-${this.theme}-${this.color}`;
-                }
-            },
-            roundClass: function() {
-                return this.round && !this.isItemCover ? `button-round button-round-${this.theme}` : '';
-            },
-            blockClass: function() {
-                return this.block && !this.isItemCover ? `button-block button-block-${this.theme}` : '';
-            },
-            fullClass: function() {
-                return this.full && !this.isItemCover ? `button-full button-full-${this.theme}` : '';
-            },
-            sizeClass: function() {
-                let size = this.size;
-                switch (this.size) {
-                    case 'small':
-                    case 'large':
-                        return `${this.prefix}-${size} ${this.prefix}-${size}-${this.theme}`;
-                    default:
-                        return '';
-                }
+            themeClass () {
+                return `${this.roleName}-${this.theme}`
             }
         },
         created() {
             let parentName = this.$parent.$data.componentName;
-            //如果在item 组件里 则加上class
-            if (parentName === 'ionItem') {
-                this.isParentItem = true;
-            }
 
             // 如果是在组件 buttons 下则修改前缀为 bar-button-
             if (parentName === 'ionButtons' || parentName === 'ionToolbar') {
-                this.prefix = 'bar-button';
-            }
-            if (this.role === 'radio' || this.role === 'checkbox' || this.role === 'select') {
-                this.prefix = 'item-cover';
-            } else if (this.role !== 'button') {
-                this.prefix = this.role
+                this.roleName = 'bar-button';
             }
 
-            this.style = this.clear ? 'clear' : (this.outline ? 'outline' : 'default')
-            this.isItemCover = this.prefix === 'item-cover'
+            if (this.role === 'radio' || this.role === 'checkbox' || this.role === 'select') {
+                this.roleName = 'item-cover';
+            }
+//
+//            this.style = this.clear ? 'clear' : (this.outline ? 'outline' : 'default')
+//            this.isItemCover = this.roleName === 'item-cover';
+
+            this.getProps();
+        },
+        mounted () {
+            this.assignCss(true)
+
+            this.addClassInItem();
         },
         methods: {
-            handleTouchStart(evt) {
-//                this.isActive = true;
-//                this.$emit('touchstart', evt);
-//                window.addEventListener('touchend', this.handleTouchMove);
-//                window.addEventListener('touchmove', this.handleTouchMove);
-            },
-            handleTouchMove(e) {
-                this.isActive = false;
-            }
-        },
+            getProps () {
+                isTrueProperty(this.small) && (this.size = 'small')
+                isTrueProperty(this.default) && (this.size = 'default')
+                isTrueProperty(this.large) && (this.size = 'large')
 
+                isTrueProperty(this.outline) && (this.style = 'outline')
+                isTrueProperty(this.clear) && (this.style = 'clear')
+                isTrueProperty(this.solid) && (this.style = 'solid')
+
+                isTrueProperty(this.round) && (this.shape = 'round')
+                isTrueProperty(this.full) && (this.shape = 'full')
+                isTrueProperty(this.block) && (this.shape = 'block')
+                isTrueProperty(this.menuToggle) && (this.shape = 'menutoggle')
+
+                isTrueProperty(this.strong) && (this.decorator = 'strong')
+            },
+
+            assignCss(assignCssClass) {
+                let role = this.roleName;
+                if (role) {
+                    this.setElementClass(role, assignCssClass); // button
+                    this.setElementClass(`${role}-${this.theme}`, assignCssClass); // button
+
+                    this.setClass(this.style, assignCssClass); // button-clear
+                    this.setClass(this.shape, assignCssClass); // button-round
+                    this.setClass(this.display, assignCssClass); // button-full
+                    this.setClass(this.size, assignCssClass); // button-small
+                    this.setClass(this.decorator, assignCssClass); // button-strong
+                    this.updateColor(this.color, assignCssClass); // button-secondary, bar-button-secondary
+                }
+            },
+
+            setClass(type, assignCssClass) {
+                if (type) {
+                    type = type.toLocaleLowerCase();
+                    this.setElementClass(`${this.roleName}-${type}`, assignCssClass);
+                    this.setElementClass(`${this.roleName}-${type}-${this.theme}`, assignCssClass);
+                }
+            },
+
+            updateColor(color, isAdd) {
+                if (color) {
+                    // The class should begin with the button role
+                    // button, bar-button
+                    let className = this.roleName;
+
+                    // If the role is not a bar-button, don't apply the solid style
+                    let style = this.style;
+                    style = (this.roleName !== 'bar-button' && style === 'solid' ? 'default' : style);
+
+                    className += (style !== null && style !== '' && style !== 'default' ? '-' + style.toLowerCase() : '');
+
+                    if (color !== null && color !== '') {
+                        this.setElementClass(`${className}-${this.theme}-${color}`, isAdd);
+                    }
+                }
+            },
+
+            addClassInItem () {
+                if (this.$parent.$el && this.$parent.$data.componentName === 'ionItem' && this.roleName === 'button') {
+                    // button in items should add class of 'item-button'
+                    this.setElementClass('item-button', true)
+                }
+            }
+        }
     };
 </script>
 

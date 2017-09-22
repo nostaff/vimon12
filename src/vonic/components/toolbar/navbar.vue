@@ -5,8 +5,8 @@
             <ion-icon :class="['back-button-icon','back-button-icon-'+theme]" :name="backIcon" v-if="backIcon"></ion-icon>
             <span :class="['back-button-text','back-button-text-'+theme]" v-if="backText && theme ==='ios'" v-text="backText"></span>
         </ion-button>
-        <slot name="left-item"></slot>
-        <slot name="right-item"></slot>
+        <slot name="item-start"></slot>
+        <slot name="item-end"></slot>
         <div class="toolbar-content" :class="['toolbar-content-'+theme]">
             <slot></slot>
         </div>
@@ -48,13 +48,13 @@
             }
         },
         mounted () {
-            if (this.$slots['left-item']) {
-                this.$slots['left-item'].forEach(function (item) {
+            if (this.$slots['item-start']) {
+                this.$slots['item-start'].forEach(function (item) {
                     item.elm.setAttribute('start', '')
                 })
             }
-            if (this.$slots['right-item']) {
-                this.$slots['right-item'].forEach(function (item) {
+            if (this.$slots['item-end']) {
+                this.$slots['item-end'].forEach(function (item) {
                     item.elm.setAttribute('end', '')
                 })
             }

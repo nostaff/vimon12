@@ -39,7 +39,7 @@ import DemoList from './demos/List'
 import DemoCells from './demos/Cells'
 import DemoGrid from './demos/Grid'
 import DemoTabs from './demos/Tabs'
-import DemoButtonBar from './demos/ButtonBar'
+import DemoSegment from './demos/Segment'
 
 // Advanced
 import DemoSwiper from './demos/Swiper'
@@ -100,7 +100,7 @@ const routes = [
     { path: '/demo/cells', component: DemoCells },
     { path: '/demo/grid', component: DemoGrid },
     { path: '/demo/tabs', component: DemoTabs },
-    { path: '/demo/buttonbar', component: DemoButtonBar },
+    { path: '/demo/segment', component: DemoSegment },
 
     // Advanced
     { path: '/demo/swiper', component: DemoSwiper },

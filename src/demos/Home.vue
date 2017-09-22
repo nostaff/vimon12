@@ -62,17 +62,11 @@
                 <ion-item detail-push @click.native="$router.forward('/demo/tabs')">
                     选项卡<ion-note slot="item-end">Tabs</ion-note>
                 </ion-item>
-                <ion-item detail-push @click.native="$router.forward('/demo/buttonbar')">
-                    iOS 选项卡<ion-note slot="item-end">ButtonBar</ion-note>
+                <ion-item detail-push @click.native="$router.forward('/demo/segment')">
+                    选项卡<ion-note slot="item-end">Segment</ion-note>
                 </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/sidebar')">
                     Sidebar <ion-note slot="item-end">侧边栏</ion-note>
-                </ion-item>
-                <ion-item detail-push @click.native="$router.forward('/demo/tabbar/home')">
-                    Tabbar <ion-note slot="item-end">嵌套路由使用</ion-note>
-                </ion-item>
-                <ion-item detail-push @click.native="$router.forward('/demo/tabbarWithoutRoutes')">
-                    Tabbar Standalone <ion-note slot="item-end">单独使用</ion-note>
                 </ion-item>
             </ion-list>
 

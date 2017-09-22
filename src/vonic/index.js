@@ -77,7 +77,7 @@ import {Item, ItemGroup, ItemOptions, ItemSliding, ItemDivider} from './componen
 import {Grid, Row, Col} from './components/grid'
 import Cells from './components/cells'
 import {Tabs, Tab} from './components/tabs'
-import ButtonBar from './components/buttonbar'
+import {Segment, SegmentButton} from './components/segment'
 
 Vue.component(Page.name, Page)
 Vue.component(Header.name, Header)
@@ -103,7 +103,8 @@ Vue.component(Col.name, Col)
 Vue.component(Cells.name, Cells)
 Vue.component(Tabs.name, Tabs)
 Vue.component(Tab.name, Tab)
-Vue.component('button-bar', ButtonBar)
+Vue.component(Segment.name, Segment)
+Vue.component(SegmentButton.name, SegmentButton)
 
 // Advanced
 import {Swiper, SwiperItem} from './components/swiper'
@@ -140,7 +141,7 @@ export default {
     Item,
     Cells,
     Tabs,
-    ButtonBar,
+    Tab,
 
     // Advanced
     Swiper,

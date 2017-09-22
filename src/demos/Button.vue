@@ -28,9 +28,9 @@
                 <ion-icon name="star"></ion-icon>
             </ion-button>
             <h4>Sizes</h4>
-            <ion-button color="light" size="large">Large</ion-button>
+            <ion-button color="light" large>Large</ion-button>
             <ion-button color="light">Default</ion-button>
-            <ion-button color="light" size="small">Small</ion-button>
+            <ion-button color="light" small>Small</ion-button>
         </ion-content>
     </ion-page>
 </template>

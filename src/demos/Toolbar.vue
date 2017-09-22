@@ -1,100 +1,125 @@
 <template>
     <ion-page v-nav="{title: '工具条', showBackButton: true}">
             <ion-content>
-            <!--<ion-header>-->
-                <!--<ion-nav :color="theme">-->
-                    <!--<ion-button icon-only slot="left-item">-->
-                        <!--<ion-icon name="menu"></ion-icon>-->
-                    <!--</ion-button>-->
+                <ion-toolbar no-border-top>
+                    <ion-title>Long title that never ends. It just goes on and on my friend.</ion-title>
+                </ion-toolbar>
 
-                    <!--<ion-title>-->
-                        <!--Page Title-->
-                    <!--</ion-title>-->
-
-                    <!--<ion-buttons slot="right-item">-->
-                        <!--<ion-button icon-only>-->
-                            <!--<ion-icon name="options"></ion-icon>-->
-                        <!--</ion-button>-->
-                    <!--</ion-buttons>-->
-                <!--</ion-nav>-->
-            <!--</ion-header>-->
-
-
-                <ion-toolbar :color="theme">
-                    <ion-button icon-only slot="left-item">
-                        <ion-icon name="menu"></ion-icon>
-                    </ion-button>
-
-                    <ion-title>
-                        Page Title
-                    </ion-title>
-
-                    <ion-buttons slot="right-item">
+                <ion-toolbar no-border-top>
+                    <ion-buttons slot="item-start">
                         <ion-button icon-only>
-                            <ion-icon name="options"></ion-icon>
+                            <ion-icon name="contact"></ion-icon>
+                        </ion-button>
+                        <ion-button icon-only>
+                            <ion-icon name="search"></ion-icon>
                         </ion-button>
                     </ion-buttons>
-                </ion-toolbar>
-
-                <ion-toolbar>
-                    <ion-title>Scrolls with the content</ion-title>
-                </ion-toolbar>
-
-                <ion-toolbar color="primary">
-                    <ion-title>Toolbar</ion-title>
-                </ion-toolbar>
-
-
-                <ion-toolbar color="secondary">
-                    <ion-title>Toolbar</ion-title>
-                </ion-toolbar>
-
-                <ion-toolbar color="danger">
-                    <ion-title>Toolbar</ion-title>
-                </ion-toolbar>
-
-
-                <ion-toolbar color="dark">
-                    <ion-title>Toolbar</ion-title>
-                </ion-toolbar>
-
-
-                <ion-toolbar>
-                    <ion-button icon-only slot="left-item">
-                        <ion-icon name="menu"></ion-icon>
-                    </ion-button>
-
-                    <ion-title>
-                        Page Title
-                    </ion-title>
-
-                    <ion-buttons slot="right-item">
+                    <ion-buttons slot="item-end">
                         <ion-button icon-only>
-                            <ion-icon name="options"></ion-icon>
+                            <ion-icon name="more"></ion-icon>
                         </ion-button>
                     </ion-buttons>
+                    <ion-title>Default Buttons</ion-title>
                 </ion-toolbar>
 
-                <ion-toolbar>
-                    <ion-button icon-only outline slot="left-item">
-                        <ion-icon name="contact"></ion-icon>
-                    </ion-button>
+                <ion-toolbar no-border-top>
+                    <ion-buttons slot="item-start">
+                        <ion-button icon-only color="danger">
+                            <ion-icon name="contact"></ion-icon>
+                        </ion-button>
+                        <ion-button icon-only color="secondary">
+                            <ion-icon name="search"></ion-icon>
+                        </ion-button>
+                    </ion-buttons>
+                    <ion-buttons slot="item-end">
+                        <ion-button icon-only color="dark">
+                            <ion-icon name="more"></ion-icon>
+                        </ion-button>
+                    </ion-buttons>
+                    <ion-title>Colored Buttons</ion-title>
+                </ion-toolbar>
 
-                    <ion-title>
-                        Page Title
-                    </ion-title>
-
-                    <ion-buttons slot="right-item">
-                        <ion-button outline icon-end color="secondary">
+                <ion-toolbar no-border-top>
+                    <ion-buttons slot="item-start">
+                        <ion-button icon-only solid>
+                            <ion-icon name="contact"></ion-icon>
+                        </ion-button>
+                    </ion-buttons>
+                    <ion-title>Solid</ion-title>
+                    <ion-buttons slot="item-end">
+                        <ion-button icon-end solid color="secondary">
                             Help
                             <ion-icon name="help-circle"></ion-icon>
                         </ion-button>
                     </ion-buttons>
                 </ion-toolbar>
 
-                <div style="height: 20px;"></div>
+                <ion-toolbar no-border-top>
+                    <ion-buttons slot="item-start">
+                        <ion-button icon-only outline>
+                            <ion-icon name="contact"></ion-icon>
+                        </ion-button>
+                    </ion-buttons>
+                    <ion-buttons slot="item-end">
+                        <ion-button icon-end outline color="secondary">
+                            Help
+                            <ion-icon name="help-circle"></ion-icon>
+                        </ion-button>
+                    </ion-buttons>
+                    <ion-title>Outline</ion-title>
+                </ion-toolbar>
 
-                <ion-radio-group :options="themes" v-model="theme"></ion-radio-group>
+                <ion-toolbar no-border-top>
+                    <ion-button icon-only menuToggle>
+                        <ion-icon name="menu"></ion-icon>
+                    </ion-button>
+                    <ion-title>Left Menu</ion-title>
+                </ion-toolbar>
+
+                <ion-toolbar no-border-top>
+                    <ion-title>Right Menu</ion-title>
+                    <ion-button menuToggle slot="item-end">
+                        <ion-icon name="menu"></ion-icon>
+                    </ion-button>
+                </ion-toolbar>
+
+                <ion-toolbar no-border-top>
+                    <ion-buttons end>
+                        <ion-button icon-only>
+                            <ion-icon name="search"></ion-icon>
+                        </ion-button>
+                    </ion-buttons>
+                    <ion-segment color="danger" v-model="favorites">
+                        <ion-segment-button value="featured">
+                            Featured
+                        </ion-segment-button>
+                        <ion-segment-button value="recent">
+                            Recent
+                        </ion-segment-button>
+                    </ion-segment>
+                </ion-toolbar>
+
+                <ion-toolbar no-border-top>
+                    <ion-segment v-model="apps">
+                        <ion-segment-button value="paid">
+                            Paid
+                        </ion-segment-button>
+                        <ion-segment-button value="free">
+                            Free
+                        </ion-segment-button>
+                        <ion-segment-button value="top">
+                            Top
+                        </ion-segment-button>
+                    </ion-segment>
+                </ion-toolbar>
+
+                <ion-toolbar no-border-top>
+                    <ion-searchbar></ion-searchbar>
+                </ion-toolbar>
+
+                <ion-toolbar no-border-top color="primary">
+                    <ion-searchbar></ion-searchbar>
+                </ion-toolbar>
 
             </ion-content>
 
@@ -107,32 +132,15 @@
 
             </ion-footer>
 
-            <!--<von-header :theme="theme">-->
-                <!--<button class="button button-icon ion-ios-arrow-back" slot="left" @click="$router.back('/demo')"></button>-->
-                <!--<span slot="title">标题文字</span>-->
-                <!--<button class="button button-icon ion-navicon" slot="right"></button>-->
-            <!--</von-header>-->
-
     </ion-page>
 </template>
 <script>
-    import IonToolbar from "../vonic/components/toolbar/toolbar";
     export default {
-        components: {IonToolbar},
         data() {
             return {
-                themes: [
-                    'primary',
-                    'secondary',
-                    'danger',
-                    'light',
-                    'dark',
-                    'energized',
-                    'assertive',
-                    'royal',
-                    'positive'
-                ],
-                theme: 'light'
+                demo: 'Toolbar',
+                favorites: 'recent',
+                apps: 'free',
             }
         }
     }

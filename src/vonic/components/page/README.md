@@ -1,5 +1,5 @@
 # header 顶部组件
-> One of the best uses of the toolbar is as a header.     
+> One of the best uses of the toolbar is as a header.
 > [demo访问](http://localhost:8080/header) 请npm run dev 后点击访问
 
 ## 使用
@@ -7,13 +7,13 @@
 <ion-header>
      <ion-toolbar color="primary">
           <ion-buttons slot="buttons">
-              <ion-button color="secondary" size="small" clear  icon-only>
+              <ion-button color="secondary" small clear  icon-only>
                   <ion-icon name="home"></ion-icon>
                </ion-button>
           </ion-buttons>
           <ion-title>header primary</ion-title>
           <ion-buttons slot="buttons" end>
-                <ion-button color="danger" size="small" clear  icon-only>
+                <ion-button color="danger" small clear  icon-only>
                    <ion-icon name="heart"></ion-icon>
                 </ion-button>
           </ion-buttons>

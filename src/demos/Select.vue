@@ -201,10 +201,8 @@
     </ion-page>
 </template>
 <script>
-    import IonItem from "../vonic/components/item/item.vue";
 
     export default {
-        components: {IonItem},
         data() {
             return {
                 gender: '',

@@ -323,7 +323,7 @@
 
                         // ******** DOM READ ****************
                         this._hdrHeight = ele.clientHeight;
-                        console.log( this._hdrHeight, ele.offsetHeight)
+                        console.log('_hdrHeight', this._hdrHeight)
                     } else if (hasClass(ele, 'ion-footer')) {
                         scrollEvent.footerElement = ele;
 
@@ -372,7 +372,6 @@
                     this._cBottom !== this.contentBottom
                 );
 
-                console.log(this._cTop, this._cBottom)
                 this._scroll.init(this.getScrollElement(), this._cTop, this._cBottom);
 
                 // initial imgs refresh

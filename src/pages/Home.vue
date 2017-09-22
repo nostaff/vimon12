@@ -1,7 +1,7 @@
 <template>
     <ion-page class="home">
         <ion-navbar title="心理无忧">
-            <img src="../assets/logo.png" width="30" height="30" slot="left-item">
+            <img src="../assets/logo.png" width="30" height="30" slot="item-start">
         </ion-navbar>
 
         <ion-content class="">
