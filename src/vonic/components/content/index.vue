@@ -1,18 +1,18 @@
 <template>
-    <div class="ion-content" :class="['content-'+theme, hasRefresher?'has-refresher':'', statusbarPadding?'statusbar-padding':'']">
-        <div ref="fixedElement" class="fixed-content" :style="fixedElementStyle">
+    <div class="ion-content" :class="['content-'+theme, hasRefresher?'has-refresher':'']">
+        <div ref="fixedElement" class="fixed-content">
             <slot name="fixed"></slot>
             <slot name="fixedTop"></slot>
             <slot name="fixedBottom"></slot>
         </div>
-        <div ref="scrollElement" class="scroll-content" :style="scrollElementStyle">
+        <div ref="scrollElement" class="scroll-content">
             <slot></slot>
         </div>
         <slot name="refresher"></slot>
     </div>
 </template>
 <script>
-    import { isPresent, transitionEnd, isString, isBoolean, isTrueProperty, removeArrayItem, hasClass, parsePxUnit, cssFormat } from '../../utils/utils'
+    import { assert, isPresent, transitionEnd, isString, isBoolean, isTrueProperty, removeArrayItem, hasClass, parsePxUnit, cssFormat } from '../../utils/utils'
     import { ScrollView } from './scroll-view'
     import ThemeMixins from '../../themes/theme.mixins';
 
@@ -27,24 +27,20 @@
             return {
                 componentName: 'ionContent',
 
+                hasRefresher: false,
+                contentTop: 0,
+                contentBottom: 0,
+
                 _fullscreen: isTrueProperty(this.fullscreen),
                 _scrollDownOnLoad: isTrueProperty(this.scrollDownOnLoad),
-                hasRefresher: false,
-                statusbarPadding: false,
 
-                fixedElementStyle: {},  // 固定内容的位置样式
-                scrollElementStyle: {}, // 滑动内容的位置样式
+                _scrollEle: null,
+                _fixedEle: null,
 
-                _scrollEle: null,    // scrollConent的DOM句柄
-                _fixedEle: null,     // fixedElement的DOM句柄
-
-                headerElement: null,    // Header组件的DOM句柄
-                footerElement: null,    // footer组件的DOM句柄
+                _tabsCmp: null,
 
                 _hdrHeight: 0,
                 _ftrHeight: 0,
-                contentTop: 0,
-                contentBottom: 0,
 
                 _scroll: null,
 
@@ -111,6 +107,16 @@
             this._fixedEle = this.$refs.fixedElement;
             this._scrollEle = this.$refs.scrollElement;
 
+            // Check whether in a tabs component
+            let parentCmp = this.$parent;
+            while (parentCmp) {
+                if (parentCmp && parentCmp.$el.classList.contains('ion-tabs')) {
+                    this._tabsCmp = parentCmp;
+                    break;
+                }
+                parentCmp = parentCmp.$parent;
+            }
+
             this.updateContentDimensions()
         },
         destroyed () {
@@ -118,8 +124,8 @@
         },
         methods: {
             updateContentDimensions () {
-                console.assert(this.getFixedElement(), 'fixed element was not found');
-                console.assert(this.getScrollElement(), 'scroll element was not found');
+                assert(this.getFixedElement(), 'fixed element was not found');
+                assert(this.getScrollElement(), 'scroll element was not found');
 
                 const scroll = this._scroll
 
@@ -210,43 +216,6 @@
             },
 
             /**
-             * DOM WRITE
-             * Adds padding to the bottom of the scroll element when the keyboard is open
-             * so content below the keyboard can be scrolled into view.
-             */
-            addScrollPadding(newPadding) {
-                assert(typeof this._scrollPadding === 'number', '_scrollPadding must be a number');
-                if (newPadding > this._scrollPadding) {
-                    console.debug(`content, addScrollPadding, newPadding: ${newPadding}, this._scrollPadding: ${this._scrollPadding}`);
-
-                    this._scrollPadding = newPadding;
-                    var scrollEle = this.getScrollElement();
-                    if (scrollEle) {
-                        this._dom.write(() => {
-                            scrollEle.style.paddingBottom = (newPadding > 0) ? newPadding + 'px' : '';
-                        });
-                    }
-                }
-            },
-
-            /**
-             * DOM WRITE
-             */
-            clearScrollPaddingFocusOut() {
-                if (!this._inputPolling) {
-                    console.debug(`content, clearScrollPaddingFocusOut begin`);
-                    this._inputPolling = true;
-
-                    this._keyboard.onClose(() => {
-                        console.debug(`content, clearScrollPaddingFocusOut _keyboard.onClose`);
-                        this._inputPolling = false;
-                        this._scrollPadding = -1;
-                        this.addScrollPadding(0);
-                    }, 200, 3000);
-                }
-            },
-
-            /**
              * Tell the content to recalculate its dimensions. This should be called
              * after dynamically adding/removing headers, footers, or tabs.
              */
@@ -266,7 +235,9 @@
                 const cachePaddingBottom = this._pBottom;
                 const cachePaddingLeft = this._pLeft;
                 const cacheHeaderHeight = this._hdrHeight;
+                const cacheTabsPlacement = this._tabsPlacement;
                 const cacheFooterHeight = this._ftrHeight;
+                let tabsTop = 0;
                 let scrollEvent = null;
                 this._pTop = 0;
                 this._pRight = 0;
@@ -274,6 +245,7 @@
                 this._pLeft = 0;
                 this._hdrHeight = 0;
                 this._ftrHeight = 0;
+                this._tabsPlacement = null;
                 this._tTop = 0;
                 this._fTop = 0;
                 this._fBottom = 0;
@@ -281,21 +253,15 @@
                 // In certain cases this._scroll is undefined
                 // if that is the case then we should just return
                 if (!this._scroll) {
-                    console.assert(false, '_scroll should be valid');
+                    assert(false, '_scroll should be valid');
                     return;
                 }
 
                 scrollEvent = this._scroll.ev;
 
-                let ele = this.$el;
-                if (!ele) {
-                    console.assert(false, 'ele should be valid');
-                    return;
-                }
-
+                let ele;
                 let computedStyle;
-                let tagName;
-                let parentEle = this.$parent.$el;
+                let parentEle = this.$parent.getNativeElement();
                 let children = parentEle.children;
                 for (var i = children.length - 1; i >= 0; i--) {
                     ele = children[i];
@@ -307,16 +273,15 @@
                             computedStyle = window.getComputedStyle(ele)
                             this._pTop = parsePxUnit(computedStyle.paddingTop);
                             this._pBottom = parsePxUnit(computedStyle.paddingBottom);
-                            this._pRigt = parsePxUnit(computedStyle.paddingRight);
+                            this._pRight = parsePxUnit(computedStyle.paddingRight);
                             this._pLeft = parsePxUnit(computedStyle.paddingLeft);
                         }
                     } else if (hasClass(ele, 'ion-header')) {
                         scrollEvent.headerElement = ele;
 
-
                         // ******** DOM READ ****************
                         this._hdrHeight = ele.clientHeight;
-                        console.log('_hdrHeight', this._hdrHeight)
+                        console.log('_hdrHeight', this._hdrHeight, ele)
                     } else if (hasClass(ele, 'ion-footer')) {
                         scrollEvent.footerElement = ele;
 
@@ -326,9 +291,35 @@
                     }
                 }
 
+                // In a Tabs
+                if (this._tabsCmp) {
+                    ele = this._tabsCmp.getNativeElement();
+                    let tabbarEle = ele.firstElementChild;
+                    // ******** DOM READ ****************
+                    this._tabbarHeight = tabbarEle.clientHeight;
+
+                    if (this._tabsPlacement === null) {
+                        // this is the first tabbar found, remember it's position
+                        this._tabsPlacement = ele.getAttribute('tabsplacement');
+                    }
+                }
+
+                // Tabs top
+                if (this._tabsCmp && this._tabsPlacement === 'top') {
+                    this._tTop = this._hdrHeight;
+                    tabsTop = this._tabsCmp.getTabsTop();
+                }
+
                 // Toolbar height
                 this._cTop = this._hdrHeight;
                 this._cBottom = this._ftrHeight;
+
+                // Tabs height
+                if (this._tabsPlacement === 'top') {
+                    this._cTop += this._tabbarHeight;
+                } else if (this._tabsPlacement === 'bottom') {
+                    this._cBottom += this._tabbarHeight;
+                }
 
                 // Refresher uses a border which should be hidden unless pulled
                 if (this._hasRefresher) {
@@ -361,6 +352,8 @@
                     cachePaddingRight !== this._pRight ||
                     cacheHeaderHeight !== this._hdrHeight ||
                     cacheFooterHeight !== this._ftrHeight ||
+                    cacheTabsPlacement !== this._tabsPlacement ||
+                    tabsTop !== this._tTop ||
                     this._cTop !== this.contentTop ||
                     this._cBottom !== this.contentBottom
                 );
@@ -382,14 +375,22 @@
 
                 const scrollEle = this.getScrollElement();
                 if (!scrollEle) {
-                    console.assert(false, 'this._scrollEle should be valid');
+                    assert(false, 'this._scrollEle should be valid');
                     return;
                 }
 
                 const fixedEle = this.getFixedElement();
                 if (!fixedEle) {
-                    console.assert(false, 'this._fixedEle should be valid');
+                    assert(false, 'this._fixedEle should be valid');
                     return;
+                }
+
+                // Tabs height
+                if (this._tabsPlacement === 'bottom' && this._cBottom > 0 && this._footerEle) {
+                    var footerPos = this._cBottom - this._ftrHeight;
+                    assert(footerPos >= 0, 'footerPos has to be positive');
+                    // ******** DOM WRITE ****************
+                    this._footerEle.style.bottom = cssFormat(footerPos);
                 }
 
                 // Handle fullscreen viewport (padding vs margin)
@@ -399,8 +400,8 @@
                 let fixedBottom = this._fBottom;
 
                 if (this._fullscreen) {
-                    console.assert(this._pTop >= 0, '_paddingTop has to be positive');
-                    console.assert(this._pBottom >= 0, '_paddingBottom has to be positive');
+                    assert(this._pTop >= 0, '_paddingTop has to be positive');
+                    assert(this._pBottom >= 0, '_paddingBottom has to be positive');
 
                     // adjust the content with padding, allowing content to scroll under headers/footers
                     // however, on iOS you cannot control the margins of the scrollbar (last tested iOS9.2)
@@ -412,8 +413,8 @@
 
                 // Only update top margin if value changed
                 if (this._cTop !== this.contentTop) {
-                    console.assert(this._cTop >= 0, 'contentTop has to be positive');
-                    console.assert(fixedTop >= 0, 'fixedTop has to be positive');
+                    assert(this._cTop >= 0, 'contentTop has to be positive');
+                    assert(fixedTop >= 0, 'fixedTop has to be positive');
 
                     // ******** DOM WRITE ****************
                     (scrollEle.style)[topProperty] = cssFormat(this._cTop);
@@ -425,8 +426,8 @@
 
                 // Only update bottom margin if value changed
                 if (this._cBottom !== this.contentBottom) {
-                    console.assert(this._cBottom >= 0, 'contentBottom has to be positive');
-                    console.assert(fixedBottom >= 0, 'fixedBottom has to be positive');
+                    assert(this._cBottom >= 0, 'contentBottom has to be positive');
+                    assert(fixedBottom >= 0, 'fixedBottom has to be positive');
 
                     // ******** DOM WRITE ****************
                     (scrollEle.style)[bottomProperty] = cssFormat(this._cBottom);
@@ -434,6 +435,18 @@
                     fixedEle.style.marginBottom = cssFormat(fixedBottom);
 
                     this.contentBottom = this._cBottom;
+                }
+
+                if (this._tabsCmp && this._tabsPlacement !== null) {
+                    // set the position of the tabbar
+                    if (this._tabsPlacement === 'top') {
+                        // ******** DOM WRITE ****************
+                        this._tabsCmp.setTabbarPosition(this._tTop, -1);
+                    } else {
+                        assert(this._tabsPlacement === 'bottom', 'tabsPlacement should be bottom');
+                        // ******** DOM WRITE ****************
+                        this._tabsCmp.setTabbarPosition(-1, 0);
+                    }
                 }
 
                 // Scroll the page all the way down after setting dimensions

@@ -4,7 +4,7 @@
          :tabsLayout="tabsLayout"
          :tabsHighlight="tabsHighlight"
          :tabsPlacement="tabsPlacement">
-        <div class="tabbar" role="tablist">
+        <div class="tabbar" role="tablist" ref="tabbarElement">
             <slot></slot>
             <div class="tab-highlight"></div>
         </div>
@@ -54,6 +54,9 @@
                 ids: -1,
                 tabs: [],
 
+                _top: 0,
+                _bottom: 0,
+
                 selectedTabIndex: -1,
             }
         },
@@ -68,6 +71,8 @@
             this.selectedTabIndex = (isBlank(this.selectedIndex) ? 0 : parseInt(this.selectedIndex, 10));
         },
         mounted() {
+            this.tabbarEle = this.$refs.tabbarElement;
+
             if (this.selectedTabIndex > this.length())
                 this.selectedTabIndex = 0;
         },
@@ -104,12 +109,41 @@
                 return this.tabs.indexOf(tab);
             },
 
+            /**
+             * @return {Tab} Returns the currently selected tab
+             */
+            getSelected() {
+                const tabs = this.tabs;
+                for (var i = 0; i < tabs.length; i++) {
+                    if (tabs[i].isSelected) {
+                        return tabs[i];
+                    }
+                }
+                return null;
+            },
+
             length() {
                 return this.tabs.length;
             },
 
             getTabsLayout () {
                 return this.tabsLayout;
+            },
+
+            getTabsTop () {
+                return this._top;
+            },
+
+            setTabbarPosition(top, bottom) {
+                if (this._top !== top || this._bottom !== bottom) {
+                    var tabbarEle = this.tabbarEle;
+                    tabbarEle.style.top = (top > -1 ? top + 'px' : '');
+                    tabbarEle.style.bottom = (bottom > -1 ? bottom + 'px' : '');
+                    tabbarEle.classList.add('show-tabbar');
+
+                    this._top = top;
+                    this._bottom = bottom;
+                }
             }
         }
     }

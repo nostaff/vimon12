@@ -173,7 +173,7 @@ export function swipeShouldReset(isResetDirection, isMovingFast, isOnResetZone) 
 export function assert(actual, reason) {
     if (!actual) {
         var message = 'IONIC ASSERT: ' + reason;
-        console.error(message);
+        console.assert(message);
         debugger; // tslint:disable-line
         throw new Error(message);
     }
