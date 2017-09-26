@@ -50,11 +50,6 @@
                 isItemCover: false
             }
         },
-        computed: {
-            themeClass () {
-                return `${this.roleName}-${this.theme}`
-            }
-        },
         created() {
             let parentName = this.$parent.$data.componentName;
 
