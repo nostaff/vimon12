@@ -70,7 +70,6 @@
         },
 
         methods: {
-
             getChecked(val) {
                 return this.currentValue.indexOf(val) != -1
             },

@@ -34,6 +34,14 @@ export default {
             }
         }
     },
+    computed: {
+        themeClass () {
+            return `${this.roleName} ${this.roleName}-${this.theme}`
+        },
+        colorClass () {
+            return this.color ? (`${this.roleName}-${this.theme}-${this.color}`) : ''
+        }
+    },
     methods: {
         getNativeElement() {
             return this.$el;

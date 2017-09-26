@@ -73,9 +73,9 @@ import {Toolbar, Navbar, BarTitle, BarButtons} from './components/toolbar'
 import Content from './components/content'
 import {List, ListHeader} from './components/list'
 import {Item, ItemGroup, ItemOptions, ItemSliding, ItemDivider} from './components/item'
+import {Card, CardHeader, CardTitle, CardContent} from './components/card'
 
 import {Grid, Row, Col} from './components/grid'
-import Cells from './components/cells'
 import {Tabs, Tab} from './components/tabs'
 import {Segment, SegmentButton} from './components/segment'
 
@@ -95,12 +95,15 @@ Vue.component(ItemGroup.name, ItemGroup)
 Vue.component(ItemOptions.name, ItemOptions)
 Vue.component(ItemSliding.name, ItemSliding)
 Vue.component(ItemDivider.name, ItemDivider)
+Vue.component(Card.name, Card)
+Vue.component(CardHeader.name, CardHeader)
+Vue.component(CardTitle.name, CardTitle)
+Vue.component(CardContent.name, CardContent)
 
 Vue.component(Grid.name, Grid)
 Vue.component(Row.name, Row)
 Vue.component(Col.name, Col)
 
-Vue.component(Cells.name, Cells)
 Vue.component(Tabs.name, Tabs)
 Vue.component(Tab.name, Tab)
 Vue.component(Segment.name, Segment)
@@ -139,7 +142,7 @@ export default {
     List,
     ListHeader,
     Item,
-    Cells,
+    Grid, Row, Col,
     Tabs,
     Tab,
 

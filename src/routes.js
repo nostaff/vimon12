@@ -36,7 +36,6 @@ import DemoLoading from './demos/Loading'
 import DemoToolbar from './demos/Toolbar'
 import DemoHeader from './demos/Header'
 import DemoList from './demos/List'
-import DemoCells from './demos/Cells'
 import DemoGrid from './demos/Grid'
 import DemoTabs from './demos/Tabs'
 import DemoSegment from './demos/Segment'
@@ -97,7 +96,6 @@ const routes = [
     { path: '/demo/toolbar', component: DemoToolbar },
     { path: '/demo/header', component: DemoHeader },
     { path: '/demo/list', component: DemoList },
-    { path: '/demo/cells', component: DemoCells },
     { path: '/demo/grid', component: DemoGrid },
     { path: '/demo/tabs', component: DemoTabs },
     { path: '/demo/segment', component: DemoSegment },

@@ -53,17 +53,14 @@
                 <ion-item detail-push @click.native="$router.forward('/demo/list')">
                     列表<ion-note slot="item-end">List</ion-note>
                 </ion-item>
-                <ion-item detail-push @click.native="$router.forward('/demo/cells')">
-                    宫格 <ion-note slot="item-end">Cells</ion-note>
-                </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/grid')">
                     栅格 <ion-note slot="item-end">Grid</ion-note>
                 </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/tabs')">
-                    选项卡<ion-note slot="item-end">Tabs</ion-note>
+                    Tab选项卡<ion-note slot="item-end">Tabs</ion-note>
                 </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/segment')">
-                    选项卡<ion-note slot="item-end">Segment</ion-note>
+                    分段选项卡<ion-note slot="item-end">Segment</ion-note>
                 </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/sidebar')">
                     Sidebar <ion-note slot="item-end">侧边栏</ion-note>

@@ -1,10 +1,5 @@
 <template>
-    <div :class="[
-        'checkbox',
-        'checkbox-'+theme,
-        'checkbox-'+theme+'-'+color,
-        disabled?'checkbox-disabled':''
-        ]">
+    <div :class="[themeClass, colorClass, disabled?'checkbox-disabled':'']">
         <div :class="['checkbox-icon', isChecked?'checkbox-checked':'']">
             <div class="checkbox-inner"></div>
         </div>
@@ -25,7 +20,8 @@
                 isChecked: this.value,
                 isDisabled: this.disabled,
 
-                itemComponent: null
+                itemComponent: null,
+                roleName: 'checkbox'
             }
         },
 
