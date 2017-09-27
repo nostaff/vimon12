@@ -1,9 +1,11 @@
 <template>
     <ion-page v-nav="{title: 'Vonic组件', showBackButton: false}">
 
-        <ion-content>
+        <ion-content class="outer-content">
             <!-- Basic -->
-            <ion-list title="基础">
+            <ion-list>
+                <ion-list-header>基础</ion-list-header>
+                <ion-item-group></ion-item-group>
                 <ion-item detail-push @click.native="$router.forward('/demo/button')">
                     按钮<ion-note slot="item-end">Button</ion-note>
                 </ion-item>
@@ -35,7 +37,7 @@
                     开关按钮<ion-note slot="item-end">Toggle</ion-note>
                 </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/range')">
-                    滑块<ion-note slot="item-end">Range Slider</ion-note>
+                    滑块<ion-note slot="item-end">Ranger</ion-note>
                 </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/fabs')">
                     浮动按钮<ion-note slot="item-end">FABs</ion-note>
@@ -63,7 +65,7 @@
                     分段选项卡<ion-note slot="item-end">Segment</ion-note>
                 </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/sidebar')">
-                    Sidebar <ion-note slot="item-end">侧边栏</ion-note>
+                    侧边栏 <ion-note slot="item-end">Sidebar</ion-note>
                 </ion-item>
             </ion-list>
 
@@ -115,7 +117,13 @@
 </template>
 
 <script>
+    import IonListHeader from "../vonic/components/list/list.header.vue";
+    import IonItemGroup from "../vonic/components/item/item.group.vue";
+
     export default {
+        components: {
+            IonItemGroup,
+            IonListHeader},
         data() {
             return {
                 sidebar: undefined,

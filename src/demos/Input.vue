@@ -1,6 +1,6 @@
 <template>
     <ion-page v-nav="{title: '输入框', showBackButton: true}">
-        <ion-content>
+        <ion-content class="outer-content">
 
             <ion-list title="有标签-定宽">
                 <ion-item>
@@ -52,10 +52,6 @@
                     <ion-input floating slot="item-content" :clearInput="false" v-model="date" type="password"></ion-input>
                 </ion-item>
             </ion-list>
-            <div padding>
-                <ion-button block>Sign In</ion-button>
-            </div>
-
 
             <ion-list title="Input Stacked">
                 <ion-item>
@@ -67,9 +63,6 @@
                     <ion-input stacked slot="item-content" :clearInput="true" v-model="password" type="password"></ion-input>
                 </ion-item>
             </ion-list>
-            <div padding>
-                <ion-button block>Sign In</ion-button>
-            </div>
 
         </ion-content>
     </ion-page>

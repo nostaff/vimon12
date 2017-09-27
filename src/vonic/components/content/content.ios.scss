@@ -57,3 +57,13 @@ $content-ios-transition-background:     #000 !default;
 .content-ios:not([no-bounce]) > .scroll-content::after {
   top: -1px;
 }
+
+
+
+
+// After a Header Toolbar
+
+.header-ios ~ .content-ios > .scroll-content {
+  margin-top: $toolbar-ios-height;
+}
+
