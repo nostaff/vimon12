@@ -98,8 +98,8 @@
 </script>
 
 <style lang="scss">
-    @import './modal';
-    @import './modal.ios';
-    @import './modal.md';
-    @import './modal.wp';
+    @import 'modal';
+    @import 'modal.ios';
+    @import 'modal.md';
+    @import 'modal.wp';
 </style>

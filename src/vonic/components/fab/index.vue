@@ -68,8 +68,8 @@
 </script>
 
 <style lang="scss">
-    @import './fab.scss';
-    @import './fab.ios.scss';
-    @import './fab.md.scss';
-    @import './fab.wp.scss';
+    @import 'fab';
+    @import 'fab.ios';
+    @import 'fab.md';
+    @import 'fab.wp';
 </style>

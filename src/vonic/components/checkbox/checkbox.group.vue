@@ -98,7 +98,7 @@
 </script>
 
 <style lang="scss">
-    @import './checkbox.ios.scss';
-    @import './checkbox.md.scss';
-    @import './checkbox.wp.scss';
+    @import 'checkbox.ios';
+    @import 'checkbox.md';
+    @import 'checkbox.wp';
 </style>

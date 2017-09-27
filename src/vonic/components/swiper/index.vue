@@ -8,5 +8,5 @@
 </script>
 
 <style lang="scss">
-    @import "./swiper.scss";
+    @import "swiper";
 </style>

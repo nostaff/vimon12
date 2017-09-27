@@ -86,8 +86,8 @@
 </script>
 
 <style lang="scss">
-    @import './loading';
-    @import './loading.ios';
-    @import './loading.md';
-    @import './loading.wp';
+    @import 'loading';
+    @import 'loading.ios';
+    @import 'loading.md';
+    @import 'loading.wp';
 </style>

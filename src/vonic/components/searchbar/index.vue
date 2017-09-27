@@ -106,9 +106,9 @@
 </script>
 
 <style lang="scss">
-    @import './searchbar.scss';
-    @import './searchbar.ios.scss';
-    @import './searchbar.md.scss';
-    @import './searchbar.wp.scss';
+    @import 'searchbar';
+    @import 'searchbar.ios';
+    @import 'searchbar.md';
+    @import 'searchbar.wp';
 </style>
 

@@ -9,8 +9,8 @@
 </script>
 
 <style lang="scss">
-    @import './tabs';
-    @import './tabs.ios';
-    @import './tabs.md';
-    @import './tabs.wp';
+    @import 'tabs';
+    @import 'tabs.ios';
+    @import 'tabs.md';
+    @import 'tabs.wp';
 </style>

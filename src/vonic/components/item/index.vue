@@ -15,12 +15,12 @@
 </script>
 
 <style lang="scss">
-    @import './item.scss';
-    @import './item-media.scss';
-    @import './item-reorder.scss';
-    @import './item-sliding.scss';
-    @import './item-sliding-test.scss';
-    @import './item.ios.scss';
-    @import './item.md.scss';
-    @import './item.wp.scss';
+    @import 'item';
+    @import 'item-media';
+    @import 'item-reorder';
+    @import 'item-sliding';
+    @import 'item-sliding-test';
+    @import 'item.ios';
+    @import 'item.md';
+    @import 'item.wp';
 </style>

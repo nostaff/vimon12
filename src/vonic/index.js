@@ -1,4 +1,3 @@
-// import './scss/vonic.scss'
 
 import './fonts/ionicons.scss'
 

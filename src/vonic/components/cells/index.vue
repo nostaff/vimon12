@@ -61,5 +61,5 @@
 </script>
 
 <style lang="scss">
-    @import "./cells";
+    @import "cells";
 </style>

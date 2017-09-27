@@ -120,8 +120,8 @@
 </script>
 
 <style lang="scss">
-    @import './toast';
-    @import './toast.ios';
-    @import './toast.md';
-    @import './toast.wp';
+    @import 'toast';
+    @import 'toast.ios';
+    @import 'toast.md';
+    @import 'toast.wp';
 </style>

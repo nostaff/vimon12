@@ -109,7 +109,7 @@
 </script>
 
 <style lang="scss">
-    @import './radio.ios.scss';
-    @import './radio.md.scss';
-    @import './radio.wp.scss';
+    @import 'radio.ios';
+    @import 'radio.md';
+    @import 'radio.wp';
 </style>

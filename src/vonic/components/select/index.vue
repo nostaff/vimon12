@@ -9,8 +9,8 @@
 </script>
 
 <style lang="scss">
-    @import './select.scss';
-    @import './select.ios.scss';
-    @import './select.md.scss';
-    @import './select.wp.scss';
+    @import 'select';
+    @import 'select.ios';
+    @import 'select.md';
+    @import 'select.wp';
 </style>

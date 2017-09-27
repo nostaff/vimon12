@@ -142,9 +142,9 @@
 </script>
 
 <style lang="scss">
-    @import './button.scss';
-    @import './button-icon.scss';
-    @import './button.ios.scss';
-    @import './button.md.scss';
-    @import './button.wp.scss';
+    @import 'button';
+    @import 'button-icon';
+    @import 'button.ios';
+    @import 'button.md';
+    @import 'button.wp';
 </style>

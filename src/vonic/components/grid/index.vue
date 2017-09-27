@@ -20,5 +20,5 @@
 </script>
 
 <style lang="scss">
-    @import './grid.scss';
+    @import 'grid';
 </style>

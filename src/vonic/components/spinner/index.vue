@@ -189,8 +189,8 @@
 </script>
 
 <style lang="scss">
-    @import './spinner.scss';
-    @import './spinner.ios.scss';
-    @import './spinner.md.scss';
-    @import './spinner.wp.scss';
+    @import 'spinner';
+    @import 'spinner.ios';
+    @import 'spinner.md';
+    @import 'spinner.wp';
 </style>

@@ -28,8 +28,8 @@
     }
 </script>
 <style lang="scss">
-    @import './label';
-    @import './label.ios';
-    @import './label.md';
-    @import './label.wp';
+    @import 'label';
+    @import 'label.ios';
+    @import 'label.md';
+    @import 'label.wp';
 </style>

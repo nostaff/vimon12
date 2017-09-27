@@ -93,8 +93,8 @@
 </script>
 
 <style lang="scss">
-    @import './icon.scss';
-    @import './icon.ios.scss';
-    @import './icon.md.scss';
-    @import './icon.wp.scss';
+    @import 'icon';
+    @import 'icon.ios';
+    @import 'icon.md';
+    @import 'icon.wp';
 </style>

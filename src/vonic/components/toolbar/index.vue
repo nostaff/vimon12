@@ -13,9 +13,9 @@
 </script>
 
 <style lang="scss">
-    @import './toolbar.button';
-    @import './toolbar';
-    @import './toolbar.ios';
-    @import './toolbar.md';
-    @import './toolbar.wp';
+    @import 'toolbar.button';
+    @import 'toolbar';
+    @import 'toolbar.ios';
+    @import 'toolbar.md';
+    @import 'toolbar.wp';
 </style>

@@ -39,5 +39,5 @@
     };
 </script>
 <style lang="scss">
-    @import './backdrop.scss';
+    @import 'backdrop';
 </style>

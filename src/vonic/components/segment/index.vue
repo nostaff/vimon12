@@ -9,8 +9,8 @@
 </script>
 
 <style lang="scss">
-    @import './segment';
-    @import './segment.ios';
-    @import './segment.md';
-    @import './segment.wp';
+    @import 'segment';
+    @import 'segment.ios';
+    @import 'segment.md';
+    @import 'segment.wp';
 </style>

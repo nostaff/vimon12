@@ -57,7 +57,7 @@
 
 
 <style lang="scss">
-    @import './toggle.ios.scss';
-    @import './toggle.md.scss';
-    @import './toggle.wp.scss';
+    @import 'toggle.ios';
+    @import 'toggle.md';
+    @import 'toggle.wp';
 </style>

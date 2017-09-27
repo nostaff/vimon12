@@ -145,8 +145,8 @@
 </script>
 
 <style lang="scss">
-    @import './alert';
-    @import './alert.ios';
-    @import './alert.md';
-    @import './alert.wp';
+    @import 'alert';
+    @import 'alert.ios';
+    @import 'alert.md';
+    @import 'alert.wp';
 </style>

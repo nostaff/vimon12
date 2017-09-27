@@ -140,9 +140,9 @@
 </script>
 
 <style lang="scss">
-    @import './input.scss';
-    @import './input.ios.scss';
-    @import './input.md.scss';
-    @import './input.wp.scss';
+    @import 'input';
+    @import 'input.ios';
+    @import 'input.md';
+    @import 'input.wp';
 </style>
 

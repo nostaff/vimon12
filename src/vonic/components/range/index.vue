@@ -365,10 +365,10 @@
 
 
 <style lang="scss">
-    @import './range.scss';
-    @import './range.ios.scss';
-    @import './range.md.scss';
-    @import './range.wp.scss';
+    @import 'range';
+    @import 'range.ios';
+    @import 'range.md';
+    @import 'range.wp';
 </style>
 
 

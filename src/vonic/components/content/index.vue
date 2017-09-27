@@ -580,8 +580,8 @@
     }
 </script>
 <style lang="scss">
-    @import "./content.scss";
-    @import "./content.ios.scss";
-    @import "./content.md.scss";
-    @import "./content.wp.scss";
+    @import "content";
+    @import "content.ios";
+    @import "content.md";
+    @import "content.wp";
 </style>
