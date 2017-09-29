@@ -157,8 +157,7 @@
                 this.contentCmp = this.$parent;
             }
             console.assert(this.contentCmp, 'Refresher组件必须要在Content组件下使用')
-
-            this.contentCmp.setElementClass('has-refresher', true)
+            this.contentCmp && this.contentCmp.setElementClass('has-refresher', true)
 
             this.setListeners(this.isEnabled);
         },

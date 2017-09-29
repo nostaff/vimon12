@@ -19,9 +19,6 @@ import util from "./utils/util";
 DEFAULT_CONFIG.theme = util.theme();
 Vue.prototype.$ionic = util.extend(DEFAULT_CONFIG);
 
-// import VueTonch from "./utils/vue-touch";
-// Vue.use(VueTonch);
-
 // Basic
 import Avatar from './components/avatar'
 import Label from './components/label'
@@ -29,7 +26,7 @@ import Note from './components/note'
 import Icon from './components/icon'
 import Button from './components/button'
 import Chip from './components/chip/index.vue'
-import Input from './components/input'
+import {Input, Textarea} from './components/input'
 import Searchbar from './components/searchbar'
 import {Radio, RadioGroup} from './components/radio'
 import {Checkbox, CheckboxGroup} from './components/checkbox'
@@ -50,6 +47,7 @@ Vue.component(Icon.name, Icon)
 Vue.component(Button.name, Button)
 Vue.component(Chip.name, Chip)
 Vue.component(Input.name, Input)
+Vue.component(Textarea.name, Textarea)
 Vue.component(Searchbar.name, Searchbar)
 Vue.component(RadioGroup.name, RadioGroup)
 Vue.component(Radio.name, Radio)

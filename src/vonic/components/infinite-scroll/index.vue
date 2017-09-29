@@ -109,7 +109,7 @@
                 this.contentCmp = this.$parent;
             }
             console.assert(this.contentCmp, 'InfiniteScroll组件必须要在Content组件下使用')
-            this.contentCmp.setElementClass('has-infinite-scroll', true)
+            this.contentCmp && this.contentCmp.setElementClass('has-infinite-scroll', true)
 
             this.isInited = true
             this.setListeners(this.isEnabled);
