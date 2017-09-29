@@ -16,6 +16,8 @@ import NotFound from '@/pages/NotFound'
 
 // demos
 import DemoHome from './demos/Home'
+
+// Components
 import DemoButton from './demos/Button'
 import DemoChip from './demos/Chip'
 import DemoInput from './demos/Input'
@@ -24,41 +26,34 @@ import DemoSelect from './demos/Select'
 import DemoRadio from './demos/Radio'
 import DemoCheckbox from './demos/Checkbox'
 import DemoToggle from './demos/Toggle'
-import DemoRangeSlider from './demos/RangeSlider'
+import DemoRange from './demos/Range'
 import DemoBadge from './demos/Badge'
-import DemoDialog from './demos/Dialog'
 import DemoIcon from './demos/Icon'
 import DemoFabs from './demos/FABs'
-import DemoToast from './demos/Toast'
-import DemoLoading from './demos/Loading'
+import DemoSpinner from './demos/Spinner'
 
 // Layout
 import DemoToolbar from './demos/Toolbar'
 import DemoHeader from './demos/Header'
-import DemoList from './demos/List'
 import DemoGrid from './demos/Grid'
 import DemoTabs from './demos/Tabs'
 import DemoSegment from './demos/Segment'
 
+// List
+import DemoList from './demos/List'
+import DemoRefresher from './demos/Refresher'
+import DemoInfiniteScroll from './demos/InfiniteScroll'
+
 // Advanced
+import DemoDialog from './demos/Dialog'
+import DemoToast from './demos/Toast'
 import DemoSwiper from './demos/Swiper'
 import DemoSwiperDefault from './demos/SwiperDefault'
 import DemoSwiperVertical from './demos/SwiperVertical'
-import DemoScroll from './demos/Scroll'
-import DemoVueScroller from './demos/VueScroller'
-import DemoCascade from './demos/Cascade'
-import DemoAccordion from './demos/Accordion'
 import DemoPicker from './demos/Picker'
 import DemoPopup from './demos/Popup'
 import DemoPopover from './demos/Popover'
 import DemoActionSheet from './demos/ActionSheet'
-import DemoTabbar from './demos/Tabbar'
-import DemoTabbarHome from './demos/tabbar/Home'
-import DemoTabbarDiscount from './demos/tabbar/Discount'
-import DemoTabbarCart from './demos/tabbar/Cart'
-import DemoTabbarUser from './demos/tabbar/User'
-import DemoPageFromTabbar from './demos/tabbar/PageFromTabbar'
-import DemoTabbarWithoutRoutes from './demos/TabbarWithoutRoutes'
 import DemoModal from './demos/Modal'
 
 const routes = [
@@ -83,46 +78,34 @@ const routes = [
     { path: '/demo/radio', component: DemoRadio },
     { path: '/demo/checkbox', component: DemoCheckbox },
     { path: '/demo/toggle', component: DemoToggle },
-    { path: '/demo/range', component: DemoRangeSlider },
+    { path: '/demo/range', component: DemoRange },
     { path: '/demo/badge', component: DemoBadge },
     { path: '/demo/fabs', component: DemoFabs },
     { path: '/demo/icons', component: DemoIcon },
     { path: '/demo/dialog', component: DemoDialog },
     { path: '/demo/toast', component: DemoToast },
-    { path: '/demo/loading', component: DemoLoading },
+    { path: '/demo/spinner', component: DemoSpinner },
 
 
     // Layout
     { path: '/demo/toolbar', component: DemoToolbar },
     { path: '/demo/header', component: DemoHeader },
-    { path: '/demo/list', component: DemoList },
     { path: '/demo/grid', component: DemoGrid },
     { path: '/demo/tabs', component: DemoTabs },
     { path: '/demo/segment', component: DemoSegment },
+
+    // List
+    { path: '/demo/list', component: DemoList },
+    { path: '/demo/refresher', component: DemoRefresher },
+    { path: '/demo/infinite-scroll', component: DemoInfiniteScroll },
 
     // Advanced
     { path: '/demo/swiper', component: DemoSwiper },
     { path: '/demo/swiper/default', component: DemoSwiperDefault },
     { path: '/demo/swiper/vertical', component: DemoSwiperVertical },
-    { path: '/demo/scroll', component: DemoScroll },
-    { path: '/demo/scroller', component: DemoVueScroller },
-    { path: '/demo/cascade', component: DemoCascade },
-    { path: '/demo/accordion', component: DemoAccordion },
     { path: '/demo/popup', component: DemoPopup },
     { path: '/demo/popover', component: DemoPopover },
     { path: '/demo/actionSheet', component: DemoActionSheet },
-    {
-        path: '/demo/tabbar',
-        component: DemoTabbar,
-        children: [
-            { path: 'home', component: DemoTabbarHome },
-            { path: 'discount', component: DemoTabbarDiscount },
-            { path: 'cart', component: DemoTabbarCart },
-            { path: 'user', component: DemoTabbarUser }
-        ]
-    },
-    { path: '/demo/pageFromTabbar',component: DemoPageFromTabbar },
-    { path: '/demo/tabbarWithoutRoutes', component: DemoTabbarWithoutRoutes },
     { path: '/demo/modal', component: DemoModal },
     { path: '/demo/picker', component: DemoPicker },
 

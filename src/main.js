@@ -37,23 +37,6 @@ const beforeEach = (toRoute, fromRoute, next) => {
         })
     }
 
-    // 某些页面定制 page transition direction
-    if (
-        (from == '/' && to == '/home') ||
-        (from == '/home' && to == '/advanced/tabbar/home') ||
-        (from == '/advanced/tabbar/user' && to == '/pageFromTabbar')
-    ) {
-        Vonic.app.nextDirection('forward')
-    }
-
-    if (
-        (to == '/' && from == '/home') ||
-        (to == '/home' && from == '/advanced/tabbar/home') ||
-        (to == '/advanced/tabbar/user' && from == '/pageFromTabbar')
-    ) {
-        Vonic.app.nextDirection('back')
-    }
-
     next()
 }
 

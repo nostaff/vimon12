@@ -37,23 +37,31 @@
                     开关按钮<ion-note slot="item-end">Toggle</ion-note>
                 </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/range')">
-                    滑块<ion-note slot="item-end">Ranger</ion-note>
+                    滑块<ion-note slot="item-end">Range</ion-note>
                 </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/fabs')">
                     浮动按钮<ion-note slot="item-end">FABs</ion-note>
                 </ion-item>
             </ion-list>
 
-            <!-- layout -->
+            <ion-list title="列表">
+                <ion-item detail-push @click.native="$router.forward('/demo/list')">
+                    列表<ion-note slot="item-end">List</ion-note>
+                </ion-item>
+                <ion-item detail-push @click.native="$router.forward('/demo/refresher')">
+                    下拉刷新<ion-note slot="item-end">Refresher</ion-note>
+                </ion-item>
+                <ion-item detail-push @click.native="$router.forward('/demo/infinite-scroll')">
+                    无限加载 <ion-note slot="item-end">InfiniteScroll</ion-note>
+                </ion-item>
+            </ion-list>
+
             <ion-list title="布局">
                 <ion-item detail-push @click.native="$router.forward('/demo/toolbar')">
                     工具条<ion-note slot="item-end">Toolbar</ion-note>
                 </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/header')">
                     页头<ion-note slot="item-end">Header</ion-note>
-                </ion-item>
-                <ion-item detail-push @click.native="$router.forward('/demo/list')">
-                    列表<ion-note slot="item-end">List</ion-note>
                 </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/grid')">
                     栅格 <ion-note slot="item-end">Grid</ion-note>
@@ -80,26 +88,14 @@
                 <ion-item detail-push @click.native="$router.forward('/demo/toast')">
                     文字提示 <ion-note slot="item-end">Toast</ion-note>
                 </ion-item>
-                <ion-item detail-push @click.native="$router.forward('/demo/loading')">
-                    加载提示 <ion-note slot="item-end">Loading</ion-note>
+                <ion-item detail-push @click.native="$router.forward('/demo/spinner')">
+                    加载提示 <ion-note slot="item-end">Spinner</ion-note>
                 </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/swiper')">
                     轮播 <ion-note slot="item-end">Swiper</ion-note>
                 </ion-item>
-                <ion-item detail-push @click.native="$router.forward('/demo/scroll')">
-                    下拉刷新、无限加载 <ion-note slot="item-end">Scroller</ion-note>
-                </ion-item>
-                <ion-item detail-push @click.native="$router.forward('/demo/scroller')">
-                    Vue Scroller <ion-note slot="item-end">v2.1.0</ion-note>
-                </ion-item>
-                <ion-item detail-push @click.native="$router.forward('/demo/cascade')">
-                    级联 <ion-note slot="item-end">Cascade</ion-note>
-                </ion-item>
-                <ion-item detail-push @click.native="$router.forward('/demo/accordion')">
-                    手风琴组件<ion-note slot="item-end">Accordion</ion-note>
-                </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/popup')">
-                    自定义弹层<ion-note slot="item-end">Popup</ion-note>
+                    弹层<ion-note slot="item-end">Popup</ion-note>
                 </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/picker')">
                     选择器 <ion-note slot="item-end">Picker</ion-note>
@@ -119,9 +115,11 @@
 <script>
     import IonListHeader from "../vonic/components/list/list.header.vue";
     import IonItemGroup from "../vonic/components/item/item.group.vue";
+    import IonList from "../vonic/components/list/list.vue";
 
     export default {
         components: {
+            IonList,
             IonItemGroup,
             IonListHeader},
         data() {

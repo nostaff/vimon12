@@ -84,7 +84,7 @@
             this._scroll = new ScrollView()
             this._imgs = [];
 
-            this._hasRefresher = this.$slots && isPresent(this.$slots['refresher']);
+            this.hasRefresher = this.$slots && isPresent(this.$slots['refresher']);
         },
         mounted () {
             if (this.$slots && this.$slots['fixed']) {
@@ -322,7 +322,7 @@
                 }
 
                 // Refresher uses a border which should be hidden unless pulled
-                if (this._hasRefresher) {
+                if (this.hasRefresher) {
                     this._cTop -= 1;
                 }
 

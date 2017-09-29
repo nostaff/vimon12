@@ -72,6 +72,8 @@ import {Toolbar, Navbar, BarTitle, BarButtons} from './components/toolbar'
 import Content from './components/content'
 import {List, ListHeader} from './components/list'
 import {Item, ItemGroup, ItemOptions, ItemSliding, ItemDivider} from './components/item'
+import Refresher from './components/refresher'
+import InfiniteScroll from './components/infinite-scroll'
 import {Card, CardHeader, CardTitle, CardContent} from './components/card'
 
 import {Grid, Row, Col} from './components/grid'
@@ -81,12 +83,19 @@ import {Segment, SegmentButton} from './components/segment'
 Vue.component(Page.name, Page)
 Vue.component(Header.name, Header)
 Vue.component(Footer.name, Footer)
+Vue.component(Content.name, Content)
 Vue.component(Toolbar.name, Toolbar)
 Vue.component(Navbar.name, Navbar)
 Vue.component(BarTitle.name, BarTitle)
 Vue.component(BarButtons.name, BarButtons)
+Vue.component(Grid.name, Grid)
+Vue.component(Row.name, Row)
+Vue.component(Col.name, Col)
+Vue.component(Card.name, Card)
+Vue.component(CardHeader.name, CardHeader)
+Vue.component(CardTitle.name, CardTitle)
+Vue.component(CardContent.name, CardContent)
 
-Vue.component(Content.name, Content)
 Vue.component(List.name, List)
 Vue.component(ListHeader.name, ListHeader)
 Vue.component(Item.name, Item)
@@ -94,14 +103,8 @@ Vue.component(ItemGroup.name, ItemGroup)
 Vue.component(ItemOptions.name, ItemOptions)
 Vue.component(ItemSliding.name, ItemSliding)
 Vue.component(ItemDivider.name, ItemDivider)
-Vue.component(Card.name, Card)
-Vue.component(CardHeader.name, CardHeader)
-Vue.component(CardTitle.name, CardTitle)
-Vue.component(CardContent.name, CardContent)
-
-Vue.component(Grid.name, Grid)
-Vue.component(Row.name, Row)
-Vue.component(Col.name, Col)
+Vue.component(Refresher.name, Refresher)
+Vue.component(InfiniteScroll.name, InfiniteScroll)
 
 Vue.component(Tabs.name, Tabs)
 Vue.component(Tab.name, Tab)
@@ -111,18 +114,15 @@ Vue.component(SegmentButton.name, SegmentButton)
 // Advanced
 import {Swiper, SwiperItem} from './components/swiper'
 import Scroll from './components/scroll'
-import Cascade from './components/cascade'
-import { Accordion, AccordionItem } from './components/accordion'
+// import Cascade from './components/cascade'
+// import { Accordion, AccordionItem } from './components/accordion'
 Vue.component('swiper', Swiper)
 Vue.component('swiper-item', SwiperItem)
 Vue.component('scroll', Scroll)
-Vue.component('cascade', Cascade)
-Vue.component('accordion', Accordion)
-Vue.component('accordion-item', AccordionItem)
 
-// Modal
-import Modal from './services/modal/Modal.vue'
-Vue.component('modal', Modal)
+// // Modal
+// import Modal from './services/modal/Modal.vue'
+// Vue.component('modal', Modal)
 
 import Plugin from './plugin'
 
@@ -149,12 +149,12 @@ export default {
     Swiper,
     SwiperItem,
     Scroll,
-    Cascade,
+    // Cascade,
 
-    Accordion,
-    AccordionItem,
+    // Accordion,
+    // AccordionItem,
 
-    Modal,
+    // Modal,
 
     app: Plugin
 }
