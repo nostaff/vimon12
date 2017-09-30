@@ -93,15 +93,6 @@
             }
         },
         methods: {
-            updateLabelAttribute(name, value = '') {
-                if (this.$refs.label && this.$refs.label.$el.length != 0) {   // 空==0，不为空 != 0 ，非大于0
-                    this.$refs.label.$el.setAttribute(name, value);
-                } else if (this.$slots['item-label']) {
-                    this.$slots['item-label'].forEach(item => {
-                        item.elm.setAttribute(name, value)
-                    })
-                }
-            },
             getLabelText () {
                 if (this.$refs.label && this.$refs.label.$el.length != 0) {   // 空==0，不为空 != 0 ，非大于0
                     return this.$refs.label.$el.innerText;

@@ -21,6 +21,7 @@ import DemoHome from './demos/Home'
 import DemoButton from './demos/Button'
 import DemoChip from './demos/Chip'
 import DemoInput from './demos/Input'
+import DemoTextarea from './demos/TextArea'
 import DemoSearch from './demos/Search'
 import DemoSelect from './demos/Select'
 import DemoRadio from './demos/Radio'
@@ -73,6 +74,7 @@ const routes = [
     { path: '/demo/button', component: DemoButton },
     { path: '/demo/chip', component: DemoChip },
     { path: '/demo/input', component: DemoInput },
+    { path: '/demo/textarea', component: DemoTextarea },
     { path: '/demo/search', component: DemoSearch },
     { path: '/demo/select', component: DemoSelect },
     { path: '/demo/radio', component: DemoRadio },

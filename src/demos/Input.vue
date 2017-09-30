@@ -40,27 +40,27 @@
 
             <ion-list title="Input Floating">
                 <ion-item>
-                    Username0
-                    <ion-input floating slot="item-content" v-model="username"></ion-input>
+                    <ion-label slot="item-label" floating>Username</ion-label>
+                    <ion-input slot="item-content" v-model="username"></ion-input>
                 </ion-item>
                 <ion-item>
-                    <ion-label slot="item-label">Password</ion-label>
-                    <ion-input floating slot="item-content" :clearInput="true" v-model="password" type="password"></ion-input>
+                    <ion-label slot="item-label" floating>Password</ion-label>
+                    <ion-input slot="item-content" :clearInput="true" v-model="password" type="password"></ion-input>
                 </ion-item>
                 <ion-item>
-                    <ion-label slot="item-label">Date</ion-label>
-                    <ion-input floating slot="item-content" :clearInput="false" v-model="date" type="password"></ion-input>
+                    <ion-label slot="item-label" floating>Date</ion-label>
+                    <ion-input slot="item-content" :clearInput="false" v-model="date" type="password"></ion-input>
                 </ion-item>
             </ion-list>
 
             <ion-list title="Input Stacked">
                 <ion-item>
-                    Username1
+                    <ion-label slot="item-label" stacked>Username</ion-label>
                     <ion-input stacked slot="item-content" v-model="username"></ion-input>
                 </ion-item>
                 <ion-item>
-                    <ion-label slot="item-label">Password</ion-label>
-                    <ion-input stacked slot="item-content" :clearInput="true" v-model="password" type="password"></ion-input>
+                    <ion-label slot="item-label" stacked>Password</ion-label>
+                    <ion-input slot="item-content" :clearInput="true" v-model="password" type="password"></ion-input>
                 </ion-item>
             </ion-list>
 
@@ -68,12 +68,7 @@
     </ion-page>
 </template>
 <script>
-    import IonItemDivider from "../vonic/components/item/item";
-    import IonLabel from "../vonic/components/label/index";
     export default{
-        components: {
-            IonLabel,
-            IonItemDivider},
         data() {
             return {
                 username: '',

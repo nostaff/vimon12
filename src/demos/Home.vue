@@ -21,6 +21,9 @@
                 <ion-item detail-push @click.native="$router.forward('/demo/input')">
                     输入框<ion-note slot="item-end">Input</ion-note>
                 </ion-item>
+                <ion-item detail-push @click.native="$router.forward('/demo/textarea')">
+                    多行输入<ion-note slot="item-end">Textarea</ion-note>
+                </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/search')">
                     搜索框<ion-note slot="item-end">SearchBar</ion-note>
                 </ion-item>

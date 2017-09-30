@@ -1,5 +1,10 @@
 <template>
-	<div class="ion-label" v-if="viewLabel" :class="['label-'+theme, colorClass]">
+	<div class="ion-label"
+         v-if="viewLabel"
+         :class="['label-'+theme, colorClass]"
+         :fixed="fixed"
+         :floating="floating"
+         :stacked="stacked">
         <slot></slot>
     </div>
 </template>
@@ -11,7 +16,19 @@
         mixins: [ThemeMixins],
         data() {
             return {
-                viewLabel: true
+                viewLabel: true,
+
+                itemCmp: null
+            }
+        },
+        props: {
+            fixed: Boolean,
+            floating: Boolean,
+            stacked: Boolean
+        },
+        computed: {
+            colorClass: function() {
+                return `label-${this.theme}-${this.color}`;
             }
         },
         beforeMount() {
@@ -20,9 +37,13 @@
                 this.viewLabel = false;
             }
         },
-        computed: {
-            colorClass: function() {
-                return `label-${this.theme}-${this.color}`;
+        mounted () {
+            if (this.$parent.$data.componentName === 'ionItem') {
+                this.itemCmp = this.$parent
+                this.itemCmp.setElementClass('item-label-fixed', this.fixed)
+                this.itemCmp.setElementClass('item-label-floating', this.floating)
+                this.itemCmp.setElementClass('item-label-stacked', this.stacked)
+                this.itemCmp.labelComponent = this
             }
         }
     }

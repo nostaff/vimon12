@@ -133,3 +133,18 @@ input.text-input:-webkit-autofill {
 .item-input:not(.item-label-floating) .text-input.cloned-active {
     display: none;
 }
+
+// Textarea Count
+// --------------------------------------------------
+
+.input-count {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 12px;
+  color: #bbb;
+  padding-right: 5px;
+  span {
+    color: #000;
+  }
+}
