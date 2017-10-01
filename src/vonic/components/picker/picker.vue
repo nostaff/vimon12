@@ -26,6 +26,7 @@
     </div>
 </template>
 <script>
+    import {uuid} from '../../utils/utils'
     import objectAssign from 'object-assign'
     import Scroller from './scroller';
     import ThemeMixins from '../../themes/theme.mixins';
@@ -41,7 +42,7 @@
         },
         data() {
             return {
-                uuid: Math.random().toString(36).substring(3, 8),
+                uuid: uuid(),
                 optionColumns: [],
                 defaultOptions: {
                     buttons: [],
