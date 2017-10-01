@@ -11,11 +11,11 @@
 
         mounted() {
             this.$events.$on('ModalSlideUpStart', () => {
-                this.show()
+                this.present()
             })
 
             this.$events.$on('ModalSlideUpEnd', () => {
-                this.hide()
+                this.dismiss()
             })
 
             this.$events.$on('RemoveClickBlock', () => {
@@ -28,11 +28,11 @@
         },
 
         methods: {
-            show() {
+            present() {
                 this.state = 1
             },
 
-            hide() {
+            dismiss() {
                 this.state = 0
             }
         }

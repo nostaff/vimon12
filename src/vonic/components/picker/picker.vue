@@ -94,7 +94,7 @@
                 this.rendered = true;
             },
 
-            show(options) {
+            present(options) {
                 let _options = objectAssign({}, this.defaultOptions, options)
                 if (typeof _options.cssClass === 'string')
                     this.cssClass = _options.cssClass;

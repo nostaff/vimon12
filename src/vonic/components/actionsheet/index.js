@@ -8,17 +8,17 @@ class IonActionSheet {
         this._vm = undefined
     }
 
-    show(option) {
+    present(option) {
         createElement('ion-dialog')
 
         this._vm = new Vue(ActionSheet)
         this._vm.$mount('[ion-dialog]')
 
-        return this._vm.show(option)
+        return this._vm.present(option)
     }
 
-    hide(buttonIndex) {
-        this._vm.hide(buttonIndex)
+    dismiss(buttonIndex) {
+        this._vm.dismiss(buttonIndex)
     }
 
 }

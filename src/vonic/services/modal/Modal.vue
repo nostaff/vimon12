@@ -23,7 +23,7 @@
             }"
                     >
                         <h1 class="title" v-text="title"></h1>
-                        <button class="button button-icon icon ion-ios-close-empty" @click="hide()"></button>
+                        <button class="button button-icon icon ion-ios-close-empty" @click="dismiss()"></button>
                     </div>
                 </slot>
 
@@ -57,7 +57,7 @@
         },
 
         methods: {
-            show() {
+            present() {
                 this.state = 1
                 setTimeout(() => {
                     this.state = 2
@@ -70,9 +70,9 @@
                 document.body.classList.add('modal-open')
             },
 
-            hide() {
-                if (this.onHide) {
-                    this.onHide()
+            dismiss() {
+                if (this.onDismiss) {
+                    this.onDismiss()
                 }
 
                 this.state = 3

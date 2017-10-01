@@ -8,18 +8,18 @@ class IonPicker {
         this._vm = undefined
     }
 
-    show(option) {
+    present(option) {
         let container = document.querySelector('.ion-app') || document.body;
         createElement('ion-picker', container)
 
         this._vm = new Vue(Picker)
         this._vm.$mount('[ion-picker]')
 
-        return this._vm.show(option)
+        return this._vm.present(option)
     }
 
-    hide(buttonIndex) {
-        this._vm.hide(buttonIndex)
+    dismiss(buttonIndex) {
+        this._vm.dismiss(buttonIndex)
     }
 
 }

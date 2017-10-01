@@ -10,7 +10,7 @@ let vm = undefined
 
 class IonDialog {
 
-    show(type, options) {
+    present(type, options) {
         let rnd = uuid()
         let marker = `ion-${type}-${rnd}`
         let container = document.querySelector('.ion-app') || document.body;
@@ -36,27 +36,27 @@ class IonDialog {
         vm = new Vue(component).$mount(selector)
 
         vm.$el.setAttribute('ion-dialog', '')
-        return vm.show(options)
+        return vm.present(options)
     }
 
     alert(options) {
-        return this.show('alert', options)
+        return this.present('alert', options)
     }
 
     confirm(options) {
-        return this.show('alert', options)
+        return this.present('alert', options)
     }
 
     prompt(options) {
-        return this.show('prompt', options)
+        return this.present('prompt', options)
     }
 
     radio(options) {
-        return this.show('radio', options)
+        return this.present('radio', options)
     }
 
     checkbox(options) {
-        return this.show('checkbox', options)
+        return this.present('checkbox', options)
     }
 
     dismiss(buttonIndex) {

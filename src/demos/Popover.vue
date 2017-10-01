@@ -37,7 +37,7 @@
                         <ion-item @click.native="itemClick()">GitHub Repo</ion-item>
                       </ion-list>
                     `
-                $popover.show({
+                $popover.present({
                     ev: ev,
                     template: template,
                 }).then((role) => {
@@ -46,7 +46,7 @@
             },
 
             pageSetting(ev) {
-                $popover.show({
+                $popover.present({
                     ev: ev,
                     template: Popage,
                     data: {
@@ -60,7 +60,7 @@
             popupText(ev, text) {
                 let contont = '<p padding text-center>You select the word of <strong>' + text + '</strong>.</p>';
 
-                $popover.show({
+                $popover.present({
                     ev: ev,
                     template: contont,
                 }).then((role) => {

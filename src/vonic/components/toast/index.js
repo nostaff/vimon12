@@ -8,7 +8,7 @@ class IonToast {
         this._vm = undefined
     }
 
-    show(options) {
+    present(options) {
         if (this._vm) {
             this._vm.$destroy()
             this._vm = undefined
@@ -23,7 +23,7 @@ class IonToast {
         let Component = Vue.extend(Toast);
         this._vm = new Component().$mount(selector);
 
-        return this._vm.show(options);
+        return this._vm.present(options);
     }
 
     dismiss(role) {

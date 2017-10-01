@@ -2,7 +2,7 @@
 
 ```
 
-$actionSheet.show({
+$actionSheet.present({
                     title: '标题',
                     enableBackdropDismiss: true,
                     cssClass: 'a   b',
@@ -48,14 +48,14 @@ $actionSheet.show({
                 }).then((res) => {
                                       console.log('button clicked: ', res)
                                   });
-                
+
 ```
 
 ## Instance Members
 
- 
+
 ```
-$actionSheet.show(opts)
+$actionSheet.present(opts)
 ```
 Open an action sheet with a title, subTitle, and an array of buttons
 

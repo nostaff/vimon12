@@ -20,13 +20,13 @@
             }
         },
         methods: {
-            show(allowTouchMove) {
+            present(allowTouchMove) {
                 if (!allowTouchMove)
                     document.body.addEventListener('touchmove', preventDefault)
                 this.activated = true
             },
 
-            hide(allowTouchMove) {
+            dismiss(allowTouchMove) {
                 if (!allowTouchMove)
                     document.body.removeEventListener('touchmove', preventDefault)
                 this.activated = true

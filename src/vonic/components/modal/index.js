@@ -8,7 +8,7 @@ class IonModal {
         this._vm = undefined
     }
 
-    show(options) {
+    present(options) {
         let components = (options && options.components) ? options.components : {}
         let template = (options && options.template) ? options.template : {}
 
@@ -39,7 +39,7 @@ class IonModal {
         }).$mount(this._vm.$el.querySelector('.modal-viewport'));
 
 
-        return this._vm.show(options);
+        return this._vm.present(options);
     }
 
     dismiss(role) {

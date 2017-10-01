@@ -196,7 +196,7 @@
 
                     selectOptions.cssClass = selectCssClass
 
-                    $actionSheet.show(selectOptions);
+                    $actionSheet.present(selectOptions);
 
                 } else if (this.interface === 'popover') {
                     let popoverOptions = options.map(input => {
@@ -227,7 +227,7 @@
                     selectOptions.cssClass = popoverCssClass;
                     selectOptions.data = {options: popoverOptions};
 
-                    $popover.show(selectOptions);
+                    $popover.present(selectOptions);
 
                 } else {
                     // default to use the alert interface

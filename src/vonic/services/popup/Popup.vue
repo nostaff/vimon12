@@ -16,7 +16,7 @@
 
                 <div class="popup-body" :class="{'no-content': state == 0}">
                     <slot></slot>
-                    <ion-button v-if="showClose == 'true'" @click.native="hide(-1)">
+                    <ion-button v-if="showClose == 'true'" @click.native="dismiss(-1)">
                         <i class="ion-ios-close-empty"></i>
                     </ion-button>
                 </div>
@@ -70,7 +70,7 @@
         },
 
         methods: {
-            show() {
+            present() {
                 this.activated = true;
 
                 return new Promise((resolve, reject) => {

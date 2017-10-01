@@ -12,7 +12,7 @@
 
         created() {
             this.$events.$on('VonicNotification', (data) => {
-                $toast.show(data.message);
+                $toast.present(data.message);
             })
         },
     }

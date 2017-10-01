@@ -28,7 +28,7 @@
 
                 let popup = $popup.fromTemplate('<p style="margin-bottom: 0; text-align: center;">自定义内容</p>', options)
 
-                popup.show().then((buttonIndex) => {
+                popup.present().then((buttonIndex) => {
                     console.log(buttonIndex)
                 })
             },
@@ -50,7 +50,7 @@
 
                 let popup = $popup.fromTemplate(template, options)
 
-                popup.show().then((buttonIndex) => {
+                popup.present().then((buttonIndex) => {
                     console.log(buttonIndex)
                 })
 
@@ -60,7 +60,7 @@
                 // $popup
                 //   .fromTemplateUrl(path_to_template, options)
                 //   .then((popup) => {
-                //     popup.show()
+                //     popup.present()
                 //   })
 
             }

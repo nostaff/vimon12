@@ -72,7 +72,7 @@
             getZIndex () {
                 return zIndex++;
             },
-            show(options) {
+            present(options) {
                 let _options = objectAssign({}, this.defaultOptions, options)
                 this.message = _options.message;
                 this.closeButtonText = _options.closeButtonText;

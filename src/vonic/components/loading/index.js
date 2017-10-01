@@ -8,7 +8,7 @@ let vm = undefined
 
 class IonLoading {
 
-    show(options) {
+    present(options) {
         let rnd = Math.random().toString(36).substring(3, 6)
         let marker = `ion-loading-${rnd}`
         let container = document.querySelector('.ion-app');
@@ -18,11 +18,11 @@ class IonLoading {
         vm = new Vue(Loading).$mount(selector)
         vm.$el.setAttribute('ion-dialog', '')
 
-        return vm.show(options)
+        return vm.present(options)
     }
 
-    hide(role) {
-        if(vm) vm.hide(role)
+    dismiss(role) {
+        if(vm) vm.dismiss(role)
     }
 
 }

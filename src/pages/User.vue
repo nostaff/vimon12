@@ -154,11 +154,11 @@ export default {
     },
     methods: {
         showLogin() {
-            this.loginModal && this.loginModal.show()
+            this.loginModal && this.loginModal.present()
         },
 
         showRegister() {
-            this.registerModel && this.registerModel.show()
+            this.registerModel && this.registerModel.present()
         }
     }
 }

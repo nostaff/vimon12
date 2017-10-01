@@ -62,7 +62,7 @@
         },
 
         methods: {
-            show(options) {
+            present(options) {
                 let _options = objectAssign({}, this.defaultOptions, options)
                 this.showBackdrop = isTrueProperty(_options.showBackdrop);
                 this.dismissOnPageChange = isTrueProperty(_options.dismissOnPageChange);

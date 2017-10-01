@@ -100,7 +100,7 @@
                     ]
                 })
 
-                popup.show()
+                popup.present()
             }
         }
     }

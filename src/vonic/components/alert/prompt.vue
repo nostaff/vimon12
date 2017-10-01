@@ -69,7 +69,7 @@
             }
         },
         methods: {
-            show(options) {
+            present(options) {
                 let _options = objectAssign({}, this.defaultOptions, options)
                 this.title = _options.title;
                 this.message = _options.message;

@@ -66,7 +66,7 @@
   export default {
     methods: {
       onClick() {
-        $toast.show('clicked!')
+        $toast.present('clicked!')
       },
 
       next() {

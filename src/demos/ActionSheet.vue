@@ -58,7 +58,7 @@
     export default {
         methods: {
             normal() {
-                $actionSheet.show({
+                $actionSheet.present({
                     title: '标题',
                     cssClass: 'a b',
                     buttons: buttonItems
@@ -67,7 +67,7 @@
                 });
             },
             disableBackdrop() {
-                $actionSheet.show({
+                $actionSheet.present({
                     title: '标题',
                     buttons: buttonItems,
                     enableBackdropDismiss: false

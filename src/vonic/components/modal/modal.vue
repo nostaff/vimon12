@@ -55,7 +55,7 @@
 
         methods: {
 
-            show(options) {
+            present(options) {
                 let _options = objectAssign({}, this.defaultOptions, options)
                 // Sync to sub component
                 this.component = _options.component;

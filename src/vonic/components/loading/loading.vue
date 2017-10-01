@@ -42,7 +42,7 @@
             }
         },
         methods: {
-            show(options) {
+            present(options) {
                 let _options = objectAssign({}, this.defaultOptions, options)
                 this.content = _options.content;
                 this.spinner = _options.spinner;

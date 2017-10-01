@@ -7,16 +7,16 @@ class CascadePanelService {
         this._vm = undefined
     }
 
-    show(title, options) {
+    present(title, options) {
         createElement('von-cascade-panel')
         this._vm = new Vue(CascadePanel).$mount('[von-cascade-panel]')
         return timeout(50).then(() => {
-            return this._vm.show(title, options)
+            return this._vm.present(title, options)
         })
     }
 
-    hide() {
-        this._vm.hide()
+    dismiss() {
+        this._vm.dismiss()
     }
 }
 
