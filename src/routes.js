@@ -35,10 +35,11 @@ import DemoSpinner from './demos/Spinner'
 
 // Layout
 import DemoToolbar from './demos/Toolbar'
-import DemoHeader from './demos/Header'
+import DemoPage from './demos/Page'
 import DemoGrid from './demos/Grid'
 import DemoTabs from './demos/Tabs'
 import DemoSegment from './demos/Segment'
+import DemoMenu from './demos/Menu'
 
 // List
 import DemoList from './demos/List'
@@ -71,8 +72,16 @@ const routes = [
             { path: 'demo', name:'demo', component: DemoHome }
         ]
     },
+
+    // Components
     { path: '/demo/button', component: DemoButton },
     { path: '/demo/chip', component: DemoChip },
+    { path: '/demo/badge', component: DemoBadge },
+    { path: '/demo/fabs', component: DemoFabs },
+    { path: '/demo/icons', component: DemoIcon },
+    { path: '/demo/spinner', component: DemoSpinner },
+
+    // Form
     { path: '/demo/input', component: DemoInput },
     { path: '/demo/textarea', component: DemoTextarea },
     { path: '/demo/search', component: DemoSearch },
@@ -81,27 +90,23 @@ const routes = [
     { path: '/demo/checkbox', component: DemoCheckbox },
     { path: '/demo/toggle', component: DemoToggle },
     { path: '/demo/range', component: DemoRange },
-    { path: '/demo/badge', component: DemoBadge },
-    { path: '/demo/fabs', component: DemoFabs },
-    { path: '/demo/icons', component: DemoIcon },
-    { path: '/demo/dialog', component: DemoDialog },
-    { path: '/demo/toast', component: DemoToast },
-    { path: '/demo/spinner', component: DemoSpinner },
-
 
     // Layout
     { path: '/demo/toolbar', component: DemoToolbar },
-    { path: '/demo/header', component: DemoHeader },
+    { path: '/demo/page', component: DemoPage },
+    { path: '/demo/list', component: DemoList },
     { path: '/demo/grid', component: DemoGrid },
     { path: '/demo/tabs', component: DemoTabs },
     { path: '/demo/segment', component: DemoSegment },
+    { path: '/demo/menu', component: DemoMenu },
 
-    // List
-    { path: '/demo/list', component: DemoList },
+    // Data
     { path: '/demo/refresher', component: DemoRefresher },
     { path: '/demo/infinite-scroll', component: DemoInfiniteScroll },
 
     // Advanced
+    { path: '/demo/dialog', component: DemoDialog },
+    { path: '/demo/toast', component: DemoToast },
     { path: '/demo/swiper', component: DemoSwiper },
     { path: '/demo/swiper/default', component: DemoSwiperDefault },
     { path: '/demo/swiper/vertical', component: DemoSwiperVertical },
@@ -111,7 +116,7 @@ const routes = [
     { path: '/demo/modal', component: DemoModal },
     { path: '/demo/picker', component: DemoPicker },
 
-    {path: '*', component: NotFound}
+    { path: '*', component: NotFound }
 
 ]
 

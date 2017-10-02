@@ -1,19 +1,20 @@
 <template>
     <div class="ion-navbar toolbar" :class="['toolbar-'+theme, colorClass]">
         <div class="toolbar-background" :class="['toolbar-background-'+theme]"></div>
-        <ion-button role="bar-button" :class="['back-button','back-button-'+theme,'show-back-button']" :icon-only="!backText" @click.native="onBackClick" v-if="showBack">
+        <ion-button role="bar-button" :class="['back-button','back-button-'+theme,'show-back-button']" :icon-only="!backText" @click.native="onBackClick" v-if="isShowBack">
             <ion-icon :class="['back-button-icon','back-button-icon-'+theme]" :name="backIcon" v-if="backIcon"></ion-icon>
             <span :class="['back-button-text','back-button-text-'+theme]" v-if="backText && theme ==='ios'" v-text="backText"></span>
         </ion-button>
         <slot name="item-start"></slot>
         <slot name="item-end"></slot>
         <div class="toolbar-content" :class="['toolbar-content-'+theme]">
-            <slot></slot>
+            <slot><ion-title v-if="title">{{title}}</ion-title></slot>
         </div>
     </div>
 </template>
 
 <script>
+    import { isTrueProperty } from '../../utils/utils'
     import ThemeMixins from '../../themes/theme.mixins';
     export default {
         name: 'ion-navbar',
@@ -21,11 +22,14 @@
         data() {
             return {
                 componentName: 'ionNavbar',
+                roleName: 'toolbar',
+
+                isShowBack: isTrueProperty(this.showBack)
             };
         },
         props: {
             showBack: {
-                type: Boolean,
+                type: [Boolean, String],
                 default: false
             },
             backIcon: {
@@ -35,16 +39,6 @@
             backText: {
                 type: String,
                 default: 'Back'
-            }
-        },
-        computed: {
-            colorClass: function() {
-                switch (this.color) {
-                    case 'default':
-                        return '';
-                    default:
-                        return `toolbar-${this.theme}-${this.color}`;
-                }
             }
         },
         mounted () {

@@ -26,6 +26,8 @@
         data() {
             return {
                 componentName: 'ionToolbar',
+                roleName: 'toolbar',
+
                 activated: true
             };
         },
@@ -57,16 +59,6 @@
                 default: ''
             },
             onMenu: Function,
-        },
-        computed: {
-            colorClass: function() {
-                switch (this.color) {
-                    case 'default':
-                        return '';
-                    default:
-                        return `toolbar-${this.theme}-${this.color}`;
-                }
-            }
         },
         mounted () {
             if (this.$slots['item-start']) {

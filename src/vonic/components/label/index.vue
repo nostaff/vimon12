@@ -16,6 +16,7 @@
         mixins: [ThemeMixins],
         data() {
             return {
+                roleName: 'label',
                 viewLabel: true,
 
                 itemCmp: null
@@ -25,11 +26,6 @@
             fixed: Boolean,
             floating: Boolean,
             stacked: Boolean
-        },
-        computed: {
-            colorClass: function() {
-                return `label-${this.theme}-${this.color}`;
-            }
         },
         beforeMount() {
             //如果slot 没有值 则隐藏该label 不管任何label 的是

@@ -4,8 +4,7 @@
         <ion-content class="outer-content">
             <!-- Basic -->
             <ion-list>
-                <ion-list-header>基础</ion-list-header>
-                <ion-item-group></ion-item-group>
+                <ion-list-header>组件</ion-list-header>
                 <ion-item detail-push @click.native="$router.forward('/demo/button')">
                     按钮<ion-note slot="item-end">Button</ion-note>
                 </ion-item>
@@ -18,6 +17,16 @@
                 <ion-item detail-push @click.native="$router.forward('/demo/icons')">
                     图标<ion-note slot="item-end">Icons</ion-note>
                 </ion-item>
+                <ion-item detail-push @click.native="$router.forward('/demo/fabs')">
+                    浮动按钮<ion-note slot="item-end">FABs</ion-note>
+                </ion-item>
+                <ion-item detail-push @click.native="$router.forward('/demo/spinner')">
+                    加载提示 <ion-note slot="item-end">Spinner</ion-note>
+                </ion-item>
+            </ion-list>
+
+            <ion-list>
+                <ion-list-header>Form表单</ion-list-header>
                 <ion-item detail-push @click.native="$router.forward('/demo/input')">
                     输入框<ion-note slot="item-end">Input</ion-note>
                 </ion-item>
@@ -37,34 +46,22 @@
                     复选框<ion-note slot="item-end">Checkbox</ion-note>
                 </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/toggle')">
-                    开关按钮<ion-note slot="item-end">Toggle</ion-note>
+                    开关<ion-note slot="item-end">Toggle</ion-note>
                 </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/range')">
                     滑块<ion-note slot="item-end">Range</ion-note>
                 </ion-item>
-                <ion-item detail-push @click.native="$router.forward('/demo/fabs')">
-                    浮动按钮<ion-note slot="item-end">FABs</ion-note>
-                </ion-item>
-            </ion-list>
-
-            <ion-list title="列表">
-                <ion-item detail-push @click.native="$router.forward('/demo/list')">
-                    列表<ion-note slot="item-end">List</ion-note>
-                </ion-item>
-                <ion-item detail-push @click.native="$router.forward('/demo/refresher')">
-                    下拉刷新<ion-note slot="item-end">Refresher</ion-note>
-                </ion-item>
-                <ion-item detail-push @click.native="$router.forward('/demo/infinite-scroll')">
-                    无限加载 <ion-note slot="item-end">InfiniteScroll</ion-note>
-                </ion-item>
             </ion-list>
 
             <ion-list title="布局">
+                <ion-item detail-push @click.native="$router.forward('/demo/page')">
+                    页面<ion-note slot="item-end">Page</ion-note>
+                </ion-item>
+                <ion-item detail-push @click.native="$router.forward('/demo/list')">
+                    列表<ion-note slot="item-end">List</ion-note>
+                </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/toolbar')">
                     工具条<ion-note slot="item-end">Toolbar</ion-note>
-                </ion-item>
-                <ion-item detail-push @click.native="$router.forward('/demo/header')">
-                    页头<ion-note slot="item-end">Header</ion-note>
                 </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/grid')">
                     栅格 <ion-note slot="item-end">Grid</ion-note>
@@ -77,6 +74,15 @@
                 </ion-item>
                 <ion-item detail-push @click.native="$router.forward('/demo/sidebar')">
                     侧边栏 <ion-note slot="item-end">Sidebar</ion-note>
+                </ion-item>
+            </ion-list>
+
+            <ion-list title="数据加载">
+                <ion-item detail-push @click.native="$router.forward('/demo/refresher')">
+                    下拉刷新<ion-note slot="item-end">Refresher</ion-note>
+                </ion-item>
+                <ion-item detail-push @click.native="$router.forward('/demo/infinite-scroll')">
+                    无限加载 <ion-note slot="item-end">InfiniteScroll</ion-note>
                 </ion-item>
             </ion-list>
 

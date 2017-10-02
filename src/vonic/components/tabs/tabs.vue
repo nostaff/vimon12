@@ -48,6 +48,8 @@
         data () {
             return {
                 componentName: 'ionTabs',
+                roleName: 'tabs',
+
                 tabsCmp: null,
 
                 id: '',
@@ -58,11 +60,6 @@
                 _bottom: 0,
 
                 selectedTabIndex: -1,
-            }
-        },
-        computed: {
-            colorClass: function() {
-                return this.color ? `tabs-${this.theme}-${this.color}` : ''
             }
         },
         created() {

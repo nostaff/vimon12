@@ -1,6 +1,5 @@
 <template>
 	<ion-page class="sports">
-        <ion-navbar title="折扣"></ion-navbar>
         <ion-content>
 
             <panel-list :sport-list="sportsList"></panel-list>

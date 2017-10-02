@@ -1,8 +1,11 @@
 <template>
     <ion-page class="home">
-        <ion-navbar title="心理无忧">
-            <img src="../assets/logo.png" width="30" height="30" slot="item-start">
-        </ion-navbar>
+        <ion-header>
+            <ion-navbar>
+                <img src="../assets/logo.png" width="30" height="30" slot="item-start">
+                <ion-title>心理无忧</ion-title>
+            </ion-navbar>
+        </ion-header>
 
         <ion-content class="">
             <swiper ref="swiper"

@@ -15,18 +15,9 @@
         mixins: [ThemeMixins],
         data() {
             return {
-                componentName: 'ionToolbar'
+                componentName: 'ionToolbar',
+                roleName: 'toobar'
             };
-        },
-        computed: {
-            colorClass: function() {
-                switch (this.color) {
-                    case 'default':
-                        return '';
-                    default:
-                        return `toolbar-${this.theme}-${this.color}`;
-                }
-            }
         },
         mounted () {
             if (this.$slots['item-start']) {

@@ -25,6 +25,7 @@
         data () {
             return {
                 componentName: 'ionSegment',
+                roleName: 'segment',
 
                 isDisabled: isTrueProperty(this.disable),
                 currentValue: this.value,
@@ -32,11 +33,6 @@
                 buttons: [],
 
                 selectedIndex: -1,
-            }
-        },
-        computed: {
-            colorClass: function() {
-                return this.color ? `segment-${this.theme}-${this.color}` : ''
             }
         },
         created() {
