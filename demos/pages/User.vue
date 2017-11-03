@@ -73,8 +73,8 @@
 
 import { mapGetters } from 'vuex'
 import api from '../api'
-import IonPage from "../vonic/components/page/page";
-import IonContent from "../vonic/components/content/index";
+import IonPage from "../../src/components/page/page";
+import IonContent from "../../src/components/content/index";
 
 export default {
 

@@ -63,7 +63,7 @@ var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsS
 app.use(staticPath, express.static('./static'))
 
 // mock data
-app.use("/mock", express.static('./jsonData'))
+// app.use("/mock", express.static('./jsonData'))
 
 var uri = 'http://localhost:' + port
 

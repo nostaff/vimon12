@@ -21,7 +21,7 @@
 </template>
 <script>
     import Popage from "./Popage.vue";
-    import IonLabel from "../vonic/components/label/index.vue";
+    import IonLabel from "../../src/components/label/index.vue";
 
     export default {
 

@@ -8,7 +8,7 @@ import { DomController } from '../../platform/dom-controller';
 import { BlockerDelegate, GESTURE_GO_BACK_SWIPE, GestureController,  } from '../../gestures/gesture-controller';
 import { Side, assert, isRightSide, isTrueProperty } from '../../util/util';
 import { Keyboard } from '../../platform/keyboard';
-import { MenuContentGesture } from  './menu-gestures';
+import { MenuContentGesture } from './menu-gestures';
 import { Menu as MenuInterface } from '../app/menu-interface';
 import { MenuController } from '../app/menu-controller';
 import { MenuType } from './menu-types';

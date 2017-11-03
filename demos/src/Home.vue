@@ -122,9 +122,9 @@
 </template>
 
 <script>
-    import IonListHeader from "../vonic/components/list/list.header.vue";
-    import IonItemGroup from "../vonic/components/item/item.group.vue";
-    import IonList from "../vonic/components/list/list.vue";
+    import IonListHeader from "../../src/components/list/list.header.vue";
+    import IonItemGroup from "../../src/components/item/item.group.vue";
+    import IonList from "../../src/components/list/list.vue";
 
     export default {
         components: {

@@ -13,8 +13,8 @@
 </script>
 
 <style lang="scss">
-    @import './card';
-    @import './card.ios';
-    @import './card.md';
-    @import './card.wp';
+    @import 'card';
+    @import 'card.ios';
+    @import 'card.md';
+    @import 'card.wp';
 </style>

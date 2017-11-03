@@ -32,8 +32,8 @@
 
 
 <style lang="scss">
-    @import './app';
-    @import './app.ios';
-    @import './app.md';
-    @import './app.wp';
+    @import 'app';
+    @import 'app.ios';
+    @import 'app.md';
+    @import 'app.wp';
 </style>

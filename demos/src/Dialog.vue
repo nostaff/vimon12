@@ -26,7 +26,7 @@
     </ion-page>
 </template>
 <script>
-    import IonNote from "../vonic/components/note/index";
+    import IonNote from "../../src/components/note/index";
     export default {
         components: {IonNote},
         methods: {

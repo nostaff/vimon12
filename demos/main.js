@@ -1,7 +1,7 @@
 
 import Vue from 'vue'
 
-import Vonic from './vonic'
+import Vonic from '../src'
 Vue.use(Vonic)
 
 import sess from './lib/session'

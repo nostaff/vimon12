@@ -6,7 +6,7 @@
         </ion-item>
         <ion-item class="expert" v-for="expert in expertLists" :key="expert.id" link="/expert/10001">
             <!--<div class="item-avatar">-->
-                <!--<img :demos="expert.avatar" :alt="expert.title">-->
+                <!--<img :src="expert.avatar" :alt="expert.title">-->
                 <!--<h2>{{expert.name}}</h2>-->
                 <!--<span class="fc-green">{{expert.joinNum}}</span>人已咨询过 &nbsp;&nbsp;-->
                 <!--收到 <span class="fc-green">{{expert.joinNum}}</span>个好评-->
@@ -31,8 +31,8 @@
 </template>
 
 <script>
-    import IonAvatar from "../vonic/components/avatar/index";
-    import IonItem from "../vonic/components/item/item";
+    import IonAvatar from "../../src/components/avatar/index";
+    import IonItem from "../../src/components/item/item";
 export default {
     components: {
         IonItem,

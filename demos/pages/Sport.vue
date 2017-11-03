@@ -13,8 +13,8 @@
 //import panelList from '@/components/panelList'
 
 import { mapGetters } from 'vuex'
-import IonContent from "../vonic/components/content/index";
-import IonPage from "../vonic/components/page/page";
+import IonContent from "../../src/components/content/index";
+import IonPage from "../../src/components/page/page";
 
 export default {
 

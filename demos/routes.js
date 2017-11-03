@@ -1,10 +1,10 @@
 // Pages
-import Index from '@/pages/Index'
-import Home from '@/pages/Home'
-import Sport from '@/pages/Sport'
-import Travel from '@/pages/Travel'
+// import Index from '@/pages/Index'
+// import Home from '@/pages/Home'
+// import Sport from '@/pages/Sport'
+// import Travel from '@/pages/Travel'
 // import Detail from '@/pages/Detail'
-import User from '@/pages/User'
+// import User from '@/pages/User'
 // import Login from '@/pages/Login'
 // import Regist from '@/pages/Regist'
 // import UserInfo from '@/pages/UserInfo'
@@ -12,51 +12,51 @@ import User from '@/pages/User'
 // import Post from '@/pages/Post'
 // import UserMsg from '@/pages/UserMsg'
 // import Navbar from '@/pages/Navbar'
-import NotFound from '@/pages/NotFound'
+// import NotFound from '@/pages/NotFound'
 
-// demos
-import DemoHome from './demos/Home'
+// src
+import DemoHome from './src/Home'
 
 // Components
-import DemoButton from './demos/Button'
-import DemoChip from './demos/Chip'
-import DemoInput from './demos/Input'
-import DemoTextarea from './demos/TextArea'
-import DemoSearch from './demos/Search'
-import DemoSelect from './demos/Select'
-import DemoRadio from './demos/Radio'
-import DemoCheckbox from './demos/Checkbox'
-import DemoToggle from './demos/Toggle'
-import DemoRange from './demos/Range'
-import DemoBadge from './demos/Badge'
-import DemoIcon from './demos/Icon'
-import DemoFabs from './demos/FABs'
-import DemoSpinner from './demos/Spinner'
+import DemoButton from './src/Button'
+import DemoChip from './src/Chip'
+import DemoInput from './src/Input'
+import DemoTextarea from './src/TextArea'
+import DemoSearch from './src/Search'
+import DemoSelect from './src/Select'
+import DemoRadio from './src/Radio'
+import DemoCheckbox from './src/Checkbox'
+import DemoToggle from './src/Toggle'
+import DemoRange from './src/Range'
+import DemoBadge from './src/Badge'
+import DemoIcon from './src/Icon'
+import DemoFabs from './src/FABs'
+import DemoSpinner from './src/Spinner'
 
 // Layout
-import DemoToolbar from './demos/Toolbar'
-import DemoPage from './demos/Page'
-import DemoGrid from './demos/Grid'
-import DemoTabs from './demos/Tabs'
-import DemoSegment from './demos/Segment'
-import DemoMenu from './demos/Menu'
+import DemoToolbar from './src/Toolbar'
+import DemoPage from './src/Page'
+import DemoGrid from './src/Grid'
+import DemoTabs from './src/Tabs'
+import DemoSegment from './src/Segment'
+import DemoMenu from './src/Menu'
 
 // List
-import DemoList from './demos/List'
-import DemoRefresher from './demos/Refresher'
-import DemoInfiniteScroll from './demos/InfiniteScroll'
+import DemoList from './src/List'
+import DemoRefresher from './src/Refresher'
+import DemoInfiniteScroll from './src/InfiniteScroll'
 
 // Advanced
-import DemoDialog from './demos/Dialog'
-import DemoToast from './demos/Toast'
-import DemoSwiper from './demos/Swiper'
-import DemoSwiperDefault from './demos/SwiperDefault'
-import DemoSwiperVertical from './demos/SwiperVertical'
-import DemoPicker from './demos/Picker'
-import DemoPopup from './demos/Popup'
-import DemoPopover from './demos/Popover'
-import DemoActionSheet from './demos/ActionSheet'
-import DemoModal from './demos/Modal'
+import DemoDialog from './src/Dialog'
+import DemoToast from './src/Toast'
+import DemoSwiper from './src/Swiper'
+import DemoSwiperDefault from './src/SwiperDefault'
+import DemoSwiperVertical from './src/SwiperVertical'
+import DemoPicker from './src/Picker'
+import DemoPopup from './src/Popup'
+import DemoPopover from './src/Popover'
+import DemoActionSheet from './src/ActionSheet'
+import DemoModal from './src/Modal'
 
 const routes = [
     {
@@ -65,10 +65,10 @@ const routes = [
         component: Index,
         redirect: '/home',
         children: [
-            { path: 'home', name:'home', component: Home },
-            { path: 'sport', name:'sport', component: Sport },
-            { path: 'cart', name:'setting', component: Travel },
-            { path: 'user', name:'user', component: User },
+            // { path: 'home', name:'home', component: Home },
+            // { path: 'sport', name:'sport', component: Sport },
+            // { path: 'cart', name:'setting', component: Travel },
+            // { path: 'user', name:'user', component: User },
             { path: 'demo', name:'demo', component: DemoHome }
         ]
     },
