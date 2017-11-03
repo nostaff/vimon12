@@ -6,7 +6,7 @@
         </ion-item>
         <ion-item class="expert" v-for="expert in expertLists" :key="expert.id" link="/expert/10001">
             <!--<div class="item-avatar">-->
-                <!--<img :src="expert.avatar" :alt="expert.title">-->
+                <!--<img :demos="expert.avatar" :alt="expert.title">-->
                 <!--<h2>{{expert.name}}</h2>-->
                 <!--<span class="fc-green">{{expert.joinNum}}</span>人已咨询过 &nbsp;&nbsp;-->
                 <!--收到 <span class="fc-green">{{expert.joinNum}}</span>个好评-->

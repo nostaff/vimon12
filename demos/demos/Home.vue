@@ -72,8 +72,8 @@
                 <ion-item detail-push @click.native="$router.forward('/demo/segment')">
                     分段选项卡<ion-note slot="item-end">Segment</ion-note>
                 </ion-item>
-                <ion-item detail-push @click.native="$router.forward('/demo/sidebar')">
-                    侧边栏 <ion-note slot="item-end">Sidebar</ion-note>
+                <ion-item detail-push @click.native="$router.forward('/demo/menu')">
+                    侧边栏/菜单 <ion-note slot="item-end">Menu</ion-note>
                 </ion-item>
             </ion-list>
 

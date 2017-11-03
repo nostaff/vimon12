@@ -233,17 +233,17 @@
                 editing: false,
                 editButton: 'Edit',
                 chats: [{
-                        img: 'http://ionicframework.com/docs/demos/src/item-sliding/www/assets/avatar-cher.png',
+                        img: 'http://ionicframework.com/docs/demos/demos/item-sliding/www/assets/avatar-cher.png',
                         name: 'Cher',
                         message: 'Ugh. As if.',
                         time: '9:38 pm'
                     }, {
-                        img: 'http://ionicframework.com/docs/demos/src/item-sliding/www/assets/avatar-dionne.png',
+                        img: 'http://ionicframework.com/docs/demos/demos/item-sliding/www/assets/avatar-dionne.png',
                         name: 'Dionne',
                         message: 'Mr. Hall was way harsh.',
                         time: '8:59 pm'
                     }, {
-                        img: 'http://ionicframework.com/docs/demos/src/item-sliding/www/assets/avatar-murray.png',
+                        img: 'http://ionicframework.com/docs/demos/demos/item-sliding/www/assets/avatar-murray.png',
                         name: 'Murray',
                         message: 'Excuse me, "Ms. Dione."',
                         time: 'Wed'

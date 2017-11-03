@@ -4,23 +4,15 @@
         <ion-navbar title="购物车"></ion-navbar>
         <ion-content>
 
-		    <travel-list :travel-lists="travelsList"></travel-list>
-
         </ion-content>
 	</ion-page>
 </template>
 
 <script>
 
-import travelList from '@/components/travelList'
-
 import { mapGetters } from 'vuex'
 
 export default {
-
-	components: {
-        travelList
-	},
     created() {
         if (this.travelsList.length == 0) {
             this.$store.dispatch('getTravelsList')
