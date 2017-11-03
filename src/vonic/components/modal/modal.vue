@@ -1,6 +1,6 @@
 <template>
     <div class="ion-modal show-page" :class="['modal-'+theme, cssClass]" role="dialog" style="z-index: 10010;">
-        <ion-backdrop :class="{'backdrop-no-tappable':!enableBackdropDismiss}"
+        <ion-backdrop :enableBackdropDismiss="enableBackdropDismiss"
                       v-if="showBackdrop"
                       v-show="activated"
                       @click.native="bdClick"></ion-backdrop>

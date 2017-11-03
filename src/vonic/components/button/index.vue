@@ -8,7 +8,7 @@
     </button>
 </template>
 <script>
-    import { isTrueProperty } from '../../utils/utils'
+    import { isTrueProperty, isPresent } from '../../utils/utils'
     import ThemeMixins from '../../themes/theme.mixins';
     export default {
         name: 'ion-button',
@@ -18,6 +18,8 @@
                 type: String,
                 default: 'button'
             },
+            menuClose: String,
+
             outline: Boolean,
             clear: Boolean,
             solid: Boolean,
@@ -46,6 +48,7 @@
                 shape: null,        // round/fab
                 display: null,      // block/full
                 decorator: null,    // strong
+                menutoggle: null,    // menutoggle
 
                 isItemCover: false
             }
@@ -54,16 +57,13 @@
             let parentName = this.$parent.$data.componentName;
 
             // 如果是在组件 buttons 下则修改前缀为 bar-button-
-            if (parentName === 'ionButtons' || parentName === 'ionToolbar') {
+            if (parentName === 'ionButtons' || parentName === 'ionToolbar' || parentName === 'ionNavbar') {
                 this.roleName = 'bar-button';
             }
 
             if (this.role === 'radio' || this.role === 'checkbox' || this.role === 'select') {
                 this.roleName = 'item-cover';
             }
-//
-//            this.style = this.clear ? 'clear' : (this.outline ? 'outline' : 'default')
-//            this.isItemCover = this.roleName === 'item-cover';
 
             this.getProps();
         },
@@ -83,9 +83,11 @@
                 isTrueProperty(this.solid) && (this.style = 'solid')
 
                 isTrueProperty(this.round) && (this.shape = 'round')
-                isTrueProperty(this.full) && (this.shape = 'full')
-                isTrueProperty(this.block) && (this.shape = 'block')
-                isTrueProperty(this.menuToggle) && (this.shape = 'menutoggle')
+
+                isTrueProperty(this.full) && (this.display = 'full')
+                isTrueProperty(this.block) && (this.display = 'block')
+
+                isTrueProperty(this.menuToggle) && (this.menutoggle = 'menutoggle')
 
                 isTrueProperty(this.strong) && (this.decorator = 'strong')
             },
@@ -101,6 +103,8 @@
                     this.setClass(this.display, assignCssClass); // button-full
                     this.setClass(this.size, assignCssClass); // button-small
                     this.setClass(this.decorator, assignCssClass); // button-strong
+                    this.setClass(this.menutoggle, assignCssClass); // button-menutoggle
+
                     this.updateColor(this.color, assignCssClass); // button-secondary, bar-button-secondary
                 }
             },

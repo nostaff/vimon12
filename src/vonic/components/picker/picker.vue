@@ -1,6 +1,6 @@
 <template>
     <div role="dialog" class="ion-picker-cmp" :class="['picker-'+theme, cssClass]" style="z-index: 9999;">
-        <ion-backdrop @click.native="bdClick()" v-show="activated"></ion-backdrop>
+        <ion-backdrop @click.native="bdClick()" :isActive="activated"></ion-backdrop>
         <transition name="ion-picker-fadeup">
             <div class="picker-wrapper" v-show="activated">
                 <div class="picker-toolbar" v-if="buttons">

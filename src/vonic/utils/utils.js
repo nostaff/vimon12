@@ -393,6 +393,10 @@ export function removeClass (element, name) {
     }
 }
 
+export function firstUpperCase (str) {
+    return str.toString()[0].toUpperCase() + str.toString().slice(1)
+}
+
 export function parsePxUnit(val) {
     return (val.indexOf('px') > 0) ? parseInt(val, 10) : 0;
 }

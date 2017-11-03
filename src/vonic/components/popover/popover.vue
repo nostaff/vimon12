@@ -1,7 +1,7 @@
 <template>
     <div class="ion-popover" :class="['popover-'+theme, cssClass]" style="z-index: 9999;">
         <ion-backdrop
-                :class="{'backdrop-no-tappable':!enableBackdropDismiss}"
+                :enableBackdropDismiss="enableBackdropDismiss"
                 v-if="showBackdrop" v-show="activated" @click.native="bdClick()"></ion-backdrop>
         <transition name="ion-popover-fadeup">
             <div class="popover-wrapper" v-show="activated">

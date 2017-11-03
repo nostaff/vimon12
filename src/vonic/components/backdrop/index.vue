@@ -1,13 +1,11 @@
 <template>
     <transition name="ion-backdrop-fade">
-        <div class="ion-backdrop" role="presentation" v-show="activated"></div>
+        <div class="ion-backdrop" :class="{'backdrop-no-tappable': !isEnableBackdropDismiss}" role="presentation" v-show="activated"></div>
     </transition>
 </template>
-<script>
-    import util from '../../utils/util';
-    const disableCls = 'pointer--none';
-    const enableCls = 'pointer--auto';
 
+<script>
+    import { isTrueProperty } from '../../utils/utils'
     const preventDefault = (e) => {
         e.preventDefault()
     }
@@ -16,7 +14,23 @@
         name: 'ion-backdrop',
         data() {
             return {
-                activated: false
+                activated: isTrueProperty(this.isActive),
+                isEnableBackdropDismiss: isTrueProperty(this.enableBackdropDismiss)
+            }
+        },
+        props: {
+            isActive:{
+                type: [Boolean, String],
+                default: false
+            },
+            enableBackdropDismiss:{
+                type: [Boolean, String],
+                default: true
+            },
+        },
+        watch: {
+            isActive (val) {
+                this.activated = isTrueProperty(val);
             }
         },
         methods: {
@@ -38,6 +52,7 @@
         }
     };
 </script>
+
 <style lang="scss">
     @import 'backdrop';
 </style>
