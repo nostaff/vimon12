@@ -8,12 +8,12 @@ Vue.use(VueRouter)
 import './components/nav/nav.js'
 
 // import './components/backdrop'
-import './services/popup/index.js'
+import './components/popup/index.js'
 // import './services/cascadepanel/index.js'
 // import './services/sidebar/index.js'
 // import './services/modal/tabbar.js'
 
-import './components/actionsheet/index.js'
+import './components/action-sheet/index.js'
 import './components/alert/index.js'
 import './components/loading/index.js'
 import './components/toast/index.js'

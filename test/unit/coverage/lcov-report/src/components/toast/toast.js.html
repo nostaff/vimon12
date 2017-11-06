@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/toast/toast.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">src/components/toast/</a> toast.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10.34% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>3/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10.34% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>3/29</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * @component Toast
+ * @description
+ *
+ * ## 弹出层 / Toast提示组件
+ *
+ * Toast是移动端比较灵活的通知组件, 可以用它来处理反馈信息或者展示系统消息. Toast组件可以出现在内容的上面/下面/中间, 可以定时关闭, 也可以手动点击Toast的关闭按钮, 形式较为灵活.
+ *
+ * ### 还有
+ *
+ * Toast组件本身并不是单例对象, 但是调用指纹都为`Toast('Toast Bottom Only String')`, 因此可能会问:
+ * 如何程序关闭toast呢? 目前, 关闭Toast只有三个方法:
+ *
+ * 1. duration 过期时间
+ * 2. showCloseButton 关闭按钮
+ * 3. 当上面两个都设置了, 则只执行第二个配置
+ * 4. `let toast = Toast('Toast Bottom Only String')`返回toast实例, 执行`toast.dismiss()`执行关闭
+ *
+ * 因此使用Toast需要知道这一点.
+ *
+ *
+ * ### 此外
+ *
+ * - 在Toast的传入参数中定义`onDismiss`回调函数, 可以在Toast关闭及动画结束后可以进行一些操作.
+ * - `dismissOnPageChange`表示如果路由切换自动关闭Toast, 这个属性默认值为`false`.
+ *
+ * ### 实例化Toast的方法
+ *
+ * #### 1. 只传入Message
+ *
+ *
+ *```
+ Toast('Bottom was added successfully')
+ *```
+ *
+ * #### 2. 传入Message和Duration
+ *
+ *```
+ Toast('Bottom was added successfully',1000)
+ *```
+ *
+ * #### 3. 传入Options对象
+ *
+ *```
+ Toast({
+    message: 'Bottom was added successfully',
+    duration: 3000,
+    position: 'bottom',
+    dismissOnPageChange: true,
+    onDismiss () {
+      console.debug('2 onDismiss in promise success!')
+    }
+ })
+ Toast({
+    message: 'Top with Button was added successfully',
+    duration: 3000, // 这个不生效
+    position: 'top',
+    showCloseButton: true,
+    closeButtonText: '好的',
+    cssClass: 'showCloseBtnToastCssClass',
+    dismissOnPageChange: true,
+    onDismiss () {
+      console.debug('5 onDismiss in promise success!')
+    }
+ })
+ *```
+ *
+ * @props {string} message - Toast显示的message, 如果文本过程则折行并自动撑开容器
+ * @props {number} [duration=3000] - Toast开启时间, 过期后关闭
+ * @props {string} [position="bottom"] - Toast开启放置的位置. 可以是: "top", "middle", "bottom".
+ * @props {string} [cssClass] - 额外的样式定义, 多个样式使用空格隔开
+ * @props {boolean} [showCloseButton=false] - 是否显示关闭按钮
+ * @props {string} [closeButtonText='Close'] - 关闭按钮的文字, 这里默认是Close
+ * @props {boolean} [dismissOnPageChange=false] - 当导航切换时, 是否自动关闭, 默认不关闭
+ * @props {string} [mode='ios'] - 模式
+ * @props {string} [onDismiss=noop] - 当关闭动画结束时执行的函数
+ * @props {string} [type=''] - (支付宝/DingTalk) toast 类型，展示相应图标，类型可选值： success / fail
+ *
+ * @demo #/toast
+ */
+&nbsp;
+import Vue from 'vue'
+import { isObject, isString } from '../../util/util'
+import ToastComponent from './toast.vue'
+&nbsp;
+const Toast = Vue.extend(ToastComponent)
+const DOM_INSERT_POSITION = 'toastPortal' // 插入的DOM位置
+const DOM_INSERT_POSITION_FALLBACK = 'app' // fallback选项
+&nbsp;
+/**
+ * 创建ToastInstance, 并且根据传参指纹构建对象
+ * @param {any} arguments - 传入参数
+ * @private
+ * */
+function ToastFactory () <span class="fstat-no" title="function not covered" >{</span>
+  let _args = <span class="cstat-no" title="statement not covered" >Array.from(arguments)</span>
+  let propsData = <span class="cstat-no" title="statement not covered" >{}</span>
+&nbsp;
+  // get el position
+  let _insertPosition =
+<span class="cstat-no" title="statement not covered" >    document.getElementById(DOM_INSERT_POSITION) ||</span>
+    document.getElementById(DOM_INSERT_POSITION_FALLBACK) ||
+    document.body
+  let el = <span class="cstat-no" title="statement not covered" >_insertPosition.appendChild(document.createElement('div'))</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (_args.length === 2) {</span>
+<span class="cstat-no" title="statement not covered" >    propsData = {</span>
+      message: _args[0],
+      duration: _args[1]
+    }
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (_args.length === 1 &amp;&amp; isString(_args[0])) {</span>
+<span class="cstat-no" title="statement not covered" >    propsData = {</span>
+      message: _args[0]
+    }
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (_args.length === 1 &amp;&amp; isObject(_args[0])) {</span>
+<span class="cstat-no" title="statement not covered" >    propsData = _args[0]</span>
+  }
+&nbsp;
+  let h5Toast = <span class="cstat-no" title="statement not covered" >new Toast({ el, propsData: propsData })</span>
+<span class="cstat-no" title="statement not covered" >  return {</span>
+    present () {
+<span class="cstat-no" title="statement not covered" >      return new Promise(resolve =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+        let isHandled =
+<span class="cstat-no" title="statement not covered" >          !propsData.isH5 &amp;&amp;</span>
+          window.VM &amp;&amp;
+          window.VM.platform &amp;&amp;
+          window.VM.platform.showToast &amp;&amp;
+          window.VM.platform.showToast(propsData)
+<span class="cstat-no" title="statement not covered" >        if (isHandled) {</span>
+<span class="cstat-no" title="statement not covered" >          resolve()</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >          console.debug('Toast:present 组件使用H5模式!')</span>
+<span class="cstat-no" title="statement not covered" >          h5Toast.present().then(() =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >            resolve()</span>
+          })
+        }
+      })
+    },
+    dismiss () {
+<span class="cstat-no" title="statement not covered" >      return new Promise(resolve =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >        window.VM &amp;&amp;</span>
+          window.VM.platform &amp;&amp;
+          window.VM.platform.hideToast &amp;&amp;
+          window.VM.platform.hideToast()
+<span class="cstat-no" title="statement not covered" >        h5Toast.dismiss().then(() =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >          resolve()</span>
+        })
+      })
+    }
+  }
+}
+&nbsp;
+/**
+ * 对外的Toast构建部分
+ * @function present
+ * @description 打开Toast
+ * @param {object} args - 传入参数
+ * @param {string} args.message - The message for the toast. Long strings will wrap and the toast container will
+ *   expand.
+ * @param {number} [args.duration=3000] - How many milliseconds to wait before hiding the toast.
+ * @param {string} [args.position="bottom"] - The position of the toast on the screen. Accepted values: "top",
+ *   "middle", "bottom".
+ * @param {string} [args.cssClass] - Additional classes for custom styles, separated by spaces.
+ * @param {boolean} [args.showCloseButton=false] - Whether or not to show a button to close the toast.
+ * @param {string} [args.closeButtonText='Close'] - Text to display in the close button.
+ * @param {boolean} [args.dismissOnPageChange=false] - Whether to dismiss the toast when navigating to a new page or
+ *   nav back.
+ * @return {ToastInstance} 返回Toast的实例
+ * @private
+ * */
+export default function (...args) <span class="fstat-no" title="function not covered" >{</span>
+  let _instance = <span class="cstat-no" title="statement not covered" >ToastFactory(...args)</span>
+  // 自动开启
+<span class="cstat-no" title="statement not covered" >  _instance.present()</span>
+<span class="cstat-no" title="statement not covered" >  return _instance</span>
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Nov 04 2017 21:46:17 GMT+0800 (CST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

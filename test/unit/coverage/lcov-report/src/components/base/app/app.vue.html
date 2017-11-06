@@ -1,0 +1,905 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/base/app/app.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">src/components/base/app/</a> app.vue
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>56/56</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">80% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>28/35</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>9/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>56/56</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+    &lt;article class="ion-app" :version="version"
+             :class="[modeClass,platformClass,hoverClass,{'disable-scroll':isScrollDisabled}]"&gt;
+        &lt;!--app-root start--&gt;
+        &lt;section class="app-root"&gt;
+            &lt;slot&gt;&lt;/slot&gt;
+        &lt;/section&gt;
+        &lt;!--modal portal--&gt;
+        &lt;aside id="modalPortal"&gt;&lt;/aside&gt;
+        &lt;!--蒙层指示,action-sheet,choose-sheet,picker等 sheetPortal--&gt;
+        &lt;aside id="sheetPortal"&gt;&lt;/aside&gt;
+        &lt;!--alert portal--&gt;
+        &lt;aside id="alertPortal"&gt;&lt;/aside&gt;
+        &lt;!--loading portal--&gt;
+        &lt;aside id="loadingPortal"&gt;&lt;/aside&gt;
+        &lt;!--toast portal--&gt;
+        &lt;aside id="toastPortal"&gt;&lt;/aside&gt;
+        &lt;!--当页面被点击的时候，防止在动画的过程中再次点击页面导致bug的蒙层，全局最高！z-index=99999--&gt;
+        &lt;aside class="click-block"
+               :class="[{'click-block-enabled':isClickBlockEnabled}]"&gt;&lt;/aside&gt;
+        &lt;slot name="outer"&gt;&lt;/slot&gt;
+    &lt;/article&gt;
+&lt;/template&gt;
+&lt;style lang="less"&gt;
+    @import "app.less";
+    // Page Animate
+    // --------------------------------------------------
+    @import "transition/fade-bottom-transition";
+    @import "transition/fade-right-transition";
+    @import "transition/fade-transition";
+    @import "transition/ios-transition";
+    @import "transition/zoom-transition";
+&lt;/style&gt;
+&lt;script type="text/javascript"&gt;
+  /**
+   * @component Base/App
+   * @description
+   *
+   *  ## 基础组件 / App组件
+   *
+   * App组件是Vimo框架的根组件,用于管理及控制整个页面的状态.
+   * 控制App行为的方法已挂载到`vue.prototype.$app`上, 所以在页面中直接像这样使用, 例如:
+   *
+   * ```
+   * this.$app.setTitle('Hello World'); // 设置title
+   * this.$app.isScrolling; // 获取可滚动状态
+   * this.$app.isEnabled; // 获取可点击状态
+   * ```
+   *
+   * 此外, 弹出层挂载点也在此组件中列举, 可以用id搜索到这些挂载点:
+   *
+   * - modalPortal
+   * - sheetPortal
+   * - alertPortal
+   * - loadingPortal
+   * - toastPortal
+   *
+   * ### 何为基础组件
+   *
+   * 因为业务的复杂多样, 如果组件全部加载, 会造成初始化的下载包过大, 所以基础组件(SPA应用框架组件)在安装Vimo的时候就全局安装, 不需要在业务中再次安装. 除此之外的组件则要按需引入.
+   *
+   * 布局组件就是基础组件, 比如: **App/Nav/Navbar/Page/Header/Footer/Content**, 一共7个. 这些组件不是业务组件, 组件由vimo初始化安装完毕. 此外, 如果不使用布局组件也没关系. 通过布局组件提供的方法就能知道它的作用了.
+   *
+   * - App: 根组件, 用于设置页面点击/滚动状态/设置文档title/设置根位置的样式
+   * - Nav: 导航组件, 用于设置页面切换属性: 转场动画/转场是否显示Indicator/和Menus配合
+   * - Page: 页面容器, 因为Vue要求业务template必须要使用一个根元素包裹, 故Page就是这个作用. 此外, 通过页面切换定义z-index层级.
+   * - Header: 顾名思义, 页面的头部, 这部分不会页面滚动, 内部可安插Toolbar/Navbar等组件
+   * - Footer: 使用方法和Header一致
+   * - Content: 页面展示部分的容器, 可以使滚动内容, 也可以是固定内容, 详情参考组件介绍
+   * - Nabvar: 该组件也在基础组件中, Navbar存在的意义是定义内容Title组件, 用于更新文档的Title. 页面切换在左侧显示后退按钮, 也可定义多个按钮. 使用方法和 Toolbar 一致.
+   *
+   * ### 可用状态(参考示例)
+   *
+   * - isScrolling  获取当前可滚动状态
+   * - isEnabled    获取可点击状态
+   *
+   * ### 可在全局使用的公共样式
+   *
+   * -Text Alignment
+   *    - [text-left]          - 文本左对齐
+   *    - [text-center]        - 文本居中
+   *    - [text-right]         - 文本右对齐
+   *    - [text-justify]       - 文本右对齐
+   *    - [text-nowrap]        - 文本不换行
+   *
+   *
+   * -Text Transformation
+   *    - [text-uppercase]     - 文本大写
+   *    - [text-lowercase]     - 文本小写
+   *    - [text-capitalize]    - 文本首字母大写
+   *
+   * -Normal
+   *    - [padding]         - 结构增加padding, 默认16px
+   *    - [no-padding]      - 结构去除padding
+   *    - [hidden]          - display:none
+   *    - .hidden           - display:none
+   *
+   * @props {String} [mode='ios'] - 模式, 用于在根处定义app的平台及样式
+   *
+   *
+   * @slot 空               默认插入到正常页面中
+   * @slot [outer]         插入到最外部， 用于定义在所有页面和弹出层之上的结构组件，比如：landscape-prompt组件
+   *
+   * @demo #/app
+   * */
+&nbsp;
+  import ClickBlock from './click-block'
+  import { setElementClass, isString, isPresent } from '../../../util/util'
+&nbsp;
+  const CLICK_BLOCK_BUFFER_IN_MILLIS = 64       // click_blcok等待时间
+  const CLICK_BLOCK_DURATION_IN_MILLIS = 700    // 时间过后回复可点击状态
+  const clickBlockInstance = new ClickBlock()
+&nbsp;
+  let scrollDisTimer = null                     // 计时器
+  export default {
+    name: 'App',
+    data () {
+      return {
+        disabledTimeRecord: 0,          // 禁用计时
+        scrollTimeRecord: 0,            // 滚动计时
+        isScrollDisabled: false,        // 控制页面是否能滚动
+        isClickBlockEnabled: false,     // 控制是否激活 '冷冻'效果 click-block-enabled
+&nbsp;
+        isScrolling: false,             // 可滚动状态
+        isEnabled: true,                // 可点击状态
+&nbsp;
+        version: isPresent(window.VM) &amp;&amp; window.VM.version
+      }
+    },
+    props: {
+      mode: {
+        type: String,
+        default () { return this.$config &amp;&amp; this.$config.get('mode', 'ios') |<span class="branch-2 cbranch-no" title="branch not covered" >| 'ios</span>' }
+      }
+    },
+    computed: {
+      modeClass () {
+        return `${this.mode}`
+      },
+      platformClass () {
+        return `platform-${this.mode}`
+      },
+      hoverClass () {
+        let _isMobile = navigator.userAgent.match(/AppleWebKit.*Mobile.*/)
+        return _isMobile <span class="branch-0 cbranch-no" title="branch not covered" >? 'disable-hover</span>' : 'enable-hover'
+      }
+    },
+    methods: {
+      /**
+       * @function setEnabled
+       * @description
+       * 设置当前页面是否能点击滑动, 一般使用在像ActionSheet/Alert/Modal等弹出会出现transition动画,
+       * 当transition动画进行中，页面是锁定的不能点击，因此使用该函数设定App的状态, 保证动画过程中, 用户不会操作页面
+       * @param {boolean} isEnabled  - `true` for enabled, `false` for disabled
+       * @param {number} duration - isEnabled=false的过期时间 当 `isEnabled` 设置为`false`, 则duration之后，`isEnabled`将自动设为`true`
+       *
+       * @example
+       * this.$app &amp;&amp; this.$app.setEnabled(false, 400) -&gt; 400ms内页面不可点击, 400ms过后可正常使用
+       * this.$app &amp;&amp; this.$app.setEnabled(true) -&gt; 64ms后解除锁定
+       * */
+      setEnabled (isEnabled, duration = CLICK_BLOCK_DURATION_IN_MILLIS) {
+        this.disabledTimeRecord = (isEnabled ? 0 : Date.now() + duration)
+        this.isEnabled = isEnabled
+        if (isEnabled) {
+          // disable the click block if it's enabled, or the duration is tiny
+          clickBlockInstance.activate(false, CLICK_BLOCK_BUFFER_IN_MILLIS).then(() =&gt; {
+            this.isEnabled = true
+          })
+        } else {
+          // show the click block for duration + some number
+          clickBlockInstance.activate(true, duration + CLICK_BLOCK_BUFFER_IN_MILLIS).then(() =&gt; {
+            this.isEnabled = true
+          })
+        }
+      },
+&nbsp;
+      /**
+       * @function setDisableScroll
+       * @description
+       * 是否点击滚动, 这个需要自己设置时间解锁
+       * @param {Boolean} isScrollDisabled - 是否禁止滚动点击 true:禁止滚动/false:可以滚动
+       * @param {number} duration - 时间过后则自动解锁
+       * @example
+       * this.$app &amp;&amp; this.$app.setDisableScroll(true, 400) -&gt; 400ms内页面不可滚动, 400ms过后可正常使用
+       * this.$app &amp;&amp; this.$app.setDisableScroll(false) -&gt;立即解除锁定
+       * */
+      setDisableScroll (isScrollDisabled, duration = 0) {
+        if (duration &gt; 0 &amp;&amp; isScrollDisabled) {
+          this.isScrollDisabled = isScrollDisabled
+          window.clearTimeout(scrollDisTimer)
+          scrollDisTimer = window.setTimeout(() =&gt; {
+            this.isScrollDisabled = false
+          }, duration)
+        }
+      },
+&nbsp;
+      /**
+       * @function setClass
+       * @description
+       * 设置根组件的class样式, 比如全局颜色替换或者结构变更
+       * @param {string} className - 样式名称
+       * @param {boolean} [isAdd=false] - 是否添加
+       */
+      setClass (className, isAdd = false) {
+      <span class="missing-if-branch" title="else path not taken" >E</span>  if (className) {
+          setElementClass(this.$el, className, isAdd)
+        }
+      },
+&nbsp;
+      /**
+       * @function setDocTitle
+       * @param {String|Object}  _title - 设置标题
+       * @param {String}  _title.title - 标题
+       * @description
+       * 设置document.title的值, 如果传入的是string, 则为title的字符串, 如果是对象, 则title字段为标题名称
+       * */
+      setDocTitle (_title) {
+      <span class="missing-if-branch" title="else path not taken" >E</span>  if (isString(_title)) {
+          _title = {title: _title}
+        }
+        // BugFixed: 如果组件不是通过异步加载, 则他的执行顺序会很靠前, 此时平台的方法并未初始化完毕. 因此异步定时后在执行
+        window.setTimeout(() =&gt; {
+          let isHandled = !!this.$platform &amp;&amp; !!this.$platform.setNavbarTitle &amp;&amp; this.$platform.setNavbarTitle(_title)
+          if (!isHandled) {
+            if (this.$platform &amp;&amp; this.$platform.platforms().length &lt;= 2) {
+              // PC端
+              document.title = _title.title |<span class="branch-1 cbranch-no" title="branch not covered" >| '</span>'
+            } else {
+              // 利用iframe的onload事件刷新页面
+              document.title = _title.title
+              let iframe = document.createElement('iframe')
+              // 空白图片
+              iframe.src = 'data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=='
+              iframe.style.visibility = 'hidden'
+              iframe.style.width = '1px'
+              iframe.style.height = '1px'
+              iframe.onload = function () {
+                window.setTimeout(function () {
+                  document.body.removeChild(iframe)
+                }, 0)
+              }
+              document.body.appendChild(iframe)
+            }
+          }
+        }, 16 * 5)
+      }
+    },
+    created () {
+      console.assert(this.$platform, `The Component of &lt;App&gt; need 'platform' instance`)
+      console.assert(this.$config, `The Component of &lt;App&gt; need 'config' instance`)
+&nbsp;
+      /**
+       * $app对外方法
+       * */
+      let proto = Reflect.getPrototypeOf(Reflect.getPrototypeOf(this))
+      proto.$app = this
+&nbsp;
+      const _this = this
+      this.$events.$on('onScrollStart', () =&gt; {
+        _this.isScrolling = true
+      })
+      this.$events.$on('onScroll', () =&gt; {
+        _this.isScrolling = true
+      })
+      this.$events.$on('onScrollEnd', () =&gt; {
+        _this.isScrolling = false
+      })
+&nbsp;
+      // 设置当前可点击
+      this.isClickBlockEnabled = true
+    },
+    mounted () {
+    <span class="missing-if-branch" title="else path not taken" >E</span>  if (window.VM) {
+        window.VM.$app = this
+        // 用于判断组件是否在VM的组件树中
+        window.VM.$root = this.$root
+      }
+    }
+  }
+&lt;/script&gt;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Nov 04 2017 21:46:17 GMT+0800 (CST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

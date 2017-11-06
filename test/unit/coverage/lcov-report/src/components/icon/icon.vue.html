@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/icon/icon.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">src/components/icon/</a> icon.vue
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">64.52% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>20/31</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">62.16% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>23/37</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">66.67% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>20/30</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+    &lt;i class="ion-icon"
+       :class="[colorClass,nameClass,itemClass,{'hide':hidden}]"&gt;&lt;/i&gt;
+&lt;/template&gt;
+&lt;style lang="less"&gt;
+    @import "icon";
+    @import "icon.ios.less";
+    @import "icon.md.less";
+&lt;/style&gt;
+&lt;script type="text/javascript"&gt;
+  export default {
+    name: 'Icon',
+    props: {
+      /**
+       * 指定图标使用模式
+       * */
+      mode: {
+        type: String,
+        default () { return this.$config &amp;&amp; this.$config.get('iconMode') |<span class="branch-2 cbranch-no" title="branch not covered" >| 'ios</span>' }
+      },
+      /**
+       * 按钮color：
+       * primary:    #007aff,
+       * secondary:  #32db64,
+       * danger:     #d91e18,
+       * light:      #f4f4f4,
+       * dark:       #222,
+       * */
+      color: String,
+      /**
+       * icon的名字, 默认的名字
+       * */
+      name: [String, Boolean],
+&nbsp;
+      /**
+       * 激活状态的图标样式,
+       * 如果未定义,则为:
+       * ion -&gt; `${this.name}-outline`
+       * */
+      activeName: String,
+&nbsp;
+      /**
+       * 表示当前的图标的状态
+       *
+       * 特殊情况:
+       * 当定义了activeIcon时, 则使用这个字段的值作为激活状态的图标
+       *
+       * 在name中设置normal状态的图标
+       * 在activeName中设置激活状态的图标样式
+       *
+       * */
+      isActive: {
+        type: Boolean,
+        default: true
+      },
+&nbsp;
+      ios: String,
+      md: String
+    },
+    data () {
+      return {
+        nameClass: '', // 最终显示的nameClass
+        itemClass: '',
+        nameValue: null,
+        hidden: false // 是否隐藏图标
+      }
+    },
+    watch: {
+      isActive () {
+<span class="cstat-no" title="statement not covered" >        this.update(</span>)
+      },
+      name () {
+<span class="cstat-no" title="statement not covered" >        this.update(</span>)
+      },
+      activeName () {
+<span class="cstat-no" title="statement not covered" >        this.update(</span>)
+      },
+      ios () {
+<span class="cstat-no" title="statement not covered" >        this.update(</span>)
+      },
+      md () {
+<span class="cstat-no" title="statement not covered" >        this.update(</span>)
+      }
+    },
+    computed: {
+      // 颜色
+      colorClass () {
+        return this.color ?<span class="branch-0 cbranch-no" title="branch not covered" > (`icon-${this.mode}-${this.color}</span>`) : ''
+      }
+    },
+    methods: {
+      getNameValue (val) {
+        if (!(/^md-|^ios-|^logo-|^icon-/.test(val))) {
+          // this does not have one of the defaults
+          // so lets auto add in the mode prefix for them
+          return this.mode + '-' + val
+        } else {
+          return val
+        }
+      },
+      update () {
+        let iconName
+        this.hidden = !this.name &amp;<span class="branch-1 cbranch-no" title="branch not covered" >&amp; !this.io</span>s &amp;<span class="branch-2 cbranch-no" title="branch not covered" >&amp; !this.m</span>d
+      <span class="missing-if-branch" title="if path not taken" >I</span>  if (this.hidden<span class="cstat-no" title="statement not covered" >) retur</span>n
+&nbsp;
+      <span class="missing-if-branch" title="if path not taken" >I</span>  if (this.isActive &amp;&amp; this.activeName) {
+<span class="cstat-no" title="statement not covered" >          this.nameValue = this.getNameValue(this.activeName</span>)
+        } else {
+          this.nameValue = this.getNameValue(this.name)
+        }
+&nbsp;
+      <span class="missing-if-branch" title="if path not taken" >I</span>  if (this.ios &amp;<span class="branch-1 cbranch-no" title="branch not covered" >&amp; this.mode === 'ios</span>') {
+          // ios-star ios
+<span class="cstat-no" title="statement not covered" >          iconName = this.io</span>s
+        } els<span class="missing-if-branch" title="if path not taken" >I</span>e if (this.md &amp;<span class="branch-1 cbranch-no" title="branch not covered" >&amp; this.mode === 'md</span>') {
+          // md-star md
+<span class="cstat-no" title="statement not covered" >          iconName = this.m</span>d
+        } else {
+          // ios-star md-star icon-star
+          iconName = this.nameValue
+        }
+&nbsp;
+        let iconMode = iconName.split('-', 2)[0]
+      <span class="missing-if-branch" title="if path not taken" >I</span>  if (iconMode === 'ios' &amp;&amp; !this.isActive &amp;&amp;
+<span class="branch-2 cbranch-no" title="branch not covered" >          iconName.indexOf('logo-') &lt; </span>0 &amp;&amp;
+<span class="branch-3 cbranch-no" title="branch not covered" >          iconName.indexOf('-outline') &lt; </span>0) {
+          // ios-star -&gt; ios-star-outline
+<span class="cstat-no" title="statement not covered" >          iconName += '-outline</span>'
+        }
+        // ios-star-outline -&gt; ion-ios-star-outline
+        // ios-star -&gt; ion-ios-star-outline
+        // icon-star -&gt; icon-star
+        if (iconMode === 'icon') {
+          this.nameClass = iconName
+        } else {
+          this.nameClass = 'ion-' + iconName
+        }
+      }
+    },
+    created () {
+      this.update()
+    },
+    mounted () {
+    <span class="missing-if-branch" title="if path not taken" >I</span>  if (this.$parent.$el &amp;&amp; this.$parent.$el.className &amp;&amp; this.$parent.$el.className.indexOf('item') &gt; -1) {
+        // button in items should add class of 'item-button'
+<span class="cstat-no" title="statement not covered" >        this.itemClass = 'item-icon</span>'
+      }
+    }
+  }
+&lt;/script&gt;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Nov 04 2017 21:46:17 GMT+0800 (CST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

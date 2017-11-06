@@ -103,7 +103,7 @@
                 this.activated = true;
 
                 return new Promise((resolve, reject) => {
-                    this.$on('onHideEvent', data => {
+                    this.$events.$on('onHideEvent', data => {
                         resolve(data)
                     })
                 });

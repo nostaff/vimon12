@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/segment/segment.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">src/components/segment/</a> segment.vue
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/15</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+    &lt;div class="ion-segment segment" :class="[modeClass,colorClass]"&gt;
+        &lt;slot&gt;&lt;/slot&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;style lang="less"&gt;
+    @import "segment";
+    @import "segment.ios.less";
+    @import "segment.md.less";
+&lt;/style&gt;
+&lt;script type="text/javascript"&gt;
+  /**
+   * @component Segment
+   * @description
+   *
+   * ## 小标签 / Segment
+   *
+   * Segment组件可以说是联动的按钮组合, 他不负责路由, 只是按钮组合而已. 如果涉及路由, 请使用Tab组件, 或者自己集成路由部分.
+   *
+   * ### 父子组件组合
+   *
+   * Segment组件和SegmentButton组件是互相组合的模式, 不可分离. 父组件可使用`v-model`指令监听子组件当前的选中状态. 子组件支持异步载入, 当子组件的value没有指定, 则使用当前组件的内置文本作为其value.
+   *
+   * ### 父子组件通信过程
+   *
+   * 1. 初始化时, 子组件自己的this传递给父组件, recordChild()
+   * 2. 子组件点击时, 调用父组件的 onChildChange 函数, 传递自己的value
+   * 3. 父组件得到value触发input更新v-modal值, 之后遍历子组件, 触发组件的setChecked, 传递value
+   * 4. 子组件根据传入的value设置自己的状态
+   *
+   * ### 异步加载子组件
+   *
+   * 父组件通过被动的的方式获取对子组件的控制权, 便于异步动态初始化子组件的情形. 子组件的value是子组件的标示, 当value没有值时, 通过SegmentButton组件中的text内容获取唯一标示.
+   *
+   * ### 支持`v-model`指令
+   *
+   * 如果不使用`v-model`指令, 通过`value`属性可设置初始选中状态, 但是使用了`v-model`指令时, 动态改变value将不会触发`onChange事件`, 因为事件的触发原则是组件内部变动通知外部, 但是外部改变value不是内部行为, 这点切记.
+   *
+   *
+   * ### 如何使用
+   *
+   * ```
+   * // 引入
+   * import { Segment, SegmentButton } from 'vimo/lib/segment'
+   * // 安装
+   * Vue.component(Segment.name, Segment)
+   * Vue.component(SegmentButton.name, SegmentButton)
+   * ```
+   *
+   * @props {String} color - 颜色
+   * @props {String} mode - 样式模式
+   * @props {String} value - 当前Segment的value, 用于触发制定value的子组件
+   *
+   * @fires component:Segment#onChange
+   * @demo #/segment
+   *
+   *
+   * @usage
+   * &lt;Header&gt;
+   *    &lt;Navbar&gt;
+   *        &lt;Title&gt;普通用法&lt;/Title&gt;
+   *    &lt;/Navbar&gt;
+   *    &lt;Toolbar&gt;
+   *        &lt;!--content--&gt;
+   *        &lt;Segment v-model="fruit" @onChange="onChangeHandler"&gt;
+   *            &lt;SegmentButton value="apple" @onSelect="onSelectHandler"&gt;Apple&lt;/SegmentButton&gt;
+   *            &lt;SegmentButton value="orange" @onSelect="onSelectHandler"&gt;Orange&lt;/SegmentButton&gt;
+   *            &lt;SegmentButton value="pear" @onSelect="onSelectHandler"&gt;Pear&lt;/SegmentButton&gt;
+   *            &lt;SegmentButton value="disabled" :disabled="true" @onSelect="onSelectHandler"&gt;Disabled&lt;/SegmentButton&gt;
+   *        &lt;/Segment&gt;
+   *    &lt;/Toolbar&gt;
+   * &lt;/Header&gt;
+   *
+   * */
+  export default{
+    name: 'Segment',
+    props: {
+      /**
+       * 接收value信息
+       * */
+      value: [String, Number],
+      /**
+       * 按钮color：primary、secondary、danger、light、dark
+       * */
+      color: [String],
+      /**
+       * mode 按钮风格 ios/window/android/we/alipay
+       * */
+      mode: {
+        type: String,
+        default () <span class="cstat-no" title="statement not covered" >{ return this.$config &amp;&amp; this.$config.get('mode') || 'ios</span>' }
+      },
+      disabled: [Boolean]
+    },
+    data () {
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        // value的缓存值，因为props的value不能直接修改
+        childComponents: [],
+        timer: null,
+        theValue: this.value
+      }
+    },
+    watch: {
+      value (value) {
+        // 更新子组件状态
+<span class="cstat-no" title="statement not covered" >        this.refreshChildState(value</span>)
+      }
+    },
+    computed: {
+      // 环境样式
+      modeClass () {
+<span class="cstat-no" title="statement not covered" >        return `segment-${this.mode}</span>`
+      },
+      // 颜色
+      colorClass () {
+<span class="cstat-no" title="statement not covered" >        return this.color ? (`segment-${this.mode}-${this.color}`) : '</span>'
+      }
+    },
+    methods: {
+&nbsp;
+      // ------ for children ------
+      /**
+       * 记录子组件, 这个由子组件自己找到并调用
+       * @param {Object} childComponent - 子组件实例(子组件的this)
+       * @private
+       * */
+      recordChild (childComponent) {
+<span class="cstat-no" title="statement not covered" >        this.childComponents.push(childComponent</span>)
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.timer &amp;&amp; window.clearTimeout(this.timer</span>)
+<span class="cstat-no" title="statement not covered" >        this.timer = setTimeout(() =<span class="fstat-no" title="function not covered" >&gt; {</span></span>
+          // 更新子组件状态
+<span class="cstat-no" title="statement not covered" >          this.refreshChildState(this.value</span>)
+        }, 0)
+      },
+&nbsp;
+      /**
+       * 子组件点击时操作此函数
+       * @param {string} value - 当前子组件的点击值
+       * @private
+       * */
+      onChildChange (value) {
+        // 更新子组件状态
+<span class="cstat-no" title="statement not covered" >        this.refreshChildState(value</span>)
+<span class="cstat-no" title="statement not covered" >        this.$emit('input', value</span>)
+        /**
+         * @event component:Segment#onChange
+         * @description 子元素 样式更新后发送onChange事件，并传入value变化值
+         * @property {string} value - 滚动事件对象
+         */
+<span class="cstat-no" title="statement not covered" >        this.$emit('onChange', value</span>)
+      },
+&nbsp;
+      /**
+       * 更新子组件状态
+       * @private
+       * */
+      refreshChildState (value) {
+<span class="cstat-no" title="statement not covered" >        this.childComponents.forEach((childComponent) =<span class="fstat-no" title="function not covered" >&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >          if (!childComponent.isDisabled) {</span>
+<span class="cstat-no" title="statement not covered" >            childComponent.setState(value</span>)
+          }
+        })
+      }
+    }
+  }
+&lt;/script&gt;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Nov 04 2017 21:46:17 GMT+0800 (CST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

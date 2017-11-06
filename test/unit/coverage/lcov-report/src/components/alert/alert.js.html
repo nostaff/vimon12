@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/alert/alert.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">src/components/alert/</a> alert.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.83% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>23/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>17/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">87.5% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>7/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.83% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>23/24</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * @component Alert
+ * @description
+ *
+ * ## 对话框 / Alert对话框组件
+ *
+ * 对话框作为和用户交互的弹出层组件, 向用户提供操作选择或操作列表, 让使用者作出决定。 这里的对话框可以是: Alert/Confirm/Radios/Checkboxes/Input等.
+ *
+ * 这里需要注意的是, Select组件使用的就是Radio/Checkboxes这两模式的封装, 但是单选多选两者只能选一个模式出现. 另外, 对于Input类文本输入, 可以混合使用,
+ *   比如url，email，text等，如果确认表单过多, 请单独开一页或者用modal组件处理.
+ *
+ *
+ * ### 关于buttons属性的说明
+ * - role属性: cancel只在ios下有用, 他会将标记cancel的button做特殊处理, 比如点击背景关闭则触发cancel的handler
+ * - cssClass属性: 这个属性用于自定义button的样式, 同理, 外层的cssClass用来定义整个弹层的样式
+ * - handler属性: 默认是关闭当前的组件, 可以通过`Alert.dismiss()`返回的Promise做后续处理, 他表示整个动画完毕
+ *
+ * ### 关于inputs属性的说明
+ * - inputs属性内type的属性的填值能改变弹出层的展现形式, 比如: input/checkbox/radio等三种形式.
+ * - 上述的三种形式一次只能选择一种, 这个是规定定死的.
+ * - 关于input的type类型: text/tel/number/email -&gt; 对应的其余属性可以是: type/name/placeholder/value.
+ * - 关于input的type类型: checkbox/radio -&gt; 对应的其余属性可以是: type/value/label/checked/disabled.
+ * - 以上如果混用是达不到效果的, 这个是Alert组件的使用约定.
+ *
+ *
+ * ### 使用注意
+ *
+ * - 建议在关闭弹出层动画后在处理关闭事项, 比如跳转/再次弹出提示等
+ * - 弹层组件全部对路由跳转相应, 比如路由切换则弹层自动关闭, 这个可以通过`dismissOnPageChange`设置
+ * - button超过三个则纵向排列
+ * - 更详细的示例请看demo
+ *
+ *
+ * @demo #/alert
+ * @usage
+ *
+ * import Alert from 'vimo/lib/alert'
+ *
+ * // Alert
+ * Alert.present({
+ *    title: 'Alert',
+ *    message: '收到这个通知的人希望你今天能搞定这个alert组件',
+ *    cssClass: 'alertCssOuterMain  ',
+ *    enableBackdropDismiss: true,
+ *    buttons: [
+ *      {
+ *        text: '确定',
+ *        handler: (value) =&gt; {
+ *          Alert.dismiss().then((data) =&gt; {
+ *            console.debug('button3 click dismiss ')
+ *            console.debug(data)
+ *          });
+ *        }
+ *      }
+ *    ]
+ * });
+ *
+ * // Input
+ * input () {
+ *   Alert.present({
+ *     title: '登录iTunes Store',
+ *     // subTitle: '收到这个通知的人希望你今天能搞定这个alert组件',
+ *     message: '请输入您Apple ID"apple@icloud.com"的密码',
+ *     cssClass: 'alertCssOuterMain  ',
+ *     enableBackdropDismiss: true,
+ *     inputs: [
+ *       {
+ *         type: 'password',
+ *         name: 'password',
+ *         placeholder: '密码',
+ *         value: '',
+ *       },
+ *     ],
+ *     buttons: [
+ *       {
+ *         text: '取消',
+ *         role: 'cancel',
+ *         handler: () =&gt; {}
+ *       },
+ *       {
+ *         text: '确定',
+ *         role: '',
+ *         handler: (value) =&gt; {
+ *           Alert.present({
+ *             title: '请确认',
+ *             // subTitle: '收到这个通知的人希望你今天能搞定这个alert组件',
+ *             message: '您输入的信息：' + JSON.stringify(value),
+ *             cssClass: '',
+ *             enableBackdropDismiss: true,
+ *             buttons: [
+ *               {
+ *                 text: '确定',
+ *                 role: 'cancel',
+ *                 handler: (value) =&gt; {
+ *                   Alert.dismiss().then(function (msg) {
+ *                     console.log('alert input2 dismiss promise')
+ *                   })
+ *                 }
+ *               }
+ *             ]
+ *           }).then(function () {
+ *             console.log('alert input2 present promise')
+ *           })
+ *         }
+ *       }
+ *     ]
+ *   }).then(function () {
+ *     console.log('alert input1 present promise')
+ *   });
+ * }
+ *
+ */
+import Vue from 'vue'
+import getInsertPosition from '../../util/getInsertPosition'
+import AlertComponent from './alert.vue'
+&nbsp;
+const Alert = Vue.extend(AlertComponent)
+&nbsp;
+function AlertFactory (options) {
+  let el = getInsertPosition('alertPortal').appendChild(
+    document.createElement('div')
+  )
+  return new Alert({ el, propsData: options })
+}
+&nbsp;
+function getPresentDismissIns (Factory) {
+  return {
+    /**
+     * 组件实例
+     * @private
+     * */
+    _i: null, // instance
+&nbsp;
+    /**
+     * @function present
+     * @description
+     * 开启组件, 当开启动画过度完毕时触发 `Promise` 的 `resolve` 。
+     *
+     * @param {object} options - 传入参数
+     * @param {String} [options.title]                        - 标题
+     * @param {string} [options.subTitle]                     - 副标题
+     * @param {string} [options.message]                      - 消息文本
+     * @param {string} [options.cssClass]                     - 自定义样式
+     * @param {Boolean} [options.enableBackdropDismiss=true]  - 允许点击backdrop关闭组件
+     * @param {Boolean} [options.dismissOnPageChange=true]    - 路由切换关闭组件
+     * @param {string} [options.mode=ios]                     - 样式模式
+     * @param {string} [options.isH5=false]                   - 强制使用H5组件(区别使用Hybrid提供的Alert方法)
+     *
+     * @param {Array} [options.buttons]                       - button数组，包含全部role
+     * @param {Array} options.buttons.text                    - button显示文本
+     * @param {Array} options.buttons.icon                    - button显示的icon的name, 具体参考Icon组件
+     * @param {Array} options.buttons.role                    - 可以是cancel(关闭)/destructive(警告/删除)/null
+     * @param {Array} options.buttons.handler                 - 默认是关闭组件
+     * @param {Array} options.buttons.cssClass                - 自定义样式
+     *
+     * @param {Array} [options.inputs]                        - 如果alert中有input等form
+     * @param {Array} options.inputs.type                     - input的类型, 比如: text, tel, number, etc.
+     * @param {Array} options.inputs.name                     - 名称
+     * @param {Array} options.inputs.placeholder              - 占位名称
+     * @param {Array} options.inputs.value                    - 值
+     * @param {Array} options.inputs.label                    - 标签名
+     * @param {Array} options.inputs.checked                  - 是否选中
+     * @param {Array} options.inputs.id                       - id编号
+     *
+     * @return {Promise}
+     * */
+    present (options) {
+      if (!options.buttons) {
+        options.buttons = []
+      }
+      return new Promise(resolve =&gt; {
+        let isHandled =
+          !options.isH5 &amp;&amp;
+          window.VM &amp;&amp;
+          window.VM.platform &amp;&amp;
+          window.VM.platform.alert &amp;&amp;
+          window.VM.platform.alert(options)
+        if (isHandled) {
+          resolve()
+        } else {
+          console.info('Alert 组件使用H5模式!')
+          if (this._i &amp;&amp; this._i.isActive) {
+            this._i.dismiss().then(() =&gt; {
+              this._i = Factory(options)
+              // 自动开启
+              this._i.present().then(() =&gt; {
+                resolve()
+              })
+            })
+          } else {
+            this._i = Factory(options)
+            // 自动开启
+            this._i.present().then(() =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >              resolve()</span>
+            })
+          }
+        }
+      })
+    },
+&nbsp;
+    /**
+     * @function dismiss
+     * @description
+     * 手动关闭组件, 当开启动画过度完毕时触发 `Promise` 的 `resolve` 。
+     * @return {Promise}
+     * */
+    dismiss () {
+      return new Promise(resolve =&gt; {
+        if (this._i &amp;&amp; this._i.isActive) {
+          this._i.dismiss().then(() =&gt; {
+            resolve()
+          })
+        } else {
+          resolve()
+        }
+      })
+    }
+  }
+}
+&nbsp;
+export default getPresentDismissIns(AlertFactory)
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Nov 04 2017 21:46:17 GMT+0800 (CST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

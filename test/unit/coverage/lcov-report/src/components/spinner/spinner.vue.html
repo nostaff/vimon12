@@ -1,0 +1,878 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/spinner/spinner.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">src/components/spinner/</a> spinner.vue
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.08% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/48</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/34</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.08% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/48</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+    &lt;div class="spinner" :class=[colorClass,nameClass,pausedClass]&gt;
+        &lt;svg v-if="circles &amp;&amp; circles.length&gt;0" viewBox="0 0 64 64" v-for="i in circles" :style="i.style"&gt;
+            &lt;circle :r="i.r" transform="translate(32,32)"&gt;&lt;/circle&gt;
+        &lt;/svg&gt;
+        &lt;svg v-if="lines &amp;&amp; lines.length&gt;0" viewBox="0 0 64 64" v-for="i in lines" :style="i.style"&gt;
+            &lt;line :y1="i.y1" :y2="i.y2" transform="translate(32,32)"&gt;&lt;/line&gt;
+        &lt;/svg&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;style lang="less"&gt;
+    @import "spinner";
+    @import "spinner.ios.less";
+    @import "spinner.md.less";
+&lt;/style&gt;
+&lt;script type="text/javascript"&gt;
+  /**
+   * @component Spinner
+   * @description
+   *
+   * ## 其他 / Spinner菊花组件
+   *
+   * ### 说明
+   * Spinner组件提供了一个使用svg+js的方式事项的菊花图(loading). Spinner组件可以通过传入`props`来实时控制Spinner的样子, 用来模拟诸如: processing/thinking/waiting/chilling 等特性.
+   *
+   * ### 菊花风格
+   *
+   * Spinner的风格可以是下面的一种: ios/ios-small/bubbles/circles/crescent/dots, 其中, ios默认的是'ios'; md默认的是'crescent'; wp默认的是'circles'; 这些可以通过`config`配置
+   *
+   *
+   * ### 如何使用
+   *
+   * ```
+   * // 引入
+   * import Spinner from 'vimo/lib/spinner'
+   * // 安装
+   * Vue.component(Spinner.name, Spinner)
+   * // 或者
+   * export default{
+   *   components: {
+   *    Spinner
+   *  }
+   * }
+   * ```
+   *
+   * @props {String} [color] - 颜色
+   * @props {String} [mode='ios'] - 模式
+   * @props {String} [name] - 菊花样式
+   * @props {String} [duration] - 旋转动画的持续时间
+   * @props {Boolean} [paused] - 是否暂停
+   *
+   * @demo #/spinner
+   *
+   * @usage
+   * &lt;Spinner&gt;&lt;/Spinner&gt;
+   * &lt;Spinner name="ios"&gt;&lt;/Spinner&gt;
+   * &lt;Spinner mode="wp"&gt;&lt;/Spinner&gt;
+   * &lt;Spinner color="secondary" name="dots"&gt;&lt;/Spinner&gt;
+   * &lt;Spinner duration="3000" name="dots"&gt;&lt;/Spinner&gt;
+   * &lt;Spinner :paused="true" name="ios"&gt;&lt;/Spinner&gt;
+   * */
+&nbsp;
+  export default{
+    name: 'Spinner',
+    props: {
+      // 按钮color：primary、secondary、danger、light、dark
+      color: [String],
+&nbsp;
+      // mode 按钮平台 ios/window/android
+      mode: {
+        type: String,
+        default () <span class="cstat-no" title="statement not covered" >{ return this.$config &amp;&amp; this.$config.get('mode') || 'ios</span>' }
+      },
+&nbsp;
+      // name 风格
+      // ios/ios-small/bubbles/circles/crescent/dots
+      name: String,
+&nbsp;
+      // duration 持续时间
+      duration: String,
+&nbsp;
+      // paused 是否暂停
+      paused: Boolean
+    },
+    data () {
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        isInit: false,
+        // svg动画数组
+        lines: [],
+        circles: [],
+        // ios/ios-small/bubbles/circles/crescent/dots
+        nameClass: null
+      }
+    },
+    watch: {
+      // 因为实例创建在前，赋值在后，如果name和duration改变则从新初始化
+      name () {
+<span class="cstat-no" title="statement not covered" >        this.load(</span>)
+      },
+      duration () {
+<span class="cstat-no" title="statement not covered" >        this.load(</span>)
+      }
+    },
+    computed: {
+      // primary、secondary、danger、light、dark
+      colorClass () {
+<span class="cstat-no" title="statement not covered" >        return this.color ? `spinner-${this.mode}-${this.color}` : nul</span>l
+      },
+      // 设置Alert的风格
+      modeClass () {
+<span class="cstat-no" title="statement not covered" >        return this.mode ? `spinner-${this.mode}` : nul</span>l
+      },
+      pausedClass () {
+<span class="cstat-no" title="statement not covered" >        return this.paused ? 'spinner-paused' : nul</span>l
+      }
+    },
+    methods: {
+      load () {
+<span class="cstat-no" title="statement not covered" >        if (this.isInit) {</span>
+          // 因为会涉及到再次渲染，故提前制空
+<span class="cstat-no" title="statement not covered" >          this.lines = [</span>]
+<span class="cstat-no" title="statement not covered" >          this.circles = [</span>]
+&nbsp;
+          // 如果指定了name，则使用指定的name。
+          // 如果没指定name，则根据设备别使用默认的name
+          let name
+<span class="cstat-no" title="statement not covered" >          if (this.name) {</span>
+<span class="cstat-no" title="statement not covered" >            name = this.nam</span>e
+          } else {
+<span class="cstat-no" title="statement not covered" >            if (this.mode === 'ios') {</span>
+<span class="cstat-no" title="statement not covered" >              name = 'ios</span>'
+            } els<span class="cstat-no" title="statement not covered" >e if (this.mode === 'md') {</span>
+<span class="cstat-no" title="statement not covered" >              name = 'crescent</span>'
+            } els<span class="cstat-no" title="statement not covered" >e if (this.mode === 'wp') {</span>
+<span class="cstat-no" title="statement not covered" >              name = 'circles</span>'
+            } else {
+<span class="cstat-no" title="statement not covered" >              name = this.$config &amp;&amp; this.$config.get('spinner', 'ios') || 'ios</span>'
+            }
+          }
+          const spinner <span class="cstat-no" title="statement not covered" >= SPINNERS[name</span>]
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          if (spinner) {</span>
+<span class="cstat-no" title="statement not covered" >            if (spinner.lines) {</span>
+<span class="cstat-no" title="statement not covered" >              for (let i = 0, l = spinner.lines; i &lt; l; i++) {</span>
+<span class="cstat-no" title="statement not covered" >                this.lines.push(this._loadEle(spinner, i, l)</span>)
+              }
+            } els<span class="cstat-no" title="statement not covered" >e if (spinner.circles) {</span>
+<span class="cstat-no" title="statement not covered" >              for (let i = 0, l = spinner.circles; i &lt; l; i++) {</span>
+<span class="cstat-no" title="statement not covered" >                this.circles.push(this._loadEle(spinner, i, l)</span>)
+              }
+            }
+<span class="cstat-no" title="statement not covered" >            this.nameClass = `spinner-${name} spinner-${this.mode}-${name}</span>`
+          }
+        }
+      },
+      _loadEle (spinner, index, total) {
+        let duration <span class="cstat-no" title="statement not covered" >= parseInt(this.duration) || spinner.du</span>r
+        let data <span class="cstat-no" title="statement not covered" >= spinner.fn(duration, index, total</span>)
+<span class="cstat-no" title="statement not covered" >        data.style['animation-duration'] = parseInt(duration) + 'ms</span>'
+<span class="cstat-no" title="statement not covered" >        return dat</span>a
+      }
+&nbsp;
+    },
+    created () {
+<span class="cstat-no" title="statement not covered" >      this.isInit = tru</span>e
+<span class="cstat-no" title="statement not covered" >      this.load(</span>)
+    }
+  }
+&nbsp;
+  const SPINNERS = {
+    ios: {
+      dur: 1000,
+      lines: 12,
+      fn (dur, index, total) {
+        const transform <span class="cstat-no" title="statement not covered" >= 'rotate(' + (30 * index + (index &lt; 6 ? 180 : -180)) + 'deg)</span>'
+        const animationDelay <span class="cstat-no" title="statement not covered" >= -(dur - ((dur / total) * index)) + 'ms</span>'
+<span class="cstat-no" title="statement not covered" >        return {</span>
+          y1: 17,
+          y2: 29,
+          style: {
+            transform: transform,
+            webkitTransform: transform,
+            animationDelay: animationDelay,
+            webkitAnimationDelay: animationDelay
+          }
+        }
+      }
+    },
+&nbsp;
+    'ios-small': {
+      dur: 1000,
+      lines: 12,
+      fn (dur, index, total) {
+        const transform <span class="cstat-no" title="statement not covered" >= 'rotate(' + (30 * index + (index &lt; 6 ? 180 : -180)) + 'deg)</span>'
+        const animationDelay <span class="cstat-no" title="statement not covered" >= -(dur - ((dur / total) * index)) + 'ms</span>'
+<span class="cstat-no" title="statement not covered" >        return {</span>
+          y1: 12,
+          y2: 20,
+          style: {
+            transform: transform,
+            webkitTransform: transform,
+            animationDelay: animationDelay,
+            webkitAnimationDelay: animationDelay
+          }
+        }
+      }
+    },
+&nbsp;
+    bubbles: {
+      dur: 1000,
+      circles: 9,
+      fn (dur, index, total) {
+        const animationDelay <span class="cstat-no" title="statement not covered" >= -(dur - ((dur / total) * index)) + 'ms</span>'
+<span class="cstat-no" title="statement not covered" >        return {</span>
+          r: 5,
+          style: {
+            top: (9 * Math.sin(2 * Math.PI * index / total)) + 'px',
+            left: (9 * Math.cos(2 * Math.PI * index / total)) + 'px',
+            animationDelay: animationDelay,
+            webkitAnimationDelay: animationDelay
+          }
+        }
+      }
+    },
+&nbsp;
+    circles: {
+      dur: 1000,
+      circles: 8,
+      fn (dur, index, total) {
+        const animationDelay <span class="cstat-no" title="statement not covered" >= -(dur - ((dur / total) * index)) + 'ms</span>'
+<span class="cstat-no" title="statement not covered" >        return {</span>
+          r: 5,
+          style: {
+            top: (9 * Math.sin(2 * Math.PI * index / total)) + 'px',
+            left: (9 * Math.cos(2 * Math.PI * index / total)) + 'px',
+            animationDelay: animationDelay,
+            webkitAnimationDelay: animationDelay
+          }
+        }
+      }
+    },
+&nbsp;
+    crescent: {
+      dur: 750,
+      circles: 1,
+      fn (dur) {
+<span class="cstat-no" title="statement not covered" >        return {</span>
+          r: 26,
+          style: {}
+        }
+      }
+    },
+&nbsp;
+    dots: {
+      dur: 750,
+      circles: 3,
+      fn (dur, index, total) {
+        const animationDelay <span class="cstat-no" title="statement not covered" >= -(110 * index) + 'ms</span>'
+<span class="cstat-no" title="statement not covered" >        return {</span>
+          r: 6,
+          style: {
+            left: (9 - (9 * index)) + 'px',
+            animationDelay: animationDelay,
+            webkitAnimationDelay: animationDelay
+          }
+        }
+      }
+    }
+&nbsp;
+  }
+&lt;/script&gt;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Nov 04 2017 21:46:17 GMT+0800 (CST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

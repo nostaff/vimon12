@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/item/item.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">src/components/item/</a> item.vue
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">3.57% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/27</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">3.57% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/28</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;script type="text/javascript"&gt;
+  /**
+   * @component Item
+   * @description
+   *
+   * ## 列表组件 / Item
+   *
+   * Item组件是List组件的子组件, 两者配合使用.
+   *
+   * ### 关于其余组件
+   *
+   * 列表组件中的每一个Item将在这里定义, 其中包括**Item/ListHeader/ItemGroup/ItemDivider**等, 他们的使用方式基本一样, 这里统一说明.
+   *
+   *
+   * ### ItemDivider组件
+   *
+   * 加 `[sticky]` 属性可实现吸顶效果
+   *
+   * ### 如何使用
+   *
+   * ### Item组件
+   *
+   * - 加 `[no-lines]` 属性可去除边框
+   * - 在item中的Icon上加属性`[large],[small]`可控制大小
+   *
+   * ### 关于跳转
+   *
+   * item组件将使用v-router的router-link组件中的部分同名方法, 并执行对应的跳转
+   *
+   * ### 如何引入
+   *
+   * ```
+   * // 引入
+   * import List from 'vimo/lib/list'
+   * import { ListHeader, ItemGroup, Item, ItemDivider } from 'vimo/lib/item'
+   * // 安装
+   * Vue.component(List.name, List)
+   * Vue.component(ListHeader.name, ListHeader)
+   * Vue.component(ItemGroup.name, ItemGroup)
+   * Vue.component(Item.name, Item)
+   * Vue.component(ItemDivider.name, ItemDivider)
+   * // 或者
+   * export default{
+   *   components: {
+   *    List, ListHeader, ItemGroup, Item, ItemDivider
+   *  }
+   * }
+   * ```
+   *
+   * @props {String} [mode='ios'] - 模式
+   * @props {String} [color] - 颜色
+   * @props {any} [to] - 路由, 这部分用法请参开vue-router, 这里是对其移植
+   * @props {Boolean} [append] - 路由是否append
+   * @props {Boolean} [replace] - 路由进行方式, 默认为push
+   *
+   *
+   * @slot 空 - 放置在中间, 默认位置
+   * @slot item-left - 放置在左边
+   * @slot item-right - 放置在左边
+   *
+   * @demo #/list
+   * @see component:List
+   * @see http://router.vuejs.org/zh-cn/index.html
+   *
+   * @usage
+   * &lt;List&gt;
+   *    &lt;ListHeader&gt;
+   *            setting
+   *        &lt;Button slot="item-right" clear&gt;
+   *            &lt;Icon name="cog"&gt;&lt;/Icon&gt;
+   *        &lt;/Button&gt;
+   *    &lt;/ListHeader&gt;
+   *    &lt;ItemGroup&gt;
+   *        &lt;Item&gt;
+   *            &lt;Icon slot="item-left" color="danger" name="plane"&gt;&lt;/Icon&gt;
+   *            &lt;span&gt;Airplane Mode&lt;/span&gt;
+   *            &lt;Toggle slot="item-right" @ionChange="toggleChange"
+   *                :checked="toggleValue"&gt;&lt;/Toggle&gt;
+   *        &lt;/Item&gt;
+   *    &lt;Item button&gt;
+   *            &lt;Icon slot="item-left" color="primary" name="wifi"&gt;&lt;/Icon&gt;
+   *                Wi-Fi
+   *            &lt;Note slot="item-right"&gt;The Interwebz&lt;/Note&gt;
+   *        &lt;/Item&gt;
+   *        &lt;Item button&gt;
+   *            &lt;Icon slot="item-left" color="primary" name="bluetooth"&gt;&lt;/Icon&gt;
+   *                Bluetooth
+   *            &lt;Note slot="item-right"&gt;Off&lt;/Note&gt;
+   *        &lt;/Item&gt;
+   *    &lt;/ItemGroup&gt;
+   *    &lt;ItemDivider color="primary"&gt;
+   *        Other Setting
+   *        &lt;Button slot="item-right" outline color="light"&gt;Clear&lt;/Button&gt;
+   *    &lt;/ItemDivider&gt;
+   *    &lt;Item button&gt;
+   *            &lt;Icon slot="item-left" color="secondary" name="call"&gt;&lt;/Icon&gt;
+   *            Cellular
+   *    &lt;/Item&gt;
+   *    &lt;Item button&gt;
+   *         &lt;Icon slot="item-left" color="secondary" name="link"&gt;&lt;/Icon&gt;
+   *            Personal Hotspot
+   *        &lt;Note slot="item-right"&gt;Off&lt;/Note&gt;
+   *    &lt;/Item&gt;
+   * &lt;/List&gt;
+   *
+   * */
+  import ItemMixin from './item-mixin.vue'
+  import { isPresent, isString } from '../../util/util'
+&nbsp;
+  export default {
+    mixins: [ItemMixin],
+    name: 'Item',
+    data () {
+      return {
+        isInMenu: this.wait // 判断是否在menu组件中, 如果在menu中, 则
+      }
+    },
+    props: {
+      /**
+       * 指向跳转
+       * 当被点击后，内部会立刻把 to 的值传到 router.push()
+       * 所以这个值可以是一个字符串或者是描述目标位置的对象
+       * */
+      to: [String, Object],
+&nbsp;
+      append: Boolean,
+&nbsp;
+      /**
+       * 设置 replace 属性的话，当点击时，会调用 router.replace()
+       * 而不是 router.push()，于是导航后不会留下 history 记录。
+       * */
+      replace: Boolean,
+&nbsp;
+      /**
+       * 如果是在menus中, 可以设置这个值, 当menus完全关闭时再出发跳转动作
+       * */
+      wait: Boolean
+    },
+    methods: {
+      /**
+       * 类似于a标签跳转
+       * */
+      clickHandler ($event) {
+        const _this <span class="cstat-no" title="statement not covered" >= thi</span>s
+        const router <span class="cstat-no" title="statement not covered" >= this.$route</span>r
+        const current <span class="cstat-no" title="statement not covered" >= this.$rout</span>e
+        let _to <span class="cstat-no" title="statement not covered" >= this.t</span>o
+<span class="cstat-no" title="statement not covered" >        if (isPresent(router) &amp;&amp; isPresent(current) &amp;&amp; isPresent(_to)) {</span>
+<span class="cstat-no" title="statement not covered" >          if (isString(_to)) {</span>
+<span class="cstat-no" title="statement not covered" >            _to = {</span>
+              name: _to
+            }
+          }
+&nbsp;
+          // 返回数据: {location, route, href}
+          const {location} <span class="cstat-no" title="statement not covered" >= router.resolve(_to, current, this.append</span>)
+&nbsp;
+          // 如果在menu跳转, 则需要等待menu关闭后再跳转
+<span class="cstat-no" title="statement not covered" >          if (this.isInMenu) {</span>
+<span class="cstat-no" title="statement not covered" >            this.$menus.close(</span>)
+<span class="cstat-no" title="statement not covered" >            this.$events &amp;&amp; this.$events.$on('onMenuClosed', directToHandler</span>)
+          } else {
+            // 正常情况
+<span class="cstat-no" title="statement not covered" >            doRedirect(</span>)
+          }
+&nbsp;
+          // 事件处理函数
+          // eslint-disable-next-line no-inner-declarations
+          function directToHandler (<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >            _this.$events &amp;&amp; _this.$events.$off('onMenuClosed', directToHandler</span>)
+<span class="cstat-no" title="statement not covered" >            doRedirect(</span>)
+          }
+&nbsp;
+          // 跳转
+          // eslint-disable-next-line no-inner-declarations
+          function doRedirect (<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >            if (_this.replace) {</span>
+<span class="cstat-no" title="statement not covered" >              router.replace(location</span>)
+            } else {
+<span class="cstat-no" title="statement not covered" >              router.push(location</span>)
+            }
+          }
+        } else {
+<span class="cstat-no" title="statement not covered" >          this.$emit('click', $event</span>)
+        }
+      },
+      /**
+       * 获取组件类Label的文本
+       * */
+      getLabelText () {
+        let list <span class="cstat-no" title="statement not covered" >= [</span>]
+<span class="cstat-no" title="statement not covered" >        if (this.$slots['default'] &amp;&amp; this.$slots['default'].length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >          list = this.$slots['default'</span>]
+        }
+<span class="cstat-no" title="statement not covered" >        for (let i = 0, len = list.length; len &gt; i; i++) {</span>
+          let item <span class="cstat-no" title="statement not covered" >= list[i</span>]
+          let hasValue <span class="cstat-no" title="statement not covered" >= !!item.tag || (!!item.text &amp;&amp; !!item.text.trim()</span>)
+<span class="cstat-no" title="statement not covered" >          if (hasValue &amp;&amp; item.elm &amp;&amp; item.elm.textContent) {</span>
+<span class="cstat-no" title="statement not covered" >            return item.elm.textContent.toString().trim(</span>)
+          }
+        }
+<span class="cstat-no" title="statement not covered" >        return '</span>'
+      }
+    }
+  }
+&lt;/script&gt;
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Nov 04 2017 21:46:17 GMT+0800 (CST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

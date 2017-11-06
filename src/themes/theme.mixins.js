@@ -10,9 +10,9 @@ export default {
         };
     },
     created() {
-        if (this.theme != this.$ionic.theme) {
-            this.theme = this.$ionic.theme;
-        }
+        // if (this.theme != this.$ionic.theme) {
+        //     this.theme = this.$ionic.theme;
+        // }
     },
     props: {
         title: {

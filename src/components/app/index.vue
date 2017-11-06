@@ -9,7 +9,7 @@
     import ThemeMixins from '../../themes/theme.mixins';
 
     export default {
-        name: 'ion-index',
+        name: 'ion-app',
         mixins: [ThemeMixins],
 
         created() {

@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/toolbar/toolbar-title.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">src/components/toolbar/</a> toolbar-title.vue
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/46</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/52</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/46</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+    &lt;div class="ion-title"&gt;
+        &lt;div class="toolbar-title"
+             :style="{color:titleColor}"
+             @click="titleClick" v-html="titleInner"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script type="text/javascript"&gt;
+  /**
+   * @component Toolbar/Title
+   * @description
+   *
+   *
+   * ## 文档标题 / Title
+   *
+   * 设置顶部的title及document.title, 请使用ref获取Title组件的setTitle方法, 使用该方法会同步设置document.title(默认)
+   *
+   * ### 等级
+   *
+   * 只有在Navbar组件中的Title组件才会自动更新`document.title`的值,
+   *
+   *
+   * ### 如何引入
+   *
+   * ```
+   * // 引入
+   * import { Toolbar, Buttons, Title } from 'vimo/lib/toolbar'
+   * // 安装
+   * Vue.component(Toolbar.name, Toolbar)
+   * Vue.component(Title.name, Title)
+   * Vue.component(Buttons.name, Buttons)
+   * ```
+   *
+   *
+   * ### 如果在支付宝中
+   * 如果在支付宝中, 则使用支付宝的方式设置title及其壳子的title, 可用方法如下:
+   *
+   * - setTitle
+   * - reset
+   *
+   * @props {String} [mode=ios] - 模式
+   * @props {String} [title] - 标题
+   * @fires component:Title#onTitleClick
+   * @see component:Toolbar
+   * @usage
+   * &lt;template&gt;
+   *  &lt;Page&gt;
+   *    &lt;Header&gt;
+   *      &lt;Navbar&gt;
+   *        &lt;Title ref="title"&gt;Demo&lt;/Title&gt;
+   *      &lt;Navbar&gt;
+   *    &lt;/Header&gt;
+   *    &lt;Content&gt;
+   *      &lt;h1&gt;这里是内容&lt;/h1&gt;
+   *    &lt;/Content&gt;
+   *  &lt;/Page&gt;
+   * &lt;/template&gt;
+   *
+   * ...
+   *
+   * computed: {
+   *   titleComponent () {
+   *     return this.$refs.title
+   *   }
+   * },
+   * methods: {
+   *   setAllTitle () {
+   *      this.titleComponent.setTitle('title')
+   * }
+   *
+   * */
+  import { isPresent } from '../../util/util'
+&nbsp;
+  export default {
+    name: 'Title',
+    data () {
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        titleColor: null,
+        titleInner: this.title,
+        isTitleInNavbar: false, // 这个title组件在navbar中
+        isHeaderInApp: false // 包裹当前组件的Header在App组件中
+      }
+    },
+    props: {
+      /**
+       * mode 按钮风格
+       * */
+      mode: {
+        type: String,
+        default () <span class="cstat-no" title="statement not covered" >{ return isPresent(this.$config) &amp;&amp; this.$config.get('mode', 'ios') || 'ios</span>' }
+      },
+      /**
+       * 设置的title值
+       * */
+      title: String
+    },
+    watch: {
+      title () {
+<span class="cstat-no" title="statement not covered" >        this.titleInner = this.getTitle(</span>)
+<span class="cstat-no" title="statement not covered" >        if (this.isTitleInNavbar) {</span>
+<span class="cstat-no" title="statement not covered" >          this.setTitle(this.titleInner</span>)
+        }
+      }
+    },
+    methods: {
+      /**
+       * @function getTitle
+       * @description
+       * 获取Title组件中的title, 兼容各种模式
+       * @return {String}
+       * */
+      getTitle () {
+        let _title <span class="cstat-no" title="statement not covered" >= '</span>'
+        /**
+         * 组件获取了传入的title值，之后通过全局注册的$setTitle方法
+         * 设置document.title（此处做了兼容）
+         * */
+<span class="cstat-no" title="statement not covered" >        if (this.title) {</span>
+          // prop传入title值
+          // eg: &lt;Title title="Toolbar"&gt;&lt;/Title&gt;
+<span class="cstat-no" title="statement not covered" >          _title = this.title.trim(</span>)
+        } els<span class="cstat-no" title="statement not covered" >e if (this.$slots.default &amp;&amp; this.$slots.default[0] &amp;&amp; this.$slots.default[0].text) {</span>
+          // 如果是直接写在ion-title中的值
+          // eg: &lt;Title&gt;Toolbar&lt;/Title&gt;
+<span class="cstat-no" title="statement not covered" >          _title = this.$slots.default[0].text.trim(</span>)
+        } els<span class="cstat-no" title="statement not covered" >e if (this.$slots.default &amp;&amp; this.$slots.default[0] &amp;&amp; this.$slots.default[0].tag &amp;&amp; this.$slots.default[0].children[0].text) {</span>
+          // 如果是这届下载ion-title中的值，并且包含一层标签的情况
+          // eg: &lt;Title&gt;
+          //      &lt;span&gt;Toolbar&lt;/span&gt;
+          //      &lt;span&gt;-&lt;/span&gt;
+          //      &lt;span&gt;Test&lt;/span&gt;
+          //    &lt;/Title&gt;
+          // -&gt; Toolbar-Test
+<span class="cstat-no" title="statement not covered" >          this.$slots.default.forEach((item) =<span class="fstat-no" title="function not covered" >&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (item.children &amp;&amp; item.children.length &gt; 0 &amp;&amp; item.children[0] &amp;&amp; item.children[0].text) {</span>
+<span class="cstat-no" title="statement not covered" >              _title += item.children[0].text.trim(</span>)
+            }
+          })
+        }
+<span class="cstat-no" title="statement not covered" >        return _titl</span>e
+      },
+&nbsp;
+      /**
+       * @function setTitle
+       * @description
+       * 修改Header的title, 目前可用平台: H5/Alipay/Dingtalk
+       * @param {String|Object} title - title
+       * @param {String|Object} title.title - title
+       * @param {String|Object} title.image - image
+       * @param {boolean} [changeDocTitle=true] - 是否设置doc的title, 默认是同步设置的
+       * */
+      setTitle (title, changeDocTitle = true) {
+        let _title <span class="cstat-no" title="statement not covered" >= {</span>}
+<span class="cstat-no" title="statement not covered" >        if (typeof title === 'string') {</span>
+<span class="cstat-no" title="statement not covered" >          _title.title = titl</span>e
+<span class="cstat-no" title="statement not covered" >          this.titleInner = titl</span>e
+        } els<span class="cstat-no" title="statement not covered" >e if (typeof title === 'object' &amp;&amp; title.image) {</span>
+<span class="cstat-no" title="statement not covered" >          _title.title = nul</span>l
+<span class="cstat-no" title="statement not covered" >          _title.image = title.imag</span>e
+<span class="cstat-no" title="statement not covered" >          this.titleInner = `&lt;img src="${title.image}"&gt;</span>`
+        }
+<span class="cstat-no" title="statement not covered" >        if (changeDocTitle) {</span>
+          // 设置document的title, 这部分由$app处理
+<span class="cstat-no" title="statement not covered" >          this.$app &amp;&amp; this.$app.setDocTitle(_title</span>)
+        }
+      },
+&nbsp;
+      /**
+       * @function setTitleColor
+       * @description
+       * 设置Title文字的颜色
+       * @param {String} color - color, 例如 #ff0000
+       * */
+      setTitleColor (color) {
+<span class="cstat-no" title="statement not covered" >        this.titleColor = colo</span>r
+      },
+&nbsp;
+      /**
+       * @function reset
+       * @description
+       * 重置Title文字的颜色, 目前可用平台: Alipay
+       * */
+      reset () {
+<span class="cstat-no" title="statement not covered" >        this.titleColor = nul</span>l
+<span class="cstat-no" title="statement not covered" >        this.$platform &amp;&amp; this.$platform.resetNavbarOptionButton &amp;&amp; this.$platform.resetNavbarOptionButton(</span>)
+      },
+&nbsp;
+      /**
+       * 初始化
+       * 只在Navbar中的Title才会具有更新Title的特性!
+       * 且, 一个Page只能拥有一个Navbar, 当在Navbar中设置Title, 则Title的方法
+       * 将赋予页面Page(document.title),
+       * @private
+       * */
+      init () {
+<span class="cstat-no" title="statement not covered" >        this.titleInner = this.getTitle(</span>)
+<span class="cstat-no" title="statement not covered" >        if (this.$parent.$options._componentTag) {</span>
+          let navbarComponent <span class="cstat-no" title="statement not covered" >= this.$paren</span>t
+<span class="cstat-no" title="statement not covered" >          if (navbarComponent.$options._componentTag.toLowerCase() === 'navbar') {</span>
+<span class="cstat-no" title="statement not covered" >            this.setTitle(this.titleInner</span>)
+<span class="cstat-no" title="statement not covered" >            this.isTitleInNavbar = tru</span>e
+          }
+<span class="cstat-no" title="statement not covered" >          if (window.VM &amp;&amp; this.$root === window.VM.$root) {</span>
+<span class="cstat-no" title="statement not covered" >            this.isHeaderInApp = tru</span>e
+<span class="cstat-no" title="statement not covered" >            window.VM.$title = thi</span>s
+          }
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        this.$events.$on('onTitleClick', () =<span class="fstat-no" title="function not covered" >&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >          this.$emit('onTitleClick'</span>)
+        })
+      },
+&nbsp;
+      /**
+       * 点击标题时触发事件
+       * @private
+       * */
+      titleClick () {
+<span class="cstat-no" title="statement not covered" >        if (this.isTitleInNavbar) {</span>
+          /**
+           * @event component:Title#onTitleClick
+           * @description 点击title时触发
+           */
+<span class="cstat-no" title="statement not covered" >          this.$emit('onTitleClick'</span>)
+        }
+      }
+    },
+    mounted () {
+<span class="cstat-no" title="statement not covered" >      this.init(</span>)
+    },
+    activated () {
+      // BugFix: #15, keep-alive模式下不更新title的问题
+<span class="cstat-no" title="statement not covered" >      if (this.isTitleInNavbar) {</span>
+<span class="cstat-no" title="statement not covered" >        this.setTitle(this.titleInner</span>)
+      }
+<span class="cstat-no" title="statement not covered" >      if (this.isHeaderInApp) {</span>
+<span class="cstat-no" title="statement not covered" >        window.VM.$title = thi</span>s
+      }
+    }
+  }
+&lt;/script&gt;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Nov 04 2017 21:46:17 GMT+0800 (CST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

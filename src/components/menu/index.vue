@@ -104,7 +104,7 @@
 //                this.$app && this.$app.setEnabled(false, 300)
 //            },
 //            afterLeave () {
-//                this.$eventBus && this.$eventBus.$emit('onMenuClosed', this.id)
+//                this.$events && this.$events.$emit('onMenuClosed', this.id)
 //                this.dismissCallback()
 //                this.showMenu = false
 //            },
@@ -132,7 +132,7 @@
 //                    }
 //
 //                    this.isOpen = true
-//                    this.$eventBus && this.$eventBus.$emit('onMenuOpen', this.id)
+//                    this.$events && this.$events.$emit('onMenuOpen', this.id)
 //                }
 //                return new Promise((resolve) => { this.presentCallback = resolve })
 //            },
@@ -147,7 +147,7 @@
 //                } else {
 //                    this.showBackdrop = false
 //                    this.isOpen = false
-//                    this.$eventBus && this.$eventBus.$emit('onMenuClosing', this.id)
+//                    this.$events && this.$events.$emit('onMenuClosing', this.id)
 //                }
 //                return new Promise((resolve) => { this.dismissCallback = resolve })
 //            },
