@@ -1,6 +1,9 @@
-# journalx-vue
+# vue-ionic
 
-一个集运动、锻炼、出游、交友、社交为一体的非常新颖的针对大学生的平台。旨在让现在的大学生抛开过去枯燥乏味、单一的生活方式，去认识更多的朋友、扩展自己的人脉圈，属个人项目。
+A H5 Platform Based On Vue2.x + IONIC 3.5 UI。
+
+## 该库停止更新，欢迎使用  https://github.com/vm-component/vimo
+
 
 ### 技术栈
 
