@@ -1,4 +1,4 @@
-@import "ionic.theme.default";
+@import "./ionic.theme.default";
 
 // Windows Default Theme
 // ----------------------------------
@@ -68,9 +68,3 @@ $item-wp-padding-icon-bottom:         10px !default;
 // --------------------------------------------------
 
 $input-wp-border-color:               rgba(0, 0, 0, .5) !default;
-
-
-
-$wp-transition-duration:          200ms !default;
-$wp-transition-timing-function:   cubic-bezier(0.36,0.66,0.04,1) !default;
-

@@ -1,3 +1,6 @@
+@import "./ionic.globals";
+
+
 // Default Theme
 // ----------------------------------
 
@@ -8,10 +11,6 @@ $colors: (
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,
-  energized:  #ffbd17,
-  assertive:  #ea5a49,
-  royal:      #b5b5b5,
-  positive:   #4a90e2
 
 ) !default;
 
@@ -41,4 +40,3 @@ $tabs-tab-color-active:      $link-color !default;
 $list-text-color:            $text-color !default;
 $list-background-color:      $background-color !default;
 $list-border-color:          #c8c7cc !default;
-//$list-border-color:          #efefef !default;
