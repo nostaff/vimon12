@@ -103,13 +103,13 @@ $refresher-border-color:       #ddd !default;
 // Refresher Content States
 // --------------------------------------------------
 
-.ion-refresher[state=pulling] .ion-refresher-content {
+.ion-refresher-content[state=pulling] {
   .refresher-pulling {
     display: block;
   }
 }
 
-.ion-refresher[state=ready] .ion-refresher-content {
+.ion-refresher-content[state=ready] {
   .refresher-pulling {
     display: block;
   }
@@ -119,13 +119,13 @@ $refresher-border-color:       #ddd !default;
   }
 }
 
-.ion-refresher[state=refreshing] .ion-refresher-content {
+.ion-refresher-content[state=refreshing] {
   .refresher-refreshing {
     display: block;
   }
 }
 
-.ion-refresher[state=cancelling] .ion-refresher-content {
+.ion-refresher-content[state=cancelling] {
   .refresher-pulling {
     display: block;
   }
@@ -135,7 +135,7 @@ $refresher-border-color:       #ddd !default;
   }
 }
 
-.ion-refresher[state=completing] .ion-refresher-content {
+.ion-refresher-content[state=completing] {
   .refresher-refreshing {
     display: block;
   }

@@ -32,9 +32,9 @@
     );";
   }
 
-  @error $error-msg;
+  @return $error-msg;
 
-  @return null;
+  //@return null;
 }
 
 @function color-brightness($color-value) {

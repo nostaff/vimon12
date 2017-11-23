@@ -20,7 +20,7 @@
 .popover-wrapper {
   z-index: $z-index-overlay-wrapper;
 
-  opacity: 1;
+  opacity: 0;
 }
 
 .popover-content {
@@ -41,19 +41,4 @@
 
 .popover-content .scroll-content {
   position: relative;
-}
-
-.ion-popover .ion-backdrop {
-  opacity: .08;
-}
-
-// transition fadeup
-.ion-popover-fadeup-enter-active, .ion-popover-fadeup-leave-active {
-  transition: opacity .15s ease;
-  opacity: 1;
-}
-
-.ion-popover-fadeup-enter, .ion-popover-fadeup-leave-to {
-  opacity: 0;
-  transition: opacity ease .15s;
 }

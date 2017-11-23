@@ -47,6 +47,7 @@ $toolbar-button-ios-strong-font-weight:     600 !default;
 
 .toolbar-ios {
   @include padding($toolbar-ios-padding);
+  @include safe-area-padding-horizontal($toolbar-ios-padding);
 
   min-height: $toolbar-ios-height;
 }
@@ -193,7 +194,7 @@ $toolbar-button-ios-strong-font-weight:     600 !default;
       color: $color-base;
     }
 
-    &:active {
+    &.activated {
       opacity: .4;
     }
   }
@@ -215,7 +216,7 @@ $toolbar-button-ios-strong-font-weight:     600 !default;
     opacity: .4;
   }
 
-  &:active {
+  &.activated {
     color: color-contrast($colors-ios, $toolbar-ios-button-color);
     background-color: $toolbar-ios-button-color;
   }
@@ -229,7 +230,7 @@ $toolbar-button-ios-strong-font-weight:     600 !default;
     color: $fg-color;
     background-color: transparent;
 
-    &:active {
+    &.activated {
       color: $color-contrast;
       background-color: $fg-color;
     }
@@ -250,7 +251,7 @@ $toolbar-button-ios-strong-font-weight:     600 !default;
     opacity: .4;
   }
 
-  &:active {
+  &.activated {
     color: color-contrast($colors-ios, $toolbar-ios-button-color);
     background-color: color-shade($toolbar-ios-button-color);
     opacity: .4;
@@ -263,7 +264,7 @@ $toolbar-button-ios-strong-font-weight:     600 !default;
     color: $color-contrast;
     background-color: $color-base;
 
-    &:active {
+    &.activated {
       color: $color-contrast;
       background-color: color-shade($color-base);
     }

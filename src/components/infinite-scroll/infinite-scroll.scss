@@ -95,10 +95,11 @@ $infinite-scroll-loading-text-margin-start:32px !default;
 
 // Infinite Scroll Content States
 // --------------------------------------------------
-.ion-infinite-scroll[state=loading] .ion-infinite-scroll-content .infinite-loading {
+
+.ion-infinite-scroll-content[state=loading] .infinite-loading {
   display: block;
 }
 
-.ion-infinite-scroll[state=disabled] .ion-infinite-scroll-content {
+.ion-infinite-scroll-content[state=disabled] {
   display: none;
 }

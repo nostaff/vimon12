@@ -34,7 +34,7 @@ $picker-max-width:                         500px !default;
 .picker-wrapper {
   @include position(null, 0, 0, 0);
   @include margin(auto);
-  @include transform(translate3d(0, 0, 0));
+  @include transform(translate3d(0, 100%, 0));
 
   position: absolute;
   z-index: $z-index-overlay-wrapper;
@@ -51,6 +51,8 @@ $picker-max-width:                         500px !default;
 }
 
 .picker-columns {
+  @include margin(null, null, constant(safe-area-inset-bottom), null);
+  @include margin(null, null, env(safe-area-inset-bottom), null);
   position: relative;
   display: flex;
 
@@ -68,7 +70,7 @@ $picker-max-width:                         500px !default;
 
 .picker-col {
   position: relative;
-  //display: flex;
+  display: flex;
 
   flex: 1;
   justify-content: center;
@@ -116,10 +118,10 @@ $picker-max-width:                         500px !default;
 
 // contain property is supported by Chrome
 .picker-opt {
-  //@include position(0, null, null, 0);
+  @include position(0, null, null, 0);
   @include text-align(center);
 
-  //position: absolute;
+  position: absolute;
 
   display: block;
   overflow: hidden;
@@ -166,20 +168,4 @@ $picker-max-width:                         500px !default;
   display: none;
 
   pointer-events: none;
-}
-
-
-// transition fadeup
-.ion-picker-fadeup-enter-active {
-  transition: transform .45s cubic-bezier(.36, .66, .04, 1);
-  transform: translateY(0);
-}
-
-.ion-picker-fadeup-leave-active {
-  transition: transform .4s cubic-bezier(.36, .66, .04, 1);
-  transform: translateY(100%);
-}
-
-.ion-picker-fadeup-enter, .ion-picker-fadeup-leave-to {
-  transform: translateY(100%);
 }

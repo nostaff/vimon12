@@ -194,6 +194,7 @@ $toggle-wp-item-end-padding-start:       $item-wp-padding-start !default;
   }
 }
 
+.item-wp .toggle-wp[item-left], // deprecated
 .item-wp .toggle-wp[item-start] {
   @include deprecated-variable(padding, $toggle-wp-item-left-padding) {
     @include padding($toggle-wp-item-start-padding-top, $toggle-wp-item-start-padding-end, $toggle-wp-item-start-padding-bottom, $toggle-wp-item-start-padding-start);

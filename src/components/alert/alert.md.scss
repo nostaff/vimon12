@@ -613,7 +613,7 @@ $alert-md-checkbox-icon-transform:            rotate(45deg) !default;
   }
 }
 
-.alert-md .alert-button:active {
+.alert-md .alert-button.activated {
   background-color: $alert-md-button-background-color-activated;
 }
 

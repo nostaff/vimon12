@@ -1,4 +1,4 @@
-@import "../../themes/ionic.globals.wp";
+@import "../../themes/ionic.globals";
 
 // Windows Popover
 // --------------------------------------------------
@@ -43,6 +43,6 @@ $popover-wp-background:                $background-wp-color !default;
 }
 
 .popover-wp .popover-viewport {
-  opacity: 1;
+  opacity: 0;
   transition-delay: 100ms;
 }

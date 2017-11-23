@@ -635,6 +635,6 @@ $alert-wp-checkbox-icon-transform:             rotate(45deg) !default;
   @include margin-horizontal(null, $alert-wp-button-margin-end);
 }
 
-.alert-wp .alert-button:active {
+.alert-wp .alert-button.activated {
   background: $alert-wp-button-background-activated;
 }
