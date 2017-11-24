@@ -32,4 +32,18 @@ class IonToast {
 
 }
 
-window.$toast = new IonToast()
+const VuePlugin = {
+
+  install: function (Vue, options = {}) {
+    if (this.installed) {
+      return
+    }
+
+    Vue.prototype.$toast = new IonToast()
+
+    this.installed = true
+  }
+
+}
+
+export default VuePlugin

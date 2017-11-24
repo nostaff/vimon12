@@ -24,7 +24,7 @@
 
         methods: {
             showToast(position) {
-                $toast.present({
+                this.$toast.present({
                     message: 'Top was added successfully',
                     duration: 3000,
                     position: position,
@@ -36,7 +36,7 @@
             },
 
             showLongToast() {
-                $toast.present({
+                this.$toast.present({
                     message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea voluptatibus quibusdam eum nihil optio, ullam accusamus magni, nobis suscipit reprehenderit, sequi quam amet impedit. Accusamus dolorem voluptates laborum dolor obcaecati.',
                     duration: 3000,
                     onDismiss () {
@@ -46,7 +46,7 @@
             },
 
             showDismissDurationToast() {
-                $toast.present({
+                this.$toast.present({
                     message: 'I am dismissed after 1.5 seconds',
                     duration: 1500,
                     onDismiss () {
@@ -56,7 +56,7 @@
             },
 
             showToastWithCloseButton() {
-                $toast.present({
+                this.$toast.present({
                     message: 'Your internet connection appears to be offline. Data integrity is not guaranteed.',
                     showCloseButton: true,
                     closeButtonText: 'Ok',

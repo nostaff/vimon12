@@ -62,7 +62,20 @@ class IonDialog {
     dismiss(buttonIndex) {
         if(vm) vm.dismiss(buttonIndex)
     }
+}
+
+const VuePlugin = {
+
+  install: function (Vue, options = {}) {
+    if (this.installed) {
+      return
+    }
+
+    Vue.prototype.$dialog = new IonDialog()
+
+    this.installed = true
+  }
 
 }
 
-window.$dialog = new IonDialog()
+export default VuePlugin

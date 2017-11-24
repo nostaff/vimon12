@@ -43,7 +43,7 @@
     export default {
         methods: {
             showLoading(name, duration) {
-                $loading.present({
+               this.$loading.present({
                     spinner: name,
                     content: 'This is the "'+name+'" spinner. It will dismiss after ' + duration/1000 + 'seconds.',
                     duration: duration
@@ -53,7 +53,7 @@
             },
 
             showCustomLoading() {
-                $loading.present({
+              this.$loading.present({
                     spinner: 'circles',
                     content: 'This is the spinner with "enableBackdropDismiss = true".',
                     duration: 100000,
@@ -64,7 +64,7 @@
             },
 
             showLoadingText() {
-                $loading.present({
+              this.$loading.present({
                     content: 'This is the ONLY TEXT spinner. It will dismiss after  3 seconds.',
                     duration: 3000
                 }).then((res) => {

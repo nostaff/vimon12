@@ -58,12 +58,10 @@ const afterEach = (toRoute, fromRoute) => {
 Vonic.app.setConfig('beforeEach', beforeEach)
 Vonic.app.setConfig('afterEach', afterEach)
 
-import routes from './router/routes'
-import store from '../../start-kit/src/store'
+import routes from './router/route-opt'
 
 Vue.use(Vonic.app, {
-    routes: routes,
-    store: store
+    routes: routes
 })
 
 // import FastClick from 'fastclick'

@@ -24,4 +24,18 @@ class IonPicker {
 
 }
 
-window.$picker = new IonPicker()
+const VuePlugin = {
+
+  install: function (Vue, options = {}) {
+    if (this.installed) {
+      return
+    }
+
+    Vue.prototype.$picker = new IonPicker()
+
+    this.installed = true
+  }
+
+}
+
+export default VuePlugin

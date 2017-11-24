@@ -10,7 +10,7 @@ const extend = (target, source) => {
     return target
 }
 
-class VonicPopup {
+class IonPopup {
     constructor() {
         this._vm = undefined
     }
@@ -82,4 +82,19 @@ class VonicPopup {
     }
 }
 
-window.$popup = new VonicPopup()
+
+const VuePlugin = {
+
+  install: function (Vue, options = {}) {
+    if (this.installed) {
+      return
+    }
+
+    Vue.prototype.$popup = new IonPopup()
+
+    this.installed = true
+  }
+
+}
+
+export default VuePlugin

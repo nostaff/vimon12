@@ -48,4 +48,18 @@ class IonModal {
 
 }
 
-window.$modal = new IonModal()
+const VuePlugin = {
+
+  install: function (Vue, options = {}) {
+    if (this.installed) {
+      return
+    }
+
+    Vue.prototype.$modal = new IonModal()
+
+    this.installed = true
+  }
+
+}
+
+export default VuePlugin

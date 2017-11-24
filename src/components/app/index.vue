@@ -1,33 +1,38 @@
 <template>
     <div class="ion-app" :class="theme">
-        <transition name="page" v-on:before-enter="beforePageEnter">
-            <router-view></router-view>
-        </transition>
+        <div app-viewport=""></div>
+        <div class="ion-nav">
+            <div nav-viewport=""></div>
+            <transition name="page" v-on:before-enter="beforePageEnter">
+                <slot></slot>
+            </transition>
+            <div class="nav-decor"></div>
+        </div>
     </div>
 </template>
 <script>
-    import ThemeMixins from '../../themes/theme.mixins';
+  import ThemeMixins from '../../themes/theme.mixins';
 
-    export default {
-        name: 'ion-app',
-        mixins: [ThemeMixins],
+  export default {
+    name: 'ion-app',
+    mixins: [ThemeMixins],
 
-        created() {
-            this.$events.$on('VonicNotification', (data) => {
-                $toast.present(data.message);
-            })
-        },
+    created() {
+      this.$events.$on('VonicNotification', (data) => {
+        this.$toast.present(data.message);
+      })
+    },
 
-        mounted() {
-//            console.debug('app mounted')
-        },
+    mounted() {
+      console.debug('app mounted')
+    },
 
-        methods: {
-            beforePageEnter(el) {
-//                 console.log('beforePageEnter time:', +new Date())
-            }
-        }
+    methods: {
+      beforePageEnter(el) {
+        console.log('beforePageEnter time:', +new Date())
+      }
     }
+  }
 </script>
 
 

@@ -101,7 +101,4 @@ const routes = [
 
 ]
 
-export default {
-  mode: 'hash',
-  routes: routes // （缩写）相当于 routes: routes
-}
+export default routes

@@ -12,7 +12,7 @@ import { MenuContentGesture } from './menu-gestures';
 import { Menu as MenuInterface } from '../app/menu-interface';
 import { MenuController } from '../app/menu-controller';
 import { MenuType } from './menu-types';
-import { Nav } from '../nav/nav';
+import { Nav } from '../navigation/navigation';
 import { Platform } from '../../platform/platform';
 import { UIEventManager } from '../../gestures/ui-event-manager';
 import { RootNode } from '../split-pane/split-pane';
@@ -38,16 +38,16 @@ import { RootNode } from '../split-pane/split-pane';
  *   </ion-content>
  * </ion-menu>
  *
- * <ion-nav #mycontent [root]="rootPage"></ion-nav>
+ * <ion-navigation #mycontent [root]="rootPage"></ion-navigation>
  * ```
  *
- * To add a menu to an app, the `<ion-menu>` element should be added as a sibling to the `ion-nav` it will belongs
+ * To add a menu to an app, the `<ion-menu>` element should be added as a sibling to the `ion-navigation` it will belongs
  * to. A [local variable](https://angular.io/docs/ts/latest/guide/user-input.html#local-variables)
- * should be added to the `ion-nav` and passed to the `ion-menu`s `content` property.
+ * should be added to the `ion-navigation` and passed to the `ion-menu`s `content` property.
  *
  * This tells the menu what it is bound to and what element to watch for gestures.
  * In the below example, `content` is using [property binding](https://angular.io/docs/ts/latest/guide/template-syntax.html#!#property-binding)
- * because `mycontent` is a reference to the `<ion-nav>` element, and not a string.
+ * because `mycontent` is a reference to the `<ion-navigation>` element, and not a string.
  *
  *
  * ### Opening/Closing Menus
@@ -74,7 +74,7 @@ import { RootNode } from '../split-pane/split-pane';
  * If a [MenuToggle](../MenuToggle) button is added to the [Navbar](../../navbar/Navbar) of
  * a page, the button will only appear when the page it's in is currently a root page. The
  * root page is the initial page loaded in the app, or a page that has been set as the root
- * using the [setRoot](../../nav/NavController/#setRoot) method on the [NavController](../../nav/NavController).
+ * using the [setRoot](../../navigation/NavController/#setRoot) method on the [NavController](../../navigation/NavController).
  *
  * For example, say the application has two pages, `Page1` and `Page2`, and both have a
  * `MenuToggle` button in their navigation bars. Assume the initial page loaded into the app
@@ -354,7 +354,7 @@ export class Menu implements RootNode, MenuInterface, OnInit, OnDestroy {
 
     // requires content element
     if (!this._cntEle) {
-      return console.error('Menu: must have a [content] element to listen for drag events on. Example:\n\n<ion-menu [content]="content"></ion-menu>\n\n<ion-nav #content></ion-nav>');
+      return console.error('Menu: must have a [content] element to listen for drag events on. Example:\n\n<ion-menu [content]="content"></ion-menu>\n\n<ion-navigation #content></ion-navigation>');
     }
 
     this.setElementAttribute('side', this._side);

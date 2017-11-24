@@ -1,19 +1,31 @@
 <template>
-    <div class="ion-page show-page">
+    <div class="ion-page show-page" :style="{zIndex:pageZIndex}">
         <slot></slot>
     </div>
 </template>
 
 <script>
-    import ThemeMixins from '../../themes/theme.mixins';
-    export default {
-        name: 'ion-page',
-        mixins: [ThemeMixins],
+  import ThemeMixins from '../../themes/theme.mixins';
 
-        created() {
-            this.$events.$on('VonicNotification', (data) => {
-                $toast.present(data.message);
-            })
-        },
-    }
+  let initPageZIndex = 100
+  export default {
+    name: 'ion-page',
+    mixins: [ThemeMixins],
+
+    created() {
+      this.$events.$on('VonicNotification', (data) => {
+        this.$toast.present(data.message);
+      })
+
+      let direction = this.$history.getDirection()
+      if (direction === 'forward') {
+        this.pageZIndex = ++initPageZIndex
+      } else if (direction === 'backward') {
+        this.pageZIndex = --initPageZIndex
+      } else {
+        this.pageZIndex = initPageZIndex
+      }
+      this.$root.$emit('page:created')
+    },
+  }
 </script>

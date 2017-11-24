@@ -4,7 +4,7 @@ import AttachFastClick from 'fastclick'
 import APP_CONFIGS from './config/app-configs'
 import PLATFORM_CONFIGS from './config/platform-configs'
 import 'ionicons/dist/css/ionicons.css'
-import vimo from '../../src/dist'
+import Vimo from '../../src/index'
 import VueI18n from 'vue-i18n'
 import vmGeo from 'vm-geo'
 import vmStorage from 'vm-storage'
@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // 平台基础安装
-Vue.use(vimo, {
+Vue.use(Vimo, {
   custConf: APP_CONFIGS,
   pltConf: PLATFORM_CONFIGS,
   router: router

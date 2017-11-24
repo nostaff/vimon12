@@ -165,7 +165,7 @@
 //
 //                // requires content element
 //                if (!this._cntEle) {
-//                    return console.error('Menu: must have a [content] element to listen for drag events on. Example:\n\n<ion-menu [content]="content"></ion-menu>\n\n<ion-nav #content></ion-nav>');
+//                    return console.error('Menu: must have a [content] element to listen for drag events on. Example:\n\n<ion-menu [content]="content"></ion-menu>\n\n<ion-navigation #content></ion-navigation>');
 //                }
 
                 this.setElementAttribute('side', this.side);

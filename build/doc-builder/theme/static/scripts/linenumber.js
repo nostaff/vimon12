@@ -23,8 +23,8 @@
     }
   }
 
-  var navElement = document.querySelectorAll('body>nav')[0]
-  var navs = document.querySelectorAll('nav>ul>li a')
+  var navElement = document.querySelectorAll('body>navigation')[0]
+  var navs = document.querySelectorAll('navigation>ul>li a')
   navs = Array.prototype.slice.call(navs)
 
   // 如果nav有浏浏览记录则滚动到那个位置
@@ -45,7 +45,7 @@
     }
   }
 
-  var mainNavs = document.querySelectorAll('nav>.nav__header>h2 a')
+  var mainNavs = document.querySelectorAll('navigation>.nav__header>h2 a')
   mainNavs = Array.prototype.slice.call(mainNavs)
 
   for (i = 0, len = mainNavs.length; len > i; i++) {

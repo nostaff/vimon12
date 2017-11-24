@@ -6,37 +6,80 @@
   "private": true,
   "scripts": {
     "demo:dev": "node demos/build/dev-server.js",
-    "demo:build": "node demos/build/build.js"
+    "demo:build": "node demos/build/build.js",
+    "docs:dev": "gulp default --gulpfile build/doc-builder/gulpfile.js",
+    "docs:build": "gulp build --gulpfile build/doc-builder/gulpfile.js",
+    "pub:dist1": "node build/webpack.dist.conf.js",
+    "pub:lib1": "gulp default --gulpfile build/gulpfile.lib.js",
+    "pub:old": "npm run pub:lib && npm run pub:dist",
+    "pub:entry": "cross-env BABEL_ENV=lib node build/lib-builder/build-entry.js",
+    "pub:lib": "cross-env BABEL_ENV=lib node build/lib-builder/index.js",
+    "pub": "npm run pub:entry && npm run pub:lib",
+    "test": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
+    "lint": "eslint --ext .js,.vue components examples/src test/unit/specs",
+    "lint:fix": "npm run lint -- --fix",
+    "precommit": "lint-staged",
+    "commitmsg": "validate-commit-msg",
+    "prepush": "npm run test",
+    "release": "standard-version && npm run pub && git push --follow-tags origin master && npm publish",
+    "ci-demo-release": "npm run demo:build && node build/demo-publish.js",
+    "ci-docs-release": "npm run docs:build && node build/docs-publish.js",
+    "ci-report-coverage": "cat ./test/unit/coverage/lcov.info | coveralls",
+    "ci-github-release": "node build/github-release.js"
+  },
+  "standard-version": {
+    "skip": {
+      "bump": false,
+      "changelog": false,
+      "commit": false,
+      "tag": false
+    }
+  },
+  "lint-staged": {
+    "{components,test/unit/specs}/**/*.{js,vue}": [
+      "npm run lint"
+    ]
+  },
+  "config": {
+    "validate-commit-msg": {
+      "types": "conventional-commit-types",
+      "helpMessage": "We use Conventional Commits, for more information here: https://conventionalcommits.org/"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nostaff/vue-ionic.git"
+  },
+  "demo": {
+    "type": "git",
+    "url": "git@github.com:nostaff/vue-ionic-demo.git"
   },
   "dependencies": {
     "axios": "^0.16.2",
-    "babel-runtime": "^6.23.0",
     "es6-promise": "^4.1.1",
+    "lodash.debounce": "^4.0.8",
+    "lodash.throttle": "^4.1.1",
     "ionicons": "^3.0.0",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
-    "vm-geo": "0.0.5",
-    "vm-storage": "^0.2.1",
-    "vue": "^2.2.2",
-    "vue-events": "^3.0.1",
-    "vue-i18n": "^7.3.2",
-    "vue-router": "^2.2.0",
-    "vue-scroller": "^2.2.1",
-    "vuex": "^2.3.1"
+    "vue": "^2.2.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
-    "babel-core": "^6.22.1",
-    "babel-loader": "^6.2.10",
-    "babel-plugin-transform-runtime": "^6.22.0",
-    "babel-preset-env": "^1.2.1",
-    "babel-preset-es2015": "^6.24.0",
-    "babel-preset-stage-2": "^6.22.0",
-    "babel-register": "^6.22.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-istanbul": "^3.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "chai": "^4.1.2",
     "chalk": "^1.1.3",
     "connect-history-api-fallback": "^1.3.0",
     "copy-webpack-plugin": "^4.0.1",
+    "cross-env": "^5.1.1",
     "css-loader": "^0.26.1",
+    "eslint": "^4.11.0",
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.14.1",
     "extract-text-webpack-plugin": "^2.0.0",
@@ -46,32 +89,63 @@
     "function-bind": "^1.1.0",
     "html-webpack-plugin": "^2.28.0",
     "http-proxy-middleware": "^0.17.3",
-    "less": "^2.7.2",
-    "less-loader": "^4.0.2",
-    "moment": "^2.18.1",
+    "jsdoc": "^3.4.3",
+    "jsdoc-to-markdown": "^3.0.0",
+    "jsdoc-vue": "^1.0.0",
+    "karma": "^1.4.1",
+    "karma-coverage": "^1.1.1",
+    "karma-mocha": "^1.3.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-phantomjs-shim": "^1.4.0",
+    "karma-safari-launcher": "^1.0.0",
+    "karma-sinon-chai": "^1.2.4",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-spec-reporter": "0.0.26",
+    "karma-webpack": "^2.0.2",
+    "lodash.camelcase": "^4.3.0",
+    "lodash.capitalize": "^4.2.1",
+    "lodash.clonedeep": "^4.5.0",
+    "lodash.kebabcase": "^4.1.1",
+    "lodash.startcase": "^4.4.0",
+    "node-sass": "^4.7.2",
     "opn": "^4.0.2",
     "optimize-css-assets-webpack-plugin": "^1.3.0",
     "ora": "^1.1.0",
     "rimraf": "^2.6.0",
     "semver": "^5.3.0",
+    "sinon": "^4.1.2",
+    "sinon-chai": "^2.14.0",
     "style-loader": "^0.16.0",
     "url-loader": "^0.5.7",
+    "vue-i18n": "^7.3.2",
     "vue-loader": "^11.1.4",
+    "vue-router": "^2.2.0",
+    "vue-scroller": "^2.2.1",
     "vue-style-loader": "^2.0.4",
     "vue-template-compiler": "^2.2.1",
-    "webpack": "^2.2.1",
+    "webpack": "^3.5.6",
     "webpack-bundle-analyzer": "^2.2.1",
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.16.1",
     "webpack-merge": "^2.6.1"
   },
   "engines": {
-    "node": ">= 4.0.0",
-    "npm": ">= 3.0.0"
+    "node": ">= 8.0.0",
+    "npm": ">= 4.0.0"
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "standard": {
+    "ignore": [
+      "/build/",
+      "/config/",
+      "/dist/",
+      "/node_modules/",
+      "/src/assets/",
+      "/static/"
+    ]
+  }
 }

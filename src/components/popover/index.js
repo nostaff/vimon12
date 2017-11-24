@@ -48,4 +48,18 @@ class IonPopover {
 
 }
 
-window.$popover = new IonPopover()
+const VuePlugin = {
+
+  install: function (Vue, options = {}) {
+    if (this.installed) {
+      return
+    }
+
+    Vue.prototype.$popover = new IonPopover()
+
+    this.installed = true
+  }
+
+}
+
+export default VuePlugin

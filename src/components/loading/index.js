@@ -26,4 +26,18 @@ class IonLoading {
 
 }
 
-window.$loading = new IonLoading()
+const VuePlugin = {
+
+  install: function (Vue, options = {}) {
+    if (this.installed) {
+      return
+    }
+
+    Vue.prototype.$loading = new IonLoading()
+
+    this.installed = true
+  }
+
+}
+
+export default VuePlugin

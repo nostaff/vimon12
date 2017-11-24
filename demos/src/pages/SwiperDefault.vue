@@ -27,7 +27,7 @@
 
       <div style="height: 20px;"></div>
 
-      <div class="item item-icon-right" thin-border @click="$router.forward('/advanced/swiper/vertical')">
+      <div class="item item-icon-right" thin-border @click="this.$router.forward('/advanced/swiper/vertical')">
         Switch between pages having swiper component
               </div>
     </ion-content>
@@ -66,7 +66,7 @@
   export default {
     methods: {
       onClick() {
-        $toast.present('clicked!')
+        this.$toast.present('clicked!')
       },
 
       next() {

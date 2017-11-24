@@ -23,4 +23,18 @@ class IonActionSheet {
 
 }
 
-window.$actionSheet = new IonActionSheet()
+const VuePlugin = {
+
+  install: function (Vue, options = {}) {
+    if (this.installed) {
+      return
+    }
+
+    Vue.prototype.$actionSheet = new IonActionSheet()
+
+    this.installed = true
+  }
+
+}
+
+export default VuePlugin

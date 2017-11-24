@@ -1,14 +1,14 @@
 <script>
     import Toolbar from './toolbar.vue';
     import Navbar from './navbar.vue';
-    import BarTitle from './toolbar.title.vue';
-    import BarButtons from './toolbar.button.vue';
+    import Title from './toolbar.title.vue';
+    import Buttons from './toolbar.button.vue';
 
     export default {
         Toolbar,
         Navbar,
-        BarTitle,
-        BarButtons
+        Title,
+        Buttons
     };
 </script>
 

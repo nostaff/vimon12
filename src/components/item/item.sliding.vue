@@ -11,7 +11,6 @@
         <slot></slot>
     </div>
 </template>
-<style lang="less"></style>
 <script type="text/javascript">
     import { pointerCoord, transitionEnd, swipeShouldReset } from '../../utils/utils'
     import ThemeMixins from '../../themes/theme.mixins';
