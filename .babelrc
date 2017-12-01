@@ -6,6 +6,26 @@
 //  "plugins": ["transform-runtime"],
   "comments": false,
   "env": {
+    "demo": {
+      "presets": [
+        [
+          "env",
+          {
+            "modules": false
+          }
+        ],
+        "stage-2"
+      ],
+      "plugins": [
+        [
+          "import",
+          {
+            "libraryName": "vimo",
+            "libraryDirectory": "components"
+          }
+        ]
+      ]
+    },
     "test": {
       "plugins": [ "istanbul" ]
     }

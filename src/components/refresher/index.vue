@@ -21,8 +21,8 @@
 <script>
     import { registerListener, pointerCoord, isTrueProperty } from '../../utils/utils'
     import ThemeMixins from '../../themes/theme.mixins';
-    import IonIcon from "../icon/index.vue";
-    import IonSpinner from "../spinner/index.vue";
+    import IonIcon from "../icon";
+    import IonSpinner from "../spinner";
 
     const STATE_INACTIVE = 'inactive';
     const STATE_PULLING = 'pulling';

@@ -42,7 +42,7 @@
 
         methods: {
             openBasicModal() {
-                $modal.present({
+                this.$modal.present({
                     template: ModalPage,
                     onDismiss (data) {
                         console.log(data)
@@ -50,7 +50,7 @@
                 });
             },
             openModalWithParams() {
-                $modal.present({
+                this.$modal.present({
                     template: ModalPage,
                     data: {
                         myParam: this.myParam,

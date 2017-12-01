@@ -1,47 +1,49 @@
 <template>
-    <ion-page>
+  <ion-page>
 
-        <ion-header>
+    <ion-header>
 
-            <ion-navbar>
-                <ion-buttons slot="item-end">
-                    <ion-button @click.native="dismiss()">Close</ion-button>
-                </ion-buttons>
-                <ion-title>Modals</ion-title>
-            </ion-navbar>
+      <ion-navbar>
+        <ion-buttons slot="item-end">
+          <ion-button @click.native="dismiss()">Close</ion-button>
+        </ion-buttons>
+        <ion-title>Modals</ion-title>
+      </ion-navbar>
 
-        </ion-header>
+    </ion-header>
 
 
-        <ion-content padding>
-            <div v-if="myParam">
-                <h5>Parameters passed:</h5>
-                <pre style="background-color: #f8f8f8">selections: {{myParam}}</pre>
-            </div>
-            <div v-else>
-                <p>No parameters passed.</p>
-            </div>
-            <ion-button color="danger" full @click.native="dismiss()">Close Modal</ion-button>
+    <ion-content padding>
+      <div v-if="myParam">
+        <h5>Parameters passed:</h5>
+        <pre style="background-color: #f8f8f8">selections: {{myParam}}</pre>
+      </div>
+      <div v-else>
+        <p>No parameters passed.</p>
+      </div>
+      <ion-button color="danger" full @click.native="dismiss()">Close Modal</ion-button>
 
-        </ion-content>
-    </ion-page>
+    </ion-content>
+  </ion-page>
 </template>
 
 <script>
 
-    export default {
-        data() {
-            return {
-                myParam: null,
-            }
-        },
-        created() {
-            this.myParam = this.$options.$data ? this.$options.$data.myParam : null;
-        },
-        methods: {
-            dismiss() {
-                $modal.dismiss('dismiss return by modal page' + this.myParam);
-            }
-        }
+  import {Modal} from 'vimo'
+
+  export default {
+    data() {
+      return {
+        myParam: null,
+      }
+    },
+    created() {
+      this.myParam = this.$options.$data ? this.$options.$data.myParam : null;
+    },
+    methods: {
+      dismiss() {
+        this.$modal.dismiss('dismiss return by modal page' + this.myParam);
+      }
     }
+  }
 </script>

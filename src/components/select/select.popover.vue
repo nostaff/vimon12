@@ -1,51 +1,52 @@
 <template>
-    <ion-list radio-group v-model="checkedValue" @onChange="onRadioChecked($event)">
-        <ion-item v-for="option in options" key="idx">
-            <ion-label slot="item-label">{{option.text}}</ion-label>
-            <ion-radio slot="item-content" :value="option.value" :disabled="option.disabled"></ion-radio>
-        </ion-item>
-    </ion-list>
+  <ion-list radio-group v-model="checkedValue" @onChange="onRadioChecked($event)">
+    <ion-item v-for="option in options" key="idx">
+      <ion-label slot="item-label">{{option.text}}</ion-label>
+      <ion-radio slot="item-content" :value="option.value" :disabled="option.disabled"></ion-radio>
+    </ion-item>
+  </ion-list>
 </template>
 <script type="text/javascript">
-    import { isBlank, isTrueProperty } from '../../utils/utils'
-    import IonList from "../list/list.vue";
-    import IonItem from "../item/item.vue";
-    import IonLabel from "../label/index.vue";
-    import IonRadio from "../radio/radio.vue";
+  import {isBlank, isTrueProperty} from '../../utils/utils'
+  import Popover from "../popover/index"
+  import IonList from "../list/list.vue";
+  import IonItem from "../item/item.vue";
+  import IonLabel from "../label/index.vue";
+  import IonRadio from "../radio/radio.vue";
 
-    export default {
-        name: 'ion-option',
-        components: {
-            IonRadio,
-            IonLabel,
-            IonItem,
-            IonList
-        },
-        data () {
-            return {
-                options: [],
-                checkedValue: null
-            }
-        },
-        created() {
-            this.options = this.$options.$data.options;
+  export default {
+    name: 'ion-option',
+    components: {
+      IonRadio,
+      IonLabel,
+      IonItem,
+      IonList
+    },
+    data() {
+      return {
+        options: [],
+        checkedValue: null
+      }
+    },
+    created() {
+      this.options = this.$options.$data.options;
 
-            this.checkedValue = this.getValue();
-        },
-        methods: {
-            onRadioChecked (value) {
-                let checkedOption = this.options.find(option => option.value === value);
-                if (checkedOption && checkedOption.handler) {
-                    checkedOption.handler();
-                }
-
-                $popover.dismiss(value)
-            },
-
-            getValue() {
-                let checkedOption = this.options.find(option => option.checked);
-                return checkedOption ? checkedOption.value : undefined;
-            }
+      this.checkedValue = this.getValue();
+    },
+    methods: {
+      onRadioChecked(value) {
+        let checkedOption = this.options.find(option => option.value === value);
+        if (checkedOption && checkedOption.handler) {
+          checkedOption.handler();
         }
+
+        Popover.dismiss(value)
+      },
+
+      getValue() {
+        let checkedOption = this.options.find(option => option.checked);
+        return checkedOption ? checkedOption.value : undefined;
+      }
     }
+  }
 </script>

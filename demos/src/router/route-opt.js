@@ -48,14 +48,10 @@ import DemoActionSheet from '../pages/ActionSheet'
 import DemoModal from '../pages/Modal'
 
 const routes = [
-    {
-        path: '/',
-        name: 'index',
-        component: DemoHome,
-    },
+    { path: '/', name:"demo.index", component: DemoHome },
 
     // Components
-    { path: '/demo/button', component: DemoButton },
+    { path: '/demo/button', name:"demo.button", component: DemoButton },
     { path: '/demo/chip', component: DemoChip },
     { path: '/demo/badge', component: DemoBadge },
     { path: '/demo/fabs', component: DemoFabs },

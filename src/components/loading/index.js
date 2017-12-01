@@ -3,41 +3,39 @@ import Loading from './loading.vue'
 
 import {createElement, uuid} from '../../utils/utils'
 
-let vm = undefined
-
 class IonLoading {
+  constructor() {
+    this._vm = undefined
+  }
 
-    present(options) {
-        let rnd = uuid()
-        let marker = `ion-loading-${rnd}`
-        let container = document.querySelector('.ion-app');
-        createElement(marker, container)
-        let selector = `[${marker}]`
+  present(options) {
 
-        vm = new Vue(Loading).$mount(selector)
-        vm.$el.setAttribute('ion-dialog', '')
+    console.log(options)
+    let rnd = uuid()
+    let marker = `ion-loading-${rnd}`
+    let container = document.querySelector('.ion-app');
+    createElement(marker, container)
+    let selector = `[${marker}]`
 
-        return vm.present(options)
-    }
+    this._vm = new Vue(Loading).$mount(selector)
+    this._vm.$el.setAttribute('ion-dialog', '')
 
-    dismiss(role) {
-        if(vm) vm.dismiss(role)
-    }
+    //
+    //
+    // let el = getInsertPosition(this._position).appendChild(
+    //   document.createElement('div')
+    // )
+    // let PreviewImage = Vue.extend(this._component)
+    // let _ins = new PreviewImage({propsData: options})
+    // _ins.$mount(el)
 
-}
+    return this._vm.present(options)
+  }
 
-const VuePlugin = {
-
-  install: function (Vue, options = {}) {
-    if (this.installed) {
-      return
-    }
-
-    Vue.prototype.$loading = new IonLoading()
-
-    this.installed = true
+  dismiss(role) {
+    if (this._vm) this._vm.dismiss(role)
   }
 
 }
 
-export default VuePlugin
+export default new IonLoading()

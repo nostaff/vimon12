@@ -31,7 +31,7 @@
         components: {IonNote},
         methods: {
             showAlert() {
-                $dialog.alert({
+                this.$dialog.alert({
                     title: 'New Friend!',
                     message: 'Your friend, Obi wan Kenobi, just accepted your friend request!',
                     buttons: [
@@ -48,7 +48,7 @@
             },
 
             showAlert2() {
-                $dialog.alert({
+                this.$dialog.alert({
                     title: 'New Friend!',
                     message: 'Your friend, Obi wan Kenobi, just accepted your friend request!',
                     buttons: [
@@ -67,7 +67,7 @@
             },
 
             showConfirm() {
-                $dialog.confirm({
+                this.$dialog.confirm({
                     title: '在"微信"中打开链接吗?',
                     message: '即将启动"微信",并在微信中打开连接',
                     buttons: [
@@ -86,7 +86,7 @@
             },
 
             showPrompt() {
-                $dialog.prompt({
+                this.$dialog.prompt({
                     title: 'Login',
                     message: "Enter a name for this new album you're so keen on adding",
                     inputs: [
@@ -120,7 +120,7 @@
             },
 
             showRadio() {
-                $dialog.radio({
+                this.$dialog.radio({
                     title: 'Login',
                     inputs: [
                         {
@@ -161,7 +161,7 @@
             },
 
             showCheckbox() {
-                $dialog.checkbox({
+                this.$dialog.checkbox({
                     title: 'Login',
                     inputs: [
                         {
@@ -212,7 +212,7 @@
                 for (let i = 0; i < 3; i++) {
                     setTimeout(() => {
                         options.content = `第${i+1}条消息`
-                        $dialog.alert(options)
+                        this.$dialog.alert(options)
                     }, 500 * i)
                 }
             }

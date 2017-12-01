@@ -1,51 +1,49 @@
-import Nav from './nav/index.vue'
-import App from './app/index.vue'
-import {Footer, Header, Page} from './page/index.vue'
-import Content from './content/index.vue'
-// import Nav from './navigation/index.vue'
-// import Navbar from './navbar/index.vue'
-import Avatar from './avatar/index.vue'
-import Backdrop from './backdrop/index.vue'
-import Badge from './badge/index.vue'
-import Button from './button/index.vue'
-import {Card, CardContent, CardHeader, CardTitle} from './card/index.vue'
-import {Checkbox, CheckboxGroup} from './checkbox/index.vue'
-import Chip from './chip/index.vue'
-import Datetime from './datetime/index.vue'
-import Fab from './fab/index.vue'
-// import Feedback from './feedback/index.vue'
-import {Column, Grid, Row} from './grid/index.vue'
-import Icon from './icon/index.vue'
-// import Img from './img/index.vue'
-import InfiniteScroll from './infinite-scroll/index.vue'
-import {Input, Textarea} from './input/index.vue'
-import {Item, ItemDivider, ItemGroup, ItemOptions, ItemSliding} from './item/index.vue'
-// import ItemCollapse from './item-collapse/index.vue'
-// import ItemSliding from './item-sliding/index.vue'
-import Label from './label/index.vue'
-import {List, ListHeader} from './list/index.vue'
-// import Menu from './menu/index.vue'
-import Note from './note/index.vue'
-// import Noticebar from './noticebar/index.vue'
-// import PopSheet from './pop-sheet/index.vue'
-import {Radio, RadioGroup} from './radio/index.vue'
-import Range from './range/index.vue'
-import Refresher from './refresher/index.vue'
-import Scroll from './scroll/index.vue'
-// import ScrollSegment from './scroll-segment/index.vue'
-import Searchbar from './searchbar/index.vue'
-import {Segment, SegmentButton} from './segment/index.vue'
-import {Option, Select} from './select/index.vue'
-// import Separation from './separation/index.vue'
-// import Sheet from './sheet/index.vue'
-// import SlideBox from './slide-box/index.vue'
-// import Slides from './slides/index.vue'
-// import SlidesLite from './slides-lite/index.vue'
-import Spinner from './spinner/index.vue'
-import {Tab, Tabs} from './tabs/index.vue'
-import Thumbnail from './thumbnail/index.vue'
-import {Buttons, Navbar, Title, Toolbar} from './toolbar/index.vue'
-import Toggle from './toggle/index.vue'
+import App from './app/index.js'
+import {Footer, Header, Page} from './page/index.js'
+import Content from './content/index.js'
+// import Navbar from './navbar/index.js'
+import Avatar from './avatar/index.js'
+import Backdrop from './backdrop/index.js'
+import Badge from './badge/index.js'
+import Button from './button/index.js'
+import {Card, CardContent, CardHeader, CardTitle} from './card/index.js'
+import {Checkbox, CheckboxGroup} from './checkbox/index.js'
+import Chip from './chip/index.js'
+import Datetime from './datetime/index.js'
+import Fab from './fab/index.js'
+// import Feedback from './feedback/index.js'
+import {Column, Grid, Row} from './grid/index.js'
+import Icon from './icon/index.js'
+// import Img from './img/index.js'
+import InfiniteScroll from './infinite-scroll/index.js'
+import {Input, Textarea} from './input/index.js'
+import {Item, ItemDivider, ItemGroup, ItemOptions, ItemSliding} from './item/index.js'
+// import ItemCollapse from './item-collapse/index.js'
+// import ItemSliding from './item-sliding/index.js'
+import Label from './label/index.js'
+import {List, ListHeader} from './list/index.js'
+// import Menu from './menu/index.js'
+import Note from './note/index.js'
+// import Noticebar from './noticebar/index.js'
+// import PopSheet from './pop-sheet/index.js'
+import {Radio, RadioGroup} from './radio/index.js'
+import Range from './range/index.js'
+import Refresher from './refresher/index.js'
+import Scroll from './scroll/index.js'
+// import ScrollSegment from './scroll-segment/index.js'
+import Searchbar from './searchbar/index.js'
+import {Segment, SegmentButton} from './segment/index.js'
+import {Option, Select} from './select/index.js'
+// import Separation from './separation/index.js'
+// import Sheet from './sheet/index.js'
+// import SlideBox from './slide-box/index.js'
+// import Slides from './slides/index.js'
+// import SlidesLite from './slides-lite/index.js'
+import Spinner from './spinner/index.js'
+import {Tab, Tabs} from './tabs/index.js'
+import Thumbnail from './thumbnail/index.js'
+import {Buttons, Navbar, Title, Toolbar} from './toolbar/index.js'
+import Toggle from './toggle/index.js'
 
 // Plugins
 import ActionSheet from './action-sheet'
@@ -61,11 +59,8 @@ import Popup from './popup'
 // import PreviewImage from './components/preview-image'
 import Toast from './toast'
 
-// Directives
-import Nav from './navigation/navigation.js'
-
-const Components = {
-  Nav,
+export {
+  // Nav,
   App,
   Footer,
   Header,
@@ -127,11 +122,9 @@ const Components = {
   Thumbnail,
   Title,
   Toolbar,
-  Toggle
-};
+  Toggle,
 
 // Plugins
-const Plugins = {
   ActionSheet,
   Alert,
   // ChooseCity,
@@ -144,11 +137,4 @@ const Plugins = {
   Popup,
   // PreviewImage,
   Toast
-};
-
-// Directives
-const Directives = {
-  Nav
-};
-
-export { Components, Plugins, Directives }
+}

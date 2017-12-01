@@ -4,38 +4,24 @@ import Picker from './picker.vue'
 import {createElement} from '../../utils/utils'
 
 class IonPicker {
-    constructor() {
-        this._vm = undefined
-    }
+  constructor() {
+    this._vm = undefined
+  }
 
-    present(option) {
-        let container = document.querySelector('.ion-app') || document.body;
-        createElement('ion-picker', container)
+  present(option) {
+    let container = document.querySelector('.ion-app') || document.body;
+    createElement('ion-picker', container)
 
-        this._vm = new Vue(Picker)
-        this._vm.$mount('[ion-picker]')
+    this._vm = new Vue(Picker)
+    this._vm.$mount('[ion-picker]')
 
-        return this._vm.present(option)
-    }
+    return this._vm.present(option)
+  }
 
-    dismiss(buttonIndex) {
-        this._vm.dismiss(buttonIndex)
-    }
-
-}
-
-const VuePlugin = {
-
-  install: function (Vue, options = {}) {
-    if (this.installed) {
-      return
-    }
-
-    Vue.prototype.$picker = new IonPicker()
-
-    this.installed = true
+  dismiss(buttonIndex) {
+    this._vm.dismiss(buttonIndex)
   }
 
 }
 
-export default VuePlugin
+export default new IonPicker()

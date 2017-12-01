@@ -2,20 +2,20 @@ import assign from 'object-assign'
 import Vue from 'vue'
 import Navigation from './navigation.vue'
 
-import {createElement, isFunction, isTrueProperty} from '../../util/util'
-import {createElement} from '../../utils/utils'
+import {createElement, isFunction, isTrueProperty} from '../util/util'
+import {createElement} from '../utils/utils'
 
 export default {
-  bind: function (el, binding, vnode) {
-    var s = JSON.stringify
-    el.innerHTML +=
-      'name: '       + s(binding.name) + '<br>' +
-      'value: '      + s(binding.value) + '<br>' +
-      'expression: ' + s(binding.expression) + '<br>' +
-      'argument: '   + s(binding.arg) + '<br>' +
-      'modifiers: '  + s(binding.modifiers) + '<br>' +
-      'vnode keys: ' + Object.keys(vnode).join(', ')
-  },
+  // bind: function (el, binding, vnode) {
+  //   var s = JSON.stringify
+  //   el.innerHTML +=
+  //     'name: '       + s(binding.name) + '<br>' +
+  //     'value: '      + s(binding.value) + '<br>' +
+  //     'expression: ' + s(binding.expression) + '<br>' +
+  //     'argument: '   + s(binding.arg) + '<br>' +
+  //     'modifiers: '  + s(binding.modifiers) + '<br>' +
+  //     'vnode keys: ' + Object.keys(vnode).join(', ')
+  // },
   inserted: function (el, binding) {
     createElement('ion-navigation', el, true)
 

@@ -204,7 +204,7 @@
         },
         methods: {
             normal() {
-                $picker.present({
+                this.$picker.present({
                     cssClass: 'a b',
                     buttons: buttonItems,
                     columns: columnItems,
@@ -214,7 +214,7 @@
             },
 
             chain() {
-                $picker.present({
+                this.$picker.present({
                     buttons: buttonItems,
                     columns: areas,
                     isChain: true,

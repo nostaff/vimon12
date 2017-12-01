@@ -19,7 +19,7 @@
 </template>
 
 <script>
-    import ThemeMixins from '../../themes/theme.mixins';
+    import ThemeMixins from '../themes/theme.mixins';
     export default {
         name: 'ion-navigation',
         mixins: [ThemeMixins],
@@ -99,9 +99,9 @@
 
 
 <style lang="scss">
-    @import '../toolbar/toolbar.button';
-    @import '../toolbar/toolbar';
-    @import '../toolbar/toolbar.ios';
-    @import '../toolbar/toolbar.md';
-    @import '../toolbar/toolbar.wp';
+    @import '../components/toolbar/toolbar.button';
+    @import '../components/toolbar/toolbar';
+    @import '../components/toolbar/toolbar.ios';
+    @import '../components/toolbar/toolbar.md';
+    @import '../components/toolbar/toolbar.wp';
 </style>

@@ -16,17 +16,6 @@
   export default {
     name: 'ion-app',
     mixins: [ThemeMixins],
-
-    created() {
-      this.$events.$on('VonicNotification', (data) => {
-        this.$toast.present(data.message);
-      })
-    },
-
-    mounted() {
-      console.debug('app mounted')
-    },
-
     methods: {
       beforePageEnter(el) {
         console.log('beforePageEnter time:', +new Date())

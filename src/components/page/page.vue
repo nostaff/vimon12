@@ -11,12 +11,7 @@
   export default {
     name: 'ion-page',
     mixins: [ThemeMixins],
-
     created() {
-      this.$events.$on('VonicNotification', (data) => {
-        this.$toast.present(data.message);
-      })
-
       let direction = this.$history.getDirection()
       if (direction === 'forward') {
         this.pageZIndex = ++initPageZIndex

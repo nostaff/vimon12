@@ -129,7 +129,7 @@
 
                 pickerOptions.columns = this.columns;
 
-                this.picker = $picker.present(pickerOptions);
+                this.picker = this.$picker.present(pickerOptions);
                 this.columns = [];
             },
 

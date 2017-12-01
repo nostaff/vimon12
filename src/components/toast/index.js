@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Toast from './toast.vue'
 
-import {createElement, extend, isObject, isString, uuid} from '../../utils/utils'
+import {createElement, uuid} from '../../utils/utils'
 
 class IonToast {
     constructor() {
@@ -27,23 +27,9 @@ class IonToast {
     }
 
     dismiss(role) {
-        this._vm.dismiss(role)
+        this._vm && this._vm.dismiss(role)
     }
 
 }
 
-const VuePlugin = {
-
-  install: function (Vue, options = {}) {
-    if (this.installed) {
-      return
-    }
-
-    Vue.prototype.$toast = new IonToast()
-
-    this.installed = true
-  }
-
-}
-
-export default VuePlugin
+export default new IonToast()

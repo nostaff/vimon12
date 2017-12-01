@@ -26,7 +26,7 @@
                     ]
                 }
 
-                let popup = $popup.fromTemplate('<p style="margin-bottom: 0; text-align: center;">自定义内容</p>', options)
+                let popup = this.$popup.fromTemplate('<p style="margin-bottom: 0; text-align: center;">自定义内容</p>', options)
 
                 popup.present().then((buttonIndex) => {
                     console.log(buttonIndex)
@@ -48,7 +48,7 @@
                       <p style="margin-bottom: 0; text-align: center;">自定义内容</p>
                     `
 
-                let popup = $popup.fromTemplate(template, options)
+                let popup = this.$popup.fromTemplate(template, options)
 
                 popup.present().then((buttonIndex) => {
                     console.log(buttonIndex)

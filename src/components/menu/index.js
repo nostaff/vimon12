@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Menu from './Menu'
+import Menu from './menu.vue'
 
 class IonMenu {
     constructor() {

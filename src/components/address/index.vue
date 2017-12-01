@@ -98,7 +98,7 @@
                 pickerOptions.isChain = true;
                 pickerOptions.chainValue = this.currentValue;
 
-                $picker.present(pickerOptions);
+                this.$picker.present(pickerOptions);
             },
 
             updateText() {

@@ -14,7 +14,6 @@ const addLogo = (vimoVer, vueVer) => {
 export default function core (Vue, options) {
   const eventBus = new Vue()
 
-  console.log(options)
   // 全局事件总线（各个组件共用）中央事件总线
   Vue.prototype.$events = eventBus
 
