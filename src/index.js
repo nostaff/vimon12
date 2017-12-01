@@ -11,6 +11,7 @@ import Badge from './components/badge/index.js'
 import Button from './components/button/index.js'
 import {Card, CardContent, CardHeader, CardTitle} from './components/card/index.js'
 import {Checkbox, CheckboxGroup} from './components/checkbox/index.js'
+import Cells from './components/cells/index.js'
 import Chip from './components/chip/index.js'
 import Datetime from './components/datetime/index.js'
 import Fab from './components/fab/index.js'
@@ -79,6 +80,7 @@ const Components = {
   CardTitle,
   Checkbox,
   CheckboxGroup,
+  Cells,
   Chip,
   Datetime,
   Fab,
@@ -108,7 +110,7 @@ const Components = {
   RadioGroup,
   Range,
   Refresher,
-  // Scroll,
+  Scroll,
   // ScrollSegment,
   Searchbar,
   Segment,
@@ -179,6 +181,7 @@ export {
   CardTitle,
   Checkbox,
   CheckboxGroup,
+  Cells,
   Chip,
   Datetime,
   Fab,
@@ -208,7 +211,7 @@ export {
   RadioGroup,
   Range,
   Refresher,
-  // Scroll,
+  Scroll,
   // ScrollSegment,
   Searchbar,
   Segment,
