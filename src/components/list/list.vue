@@ -7,7 +7,7 @@
 <script>
     import { isBlank, isTrueProperty } from '../../utils/utils'
     import ThemeMixins from '../../themes/theme.mixins';
-    import IonListHeader from "./list.header";
+    import IonListHeader from "./list-header";
 
     export default {
         name: 'ion-list',
@@ -122,3 +122,10 @@
 
     }
 </script>
+
+<style lang="scss">
+  @import 'list';
+  @import 'list.ios';
+  @import 'list.md';
+  @import 'list.wp';
+</style>

@@ -15,7 +15,7 @@
     import {isFunction, isNumber, isTrueProperty, urlChange, uuid} from '../../utils/utils'
     import objectAssign from 'object-assign'
     import ThemeMixins from '../../themes/theme.mixins';
-    import IonButton from "../button/index.vue";
+    import IonButton from "../button";
 
     let zIndex = 20001;
     export default {

@@ -65,3 +65,10 @@
         }
     }
 </script>
+
+<style lang="scss">
+  @import 'toolbar';
+  @import 'toolbar.ios';
+  @import 'toolbar.md';
+  @import 'toolbar.wp';
+</style>

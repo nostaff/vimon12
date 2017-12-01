@@ -16,7 +16,7 @@
 <script type="text/javascript">
     import  {isTrueProperty} from '../../utils/utils'
     import ThemeMixins from '../../themes/theme.mixins';
-    import IonSpinner from "../spinner/index.vue";
+    import IonSpinner from "../spinner";
 
     const STATE_ENABLED = 'enabled'
     const STATE_DISABLED = 'disabled'

@@ -149,3 +149,7 @@
         }
     }
 </script>
+
+<style lang="scss">
+  @import "swiper";
+</style>

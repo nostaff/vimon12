@@ -11,7 +11,7 @@
   import Popover from "../popover/index"
   import IonList from "../list/list.vue";
   import IonItem from "../item/item.vue";
-  import IonLabel from "../label/index.vue";
+  import IonLabel from "../label/label.vue";
   import IonRadio from "../radio/radio.vue";
 
   export default {

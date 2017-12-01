@@ -9,7 +9,7 @@
 <script>
     import { isTrueProperty } from '../../utils/utils'
     import ThemeMixins from '../../themes/theme.mixins';
-    import ItemDivider from './item.divider.vue'
+    import ItemDivider from './item-divider.vue'
 
     export default {
         name: 'ion-item-group',

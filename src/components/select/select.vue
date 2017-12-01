@@ -19,7 +19,7 @@
   import {isTrueProperty, isBlank, isArray, isCheckedProperty} from '../../utils/utils'
   import ThemeMixins from '../../themes/theme.mixins';
   import Popover from "../popover/index"
-  import IonButton from "../button/index.vue";
+  import IonButton from "../button";
   import SelectPopover from "./select.popover.vue";
 
   export default {
@@ -279,3 +279,10 @@
 
   }
 </script>
+
+<style lang="scss">
+  @import 'select';
+  @import 'select.ios';
+  @import 'select.md';
+  @import 'select.wp';
+</style>

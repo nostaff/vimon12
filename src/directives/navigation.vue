@@ -99,7 +99,7 @@
 
 
 <style lang="scss">
-    @import '../components/toolbar/toolbar.button';
+    @import '../components/toolbar/toolbar-buttons';
     @import '../components/toolbar/toolbar';
     @import '../components/toolbar/toolbar.ios';
     @import '../components/toolbar/toolbar.md';

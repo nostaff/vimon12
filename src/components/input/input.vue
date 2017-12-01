@@ -206,3 +206,10 @@
         }
     }
 </script>
+
+<style lang="scss">
+  @import 'input';
+  @import 'input.ios';
+  @import 'input.md';
+  @import 'input.wp';
+</style>

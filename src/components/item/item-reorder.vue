@@ -195,3 +195,7 @@
         return null;
     }
 </script>
+
+<style lang="scss">
+  @import 'item-reorder';
+</style>

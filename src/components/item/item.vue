@@ -48,7 +48,7 @@
 <script>
   import {isUndefined} from '../../utils/utils'
   import ThemeMixins from '../../themes/theme.mixins';
-  import IonReorder from "./item.reorder.vue";
+  import IonReorder from "./item-reorder.vue";
   import IonLabel from "../label/index";
 
   export default {
@@ -108,3 +108,11 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import 'item';
+  @import 'item-media';
+  @import 'item.ios';
+  @import 'item.md';
+  @import 'item.wp';
+</style>

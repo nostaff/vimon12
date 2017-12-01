@@ -15,3 +15,7 @@
         },
     }
 </script>
+
+<style lang="scss">
+  @import 'toolbar-buttons';
+</style>

@@ -16,7 +16,6 @@
     </div>
 </template>
 
-
 <script>
     import { isPresent, isTrueProperty } from '../../utils/utils'
     import ThemeMixins from '../../themes/theme.mixins';
@@ -152,3 +151,10 @@
         }
     }
 </script>
+
+<style lang="scss">
+  @import 'input';
+  @import 'input.ios';
+  @import 'input.md';
+  @import 'input.wp';
+</style>

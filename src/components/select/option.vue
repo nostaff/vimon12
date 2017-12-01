@@ -49,3 +49,10 @@
         }
     }
 </script>
+
+<style lang="scss">
+  @import 'select';
+  @import 'select.ios';
+  @import 'select.md';
+  @import 'select.wp';
+</style>
