@@ -21,7 +21,7 @@ import Icon from './components/icon/index.js'
 // import Img from './components/img/index.js'
 import InfiniteScroll from './components/infinite-scroll/index.js'
 import {Input, Textarea} from './components/input/index.js'
-import {Item, ItemDivider, ItemGroup, ItemOptions, ItemSliding} from './components/item/index.js'
+import {Item, ItemDivider, ItemGroup, ItemOptions, ItemSliding, ItemReorder} from './components/item/index.js'
 import Label from './components/label/index.js'
 import {List, ListHeader} from './components/list/index.js'
 // import Menu from './components/menu/index.js'
@@ -60,10 +60,13 @@ import Popup from './components/popup'
 // import PreviewImage from './components/components/preview-image'
 import Toast from './components/toast'
 
-const version = '2.2.12';
+// directives
+import Navigation from './directives/navigation.js'
+
+const version = '1.0.1';
 
 // Componnets
-const Components = {
+const components = {
   App,
   Footer,
   Header,
@@ -97,7 +100,9 @@ const Components = {
   ItemDivider,
   ItemGroup,
   // ItemCollapse,
-  // ItemSliding,
+  ItemOptions,
+  ItemReorder,
+  ItemSliding,
   Label,
   ListHeader,
   List,
@@ -114,7 +119,9 @@ const Components = {
   // ScrollSegment,
   Searchbar,
   Segment,
+  SegmentButton,
   Select,
+  Option,
   // Separation,
   // Sheet,
   // SlideBox,
@@ -122,10 +129,16 @@ const Components = {
   // SlidesLite,
   Spinner,
   Tabs,
+  Tab,
   Thumbnail,
   Title,
   Toolbar,
   Toggle
+};
+
+// directives
+const directives = {
+  Navigation
 };
 
 const VuePlugin = {
@@ -135,22 +148,27 @@ const VuePlugin = {
 
     core(Vue, options)
 
-    for (let component in Components) {
-      let name = Components[component].name || component;
-      console.log(component)
-      Vue.component(name, Components[component]);
+    // components
+    for (let component in components) {
+      let name = components[component].name || component;
+      Vue.component(name, components[component]);
     }
 
+    // directives
+    for (let directive in directives) {
+      let name = directives[directive].name || directive;
+      Vue.directive(name, directives[directive]);
+    }
+
+    // plugins
     Vue.prototype.$actionSheet = ActionSheet;
-    Vue.prototype.$diloag = Alert;
+    Vue.prototype.$dialog = Alert;
     Vue.prototype.$loading = Loading;
     Vue.prototype.$modal = Modal;
     Vue.prototype.$picker = Picker;
     Vue.prototype.$popover = Popover;
     Vue.prototype.$popup = Popup;
     Vue.prototype.$toast = Toast;
-
-    this.installed = true;
   }
 }
 
@@ -158,7 +176,6 @@ const VuePlugin = {
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
 }
-;
 
 export {
   version,
@@ -198,7 +215,9 @@ export {
   ItemDivider,
   ItemGroup,
   // ItemCollapse,
-  // ItemSliding,
+  ItemOptions,
+  ItemReorder,
+  ItemSliding,
   Label,
   ListHeader,
   List,
@@ -215,7 +234,9 @@ export {
   // ScrollSegment,
   Searchbar,
   Segment,
+  SegmentButton,
   Select,
+  Option,
   // Separation,
   // Sheet,
   // SlideBox,
@@ -223,6 +244,7 @@ export {
   // SlidesLite,
   Spinner,
   Tabs,
+  Tab,
   Thumbnail,
   Title,
   Toolbar,
@@ -240,7 +262,10 @@ export {
   Popover,
   Popup,
   // PreviewImage,
-  Toast
+  Toast,
+
+// Directives
+  Navigation
 };
 
 export default VuePlugin;

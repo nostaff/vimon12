@@ -1,5 +1,5 @@
 <template>
-  <div class="ion-list-header list-header item" :class="['item-'+theme, 'list-header-'+theme]">
+  <div :class="['ion-list-header item list-header', 'list-header-'+theme]">
     <div class="item-inner">
       <div class="input-wrapper">
         <slot name="item-label"></slot>
@@ -16,8 +16,8 @@
   import IonLabel from "../label/index";
 
   export default {
-    components: {IonLabel},
     name: 'ion-list-header',
+    components: {IonLabel},
     mixins: [ThemeMixins],
 
     data() {

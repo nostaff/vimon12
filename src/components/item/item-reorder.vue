@@ -16,7 +16,7 @@
     const SCROLL_JUMP = 10;
     const ITEM_REORDER_ACTIVE = 'reorder-active';
 
-    import { pointerCoord, transitionEnd, reorderArray, hasClass } from '../../utils/utils'
+    import { pointerCoord, transitionEnd, hasClass } from '../../util/util'
 
     import IonIcon from '../icon'
     export default {
