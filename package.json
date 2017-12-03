@@ -145,5 +145,8 @@
       "/src/assets/",
       "/static/"
     ]
-  }
+  },
+  "theme": [
+    "./demos/src/theme/variables.scss"
+  ]
 }
