@@ -1,6 +1,6 @@
 <template>
     <ion-page v-nav="{title: '模态窗', showBackButton: true, showMenuButton: true}">
-        <ion-content class="page-content padding padding-top">
+        <ion-content class="page-content padding">
 
             <div padding>
                 <ion-button block @click.native="openBasicModal()">Open Basic Modal</ion-button>

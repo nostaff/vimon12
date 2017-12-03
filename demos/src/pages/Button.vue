@@ -34,3 +34,9 @@
         </ion-content>
     </ion-page>
 </template>
+
+<script>
+  export default {
+    name: 'DemoButton'
+  }
+</script>

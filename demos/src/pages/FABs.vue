@@ -1,6 +1,6 @@
 <template>
     <ion-page v-nav="{title: '浮动按钮', showBackButton: true}">
-        <ion-content class="padding-top">
+        <ion-content>
 
                 <ion-fabs top right mini icon="add" :options="downItems" @on-item-clicked="onClick"></ion-fabs>
 

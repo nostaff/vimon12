@@ -1,6 +1,6 @@
 <template>
   <ion-page v-nav="{title: 'iOS 风格选项卡', showBackButton: true}">
-    <ion-content class="padding-top">
+    <ion-content>
 
       <div class="padding light-bg">
         <button-bar theme="assertive" :tab-items="tabs" :tab-index="tab_0"

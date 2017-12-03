@@ -1,6 +1,6 @@
 <template>
     <ion-page v-nav="{title: '单选框', showBackButton: true}">
-        <ion-content class="padding-top">
+        <ion-content>
 
             <ion-radio-group title="请选择性别" :options="genderOptions" v-model="gender" @onChange="change"></ion-radio-group>
 

@@ -1,6 +1,6 @@
 <template>
     <ion-page v-nav="{title: '下拉选择框', showBackButton: true}">
-        <ion-content class="padding-top">
+        <ion-content>
 
             <ion-list>
                 <ion-list-header>Single Value Select</ion-list-header>

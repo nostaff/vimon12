@@ -154,16 +154,8 @@
 </template>
 
 <script>
-  import {List as IonList, Item as IonItem, ItemGroup as IonItemGroup, ListHeader as IonListHeader, Note as IonNote} from 'vimo'
-
   export default {
-    components: {
-      IonList,
-      IonItem,
-      IonItemGroup,
-      IonListHeader,
-      IonNote
-    },
+    name: 'DemoHome',
     data() {
       return {
         sidebar: undefined,

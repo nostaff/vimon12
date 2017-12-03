@@ -1,6 +1,6 @@
 <template>
     <ion-page v-nav="{title: '开关按钮', showBackButton: true}">
-        <ion-content class="padding-top">
+        <ion-content>
             <ion-toggle v-model="pushNotification"></ion-toggle>
             <div class="item item-divider">开关状态: <span>{{ pushNotification ? '开启' : '关闭' }}</span></div>
 
