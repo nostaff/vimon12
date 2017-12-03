@@ -1,6 +1,7 @@
 var path = require('path')
-var config = require('../config')
+var config = require('../config/index')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var getScssVariables = require('./get-scss-variables')
 
 exports.assetsPath = function (_path) {
   var assetsSubDirectory = process.env.NODE_ENV === 'production'
@@ -37,7 +38,8 @@ exports.cssLoaders = function (options) {
     if (options.extract) {
       return ExtractTextPlugin.extract({
         use: loaders,
-        fallback: 'vue-style-loader'
+        fallback: 'vue-style-loader',
+        publicPath: '../../'
       })
     } else {
       return ['vue-style-loader'].concat(loaders)
@@ -49,8 +51,8 @@ exports.cssLoaders = function (options) {
     css: generateLoaders(),
     postcss: generateLoaders(),
     less: generateLoaders('less'),
-    sass: generateLoaders('sass', { indentedSyntax: true }),
-    scss: generateLoaders('sass'),
+    sass: generateLoaders('sass', {indentedSyntax: true, data: getScssVariables}),
+    scss: generateLoaders('sass', {data: getScssVariables}),
     stylus: generateLoaders('stylus'),
     styl: generateLoaders('stylus')
   }
