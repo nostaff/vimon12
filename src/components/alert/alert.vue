@@ -1,8 +1,8 @@
 <template>
   <div class="ion-alert" :class="['alert-'+theme, cssClass]" role="dialog" style="z-index: 10010;">
-        <ion-backdrop :enableBackdropDismiss="enableBackdropDismiss" :isActive="activated" @click.native="bdClick()"></ion-backdrop>
-        <transition name="ion-alert-fadeup">
-            <div class="alert-wrapper" v-show="activated">
+    <ion-backdrop :enableBackdropDismiss="enableBackdropDismiss" :isActive="activated" @click.native="bdClick()"></ion-backdrop>
+    <transition name="ion-alert-fadeup">
+      <div class="alert-wrapper" v-show="activated">
         <div class="alert-head">
           <h2 class="alert-title">{{ title }}</h2>
         </div>
@@ -24,7 +24,7 @@
   </div>
 </template>
 <script>
-    import {urlChange, isTrueProperty} from '../../utils/utils'
+  import {urlChange, isTrueProperty} from '../../utils/utils'
   import objectAssign from 'object-assign'
   import ThemeMixins from '../../themes/theme.mixins';
   import IonBackdrop from "../backdrop/index";
