@@ -116,5 +116,4 @@
   @import '../components/toolbar/toolbar';
   @import '../components/toolbar/toolbar.ios';
   @import '../components/toolbar/toolbar.md';
-  @import '../components/toolbar/toolbar.wp';
 </style>
