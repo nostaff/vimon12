@@ -1,0 +1,11 @@
+
+// transition fadeup
+.ion-popover-fadeup-enter-active, .ion-popover-fadeup-leave-active {
+  transition: opacity .15s ease;
+  opacity: 1;
+}
+
+.ion-popover-fadeup-enter, .ion-popover-fadeup-leave-to {
+  opacity: 0;
+  transition: opacity ease .15s;
+}

@@ -20,8 +20,7 @@
                 isChecked: this.value,
                 isDisabled: this.disabled,
 
-                itemComponent: null,
-                roleName: 'checkbox'
+                itemComponent: null
             }
         },
 
@@ -46,7 +45,7 @@
         },
 
         mounted() {
-            if (this.$parent.$data.componentName === 'ionItem') {
+            if (this.$parent.$option.name === 'ion-item') {
                 this.itemComponent = this.$parent;
                 this.itemComponent.$el.classList.add('item-checkbox')
             }

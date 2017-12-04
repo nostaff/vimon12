@@ -22,7 +22,6 @@
         data() {
             return {
                 componentName: 'ionNavbar',
-                roleName: 'toolbar',
 
                 isShowBack: isTrueProperty(this.showBack)
             };

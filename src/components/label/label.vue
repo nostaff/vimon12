@@ -16,7 +16,6 @@
         mixins: [ThemeMixins],
         data() {
             return {
-                roleName: 'label',
                 viewLabel: true,
 
                 itemCmp: null

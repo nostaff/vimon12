@@ -6,6 +6,7 @@ import {isFunction, isTrueProperty} from '../util/util'
 import {createElement} from '../utils/utils'
 
 export default {
+  name: 'nav',
   // bind: function (el, binding, vnode) {
   //   var s = JSON.stringify
   //   el.innerHTML +=

@@ -35,10 +35,10 @@ class IonDialog {
         break;
     }
 
-    this.vm = new Vue(component).$mount(selector)
+    this._vm = new Vue(component).$mount(selector)
 
-    // this.vm.$el.setAttribute('ion-dialog', '')
-    return vm.present(options)
+    this._vm.$el.setAttribute('ion-dialog', '')
+    return this._vm.present(options)
   }
 
   alert(options) {
@@ -62,7 +62,7 @@ class IonDialog {
   }
 
   dismiss(buttonIndex) {
-    if (this.vm) this.vm.dismiss(buttonIndex)
+    this._vm && this._vm.dismiss(buttonIndex)
   }
 }
 

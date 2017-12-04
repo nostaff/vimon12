@@ -18,7 +18,7 @@ class IonActionSheet {
   }
 
   dismiss(buttonIndex) {
-    this._vm.dismiss(buttonIndex)
+    this._vm && this._vm.dismiss(buttonIndex)
   }
 }
 

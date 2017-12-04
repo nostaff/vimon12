@@ -1,5 +1,5 @@
 <template>
-  <div :id="elelmentId" class="ion-range range" :class="[
+  <div :id="eleId" class="ion-range range" :class="[
         'range-'+theme,
         'range-'+theme+'-'+color,
         pin?'range-has-pin':'',

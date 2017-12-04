@@ -153,7 +153,7 @@
             }
         },
         mounted() {
-            if (this.$parent.$data.componentName === 'ionContent') {
+            if (this.$parent.$option.name === 'ion-content') {
                 this.contentCmp = this.$parent;
             }
             console.assert(this.contentCmp, 'Refresher组件必须要在Content组件下使用')

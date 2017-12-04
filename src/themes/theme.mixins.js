@@ -4,36 +4,19 @@
 export default {
   data() {
     return {
-      theme: 'ios',
-      elelmentId: 'ion-' + Math.random().toString(36).substring(3, 8),
+      eleId: 'ion-' + Math.random().toString(36).substring(3, 8),
+      roleName: this.$options.name.replace('ion-', '')
     };
   },
-  created() {
-    // if (this.theme != this.$ionic.theme) {
-    //     this.theme = this.$ionic.theme;
-    // }
-  },
   props: {
-    title: {
+    title: String,
+    theme: {
       type: String,
-      default: ''
-    },
-    color: {
-      type: String,
-      default: 'default',
-      validator(value) {
-        return [
-          'default',
-          'primary',
-          'light',
-          'secondary',
-          'danger',
-          'dark',
-          'vibrant',
-          'bright'
-        ].indexOf(value) > -1;
+      default () {
+        return this.$config && this.$config.get('mode') || 'ios'
       }
-    }
+    },
+    color: String,
   },
   computed: {
     themeClass() {
