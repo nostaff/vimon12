@@ -17,5 +17,4 @@
     @import 'chip';
     @import 'chip.ios';
     @import 'chip.md';
-    @import 'chip.wp';
 </style>

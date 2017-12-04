@@ -412,5 +412,4 @@
     @import 'datetime';
     @import 'datetime.ios';
     @import 'datetime.md';
-    @import 'datetime.wp';
 </style>

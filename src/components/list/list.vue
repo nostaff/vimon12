@@ -127,5 +127,4 @@
   @import 'list';
   @import 'list.ios';
   @import 'list.md';
-  @import 'list.wp';
 </style>

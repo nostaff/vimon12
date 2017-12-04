@@ -113,5 +113,4 @@
   @import 'item-media';
   @import 'item.ios';
   @import 'item.md';
-  @import 'item.wp';
 </style>

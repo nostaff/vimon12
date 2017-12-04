@@ -59,5 +59,4 @@
 <style lang="scss">
     @import 'toggle.ios';
     @import 'toggle.md';
-    @import 'toggle.wp';
 </style>

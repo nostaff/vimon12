@@ -583,5 +583,4 @@
     @import "content";
     @import "content.ios";
     @import "content.md";
-    @import "content.wp";
 </style>

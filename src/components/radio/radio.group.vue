@@ -84,5 +84,4 @@
 <style lang="scss">
     @import 'radio.ios';
     @import 'radio.md';
-    @import 'radio.wp';
 </style>

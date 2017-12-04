@@ -79,5 +79,4 @@
   @import 'segment';
   @import 'segment.ios';
   @import 'segment.md';
-  @import 'segment.wp';
 </style>

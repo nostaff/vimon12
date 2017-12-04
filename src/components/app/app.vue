@@ -1,14 +1,14 @@
 <template>
-    <div class="ion-app" :class="theme">
-        <div app-viewport=""></div>
-        <div class="ion-nav">
-            <div nav-viewport=""></div>
-            <transition name="page" v-on:before-enter="beforePageEnter">
-                <slot></slot>
-            </transition>
-            <div class="nav-decor"></div>
-        </div>
+  <div class="ion-app" :class="theme">
+    <div app-viewport=""></div>
+    <div class="ion-nav">
+      <div nav-viewport=""></div>
+      <transition name="page" v-on:before-enter="beforePageEnter">
+        <slot></slot>
+      </transition>
+      <div class="nav-decor"></div>
     </div>
+  </div>
 </template>
 <script>
   import ThemeMixins from '../../themes/theme.mixins';
@@ -26,8 +26,8 @@
 
 
 <style lang="scss">
-    @import 'app';
-    @import 'app.ios';
-    @import 'app.md';
-    @import 'app.wp';
+  @import 'app';
+  @import 'app.ios';
+  @import 'app.md';
+  @import "../../transition/app";
 </style>

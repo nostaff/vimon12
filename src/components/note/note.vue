@@ -16,5 +16,4 @@
 <style lang="scss">
     @import 'note.ios';
     @import 'note.md';
-    @import 'note.wp';
 </style>

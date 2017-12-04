@@ -17,5 +17,4 @@
     @import 'badge';
     @import 'badge.ios';
     @import 'badge.md';
-    @import 'badge.wp';
 </style>

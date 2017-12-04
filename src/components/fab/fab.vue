@@ -71,5 +71,4 @@
     @import 'fab';
     @import 'fab.ios';
     @import 'fab.md';
-    @import 'fab.wp';
 </style>

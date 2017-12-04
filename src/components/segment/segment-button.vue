@@ -44,7 +44,7 @@
         console.warn('<ion-segment-button> requires a "value" attribute');
       }
 
-      if (this.$parent.$data.componentName === 'ionSegment') {
+      if (this.$parent && this.$parent.$option.name === 'ion-segment') {
         this.segmentCmp = this.$parent;
       } else {
         console.error('Segment-button component must combine with Segment')
@@ -73,10 +73,3 @@
 
   }
 </script>
-
-<style lang="scss">
-  @import 'segment';
-  @import 'segment.ios';
-  @import 'segment.md';
-  @import 'segment.wp';
-</style>

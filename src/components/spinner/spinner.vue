@@ -192,5 +192,4 @@
     @import 'spinner';
     @import 'spinner.ios';
     @import 'spinner.md';
-    @import 'spinner.wp';
 </style>

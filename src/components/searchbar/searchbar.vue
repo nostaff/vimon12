@@ -109,6 +109,5 @@
     @import 'searchbar';
     @import 'searchbar.ios';
     @import 'searchbar.md';
-    @import 'searchbar.wp';
 </style>
 

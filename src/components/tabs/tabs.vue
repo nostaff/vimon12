@@ -150,5 +150,4 @@
   @import 'tabs';
   @import 'tabs.ios';
   @import 'tabs.md';
-  @import 'tabs.wp';
 </style>

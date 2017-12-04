@@ -150,5 +150,4 @@
     @import 'button-icon';
     @import 'button.ios';
     @import 'button.md';
-    @import 'button.wp';
 </style>

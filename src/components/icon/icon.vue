@@ -96,5 +96,4 @@
     @import 'icon';
     @import 'icon.ios';
     @import 'icon.md';
-    @import 'icon.wp';
 </style>

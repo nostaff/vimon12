@@ -368,7 +368,6 @@
   @import 'range';
   @import 'range.ios';
   @import 'range.md';
-  @import 'range.wp';
 </style>
 
 
