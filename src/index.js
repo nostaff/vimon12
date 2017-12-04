@@ -14,7 +14,7 @@ import {Checkbox, CheckboxGroup} from './components/checkbox/index.js'
 import Cells from './components/cells/index.js'
 import Chip from './components/chip/index.js'
 import Datetime from './components/datetime/index.js'
-import Fab from './components/fab/index.js'
+import {Fab, FabButton, FabList} from './components/fab/index.js'
 // import Feedback from './components/feedback/index.js'
 import {Column, Grid, Row} from './components/grid/index.js'
 import Icon from './components/icon/index.js'
@@ -87,6 +87,8 @@ const components = {
   Chip,
   Datetime,
   Fab,
+  FabButton,
+  FabList,
   // Feedback,
   Column,
   Grid,
@@ -202,6 +204,8 @@ export {
   Chip,
   Datetime,
   Fab,
+  FabButton,
+  FabList,
   // Feedback,
   Column,
   Grid,
