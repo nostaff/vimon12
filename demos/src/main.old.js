@@ -44,7 +44,7 @@ const afterEach = (toRoute, fromRoute) => {
   const to = toRoute.path
   const from = fromRoute.path
     // [Custom Business] Never use history scrollTop when '/' => '/home'
-  if (from == '/' && to == '/home') return
+  if (from === '/' && to === '/home') return
 
   const h = sess.get(to)
   if (h && h.scrollTop) {

@@ -2,198 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8323a9fe-be66-40c8-a870-6d9da02c649f" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.eslintignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.eslintrc.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/demos/src/pages/Datetime.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/components/picker/picker-col.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/util/dom.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/demos/src/App.vue" afterPath="$PROJECT_DIR$/demos/src/App.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/config/app-configs.js" afterPath="$PROJECT_DIR$/demos/src/config/app-configs.js" />
-      <change beforePath="$PROJECT_DIR$/demos/src/config/platform-configs.js" afterPath="$PROJECT_DIR$/demos/src/config/platform-configs.js" />
-      <change beforePath="$PROJECT_DIR$/demos/src/config/platforms/platform-alipay-config.js" afterPath="$PROJECT_DIR$/demos/src/config/platforms/platform-alipay-config.js" />
-      <change beforePath="$PROJECT_DIR$/demos/src/config/platforms/platform-dingtalk-config.js" afterPath="$PROJECT_DIR$/demos/src/config/platforms/platform-dingtalk-config.js" />
-      <change beforePath="$PROJECT_DIR$/demos/src/config/platforms/platform-wechat-config.js" afterPath="$PROJECT_DIR$/demos/src/config/platforms/platform-wechat-config.js" />
-      <change beforePath="$PROJECT_DIR$/demos/src/lib/util.js" afterPath="$PROJECT_DIR$/demos/src/lib/util.js" />
-      <change beforePath="$PROJECT_DIR$/demos/src/main.js" afterPath="$PROJECT_DIR$/demos/src/main.js" />
       <change beforePath="$PROJECT_DIR$/demos/src/main.old.js" afterPath="$PROJECT_DIR$/demos/src/main.old.js" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/ActionSheet.vue" afterPath="$PROJECT_DIR$/demos/src/pages/ActionSheet.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/Badge.vue" afterPath="$PROJECT_DIR$/demos/src/pages/Badge.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/ButtonBar.vue" afterPath="$PROJECT_DIR$/demos/src/pages/ButtonBar.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/Cascade.vue" afterPath="$PROJECT_DIR$/demos/src/pages/Cascade.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/Checkbox.vue" afterPath="$PROJECT_DIR$/demos/src/pages/Checkbox.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/Chip.vue" afterPath="$PROJECT_DIR$/demos/src/pages/Chip.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/Dialog.vue" afterPath="$PROJECT_DIR$/demos/src/pages/Dialog.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/FABs.vue" afterPath="$PROJECT_DIR$/demos/src/pages/FABs.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/Home.vue" afterPath="$PROJECT_DIR$/demos/src/pages/Home.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/InfiniteScroll.vue" afterPath="$PROJECT_DIR$/demos/src/pages/InfiniteScroll.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/Input.vue" afterPath="$PROJECT_DIR$/demos/src/pages/Input.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/List.vue" afterPath="$PROJECT_DIR$/demos/src/pages/List.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/Menu.vue" afterPath="$PROJECT_DIR$/demos/src/pages/Menu.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/Modal.vue" afterPath="$PROJECT_DIR$/demos/src/pages/Modal.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/ModalPage.vue" afterPath="$PROJECT_DIR$/demos/src/pages/ModalPage.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/Page.vue" afterPath="$PROJECT_DIR$/demos/src/pages/Page.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/Picker.vue" afterPath="$PROJECT_DIR$/demos/src/pages/Picker.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/Popage.vue" afterPath="$PROJECT_DIR$/demos/src/pages/Popage.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/Popover.vue" afterPath="$PROJECT_DIR$/demos/src/pages/Popover.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/Popup.vue" afterPath="$PROJECT_DIR$/demos/src/pages/Popup.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/Radio.vue" afterPath="$PROJECT_DIR$/demos/src/pages/Radio.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/Range.vue" afterPath="$PROJECT_DIR$/demos/src/pages/Range.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/Refresher.vue" afterPath="$PROJECT_DIR$/demos/src/pages/Refresher.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/Search.vue" afterPath="$PROJECT_DIR$/demos/src/pages/Search.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/Segment.vue" afterPath="$PROJECT_DIR$/demos/src/pages/Segment.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/Select.vue" afterPath="$PROJECT_DIR$/demos/src/pages/Select.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/Spinner.vue" afterPath="$PROJECT_DIR$/demos/src/pages/Spinner.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/Swiper.vue" afterPath="$PROJECT_DIR$/demos/src/pages/Swiper.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/SwiperDefault.vue" afterPath="$PROJECT_DIR$/demos/src/pages/SwiperDefault.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/Toast.vue" afterPath="$PROJECT_DIR$/demos/src/pages/Toast.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/Toggle.vue" afterPath="$PROJECT_DIR$/demos/src/pages/Toggle.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/pages/Toolbar.vue" afterPath="$PROJECT_DIR$/demos/src/pages/Toolbar.vue" />
-      <change beforePath="$PROJECT_DIR$/demos/src/router/route-opt.js" afterPath="$PROJECT_DIR$/demos/src/router/route-opt.js" />
       <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change beforePath="$PROJECT_DIR$/src/components/action-sheet/action-sheet.vue" afterPath="$PROJECT_DIR$/src/components/action-sheet/action-sheet.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/action-sheet/index.js" afterPath="$PROJECT_DIR$/src/components/action-sheet/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/address/address.vue" afterPath="$PROJECT_DIR$/src/components/address/address.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/address/index.js" afterPath="$PROJECT_DIR$/src/components/address/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/alert/alert.checkbox.vue" afterPath="$PROJECT_DIR$/src/components/alert/alert.checkbox.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/alert/alert.radio.vue" afterPath="$PROJECT_DIR$/src/components/alert/alert.radio.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/alert/alert.vue" afterPath="$PROJECT_DIR$/src/components/alert/alert.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/alert/index.js" afterPath="$PROJECT_DIR$/src/components/alert/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/alert/prompt.vue" afterPath="$PROJECT_DIR$/src/components/alert/prompt.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/app/app.vue" afterPath="$PROJECT_DIR$/src/components/app/app.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/app/index.js" afterPath="$PROJECT_DIR$/src/components/app/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/avatar/avatar.vue" afterPath="$PROJECT_DIR$/src/components/avatar/avatar.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/avatar/index.js" afterPath="$PROJECT_DIR$/src/components/avatar/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/backdrop/backdrop.vue" afterPath="$PROJECT_DIR$/src/components/backdrop/backdrop.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/backdrop/index.js" afterPath="$PROJECT_DIR$/src/components/backdrop/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/badge/badge.vue" afterPath="$PROJECT_DIR$/src/components/badge/badge.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/badge/index.js" afterPath="$PROJECT_DIR$/src/components/badge/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/button/button.vue" afterPath="$PROJECT_DIR$/src/components/button/button.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/button/index.js" afterPath="$PROJECT_DIR$/src/components/button/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/card/card-content.vue" afterPath="$PROJECT_DIR$/src/components/card/card-content.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/card/card-header.vue" afterPath="$PROJECT_DIR$/src/components/card/card-header.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/card/card-title.vue" afterPath="$PROJECT_DIR$/src/components/card/card-title.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/card/card.vue" afterPath="$PROJECT_DIR$/src/components/card/card.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/card/index.js" afterPath="$PROJECT_DIR$/src/components/card/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/cells/cells.vue" afterPath="$PROJECT_DIR$/src/components/cells/cells.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/cells/index.js" afterPath="$PROJECT_DIR$/src/components/cells/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkbox/checkbox-group.vue" afterPath="$PROJECT_DIR$/src/components/checkbox/checkbox-group.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkbox/checkbox.vue" afterPath="$PROJECT_DIR$/src/components/checkbox/checkbox.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkbox/index.js" afterPath="$PROJECT_DIR$/src/components/checkbox/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/chip/chip.vue" afterPath="$PROJECT_DIR$/src/components/chip/chip.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/chip/index.js" afterPath="$PROJECT_DIR$/src/components/chip/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/content/content.vue" afterPath="$PROJECT_DIR$/src/components/content/content.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/content/index.js" afterPath="$PROJECT_DIR$/src/components/content/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/content/scroll-view.js" afterPath="$PROJECT_DIR$/src/components/content/scroll-view.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/datetime/datetime-util.js" afterPath="$PROJECT_DIR$/src/components/datetime/datetime-util.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/datetime/datetime.vue" afterPath="$PROJECT_DIR$/src/components/datetime/datetime.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/datetime/index.js" afterPath="$PROJECT_DIR$/src/components/datetime/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/fab/fab-button.vue" afterPath="$PROJECT_DIR$/src/components/fab/fab-button.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/fab/fab-list.vue" afterPath="$PROJECT_DIR$/src/components/fab/fab-list.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/fab/fab.vue" afterPath="$PROJECT_DIR$/src/components/fab/fab.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/fab/index.js" afterPath="$PROJECT_DIR$/src/components/fab/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/grid/grid.vue" afterPath="$PROJECT_DIR$/src/components/grid/grid.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/grid/index.js" afterPath="$PROJECT_DIR$/src/components/grid/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/icon/icon.vue" afterPath="$PROJECT_DIR$/src/components/icon/icon.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/icon/index.js" afterPath="$PROJECT_DIR$/src/components/icon/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/infinite-scroll/index.js" afterPath="$PROJECT_DIR$/src/components/infinite-scroll/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/infinite-scroll/infinite-scroll.vue" afterPath="$PROJECT_DIR$/src/components/infinite-scroll/infinite-scroll.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/input/index.js" afterPath="$PROJECT_DIR$/src/components/input/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/input/input.vue" afterPath="$PROJECT_DIR$/src/components/input/input.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/input/textarea.vue" afterPath="$PROJECT_DIR$/src/components/input/textarea.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/item/index.js" afterPath="$PROJECT_DIR$/src/components/item/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/item/item-divider.vue" afterPath="$PROJECT_DIR$/src/components/item/item-divider.vue" />
       <change beforePath="$PROJECT_DIR$/src/components/item/item-group.vue" afterPath="$PROJECT_DIR$/src/components/item/item-group.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/item/item-options.vue" afterPath="$PROJECT_DIR$/src/components/item/item-options.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/item/item-reorder.vue" afterPath="$PROJECT_DIR$/src/components/item/item-reorder.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/item/item-sliding.vue" afterPath="$PROJECT_DIR$/src/components/item/item-sliding.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/item/item.vue" afterPath="$PROJECT_DIR$/src/components/item/item.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/label/index.js" afterPath="$PROJECT_DIR$/src/components/label/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/label/label.vue" afterPath="$PROJECT_DIR$/src/components/label/label.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/list/index.js" afterPath="$PROJECT_DIR$/src/components/list/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/list/list-header.vue" afterPath="$PROJECT_DIR$/src/components/list/list-header.vue" />
       <change beforePath="$PROJECT_DIR$/src/components/list/list.vue" afterPath="$PROJECT_DIR$/src/components/list/list.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/loading/index.js" afterPath="$PROJECT_DIR$/src/components/loading/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/loading/loading.vue" afterPath="$PROJECT_DIR$/src/components/loading/loading.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/menu/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/menu/menu-close.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/menu/menu-gestures.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/menu/menu-toggle.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/menu/menu-types.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/menu/menu.ios.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/menu/menu.md.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/menu/menu.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/menu/menu.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/menu/menu.vue" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/modal/index.js" afterPath="$PROJECT_DIR$/src/components/modal/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/modal/modal.vue" afterPath="$PROJECT_DIR$/src/components/modal/modal.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/note/index.js" afterPath="$PROJECT_DIR$/src/components/note/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/note/note.vue" afterPath="$PROJECT_DIR$/src/components/note/note.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/page/footer.vue" afterPath="$PROJECT_DIR$/src/components/page/footer.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/page/header.vue" afterPath="$PROJECT_DIR$/src/components/page/header.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/page/index.js" afterPath="$PROJECT_DIR$/src/components/page/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/page/page.vue" afterPath="$PROJECT_DIR$/src/components/page/page.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/picker/animate.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/picker/index.js" afterPath="$PROJECT_DIR$/src/components/picker/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/picker/picker.ios.scss" afterPath="$PROJECT_DIR$/src/components/picker/picker.ios.scss" />
-      <change beforePath="$PROJECT_DIR$/src/components/picker/picker.md.scss" afterPath="$PROJECT_DIR$/src/components/picker/picker.md.scss" />
-      <change beforePath="$PROJECT_DIR$/src/components/picker/picker.scss" afterPath="$PROJECT_DIR$/src/components/picker/picker.scss" />
-      <change beforePath="$PROJECT_DIR$/src/components/picker/picker.vue" afterPath="$PROJECT_DIR$/src/components/picker/picker.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/picker/scroller.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/popover/index.js" afterPath="$PROJECT_DIR$/src/components/popover/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/popover/popover.vue" afterPath="$PROJECT_DIR$/src/components/popover/popover.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/popup/index.js" afterPath="$PROJECT_DIR$/src/components/popup/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/popup/popup.vue" afterPath="$PROJECT_DIR$/src/components/popup/popup.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/radio/index.js" afterPath="$PROJECT_DIR$/src/components/radio/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/radio/radio.group.vue" afterPath="$PROJECT_DIR$/src/components/radio/radio.group.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/radio/radio.vue" afterPath="$PROJECT_DIR$/src/components/radio/radio.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/range/index.js" afterPath="$PROJECT_DIR$/src/components/range/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/range/range.vue" afterPath="$PROJECT_DIR$/src/components/range/range.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/refresher/index.js" afterPath="$PROJECT_DIR$/src/components/refresher/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/refresher/refresher.vue" afterPath="$PROJECT_DIR$/src/components/refresher/refresher.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/scroll/index.js" afterPath="$PROJECT_DIR$/src/components/scroll/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/scroll/scroll.vue" afterPath="$PROJECT_DIR$/src/components/scroll/scroll.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/searchbar/index.js" afterPath="$PROJECT_DIR$/src/components/searchbar/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/searchbar/searchbar.vue" afterPath="$PROJECT_DIR$/src/components/searchbar/searchbar.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/segment/index.js" afterPath="$PROJECT_DIR$/src/components/segment/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/segment/segment-button.vue" afterPath="$PROJECT_DIR$/src/components/segment/segment-button.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/segment/segment.vue" afterPath="$PROJECT_DIR$/src/components/segment/segment.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/select/index.js" afterPath="$PROJECT_DIR$/src/components/select/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/select/option.vue" afterPath="$PROJECT_DIR$/src/components/select/option.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/select/select.popover.vue" afterPath="$PROJECT_DIR$/src/components/select/select.popover.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/select/select.vue" afterPath="$PROJECT_DIR$/src/components/select/select.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/spinner/index.js" afterPath="$PROJECT_DIR$/src/components/spinner/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/spinner/spinner.vue" afterPath="$PROJECT_DIR$/src/components/spinner/spinner.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/swiper/core.js" afterPath="$PROJECT_DIR$/src/components/swiper/core.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/swiper/index.js" afterPath="$PROJECT_DIR$/src/components/swiper/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/swiper/swiper-pagination.vue" afterPath="$PROJECT_DIR$/src/components/swiper/swiper-pagination.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/swiper/swiper.vue" afterPath="$PROJECT_DIR$/src/components/swiper/swiper.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/tabs/index.js" afterPath="$PROJECT_DIR$/src/components/tabs/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/tabs/tab.vue" afterPath="$PROJECT_DIR$/src/components/tabs/tab.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/tabs/tabs.vue" afterPath="$PROJECT_DIR$/src/components/tabs/tabs.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/thumbnail/index.js" afterPath="$PROJECT_DIR$/src/components/thumbnail/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/thumbnail/thumbnail.vue" afterPath="$PROJECT_DIR$/src/components/thumbnail/thumbnail.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/toast/index.js" afterPath="$PROJECT_DIR$/src/components/toast/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/toast/toast.vue" afterPath="$PROJECT_DIR$/src/components/toast/toast.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/toggle/index.js" afterPath="$PROJECT_DIR$/src/components/toggle/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/toggle/toggle.vue" afterPath="$PROJECT_DIR$/src/components/toggle/toggle.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/toolbar/index.js" afterPath="$PROJECT_DIR$/src/components/toolbar/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/toolbar/navbar.vue" afterPath="$PROJECT_DIR$/src/components/toolbar/navbar.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/toolbar/toolbar-buttons.vue" afterPath="$PROJECT_DIR$/src/components/toolbar/toolbar-buttons.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/toolbar/toolbar-title.vue" afterPath="$PROJECT_DIR$/src/components/toolbar/toolbar-title.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/toolbar/toolbar.vue" afterPath="$PROJECT_DIR$/src/components/toolbar/toolbar.vue" />
-      <change beforePath="$PROJECT_DIR$/src/config/platform.js" afterPath="$PROJECT_DIR$/src/config/platform.js" />
-      <change beforePath="$PROJECT_DIR$/src/directives/navigation.js" afterPath="$PROJECT_DIR$/src/directives/navigation.js" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
-      <change beforePath="$PROJECT_DIR$/src/util/addItemAttr.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/util/getCss.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/util/index.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/util/regexp.js" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/util/util.js" afterPath="$PROJECT_DIR$/src/util/util.js" />
-      <change beforePath="$PROJECT_DIR$/src/utils/clickoutside.js" afterPath="$PROJECT_DIR$/src/util/clickoutside.js" />
-      <change beforePath="$PROJECT_DIR$/src/utils/util.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/utils/utils.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/utils/vue-touch.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/test/unit/.eslintrc" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/test/unit/index.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/test/unit/karma.conf.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/test/unit/specs/Alert.spec.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/test/unit/specs/App.spec.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/test/unit/specs/Avatar.spec.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/test/unit/specs/Badge.spec.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/test/unit/specs/Base.spec.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/test/unit/specs/Button.spec.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/test/unit/specs/Footer.spec.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/test/unit/specs/Header.spec.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/test/unit/specs/Navbar.spec.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/test/unit/specs/Page.spec.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/test/unit/specs/config.spec.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/test/unit/specs/platform.spec.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/test/unit/webpack.test.conf.js" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -213,78 +43,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ModalPage.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demos/src/pages/ModalPage.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Picker.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demos/src/pages/Picker.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="143" column="22" lean-forward="false" selection-start-line="143" selection-start-column="22" selection-end-line="143" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Popover.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demos/src/pages/Popover.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="79" column="26" lean-forward="false" selection-start-line="79" selection-start-column="26" selection-end-line="79" selection-end-column="26" />
-              <folding>
-                <marker date="1512462240000" expanded="true" signature="4556:4994" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scroll-view.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/content/scroll-view.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="393" column="14" lean-forward="false" selection-start-line="393" selection-start-column="14" selection-end-line="393" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="datetime-util.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/datetime/datetime-util.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="261" column="11" lean-forward="false" selection-start-line="261" selection-start-column="0" selection-end-line="262" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="select.popover.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/select/select.popover.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/swiper/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="core.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/swiper/core.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -305,11 +63,61 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file leaf-file-name=".eslintrc.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.eslintrc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="30" lean-forward="false" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="util.spec.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/__test__/util.spec.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="item-group.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/item/item-group.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="2" lean-forward="false" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/list/list.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="485">
+              <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="item-sliding.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/item/item-sliding.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2834">
+              <caret line="318" column="6" lean-forward="false" selection-start-line="318" selection-start-column="6" selection-end-line="318" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="util.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/util/util.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="678">
+              <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -328,20 +136,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>process-nextick-args</find>
-      <find>eslint</find>
-      <find>that</find>
-      <find>$popup.</find>
-      <find>specialMap</find>
-      <find>timeout</find>
       <find>isString</find>
       <find>setElementClass</find>
       <find>transitionEnd</find>
       <find>clickedOptionButton</find>
       <find>!=</find>
-      <find>containsSlidingItem</find>
-      <find>_updateSlidingState</find>
-      <find>ItemSlidingGesture</find>
       <find>Vue</find>
       <find>isFunction</find>
       <find>animate</find>
@@ -349,7 +148,6 @@
       <find>export { default as</find>
       <find>re_color</find>
       <find>isPresent</find>
-      <find>!=</find>
       <find>is_md</find>
       <find>Modal</find>
       <find>Popover</find>
@@ -358,9 +156,18 @@
       <find>/* eslin</find>
       <find>TIME_REGEXP</find>
       <find>validate-commit-msg</find>
+      <find>./../examples/</find>
+      <find>__tests__</find>
+      <find>CommitLint</find>
+      <find>ItemSlidingGesture</find>
+      <find>closeSlidingItems</find>
+      <find>containsSlidingItem</find>
+      <find>_updateSlidingState</find>
+      <find>containsSlidingItems</find>
+      <find>enableSliding</find>
+      <find>isTrueProperty</find>
     </findStrings>
     <replaceStrings>
-      <replace>fade-up</replace>
       <replace>action-sheet</replace>
       <replace>alert</replace>
       <replace>opx</replace>
@@ -389,6 +196,7 @@
       <replace>util/util</replace>
       <replace>export function</replace>
       <replace>===</replace>
+      <replace>./../demos/</replace>
       <replace>isMd</replace>
     </replaceStrings>
     <dirStrings>
@@ -414,10 +222,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/range/range.vue" />
-        <option value="$PROJECT_DIR$/src/util/getCss.js" />
-        <option value="$PROJECT_DIR$/src/components/fab/fab-list.vue" />
-        <option value="$PROJECT_DIR$/src/util/util.js" />
         <option value="$PROJECT_DIR$/src/utils/utils.js" />
         <option value="$PROJECT_DIR$/demos/src/pages/FABs.vue" />
         <option value="$PROJECT_DIR$/src/util/dom.js" />
@@ -427,7 +231,6 @@
         <option value="$PROJECT_DIR$/src/components/thumbnail/thumbnail.vue" />
         <option value="$PROJECT_DIR$/src/components/toggle/toggle.vue" />
         <option value="$PROJECT_DIR$/src/components/toolbar/navbar.vue" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/demos/src/pages/Swiper.vue" />
         <option value="$PROJECT_DIR$/src/components/action-sheet/action-sheet.vue" />
         <option value="$PROJECT_DIR$/src/components/address/address.vue" />
@@ -447,7 +250,6 @@
         <option value="$PROJECT_DIR$/src/components/item/item-reorder.vue" />
         <option value="$PROJECT_DIR$/src/components/item/item-sliding.vue" />
         <option value="$PROJECT_DIR$/src/components/item/item.vue" />
-        <option value="$PROJECT_DIR$/src/components/list/list.vue" />
         <option value="$PROJECT_DIR$/src/components/modal/modal.vue" />
         <option value="$PROJECT_DIR$/src/components/popover/popover.vue" />
         <option value="$PROJECT_DIR$/src/components/segment/segment-button.vue" />
@@ -465,6 +267,12 @@
         <option value="$PROJECT_DIR$/src/components/select/select.popover.vue" />
         <option value="$PROJECT_DIR$/src/components/swiper/core.js" />
         <option value="$PROJECT_DIR$/src/components/swiper/swiper.vue" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/util/util.js" />
+        <option value="$PROJECT_DIR$/src/util/__test__/util.spec.js" />
+        <option value="$PROJECT_DIR$/demos/src/main.old.js" />
+        <option value="$PROJECT_DIR$/src/components/item/item-group.vue" />
+        <option value="$PROJECT_DIR$/src/components/list/list.vue" />
       </list>
     </option>
   </component>
@@ -586,258 +394,6 @@
               <item name="demos" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="demos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="demos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="router" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="demos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="theme" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="action-sheet" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="address" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="alert" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="backdrop" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="button" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="card" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="checkbox" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="content" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="datetime" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="fab" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="input" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="item" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="label" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="list" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="modal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="picker" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="popover" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="range" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="refresher" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="scroll" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="segment" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="select" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="swiper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="tabs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="thumbnail" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="toast" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="toggle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="toolbar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -866,6 +422,7 @@
     <property name="node.js.path.for.package.jscs" value="project" />
     <property name="node.js.detected.package.jscs" value="true" />
     <property name="node.js.selected.package.jscs" value="" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -876,11 +433,11 @@
       <recent name="$PROJECT_DIR$/src/directives" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/util/__test__" />
       <recent name="$PROJECT_DIR$/src/util" />
       <recent name="$PROJECT_DIR$/demos/src/pages" />
       <recent name="$PROJECT_DIR$/src/components/picker" />
       <recent name="$PROJECT_DIR$/src/components/fab" />
-      <recent name="$PROJECT_DIR$/src/transition" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -895,7 +452,54 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.demo:dev">
+  <component name="RunManager" selected="Jest.util.isBoolean()">
+    <configuration name="util" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/util/__test__/util.spec.js" />
+      <test-names>
+        <test-name value="util" />
+      </test-names>
+    </configuration>
+    <configuration name="util.firstUpperCase()" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/util/__test__/util.spec.js" />
+      <test-names>
+        <test-name value="util" />
+        <test-name value="firstUpperCase()" />
+      </test-names>
+    </configuration>
+    <configuration name="util.isBoolean()" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/util/__test__/util.spec.js" />
+      <test-names>
+        <test-name value="util" />
+        <test-name value="isBoolean()" />
+      </test-names>
+    </configuration>
+    <configuration name="util.parsePxUnit()" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/util/__test__/util.spec.js" />
+      <test-names>
+        <test-name value="util" />
+        <test-name value="parsePxUnit()" />
+      </test-names>
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
@@ -949,15 +553,6 @@
       <arguments />
       <envs />
     </configuration>
-    <configuration name="demo:dev" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="demo:dev" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-    </configuration>
     <configuration name="lint" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -967,47 +562,20 @@
       <node-interpreter value="project" />
       <envs />
     </configuration>
-    <configuration name="lint:fix" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="lint:fix" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-    </configuration>
-    <configuration name="pub:entry" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="pub:entry" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-    </configuration>
-    <configuration name="test" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="test" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="npm.demo:dev" />
-      <item index="1" class="java.lang.String" itemvalue="npm.test" />
-      <item index="2" class="java.lang.String" itemvalue="npm.pub:entry" />
-      <item index="3" class="java.lang.String" itemvalue="npm.lint" />
-      <item index="4" class="java.lang.String" itemvalue="npm.lint:fix" />
+      <item index="0" class="java.lang.String" itemvalue="Jest.util" />
+      <item index="1" class="java.lang.String" itemvalue="Jest.util.parsePxUnit()" />
+      <item index="2" class="java.lang.String" itemvalue="Jest.util.firstUpperCase()" />
+      <item index="3" class="java.lang.String" itemvalue="Jest.util.isBoolean()" />
+      <item index="4" class="java.lang.String" itemvalue="npm.lint" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="npm.lint:fix" />
-        <item index="1" class="java.lang.String" itemvalue="npm.lint" />
-        <item index="2" class="java.lang.String" itemvalue="npm.test" />
-        <item index="3" class="java.lang.String" itemvalue="npm.demo:dev" />
-        <item index="4" class="java.lang.String" itemvalue="npm.pub:entry" />
+        <item index="0" class="java.lang.String" itemvalue="npm.lint" />
+        <item index="1" class="java.lang.String" itemvalue="Jest.util.isBoolean()" />
+        <item index="2" class="java.lang.String" itemvalue="Jest.util.firstUpperCase()" />
+        <item index="3" class="java.lang.String" itemvalue="Jest.util.parsePxUnit()" />
+        <item index="4" class="java.lang.String" itemvalue="Jest.util" />
       </list>
     </recent_temporary>
   </component>
@@ -1149,6 +717,29 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="util - 2017.12.05 at 17h 10m 53s.xml">
+      <configuration name="util" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="util_firstUpperCase() - 2017.12.05 at 17h 14m 22s.xml">
+      <configuration name="util.firstUpperCase()" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="util_isBlank() - 2017.12.05 at 17h 07m 08s.xml">
+      <configuration name="util.isBlank()" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="util_isBoolean() - 2017.12.05 at 17h 14m 58s.xml">
+      <configuration name="util.isBoolean()" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="util_isBoolean() - 2017.12.05 at 17h 15m 05s.xml">
+      <configuration name="util.isBoolean()" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="util_isDate() - 2017.12.05 at 17h 07m 16s.xml">
+      <configuration name="util.isDate()" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="util_parsePxUnit() - 2017.12.05 at 17h 14m 15s.xml">
+      <configuration name="util.parsePxUnit()" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="1198506000" />
   </component>
@@ -1163,27 +754,39 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="43" y="23" width="1397" height="877" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908162" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.32908162" sideWeight="0.49709302" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33673468" sideWeight="0.4738372" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33673468" sideWeight="0.47093022" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18968023" sideWeight="0.5326923" order="2" side_tool="true" content_ui="tabs" x="611" y="330" width="261" height="262" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33673468" sideWeight="0.5261628" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33673468" sideWeight="0.5290698" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18968023" sideWeight="0.4673077" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18968023" sideWeight="0.4673077" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32780612" sideWeight="0.44186047" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.18968023" sideWeight="0.5133588" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39923468" sideWeight="0.49709302" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908162" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.32908162" sideWeight="0.49709302" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33673468" sideWeight="0.4738372" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18968023" sideWeight="0.5326923" order="2" side_tool="true" content_ui="tabs" x="611" y="330" width="261" height="262" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33673468" sideWeight="0.5261628" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18968023" sideWeight="0.4673077" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32780612" sideWeight="0.44186047" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.18968023" sideWeight="0.5133588" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39923468" sideWeight="0.49709302" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1210,141 +813,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/config/platform.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="26" lean-forward="true" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/tabs/tab.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="6" lean-forward="true" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/tabs/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/thumbnail/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/thumbnail/thumbnail.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="9" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="16" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/toggle/toggle.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="36" column="6" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/toolbar/navbar.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="33" column="32" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="74" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/toolbar/toolbar.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/config/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demos/src/pages/Swiper.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-          <folding>
-            <marker date="1512460741000" expanded="true" signature="2116:2387" ph="..." />
-            <marker date="1512460741000" expanded="true" signature="2142:2199" ph="..." />
-            <marker date="1512460741000" expanded="true" signature="2226:2283" ph="..." />
-            <marker date="1512460741000" expanded="true" signature="2310:2367" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/action-sheet/action-sheet.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="99" column="26" lean-forward="false" selection-start-line="99" selection-start-column="26" selection-end-line="99" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/address/address.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="131" column="9" lean-forward="true" selection-start-line="131" selection-start-column="9" selection-end-line="131" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/alert/alert.checkbox.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="143" column="20" lean-forward="false" selection-start-line="143" selection-start-column="20" selection-end-line="143" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/alert/alert.radio.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="80" column="23" lean-forward="false" selection-start-line="80" selection-start-column="23" selection-end-line="80" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/alert/alert.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="81" column="10" lean-forward="true" selection-start-line="81" selection-start-column="10" selection-end-line="81" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/backdrop/backdrop.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="48" column="26" lean-forward="false" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/button/button.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
@@ -1425,14 +893,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/item/item-sliding.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="318" column="6" lean-forward="false" selection-start-line="318" selection-start-column="6" selection-end-line="318" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/item/item.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="101">
@@ -1441,30 +901,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/list/list.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/menu/menu.ios.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/menu/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/menu/menu.ios.scss" />
+    <entry file="file://$PROJECT_DIR$/src/components/menu/index.js" />
     <entry file="file://$PROJECT_DIR$/src/components/modal/modal.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="326">
@@ -1473,22 +911,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/picker/animate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/picker/scroller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/picker/animate.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/picker/scroller.js" />
     <entry file="file://$PROJECT_DIR$/src/components/popover/popover.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-787">
@@ -1611,6 +1035,102 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/specs/platform.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/karma.conf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/webpack.test.conf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/.eslintrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/specs/Alert.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/specs/Base.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/_jest-cli@21.2.1@jest-cli/bin/jest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/util.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="678">
+          <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/_jest@21.2.1@jest/bin/jest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/_jest@21.2.1@jest/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-337">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="104" column="28" lean-forward="false" selection-start-line="104" selection-start-column="28" selection-end-line="104" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/swiper/swiper.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
@@ -1619,10 +1139,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/src/util/checkProtocol.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="30" lean-forward="false" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.eslintrc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/item/item-sliding.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2834">
+          <caret line="318" column="6" lean-forward="false" selection-start-line="318" selection-start-column="6" selection-end-line="318" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demos/src/main.old.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/__test__/util.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/item/item-group.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="2" lean-forward="false" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/list/list.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
           <folding />
         </state>
       </provider>
