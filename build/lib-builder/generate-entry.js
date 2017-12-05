@@ -34,8 +34,8 @@ if (ENV && ENV !== 'production' && ENV !== 'test' && typeof console !== 'undefin
   console.warn('You are using a whole package of vimo, ' + 'please read docs https://vm-component.github.io/vimo/ to reduce app bundle size.')
 }
 `
-    fs.createWriteStream(`${config.srcPath}/index.js`)
-    fs.writeFile(`${config.srcPath}/index.js`, importString, function (err) {
+    fs.createWriteStream(`${config.srcPath}/index-build.js`)
+    fs.writeFile(`${config.srcPath}/index-build.js`, importString, function (err) {
       if (err) {
         reject(err)
         throw err
