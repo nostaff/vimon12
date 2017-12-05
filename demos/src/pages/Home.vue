@@ -29,6 +29,14 @@
           加载提示
           <ion-note slot="item-end">Spinner</ion-note>
         </ion-item>
+        <ion-item detail-push @click.native="onClicked('/demo/datetime')">
+          日期时间
+          <ion-note slot="item-end">Datetime</ion-note>
+        </ion-item>
+        <ion-item detail-push @click.native="onClicked('/demo/address')">
+          地址联动
+          <ion-note slot="item-end">Address</ion-note>
+        </ion-item>
       </ion-list>
 
       <ion-list>
@@ -156,21 +164,21 @@
 <script>
   export default {
     name: 'DemoHome',
-    data() {
+    data () {
       return {
         sidebar: undefined,
         sidebarRight: undefined
       }
     },
 
-    mounted() {
+    mounted () {
       this.$events.$emit('selectedItem', 4)
     },
     methods: {
-      onClicked(urlPath) {
+      onClicked (urlPath) {
         console.log(urlPath)
-        this.$router.push({'path': urlPath});
-      },
+        this.$router.push({'path': urlPath})
+      }
     }
   }
 </script>

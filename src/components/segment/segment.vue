@@ -4,10 +4,10 @@
   </div>
 </template>
 <script>
-  import {isBlank, isPresent, isTrueProperty} from '../../utils/utils'
-  import ThemeMixins from '../../themes/theme.mixins';
+  import {isBlank, isTrueProperty} from '../../util/util'
+  import ThemeMixins from '../../themes/theme.mixins'
 
-  let tabIds = -1;
+  let tabIds = -1
 
   export default {
     name: 'ion-segment',
@@ -22,7 +22,7 @@
         default: true
       }
     },
-    data() {
+    data () {
       return {
         componentName: 'ionSegment',
         roleName: 'segment',
@@ -32,39 +32,39 @@
 
         buttons: [],
 
-        selectedIndex: -1,
+        selectedIndex: -1
       }
     },
-    created() {
-      this.id = 't-' + (++tabIds);
+    created () {
+      this.id = 't-' + (++tabIds)
 
-      this.selectedTabIndex = (isBlank(this.selectedIndex) ? 0 : parseInt(this.selectedIndex, 10));
+      this.selectedTabIndex = (isBlank(this.selectedIndex) ? 0 : parseInt(this.selectedIndex, 10))
     },
-    mounted() {
+    mounted () {
       this.$nextTick(() => {
-        this.refreshButtons(this.currentValue);
+        this.refreshButtons(this.currentValue)
       })
     },
     methods: {
-      addButton(button) {
-        this.buttons.push(button);
+      addButton (button) {
+        this.buttons.push(button)
 
         if (isBlank(this.currentValue) && button.isActive) {
-          this.currentValue = button.value;
+          this.currentValue = button.value
         }
 
         // listen for button select events
         button.$on('onActived', (val) => {
           // this button has been selected
-          this.onButtonActived(val);
-        });
+          this.onButtonActived(val)
+        })
       },
-      onButtonActived(value) {
+      onButtonActived (value) {
         this.refreshButtons(value)
         this.$emit('input', value)
         this.$emit('onChange', value)
       },
-      refreshButtons(value) {
+      refreshButtons (value) {
         this.buttons.forEach((button) => {
           if (!button.isDisabled) {
             button.setActived(value)

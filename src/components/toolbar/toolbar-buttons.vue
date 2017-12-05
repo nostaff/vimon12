@@ -4,15 +4,15 @@
     </div>
 </template>
 <script>
-    import ThemeMixins from '../../themes/theme.mixins';
-    export default {
-        name: 'ion-buttons',
-        mixins: [ThemeMixins],
-        data() {
-            return {
-                componentName: 'ionButtons'
-            };
-        },
+    import ThemeMixins from '../../themes/theme.mixins'
+export default {
+      name: 'ion-buttons',
+      mixins: [ThemeMixins],
+      data () {
+        return {
+          componentName: 'ionButtons'
+        }
+      }
     }
 </script>
 

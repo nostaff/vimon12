@@ -60,25 +60,25 @@
 </template>
 <script>
     export default {
-        data(){
-            return {
-                toggleText: "是否开启推送",
-                pushNotification: true,
+      data () {
+        return {
+          toggleText: '是否开启推送',
+          pushNotification: true,
 
-                values: [true, true, true, true, true, true]
-            }
-        },
-
-        methods: {
-            triggerToggle() {
-                this.pushNotification = !this.pushNotification
-            }
-        },
-
-        watch: {
-            values: (newVal) => {
-                console.log(newVal)
-            }
+          values: [true, true, true, true, true, true]
         }
+      },
+
+      methods: {
+        triggerToggle () {
+          this.pushNotification = !this.pushNotification
+        }
+      },
+
+      watch: {
+        values: (newVal) => {
+          console.log(newVal)
+        }
+      }
     }
 </script>

@@ -1,1 +1,1 @@
-export { default } from './backdrop.vue';
+export { default } from './backdrop.vue'

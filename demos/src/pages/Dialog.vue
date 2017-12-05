@@ -16,7 +16,7 @@
   export default {
     name: 'DemoDialog',
     methods: {
-      doAlert() {
+      doAlert () {
         this.$dialog.alert({
           title: 'New Friend!',
           message: 'Your friend, Obi wan Kenobi, just accepted your friend request!',
@@ -24,7 +24,7 @@
             {
               text: 'OK',
               handler: () => {
-                console.log('OK clicked');
+                console.log('OK clicked')
               }
             }
           ]
@@ -33,7 +33,7 @@
         })
       },
 
-      doAlert2() {
+      doAlert2 () {
         this.$dialog.alert({
           title: 'New Friend!',
           message: 'Your friend, Obi wan Kenobi, just accepted your friend request!',
@@ -41,18 +41,18 @@
             {
               text: 'OK',
               handler: () => {
-                console.log('OK clicked');
+                console.log('OK clicked')
               }
             },
             {text: 'OK2'},
-            {text: 'OK3'},
+            {text: 'OK3'}
           ]
         }).then((res) => {
           console.log('alert hide.', res)
         })
       },
 
-      doConfirm() {
+      doConfirm () {
         this.$dialog.confirm({
           title: '在"微信"中打开链接吗?',
           message: '即将启动"微信",并在微信中打开连接',
@@ -61,9 +61,9 @@
             {
               text: '打开',
               handler: () => {
-                console.log('OK clicked');
+                console.log('OK clicked')
               }
-            },
+            }
 
           ]
         }).then((res) => {
@@ -71,7 +71,7 @@
         })
       },
 
-      doPrompt() {
+      doPrompt () {
         this.$dialog.prompt({
           title: 'Login',
           message: "Enter a name for this new album you're so keen on adding",
@@ -84,19 +84,19 @@
             {
               name: 'title1',
               placeholder: 'Title'
-            },
+            }
           ],
           buttons: [
             {
               text: 'Cancel',
               handler: data => {
-                console.log('Cancel clicked');
+                console.log('Cancel clicked')
               }
             },
             {
               text: 'Save',
               handler: data => {
-                console.log('Saved clicked', data);
+                console.log('Saved clicked', data)
               }
             }
           ]
@@ -105,7 +105,7 @@
         })
       },
 
-      doRadio() {
+      doRadio () {
         this.$dialog.radio({
           title: 'Login',
           inputs: [
@@ -137,19 +137,19 @@
             {
               label: 'Black',
               value: 'black'
-            },
+            }
           ],
           buttons: [
             {
               text: 'Cancel',
               handler: data => {
-                console.log('Cancel clicked');
+                console.log('Cancel clicked')
               }
             },
             {
               text: 'Save',
               handler: data => {
-                console.log('Saved clicked', data);
+                console.log('Saved clicked', data)
               }
             }
           ]
@@ -158,7 +158,7 @@
         })
       },
 
-      doCheckbox() {
+      doCheckbox () {
         this.$dialog.checkbox({
           title: 'Login',
           inputs: [
@@ -187,19 +187,19 @@
             {
               label: 'Jakku',
               value: 'value6'
-            },
+            }
           ],
           buttons: [
             {
               text: 'Cancel',
               handler: data => {
-                console.log('Cancel clicked');
+                console.log('Cancel clicked')
               }
             },
             {
               text: 'Save',
               handler: data => {
-                console.log('Saved clicked', data);
+                console.log('Saved clicked', data)
               }
             }
           ]

@@ -5,6 +5,7 @@ import {Footer, Header, Page} from './components/page/index.js'
 import {Buttons, Navbar, Title, Toolbar} from './components/toolbar/index.js'
 import Content from './components/content/index.js'
 
+import Address from './components/address/index.js'
 import Avatar from './components/avatar/index.js'
 import Backdrop from './components/backdrop/index.js'
 import Badge from './components/badge/index.js'
@@ -72,6 +73,8 @@ const components = {
   Header,
   Content,
   Page,
+
+  Address,
   Avatar,
   Backdrop,
   Badge,
@@ -189,6 +192,7 @@ export {
   Content,
   Page,
   // Nav,
+  Address,
   Avatar,
   Backdrop,
   Badge,

@@ -1,1 +1,1 @@
-export { default } from './spinner.vue';
+export { default } from './spinner.vue'

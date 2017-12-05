@@ -92,7 +92,7 @@
           this.state = 0
         }
       },
-      mouseMove(e) {
+      mouseMove (e) {
         if (this.$el.scrollTop > 0 || !this.touching) {
           return
         }

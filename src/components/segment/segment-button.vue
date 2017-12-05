@@ -10,8 +10,8 @@
   </div>
 </template>
 <script type="text/javascript">
-  import {isTrueProperty, isBlank, isPresent} from '../../utils/utils';
-  import ThemeMixins from '../../themes/theme.mixins';
+  import {isTrueProperty, isPresent} from '../../util/util'
+  import ThemeMixins from '../../themes/theme.mixins'
 
   export default {
     name: 'ion-segment-button',
@@ -26,7 +26,7 @@
         default: true
       }
     },
-    data() {
+    data () {
       return {
         segmentCmp: null,
 
@@ -35,37 +35,37 @@
       }
     },
     watch: {
-      disabled(val) {
+      disabled (val) {
         this.setDisabled(isTrueProperty(val))
       }
     },
-    created() {
+    created () {
       if (!isPresent(this.value)) {
-        console.warn('<ion-segment-button> requires a "value" attribute');
+        console.warn('<ion-segment-button> requires a "value" attribute')
       }
 
       if (this.$parent && this.$parent.$option.name === 'ion-segment') {
-        this.segmentCmp = this.$parent;
+        this.segmentCmp = this.$parent
       } else {
         console.error('Segment-button component must combine with Segment')
       }
 
-      this.segmentCmp.addButton(this);
+      this.segmentCmp.addButton(this)
     },
     methods: {
-      onClickHandler(ev) {
+      onClickHandler (ev) {
         if (!this.isDisabled && !this.isActive) {
-          this.isActive = true;
+          this.isActive = true
           this.$emit('onActived', this.value)
         }
       },
-      setActived(value) {
+      setActived (value) {
         let isActive = value === this.value
         if (this.isActive !== isActive) {
           this.isActive = isActive
         }
       },
-      setDisabled(disabled) {
+      setDisabled (disabled) {
         this.setActived(null)
         this.isDisabled = disabled
       }

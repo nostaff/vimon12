@@ -24,11 +24,12 @@
   </div>
 </template>
 <script>
-  import {urlChange, isTrueProperty} from '../../utils/utils'
+  import {isTrueProperty} from '../../util/util'
+  import {urlChange} from '../../util/dom'
   import objectAssign from 'object-assign'
-  import ThemeMixins from '../../themes/theme.mixins';
-  import IonBackdrop from "../backdrop/index";
-  import IonButton from "../button/index";
+  import ThemeMixins from '../../themes/theme.mixins'
+  import IonBackdrop from '../backdrop/index'
+  import IonButton from '../button/index'
 
   export default {
     name: 'ion-alert',
@@ -37,12 +38,12 @@
       IonButton,
       IonBackdrop
     },
-    data() {
+    data () {
       return {
         defaultOptions: {
           title: '',
           message: '',
-          buttons: [{text: 'OK'}],
+          buttons: [{text: 'OK'}]
         },
 
         message: '',
@@ -54,7 +55,7 @@
         activated: false
       }
     },
-    created() {
+    created () {
       if (this.dismissOnPageChange) {
         urlChange(() => {
           this.activated && this.dismiss(-1)
@@ -62,57 +63,55 @@
       }
     },
     methods: {
-      present(options) {
+      present (options) {
         let _options = objectAssign({}, this.defaultOptions, options)
-        this.title = _options.title;
-        this.message = _options.message;
-        this.cssClass = _options.cssClass;
+        this.title = _options.title
+        this.message = _options.message
+        this.cssClass = _options.cssClass
         this.dismissOnPageChange = isTrueProperty(_options.dismissOnPageChange)
         this.enableBackdropDismiss = isTrueProperty(_options.enableBackdropDismiss)
 
-        let that = this
         this.buttons = _options.buttons.filter(button => {
           if (typeof button === 'string') {
-            button = {text: button};
+            button = {text: button}
           }
           if (!button.cssClass) {
-            button.cssClass = '';
+            button.cssClass = ''
           }
-          return button;
+          return button
         })
 
-        this.activated = true;
+        this.activated = true
 
         return new Promise((resolve, reject) => {
           this.$on('onHideEvent', (res) => {
             resolve(res)
           })
-        });
-
+        })
       },
 
-      dismiss(buttonIndex) {
-        this.activated = false;
+      dismiss (buttonIndex) {
+        this.activated = false
 
         if (buttonIndex > -1) {
-          let handler = this.buttons[buttonIndex].handler;
+          let handler = this.buttons[buttonIndex].handler
           if (handler && typeof handler === 'function') {
-            handler();
+            handler()
           }
         }
 
-        this.$emit('onHideEvent', buttonIndex);
+        this.$emit('onHideEvent', buttonIndex)
         setTimeout(() => {
-          this.$el.remove();
-        }, 400);
+          this.$el.remove()
+        }, 400)
       },
 
-      bdClick() {
+      bdClick () {
         if (this.enableBackdropDismiss) {
-          this.dismiss(-1);
+          this.dismiss(-1)
         }
       }
-    },
+    }
   }
 </script>
 

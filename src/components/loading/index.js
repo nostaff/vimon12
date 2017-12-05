@@ -1,19 +1,18 @@
 import Vue from 'vue'
 import Loading from './loading.vue'
 
-import {createElement, uuid} from '../../utils/utils'
+import {createElement, uuid} from '../../util/util'
 
 class IonLoading {
-  constructor() {
+  constructor () {
     this._vm = undefined
   }
 
-  present(options) {
-
+  present (options) {
     console.log(options)
     let rnd = uuid()
     let marker = `ion-loading-${rnd}`
-    let container = document.querySelector('.ion-app');
+    let container = document.querySelector('.ion-app')
     createElement(marker, container)
     let selector = `[${marker}]`
 
@@ -32,7 +31,7 @@ class IonLoading {
     return this._vm.present(options)
   }
 
-  dismiss(role) {
+  dismiss (role) {
     if (this._vm) this._vm.dismiss(role)
   }
 

@@ -11,13 +11,13 @@
   </div>
 </template>
 <script>
-  import ThemeMixins from '../../themes/theme.mixins';
+  import ThemeMixins from '../../themes/theme.mixins'
 
-  export default {
+export default {
     name: 'ion-app',
     mixins: [ThemeMixins],
     methods: {
-      beforePageEnter(el) {
+      beforePageEnter (el) {
         console.log('beforePageEnter time:', +new Date())
       }
     }

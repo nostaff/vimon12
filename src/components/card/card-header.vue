@@ -4,13 +4,13 @@
   </div>
 </template>
 <script>
-  import ThemeMixins from '../../themes/theme.mixins';
+  import ThemeMixins from '../../themes/theme.mixins'
 
-  export default {
+export default {
     name: 'ion-card-header',
     mixins: [ThemeMixins],
-    created() {
-      if (!this.$parent || this.$parent.$option.name != 'ion-card') {
+    created () {
+      if (!this.$parent || this.$parent.$option.name !== 'ion-card') {
         console.error('Card-header component must combine with Card')
       }
     }

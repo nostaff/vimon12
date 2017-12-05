@@ -4,13 +4,13 @@
   </div>
 </template>
 <script type="text/javascript">
-  import ThemeMixins from '../../themes/theme.mixins';
+  import ThemeMixins from '../../themes/theme.mixins'
 
-  export default {
+export default {
     name: 'ion-card-content',
     mixins: [ThemeMixins],
-    created() {
-      if (!this.$parent || this.$parent.$option.name != 'ion-card') {
+    created () {
+      if (!this.$parent || this.$parent.$option.name !== 'ion-card') {
         console.error('Card-content component must combine with Card')
       }
     }

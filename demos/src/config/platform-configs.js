@@ -8,7 +8,7 @@ import platformAliPayConfig from './platforms/platform-alipay-config'
 import platformDingTalkConfig from './platforms/platform-dingtalk-config'
 
 export default {
-    wechat: platformWeChatConfig,
-    alipay: platformAliPayConfig,
-    dingtalk: platformDingTalkConfig
+  wechat: platformWeChatConfig,
+  alipay: platformAliPayConfig,
+  dingtalk: platformDingTalkConfig
 }

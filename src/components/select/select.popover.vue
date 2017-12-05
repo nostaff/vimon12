@@ -7,45 +7,44 @@
   </ion-list>
 </template>
 <script type="text/javascript">
-  import {isBlank, isTrueProperty} from '../../utils/utils'
-  import Popover from "../popover/index"
-  import IonList from "../list/list.vue";
-  import IonItem from "../item/item.vue";
-  import IonLabel from "../label/label.vue";
-  import IonRadio from "../radio/radio.vue";
+  import Popover from '../popover/index'
+  import IonList from '../list/list.vue'
+  import IonItem from '../item/item.vue'
+  import IonLabel from '../label/label.vue'
+  import IonRadio from '../radio/radio.vue'
 
   export default {
-    name: 'ion-option',
+    name: 'ion-select-popover',
     components: {
       IonRadio,
       IonLabel,
       IonItem,
       IonList
     },
-    data() {
+    data () {
       return {
         options: [],
         checkedValue: null
       }
     },
-    created() {
-      this.options = this.$options.$data.options;
+    created () {
+      this.options = this.$options.$data.options
 
-      this.checkedValue = this.getValue();
+      this.checkedValue = this.getValue()
     },
     methods: {
-      onRadioChecked(value) {
-        let checkedOption = this.options.find(option => option.value === value);
+      onRadioChecked (value) {
+        let checkedOption = this.options.find(option => option.value === value)
         if (checkedOption && checkedOption.handler) {
-          checkedOption.handler();
+          checkedOption.handler()
         }
 
         Popover.dismiss(value)
       },
 
-      getValue() {
-        let checkedOption = this.options.find(option => option.checked);
-        return checkedOption ? checkedOption.value : undefined;
+      getValue () {
+        let checkedOption = this.options.find(option => option.checked)
+        return checkedOption ? checkedOption.value : undefined
       }
     }
   }

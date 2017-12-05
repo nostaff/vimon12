@@ -12,25 +12,25 @@
   </div>
 </template>
 <script>
-  import ThemeMixins from '../../themes/theme.mixins';
-  import IonLabel from "../label/index";
+  import ThemeMixins from '../../themes/theme.mixins'
+import IonLabel from '../label/index'
 
-  export default {
+export default {
     name: 'ion-list-header',
     components: {IonLabel},
     mixins: [ThemeMixins],
 
-    data() {
+    data () {
       return {
         componentName: 'ionItem'
-      };
+      }
     },
     computed: {
       noItemLabel: function () {
-        return typeof this.$slots['item-label'] === 'undefined';
-      },
+        return typeof this.$slots['item-label'] === 'undefined'
+      }
     },
-    mounted() {
+    mounted () {
       if (this.$slots['item-end']) {
         this.$slots['item-end'].forEach(function (item) {
           item.elm.setAttribute('item-end', '')

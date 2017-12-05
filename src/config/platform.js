@@ -34,8 +34,8 @@
  * */
 
 import { defaults, isFunction, isObject, isPresent } from '../util/util'
+import { getCss } from '../util/dom'
 import PLATFORM_DEFAULT_CONFIGS from './platform-default-configs'
-import css from '../util/getCss'
 
 class Platform {
   constructor () {
@@ -220,7 +220,7 @@ class Platform {
    * @private
    */
   setCssProps () {
-    this.css = css
+    this.css = getCss(document.documentElement)
     return this.css
   }
 

@@ -48,21 +48,21 @@
 </template>
 <script>
     export default{
-        data() {
-            return {
-                gender: '女',
-                genderOptions: ["男", "女", "保密"],
-                selected: false,
-                selected2: false,
-                language: 'Ruby',
-                list: [{value: true, label: '是'}, {value: false, label: '否'}, {value: 'true1', label: '是1', disabled: true}, {value: 'gfgfgf', label: '否2-RED'}],
-                list2: [{value: true, label: 'secondary', color: "secondary"}, {value: false, label: 'dark', color:'dark'}, {value: 'true1', label: 'disabled', disabled: true}, {value: 'gfgfgf', label: 'danger', color:'danger'}],
-            }
-        },
-        methods: {
-            change (value) {
-                console.log('change:', value)
-            }
+      data () {
+        return {
+          gender: '女',
+          genderOptions: ['男', '女', '保密'],
+          selected: false,
+          selected2: false,
+          language: 'Ruby',
+          list: [{value: true, label: '是'}, {value: false, label: '否'}, {value: 'true1', label: '是1', disabled: true}, {value: 'gfgfgf', label: '否2-RED'}],
+          list2: [{value: true, label: 'secondary', color: 'secondary'}, {value: false, label: 'dark', color: 'dark'}, {value: 'true1', label: 'disabled', disabled: true}, {value: 'gfgfgf', label: 'danger', color: 'danger'}]
         }
+      },
+      methods: {
+        change (value) {
+          console.log('change:', value)
+        }
+      }
     }
 </script>

@@ -226,96 +226,96 @@
 
 
 <script>
-    import { reorderArray } from '../../../src/utils/utils'
+    import { reorderArray } from '../../../src/util/util'
     export default{
-        data() {
-            return {
-                editing: false,
-                editButton: 'Edit',
-                chats: [{
-                        img: 'http://ionicframework.com/docs/pages/pages/item-sliding/www/assets/avatar-cher.png',
-                        name: 'Cher',
-                        message: 'Ugh. As if.',
-                        time: '9:38 pm'
-                    }, {
-                        img: 'http://ionicframework.com/docs/pages/pages/item-sliding/www/assets/avatar-dionne.png',
-                        name: 'Dionne',
-                        message: 'Mr. Hall was way harsh.',
-                        time: '8:59 pm'
-                    }, {
-                        img: 'http://ionicframework.com/docs/pages/pages/item-sliding/www/assets/avatar-murray.png',
-                        name: 'Murray',
-                        message: 'Excuse me, "Ms. Dione."',
-                        time: 'Wed'
-                    }, {
-                        img: 'http://ionicframework.com/dist/preview-app/www/assets/img/thumbnail-rotla.png',
-                        name: 'Rotla',
-                        message: 'That\'s OK',
-                        time: 'Yesterday'
-                    }],
-                songs: [
-                    {
-                        title: 'Everything Beta',
-                        band: 'Phoria',
-                        album: 'Volition'
-                    },
-                    {
-                        title: 'Hello',
-                        band: 'Adele',
-                        album: '25'
-                    },
-                    {
-                        title: 'Bohemian Rhapsody',
-                        band: 'Queen',
-                        album: 'A Night at the Opera'
-                    },
-                    {
-                        title: 'Don\'t Stop Believin\'',
-                        band: 'Journey',
-                        album: 'Escape'
-                    },
-                    {
-                        title: 'Smells Like Teen Spirit',
-                        band: 'Nirvana',
-                        album: 'Nevermind'
-                    },
-                    {
-                        title: 'All You Need Is Love',
-                        band: 'The Beatles',
-                        album: 'Magical Mystery Tour'
-                    },
-                    {
-                        title: 'Hotel California',
-                        band: 'The Eagles',
-                        album: 'Hotel California'
-                    },
-                    {
-                        title: 'The Hand That Feeds',
-                        band: 'Nine Inch Nails',
-                        album: 'With Teeth'
-                    },
-                    {
-                        title: 'Who Are You',
-                        band: 'The Who',
-                        album: 'Who Are You'
-                    }]
-            }
-        },
-        methods: {
-            optionClicked (ev) {
-                console.log(ev.target)
+      data () {
+        return {
+          editing: false,
+          editButton: 'Edit',
+          chats: [{
+            img: 'http://ionicframework.com/docs/pages/pages/item-sliding/www/assets/avatar-cher.png',
+            name: 'Cher',
+            message: 'Ugh. As if.',
+            time: '9:38 pm'
+          }, {
+            img: 'http://ionicframework.com/docs/pages/pages/item-sliding/www/assets/avatar-dionne.png',
+            name: 'Dionne',
+            message: 'Mr. Hall was way harsh.',
+            time: '8:59 pm'
+          }, {
+            img: 'http://ionicframework.com/docs/pages/pages/item-sliding/www/assets/avatar-murray.png',
+            name: 'Murray',
+            message: 'Excuse me, "Ms. Dione."',
+            time: 'Wed'
+          }, {
+            img: 'http://ionicframework.com/dist/preview-app/www/assets/img/thumbnail-rotla.png',
+            name: 'Rotla',
+            message: 'That\'s OK',
+            time: 'Yesterday'
+          }],
+          songs: [
+            {
+              title: 'Everything Beta',
+              band: 'Phoria',
+              album: 'Volition'
             },
-            toggleEdit() {
-                this.editing = !this.editing;
-                if (this.editing) {
-                    this.editButton = 'Done';
-                } else {
-                    this.editButton = 'Edit';
-                }
+            {
+              title: 'Hello',
+              band: 'Adele',
+              album: '25'
             },
-            reorderData(indexes) {
-                this.songs = reorderArray(this.songs, indexes.from, indexes.to);
-            }
+            {
+              title: 'Bohemian Rhapsody',
+              band: 'Queen',
+              album: 'A Night at the Opera'
+            },
+            {
+              title: 'Don\'t Stop Believin\'',
+              band: 'Journey',
+              album: 'Escape'
+            },
+            {
+              title: 'Smells Like Teen Spirit',
+              band: 'Nirvana',
+              album: 'Nevermind'
+            },
+            {
+              title: 'All You Need Is Love',
+              band: 'The Beatles',
+              album: 'Magical Mystery Tour'
+            },
+            {
+              title: 'Hotel California',
+              band: 'The Eagles',
+              album: 'Hotel California'
+            },
+            {
+              title: 'The Hand That Feeds',
+              band: 'Nine Inch Nails',
+              album: 'With Teeth'
+            },
+            {
+              title: 'Who Are You',
+              band: 'The Who',
+              album: 'Who Are You'
+            }]
         }
+      },
+      methods: {
+        optionClicked (ev) {
+          console.log(ev.target)
+        },
+        toggleEdit () {
+          this.editing = !this.editing
+          if (this.editing) {
+            this.editButton = 'Done'
+          } else {
+            this.editButton = 'Edit'
+          }
+        },
+        reorderData (indexes) {
+          this.songs = reorderArray(this.songs, indexes.from, indexes.to)
+        }
+      }
     }
 </script>

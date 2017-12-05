@@ -24,10 +24,10 @@
 </template>
 <script>
   import objectAssign from 'object-assign'
-  import ThemeMixins from '../../themes/theme.mixins';
-  import IonBackdrop from "../backdrop/index";
-  import IonButton from "../button/index";
-  import IonIcon from "../icon/index";
+  import ThemeMixins from '../../themes/theme.mixins'
+  import IonBackdrop from '../backdrop/index'
+  import IonButton from '../button/index'
+  import IonIcon from '../icon/index'
 
   export default {
     name: 'ion-action-sheet',
@@ -37,50 +37,51 @@
       IonBackdrop,
       IonIcon
     },
-    data() {
+    data () {
       return {
         defaultOptions: {
           title: '',
-          buttons: [],
+          buttons: []
         },
         buttons: [],
         enableBackdropDismiss: true,
         cssClass: '',
 
         cancelButton: {},
-        activated: false,
+        activated: false
       }
     },
 
     methods: {
-      present(options) {
+      present (options) {
         let _options = objectAssign({}, this.defaultOptions, options)
-        this.title = _options.title;
-        if (typeof _options.cssClass === 'string')
-          this.cssClass = _options.cssClass;
-        if (typeof _options.enableBackdropDismiss === 'boolean')
-          this.enableBackdropDismiss = _options.enableBackdropDismiss;
+        this.title = _options.title
+        if (typeof _options.cssClass === 'string') {
+          this.cssClass = _options.cssClass
+        }
+        if (typeof _options.enableBackdropDismiss === 'boolean') {
+          this.enableBackdropDismiss = _options.enableBackdropDismiss
+        }
 
-        let that = this
         this.buttons = _options.buttons.filter(button => {
           if (typeof button === 'string') {
-            button = {text: button};
+            button = {text: button}
           }
           if (!button.cssClass) {
-            button.cssClass = '';
+            button.cssClass = ''
           }
           switch (button.role) {
             case 'cancel':
-              this.cancelButton = button;
-              return null;
+              this.cancelButton = button
+              return null
             case 'destructive':
-              button.cssClass = (button.cssClass + ' ' || '') + 'action-sheet-destructive';
-              break;
+              button.cssClass = (button.cssClass + ' ' || '') + 'action-sheet-destructive'
+              break
             case 'selected':
-              button.cssClass = (button.cssClass + ' ' || '') + 'action-sheet-selected';
-              break;
+              button.cssClass = (button.cssClass + ' ' || '') + 'action-sheet-selected'
+              break
           }
-          return button;
+          return button
         })
 
         this.activated = true
@@ -89,37 +90,37 @@
           this.$on('onDismissEvent', (buttonIndex) => {
             resolve(buttonIndex)
           })
-        });
+        })
       },
 
-      dismiss(buttonIndex, disabled) {
-        if (disabled) return;
-        this.activated = false;
+      dismiss (buttonIndex, disabled) {
+        if (disabled) return
+        this.activated = false
 
-        if (buttonIndex == -1 && typeof this.cancelButton.handler === 'function') {
-          this.cancelButton.handler();
+        if (buttonIndex === -1 && typeof this.cancelButton.handler === 'function') {
+          this.cancelButton.handler()
         }
         if (buttonIndex > -1) {
-          let handler = this.buttons[buttonIndex].handler;
+          let handler = this.buttons[buttonIndex].handler
           if (handler && typeof handler === 'function') {
-            handler();
+            handler()
           }
         }
 
         this.$emit('onDismissEvent', buttonIndex)
 
         setTimeout(() => {
-          this.$el.remove();
-        }, 400);
+          this.$el.remove()
+        }, 400)
       },
 
-      bdClick() {
+      bdClick () {
         if (this.enableBackdropDismiss) {
-          this.dismiss(-1);
+          this.dismiss(-1)
         }
       }
     }
-  };
+  }
 </script>
 
 <style lang="scss">

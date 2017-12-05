@@ -29,118 +29,118 @@
 </template>
 
 <script>
-    import {urlChange, isTrueProperty} from '../../utils/utils'
+    import {isTrueProperty} from '../../util/util'
+    import {urlChange} from '../../util/dom'
     import objectAssign from 'object-assign'
-    import ThemeMixins from '../../themes/theme.mixins';
-    import IonBackdrop from "../backdrop/index";
-    import IonButton from "../button/index";
-    export default {
-        name:'ion-prompt',
-        mixins: [ThemeMixins],
-        components: {
-            IonButton,
-            IonBackdrop
-        },
-        data() {
-            return {
-                defaultOptions: {
-                    title: '',
-                    message: '',
-                    inputs: [{name: 'title',placeholder: 'Title'},],
-                    buttons: [{text: 'Cancel'}, {text: 'Save'}],
-                },
+    import ThemeMixins from '../../themes/theme.mixins'
+import IonBackdrop from '../backdrop/index'
+import IonButton from '../button/index'
+export default {
+      name: 'ion-prompt',
+      mixins: [ThemeMixins],
+      components: {
+        IonButton,
+        IonBackdrop
+      },
+      data () {
+        return {
+          defaultOptions: {
+            title: '',
+            message: '',
+            inputs: [{name: 'title', placeholder: 'Title'}],
+            buttons: [{text: 'Cancel'}, {text: 'Save'}]
+          },
 
-                message: '',
-                inputs: [],
-                buttons: [],
-                enableBackdropDismiss: true,
-                dismissOnPageChange: true,
-                cssClass: '',
+          message: '',
+          inputs: [],
+          buttons: [],
+          enableBackdropDismiss: true,
+          dismissOnPageChange: true,
+          cssClass: '',
 
-                activated: false,
-                values : []
+          activated: false,
+          values: []
+        }
+      },
+      created () {
+        if (this.dismissOnPageChange) {
+          urlChange(() => {
+            this.activated && this.dismiss(-1)
+          })
+        }
+      },
+      methods: {
+        present (options) {
+          let _options = objectAssign({}, this.defaultOptions, options)
+          this.title = _options.title
+          this.message = _options.message
+          this.cssClass = _options.cssClass
+          this.dismissOnPageChange = isTrueProperty(_options.dismissOnPageChange)
+          this.enableBackdropDismiss = isTrueProperty(_options.enableBackdropDismiss)
+
+          let that = this
+          this.buttons = _options.buttons.filter(button => {
+            if (typeof button === 'string') {
+              button = {text: button}
             }
-        },
-        created() {
-            if (this.dismissOnPageChange) {
-                urlChange(() => {
-                    this.activated && this.dismiss(-1)
-                })
+            if (!button.cssClass) {
+              button.cssClass = ''
             }
+            return button
+          })
+
+          this.inputs = _options.inputs.filter(input => {
+            if (typeof button === 'string') {
+              input = {title: input, name: input}
+            }
+            if (!input.cssClass) {
+              input.cssClass = ''
+            }
+            if (input.value) {
+              that.values[input.name] = input.value
+            }
+            return input
+          })
+
+          this.activated = true
+
+          return new Promise((resolve, reject) => {
+            this.$on('onHideEvent', data => {
+              resolve(data)
+            })
+          })
         },
-        methods: {
-            present(options) {
-                let _options = objectAssign({}, this.defaultOptions, options)
-                this.title = _options.title;
-                this.message = _options.message;
-                this.cssClass = _options.cssClass;
-                this.dismissOnPageChange = isTrueProperty(_options.dismissOnPageChange)
-                this.enableBackdropDismiss = isTrueProperty(_options.enableBackdropDismiss)
 
-                let that = this
-                this.buttons = _options.buttons.filter(button => {
-                    if (typeof button === 'string') {
-                        button = {text: button};
-                    }
-                    if (!button.cssClass) {
-                        button.cssClass = '';
-                    }
-                    return button;
-                })
+        dismiss (buttonIndex) {
+          this.activated = false
 
-                this.inputs = _options.inputs.filter(input => {
-                    if (typeof button === 'string') {
-                        input = {title: input, name: input};
-                    }
-                    if (!input.cssClass) {
-                        input.cssClass = '';
-                    }
-                    if (!!input.value) {
-                        that.values[input.name] = input.value
-                    }
-                    return input;
-                })
-
-                this.activated = true;
-
-                return new Promise((resolve, reject) => {
-                    this.$on('onHideEvent', data => {
-                        resolve(data)
-                    })
-                });
-
-            },
-
-            dismiss(buttonIndex) {
-                this.activated = false;
-
-                if (buttonIndex > -1) {
-                    let handler = this.buttons[buttonIndex].handler;
-                    if (handler && typeof handler === 'function') {
-                        handler(this.values);
-                    }
-                }
+          if (buttonIndex > -1) {
+            let handler = this.buttons[buttonIndex].handler
+            if (handler && typeof handler === 'function') {
+              handler(this.values)
+            }
+          }
 
                 // 返回输入框的值
-                this.$emit('onHideEvent', {index: buttonIndex, values:this.values});
-                setTimeout(() => {
-                    this.$el.remove();
-                }, 400);
-            },
+          this.$emit('onHideEvent', {index: buttonIndex, values: this.values})
+          setTimeout(() => {
+            this.$el.remove()
+          }, 400)
+        },
 
-            bdClick () {
-                if (this.enableBackdropDismiss) {
-                    this.dismiss(-1);
-                }
-            },
+        bdClick () {
+          if (this.enableBackdropDismiss) {
+            this.dismiss(-1)
+          }
+        },
 
-            inputChanged($event) {
-                let value = $event.target.value
-                let name = $event.target.name
+        inputChanged ($event) {
+          let value = $event.target.value
+          let name = $event.target.name
 
-                this.values[name] = value
-            },
+          this.values[name] = value
         }
+      }
     }
 </script>
 

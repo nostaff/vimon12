@@ -4,10 +4,10 @@
     </div>
 </template>
 <script type="text/javascript">
-  import { setElementClass, parsePxUnit, isTrueProperty } from '../../util/util'
-  import ThemeMixins from '../../themes/theme.mixins';
+  import { isTrueProperty } from '../../util/util'
+  import ThemeMixins from '../../themes/theme.mixins'
 
-  export default {
+export default {
     name: 'ion-fab-list',
     mixins: [ThemeMixins],
     inject: {
@@ -48,39 +48,39 @@
 
     methods: {
 
-      setFabButton(fab) {
-        this.fabButtons.push(fab);
+      setFabButton (fab) {
+        this.fabButtons.push(fab)
 
         setTimeout(() => {
-          const className = `fab-${this.theme}-in-list`;
+          const className = `fab-${this.theme}-in-list`
           this.fabButtons.forEach((fab) => {
-            fab.setElementClass('fab-in-list', true);
-            fab.setElementClass(className, true);
-          });
-        }, 0);
+            fab.setElementClass('fab-in-list', true)
+            fab.setElementClass(className, true)
+          })
+        }, 0)
       },
 
       /**
        * @hidden
        */
-      setVisible(val) {
-        let visible = isTrueProperty(val);
+      setVisible (val) {
+        let visible = isTrueProperty(val)
         if (visible === this.visible) {
-          return;
+          return
         }
-        this.visible = visible;
+        this.visible = visible
 
-        let fabButtons = this.fabButtons;
+        let fabButtons = this.fabButtons
         if (visible) {
           fabButtons.forEach((fab, index) => {
-            setTimeout(() => fab.setElementClass('show', true), (index + 1) * 30);
-          });
+            setTimeout(() => fab.setElementClass('show', true), (index + 1) * 30)
+          })
         } else {
-          fabButtons.forEach(fab => fab.setElementClass('show', false));
+          fabButtons.forEach(fab => fab.setElementClass('show', false))
         }
 
-        this.setElementClass('fab-list-active', visible);
-      },
+        this.setElementClass('fab-list-active', visible)
+      }
 
     }
   }

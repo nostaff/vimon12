@@ -61,20 +61,20 @@
 </style>
 <script>
     export default{
-        data() {
-            return {
-                popupShowed: false,
-                swiperPopupButtons: [
-                    {
-                        text: '关闭'
-                    }
-                ]
+      data () {
+        return {
+          popupShowed: false,
+          swiperPopupButtons: [
+            {
+              text: '关闭'
             }
-        },
+          ]
+        }
+      },
 
-        methods: {
-            swiperInPopup() {
-                const template = `
+      methods: {
+        swiperInPopup () {
+          const template = `
           <p>弹层内轮播</p>
           <swiper direction="horizontal" width="100%" height="150">
             <swiper-item>
@@ -91,17 +91,17 @@
           </swiper>
         `
 
-                let popup = $popup.fromTemplate(template, {
-                    cssClass: 'swiper-popup',
-                    buttons: [
-                        {
-                            text: '确定'
-                        }
-                    ]
-                })
+          let popup = this.$popup.fromTemplate(template, {
+            cssClass: 'swiper-popup',
+            buttons: [
+              {
+                text: '确定'
+              }
+            ]
+          })
 
-                popup.present()
-            }
+          popup.present()
         }
+      }
     }
 </script>

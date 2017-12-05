@@ -2,21 +2,21 @@
   var Grid = {
     name: 'ion-grid',
     template: '<div class="grid"><slot></slot></div>'
-  };
-  var Row = {
+  }
+var Row = {
     name: 'ion-row',
     template: '<div class="row"><slot></slot></div>'
-  };
-  var Column = {
+  }
+var Column = {
     name: 'ion-col',
     template: '<div class="col"><slot></slot></div>'
-  };
+  }
 
-  export default {
+export default {
     Grid,
     Row,
-    Column,
-  };
+    Column
+  }
 </script>
 
 <style lang="scss">

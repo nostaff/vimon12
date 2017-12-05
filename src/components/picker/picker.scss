@@ -34,7 +34,7 @@ $picker-max-width:                         500px !default;
 .picker-wrapper {
   @include position(null, 0, 0, 0);
   @include margin(auto);
-  @include transform(translate3d(0, 100%, 0));
+  @include transform(translate3d(0, 0, 0));
 
   position: absolute;
   z-index: $z-index-overlay-wrapper;
@@ -169,3 +169,4 @@ $picker-max-width:                         500px !default;
 
   pointer-events: none;
 }
+

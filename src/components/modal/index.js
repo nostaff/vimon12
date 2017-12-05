@@ -1,14 +1,14 @@
 import Vue from 'vue'
 import Modal from './modal.vue'
 
-import {createElement, extend, isObject, isString, uuid} from '../../utils/utils'
+import {isObject, isString, createElement} from '../../util/util'
 
 class IonModal {
-  constructor() {
+  constructor () {
     this._vm = undefined
   }
 
-  present(options) {
+  present (options) {
     let components = (options && options.components) ? options.components : {}
     let template = (options && options.template) ? options.template : {}
 
@@ -17,32 +17,31 @@ class IonModal {
       this._vm = undefined
     }
 
-    let container = document.querySelector('.ion-app');
+    let container = document.querySelector('.ion-app')
     container.querySelector('[ion-modal]') || createElement('ion-modal', container)
 
-    let ModalComponent = Vue.extend(Modal);
-    this._vm = new ModalComponent().$mount('[ion-modal]');
+    let ModalComponent = Vue.extend(Modal)
+    this._vm = new ModalComponent().$mount('[ion-modal]')
 
-    let ContentComponent;
+    let ContentComponent
     if (isString(template)) {
       ContentComponent = Vue.extend({
         template: '<div>' + template + '</div>',
         components: components
-      });
+      })
     } else if (isObject(template)) {
-      ContentComponent = Vue.extend(template);
+      ContentComponent = Vue.extend(template)
     }
 
     // create an instance of Profile and mount it on an element
     new ContentComponent({
       $data: options.data     // send to component, get by this.$options.$data
-    }).$mount(this._vm.$el.querySelector('.modal-viewport'));
+    }).$mount(this._vm.$el.querySelector('.modal-viewport'))
 
-
-    return this._vm.present(options);
+    return this._vm.present(options)
   }
 
-  dismiss(role) {
+  dismiss (role) {
     this._vm.dismiss(role)
   }
 

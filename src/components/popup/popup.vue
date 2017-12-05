@@ -25,16 +25,16 @@
   </div>
 </template>
 <script>
-  import ThemeMixins from '../../themes/theme.mixins';
-  import IonBackdrop from "../backdrop/index";
-  import IonButton from "../button/index";
+  import ThemeMixins from '../../themes/theme.mixins'
+import IonBackdrop from '../backdrop/index'
+import IonButton from '../button/index'
 
-  export default {
+export default {
     name: 'ion-popup',
     mixins: [ThemeMixins],
     components: {
       IonButton,
-      IonBackdrop,
+      IonBackdrop
     },
     props: {
       effect: {
@@ -55,7 +55,7 @@
       }
     },
 
-    data() {
+    data () {
       return {
         state: 0, // 0: hidden, 1: showing, 2: active
         buttons: [],
@@ -64,58 +64,57 @@
       }
     },
 
-    mounted() {
-      if (this.cssClass)
-        this.$el.querySelector('.ion-popup').classList.add(this.cssClass)
+    mounted () {
+      if (this.cssClass) { this.$el.querySelector('.ion-popup').classList.add(this.cssClass) }
     },
 
     methods: {
-      present() {
-        this.activated = true;
+      present () {
+        this.activated = true
 
         return new Promise((resolve, reject) => {
           this.$on('onDismissEvent', (data) => {
             resolve(data)
           })
-        });
+        })
       },
 
-      setButtons(buttons) {
+      setButtons (buttons) {
         this.buttons = buttons
       },
 
-      btnClick(button) {
-        let shouldDismiss = true;
+      btnClick (button) {
+        let shouldDismiss = true
 
         if (button.handler && typeof button.handler === 'function') {
           // a handler has been provided, execute it
           // pass the handler the values from the inputs
           if (button.handler(this.getSelected()) === false) {
             // if the return value of the handler is false then do not dismiss
-            shouldDismiss = false;
+            shouldDismiss = false
           }
         }
 
         if (shouldDismiss) {
-          this.dismiss(button.role);
+          this.dismiss(button.role)
         }
       },
 
-      bdClick() {
+      bdClick () {
         if (this.enableBackdropDismiss) {
-          this.dismiss('backdrop');
+          this.dismiss('backdrop')
         }
       },
 
-      dismiss(role) {
-        this.activated = false;
+      dismiss (role) {
+        this.activated = false
 
         this.$emit('onDismissEvent', {role: role})
 
         setTimeout(() => {
-          this.$el.remove();
-        }, 300);
-      },
+          this.$el.remove()
+        }, 300)
+      }
     }
   }
 </script>

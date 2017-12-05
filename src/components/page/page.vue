@@ -5,13 +5,13 @@
 </template>
 
 <script>
-  import ThemeMixins from '../../themes/theme.mixins';
+  import ThemeMixins from '../../themes/theme.mixins'
 
-  let initPageZIndex = 100
+let initPageZIndex = 100
   export default {
     name: 'ion-page',
     mixins: [ThemeMixins],
-    created() {
+    created () {
       let direction = this.$history.getDirection()
       if (direction === 'forward') {
         this.pageZIndex = ++initPageZIndex
@@ -21,6 +21,6 @@
         this.pageZIndex = initPageZIndex
       }
       this.$root.$emit('page:created')
-    },
+    }
   }
 </script>

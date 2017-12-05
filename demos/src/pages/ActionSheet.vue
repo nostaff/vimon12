@@ -13,68 +13,68 @@
     </ion-page>
 </template>
 <script>
-    const is_md = /Android/.test(navigator.userAgent)
+    const isMd = /Android/.test(navigator.userAgent)
 
     const buttonItems = [
-        {
-            text: 'Delete',
-            role: 'destructive',
-            icon: is_md ? 'ion-trash-b' : null,
-            handler: () => {
-                console.log('Delete clicked');
-            }
-        },
-        {
-            text: 'Share',
-            icon: is_md ? 'ion-android-share' : null,
-            handler: () => {
-                console.log('Share clicked');
-            }
-        },
-        {
-            text: 'Play',
-            icon: is_md ? 'ion-android-arrow-dropright-circle' : null,
-            handler: () => {
-                console.log('Play clicked');
-            }
-        },
-        {
-            text: 'Favorite',
-            icon: is_md ? 'ion-android-heart-outline' : null,
-            handler: () => {
-                console.log('Favorite clicked');
-            }
-        },
-        {
-            text: 'Cancel',
-            role: 'cancel', // will always sort to be on the bottom
-            icon: is_md ? 'ion-android-close' : null,
-            handler: () => {
-                console.log('Cancel clicked');
-            }
+      {
+        text: 'Delete',
+        role: 'destructive',
+        icon: isMd ? 'ion-trash-b' : null,
+        handler: () => {
+          console.log('Delete clicked')
         }
-    ];
-
-    export default {
-        methods: {
-            normal() {
-                this.$actionSheet.present({
-                    title: '标题',
-                    cssClass: 'a b',
-                    buttons: buttonItems
-                }).then((res) => {
-                    console.log('button clicked: ', res)
-                });
-            },
-            disableBackdrop() {
-                this.$actionSheet.present({
-                    title: '标题',
-                    buttons: buttonItems,
-                    enableBackdropDismiss: false
-                });
-            }
-
+      },
+      {
+        text: 'Share',
+        icon: isMd ? 'ion-android-share' : null,
+        handler: () => {
+          console.log('Share clicked')
         }
+      },
+      {
+        text: 'Play',
+        icon: isMd ? 'ion-android-arrow-dropright-circle' : null,
+        handler: () => {
+          console.log('Play clicked')
+        }
+      },
+      {
+        text: 'Favorite',
+        icon: isMd ? 'ion-android-heart-outline' : null,
+        handler: () => {
+          console.log('Favorite clicked')
+        }
+      },
+      {
+        text: 'Cancel',
+        role: 'cancel', // will always sort to be on the bottom
+        icon: isMd ? 'ion-android-close' : null,
+        handler: () => {
+          console.log('Cancel clicked')
+        }
+      }
+    ]
+
+export default {
+      methods: {
+        normal () {
+          this.$actionSheet.present({
+            title: '标题',
+            cssClass: 'a b',
+            buttons: buttonItems
+          }).then((res) => {
+            console.log('button clicked: ', res)
+          })
+        },
+        disableBackdrop () {
+          this.$actionSheet.present({
+            title: '标题',
+            buttons: buttonItems,
+            enableBackdropDismiss: false
+          })
+        }
+
+      }
     }
 </script>
 

@@ -16,18 +16,18 @@
 </template>
 
 <script type="text/javascript">
-  import {isTrueProperty, isBlank, isArray, isCheckedProperty} from '../../utils/utils'
-  import ThemeMixins from '../../themes/theme.mixins';
-  import Popover from "../popover/index"
-  import IonButton from "../button";
-  import SelectPopover from "./select.popover.vue";
+  import {isTrueProperty, isBlank, isArray, isCheckedProperty} from '../../util/util'
+  import ThemeMixins from '../../themes/theme.mixins'
+import Popover from '../popover/index'
+  import IonButton from '../button'
+import SelectPopover from './select.popover.vue'
 
-  export default {
+export default {
     name: 'ion-select',
     mixins: [ThemeMixins],
     components: {IonButton},
 
-    data() {
+    data () {
       return {
         componentName: 'ionSelect',
 
@@ -55,68 +55,68 @@
       interface: {
         type: String,
         default: 'alert',
-        validator(val) {
+        validator (val) {
           return [
             'popover',
             'action-sheet',
-            'alert',
-          ].indexOf(val) > -1;
+            'alert'
+          ].indexOf(val) > -1
         }
       },
       selectOptions: {
         type: Object,
-        default() {
+        default () {
           return {}
         }
       },
       selectedText: String,
       value: [String, Array, Number]
     },
-    created() {
+    created () {
       if (!isBlank(this.value)) {
-        this.values = isArray(this.value) ? this.value : [this.value];
+        this.values = isArray(this.value) ? this.value : [this.value]
       }
     },
-    mounted() {
+    mounted () {
       // if parent is item
       if (this.$parent.$data.componentName === 'ionItem') {
-        this.itemComponent = this.$parent;
-        let cssClass = this.itemComponent.$el.classList.contains('item-select') ? 'item-multiple-inputs' : 'item-select';
+        this.itemComponent = this.$parent
+        let cssClass = this.itemComponent.$el.classList.contains('item-select') ? 'item-multiple-inputs' : 'item-select'
         this.itemComponent.$el.classList.add(cssClass)
       }
     },
     watch: {
-      disabled(val) {
+      disabled (val) {
         this.setDisabled(isTrueProperty(val))
       }
     },
     methods: {
-      setDisabled(disabled) {
+      setDisabled (disabled) {
         this.isDisabled = disabled
-        this.itemComponent && this.itemComponent.$el.classList[this.isDisabled ? 'add' : 'remove']('item-select-disabled');
+        this.itemComponent && this.itemComponent.$el.classList[this.isDisabled ? 'add' : 'remove']('item-select-disabled')
       },
 
-      updateText() {
-        let texts = [];
+      updateText () {
+        let texts = []
 
         if (this.optionComponents) {
           this.optionComponents.forEach(option => {
             // check this option if the option's value is in the values array
             option.isSelected = this.values.some(selectValue => {
               return isCheckedProperty(selectValue, option.optionValue)
-            });
+            })
 
             if (option.isSelected) {
-              texts.push(option.label);
+              texts.push(option.label)
             }
-          });
+          })
         }
 
-        this.text = texts.join(', ');
+        this.text = texts.join(', ')
       },
 
-      updateOptionList(option) {
-        this.optionComponents.push(option);
+      updateOptionList (option) {
+        this.optionComponents.push(option)
 
         this.timer && clearTimeout(this.timer)
         this.timer = setTimeout(() => {
@@ -128,14 +128,14 @@
         }, 0)
       },
 
-      onClickHandler(ev) {
+      onClickHandler (ev) {
         ev.preventDefault()
         ev.stopPropagation()
 
         this.open(ev)
       },
 
-      open(ev) {
+      open (ev) {
         if (this.isDisabled) {
           return
         }
@@ -158,7 +158,7 @@
           selectOptions.title = this.itemComponent.getLabelText()
         }
 
-        let options = this.optionComponents;
+        let options = this.optionComponents
         if (this.interface === 'action-sheet' && options.length > 6) {
           console.warn('Interface cannot be "action-sheet" with more than 6 options. Using the "alert" interface.')
           this.interface = 'alert'
@@ -170,8 +170,8 @@
         }
 
         if (this.interface === 'popover' && !ev) {
-          console.warn('Interface cannot be "popover" without UIEvent.');
-          this.interface = 'alert';
+          console.warn('Interface cannot be "popover" without UIEvent.')
+          this.interface = 'alert'
         }
 
         var selectCssClass
@@ -197,8 +197,7 @@
 
           selectOptions.cssClass = selectCssClass
 
-          this.$actionSheet.present(selectOptions);
-
+          this.$actionSheet.present(selectOptions)
         } else if (this.interface === 'popover') {
           let popoverOptions = options.map(input => {
             return {
@@ -213,36 +212,35 @@
                 this.$emit('input', input.optionValue)
               }
             }
-          });
+          })
 
-          var popoverCssClass = 'select-popover';
+          var popoverCssClass = 'select-popover'
 
-          // If the user passed a cssClass for the select, add it
-          popoverCssClass += selectOptions.cssClass ? ' ' + selectOptions.cssClass : '';
+        // If the user passed a cssClass for the select, add it
+          popoverCssClass += selectOptions.cssClass ? ' ' + selectOptions.cssClass : ''
 
-          // ev.target is readonly.
-          // place popover regarding to ion-select instead of .button-inner
-          Object.defineProperty(ev, 'target', {value: ev.currentTarget.parentNode});
-          selectOptions.ev = ev;
-          selectOptions.template = SelectPopover;
-          selectOptions.cssClass = popoverCssClass;
-          selectOptions.data = {options: popoverOptions};
+        // ev.target is readonly.
+        // place popover regarding to ion-select instead of .button-inner
+          Object.defineProperty(ev, 'target', {value: ev.currentTarget.parentNode})
+          selectOptions.ev = ev
+          selectOptions.template = SelectPopover
+          selectOptions.cssClass = popoverCssClass
+          selectOptions.data = {options: popoverOptions}
 
-          Popover.present(selectOptions);
-
+          Popover.present(selectOptions)
         } else {
           // default to use the alert interface
-          this.interface = 'alert';
+          this.interface = 'alert'
 
-          // user cannot provide inputs from selectOptions
-          // alert inputs must be created by ionic from ion-options
+        // user cannot provide inputs from selectOptions
+        // alert inputs must be created by ionic from ion-options
           selectOptions.inputs = options.map(input => {
             return {
               type: (this.multiple ? 'checkbox' : 'radio'),
               label: input.label,
               value: input.optionValue,
               checked: input.isSelected,
-              disabled: input.isDisabled,
+              disabled: input.isDisabled
             }
           })
 
@@ -270,10 +268,10 @@
         }
       },
 
-      onChange(value) {
+      onChange (value) {
         console.log('select, onChange value:', value)
         this.values = (isArray(value) ? value : isBlank(value) ? [] : [value])
-        this.updateText();
+        this.updateText()
       }
     }
 

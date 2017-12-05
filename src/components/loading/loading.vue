@@ -13,9 +13,9 @@
 </template>
 <script>
   import objectAssign from 'object-assign'
-  import ThemeMixins from '../../themes/theme.mixins';
-  import IonBackdrop from "../backdrop/index";
-  import IonSpinner from '../spinner/index'
+  import ThemeMixins from '../../themes/theme.mixins'
+import IonBackdrop from '../backdrop/index'
+import IonSpinner from '../spinner/index'
 
   export default {
     name: 'ion-loading',
@@ -24,12 +24,12 @@
       IonBackdrop,
       IonSpinner
     },
-    data() {
+    data () {
       return {
         defaultOptions: {
           content: '',
           showBackdrop: true,
-          enableBackdropDismiss: false,
+          enableBackdropDismiss: false
         },
 
         content: '',
@@ -43,43 +43,40 @@
       }
     },
     methods: {
-      present(options) {
+      present (options) {
         let _options = objectAssign({}, this.defaultOptions, options)
-        this.content = _options.content;
-        this.spinner = _options.spinner;
+        this.content = _options.content
+        this.spinner = _options.spinner
 
-        this.duration = parseInt(_options.duration);
-        if (typeof _options.showBackdrop === 'boolean')
-          this.showBackdrop = _options.showBackdrop;
-        if (typeof _options.enableBackdropDismiss === 'boolean')
-          this.enableBackdropDismiss = _options.enableBackdropDismiss;
+        this.duration = parseInt(_options.duration)
+        if (typeof _options.showBackdrop === 'boolean') { this.showBackdrop = _options.showBackdrop }
+        if (typeof _options.enableBackdropDismiss === 'boolean') { this.enableBackdropDismiss = _options.enableBackdropDismiss }
 
-        this.activated = true;
+        this.activated = true
 
         if (this.duration) {
-          setTimeout(() => this.dismiss('backdrop'), this.duration);
+          setTimeout(() => this.dismiss('backdrop'), this.duration)
         }
 
         return new Promise((resolve, reject) => {
           this.$on('onHideEvent', (res) => {
             resolve(res)
           })
-        });
-
+        })
       },
 
-      dismiss(role) {
-        this.activated = false;
+      dismiss (role) {
+        this.activated = false
 
-        this.$emit('onHideEvent', role);
+        this.$emit('onHideEvent', role)
         setTimeout(() => {
-          this.$el.remove();
-        }, 200);
+          this.$el.remove()
+        }, 200)
       },
 
-      bdClick() {
+      bdClick () {
         if (this.enableBackdropDismiss) {
-          this.dismiss('backdrop');
+          this.dismiss('backdrop')
         }
       }
     }

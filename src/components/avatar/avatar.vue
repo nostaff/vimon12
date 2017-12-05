@@ -6,12 +6,12 @@
 </template>
 <script>
     export default {
-        name: 'ion-avatar',
-        props: {
-            src: {
-                type: String,
-                default: ''
-            }
+      name: 'ion-avatar',
+      props: {
+        src: {
+          type: String,
+          default: ''
         }
+      }
     }
 </script>

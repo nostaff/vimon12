@@ -1,5 +1,5 @@
 <template>
-  <div role="dialog" :class="['ion-toast', 'toast-'+theme, cssClass]" :style="{'z-index': zIndex}">
+  <div role="dialog" :class="['ion-toast', themeClass, cssClass]" :style="{'z-index': zIndex}">
     <transition :name="'toast-fade-'+position">
       <div class="toast-wrapper" :class="['toast-'+position]" v-show="activated">
         <div class="toast-container">
@@ -11,20 +11,20 @@
   </div>
 </template>
 <script>
-  import Vue from 'vue'
-  import {isFunction, isNumber, isTrueProperty, urlChange, uuid} from '../../utils/utils'
+  import {urlChange} from '../../util/dom'
+  import {isFunction, isNumber, isTrueProperty} from '../../util/util'
   import objectAssign from 'object-assign'
-  import ThemeMixins from '../../themes/theme.mixins';
-  import IonButton from "../button";
+  import ThemeMixins from '../../themes/theme.mixins'
+  import IonButton from '../button'
 
-  let zIndex = 20001;
+  let zIndex = 20001
   export default {
     name: 'ion-toast',
     mixins: [ThemeMixins],
     components: {
-      IonButton,
+      IonButton
     },
-    data() {
+    data () {
       return {
         defaultOptions: {
           message: '',
@@ -35,7 +35,7 @@
           position: 'bottom',   // "top", "middle", "bottom"
           cssClass: '',
           onDismiss: () => {
-          },
+          }
         },
 
         message: '',
@@ -54,7 +54,7 @@
         zIndex: this.getZIndex()
       }
     },
-    created() {
+    created () {
       if (this.dismissOnPageChange) {
         urlChange(() => {
           if (this.activated) {
@@ -63,7 +63,7 @@
             } else if (this.timer) {
               window.clearTimeout(this.timer)
               this.timer = null
-              this.dismiss(-1);
+              this.dismiss(-1)
             }
           }
         })
@@ -71,51 +71,53 @@
     },
 
     methods: {
-      getZIndex() {
-        return zIndex++;
+      getZIndex () {
+        return zIndex++
       },
-      present(options) {
+      present (options) {
         let _options = objectAssign({}, this.defaultOptions, options)
-        this.message = _options.message;
-        this.closeButtonText = _options.closeButtonText;
-        this.cssClass = _options.cssClass;
-        this.showCloseButton = isTrueProperty(_options.showCloseButton);
-        this.dismissOnPageChange = isTrueProperty(_options.dismissOnPageChange);
-        if (['top', 'middle', 'bottom'].indexOf(_options.position) > -1)
-          this.position = _options.position;
-        if (isNumber(_options.duration))
-          this.duration = _options.duration;
-        if (isFunction(_options.onDismiss))
-          this.onDismiss = _options.onDismiss;
+        this.message = _options.message
+        this.closeButtonText = _options.closeButtonText
+        this.cssClass = _options.cssClass
+        this.showCloseButton = isTrueProperty(_options.showCloseButton)
+        this.dismissOnPageChange = isTrueProperty(_options.dismissOnPageChange)
+        if (['top', 'middle', 'bottom'].indexOf(_options.position) > -1) {
+          this.position = _options.position
+        }
+        if (isNumber(_options.duration)) {
+          this.duration = _options.duration
+        }
+        if (isFunction(_options.onDismiss)) {
+          this.onDismiss = _options.onDismiss
+        }
 
-        this.activated = true;
+        this.activated = true
         if (!this.showCloseButton) {
           this.timer = window.setTimeout(() => {
             this.timer = null
-            this.dismiss(-1);
-          }, this.duration);
+            this.dismiss(-1)
+          }, this.duration)
         }
 
         return new Promise((resolve, reject) => {
           this.$on('onDismissEvent', (res) => {
             resolve(res)
           })
-        });
-
+        })
       },
 
-      dismiss(role) {
+      dismiss (role) {
         this.onDismiss && this.onDismiss(role)
 
         this.$nextTick(() => {
-          this.$emit('onDismissEvent', role);
+          this.$emit('onDismissEvent', role)
 
           this.$el.remove()
         })
       },
 
-      closeButtonClick() {
-        this.dismiss(-1);
+      closeButtonClick () {
+        this.dismiss(-1)
       }
     }
   }

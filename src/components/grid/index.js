@@ -1,1 +1,1 @@
-export { Grid, Row, Column } from './grid.vue';
+export { Grid, Row, Column } from './grid.vue'

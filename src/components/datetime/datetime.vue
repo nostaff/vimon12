@@ -1,415 +1,539 @@
 <template>
-    <div class="ion-datetime datetime" :class="['datetime-'+theme, disabled?'datetime-disabled':'']" @click.prevent="btnClick">
-        <div v-if="!text" class="datetime-text datetime-placeholder">{{placeholder}}</div>
-        <div v-if="text" class="datetime-text">{{text}}</div>
-        <ion-button role="item-cover" :aria-disabled="disabled"></ion-button>
-    </div>
+  <div class="ion-datetime"
+       :class="[themeClass, colorClass]"
+       @click="clickHandler($event)"
+       :displayFormat="displayFormat"
+       :pickerFormat="pickerFormat"
+       :min="min"
+       :max="max">
+    <div v-if="!text" class="datetime-text datetime-placeholder">{{placeholder}}</div>
+    <div v-if="text" class="datetime-text">{{text}}</div>
+    <ion-button type="button"
+               :id="_uid"
+               role="item-cover"
+               class="item-cover">
+    </ion-button>
+  </div>
 </template>
-<script>
-    const DEFAULT_FORMAT = 'MMM D, YYYY';
 
-    import objectAssign from 'object-assign'
-    import ThemeMixins from '../../themes/theme.mixins';
-    import IonButton from "../button/index";
-    import IonPicker from '../picker/picker';
+<script type="text/javascript">
+  import { isBlank, isPresent, isTrueProperty, isArray, isString } from '../../util/util'
+  import { setElementClass } from '../../util/dom'
+  import ThemeMixins from '../../themes/theme.mixins'
+  import Picker from '../picker'
+  import IonButton from '../button'
+  import {
+    dateValueRange,
+    renderDateTime,
+    renderTextFormat,
+    convertFormatToKey,
+    getValueFromFormat,
+    parseTemplate,
+    parseDate,
+    updateDate,
+    convertDataToISO,
+    daysInMonth,
+    dateSortValue,
+    dateDataSortValue
+  } from './datetime-util'
 
-    import { assert, clamp, deepCopy, isArray, isBlank, isObject, isPresent, isString } from '../../utils/utils';
-    import {
-        convertDataToISO,
-        convertToDatetimeData,
-        convertFormatToKey,
-        dateDataSortValue,
-        dateSortValue,
-        dateValueRange,
-        daysInMonth,
-        getValueFromFormat,
-        parseDate,
-        parseTemplate,
-        renderDateTime,
-        renderTextFormat,
-        updateDate,
-        convertToArrayOfNumbers,
-        convertToArrayOfStrings
-    } from './datetime-util';
+  const DEFAULT_FORMAT = 'MMM D, YYYY'
+  // const DEFAULT_FORMAT = 'YYYY/MM/DD'
+  export default {
+    name: 'ion-datetime',
+    mixins: [ThemeMixins],
+    components: {IonButton},
+    data () {
+      return {
+        itemComponent: null, // 父组件Item实例
+        theDisabled: this.disabled,
+        text: '',
+        theMin: this.min,
+        theMax: this.max,
+        theValue: {},
+        locale: {}
+      }
+    },
+    props: {
+      min: String,                      //  ISO 8601 datetime 的时间格式, 1996-12-19
+      max: String,                      //  ISO 8601 datetime 的时间格式, 1996-12-19
 
-    export default {
-        name: 'ion-datetime',
-        mixins: [ThemeMixins],
-        components: {
-            IonButton,
-            IonPicker
-        },
-        data (){
-            return {
-                defaultOptions: {
-                    buttons: [
-                        {
-                            text: this.cancelText,
-                            role: 'cancel',
-                            handler: () => {
-                                console.log('Delete clicked');
-                            }
-                        },
-                        {
-                            text: this.doneText,
-                            role: 'done',
-                            handler: (data) => {
-                                this.currentValue = convertToDatetimeData(data);
-                            },
-                        }
-                    ],
-                    columns: [],
-                },
-                text: '',
-                currentValue: updateDate(this.value),
-                min: {},
-                max: {},
-                picker: Object,
-                pickerOptions: {},
-                columns: [],
-                locale: []
-            }
-        },
+      displayFormat: String,            // 外部 显示的格式
+      pickerFormat: String,             // picker 显示的格式
+      placeholder: String,
+      value: [String, Object, Date],
 
-        props: {
-            value: String,
-            placeholder: String,
-            /**
-             * Value must be a date string
-             * following the
-             * [ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime),
-             * such as `1996-12-19`.
-             */
-            minDate: String,
-            maxDate: String,
+      cancelText: {                     // 取消的显示文本
+        type: String,
+        default: '取消'
+      },
+      doneText: {                       // 确定的显示文本
+        type: String,
+        default: '确认'
+      },
 
-            displayFormat: String,
-            cancelText: {
-                type: String,
-                default: 'Cancel'
-            },
-            doneText: {
-                type: String,
-                default: 'Done'
-            },
-            yearValues: [Array, String],
-            monthValues: [Array, String],
-            dayValues: [Array, String],
-            hourValues: [Array, String],
-            minuteValues: [Array, String],
-            monthNames: [Array, String],
-            monthShortNames: [Array, String],
-            dayNames: [Array, String],
-            dayShortNames: [Array, String],
+      yearValues: [String, Array],      // 显示可以选择的 年 信息, 例如: "2024,2020,2016,2012,2008"
+      monthValues: [String, Array],     // 显示可以选择的 月 信息, 例如: "6,7,8"
+      dayValues: [String, Array],       // 显示可以选择的 日 信息, 例如: "6,7,8"
+      hourValues: [String, Array],      // 显示可以选择的 小时 信息,
+      minuteValues: [String, Array],    // 显示可以选择的 分钟 信息,
 
-            disabled: Boolean
-        },
+      monthNames: [String, Array],               // 每个月 的名字
+      monthShortNames: [String, Array],          // 每个月 的短名字
+      dayNames: [String, Array],                  // 每天 的显示名字
+      dayShortNames: [String, Array],            // 每天 的显示名字
 
-        created () {
-            ['monthNames', 'monthShortNames', 'dayNames', 'dayShortNames'].forEach(type => {
-                this.locale[type] = convertToArrayOfStrings((this)[type], type);
-            });
-
-            this.updateText();
-        },
-
-        methods: {
-
-            btnClick() {
-                if (this.disabled) {
-                    return;
-                }
-
-                let pickerOptions = objectAssign({}, this.defaultOptions, this.pickerOptions)
-
-
-                // Update picker status before presenting
-                this.generate();
-                this.validate();
-
-                pickerOptions.columns = this.columns;
-
-                this.picker = this.$picker.present(pickerOptions);
-                this.columns = [];
-            },
-
-            generate() {
-                let template = this.displayFormat || DEFAULT_FORMAT;
-
-                if (isPresent(template)) {
-                    // make sure we've got up to date sizing information
-                    this.calcMinMax();
-
-                    // does not support selecting by day name
-                    // automaticallly remove any day name formats
-                    template = template.replace('DDDD', '{~}').replace('DDD', '{~}');
-                    if (template.indexOf('D') === -1) {
-                        // there is not a day in the template
-                        // replace the day name with a numeric one if it exists
-                        template = template.replace('{~}', 'D');
-                    }
-                    // make sure no day name replacer is left in the string
-                    template = template.replace(/{~}/g, '');
-
-                    // parse apart the given template into an array of "formats"
-                    parseTemplate(template).forEach(format => {
-                        // loop through each format in the template
-                        // create a new picker column to build up with data
-                        let key = convertFormatToKey(format);
-                        let values = [];
-
-                        // first see if they have exact values to use for this input
-                        if (isPresent((this)[key + 'Values'])) {
-                            // user provide exact values for this date part
-                            values = convertToArrayOfNumbers((this)[key + 'Values'], key);
-
-                        } else {
-                            // use the default date part values
-                            values = dateValueRange(format, this.min, this.max);
-                        }
-
-                        const column = {
-                            name: key,
-                            options: values.map(val => {
-                                return {
-                                    value: val,
-                                    text: renderTextFormat(format, val, null, this.locale),
-                                };
-                            })
-                        };
-
-                        // cool, we've loaded up the columns with options
-                        // preselect the option for this column
-                        const optValue = getValueFromFormat(this.currentValue, format);
-                        const selectedIndex = column.options.findIndex(opt => {
-                            return opt.value === optValue
-                        });
-                        if (selectedIndex >= 0) {
-                            // set the select index for this column's options
-                            column.selectedIndex = selectedIndex;
-                        }
-
-                        // add our newly created column to the picker
-                        this.columns.push(column);
-                    });
-
-                    // Normalize min/max
-                    const min = this.min;
-                    const max = this.max;
-                    ['month', 'day', 'hour', 'minute'].filter(name => !this.columns.find(column => column.name === name))
-                        .forEach(name => {
-                            min[name] = 0;
-                            max[name] = 0;
-                        });
-
-                    this.divyColumns();
-                }
-            },
-
-            validateColumn(name, index, min, max, lowerBounds, upperBounds) {
-                assert(lowerBounds.length === 5, 'lowerBounds length must be 5');
-                assert(upperBounds.length === 5, 'upperBounds length must be 5');
-
-                const column = this.columns[name];
-                if (!column) {
-                    return 0;
-                }
-
-                const lb = lowerBounds.slice();
-                const ub = upperBounds.slice();
-                const options = column.options;
-                let indexMin = options.length - 1;
-                let indexMax = 0;
-
-                for (var i = 0; i < options.length; i++) {
-                    var opt = options[i];
-                    var value = opt.value;
-                    lb[index] = opt.value;
-                    ub[index] = opt.value;
-
-                    var disabled = opt.disabled = (
-                        value < lowerBounds[index] ||
-                        value > upperBounds[index] ||
-                        dateSortValue(ub[0], ub[1], ub[2], ub[3], ub[4]) < min ||
-                        dateSortValue(lb[0], lb[1], lb[2], lb[3], lb[4]) > max
-                    );
-                    if (!disabled) {
-                        indexMin = Math.min(indexMin, i);
-                        indexMax = Math.max(indexMax, i);
-                    }
-                }
-                let selectedIndex = column.selectedIndex = clamp(indexMin, column.selectedIndex, indexMax);
-                opt = column.options[selectedIndex];
-                if (opt) {
-                    return opt.value;
-                }
-                return 0;
-            },
-
-            validate() {
-                const today = new Date();
-                const minCompareVal = dateDataSortValue(this.min);
-                const maxCompareVal = dateDataSortValue(this.max);
-                const yearCol = this.columns['year'];
-
-                assert(minCompareVal <= maxCompareVal, 'invalid min/max value');
-
-                let selectedYear = today.getFullYear();
-                if (yearCol) {
-                    // default to the first value if the current year doesn't exist in the options
-                    if (!yearCol.options.find(col => col.value === today.getFullYear())) {
-                        selectedYear = yearCol.options[0].value;
-                    }
-
-                    var yearOpt = yearCol.options[yearCol.selectedIndex];
-                    if (yearOpt) {
-                        // they have a selected year value
-                        selectedYear = yearOpt.value;
-                    }
-                }
-
-                const selectedMonth = this.validateColumn(
-                    'month', 1,
-                    minCompareVal, maxCompareVal,
-                    [selectedYear, 0, 0, 0, 0],
-                    [selectedYear, 12, 31, 23, 59]
-                );
-
-                const numDaysInMonth = daysInMonth(selectedMonth, selectedYear);
-                const selectedDay = this.validateColumn(
-                    'day', 2,
-                    minCompareVal, maxCompareVal,
-                    [selectedYear, selectedMonth, 0, 0, 0],
-                    [selectedYear, selectedMonth, numDaysInMonth, 23, 59]
-                );
-
-                const selectedHour = this.validateColumn(
-                    'hour', 3,
-                    minCompareVal, maxCompareVal,
-                    [selectedYear, selectedMonth, selectedDay, 0, 0],
-                    [selectedYear, selectedMonth, selectedDay, 23, 59]
-                );
-
-                this.validateColumn(
-                    'minute', 4,
-                    minCompareVal, maxCompareVal,
-                    [selectedYear, selectedMonth, selectedDay, selectedHour, 0],
-                    [selectedYear, selectedMonth, selectedDay, selectedHour, 59]
-                );
-            },
-
-            divyColumns() {
-                const pickerColumns = this.columns;
-                let columnsWidth = [];
-                let col;
-                let width;
-                for (var i = 0; i < pickerColumns.length; i++) {
-                    col = pickerColumns[i];
-                    columnsWidth.push(0);
-
-                    for (var j = 0; j < col.options.length; j++) {
-                        width = col.options[j].text.length;
-                        if (width > columnsWidth[i]) {
-                            columnsWidth[i] = width;
-                        }
-                    }
-                }
-
-                if (columnsWidth.length === 2) {
-                    width = Math.max(columnsWidth[0], columnsWidth[1]);
-                    pickerColumns[0].align = 'right';
-                    pickerColumns[1].align = 'left';
-//                    pickerColumns[0].optionsWidth = pickerColumns[1].optionsWidth = `${width * 17}px`;
-                } else if (columnsWidth.length === 3) {
-                    width = Math.max(columnsWidth[0], columnsWidth[2]);
-                    pickerColumns[0].align = 'right';
-//                    pickerColumns[1].columnWidth = `${columnsWidth[1] * 17}px`;
-//                    pickerColumns[0].optionsWidth = pickerColumns[2].optionsWidth = `${width * 17}px`;
-                    pickerColumns[2].align = 'left';
-                }
-            },
-
-            updateText() {
-                // create the text of the formatted data
-                const template = this.displayFormat || DEFAULT_FORMAT;
-                this.text = renderDateTime(template, this.currentValue, this.locale);
-            },
-
-            calcMinMax(now) {
-                const todaysYear = (now || new Date()).getFullYear();
-                let minDate = this.minDate;
-                let maxDate = this.maxDate;
-
-                if (isPresent(this.yearValues)) {
-                    var years = convertToArrayOfNumbers(this.yearValues, 'year');
-                    if (isBlank(minDate)) {
-                        minDate = Math.min.apply(Math, years);
-                    }
-                    if (isBlank(maxDate)) {
-                        maxDate = Math.max.apply(Math, years);
-                    }
-                } else {
-                    if (isBlank(minDate)) {
-                        minDate = (todaysYear - 100).toString();
-                    }
-                    if (isBlank(maxDate)) {
-                        maxDate = todaysYear.toString();
-                    }
-                }
-
-                const min = this.min = parseDate(minDate);
-                const max = this.max = parseDate(maxDate);
-
-                min.year = min.year || todaysYear;
-                max.year = max.year || todaysYear;
-
-                min.month = min.month || 1;
-                max.month = max.month || 12;
-                min.day = min.day || 1;
-                max.day = max.day || 31;
-                min.hour = min.hour || 0;
-                max.hour = max.hour || 23;
-                min.minute = min.minute || 0;
-                max.minute = max.minute || 59;
-                min.second = min.second || 0;
-                max.second = max.second || 59;
-
-                // Ensure min/max constraits
-                if (min.year > max.year) {
-                    console.error('min.year > max.year');
-                    min.year = max.year - 100;
-                }
-                if (min.year === max.year) {
-                    if (min.month > max.month) {
-                        console.error('min.month > max.month');
-                        min.month = 1;
-                    } else if (min.month === max.month && min.day > max.day) {
-                        console.error('min.day > max.day');
-                        min.day = 1;
-                    }
-                }
-
-            },
-        },
-
-        watch: {
-            currentValue: function (value) {
-                this.updateText();
-                this.$emit('input', convertDataToISO(value))
-            },
-
-            value: function (value) {
-                this.currentValue = updateDate(value)
-                this.updateText();
-            }
+      pickerOptions: {
+        type: Object,
+        default () { return {} }
+      }
+    },
+    watch: {
+      disabled (val) {
+        this.theDisabled = isTrueProperty(val)
+        this.itemComponent && setElementClass(this.itemComponent.$el, 'item-datetime-disabled', this.theDisabled)
+      },
+      value (val) {
+        this.theValue = parseDate(val)
+        this.onChange(val)
+      }
+    },
+    methods: {
+      clickHandler ($event) {
+        if ($event.detail === 0) {
+          // do not continue if the click event came from a form submit
+          return
         }
-    };
+        $event.preventDefault()
+        $event.stopPropagation()
+        this.open()
+      },
 
+      open () {
+        if (this.theDisabled) {
+          return
+        }
 
+        // the user may have assigned some options specifically for the alert
+        const pickerOptions = JSON.parse(JSON.stringify(this.pickerOptions))
+
+        pickerOptions.buttons = [
+          {
+            text: this.cancelText,
+            role: 'cancel',
+            handler: () => {
+              /**
+               * @event component:Datetime#onCancel
+               * @description 点击取消按钮触发
+               */
+              this.$emit('onCancel', null)
+            }
+          },
+          {
+            text: this.doneText,
+            handler: (data) => {
+              console.debug('datetime, done', data)
+              this.onChange(data)
+              let value = convertDataToISO(this.theValue)
+              /**
+               * @event component:Datetime#onChange
+               * @description 点击确定按钮
+               */
+              this.$emit('input', value)
+              this.$emit('onChange', data)
+            }
+          }
+        ]
+        pickerOptions.columns = []
+
+        this.generate(pickerOptions)
+        this.validate(pickerOptions)
+
+        pickerOptions.onChange = () => {
+          this.validate(pickerOptions)
+          Picker.refresh()
+        }
+        pickerOptions.onDismiss = () => {}
+
+        Picker.present(pickerOptions)
+
+        Picker.refresh()
+      },
+
+      /**
+       * @private
+       */
+      generate (pickerOptions) {
+        // if a picker format wasn't provided, then fallback
+        // to use the display format
+        let template = this.pickerFormat || this.displayFormat || DEFAULT_FORMAT
+
+        if (isPresent(template)) {
+          // make sure we've got up to date sizing information
+          this.calcMinMax()
+
+          // does not support selecting by day name
+          // automaticallly remove any day name formats
+          template = template.replace('DDDD', '{~}').replace('DDD', '{~}')
+          if (template.indexOf('D') === -1) {
+            // there is not a day in the template
+            // replace the day name with a numeric one if it exists
+            template = template.replace('{~}', 'D')
+          }
+          // make sure no day name replacer is left in the string
+          template = template.replace(/{~}/g, '')
+
+          // parse apart the given template into an array of "formats"
+          parseTemplate(template).forEach(format => {
+            // loop through each format in the template
+            // create a new picker column to build up with data
+            let key = convertFormatToKey(format)
+            let values
+
+            // first see if they have exact values to use for this input
+            if (isPresent((this)[key + 'Values'])) {
+              // user provide exact values for this date part
+              values = convertToArrayOfNumbers((this)[key + 'Values'], key)
+            } else {
+              // use the default date part values
+              values = dateValueRange(format, this.theMin, this.theMax)
+            }
+
+            let column = {
+              name: key,
+              selectedIndex: 0,
+              options: values.map(val => {
+                return {
+                  value: val,
+                  text: renderTextFormat(format, val, null, this.locale)
+                }
+              })
+            }
+
+            if (column.options.length) {
+              // cool, we've loaded up the columns with options
+              // preselect the option for this column
+              var selected
+              if (this.theValue) {
+                selected = column.options.find(opt => opt.value === getValueFromFormat(this.theValue, format))
+              }
+              if (selected) {
+                // set the select index for this column's options
+                column.selectedIndex = column.options.indexOf(selected)
+              }
+
+              // add our newly created column to the picker
+              pickerOptions.columns.push(column)
+            }
+          })
+
+          this.divyColumns(pickerOptions)
+        }
+      },
+
+      /**
+       * @private
+       */
+      validate (pickerOptions) {
+        let i
+        let today = new Date()
+        let columns = pickerOptions.columns
+
+        // find the columns used
+        let yearCol = columns.find(col => col.name === 'year')
+        let monthCol = columns.find(col => col.name === 'month')
+        let dayCol = columns.find(col => col.name === 'day')
+
+        let yearOpt
+        let monthOpt
+        let dayOpt
+
+        // default to the current year
+        let selectedYear = today.getFullYear()
+
+        if (yearCol) {
+          // default to the first value if the current year doesn't exist in the options
+          if (!yearCol.options.find(col => col.value === today.getFullYear())) {
+            selectedYear = yearCol.options[0].value
+          }
+
+          yearOpt = yearCol.options[yearCol.selectedIndex]
+          if (yearOpt) {
+            // they have a selected year value
+            selectedYear = yearOpt.value
+          }
+        }
+
+        // default to assuming this month has 31 days
+        let numDaysInMonth = 31
+        let selectedMonth
+        if (monthCol) {
+          monthOpt = monthCol.options[monthCol.selectedIndex]
+          if (monthOpt) {
+            // they have a selected month value
+            selectedMonth = monthOpt.value
+
+            // calculate how many days are in this month
+            numDaysInMonth = daysInMonth(selectedMonth, selectedYear)
+          }
+        }
+
+        // create sort values for the min/max datetimes
+        let minCompareVal = dateDataSortValue(this.theMin)
+        let maxCompareVal = dateDataSortValue(this.theMax)
+
+        if (monthCol) {
+          // enable/disable which months are valid
+          // to show within the min/max date range
+          for (i = 0; i < monthCol.options.length; i++) {
+            monthOpt = monthCol.options[i]
+
+            // loop through each month and see if it
+            // is within the min/max date range
+            monthOpt.disabled = (dateSortValue(selectedYear, monthOpt.value, 31) < minCompareVal ||
+              dateSortValue(selectedYear, monthOpt.value, 1) > maxCompareVal)
+          }
+        }
+
+        if (dayCol) {
+          if (isPresent(selectedMonth)) {
+            // enable/disable which days are valid
+            // to show within the min/max date range
+            for (i = 0; i < dayCol.options.length; i++) {
+              dayOpt = dayCol.options[i]
+
+              // loop through each day and see if it
+              // is within the min/max date range
+              var compareVal = dateSortValue(selectedYear, selectedMonth, dayOpt.value)
+
+              dayOpt.disabled = (compareVal < minCompareVal ||
+                compareVal > maxCompareVal ||
+                numDaysInMonth <= i)
+            }
+          } else {
+            // enable/disable which numbers of days to show in this month
+            for (i = 0; i < dayCol.options.length; i++) {
+              dayCol.options[i].disabled = (numDaysInMonth <= i)
+            }
+          }
+        }
+      },
+
+      /**
+       * 制作picker的columns
+       * @private
+       */
+      divyColumns (pickerOptions) {
+        let pickerColumns = pickerOptions.columns
+        let columns = []
+
+        pickerColumns.forEach((col, i) => {
+          columns.push(0)
+
+          col.options.forEach(opt => {
+            if (opt.text.length > columns[i]) {
+              columns[i] = opt.text.length
+            }
+          })
+        })
+
+        if (columns.length === 2) {
+          let width = Math.max(columns[0], columns[1])
+          pickerColumns[0].align = 'right'
+          pickerColumns[1].align = 'left'
+          pickerColumns[0].optionsWidth = pickerColumns[1].optionsWidth = `${width * 17}px`
+        } else if (columns.length === 3) {
+          let width = Math.max(columns[0], columns[2])
+          pickerColumns[0].align = 'right'
+          pickerColumns[1].columnWidth = `${columns[1] * 17}px`
+          pickerColumns[0].optionsWidth = pickerColumns[2].optionsWidth = `${width * 17}px`
+          pickerColumns[2].align = 'left'
+        }
+      },
+
+      /**
+       * @private
+       */
+      setValue (newData) {
+        this.theValue = updateDate(this.theValue, newData)
+      },
+
+      /**
+       * @private
+       */
+      checkHasValue (inputValue) {
+        if (this.itemComponent) {
+          setElementClass(this.itemComponent.$el, 'input-has-value', !!(inputValue && inputValue !== ''))
+        }
+      },
+
+      /**
+       * @private
+       */
+      updateText () {
+        // create the text of the formatted data
+        const template = this.displayFormat || this.pickerFormat || DEFAULT_FORMAT
+        this.text = renderDateTime(template, this.theValue, this.locale)
+      },
+
+      /**
+       * @private
+       */
+      onChange (val) {
+        console.debug('datetime, onChange w/out formControlName', val)
+        this.setValue(val)
+        this.updateText()
+        this.checkHasValue(val)
+      },
+
+      /**
+       * @private
+       */
+      calcMinMax (now) {
+        this.theMin = this.min
+        this.theMax = this.max
+
+        const todaysYear = (now || new Date()).getFullYear()
+        if (isBlank(this.theMin)) {
+          if (isPresent(this.yearValues)) {
+            this.theMin = Math.min.apply(Math, convertToArrayOfNumbers(this.yearValues, 'year'))
+          } else {
+            this.theMin = (todaysYear - 100).toString()
+          }
+        }
+
+        if (isBlank(this.theMax)) {
+          if (isPresent(this.yearValues)) {
+            this.theMax = Math.max.apply(Math, convertToArrayOfNumbers(this.yearValues, 'year'))
+          } else {
+            this.theMax = todaysYear.toString()
+          }
+        }
+
+        const min = this.theMin = parseDate(this.theMin)
+        const max = this.theMax = parseDate(this.theMax)
+
+        if (min.year > max.year) {
+          min.year = max.year - 100
+        } else if (min.year === max.year) {
+          if (min.month > max.month) {
+            min.month = 1
+          } else if (min.month === max.month && min.day > max.day) {
+            min.day = 1
+          }
+        }
+
+        min.month = min.month || 1
+        min.day = min.day || 1
+        min.hour = min.hour || 0
+        min.minute = min.minute || 0
+        min.second = min.second || 0
+
+        max.month = max.month || 12
+        max.day = max.day || 31
+        max.hour = max.hour || 23
+        max.minute = max.minute || 59
+        max.second = max.second || 59
+      }
+    },
+    created () {
+      this.theValue = parseDate(this.value)
+    },
+    mounted () {
+      if (this.$parent.$options.name.toLowerCase() === 'ion-item') {
+        this.itemComponent = this.$parent
+      }
+      console.assert(this.itemComponent, 'The component of Datetime must in Item component.')
+      setElementClass(this.itemComponent.$el, 'item-datetime', true)
+
+      // first see if locale names were provided in the inputs
+      // then check to see if they're in the config
+      // if neither were provided then it will use default English names
+      const NAMES = ['monthNames', 'monthShortNames', 'dayNames', 'dayShortNames']
+      NAMES.forEach(type => {
+        (this).locale[type] = convertToArrayOfStrings(isPresent((this)[type]) ? (this)[type] : this.$config && this.$config.get(type), type)
+      })
+
+      // update how the datetime value is displayed as formatted text
+      this.updateText()
+      this.checkHasValue(this.theValue)
+    }
+  }
+
+  /**
+   * Use to convert a string of comma separated numbers or
+   * an array of numbers, and clean up any user input
+   * @example
+   * '1,2,4,5'      ->  [1,2,3,5]
+   * '[1,2,3,4]'    ->  [1,2,3,4]
+   * [1,2,3,a]      ->  [1,2,3]
+   * @private
+   */
+  function convertToArrayOfNumbers (input, type) {
+    var values = []
+
+    if (isString(input)) {
+      // convert the string to an array of strings
+      // auto remove any whitespace and [] characters
+      input = input.replace(/\[|\]|\s/g, '').split(',')
+    }
+
+    if (isArray(input)) {
+      // ensure each value is an actual number in the returned array
+      input.forEach((num) => {
+        num = parseInt(num, 10)
+        if (!isNaN(num)) {
+          values.push(num)
+        }
+      })
+    }
+
+    if (!values.length) {
+      console.warn(`Invalid "${type}Values". Must be an array of numbers, or a comma separated string of numbers.`)
+    }
+
+    return values
+  }
+
+  /**
+   * Use to convert a string of comma separated strings or
+   * an array of strings, and clean up any user input
+   * @example
+   * 'a,b,c,d'      ->  [a,b,c,d]
+   * '[a,b,c,d]'    ->  [a,b,c,d]
+   * @private
+   */
+  function convertToArrayOfStrings (input, type) {
+    if (isPresent(input)) {
+      var values = []
+
+      if (isString(input)) {
+        // convert the string to an array of strings
+        // auto remove any [] characters
+        input = input.replace(/\[|\]/g, '').split(',')
+      }
+
+      if (isArray(input)) {
+        // trim up each string value
+        input.forEach((val) => {
+          val = val.trim()
+          if (val) {
+            values.push(val)
+          }
+        })
+      }
+
+      if (!values.length) {
+        console.warn(`Invalid "${type}Names". Must be an array of strings, or a comma separated string.`)
+      }
+
+      return values
+    }
+  }
 </script>
 
 <style lang="scss">
-    @import 'datetime';
-    @import 'datetime.ios';
-    @import 'datetime.md';
+  @import "datetime";
+  @import "datetime.ios";
+  @import "datetime.md";
 </style>

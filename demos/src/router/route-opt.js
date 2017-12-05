@@ -2,7 +2,6 @@
  * 路由配置表
  * */
 
-
 // pages
 import DemoHome from '../pages/Home'
 
@@ -21,6 +20,7 @@ import DemoBadge from '../pages/Badge'
 import DemoIcon from '../pages/Icon'
 import DemoFabs from '../pages/FABs'
 import DemoSpinner from '../pages/Spinner'
+import DemoDatetime from '../pages/Datetime'
 
 // Layout
 import DemoToolbar from '../pages/Toolbar'
@@ -48,15 +48,16 @@ import DemoActionSheet from '../pages/ActionSheet'
 import DemoModal from '../pages/Modal'
 
 const routes = [
-    { path: '/', name:"demo.index", component: DemoHome },
+    { path: '/', name: 'demo.index', component: DemoHome },
 
     // Components
-    { path: '/demo/button', name:"demo.button", component: DemoButton },
+    { path: '/demo/button', name: 'demo.button', component: DemoButton },
     { path: '/demo/chip', component: DemoChip },
     { path: '/demo/badge', component: DemoBadge },
     { path: '/demo/fabs', component: DemoFabs },
     { path: '/demo/icons', component: DemoIcon },
     { path: '/demo/spinner', component: DemoSpinner },
+    { path: '/demo/datetime', component: DemoDatetime },
 
     // Form
     { path: '/demo/input', component: DemoInput },

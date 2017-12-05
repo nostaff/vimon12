@@ -69,26 +69,26 @@
 </template>
 <script>
     export default{
-        data() {
-            return {
-                username: '',
-                password: '',
-                date: '',
-                tel: '',
-                phone: '',
-                email: ''
-            }
-        },
-        computed: {
-            // a computed getter
-            hasLabel: function () {
-                return "有标签: " + this.username
-            },
-
-            noLabel: function () {
-                return "无标签: " + this.tel
-            },
+      data () {
+        return {
+          username: '',
+          password: '',
+          date: '',
+          tel: '',
+          phone: '',
+          email: ''
         }
+      },
+      computed: {
+            // a computed getter
+        hasLabel: function () {
+          return '有标签: ' + this.username
+        },
+
+        noLabel: function () {
+          return '无标签: ' + this.tel
+        }
+      }
 
     }
 </script>

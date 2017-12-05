@@ -13,31 +13,31 @@
 </template>
 
 <script>
-    import ThemeMixins from '../../themes/theme.mixins';
-    import Item from './item.vue'
+    import ThemeMixins from '../../themes/theme.mixins'
+import Item from './item.vue'
 
     export default {
-        name: 'ion-item-divider',
-        mixins: [ThemeMixins],
-        components: {
-            'ion-item': Item
-        },
-        data() {
-            return {
-                componentName: 'ionItem',
-            };
-        },
-        computed: {
-            noItemLabel: function () {
-                return typeof this.$slots['item-label'] === 'undefined';
-            },
-        },
-        mounted () {
-            if (this.$slots['item-end']) {
-                this.$slots['item-end'].forEach(function (item) {
-                    item.elm.setAttribute('item-end', '')
-                })
-            }
+      name: 'ion-item-divider',
+      mixins: [ThemeMixins],
+      components: {
+        'ion-item': Item
+      },
+      data () {
+        return {
+          componentName: 'ionItem'
         }
+      },
+      computed: {
+        noItemLabel: function () {
+          return typeof this.$slots['item-label'] === 'undefined'
+        }
+      },
+      mounted () {
+        if (this.$slots['item-end']) {
+          this.$slots['item-end'].forEach(function (item) {
+            item.elm.setAttribute('item-end', '')
+          })
+        }
+      }
     }
 </script>

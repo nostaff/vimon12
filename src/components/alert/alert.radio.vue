@@ -31,11 +31,12 @@
 </template>
 
 <script>
-  import {urlChange, isTrueProperty} from '../../utils/utils'
+  import {isTrueProperty} from '../../util/util'
+  import {urlChange} from '../../util/dom'
   import objectAssign from 'object-assign'
-  import ThemeMixins from '../../themes/theme.mixins';
-  import IonBackdrop from "../backdrop/index";
-  import IonButton from "../button/index";
+  import ThemeMixins from '../../themes/theme.mixins'
+  import IonBackdrop from '../backdrop/index'
+  import IonButton from '../button/index'
 
   export default {
     name: 'ion-alert-radio',
@@ -44,12 +45,12 @@
       IonButton,
       IonBackdrop
     },
-    data() {
+    data () {
       return {
         defaultOptions: {
           title: '',
-          inputs: [{label: 'title', value: 'Title'},],
-          buttons: [{text: 'Cancel'}, {text: 'Save'}],
+          inputs: [{label: 'title', value: 'Title'}],
+          buttons: [{text: 'Cancel'}, {text: 'Save'}]
         },
 
         inputs: [],
@@ -62,7 +63,7 @@
         currentValue: ''
       }
     },
-    created() {
+    created () {
       if (this.dismissOnPageChange) {
         urlChange(() => {
           this.activated && this.dismiss(-1)
@@ -70,75 +71,74 @@
       }
     },
     methods: {
-      present(options) {
+      present (options) {
         let _options = objectAssign({}, this.defaultOptions, options)
-        this.title = _options.title;
-        this.cssClass = _options.cssClass;
+        this.title = _options.title
+        this.cssClass = _options.cssClass
         this.dismissOnPageChange = isTrueProperty(_options.dismissOnPageChange)
         this.enableBackdropDismiss = isTrueProperty(_options.enableBackdropDismiss)
 
-        let that = this
         this.buttons = _options.buttons.filter(button => {
           if (typeof button === 'string') {
-            button = {text: button};
+            button = {text: button}
           }
           if (!button.cssClass) {
-            button.cssClass = '';
+            button.cssClass = ''
           }
-          return button;
+          return button
         })
 
         this.inputs = _options.inputs.filter(input => {
           if (typeof button === 'string') {
-            input = {label: input, value: input, checked: false};
+            input = {label: input, value: input, checked: false}
           }
           if (!input.cssClass) {
-            input.cssClass = '';
+            input.cssClass = ''
           }
           if (input.checked === true || input.checked === 'true') {
             this.currentValue = input.value
           }
-          return input;
+          return input
         })
 
-        this.activated = true;
+        this.activated = true
 
         return new Promise((resolve, reject) => {
           this.$events.$on('onHideEvent', data => {
             resolve(data)
           })
-        });
-
+        })
       },
 
-      dismiss(buttonIndex) {
-        this.activated = false;
+      dismiss (buttonIndex) {
+        this.activated = false
 
         if (buttonIndex > -1) {
-          let handler = this.buttons[buttonIndex].handler;
+          let handler = this.buttons[buttonIndex].handler
           if (handler && typeof handler === 'function') {
-            handler(this.currentValue);
+            handler(this.currentValue)
           }
         }
 
         // 返回输入框的值
-        this.$emit('onHideEvent', {index: buttonIndex, value: this.currentValue});
+        this.$emit('onHideEvent', {index: buttonIndex, value: this.currentValue})
         setTimeout(() => {
-          this.$el.remove();
-        }, 400);
+          this.$el.remove()
+        }, 400)
       },
 
-      bdClick() {
+      bdClick () {
         if (this.enableBackdropDismiss) {
-          this.dismiss(-1);
+          this.dismiss(-1)
         }
       },
 
-      onCheck(value, disabled) {
-        if (disabled)
+      onCheck (value, disabled) {
+        if (disabled) {
           return
+        }
         this.currentValue = value
-      },
+      }
     }
   }
 </script>

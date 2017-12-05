@@ -28,21 +28,18 @@
 </template>
 
 <script>
-
-  import {Modal} from 'vimo'
-
   export default {
-    data() {
+    data () {
       return {
-        myParam: null,
+        myParam: null
       }
     },
-    created() {
-      this.myParam = this.$options.$data ? this.$options.$data.myParam : null;
+    created () {
+      this.myParam = this.$options.$data ? this.$options.$data.myParam : null
     },
     methods: {
-      dismiss() {
-        this.$modal.dismiss('dismiss return by modal page' + this.myParam);
+      dismiss () {
+        this.$modal.dismiss('dismiss return by modal page' + this.myParam)
       }
     }
   }

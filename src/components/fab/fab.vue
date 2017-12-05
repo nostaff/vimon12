@@ -1,21 +1,22 @@
-<<template>
+<
+<template>
   <div class="ion-fab">
     <slot></slot>
   </div>
 </template>
 <script>
-  import { parsePxUnit } from '../../util/util'
-  import ThemeMixins from '../../themes/theme.mixins';
+  import ThemeMixins from '../../themes/theme.mixins'
 
   export default {
     name: 'ion-fab',
+    mixins: [ThemeMixins],
     provide () {
       let _this = this
       return {
         fabComponent: _this
       }
     },
-    data() {
+    data () {
       return {
         /**
          * @hidden
@@ -31,61 +32,63 @@
          * @hidden
          */
         fabLists: []
-      };
+      }
+    },
+    created () {
+      this.$on('click', function (ev) {
+        console.log(ev)
+      })
+
+      // this._events.listen(mainButton.getNativeElement(), 'click', this.clickHandler.bind(this), { zone: true });
     },
     methods: {
       /**
        * @hidden
        */
-      clickHandler(ev) {
-        if (this.canActivateList(ev)) {
-          this.toggleList();
+      toggleClicked () {
+        if (this.canActivateList()) {
+          this.toggleList()
         }
       },
 
       /**
        * @hidden
        */
-      canActivateList(ev) {
-        console.log(this.mainButton)
-        if (this.fabLists.length > 0 && this.mainButton && ev.target) {
-          let ele = ev.target.closest('ion-fab>[ion-fab]');
-          return (ele && ele === this.mainButton.getNativeElement());
-        }
-        return false;
+      canActivateList () {
+        return (this.fabLists.length > 0 && this.mainButton)
       },
 
       /**
        * @hidden
        */
-      toggleList() {
+      toggleList () {
         this.$app && this.$app.setEnabled(false, 300)
 
-        this.setActiveLists(!this.listsActive);
+        this.setActiveLists(!this.listsActive)
       },
 
       /**
        * @hidden
        */
-      setActiveLists(isActive) {
+      setActiveLists (isActive) {
         if (isActive === this.listsActive) {
-          return;
+          return
         }
 
-        let lists = this.fabLists;
+        let lists = this.fabLists
         for (let list of lists) {
-          list.setVisible(isActive);
+          list.setVisible(isActive)
         }
-        this.mainButton.setActiveClose(isActive);
-        this.listsActive = isActive;
+        this.mainButton.setActiveClose(isActive)
+        this.listsActive = isActive
       },
 
       /**
        * Close an active FAB list container
        */
-      close() {
-        this.setActiveLists(false);
-      },
+      close () {
+        this.setActiveLists(false)
+      }
 
     }
   }

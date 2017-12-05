@@ -1,295 +1,392 @@
 <template>
-  <div role="dialog" class="ion-picker-cmp" :class="['picker-'+theme, cssClass]" style="z-index: 9999;">
-    <ion-backdrop @click.native="bdClick()" :isActive="activated"></ion-backdrop>
-    <transition name="ion-picker-fadeup">
-      <div class="picker-wrapper" v-show="activated">
-        <div class="picker-toolbar" v-if="buttons">
-          <div v-for="(button, index) in buttons" class="picker-toolbar-button" :class="button.cssRole">
-            <ion-button @click.native="btnClick(button)" :class="button.cssClass" class="picker-button"
-                        clear>
-              {{button.text}}
-            </ion-button>
+  <div class="ion-picker-cmp" :class="[themeClass,cssClass]">
+    <ion-backdrop :enableBackdropDismiss="enableBackdropDismiss" :isActive="isActive"
+                 :bdClick="bdClick"></ion-backdrop>
+    <transition
+        name="picker"
+        @before-enter="beforeEnter"
+        @after-enter="afterEnter"
+        @before-leave="beforeLeave"
+        @after-leave="afterLeave">
+      <div class="picker-wrapper" v-show="isActive">
+        <div class="picker-toolbar">
+          <div v-for="(b,index) in buttons"
+               :key="index"
+               class="picker-toolbar-button"
+               :class="[b.cssRole]">
+            <ion-button @click="btnClick(b)" :class="b.cssClass" class="picker-button" clear>{{b.text}}</ion-button>
           </div>
         </div>
         <div class="picker-columns">
           <div class="picker-above-highlight"></div>
-          <div class="picker-col" ref="picker" :id="'picker-col-' + uuid + '-' + index"
-               :data-name="column.name"
-               :class="{'picker-opts-left': column.align=='left', 'picker-opts-right': column.align=='right'}"
-               :style="{width: column.columnWidth}"
-               key="idx" v-for="(column, index) in columns">
-          </div>
+          <ion-picker-col v-for="(c,index) in columns"
+                         :index="index"
+                         :key="c.name"
+                         :col="c"
+                         @onChange="colChange"></ion-picker-col>
           <div class="picker-below-highlight"></div>
         </div>
       </div>
     </transition>
   </div>
 </template>
-<script>
-  import {uuid} from '../../utils/utils'
-  import objectAssign from 'object-assign'
-  import Scroller from './scroller';
-  import ThemeMixins from '../../themes/theme.mixins';
-  import IonBackdrop from "../backdrop/index";
-  import IonButton from "../button/index";
+
+<script type="text/javascript">
+  /**
+   * @component Picker
+   * @description
+   *
+   * ## 弹出层组件 / 单多列选择器Picker
+   *
+   * ### 简介
+   *
+   * Picker组件适用于单多列数据的选择, 这个不同于Select组件, Select组件只能做单类型数据的选择, 比如选择水果的话不能类别和新鲜度同时选择. 因此, 如果期望能进行城市三级选择, Picker能够解决这个需求, 详情参考Demo.
+   *
+   * ### 传参说明
+   *
+   * 因为Picker组件为了满足大多数的需求, 且能根据业务定制化, 比如被Datetime组件/CitySelect业务定制等. 因此Picker传参有点点麻烦. 主要参数如下:
+   *
+   *
+   * #### 1. buttons属性
+   *
+   名称 / Name | 类型 / Type | 描述 / Description
+   ----------|-----------|--------------------------------
+   text      | string    | 显示的文本
+   role      | string    | 按钮的角色, 取消按钮的role为cancel, 其他的没有
+   handler   | function  | 点击按钮的处理方法
+   *
+   * #### 2. columns属性
+   *
+   名称 / Name     | 类型 / Type          | 描述 / Description
+   --------------|--------------------|---------------------------
+   name          | string             | 这个column的名称
+   align         | string             | column对齐方式
+   selectedIndex | number             | 当前column的初始选的位置(index)
+   prefix        | string             | 这一列显示的前缀
+   prefixWidth   | string             | 前缀固定宽度, 例如'50px'
+   suffix        | string             | 这一列显示的后缀
+   suffixWidth   | string             | 后缀固定宽度, 例如'50px'
+   cssClass      | string             | 当前column的自定义样式, 使用空格分割多个值
+   columnWidth   | string             | 每个column的最大宽度, 默认宽度均分
+   optionsWidth  | string             | 每个column中的选项最大宽度
+   options       | PickerColumnOption | 当前column的每个选项列表
+   *
+   *
+   * #### 3. columns属性中的options属性
+   *
+   名称 / Name | 类型 / Type | 描述 / Description
+   ----------|-----------|------------------
+   text      | string    | 显示的文本
+   value     | *         | 对显示文本的值
+   disabled  | boolean   | 是否禁用
+   *
+   *
+   * #### 4. onChange钩子
+   *
+   * 当用户选定后触发钩子, 传递的数据包括三列的详细选择信息.
+   *
+   * #### 5. onSelect钩子
+   *
+   * 某一列选择之后触发, 包含单列的选择信息
+   *
+   * ### 组件自动支持切换alipay组件
+   *
+   * 如果强制使用H5模式需要在开启options中传入`isH5=true`, alipay组件只支持最多两级且不可联动.
+   *
+   * ### 如何使用
+   *
+   * 因为是弹出层组件, 故引入后, `Picker.present(...)`就可打开组件
+   *
+   * ```
+   *  import Picker from 'vimo/lib/picker'
+   * ```
+   *
+   * @demo #/picker
+   * */
+  import { isString, isPresent, isNumber } from '../../util/util'
+  import { urlChange } from '../../util/dom'
+  import ThemeMixins from '../../themes/theme.mixins'
+  import IonBackdrop from '../backdrop/backdrop'
+import IonButton from '../button/button'
+import IonPickerCol from './picker-col'
+
+const NOOP = () => {}
 
   export default {
     name: 'ion-picker',
     mixins: [ThemeMixins],
     components: {
+      IonPickerCol,
       IonButton,
-      IonBackdrop,
+      IonBackdrop
     },
-    data() {
+    data () {
       return {
-        uuid: uuid(),
-        optionColumns: [],
-        defaultOptions: {
-          buttons: [],
-          columns: [],
-        },
-        buttons: [],
-        columns: [],
-        enableBackdropDismiss: true,
-        cssClass: '',
+        isActive: false,        // 控制当前组件的激活状态
+        enabled: true,          // 是否不在动画中(是否为可行为状态)
 
-        scroller: [],
-        rendered: false,
-        activated: false,
-        isChain: false,
-        level: 0,
+        dismissCallback: NOOP,  // 关闭的回调
+        presentCallback: NOOP,  // 打开的回调
+
+        cols: [],               // 每列的数据
+        timer: null,            // 计时器
+        unreg: null             // 页面切换关闭组件的解绑函数
       }
     },
-
-    updated() {
-      this.$nextTick(this.renderColumn())
+    props: {
+      buttons: {
+        type: Array,
+        required: true
+      },
+      columns: {
+        type: Array,
+        required: true
+      },
+      cssClass: String,
+      enableBackdropDismiss: {
+        type: Boolean,
+        default: true
+      },
+      dismissOnPageChange: {
+        type: Boolean,
+        default: true
+      },
+      onChange: Function,
+      onSelect: Function,
+      onDismiss: Function
     },
+    created () {
+      this.normalizeData()
 
+      // dismissOnPageChange
+      if (this.dismissOnPageChange) {
+        this.unreg = urlChange(() => {
+          this.isActive && this.dismiss()
+        })
+      }
+    },
+    beforeMount () {
+      let pickerCmpElements = document.querySelectorAll('.ion-picker-cmp')
+      if (pickerCmpElements.length > 0) {
+        pickerCmpElements.forEach((ele) => {
+          ele.remove()
+          console.error('beforeMount find Picker opened!')
+        })
+      }
+    },
     methods: {
-      getId(i) {
-        return `#picker-col-${this.uuid}-${i}`
+      /**
+       * Component Animate Hooks
+       * @private
+       * */
+      beforeEnter () {
+        this.enabled = false // 不允许过渡中途操作
+        this.$app && this.$app.setEnabled(false, 400)
+      },
+      afterEnter () {
+        this.presentCallback()
+        this.enabled = true
+      },
+      beforeLeave () {
+        this.enabled = false
+        this.$app && this.$app.setEnabled(false, 400)
+      },
+      afterLeave () {
+        this.dismissCallback()
+        // 删除DOM
+        this.$el.remove()
+        this.enabled = true
       },
 
-      renderColumn() {
-        if (this.rendered)
-          return;
+      /**
+       * 背景backdrop点击
+       * @private
+       * */
+      bdClick () {
+        if (this.enabled && this.enableBackdropDismiss) {
+          this.dismiss()
+        }
+      },
 
-        const self = this
+      /**
+       * @function present
+       * @param {object} options - 传入参数
+       * @param {Object} options.buttons - 组件初始化的button数据
+       * @param {Array} options.columns - 组件初始化的column数据
+       * @param {String} options.column.name - 组件初始化的column数据
+       * @param {String} options.columns.align - 组件初始化的column数据
+       * @param {String} [options.mode='ios'] - 模式
+       * @param {String} [options.cssClass] - 样式
+       * @param {Boolean} [options.enableBackdropDismiss=true] - 点击backdrop是否能关闭
+       * @param {Function} [options.onChange=noop] - picker数据变化时触发, 某一个col变化也触发, 返回最新值
+       * @param {Function} [options.onSelect=noop] - 某一列发生变化时触发
+       * @description
+       * 开启
+       * */
+      present () {
+        this.isActive = true
+        return new Promise((resolve) => { this.presentCallback = resolve })
+      },
 
-        for (let i = 0; i < this.columns.length; i++) {
-          let container = this.$el.querySelector(this.getId(i))
-          let column = this.columns[i];
+      /**
+       * @function dismiss
+       * @description
+       * 关闭
+       * */
+      dismiss () {
+        this.isActive = false
+        this.unreg && this.unreg()
+        this.onDismiss && this.onDismiss()
+        return new Promise((resolve) => { this.dismissCallback = resolve })
+      },
 
-          this.scroller[i] = new Scroller(container, {
-            options: column.options,
-            selectedIndex: column.selectedIndex,
-            onSelect(value, index) {
-              column.selectedIndex = index;
-              if (column.onChange && typeof column.onChange === 'function') {
-                column.onChange({name: column.name, value: value, index: index});
-              }
-            }
-          });
+      /**
+       * 标题左右的两个按钮点击(取消/确定)
+       * @private
+       * */
+      btnClick (button) {
+        if (!this.enabled) {
+          return
         }
 
-        this.rendered = true;
-      },
+        let shouldDismiss = true
 
-      present(options) {
-        let _options = objectAssign({}, this.defaultOptions, options)
-        if (typeof _options.cssClass === 'string')
-          this.cssClass = _options.cssClass;
-        if (typeof _options.enableBackdropDismiss === 'boolean')
-          this.enableBackdropDismiss = _options.enableBackdropDismiss;
-        if (typeof _options.isChain === 'boolean')
-          this.isChain = _options.isChain;
-        if (typeof _options.level === 'number')
-          this.level = _options.level;
-
-        this.buttons = _options.buttons.filter(button => {
-          if (typeof button === 'string') {
-            button = {text: button};
-          }
-          if (button.role) {
-            button.cssRole = `picker-toolbar-${button.role}`;
-          }
-          return button;
-        });
-
-        let columns = [];
-        if (this.isChain === true) {
-          this.optionColumns = _options.columns;
-          const level = this.level || 8
-          for (let i = 0; i < level; i++) {
-            let column = {
-              name: 'level_' + i,
-              selectedIndex: 0,
-              options: [],
-              onChange: (option) => {
-                this.renderChain(i + 1);
-              }
-            };
-            if (i === 0) {
-              column.options = this.getRootColumn();
-            } else {
-              const topValue = _options.chainValue[i - 1] || columns[i - 1].options[0].value;
-              column.options = this.getChildren(topValue);
-            }
-            let selectedIndex = column.options.findIndex(one => {
-              return one.value === _options.chainValue[i]
-            })
-            if (selectedIndex >= 0) {
-              // set the select index for this column's options
-              column.selectedIndex = selectedIndex;
-            }
-            columns.push(column);
-          }
-        } else {
-          columns = _options.columns;
-        }
-
-        this.columns = columns.filter(column => {
-          if (!column.options) {
-            column.options = [];
-          }
-          column.options = column.options.map(option => {
-            let opt = {
-              text: '',
-              value: '',
-              disabled: option.disabled,
-            };
-
-            if (option) {
-              if (typeof option === 'string' || typeof option === 'number') {
-                opt.text = option.toString();
-                opt.value = option;
-              } else {
-                opt.text = option.text ? option.text : option.value;
-                opt.value = option.value ? option.value : option.text;
-              }
-            }
-            return opt;
-          });
-          return column;
-        });
-
-        this.activated = true;
-
-        return new Promise((resolve, reject) => {
-          this.$on('onDismissEvent', (data) => {
-            resolve(data)
-          })
-        });
-      },
-
-      btnClick(button) {
-        let shouldDismiss = true;
-
-        if (button.handler && typeof button.handler === 'function') {
+        if (button.handler) {
           // a handler has been provided, execute it
           // pass the handler the values from the inputs
           if (button.handler(this.getSelected()) === false) {
             // if the return value of the handler is false then do not dismiss
-            shouldDismiss = false;
+            shouldDismiss = false
           }
         }
 
         if (shouldDismiss) {
-          this.dismiss(button.role);
+          this.dismiss(button.role)
         }
       },
 
-      bdClick() {
-        if (this.enableBackdropDismiss) {
-          this.dismiss('backdrop');
-        }
-      },
-
-      dismiss(role) {
-        this.activated = false;
-
-        this.$emit('onDismissEvent', {role: role, selected: this.getSelected()})
-
-        setTimeout(() => {
-          this.$el.remove();
-        }, 400);
-      },
-
-      getValues() {
-        let values = {};
+      /**
+       * 获取当前选择的值, 有多少列返回多少列的数据
+       * @return {Array} selected - selected
+       * @return {String} selected.text - text
+       * @return {String} selected.value - value
+       * @return {String} selected.columnIndex - columnIndex
+       * @private
+       * */
+      getSelected () {
+        let selected = {}
         this.columns.forEach((col, index) => {
-          let selected = col.options[col.selectedIndex];
-          values[index] = selected ? selected.value : null;
-        });
-
-        return values;
-      },
-
-      getSelected() {
-        let selected = {};
-        this.columns.forEach((col, index) => {
-          let selectedColumn = col.options[col.selectedIndex];
+          let selectedColumn = col.options[col.selectedIndex]
           selected[col.name] = {
             text: selectedColumn ? selectedColumn.text : null,
             value: selectedColumn ? selectedColumn.value : null,
-            index: index,
-          };
-        });
-        return selected;
-      },
-
-      renderChain(nextLevel) {
-        if (!this.columns || !this.level) {
-          return
-        }
-
-        // do not render for last scroller
-        if (nextLevel > this.level - 1) {
-          return
-        }
-
-        const self = this
-
-        // destroy old one
-        this.scroller[nextLevel].destroy()
-
-        this.columns[nextLevel].options = this.getChildren(this.getValues()[nextLevel - 1]);
-        this.columns[nextLevel].selectedIndex = 0;
-        this.scroller[nextLevel] = new Scroller(this.$el.querySelector(this.getId(nextLevel)), {
-          options: this.columns[nextLevel].options,
-          selectedIndex: this.columns[nextLevel].selectedIndex,
-          onSelect(value, index) {
-            self.columns[nextLevel].selectedIndex = index;
-            if (nextLevel < this.level) {
-              self.columns[nextLevel + 1].options = self.getChildren(self.getValues()[nextLevel]);
-              self.columns[nextLevel + 1].selectedIndex = 0;
-            }
-            self.renderChain(nextLevel + 1)
+            columnIndex: index
           }
         })
-
-        this.renderChain(nextLevel + 1)
+        return selected
       },
 
-      getChildren(value) {
-        return this.optionColumns.filter(one => {
-          return one.parent === value;
+      /**
+       * 当选择变化,对外发送事件
+       * @private
+       * */
+      colChange (data) {
+        // col发生变化时触发onSelect事件, 传递触发col的信息
+        this.$emit('onSelect', data)
+        this.onSelect && this.onSelect(data)
+
+        // col发生变化, 则获取当前选中的整体数据, 触发onChange事件
+        let selectedData = this.getSelected()
+        this.$emit('onChange', selectedData)
+        this.onChange && this.onChange(selectedData)
+      },
+
+      /**
+       * data数据格式化
+       *
+       * PS: 在this.data原值上操作
+       *
+       * - this.buttons: 如果传入的string字符串数组, 则button的文本将是这个字符串
+       * - this.buttons: 如过role定义了, 则加上cssRole: `picker-toolbar-${button.role}`
+       * - columns -> column.options: 如果不是对象, 则将传入的值toString后转给text/value
+       *
+       * @private
+       * */
+      normalizeData () {
+        // normalize the data
+        this.buttons = this.buttons.map(button => {
+          if (isString(button)) {
+            return {text: button}
+          }
+          if (button.role) {
+            // role: cancel / button
+            button.cssRole = `picker-toolbar-${button.role}`
+          }
+          return button
+        })
+
+        // clean up dat data
+        this.columns = this.columns.map(column => {
+          if (!isPresent(column.options)) {
+            column.options = []
+          }
+          // 取值必须>=0
+          column.selectedIndex = Math.max(0, parseInt(column.selectedIndex))
+          column.options = column.options.map(inputOpt => {
+            // PickerColumnOption
+            let opt = {
+              text: '',
+              value: '',
+              disabled: inputOpt.disabled
+            }
+
+            if (isPresent(inputOpt)) {
+              if (isString(inputOpt) || isNumber(inputOpt)) {
+                opt.text = inputOpt.toString()
+                opt.value = inputOpt
+              } else {
+                opt.text = isPresent(inputOpt.text) ? inputOpt.text : inputOpt.value
+                opt.value = isPresent(inputOpt.value) ? inputOpt.value : inputOpt.text
+              }
+            }
+            return opt
+          })
+          return column
         })
       },
 
-      getRootColumn() {
-        return this.optionColumns.filter(one => {
-          return !one.parent || one.parent === 0 || one.parent === '0';
-        })
+      /**
+       * 由子组件调用, 用于记录自己
+       * @private
+       * */
+      recordChildComponent (childComponent) {
+        this.cols.push(childComponent)
       },
 
+      // ------- 动态添加数据接口 --------
+      /**
+       * 动态添加修改列数据时,对某一列数据修改并刷新显示
+       * */
+      resetColumn (index) {
+        this.cols[index].reset()
+      },
+
+      /**
+       * 如果设置的选中值与显示不一致, 使用这个刷新, 他会更新滚动位置
+       * @private
+       * */
+      refresh () {
+        this.cols.forEach(column => {
+          column.refresh()
+        })
+      }
     }
-  };
+  }
 </script>
 
 <style lang="scss">
-  @import 'picker';
-  @import 'picker.ios';
-  @import 'picker.md';
+  @import "picker";
+  @import "picker.ios";
+  @import "picker.md";
   @import "../../transition/picker";
 </style>

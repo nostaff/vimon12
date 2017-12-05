@@ -1,1 +1,1 @@
-export { default } from './searchbar.vue';
+export { default } from './searchbar.vue'

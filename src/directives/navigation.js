@@ -2,8 +2,7 @@ import assign from 'object-assign'
 import Vue from 'vue'
 import Navigation from './navigation.vue'
 
-import {isFunction, isTrueProperty} from '../util/util'
-import {createElement} from '../utils/utils'
+import {isFunction, isTrueProperty, createElement} from '../util/util'
 
 export default {
   name: 'nav',

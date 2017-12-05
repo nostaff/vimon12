@@ -23,18 +23,18 @@
 </template>
 <script>
     export default {
-        data() {
-            return {
-                themes: [
-                    'default',
-                    'primary',
-                    'light',
-                    'secondary',
-                    'danger',
-                    'dark'
-                ],
-                theme: 'default'
-            }
+      data () {
+        return {
+          themes: [
+            'default',
+            'primary',
+            'light',
+            'secondary',
+            'danger',
+            'dark'
+          ],
+          theme: 'default'
         }
+      }
     }
 </script>

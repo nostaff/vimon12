@@ -65,19 +65,19 @@
 <script>
   export default {
     methods: {
-      onClick() {
+      onClick () {
         this.$toast.present('clicked!')
       },
 
-      next() {
+      next () {
         this.$refs.swiper.next()
       },
 
-      prev() {
+      prev () {
         this.$refs.swiper.prev()
       },
 
-      callback(prev, current) {
+      callback (prev, current) {
         console.log(prev, current)
       }
     }

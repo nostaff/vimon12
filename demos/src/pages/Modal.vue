@@ -34,33 +34,32 @@
     import ModalPage from './ModalPage.vue'
 
     export default {
-        data() {
-            return {
-                myParam: [],
-            }
-        },
-
-        methods: {
-            openBasicModal() {
-                this.$modal.present({
-                    template: ModalPage,
-                    onDismiss (data) {
-                        console.log(data)
-                    }
-                });
-            },
-            openModalWithParams() {
-                this.$modal.present({
-                    template: ModalPage,
-                    data: {
-                        myParam: this.myParam,
-                    },
-                    onDismiss (data) {
-                        console.log(data)
-                    }
-                });
-
-            }
+      data () {
+        return {
+          myParam: []
         }
+      },
+
+      methods: {
+        openBasicModal () {
+          this.$modal.present({
+            template: ModalPage,
+            onDismiss (data) {
+              console.log(data)
+            }
+          })
+        },
+        openModalWithParams () {
+          this.$modal.present({
+            template: ModalPage,
+            data: {
+              myParam: this.myParam
+            },
+            onDismiss (data) {
+              console.log(data)
+            }
+          })
+        }
+      }
     }
 </script>

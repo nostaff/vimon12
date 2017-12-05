@@ -42,17 +42,17 @@
   import Loading from '../../../src/components/loading'
   export default {
     methods: {
-      showLoading(name, duration) {
+      showLoading (name, duration) {
         Loading.present({
           spinner: name,
           content: 'This is the "' + name + '" spinner. It will dismiss after ' + duration / 1000 + 'seconds.',
           duration: duration
         }).then((res) => {
           console.log('loading hide.', res)
-        });
+        })
       },
 
-      showCustomLoading() {
+      showCustomLoading () {
         Loading.present({
           spinner: 'circles',
           content: 'This is the spinner with "enableBackdropDismiss = true".',
@@ -60,17 +60,17 @@
           enableBackdropDismiss: true
         }).then((res) => {
           console.log('loading hide.', res)
-        });
+        })
       },
 
-      showLoadingText() {
+      showLoadingText () {
         Loading.present({
           content: 'This is the ONLY TEXT spinner. It will dismiss after  3 seconds.',
           duration: 3000
         }).then((res) => {
           console.log('loading hide.', res)
-        });
-      },
+        })
+      }
     }
   }
 </script>

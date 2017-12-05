@@ -8,21 +8,19 @@
   </button>
 </template>
 <script type="text/javascript">
-  import {setElementClass} from '../../util/util'
-  import ThemeMixins from '../../themes/theme.mixins';
-
-  import IonIcon from "../icon/icon";
+  import ThemeMixins from '../../themes/theme.mixins'
+  import IonIcon from '../icon/icon'
 
   export default {
     name: 'ion-fab-button',
     mixins: [ThemeMixins],
     components: {
-      IonIcon,
+      IonIcon
     },
     inject: {
       fabComponent: {
         from: 'fabComponent',
-        default() {
+        default () {
           if (process.env.NODE_ENV !== 'production') {
             console.error('[Component] FabButton组件 需要与 Fab组件 组合使用!')
           }
@@ -34,21 +32,21 @@
         default: null
       }
     },
-    data() {
+    data () {
       return {
         roleName: 'fab'
-      };
+      }
     },
     computed: {
-      isMainButton() {
+      isMainButton () {
         return !this.fabListComponent && !!this.fabComponent
       }
     },
-    created() {
+    created () {
       if (!this.isMainButton) {
-        this.fabListComponent && this.fabListComponent.setFabButton(this);
+        this.fabListComponent && this.fabListComponent.setFabButton(this)
       } else {
-        this.fabComponent.mainButton = this;
+        this.fabComponent.mainButton = this
       }
     },
 
@@ -57,16 +55,16 @@
        * 按钮点击处理函数, 如果是主button, 则Fab组件改写此方法
        * @private
        * */
-      clickHandler() {
+      clickHandler () {
         this.$emit('click', this.fabComponent)
-        this.isMainButton && this.fabComponent.toggleList()
+        this.isMainButton && this.fabComponent.toggleClicked()
       },
 
       /**
        * @hidden
        */
-      setActiveClose(closeVisible) {
-        this.setElementClass('fab-close-active', closeVisible);
+      setActiveClose (closeVisible) {
+        this.setElementClass('fab-close-active', closeVisible)
       }
     }
   }

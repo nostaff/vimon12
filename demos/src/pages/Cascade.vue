@@ -18,10 +18,10 @@
 </template>
 <script>
   export default {
-    data() {
+    data () {
       return {
         fields: [
-          "省", "市", "区"
+          '省', '市', '区'
         ],
 
         cities: [
@@ -155,7 +155,7 @@
     },
 
     methods: {
-      onChange(value) {
+      onChange (value) {
         this.value = value
         console.log(this.value)
       }

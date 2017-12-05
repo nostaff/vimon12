@@ -13,50 +13,50 @@
 
 <script>
     const range = (n) => {
-        let l = []
-        for (let i = 0; i < n; i++) l.push(i)
-        return l
+      let l = []
+      for (let i = 0; i < n; i++) l.push(i)
+      return l
     }
 
     export default {
-        name: 'ion-cells',
+      name: 'ion-cells',
 
-        props: {
-            row: {
-                type: [Number, String],
-                default: 3
-            },
-            col: {
-                type: [Number, String],
-                default: 3
-            },
-            items: {
-                type: Array,
-                required: true
-            },
-            onCellClick: Function,
-            outerBorder: {
-                type: [Boolean, String],
-                default: true
-            },
-            innerBorder: {
-                type: [Boolean, String],
-                default: true
-            }
+      props: {
+        row: {
+          type: [Number, String],
+          default: 3
         },
-
-        data() {
-            return {
-                rows: range(parseInt(this.row)),
-                cols: range(parseInt(this.col))
-            }
+        col: {
+          type: [Number, String],
+          default: 3
         },
-
-        methods: {
-            cellClicked(cellIndex) {
-                if (this.onCellClick) this.onCellClick(cellIndex)
-            }
+        items: {
+          type: Array,
+          required: true
+        },
+        onCellClick: Function,
+        outerBorder: {
+          type: [Boolean, String],
+          default: true
+        },
+        innerBorder: {
+          type: [Boolean, String],
+          default: true
         }
+      },
+
+      data () {
+        return {
+          rows: range(parseInt(this.row)),
+          cols: range(parseInt(this.col))
+        }
+      },
+
+      methods: {
+        cellClicked (cellIndex) {
+          if (this.onCellClick) this.onCellClick(cellIndex)
+        }
+      }
     }
 </script>
 

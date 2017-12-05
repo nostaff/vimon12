@@ -10,6 +10,6 @@
 
 <script>
   export default {
-    name: 'DemoBadge',
+    name: 'DemoBadge'
   }
 </script>

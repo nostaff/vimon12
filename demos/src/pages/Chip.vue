@@ -75,9 +75,9 @@
   export default {
     name: 'DemoChip',
     methods: {
-      deleteElm(chip) {
-        let el = this.$el.querySelector('#' + chip);
-        el.parentNode.removeChild(el);
+      deleteElm (chip) {
+        let el = this.$el.querySelector('#' + chip)
+        el.parentNode.removeChild(el)
       }
     }
   }

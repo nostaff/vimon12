@@ -30,28 +30,28 @@
 </template>
 <script>
     export default {
-        data() {
-            return {
-                activeMenu: 'menu1'
-            }
-        },
-        created () {
-            this.menu1Active();
-        },
-        methods: {
-            menu1Active() {
-                this.activeMenu = 'menu1';
-                this.$menu.enable(true, 'menu1');
-                this.$menu.enable(false, 'menu2');
-            },
-            menu2Active() {
-                this.activeMenu = 'menu2';
-                this.$menu.enable(false, 'menu1');
-                this.$menu.enable(true, 'menu2');
-            },
-            toggleMenu() {
-                this.$menu.present();
-            }
+      data () {
+        return {
+          activeMenu: 'menu1'
         }
+      },
+      created () {
+        this.menu1Active()
+      },
+      methods: {
+        menu1Active () {
+          this.activeMenu = 'menu1'
+          this.$menu.enable(true, 'menu1')
+          this.$menu.enable(false, 'menu2')
+        },
+        menu2Active () {
+          this.activeMenu = 'menu2'
+          this.$menu.enable(false, 'menu1')
+          this.$menu.enable(true, 'menu2')
+        },
+        toggleMenu () {
+          this.$menu.present()
+        }
+      }
     }
 </script>

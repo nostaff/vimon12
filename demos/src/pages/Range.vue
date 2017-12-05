@@ -54,13 +54,13 @@
 </template>
 <script>
     export default {
-        data() {
-            return {
-                brightness: 35,
-                saturation: 88,
-                temperature: 1300,
-                structure: {lower: 33, upper: 60},
-            }
+      data () {
+        return {
+          brightness: 35,
+          saturation: 88,
+          temperature: 1300,
+          structure: {lower: 33, upper: 60}
         }
+      }
     }
 </script>

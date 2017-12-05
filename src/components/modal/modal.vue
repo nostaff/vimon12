@@ -12,11 +12,11 @@
   </div>
 </template>
 <script>
-  import Vue from 'vue'
-  import {isFunction, isTrueProperty, urlChange} from '../../utils/utils'
+  import {isFunction, isTrueProperty} from '../../util/util'
+  import {urlChange} from '../../util/dom'
   import objectAssign from 'object-assign'
-  import ThemeMixins from '../../themes/theme.mixins';
-  import IonBackdrop from "../backdrop/index";
+  import ThemeMixins from '../../themes/theme.mixins'
+  import IonBackdrop from '../backdrop/index'
 
   export default {
     name: 'ion-modal',
@@ -24,7 +24,7 @@
     components: {
       IonBackdrop
     },
-    data() {
+    data () {
       return {
         defaultOptions: {
           component: null,
@@ -32,7 +32,7 @@
           showBackdrop: true,
           enableBackdropDismiss: true,
           onDismiss: () => {
-          },
+          }
         },
 
         component: null,
@@ -48,7 +48,7 @@
         activated: false
       }
     },
-    created() {
+    created () {
       if (this.dismissOnPageChange) {
         urlChange(() => {
           this.activated && this.dismiss(-1)
@@ -58,42 +58,42 @@
 
     methods: {
 
-      present(options) {
+      present (options) {
         let _options = objectAssign({}, this.defaultOptions, options)
         // Sync to sub component
-        this.component = _options.component;
-        this.data = _options.data;
+        this.component = _options.component
+        this.data = _options.data
 
-        this.cssClass = _options.cssClass;
-        this.showBackdrop = isTrueProperty(_options.showBackdrop);
-        this.dismissOnPageChange = isTrueProperty(_options.dismissOnPageChange);
-        this.enableBackdropDismiss = isTrueProperty(_options.enableBackdropDismiss);
-        if (isFunction(_options.onDismiss))
+        this.cssClass = _options.cssClass
+        this.showBackdrop = isTrueProperty(_options.showBackdrop)
+        this.dismissOnPageChange = isTrueProperty(_options.dismissOnPageChange)
+        this.enableBackdropDismiss = isTrueProperty(_options.enableBackdropDismiss)
+        if (isFunction(_options.onDismiss)) {
           this.onDismiss = _options.onDismiss
+        }
 
-        this.activated = true;
+        this.activated = true
 
         return new Promise((resolve, reject) => {
           this.$on('onDismissEvent', (res) => {
             resolve(res)
           })
-        });
-
+        })
       },
 
-      dismiss(role) {
+      dismiss (role) {
         this.onDismiss && this.onDismiss(role)
 
         this.$nextTick(() => {
-          this.$emit('onDismissEvent', role);
+          this.$emit('onDismissEvent', role)
 
           this.$el.remove()
         })
       },
 
-      bdClick() {
+      bdClick () {
         if (this.enableBackdropDismiss) {
-          this.dismiss(-1);
+          this.dismiss(-1)
         }
       }
     }

@@ -5,8 +5,8 @@
 </template>
 
 <script>
-  import {isTrueProperty} from '../../utils/utils'
-  import ThemeMixins from '../../themes/theme.mixins';
+  import {isTrueProperty, timeout} from '../../util/util'
+  import ThemeMixins from '../../themes/theme.mixins'
 
   const preventDefault = (e) => {
     e.preventDefault()
@@ -16,7 +16,7 @@
     name: 'ion-backdrop',
     mixins: [ThemeMixins],
 
-    data() {
+    data () {
       return {
         activated: isTrueProperty(this.isActive),
         isEnableBackdropDismiss: isTrueProperty(this.enableBackdropDismiss)
@@ -30,31 +30,29 @@
       enableBackdropDismiss: {
         type: [Boolean, String],
         default: true
-      },
+      }
     },
     watch: {
-      isActive(val) {
-        this.activated = isTrueProperty(val);
+      isActive (val) {
+        this.activated = isTrueProperty(val)
       }
     },
     methods: {
-      present(allowTouchMove) {
-        if (!allowTouchMove)
-          document.body.addEventListener('touchmove', preventDefault)
+      present (allowTouchMove) {
+        if (!allowTouchMove) { document.body.addEventListener('touchmove', preventDefault) }
         this.activated = true
       },
 
-      dismiss(allowTouchMove) {
-        if (!allowTouchMove)
-          document.body.removeEventListener('touchmove', preventDefault)
+      dismiss (allowTouchMove) {
+        if (!allowTouchMove) { document.body.removeEventListener('touchmove', preventDefault) }
         this.activated = true
-        return timeout(duration)
+        return timeout(100)
       },
-      getState() {
-        return this.activated;
+      getState () {
+        return this.activated
       }
     }
-  };
+  }
 </script>
 
 <style lang="scss">

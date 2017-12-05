@@ -9,7 +9,8 @@
   </div>
 </template>
 <script>
-  const re_color = /^#([0-9A-Fa-f]{3})|([0-9A-Fa-f]{6})$/;
+  /* eslint-disable camelcase */
+  const re_color = /^#([0-9A-Fa-f]{3})|([0-9A-Fa-f]{6})$/
 
   export default {
     props: {
@@ -20,7 +21,7 @@
 
       pagerColor: {
         type: String,
-        validator(v) {
+        validator (v) {
           return re_color.test(v)
         },
         required: true
@@ -28,14 +29,14 @@
 
       pagerBgColor: {
         type: String,
-        validator(v) {
+        validator (v) {
           return re_color.test(v)
         },
         required: true
       }
     },
 
-    data() {
+    data () {
       return {
         circles: [],
         activeIndex: 0
@@ -43,7 +44,7 @@
     },
 
     methods: {
-      init() {
+      init () {
         let circles = []
         for (let i = 0; i < this.size; i++) {
           circles.push(i)
@@ -52,7 +53,7 @@
         this.circles = circles
       },
 
-      activate(index) {
+      activate (index) {
         this.activeIndex = index
       }
     }

@@ -42,12 +42,12 @@
 </template>
 <script>
   export default {
-    data() {
+    data () {
       return {
         tabs: [
-          "tab 1",
-          "tab 2",
-          "tab 3"
+          'tab 1',
+          'tab 2',
+          'tab 3'
         ],
         tab_0: 0,
         tab_1: 1,
@@ -56,13 +56,13 @@
         tab_4: 0,
         tab_5: 1,
         tab_6: 2,
-        promotions: ["往期热卖", "抢购进行中"],
+        promotions: ['往期热卖', '抢购进行中'],
         promotionIndex: 0
       }
     },
 
     methods: {
-      onItemClick(index) {
+      onItemClick (index) {
         this.tab_0 = index
       }
     }

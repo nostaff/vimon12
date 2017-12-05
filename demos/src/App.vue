@@ -6,7 +6,7 @@
 <script type="text/javascript">
   export default {
     name: 'app-root',
-    mounted() {
+    mounted () {
 
     }
   }

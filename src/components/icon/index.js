@@ -1,3 +1,3 @@
-import 'ionicons/dist/css/ionicons.css';
+import 'ionicons/dist/css/ionicons.css'
 
-export { default } from './icon.vue';
+export { default } from './icon.vue'

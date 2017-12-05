@@ -57,71 +57,71 @@
 
 <script>
     export default{
-        name: 'comp',
-        data () {
-            return {
-                background: '',
-                contentEle: null,
-                fontFamily: '',
+      name: 'comp',
+      data () {
+        return {
+          background: '',
+          contentEle: null,
+          fontFamily: '',
 
-                colors: {
-                    'white': {
-                        'bg': 'rgb(255, 255, 255)',
-                        'fg': 'rgb(0, 0, 0)'
-                    },
-                    'tan': {
-                        'bg': 'rgb(249, 241, 228)',
-                        'fg': 'rgb(0, 0, 0)'
-                    },
-                    'grey': {
-                        'bg': 'rgb(76, 75, 80)',
-                        'fg': 'rgb(255, 255, 255)'
-                    },
-                    'black': {
-                        'bg': 'rgb(0, 0, 0)',
-                        'fg': 'rgb(255, 255, 255)'
-                    }
-                }
-            }
-        },
-        created () {
-            this.contentEle = this.$options.$data.contentEle;
-
-            this.background = this.getColorName(this.contentEle.style.backgroundColor);
-            if (this.contentEle.style.fontFamily) {
-                this.fontFamily = this.contentEle.style.fontFamily.replace(/'/g, '');
-            }
-        },
-        methods: {
-
-            getColorName(background) {
-                let colorName = 'white';
-
-                if (!background) return 'white';
-
-                for (var key in this.colors) {
-                    if (this.colors[key].bg === background) {
-                        colorName = key;
-                    }
-                }
-
-                return colorName;
+          colors: {
+            'white': {
+              'bg': 'rgb(255, 255, 255)',
+              'fg': 'rgb(0, 0, 0)'
             },
-
-            changeBackground(color) {
-                this.background = color;
-                this.contentEle.style.backgroundColor = this.colors[color].bg;
-                this.contentEle.style.color = this.colors[color].fg;
+            'tan': {
+              'bg': 'rgb(249, 241, 228)',
+              'fg': 'rgb(0, 0, 0)'
             },
-
-            changeFontSize(fontSize) {
-                this.contentEle.style.fontSize = fontSize;
+            'grey': {
+              'bg': 'rgb(76, 75, 80)',
+              'fg': 'rgb(255, 255, 255)'
             },
-
-            changeFontFamily() {
-                if (this.fontFamily) this.contentEle.style.fontFamily = this.fontFamily;
+            'black': {
+              'bg': 'rgb(0, 0, 0)',
+              'fg': 'rgb(255, 255, 255)'
             }
+          }
         }
+      },
+      created () {
+        this.contentEle = this.$options.$data.contentEle
+
+        this.background = this.getColorName(this.contentEle.style.backgroundColor)
+        if (this.contentEle.style.fontFamily) {
+          this.fontFamily = this.contentEle.style.fontFamily.replace(/'/g, '')
+        }
+      },
+      methods: {
+
+        getColorName (background) {
+          let colorName = 'white'
+
+          if (!background) return 'white'
+
+          for (var key in this.colors) {
+            if (this.colors[key].bg === background) {
+              colorName = key
+            }
+          }
+
+          return colorName
+        },
+
+        changeBackground (color) {
+          this.background = color
+          this.contentEle.style.backgroundColor = this.colors[color].bg
+          this.contentEle.style.color = this.colors[color].fg
+        },
+
+        changeFontSize (fontSize) {
+          this.contentEle.style.fontSize = fontSize
+        },
+
+        changeFontFamily () {
+          if (this.fontFamily) this.contentEle.style.fontFamily = this.fontFamily
+        }
+      }
 
     }
 </script>

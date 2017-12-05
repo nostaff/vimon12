@@ -29,10 +29,11 @@
   </ion-page>
 </template>
 <script>
-  import Popage from "./Popage.vue";
+  import Popage from './Popage.vue'
+
   export default {
     methods: {
-      showPopover(ev) {
+      showPopover (ev) {
         let template = `
                       <ion-list>
                         <ion-list-header>Ionic</ion-list-header>
@@ -42,16 +43,16 @@
                         <ion-item @click.native="itemClick()">GitHub Repo</ion-item>
                       </ion-list>
                     `
-        Vimo.Popover.present({
+        this.$popover.present({
           ev: ev,
-          template: template,
+          template: template
         }).then((role) => {
           console.log(role)
         })
       },
 
-      pageSetting(ev) {
-        Popover.present({
+      pageSetting (ev) {
+        this.$popover.present({
           ev: ev,
           template: Popage,
           data: {
@@ -62,16 +63,15 @@
         })
       },
 
-      popupText(ev, text) {
-        let contont = '<p padding text-center>You select the word of <strong>' + text + '</strong>.</p>';
+      popupText (ev, text) {
+        let contont = '<p padding text-center>You select the word of <strong>' + text + '</strong>.</p>'
 
-        Popover.present({
+        this.$popover.present({
           ev: ev,
-          template: contont,
+          template: contont
         }).then((role) => {
           console.log(role)
         })
-
       }
     }
   }

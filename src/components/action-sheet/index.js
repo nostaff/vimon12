@@ -1,14 +1,14 @@
 import Vue from 'vue'
 import ActionSheet from './action-sheet.vue'
 
-import {createElement} from '../../utils/utils'
+import {createElement} from '../../util/util'
 
 class IonActionSheet {
-  constructor() {
+  constructor () {
     this._vm = undefined
   }
 
-  present(option) {
+  present (option) {
     createElement('ion-dialog')
 
     this._vm = new Vue(ActionSheet)
@@ -17,7 +17,7 @@ class IonActionSheet {
     return this._vm.present(option)
   }
 
-  dismiss(buttonIndex) {
+  dismiss (buttonIndex) {
     this._vm && this._vm.dismiss(buttonIndex)
   }
 }

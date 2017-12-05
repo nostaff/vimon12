@@ -203,79 +203,79 @@
 <script>
 
     export default {
-        data() {
-            return {
-                gender: '',
-                gaming: '',
-                toppings: [],
-                petAlertOpts: null,
-                petData: null,
-                pets: '',
-                hairColorData: null,
-                hairColor: null,
-                skittlesData: null,
-                skittles: '',
-                notifications: 'mute_1',
-                rating: 2,
-            }
-        },
+      data () {
+        return {
+          gender: '',
+          gaming: '',
+          toppings: [],
+          petAlertOpts: null,
+          petData: null,
+          pets: '',
+          hairColorData: null,
+          hairColor: null,
+          skittlesData: null,
+          skittles: '',
+          notifications: 'mute_1',
+          rating: 2
+        }
+      },
 
-        created() {
-            this.gender = 'f';
-            this.gaming = 'ps';
+      created () {
+        this.gender = 'f'
+        this.gaming = 'ps'
 
-            this.petAlertOpts = {
-                title: 'Like Pets?',
-                subTitle: 'Select your favorite'
-            };
+        this.petAlertOpts = {
+          title: 'Like Pets?',
+          subTitle: 'Select your favorite'
+        }
 
-            this.toppings = ['bacon', 'xcheese'];
+        this.toppings = ['bacon', 'xcheese']
 
-            this.petData = [
+        this.petData = [
                 {text: 'Bird', value: 'bird'},
                 {text: 'Cat', value: 'cat'},
                 {text: 'Dog', value: 'dog'},
-                {text: 'Honey Badger', value: 'honeybadger'},
-            ];
+                {text: 'Honey Badger', value: 'honeybadger'}
+        ]
 
-            this.hairColorData = [
+        this.hairColorData = [
                 {text: 'Brown', value: 'brown'},
                 {text: 'Blonde', value: 'blonde'},
                 {text: 'Black', value: 'black'},
                 {text: 'Red', value: 'red'}
-            ];
+        ]
 
-            // Pre-selected object with different object reference
-            this.hairColor = ['brown'];
+        // Pre-selected object with different object reference
+        this.hairColor = ['brown']
 
-            this.skittlesData = [
+        this.skittlesData = [
                 {text: 'Red', value: 'red'},
                 {text: 'Orange', value: 'orange'},
                 {text: 'Yellow', value: 'yellow'},
                 {text: 'Green', value: 'green'},
                 {text: 'Purple', value: 'purple'}
-            ];
+        ]
 
-            this.skittles = ['red', 'purple'];
+        this.skittles = ['red', 'purple']
 
-            this.pets = ['cat', 'dog'];
+        this.pets = ['cat', 'dog']
+      },
+
+      methods: {
+        compareFn (option1, option2) {
+          return option1.value === option2.value
         },
 
-        methods: {
-            compareFn(option1, option2) {
-                return option1.value === option2.value;
-            },
+        monthChange (val) {
+          console.log('Month Change:', val)
+        },
 
-            monthChange(val) {
-                console.log('Month Change:', val);
-            },
-
-            yearChange(val) {
-                console.log('Year Change:', val);
-            },
-            onChange(val) {
-                console.log('onChange:', val);
-            }
+        yearChange (val) {
+          console.log('Year Change:', val)
+        },
+        onChange (val) {
+          console.log('onChange:', val)
         }
+      }
     }
 </script>

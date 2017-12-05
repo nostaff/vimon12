@@ -14,23 +14,23 @@
 </template>
 <script>
     export default{
-        data(){
-            return {
-                keywords: '',
-                searching: false
-            }
+      data () {
+        return {
+          keywords: '',
+          searching: false
+        }
+      },
+
+      methods: {
+        onChange (keywords) {
+          console.log(keywords)
+          this.searching = true
         },
 
-        methods: {
-            onChange(keywords) {
-                console.log(keywords)
-                this.searching = true;
-            },
-
-            onCancel() {
-                this.searching = false;
-                this.keywords = ''
-            }
+        onCancel () {
+          this.searching = false
+          this.keywords = ''
         }
+      }
     }
 </script>

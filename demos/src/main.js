@@ -7,12 +7,12 @@ import PLATFORM_CONFIGS from './config/platform-configs'
 import router from './router'
 
 // 导入所有组件
-import Vimo from 'vimo';
+import Vimo from 'vimo'
 Vue.use(Vimo, {
   custConf: APP_CONFIGS,
   pltConf: PLATFORM_CONFIGS,
   router: router
-});
+})
 
 // 按需导入组件
 /*

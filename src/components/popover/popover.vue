@@ -17,10 +17,11 @@
 </template>
 
 <script>
-  import {isFunction, isTrueProperty, urlChange} from '../../utils/utils'
+  import {isTrueProperty} from '../../util/util'
+  import {urlChange} from '../../util/dom'
   import objectAssign from 'object-assign'
-  import ThemeMixins from '../../themes/theme.mixins';
-  import IonBackdrop from "../backdrop/index";
+  import ThemeMixins from '../../themes/theme.mixins'
+  import IonBackdrop from '../backdrop/index'
 
   const POPOVER_IOS_BODY_PADDING = 2
   const POPOVER_MD_BODY_PADDING = 12
@@ -31,12 +32,12 @@
     components: {
       IonBackdrop
     },
-    data() {
+    data () {
       return {
         defaultOptions: {
           showBackdrop: true,
           enableBackdropDismiss: true,
-          cssClass: '',
+          cssClass: ''
         },
 
         ev: null,
@@ -49,7 +50,7 @@
       }
     },
 
-    created() {
+    created () {
       if (this.dismissOnPageChange) {
         urlChange(() => {
           this.activated && this.dismiss(-1)
@@ -57,184 +58,178 @@
       }
     },
 
-    updated() {
-      this.activated && this.updatePositionView();
+    updated () {
+      this.activated && this.updatePositionView()
     },
 
     methods: {
-      present(options) {
+      present (options) {
         let _options = objectAssign({}, this.defaultOptions, options)
-        this.showBackdrop = isTrueProperty(_options.showBackdrop);
-        this.dismissOnPageChange = isTrueProperty(_options.dismissOnPageChange);
-        this.enableBackdropDismiss = isTrueProperty(_options.enableBackdropDismiss);
-        this.cssClass = _options.cssClass;
-        this.ev = _options.ev;
+        this.showBackdrop = isTrueProperty(_options.showBackdrop)
+        this.dismissOnPageChange = isTrueProperty(_options.dismissOnPageChange)
+        this.enableBackdropDismiss = isTrueProperty(_options.enableBackdropDismiss)
+        this.cssClass = _options.cssClass
+        this.ev = _options.ev
 
-        this.activated = true;
+        this.activated = true
 
         return new Promise((resolve, reject) => {
           this.$on('onHideEvent', (res) => {
             resolve(res)
           })
-        });
-
+        })
       },
 
-      dismiss(role) {
-        this.activated = false;
-        this.$emit('onHideEvent', role);
+      dismiss (role) {
+        this.activated = false
+        this.$emit('onHideEvent', role)
 
         setTimeout(() => {
-          this.$el.remove();
-        }, 200);
+          this.$el.remove()
+        }, 200)
       },
 
-      bdClick() {
+      bdClick () {
         if (this.enableBackdropDismiss) {
-          this.dismiss('backdrop');
+          this.dismiss('backdrop')
         }
       },
 
-      mdPositionView() {
-        const nativeEle = this.$el;
-        const ev = this.ev;
+      mdPositionView () {
+        const nativeEle = this.$el
+        const ev = this.ev
 
-        let originY = 'top';
-        let originX = 'left';
-
-        let popoverWrapperEle = nativeEle.querySelector('.popover-wrapper');
+        let originY = 'top'
+        let originX = 'left'
 
         // Popover content width and height
-        let popoverEle = nativeEle.querySelector('.popover-content');
-        let popoverDim = popoverEle.getBoundingClientRect();
-        let popoverWidth = popoverDim.width;
-        let popoverHeight = popoverDim.height;
+        let popoverEle = nativeEle.querySelector('.popover-content')
+        let popoverDim = popoverEle.getBoundingClientRect()
+        let popoverWidth = popoverDim.width
+        let popoverHeight = popoverDim.height
 
         // Window body width and height
-        let bodyWidth = document.documentElement.clientWidth;
-        let bodyHeight = document.documentElement.clientHeight;
+        let bodyWidth = document.documentElement.clientWidth
+        let bodyHeight = document.documentElement.clientHeight
 
         // If ev was passed, use that for target element
-        let targetDim = ev && ev.target && ev.target.getBoundingClientRect();
+        let targetDim = ev && ev.target && ev.target.getBoundingClientRect()
 
-        let targetTop = (targetDim && 'top' in targetDim) ? targetDim.top : (bodyHeight / 2) - (popoverHeight / 2);
-        let targetLeft = (targetDim && 'left' in targetDim) ? targetDim.left : (bodyWidth / 2) - (popoverWidth / 2);
+        let targetTop = (targetDim && 'top' in targetDim) ? targetDim.top : (bodyHeight / 2) - (popoverHeight / 2)
+        let targetLeft = (targetDim && 'left' in targetDim) ? targetDim.left : (bodyWidth / 2) - (popoverWidth / 2)
 
-        let targetHeight = targetDim && targetDim.height || 0;
+        let targetHeight = targetDim && targetDim.height || 0
 
         let popoverCSS = {
           top: targetTop,
           left: targetLeft
-        };
+        }
 
         // If the popover left is less than the padding it is off screen
         // to the left so adjust it, else if the width of the popover
         // exceeds the body width it is off screen to the right so adjust
         if (popoverCSS.left < POPOVER_MD_BODY_PADDING) {
-          popoverCSS.left = POPOVER_MD_BODY_PADDING;
+          popoverCSS.left = POPOVER_MD_BODY_PADDING
         } else if (popoverWidth + POPOVER_MD_BODY_PADDING + popoverCSS.left > bodyWidth) {
-          popoverCSS.left = bodyWidth - popoverWidth - POPOVER_MD_BODY_PADDING;
-          originX = 'right';
+          popoverCSS.left = bodyWidth - popoverWidth - POPOVER_MD_BODY_PADDING
+          originX = 'right'
         }
 
         // If the popover when popped down stretches past bottom of screen,
         // make it pop up if there's room above
         if (targetTop + targetHeight + popoverHeight > bodyHeight && targetTop - popoverHeight > 0) {
-          popoverCSS.top = targetTop - popoverHeight;
-          nativeEle.classList.add('popover-bottom');
-          originY = 'bottom';
+          popoverCSS.top = targetTop - popoverHeight
+          nativeEle.classList.add('popover-bottom')
+          originY = 'bottom'
           // If there isn't room for it to pop up above the target cut it off
         } else if (targetTop + targetHeight + popoverHeight > bodyHeight) {
-          popoverEle.style.bottom = POPOVER_MD_BODY_PADDING + 'px';
+          popoverEle.style.bottom = POPOVER_MD_BODY_PADDING + 'px'
         }
 
-        popoverEle.style.top = popoverCSS.top + 'px';
-        popoverEle.style.left = popoverCSS.left + 'px';
+        popoverEle.style.top = popoverCSS.top + 'px'
+        popoverEle.style.left = popoverCSS.left + 'px'
 
-        popoverEle.style.transformOrigin = popoverEle.style.webkitTransformOrigin = originY + ' ' + originX;
-
+        popoverEle.style.transformOrigin = popoverEle.style.webkitTransformOrigin = originY + ' ' + originX
       },
 
-      iosPositionView() {
-        const nativeEle = this.$el;
-        const ev = this.ev;
+      iosPositionView () {
+        const nativeEle = this.$el
+        const ev = this.ev
 
-        let originY = 'top';
-        let originX = 'left';
-
-        let popoverWrapperEle = nativeEle.querySelector('.popover-wrapper');
+        let originY = 'top'
+        let originX = 'left'
 
         // Popover content width and height
-        let popoverEle = nativeEle.querySelector('.popover-content');
-        let popoverDim = popoverEle.getBoundingClientRect();
-        let popoverWidth = popoverDim.width;
-        let popoverHeight = popoverDim.height;
+        let popoverEle = nativeEle.querySelector('.popover-content')
+        let popoverDim = popoverEle.getBoundingClientRect()
+        let popoverWidth = popoverDim.width
+        let popoverHeight = popoverDim.height
 
         // Window body width and height
-        let bodyWidth = document.documentElement.clientWidth;
-        let bodyHeight = document.documentElement.clientHeight;
+        let bodyWidth = document.documentElement.clientWidth
+        let bodyHeight = document.documentElement.clientHeight
 
         // If ev was passed, use that for target element
-        let targetDim = ev && ev.target && ev.target.getBoundingClientRect();
+        let targetDim = ev && ev.target && ev.target.getBoundingClientRect()
 
-        let targetTop = (targetDim && 'top' in targetDim) ? targetDim.top : (bodyHeight / 2) - (popoverHeight / 2);
-        let targetLeft = (targetDim && 'left' in targetDim) ? targetDim.left : (bodyWidth / 2);
-        let targetWidth = targetDim && targetDim.width || 0;
-        let targetHeight = targetDim && targetDim.height || 0;
+        let targetTop = (targetDim && 'top' in targetDim) ? targetDim.top : (bodyHeight / 2) - (popoverHeight / 2)
+        let targetLeft = (targetDim && 'left' in targetDim) ? targetDim.left : (bodyWidth / 2)
+        let targetWidth = targetDim && targetDim.width || 0
+        let targetHeight = targetDim && targetDim.height || 0
 
         // The arrow that shows above the popover on iOS
-        var arrowEle = nativeEle.querySelector('.popover-arrow');
-        let arrowDim = arrowEle.getBoundingClientRect();
-        var arrowWidth = arrowDim.width;
-        var arrowHeight = arrowDim.height;
+        var arrowEle = nativeEle.querySelector('.popover-arrow')
+        let arrowDim = arrowEle.getBoundingClientRect()
+        var arrowWidth = arrowDim.width
+        var arrowHeight = arrowDim.height
 
         // If no ev was passed, hide the arrow
         if (!targetDim) {
-          arrowEle.style.display = 'none';
+          arrowEle.style.display = 'none'
         }
 
         let arrowCSS = {
           top: targetTop + targetHeight,
           left: targetLeft + (targetWidth / 2) - (arrowWidth / 2)
-        };
+        }
 
         let popoverCSS = {
           top: targetTop + targetHeight + (arrowHeight - 1),
           left: targetLeft + (targetWidth / 2) - (popoverWidth / 2)
-        };
+        }
 
         // If the popover left is less than the padding it is off screen
         // to the left so adjust it, else if the width of the popover
         // exceeds the body width it is off screen to the right so adjust
         if (popoverCSS.left < POPOVER_IOS_BODY_PADDING) {
-          popoverCSS.left = POPOVER_IOS_BODY_PADDING;
+          popoverCSS.left = POPOVER_IOS_BODY_PADDING
         } else if (popoverWidth + POPOVER_IOS_BODY_PADDING + popoverCSS.left > bodyWidth) {
-          popoverCSS.left = bodyWidth - popoverWidth - POPOVER_IOS_BODY_PADDING;
-          originX = 'right';
+          popoverCSS.left = bodyWidth - popoverWidth - POPOVER_IOS_BODY_PADDING
+          originX = 'right'
         }
 
         // If the popover when popped down stretches past bottom of screen,
         // make it pop up if there's room above
         if (targetTop + targetHeight + popoverHeight > bodyHeight && targetTop - popoverHeight > 0) {
-          arrowCSS.top = targetTop - (arrowHeight + 1);
-          popoverCSS.top = targetTop - popoverHeight - (arrowHeight - 1);
-          nativeEle.classList.add('popover-bottom');
-          originY = 'bottom';
+          arrowCSS.top = targetTop - (arrowHeight + 1)
+          popoverCSS.top = targetTop - popoverHeight - (arrowHeight - 1)
+          nativeEle.classList.add('popover-bottom')
+          originY = 'bottom'
           // If there isn't room for it to pop up above the target cut it off
         } else if (targetTop + targetHeight + popoverHeight > bodyHeight) {
-          popoverEle.style.bottom = POPOVER_IOS_BODY_PADDING + '%';
+          popoverEle.style.bottom = POPOVER_IOS_BODY_PADDING + '%'
         }
 
-        arrowEle.style.top = arrowCSS.top + 'px';
-        arrowEle.style.left = arrowCSS.left + 'px';
+        arrowEle.style.top = arrowCSS.top + 'px'
+        arrowEle.style.left = arrowCSS.left + 'px'
 
-        popoverEle.style.top = popoverCSS.top + 'px';
-        popoverEle.style.left = popoverCSS.left + 'px';
+        popoverEle.style.top = popoverCSS.top + 'px'
+        popoverEle.style.left = popoverCSS.left + 'px'
 
-        popoverEle.style.transformOrigin = popoverEle.style.webkitTransformOrigin = originY + ' ' + originX;
+        popoverEle.style.transformOrigin = popoverEle.style.webkitTransformOrigin = originY + ' ' + originX
       },
 
-      updatePositionView() {
+      updatePositionView () {
         if (this.theme === 'ios') {
           this.iosPositionView()
         } else {

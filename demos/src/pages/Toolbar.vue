@@ -136,12 +136,12 @@
 </template>
 <script>
     export default {
-        data() {
-            return {
-                demo: 'Toolbar',
-                favorites: 'recent',
-                apps: 'free',
-            }
+      data () {
+        return {
+          demo: 'Toolbar',
+          favorites: 'recent',
+          apps: 'free'
         }
+      }
     }
 </script>

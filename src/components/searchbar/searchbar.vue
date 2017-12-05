@@ -20,88 +20,88 @@
     </div>
 </template>
 <script>
-    import ThemeMixins from '../../themes/theme.mixins';
-    import IonButton from '../button';
+    import ThemeMixins from '../../themes/theme.mixins'
+import IonButton from '../button'
 
-    export default {
-        name: 'ion-searchbar',
-        mixins: [ThemeMixins],
-        components: {
-            IonButton,
+export default {
+      name: 'ion-searchbar',
+      mixins: [ThemeMixins],
+      components: {
+        IonButton
+      },
+      props: {
+        value: {
+          type: String,
+          required: true
         },
-        props: {
-            value: {
-                type: String,
-                required: true
-            },
-            placeholder: {
-                type: String,
-                default: ''
-            },
-            showCancelButton:{
-                type: Boolean,
-                default: false
-            },
-            cancelButtonText: {
-                type: String,
-                default: 'Cancel'
-            },
-            onChange: Function,
-            onCancel: Function
+        placeholder: {
+          type: String,
+          default: ''
         },
-
-        data() {
-            return {
-                activated: false,
-                hasFocus: false,
-                hasValue: false
-            }
+        showCancelButton: {
+          type: Boolean,
+          default: false
         },
-
-        mounted () {
-            if (this.$el.hasAttribute('floating')) {
-                this.stacked = this.fixed = false;
-                this.floating = true;
-            }
-
-            if (this.$el.hasAttribute('stacked')) {
-                this.floating = this.fixed = false;
-                this.stacked = true;
-            }
+        cancelButtonText: {
+          type: String,
+          default: 'Cancel'
         },
+        onChange: Function,
+        onCancel: Function
+      },
 
-        methods: {
-            cancelSearchbar($event) {
-                this.activated = false
-                this.clearInput($event)
-                if (this.onCancel) this.onCancel()
-            },
-            inputFocused($event) {
-                this.activated = true
-                this.hasFocus = true
-            },
-            inputBlurred($event) {
-                setTimeout(() => {
-                    this.hasFocus = false
-                }, 16 * 4);
-            },
-            inputChanged($event) {
-                let value = $event.target.value
-                this.$refs.input.value = value
-                this.$emit('input', value)
-                if (this.onChange) this.onChange(value)
-            },
-            clearInput($event) {
-                this.$refs.input.value = ''
-                this.$emit('input', '')
-            },
-        },
-
-        watch: {
-            value: function (newValue) {
-                this.hasValue = !!newValue
-            }
+      data () {
+        return {
+          activated: false,
+          hasFocus: false,
+          hasValue: false
         }
+      },
+
+      mounted () {
+        if (this.$el.hasAttribute('floating')) {
+          this.stacked = this.fixed = false
+          this.floating = true
+        }
+
+        if (this.$el.hasAttribute('stacked')) {
+          this.floating = this.fixed = false
+          this.stacked = true
+        }
+      },
+
+      methods: {
+        cancelSearchbar ($event) {
+          this.activated = false
+          this.clearInput($event)
+          if (this.onCancel) this.onCancel()
+        },
+        inputFocused ($event) {
+          this.activated = true
+          this.hasFocus = true
+        },
+        inputBlurred ($event) {
+          setTimeout(() => {
+            this.hasFocus = false
+          }, 16 * 4)
+        },
+        inputChanged ($event) {
+          let value = $event.target.value
+          this.$refs.input.value = value
+          this.$emit('input', value)
+          if (this.onChange) this.onChange(value)
+        },
+        clearInput ($event) {
+          this.$refs.input.value = ''
+          this.$emit('input', '')
+        }
+      },
+
+      watch: {
+        value: function (newValue) {
+          this.hasValue = !!newValue
+        }
+      }
     }
 </script>
 

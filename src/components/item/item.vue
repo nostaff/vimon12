@@ -45,12 +45,12 @@
   </div>
 </template>
 <script>
-  import {isUndefined} from '../../utils/utils'
-  import ThemeMixins from '../../themes/theme.mixins';
-  import IonReorder from "./item-reorder.vue";
-  import IonLabel from "../label/index";
+  import {isUndefined} from '../../util/util'
+  import ThemeMixins from '../../themes/theme.mixins'
+import IonReorder from './item-reorder.vue'
+import IonLabel from '../label/index'
 
-  export default {
+export default {
     components: {
       IonLabel,
       IonReorder
@@ -65,24 +65,23 @@
       isLink: {
         type: Boolean,
         default: false
-      },
+      }
     },
-    data() {
+    data () {
       return {
         componentName: 'ionItem',
 
         noItemLabel: false,
         hasReorder: false
-      };
+      }
     },
-    created() {
-      this.noItemLabel = isUndefined(this.$slots['item-label']);
+    created () {
+      this.noItemLabel = isUndefined(this.$slots['item-label'])
 
-      this.hasReorder = this.$parent.$data.componentName === 'ionItemGroup' && this.$parent.allowReorder;
+      this.hasReorder = this.$parent.$data.componentName === 'ionItemGroup' && this.$parent.allowReorder
     },
-    mounted() {
-      if (this.$el.classList.contains('item-divider'))
-        this.setElementClass('item-block', false)
+    mounted () {
+      if (this.$el.classList.contains('item-divider')) { this.setElementClass('item-block', false) }
 
       if (this.$slots['item-start']) {
         this.$slots['item-start'].forEach(function (item) {
@@ -96,11 +95,11 @@
       }
     },
     methods: {
-      getLabelText() {
-        if (this.$refs.label && this.$refs.label.$el.length != 0) {   // 空==0，不为空 != 0 ，非大于0
-          return this.$refs.label.$el.innerText;
+      getLabelText () {
+        if (this.$refs.label && this.$refs.label.$el.length !== 0) {   // 空==0，不为空 != 0 ，非大于0
+          return this.$refs.label.$el.innerText
         } else if (this.$slots['item-label']) {
-          return this.$slots['item-label'][0].elm.innerText;
+          return this.$slots['item-label'][0].elm.innerText
         }
         return ''
       }

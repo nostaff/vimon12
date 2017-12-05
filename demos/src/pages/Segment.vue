@@ -81,92 +81,89 @@
 <script>
 
     export default {
-        data() {
-            return {
-                appType: 'Paid',
-                safari: 'Shared Links',
-                weather: 'sunny',
+      data () {
+        return {
+          appType: 'Paid',
+          safari: 'Shared Links',
+          weather: 'sunny',
 
-                apps: {
-                    'Paid': [
-                        {
-                            name: 'Monopoly',
-                            price: '$0.99'
-                        },
-                        {
-                            name: 'Angry Birds',
-                            price: '$2.99'
-                        }
-                    ],
-                    'Free': [
-                        {
-                            name: 'Snapchat',
-                            price: 'GET'
-                        },
-                        {
-                            name: 'Instagram',
-                            price: 'OPEN'
-                        }
-                    ],
-                    'Top': [
-                        {
-                            name: 'Spotify',
-                            price: 'OPEN'
-                        },
-                        {
-                            name: 'Pandora',
-                            price: 'GET'
-                        }
-                    ]
-                },
+          apps: {
+            'Paid': [
+              {
+                name: 'Monopoly',
+                price: '$0.99'
+              },
+              {
+                name: 'Angry Birds',
+                price: '$2.99'
+              }
+            ],
+            'Free': [
+              {
+                name: 'Snapchat',
+                price: 'GET'
+              },
+              {
+                name: 'Instagram',
+                price: 'OPEN'
+              }
+            ],
+            'Top': [
+              {
+                name: 'Spotify',
+                price: 'OPEN'
+              },
+              {
+                name: 'Pandora',
+                price: 'GET'
+              }
+            ]
+          },
 
-                items: {
-                    'Bookmarks': [
-                        {
-                            name: 'Favorites',
-                            icon: 'ios-star-outline'
-                        },
-                        {
-                            name: 'History',
-                            icon: 'ios-clock-outline'
-                        }
-                    ],
-                    'Reading List': [
-                        {
-                            name: 'Terms of Service',
-                            icon: 'create'
-                        },
-                        {
-                            name: 'User Guide',
-                            icon: 'book'
-                        }
-                    ],
-                    'Shared Links': [
-                        {
-                            name: 'Ionic Framework',
-                            icon: 'ionic'
-                        },
-                        {
-                            name: 'Learn Angular',
-                            icon: 'logo-angular'
-                        }
-                    ]
-                }
-            }
+          items: {
+            'Bookmarks': [
+              {
+                name: 'Favorites',
+                icon: 'ios-star-outline'
+              },
+              {
+                name: 'History',
+                icon: 'ios-clock-outline'
+              }
+            ],
+            'Reading List': [
+              {
+                name: 'Terms of Service',
+                icon: 'create'
+              },
+              {
+                name: 'User Guide',
+                icon: 'book'
+              }
+            ],
+            'Shared Links': [
+              {
+                name: 'Ionic Framework',
+                icon: 'ionic'
+              },
+              {
+                name: 'Learn Angular',
+                icon: 'logo-angular'
+              }
+            ]
+          }
+        }
+      },
+
+      methods: {
+        getItems (type) {
+          return this.apps[type]
         },
 
-        methods: {
-            getItems(type) {
-                return this.apps[type];
-            },
-
-            getSafariItems(type) {
-                return this.items[type];
-            }
+        getSafariItems (type) {
+          return this.items[type]
         }
+      }
     }
-
-
-
 
 </script>
