@@ -357,7 +357,7 @@ function linktoExternal (longName, name) {
  * @param {array<object>} members.globals
  * @param {array<object>} members.mixins
  * @param {array<object>} members.modules
- * @param {array<object>} members.src
+ * @param {array<object>} members.components
  * @param {array<object>} members.namespaces
  * @param {array<object>} members.tutorials
  * @param {array<object>} members.events
@@ -399,12 +399,12 @@ function buildNav (members, docdash) {
   nav += buildMemberNav(component, '组件 / Components', {}, linkto)
   nav += buildMemberNav(members.classes, '类 / Classes', seen, linkto)
   nav += buildMemberNav(module, '模块 / Modules', {}, linkto)
-  // navigation += buildMemberNav(members.externals, '外部依赖 / Externals', seen, linktoExternal)
-  // navigation += buildMemberNav(members.events, '事件 / Events', seen, linkto)
-  // navigation += buildMemberNav(members.namespaces, '命名空间 / Namespaces', seen, linkto)
-  // navigation += buildMemberNav(members.mixins, '混合 / Mixins', seen, linkto)
+  // nav += buildMemberNav(members.externals, '外部依赖 / Externals', seen, linktoExternal)
+  // nav += buildMemberNav(members.events, '事件 / Events', seen, linkto)
+  // nav += buildMemberNav(members.namespaces, '命名空间 / Namespaces', seen, linkto)
+  // nav += buildMemberNav(members.mixins, '混合 / Mixins', seen, linkto)
   nav += buildMemberNav(members.tutorials, '教程 / Tutorials', seenTutorials, linktoTutorial)
-  // navigation += buildMemberNav(members.interfaces, '接口 / Interfaces', seen, linkto)
+  // nav += buildMemberNav(members.interfaces, '接口 / Interfaces', seen, linkto)
 
   if (members.globals.length) {
     var globalNav = ''

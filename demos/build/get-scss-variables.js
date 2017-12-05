@@ -34,12 +34,12 @@ module.exports = getScssVariables()
  * @example
  *
  * - example:
- * <rootDir>/examples/src/theme/variables.scss
- * /examples/src/theme/variables.scss
- * ./examples/src/theme/variables.scss
+ * <rootDir>/demos/src/theme/variables.scss
+ * /demos/src/theme/variables.scss
+ * ./demos/src/theme/variables.scss
  *
  * - return:
- * rootDir/examples/src/theme/variables.scss
+ * rootDir/demos/src/theme/variables.scss
  *
  * */
 function resolvePath (path) {

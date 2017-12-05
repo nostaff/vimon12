@@ -6,7 +6,7 @@
 <script>
   import ThemeMixins from '../../themes/theme.mixins'
 
-export default {
+  export default {
     name: 'ion-card',
     mixins: [ThemeMixins]
   }
