@@ -21,7 +21,7 @@ if (typeof pkg.demo === 'object') {
 let ghToken = process.env.GH_TOKEN
 let remoteGitStore = `https://${ghToken}@github.com/${repoUrl.split(':')[1]}`
 
-cd('./examples/dist')
+cd('./demos/dist')
 touch('.nojekyll')
 exec('git init')
 exec('git add .')

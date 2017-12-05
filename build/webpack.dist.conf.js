@@ -4,7 +4,7 @@ var path = require('path')
 var chalk = require('chalk')
 var webpack = require('webpack')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var utils = require('../examples/build/utils')
+var utils = require('../demos/build/utils')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 var config = {
   entry: path.resolve(__dirname, '..', 'src/index.js'),
