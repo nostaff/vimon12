@@ -1,5 +1,5 @@
 <template>
-    <div class="ion-title" :class="['title-'+theme]">
+    <div class="ion-title" :class="[themeClass, colorClass]">
         <div class="toolbar-title" :class="['toolbar-title-'+theme]"><slot></slot></div>
     </div>
 </template>

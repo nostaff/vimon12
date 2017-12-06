@@ -62,7 +62,7 @@ $label-ios-margin-start:       0 !default;
 .label-ios[stacked] {
   @include margin(null, null, 4px, null);
 
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .label-ios[floating] {
@@ -79,7 +79,7 @@ $label-ios-margin-start:       0 !default;
 .input-has-focus .label-ios[floating],
 .item-input-has-value .label-ios[floating],
 .input-has-value .label-ios[floating] {
-  @include transform(translate3d(0, 0, 0), scale(.8));
+  @include transform(translate3d(0, 0, 0), scale(.9));
 }
 
 .item-ios.item-label-stacked [item-right], // deprecated

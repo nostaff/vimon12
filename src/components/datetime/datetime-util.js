@@ -23,26 +23,26 @@ const FORMAT_A = 'A'
 const FORMAT_a = 'a'
 
 const FORMAT_KEYS = [
-    {f: FORMAT_YYYY, k: 'year'},
-    {f: FORMAT_MMMM, k: 'month'},
-    {f: FORMAT_DDDD, k: 'day'},
-    {f: FORMAT_MMM, k: 'month'},
-    {f: FORMAT_DDD, k: 'day'},
-    {f: FORMAT_YY, k: 'year'},
-    {f: FORMAT_MM, k: 'month'},
-    {f: FORMAT_DD, k: 'day'},
-    {f: FORMAT_HH, k: 'hour'},
-    {f: FORMAT_hh, k: 'hour'},
-    {f: FORMAT_mm, k: 'minute'},
-    {f: FORMAT_ss, k: 'second'},
-    {f: FORMAT_M, k: 'month'},
-    {f: FORMAT_D, k: 'day'},
-    {f: FORMAT_H, k: 'hour'},
-    {f: FORMAT_h, k: 'hour'},
-    {f: FORMAT_m, k: 'minute'},
-    {f: FORMAT_s, k: 'second'},
-    {f: FORMAT_A, k: 'ampm'},
-    {f: FORMAT_a, k: 'ampm'}
+  {f: FORMAT_YYYY, k: 'year'},
+  {f: FORMAT_MMMM, k: 'month'},
+  {f: FORMAT_DDDD, k: 'day'},
+  {f: FORMAT_MMM, k: 'month'},
+  {f: FORMAT_DDD, k: 'day'},
+  {f: FORMAT_YY, k: 'year'},
+  {f: FORMAT_MM, k: 'month'},
+  {f: FORMAT_DD, k: 'day'},
+  {f: FORMAT_HH, k: 'hour'},
+  {f: FORMAT_hh, k: 'hour'},
+  {f: FORMAT_mm, k: 'minute'},
+  {f: FORMAT_ss, k: 'second'},
+  {f: FORMAT_M, k: 'month'},
+  {f: FORMAT_D, k: 'day'},
+  {f: FORMAT_H, k: 'hour'},
+  {f: FORMAT_h, k: 'hour'},
+  {f: FORMAT_m, k: 'minute'},
+  {f: FORMAT_s, k: 'second'},
+  {f: FORMAT_A, k: 'ampm'},
+  {f: FORMAT_a, k: 'ampm'}
 ]
 
 const DAY_NAMES = [
@@ -199,7 +199,7 @@ export function dateValueRange (format, min, max) {
   let i
 
   if (format === FORMAT_YYYY || format === FORMAT_YY) {
-        // year
+    // year
     i = max.year
     while (i >= min.year) {
       opts.push(i--)
@@ -207,33 +207,33 @@ export function dateValueRange (format, min, max) {
   } else if (format === FORMAT_MMMM || format === FORMAT_MMM ||
         format === FORMAT_MM || format === FORMAT_M ||
         format === FORMAT_hh || format === FORMAT_h) {
-        // month or 12-hour
+    // month or 12-hour
     for (i = 1; i < 13; i++) {
       opts.push(i)
     }
   } else if (format === FORMAT_DDDD || format === FORMAT_DDD ||
         format === FORMAT_DD || format === FORMAT_D) {
-        // day
+    // day
     for (i = 1; i < 32; i++) {
       opts.push(i)
     }
   } else if (format === FORMAT_HH || format === FORMAT_H) {
-        // 24-hour
+    // 24-hour
     for (i = 0; i < 24; i++) {
       opts.push(i)
     }
   } else if (format === FORMAT_mm || format === FORMAT_m) {
-        // minutes
+    // minutes
     for (i = 0; i < 60; i++) {
       opts.push(i)
     }
   } else if (format === FORMAT_ss || format === FORMAT_s) {
-        // seconds
+    // seconds
     for (i = 0; i < 60; i++) {
       opts.push(i)
     }
   } else if (format === FORMAT_A || format === FORMAT_a) {
-        // AM/PM
+    // AM/PM
     opts.push('am', 'pm')
   }
 
@@ -269,43 +269,43 @@ const TIME_REGEXP = /^((\d{2}):(\d{2})(?::(\d{2})(?:\.(\d{3}))?)?(?:(Z)|([+\-])(
  * @returns DatetimeData
  */
 export function parseDate (val) {
-    // manually parse IS0 cuz Date.parse cannot be trusted
-    // ISO 8601 format: 1994-12-15T13:47:20Z
+  // manually parse IS0 cuz Date.parse cannot be trusted
+  // ISO 8601 format: 1994-12-15T13:47:20Z
   let parse
 
   if (isPresent(val) && val !== '') {
-        // try parsing for just time first, HH:MM
+    // try parsing for just time first, HH:MM
     parse = TIME_REGEXP.exec(val)
     if (isPresent(parse)) {
-            // adjust the array so it fits nicely with the datetime parse
+      // adjust the array so it fits nicely with the datetime parse
       parse.unshift(undefined, undefined)
       parse[2] = parse[3] = undefined
     } else {
-            // try parsing for full ISO datetime
+      // try parsing for full ISO datetime
       parse = ISO_8601_REGEXP.exec(val)
     }
   }
 
   if (isBlank(parse)) {
-        // wasn't able to parse the ISO datetime
+    // wasn't able to parse the ISO datetime
     return null
   }
 
-    // ensure all the parse values exist with at least 0
+  // ensure all the parse values exist with at least 0
   for (let i = 1; i < 8; i++) {
     parse[i] = (parse[i] !== undefined ? parseInt(parse[i], 10) : null)
   }
 
   let tzOffset = 0
   if (isPresent(parse[9]) && isPresent(parse[10])) {
-        // hours
+    // hours
     tzOffset = parseInt(parse[10], 10) * 60
     if (isPresent(parse[11])) {
-            // minutes
+      // minutes
       tzOffset += parseInt(parse[11], 10)
     }
     if (parse[9] === '-') {
-            // + or -
+      // + or -
       tzOffset *= -1
     }
   }
@@ -325,18 +325,18 @@ export function parseDate (val) {
 export function updateDate (newData) {
   if (isPresent(newData) && newData !== '') {
     if (isString(newData)) {
-            // new date is a string, and hopefully in the ISO format
-            // convert it to our DateTimeData if a valid ISO
+      // new date is a string, and hopefully in the ISO format
+      // convert it to our DateTimeData if a valid ISO
       newData = parseDate(newData)
       if (newData) {
-                // successfully parsed the ISO string to our DateTimeData
+        // successfully parsed the ISO string to our DateTimeData
         return newData
       }
     } else if ((isPresent(newData.year) || isPresent(newData.hour) || isPresent(newData.month) || isPresent(newData.day) || isPresent(newData.minute) || isPresent(newData.second))) {
-            // newData is from of a datetime picker's selected values
-            // update the existing DateTimeData data with the new values
+      // newData is from of a datetime picker's selected values
+      // update the existing DateTimeData data with the new values
 
-            // do some magic for 12-hour values
+      // do some magic for 12-hour values
       if (isPresent(newData.ampm) && isPresent(newData.hour)) {
         if (newData.ampm === 'pm') {
           newData.hour = (newData.hour === 12 ? 12 : newData.hour + 12)
@@ -348,7 +348,7 @@ export function updateDate (newData) {
       return newData
     }
 
-        // eww, invalid data
+    // eww, invalid data
     console.warn(`Error parsing date: "${newData}". Please provide a valid ISO 8601 datetime format: https://www.w3.org/TR/NOTE-datetime`)
   }
   return {}
@@ -370,12 +370,12 @@ export function parseTemplate (template) {
     FORMAT_KEYS.forEach(format => {
       if (word === format.f) {
         if (word === FORMAT_A || word === FORMAT_a) {
-                    // this format is an am/pm format, so it's an "a" or "A"
+          // this format is an am/pm format, so it's an "a" or "A"
           if ((formats.indexOf(FORMAT_h) < 0 && formats.indexOf(FORMAT_hh) < 0) ||
                         VALID_AMPM_PREFIX.indexOf(words[i - 1]) === -1) {
-                        // template does not already have a 12-hour format
-                        // or this am/pm format doesn't have a hour, minute, or second format immediately before it
-                        // so do not treat this word "a" or "A" as the am/pm format
+            // template does not already have a 12-hour format
+            // or this am/pm format doesn't have a hour, minute, or second format immediately before it
+            // so do not treat this word "a" or "A" as the am/pm format
             return
           }
         }
@@ -411,11 +411,11 @@ export function convertFormatToKey (format) {
  * @returns {string}
  */
 export function convertDataToISO (data) {
-    // https://www.w3.org/TR/NOTE-datetime
+  // https://www.w3.org/TR/NOTE-datetime
   let rtn = ''
 
   if (isPresent(data)) {
-        // do some magic for 12-hour values
+    // do some magic for 12-hour values
     if (isPresent(data.ampm) && isPresent(data.hour)) {
       if (data.ampm === 'pm') {
         data.hour = (data.hour === 12 ? 12 : data.hour + 12)
@@ -425,46 +425,46 @@ export function convertDataToISO (data) {
     }
 
     if (isPresent(data.year)) {
-            // YYYY
+      // YYYY
       rtn = fourDigit(data.year)
 
       if (isPresent(data.month)) {
-                // YYYY-MM
+        // YYYY-MM
         rtn += '-' + twoDigit(data.month)
 
         if (isPresent(data.day)) {
-                    // YYYY-MM-DD
+          // YYYY-MM-DD
           rtn += '-' + twoDigit(data.day)
 
           if (isPresent(data.hour)) {
-                        // YYYY-MM-DDTHH:mm:SS
+            // YYYY-MM-DDTHH:mm:SS
             rtn += `T${twoDigit(data.hour)}:${twoDigit(data.minute)}:${twoDigit(data.second)}`
 
             if (data.millisecond > 0) {
-                            // YYYY-MM-DDTHH:mm:SS.SSS
+              // YYYY-MM-DDTHH:mm:SS.SSS
               rtn += '.' + threeDigit(data.millisecond)
             }
 
             if (isBlank(data.tzOffset) || data.tzOffset === 0) {
-                            // YYYY-MM-DDTHH:mm:SSZ
+              // YYYY-MM-DDTHH:mm:SSZ
               rtn += 'Z'
             } else {
-                            // YYYY-MM-DDTHH:mm:SS+/-HH:mm
+              // YYYY-MM-DDTHH:mm:SS+/-HH:mm
               rtn += (data.tzOffset > 0 ? '+' : '-') + twoDigit(Math.floor(data.tzOffset / 60)) + ':' + twoDigit(data.tzOffset % 60)
             }
           }
         }
       }
     } else if (isPresent(data.hour)) {
-            // HH:mm
+      // HH:mm
       rtn = twoDigit(data.hour) + ':' + twoDigit(data.minute)
 
       if (isPresent(data.second)) {
-                // HH:mm:SS
+        // HH:mm:SS
         rtn += ':' + twoDigit(data.second)
 
         if (isPresent(data.millisecond)) {
-                    // HH:mm:SS.SSS
+          // HH:mm:SS.SSS
           rtn += '.' + threeDigit(data.millisecond)
         }
       }
@@ -482,7 +482,7 @@ export function convertToDatetimeData (data) {
   let rtn = {}
 
   if (isPresent(data)) {
-        // do some magic for 12-hour values
+    // do some magic for 12-hour values
     if (isPresent(data.ampm) && isPresent(data.hour)) {
       if (data.ampm.value === 'pm') {
         data.hour.value = (data.hour.value === 12 ? 12 : data.hour.value + 12)
@@ -492,22 +492,22 @@ export function convertToDatetimeData (data) {
     }
 
     if (isPresent(data.year)) {
-            // YYYY
+      // YYYY
       rtn.year = parseInt(data.year.value)
     }
 
     if (isPresent(data.month)) {
-            // YYYY-MM
+      // YYYY-MM
       rtn.month = parseInt(data.month.value)
     }
 
     if (isPresent(data.day)) {
-            // YYYY-MM-DD
+      // YYYY-MM-DD
       rtn.day = parseInt(data.day.value)
     }
 
     if (isPresent(data.hour)) {
-            // YYYY-MM-DD HH:mm:SS
+      // YYYY-MM-DD HH:mm:SS
       rtn.hour = parseInt(data.hour.value)
     }
 
@@ -533,17 +533,17 @@ export function convertToDatetimeData (data) {
  */
 export function convertToArrayOfNumbers (input, type) {
   if (isString(input)) {
-        // convert the string to an array of strings
-        // auto remove any whitespace and [] characters
+    // convert the string to an array of strings
+    // auto remove any whitespace and [] characters
     input = input.replace(/\[|\]|\s/g, '').split(',')
   }
 
   let values = []
   if (isArray(input)) {
-        // ensure each value is an actual number in the returned array
+    // ensure each value is an actual number in the returned array
     values = input
-            .map((num) => parseInt(num, 10))
-            .filter(isFinite)
+      .map((num) => parseInt(num, 10))
+      .filter(isFinite)
   }
 
   if (!values || !values.length) {
@@ -560,14 +560,14 @@ export function convertToArrayOfNumbers (input, type) {
 export function convertToArrayOfStrings (input, type) {
   if (isPresent(input)) {
     if (isString(input)) {
-            // convert the string to an array of strings
-            // auto remove any [] characters
+      // convert the string to an array of strings
+      // auto remove any [] characters
       input = input.replace(/\[|\]/g, '').split(',')
     }
 
     var values = []
     if (isArray(input)) {
-            // trim up each string value
+      // trim up each string value
       values = input.map((val) => val.trim())
     }
 

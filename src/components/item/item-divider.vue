@@ -1,5 +1,5 @@
 <template>
-    <div class="item item-divider ion-item-divider" :class="['item-'+theme, 'item-divider-'+theme, 'item-divider-'+theme+'-'+color]">
+    <div class="item item-divider ion-item-divider" :class="['item-'+theme, themeClass, colorClass]">
         <div class="item-inner">
             <div class="input-wrapper">
                 <slot name="item-label"></slot>

@@ -25,12 +25,12 @@
   const ITEM_SIDE_FLAG_BOTH = 3
 
   const SLIDING_STATE = {
-    Disabled: 2,            // 关闭状态
-    Enabled: 4,             // 滑动状态, 不清楚方向和程度
-    Right: 8,               // 向右滑动
-    Left: 16,               // 向左滑动
-    SwipeRight: 32,         // 向右滑动且滑动距离大
-    SwipeLeft: 64          // 向左滑动且滑动距离大
+    Disabled: 2, // 关闭状态
+    Enabled: 4, // 滑动状态, 不清楚方向和程度
+    Right: 8, // 向右滑动
+    Left: 16, // 向左滑动
+    SwipeRight: 32, // 向右滑动且滑动距离大
+    SwipeLeft: 64 // 向左滑动且滑动距离大
   }
 
   const MAX_DELTAX = 20
@@ -99,7 +99,7 @@
       },
 
       onDragStart (ev) {
-//                ev.preventDefault()
+      //                ev.preventDefault()
 
         let coord = pointerCoord(ev)
         this.firstCoord = coord

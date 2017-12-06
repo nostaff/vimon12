@@ -35,7 +35,7 @@ class IonModal {
 
     // create an instance of Profile and mount it on an element
     new ContentComponent({
-      $data: options.data     // send to component, get by this.$options.$data
+      $data: options.data // send to component, get by this.$options.$data
     }).$mount(this._vm.$el.querySelector('.modal-viewport'))
 
     return this._vm.present(options)
@@ -44,7 +44,6 @@ class IonModal {
   dismiss (role) {
     this._vm.dismiss(role)
   }
-
 }
 
 export default new IonModal()

@@ -58,7 +58,7 @@ $label-md-body-text-line-height:      1.5 !default;
 // --------------------------------------------------
 
 .label-md[stacked] {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .label-md[floating] {
@@ -86,7 +86,7 @@ $label-md-body-text-line-height:      1.5 !default;
 .input-has-focus .label-md[floating],
 .item-input-has-value .label-md[floating],
 .input-has-value .label-md[floating] {
-  @include transform(translate3d(0, 0, 0), scale(.8));
+  @include transform(translate3d(0, 0, 0), scale(.9));
 }
 
 .item-md.item-label-stacked [item-right], // deprecated

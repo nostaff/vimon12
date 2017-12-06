@@ -28,7 +28,7 @@
         let name = this.name
         if (!(/^md-|^ios-|^logo-/.test(name))) {
           // this does not have one of the defaults
-          // so lets auto add in the mode prefix for them
+          // so lets auto add in the theme prefix for them
           return this.theme + '-' + name
         }
         return name
@@ -45,7 +45,7 @@
       }
     },
     mounted () {
-      if (this.$parent.$data.componentName === 'ionItem') {
+      if (this.$parent && this.$parent.$data.componentName === 'ionItem') {
         this.setElementClass('item-icon', true)
       }
 

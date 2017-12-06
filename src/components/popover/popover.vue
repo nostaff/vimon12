@@ -1,5 +1,5 @@
 <template>
-  <div class="ion-popover" :class="['popover-'+theme, cssClass]" style="z-index: 9999;">
+  <div class="ion-popover" :class="[themeClass, cssClass]" style="z-index: 9999;">
     <ion-backdrop
         :enableBackdropDismiss="enableBackdropDismiss"
         v-if="showBackdrop" v-show="activated" @click.native="bdClick()"></ion-backdrop>

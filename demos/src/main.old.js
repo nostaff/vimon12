@@ -2,9 +2,11 @@
 import Vue from 'vue'
 
 import Vonic from '../../src/index'
+import sess from './lib/session'
+import routes from './router/route-opt'
+
 Vue.use(Vonic)
 
-import sess from './lib/session'
 const beforeEach = (toRoute, fromRoute, next) => {
   const to = toRoute.path
   const from = fromRoute.path
@@ -43,7 +45,7 @@ const beforeEach = (toRoute, fromRoute, next) => {
 const afterEach = (toRoute, fromRoute) => {
   const to = toRoute.path
   const from = fromRoute.path
-    // [Custom Business] Never use history scrollTop when '/' => '/home'
+  // [Custom Business] Never use history scrollTop when '/' => '/home'
   if (from === '/' && to === '/home') return
 
   const h = sess.get(to)
@@ -57,8 +59,6 @@ const afterEach = (toRoute, fromRoute) => {
 // Register beforeEach and afterEach Hooks
 Vonic.app.setConfig('beforeEach', beforeEach)
 Vonic.app.setConfig('afterEach', afterEach)
-
-import routes from './router/route-opt'
 
 Vue.use(Vonic.app, {
   routes: routes

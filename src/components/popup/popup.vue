@@ -1,5 +1,5 @@
 <template>
-  <div role="dialog" class="ion-popup" :class="['popup-'+theme, cssClass]" style="z-index: 9999;">
+  <div role="dialog" class="ion-popup" :class="[themeClass, cssClass]" style="z-index: 9999;">
     <ion-backdrop @click.native="bdClick()" :isActive="activated"></ion-backdrop>
     <transition name="ion-popup-fadeup">
       <div class="popup-wrapper" v-show="activated">
@@ -26,10 +26,10 @@
 </template>
 <script>
   import ThemeMixins from '../../themes/theme.mixins'
-import IonBackdrop from '../backdrop/index'
-import IonButton from '../button/index'
+  import IonBackdrop from '../backdrop/index'
+  import IonButton from '../button/index'
 
-export default {
+  export default {
     name: 'ion-popup',
     mixins: [ThemeMixins],
     components: {
@@ -65,7 +65,9 @@ export default {
     },
 
     mounted () {
-      if (this.cssClass) { this.$el.querySelector('.ion-popup').classList.add(this.cssClass) }
+      if (this.cssClass) {
+        this.$el.querySelector('.ion-popup').classList.add(this.cssClass)
+      }
     },
 
     methods: {

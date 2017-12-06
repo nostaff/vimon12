@@ -1,5 +1,6 @@
 <template>
-  <div :class="['ion-tabs', 'tabs', 'tabs-'+theme, colorClass]"
+  <div class="ion-tabs"
+       :class="[themeClass, colorClass]"
        :id="id"
        :tabsLayout="tabsLayout"
        :tabsHighlight="tabsHighlight"
@@ -87,7 +88,7 @@
 
         let selectedIndex = this.getTabIndex(selectedTab)
 
-      // If the selected tab is not the current selected tab, we do switch
+        // If the selected tab is not the current selected tab, we do switch
         if (this.selectedTabIndex !== selectedIndex) {
           const currentTab = this.getByIndex(this.selectedTabIndex)
           currentTab.updateSelected(false)
@@ -106,7 +107,7 @@
       },
 
       /**
-       * @return {Tab} Returns the currently selected tab
+       * @return {SwiperItemTab} Returns the currently selected tab
        */
       getSelected () {
         const tabs = this.tabs

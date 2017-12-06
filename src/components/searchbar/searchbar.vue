@@ -1,6 +1,6 @@
 <template>
-    <div class="ion-searchbar searchbar searchbar-left-aligned" :class="[
-            'searchbar-'+theme,
+    <div class="ion-searchbar searchbar-left-aligned" :class="[
+            themeClass,
             showCancelButton ? 'searchbar-show-cancel' : '',
             activated ? 'searchbar-active' : '',
             hasFocus ? 'searchbar-has-focus' : '',

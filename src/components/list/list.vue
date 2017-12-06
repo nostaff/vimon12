@@ -1,5 +1,5 @@
 <template>
-  <div class="ion-list" :class="['list-'+theme]">
+  <div class="ion-list" :class="[themeClass]">
     <ion-list-header v-if="title">{{title}}</ion-list-header>
     <slot></slot>
   </div>

@@ -11,7 +11,6 @@ const EVENT_OPTS = {
 }
 
 export class ScrollView {
-
   constructor () {
     this.ev = null
     this.isScrolling = false

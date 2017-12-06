@@ -90,7 +90,7 @@
         this.$emit('onChange', this.currentValue)
       },
 
-            // option的颜色优先
+      // option的颜色优先
       getColor: function (optionColor) {
         return typeof optionColor !== 'undefined' ? optionColor : this.color
       }

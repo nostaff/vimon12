@@ -1,11 +1,5 @@
 <template>
-  <div :class="[
-        'toggle',
-        'toggle-'+theme,
-        'toggle-'+theme+'-'+color,
-        checked?'toggle-checked':'',
-        disabled?'toggle-disabled':''
-        ]" @click="onToggle()">
+  <div :class="[themeClass, colorClass, {'toggle-checked':checked, 'toggle-disabled':disabled}]" @click="onToggle()">
     <div class="toggle-icon">
       <div class="toggle-inner"></div>
     </div>

@@ -122,15 +122,15 @@ const NOOP = () => {}
     },
     data () {
       return {
-        isActive: false,        // 控制当前组件的激活状态
-        enabled: true,          // 是否不在动画中(是否为可行为状态)
+        isActive: false, // 控制当前组件的激活状态
+        enabled: true, // 是否不在动画中(是否为可行为状态)
 
-        dismissCallback: NOOP,  // 关闭的回调
-        presentCallback: NOOP,  // 打开的回调
+        dismissCallback: NOOP, // 关闭的回调
+        presentCallback: NOOP, // 打开的回调
 
-        cols: [],               // 每列的数据
-        timer: null,            // 计时器
-        unreg: null             // 页面切换关闭组件的解绑函数
+        cols: [], // 每列的数据
+        timer: null, // 计时器
+        unreg: null // 页面切换关闭组件的解绑函数
       }
     },
     props: {
@@ -215,7 +215,7 @@ const NOOP = () => {}
        * @param {Array} options.columns - 组件初始化的column数据
        * @param {String} options.column.name - 组件初始化的column数据
        * @param {String} options.columns.align - 组件初始化的column数据
-       * @param {String} [options.mode='ios'] - 模式
+       * @param {String} [options.theme='ios'] - 模式
        * @param {String} [options.cssClass] - 样式
        * @param {Boolean} [options.enableBackdropDismiss=true] - 点击backdrop是否能关闭
        * @param {Function} [options.onChange=noop] - picker数据变化时触发, 某一个col变化也触发, 返回最新值

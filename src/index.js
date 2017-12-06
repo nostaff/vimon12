@@ -64,7 +64,7 @@ import Toast from './components/toast'
 // directives
 import Navigation from './directives/navigation.js'
 
-const version = '1.0.1';
+const version = '1.0.1'
 
 // Componnets
 const components = {
@@ -139,47 +139,47 @@ const components = {
   Title,
   Toolbar,
   Toggle
-};
+}
 
 // directives
 const directives = {
   Navigation
-};
+}
 
 const VuePlugin = {
   install: function (Vue, options = {}) {
     /* istanbul ignore if */
-    if (this.installed) return;
+    if (this.installed) return
 
     core(Vue, options)
 
     // components
     for (let component in components) {
-      let name = components[component].name || component;
-      Vue.component(name, components[component]);
+      let name = components[component].name || component
+      Vue.component(name, components[component])
     }
 
     // directives
     for (let directive in directives) {
-      let name = directives[directive].name || directive;
-      Vue.directive(name, directives[directive]);
+      let name = directives[directive].name || directive
+      Vue.directive(name, directives[directive])
     }
 
     // plugins
-    Vue.prototype.$actionSheet = ActionSheet;
-    Vue.prototype.$dialog = Alert;
-    Vue.prototype.$loading = Loading;
-    Vue.prototype.$modal = Modal;
-    Vue.prototype.$picker = Picker;
-    Vue.prototype.$popover = Popover;
-    Vue.prototype.$popup = Popup;
-    Vue.prototype.$toast = Toast;
+    Vue.prototype.$actionSheet = ActionSheet
+    Vue.prototype.$dialog = Alert
+    Vue.prototype.$loading = Loading
+    Vue.prototype.$modal = Modal
+    Vue.prototype.$picker = Picker
+    Vue.prototype.$popover = Popover
+    Vue.prototype.$popup = Popup
+    Vue.prototype.$toast = Toast
   }
 }
 
 /* istanbul ignore if */
 if (typeof window !== 'undefined' && window.Vue) {
-  install(window.Vue);
+  install(window.Vue)
 }
 
 export {
@@ -258,7 +258,7 @@ export {
   Toolbar,
   Toggle,
 
-// Plugins
+  // Plugins
   ActionSheet,
   Alert,
   // ChooseCity,
@@ -272,8 +272,8 @@ export {
   // PreviewImage,
   Toast,
 
-// Directives
+  // Directives
   Navigation
-};
+}
 
-export default VuePlugin;
+export default VuePlugin

@@ -1,5 +1,5 @@
 <template>
-  <div :class="['ion-list-header item list-header', 'list-header-'+theme]">
+  <div :class="['ion-list-header item', themeClass]">
     <div class="item-inner">
       <div class="input-wrapper">
         <slot name="item-label"></slot>

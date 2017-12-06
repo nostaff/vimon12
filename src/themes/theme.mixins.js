@@ -12,7 +12,7 @@ export default {
     theme: {
       type: String,
       default () {
-        return this.$config && this.$config.get('mode') || 'ios'
+        return this.$config && this.$config.get('theme') || 'ios'
       }
     },
     color: String

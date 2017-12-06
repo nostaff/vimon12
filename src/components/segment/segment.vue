@@ -1,5 +1,5 @@
 <template>
-  <div :class="['ion-segment', 'segment', 'segment-'+theme, colorClass]">
+  <div :class="['ion-segment', themeClass, colorClass]">
     <slot></slot>
   </div>
 </template>

@@ -11,13 +11,12 @@
   </div>
 </template>
 <script>
+  import {pointerCoord, hasClass} from '../../util/dom'
+  import IonIcon from '../icon'
 
   const AUTO_SCROLL_MARGIN = 60
   const SCROLL_JUMP = 10
   const ITEM_REORDER_ACTIVE = 'reorder-active'
-
-  import {pointerCoord, hasClass} from '../../util/dom'
-  import IonIcon from '../icon'
 
   export default {
     name: 'ion-reorder',

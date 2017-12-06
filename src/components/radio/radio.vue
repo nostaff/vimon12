@@ -1,10 +1,5 @@
 <template>
-  <div :class="[
-        'radio',
-        'radio-'+theme,
-        'radio-'+theme+'-'+color,
-         disabled?'radio-disabled':''
-        ]">
+  <div :class="[themeClass, colorClass, {'radio-disabled':disabled}]">
     <div :class="['radio-icon', isChecked?'radio-checked':'']">
       <div class="radio-inner"></div>
     </div>

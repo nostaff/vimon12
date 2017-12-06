@@ -29,7 +29,6 @@ class IonToast {
   dismiss (role) {
     this._vm && this._vm.dismiss(role)
   }
-
 }
 
 export default new IonToast()

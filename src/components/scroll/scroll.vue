@@ -118,7 +118,7 @@
         }
         if (this.top >= this.offset) { // do refresh
           this.refresh()
-        } else {  // cancel refresh
+        } else { // cancel refresh
           this.state = 0
           this.top = 0
         }
@@ -132,7 +132,7 @@
         }
         if (this.top >= this.offset) { // do refresh
           this.refresh()
-        } else {  // cancel refresh
+        } else { // cancel refresh
           this.state = 0
           this.top = 0
         }

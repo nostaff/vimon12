@@ -1,10 +1,5 @@
 <template>
-  <div :class="[
-        'ion-select',
-        'select',
-        'select-'+theme,
-         isDisabled?'select-disabled':''
-        ]">
+  <div class="ion-select" :class="[themeClass, {'select-disabled':isDisabled}]">
     <div v-if="!text" class="select-placeholder select-text">{{placeholder}}</div>
     <div v-else class="select-text">{{selectedText || text}}</div>
     <div class="select-icon">
@@ -216,11 +211,11 @@ export default {
 
           var popoverCssClass = 'select-popover'
 
-        // If the user passed a cssClass for the select, add it
+          // If the user passed a cssClass for the select, add it
           popoverCssClass += selectOptions.cssClass ? ' ' + selectOptions.cssClass : ''
 
-        // ev.target is readonly.
-        // place popover regarding to ion-select instead of .button-inner
+          // ev.target is readonly.
+          // place popover regarding to ion-select instead of .button-inner
           Object.defineProperty(ev, 'target', {value: ev.currentTarget.parentNode})
           selectOptions.ev = ev
           selectOptions.template = SelectPopover
@@ -232,8 +227,8 @@ export default {
           // default to use the alert interface
           this.interface = 'alert'
 
-        // user cannot provide inputs from selectOptions
-        // alert inputs must be created by ionic from ion-options
+          // user cannot provide inputs from selectOptions
+          // alert inputs must be created by ionic from ion-options
           selectOptions.inputs = options.map(input => {
             return {
               type: (this.multiple ? 'checkbox' : 'radio'),

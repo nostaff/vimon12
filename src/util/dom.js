@@ -1,5 +1,5 @@
 
-export function getCss(docEle) {
+export function getCss (docEle) {
   var css = {
     transform: null,
     transition: null,
@@ -10,77 +10,77 @@ export function getCss(docEle) {
     transitionEnd: null,
     transformOrigin: null,
     animationDelay: null
-  };
+  }
 
   // transform
-  var i;
-  var keys = ['webkitTransform', '-webkit-transform', 'webkit-transform', 'transform'];
+  var i
+  var keys = ['webkitTransform', '-webkit-transform', 'webkit-transform', 'transform']
 
   for (i = 0; i < keys.length; i++) {
     if ((docEle.style)[keys[i]] !== undefined) {
-      css.transform = keys[i];
-      break;
+      css.transform = keys[i]
+      break
     }
   }
 
   // transition
-  keys = ['webkitTransition', 'transition'];
+  keys = ['webkitTransition', 'transition']
   for (i = 0; i < keys.length; i++) {
     if ((docEle.style)[keys[i]] !== undefined) {
-      css.transition = keys[i];
-      break;
+      css.transition = keys[i]
+      break
     }
   }
 
   // The only prefix we care about is webkit for transitions.
-  var isWebkit = css.transition.indexOf('webkit') > -1;
+  var isWebkit = css.transition.indexOf('webkit') > -1
 
   // transition duration
-  css.transitionDuration = (isWebkit ? '-webkit-' : '') + 'transition-duration';
+  css.transitionDuration = (isWebkit ? '-webkit-' : '') + 'transition-duration'
 
   // transition timing function
-  css.transitionTimingFn = (isWebkit ? '-webkit-' : '') + 'transition-timing-function';
+  css.transitionTimingFn = (isWebkit ? '-webkit-' : '') + 'transition-timing-function'
 
   // transition delay
-  css.transitionDelay = (isWebkit ? '-webkit-' : '') + 'transition-delay';
+  css.transitionDelay = (isWebkit ? '-webkit-' : '') + 'transition-delay'
 
   // To be sure transitionend works everywhere, include *both* the webkit and non-webkit events
-  css.transitionEnd = (isWebkit ? 'webkitTransitionEnd ' : '') + 'transitionend';
+  css.transitionEnd = (isWebkit ? 'webkitTransitionEnd ' : '') + 'transitionend'
 
   // transform origin
-  css.transformOrigin = (isWebkit ? '-webkit-' : '') + 'transform-origin';
+  css.transformOrigin = (isWebkit ? '-webkit-' : '') + 'transform-origin'
 
   // animation delay
-  css.animationDelay = (isWebkit ? 'webkitAnimationDelay' : 'animationDelay');
+  css.animationDelay = (isWebkit ? 'webkitAnimationDelay' : 'animationDelay')
 
-  return css;
+  return css
 }
 
-export function pointerCoord(ev) {
+export function pointerCoord (ev) {
   // get coordinates for either a mouse click
   // or a touch depending on the given event
   if (ev) {
-    var changedTouches = ev.changedTouches;
+    var changedTouches = ev.changedTouches
     if (changedTouches && changedTouches.length > 0) {
-      var touch = changedTouches[0];
-      return { x: touch.clientX, y: touch.clientY };
+      var touch = changedTouches[0]
+      return { x: touch.clientX, y: touch.clientY }
     }
-    var pageX = ev.pageX;
+    var pageX = ev.pageX
     if (pageX !== undefined) {
-      return { x: pageX, y: ev.pageY };
+      return { x: pageX, y: ev.pageY }
     }
   }
-  return { x: 0, y: 0 };
+  return { x: 0, y: 0 }
 }
 
-export function hasPointerMoved(threshold, startCoord, endCoord) {
+export function hasPointerMoved (threshold, startCoord, endCoord) {
   if (startCoord && endCoord) {
-    const deltaX = (startCoord.x - endCoord.x);
-    const deltaY = (startCoord.y - endCoord.y);
-    const distance = deltaX * deltaX + deltaY * deltaY;
-    return distance > (threshold * threshold);
+    const deltaX = (startCoord.x - endCoord.x)
+    const deltaY = (startCoord.y - endCoord.y)
+    const distance = deltaX * deltaX + deltaY * deltaY
+    return distance > (threshold * threshold)
   }
-  return false;
+  return false
 }
 
 export function focusOutActiveElement () {
@@ -130,7 +130,6 @@ export function isActive (ele) {
 export function hasFocus (ele) {
   return isActive(ele) && ele.parentElement.querySelector(':focus') === ele
 }
-
 
 /**
  * transitionEnd事件注册，绑定的函数触发后会自动解绑

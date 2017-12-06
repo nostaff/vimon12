@@ -1,5 +1,5 @@
 <template>
-    <div class="toolbar" :class="['toolbar-'+theme, colorClass]">
+    <div class="toolbar" :class="[themeClass, colorClass]">
         <div class="toolbar-background" :class="['toolbar-background-'+theme]"></div>
         <slot name="item-start"></slot>
         <slot name="item-end"></slot>

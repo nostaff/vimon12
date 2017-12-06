@@ -1,5 +1,5 @@
 <template>
-  <div class="ion-loading" :class="['loading-'+theme, cssClass]" role="dialog">
+  <div class="ion-loading" :class="[themeClass, cssClass]" role="dialog">
     <ion-backdrop :enableBackdropDismiss="enableBackdropDismiss" :isActive="activated" v-if="showBackdrop" @click.native="bdClick()"></ion-backdrop>
     <transition name="ion-loading-fadeup">
       <div class="loading-wrapper" v-show="activated">

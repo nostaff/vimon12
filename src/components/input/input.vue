@@ -1,5 +1,5 @@
 <template>
-  <div :class="['ion-input','input','input-'+theme]" @click="setFocus()">
+  <div :class="['ion-input',themeClass]" @click="setFocus()">
     <input ref="input"
            :class="['text-input', 'text-input-'+theme]"
            :value="currentValue"
@@ -188,7 +188,7 @@ export default {
         this.currentValue = $event && $event.target ? $event.target.value : ''
         this.setItemHasValueClass()
 
-      // debounce
+        // debounce
         window.clearTimeout(this.timer)
         this.timer = window.setTimeout(() => {
           this.$emit('onInput', $event)

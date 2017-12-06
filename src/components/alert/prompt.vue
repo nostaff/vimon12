@@ -121,7 +121,7 @@ export default {
             }
           }
 
-                // 返回输入框的值
+          // 返回输入框的值
           this.$emit('onHideEvent', {index: buttonIndex, values: this.values})
           setTimeout(() => {
             this.$el.remove()

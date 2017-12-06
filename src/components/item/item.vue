@@ -1,5 +1,5 @@
 <template>
-  <router-link v-if="!!link" class="item item-block" :class="['item-'+theme]" :to="link">
+  <router-link v-if="!!link" class="item-block" :class="[themeClass]" :to="link">
     <slot name="item-start"></slot>
     <div class="item-inner">
       <div class="input-wrapper">
@@ -13,7 +13,7 @@
     </div>
   </router-link>
 
-  <button v-else-if="!!isLink" class="item item-block" :class="['item-'+theme]">
+  <button v-else-if="!!isLink" class="item-block" :class="[themeClass]">
     <slot name="item-start"></slot>
     <div class="item-inner">
       <div class="input-wrapper">
@@ -28,7 +28,7 @@
     <div class="button-effect"></div>
   </button>
 
-  <div v-else class="item item-block" :class="['item-'+theme]">
+  <div v-else class="item-block" :class="[themeClass]">
     <slot name="item-start"></slot>
     <div class="item-inner">
       <div class="input-wrapper">
@@ -47,16 +47,22 @@
 <script>
   import {isUndefined} from '../../util/util'
   import ThemeMixins from '../../themes/theme.mixins'
-import IonReorder from './item-reorder.vue'
-import IonLabel from '../label/index'
+  import IonReorder from './item-reorder.vue'
+  import IonLabel from '../label/index'
 
-export default {
+  export default {
     components: {
       IonLabel,
       IonReorder
     },
     name: 'ion-item',
     mixins: [ThemeMixins],
+    provide () {
+      const that = this
+      return {
+        itemComponent: that
+      }
+    },
     props: {
       link: {
         type: String,
@@ -81,7 +87,9 @@ export default {
       this.hasReorder = this.$parent.$data.componentName === 'ionItemGroup' && this.$parent.allowReorder
     },
     mounted () {
-      if (this.$el.classList.contains('item-divider')) { this.setElementClass('item-block', false) }
+      if (this.$el.classList.contains('item-divider')) {
+        this.setElementClass('item-block', false)
+      }
 
       if (this.$slots['item-start']) {
         this.$slots['item-start'].forEach(function (item) {
@@ -96,7 +104,7 @@ export default {
     },
     methods: {
       getLabelText () {
-        if (this.$refs.label && this.$refs.label.$el.length !== 0) {   // 空==0，不为空 != 0 ，非大于0
+        if (this.$refs.label && this.$refs.label.$el.length !== 0) { // 空==0，不为空 != 0 ，非大于0
           return this.$refs.label.$el.innerText
         } else if (this.$slots['item-label']) {
           return this.$slots['item-label'][0].elm.innerText

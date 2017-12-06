@@ -23,12 +23,13 @@
 </template>
 <script type="text/javascript">
   import {pointerCoord} from '../../util/dom'
-import {clamp, parsePxUnit} from '../../util/util'
+  import {clamp, parsePxUnit} from '../../util/util'
 
   const PICKER_OPT_SELECTED = 'picker-opt-selected'
   const DECELERATION_FRICTION = 0.97
   const FRAME_MS = (1000 / 60)
   const MAX_PICKER_SPEED = 60
+
   export default {
     name: 'ion-picker-col',
     data () {
@@ -36,7 +37,7 @@ import {clamp, parsePxUnit} from '../../util/util'
         isInit: false,
         rotateFactor: this.$config && this.$config.getNumber('pickerRotateFactor', 0) || 0,
         scaleFactor: this.$config && this.$config.getNumber('pickerScaleFactor', 1) || 1,
-        pickerComponent: null,          // 父组件 Picker 实例
+        pickerComponent: null, // 父组件 Picker 实例
 
         y: 0,
         colHeight: 0,
@@ -50,12 +51,12 @@ import {clamp, parsePxUnit} from '../../util/util'
         minY: 0,
         maxY: 0,
         lastIndex: 0,
-        lastTempIndex: 0               // 记录当前col选中的index
+        lastTempIndex: 0 // 记录当前col选中的index
       }
     },
     props: {
-      index: Number,    // 当前组件的序号
-      col: Object       // 这一列的数据
+      index: Number, // 当前组件的序号
+      col: Object // 这一列的数据
     },
     computed: {
       colEle () {

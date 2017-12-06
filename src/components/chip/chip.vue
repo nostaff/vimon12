@@ -1,5 +1,5 @@
 <template>
-    <div class="ion-chip" :class="['chip-'+theme, 'chip-'+theme+'-'+color]">
+    <div class="ion-chip" :class="[themeClass, colorClass]">
         <slot></slot>
     </div>
 </template>

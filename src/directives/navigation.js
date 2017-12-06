@@ -21,36 +21,27 @@ export default {
 
     let props = {
       showBack: false,
-      showMenu: false,
+      showMenu: false
     }
     let options = binding.value
-    if (options.title)
-      props.title = options.title
+    if (options.title) { props.title = options.title }
 
-    if (options.showBackButton)
-      props.showBack = options.showBackButton
-    if (options.backButtonIcon)
-      props.backIcon = options.backButtonIcon
-    if (options.backButtonText)
-      props.backText = options.backButtonText
-    if (options.onBackButtonClick && isFunction(options.onBackButtonClick))
-      props.onBack = options.onBackButtonClick
+    if (options.showBackButton) { props.showBack = options.showBackButton }
+    if (options.backButtonIcon) { props.backIcon = options.backButtonIcon }
+    if (options.backButtonText) { props.backText = options.backButtonText }
+    if (options.onBackButtonClick && isFunction(options.onBackButtonClick)) { props.onBack = options.onBackButtonClick }
 
-    if (options.showMenuButton)
-      props.showMenu = options.showMenuButton
-    if (options.menuButtonIcon)
-      props.moreIcon = options.menuButtonIcon
-    if (options.menuButtonText)
-      props.moreText = options.menuButtonText
+    if (options.showMenuButton) { props.showMenu = options.showMenuButton }
+    if (options.menuButtonIcon) { props.moreIcon = options.menuButtonIcon }
+    if (options.menuButtonText) { props.moreText = options.menuButtonText }
 
-    if (options.onMenuButtonClick && isFunction(options.onMenuButtonClick))
-      props.onMenu = options.onMenuButtonClick
+    if (options.onMenuButtonClick && isFunction(options.onMenuButtonClick)) { props.onMenu = options.onMenuButtonClick }
 
     Vue.prototype.$navbar = window.$navbar = new Vue(assign({}, Navigation, {
       data: {
         activated: !isTrueProperty(options.hideNavbar)
       },
       propsData: props
-    })).$mount('[ion-navigation]');
+    })).$mount('[ion-navigation]')
   }
-};
+}

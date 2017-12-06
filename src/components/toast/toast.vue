@@ -32,7 +32,7 @@
           showCloseButton: false,
           dismissOnPageChange: true,
           duration: 3000,
-          position: 'bottom',   // "top", "middle", "bottom"
+          position: 'bottom', // "top", "middle", "bottom"
           cssClass: '',
           onDismiss: () => {
           }

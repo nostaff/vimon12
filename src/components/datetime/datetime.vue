@@ -55,33 +55,33 @@
       }
     },
     props: {
-      min: String,                      //  ISO 8601 datetime 的时间格式, 1996-12-19
-      max: String,                      //  ISO 8601 datetime 的时间格式, 1996-12-19
+      min: String, //  ISO 8601 datetime 的时间格式, 1996-12-19
+      max: String, //  ISO 8601 datetime 的时间格式, 1996-12-19
 
-      displayFormat: String,            // 外部 显示的格式
-      pickerFormat: String,             // picker 显示的格式
+      displayFormat: String, // 外部 显示的格式
+      pickerFormat: String, // picker 显示的格式
       placeholder: String,
       value: [String, Object, Date],
 
-      cancelText: {                     // 取消的显示文本
+      cancelText: { // 取消的显示文本
         type: String,
         default: '取消'
       },
-      doneText: {                       // 确定的显示文本
+      doneText: { // 确定的显示文本
         type: String,
         default: '确认'
       },
 
-      yearValues: [String, Array],      // 显示可以选择的 年 信息, 例如: "2024,2020,2016,2012,2008"
-      monthValues: [String, Array],     // 显示可以选择的 月 信息, 例如: "6,7,8"
-      dayValues: [String, Array],       // 显示可以选择的 日 信息, 例如: "6,7,8"
-      hourValues: [String, Array],      // 显示可以选择的 小时 信息,
-      minuteValues: [String, Array],    // 显示可以选择的 分钟 信息,
+      yearValues: [String, Array], // 显示可以选择的 年 信息, 例如: "2024,2020,2016,2012,2008"
+      monthValues: [String, Array], // 显示可以选择的 月 信息, 例如: "6,7,8"
+      dayValues: [String, Array], // 显示可以选择的 日 信息, 例如: "6,7,8"
+      hourValues: [String, Array], // 显示可以选择的 小时 信息,
+      minuteValues: [String, Array], // 显示可以选择的 分钟 信息,
 
-      monthNames: [String, Array],               // 每个月 的名字
-      monthShortNames: [String, Array],          // 每个月 的短名字
-      dayNames: [String, Array],                  // 每天 的显示名字
-      dayShortNames: [String, Array],            // 每天 的显示名字
+      monthNames: [String, Array], // 每个月 的名字
+      monthShortNames: [String, Array], // 每个月 的短名字
+      dayNames: [String, Array], // 每天 的显示名字
+      dayShortNames: [String, Array], // 每天 的显示名字
 
       pickerOptions: {
         type: Object,

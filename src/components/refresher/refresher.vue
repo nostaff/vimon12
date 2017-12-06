@@ -51,7 +51,7 @@ export default {
           isEnabled: isTrueProperty(this.enabled),
           top: '',
 
-                /**
+          /**
                  * The current state which the refresher is in. The refresher's states include:
                  *
                  * - `inactive` - The refresher is not being pulled down or refreshing and is currently hidden.
@@ -63,23 +63,23 @@ export default {
                  */
           state: STATE_INACTIVE,
 
-                /**
+          /**
                  * The Y coordinate of where the user started to the pull down the content.
                  */
           startY: null,
 
-                /**
+          /**
                  * The current touch or mouse event's Y coordinate.
                  */
           currentY: null,
 
-                /**
+          /**
                  * The distance between the start of the pull and the current touch or
                  * mouse event's Y coordinate.
                  */
           deltaY: null,
 
-                /**
+          /**
                  * A number representing how far down the user has pulled.
                  * The number `0` represents the user hasn't pulled down at all. The
                  * number `1`, and anything greater than `1`, represents that the user
@@ -92,7 +92,7 @@ export default {
         }
       },
       props: {
-            /**
+        /**
              * @input {number} The min distance the user must pull down until the
              * refresher can go into the `refreshing` state. Default is `60`.
              */
@@ -100,7 +100,7 @@ export default {
           type: Number,
           default: 70
         },
-            /**
+        /**
              * @input {number} The maximum distance of the pull until the refresher
              * will automatically go into the `refreshing` state. By default, the pull
              * maximum will be the result of `pullMin + 60`.
@@ -109,21 +109,21 @@ export default {
           type: Number,
           default: 200
         },
-            /**
+        /**
              * @input {number} How many milliseconds it takes to close the refresher. Default is `280`.
              */
         closeDuration: {
           type: Number,
           default: 280
         },
-            /**
+        /**
              * @input {number} How many milliseconds it takes the refresher to to snap back to the `refreshing` state. Default is `280`.
              */
         snapbackDuration: {
           type: Number,
           default: 280
         },
-            /**
+        /**
              * @input {boolean} If the refresher is enabled or not. Default is `true`.
              */
         enabled: {
@@ -168,7 +168,7 @@ export default {
 
       methods: {
         onStart (ev) {
-                // if multitouch then get out immediately
+          // if multitouch then get out immediately
           if (ev.touches && ev.touches.length > 1) {
             return false
           }
@@ -177,8 +177,8 @@ export default {
           }
 
           let scrollHostScrollTop = this.contentCmp.getContentDimensions().scrollTop
-            // if the scrollTop is greater than zero then it's
-            // not possible to pull the content down yet
+          // if the scrollTop is greater than zero then it's
+          // not possible to pull the content down yet
           if (scrollHostScrollTop > 0) {
             return false
           }
@@ -200,46 +200,46 @@ export default {
         },
 
         onMove (ev) {
-                // this method can get called like a bazillion times per second,
-                // so it's built to be as efficient as possible, and does its
-                // best to do any DOM read/writes only when absolutely necessary
+          // this method can get called like a bazillion times per second,
+          // so it's built to be as efficient as possible, and does its
+          // best to do any DOM read/writes only when absolutely necessary
 
-                // if multitouch then get out immediately
+          // if multitouch then get out immediately
           if (ev.touches && ev.touches.length > 1) {
             return 1
           }
 
-                // do nothing if it's actively refreshing
-                // or it's in the process of closing
-                // or this was never a startY
+          // do nothing if it's actively refreshing
+          // or it's in the process of closing
+          // or this was never a startY
           if (this.startY === null || this.state === STATE_REFRESHING || this.state === STATE_CANCELLING || this.state === STATE_COMPLETING) {
             return 2
           }
 
-                // if we just updated stuff less than 16ms ago
-                // then don't check again, just chillout plz
+          // if we just updated stuff less than 16ms ago
+          // then don't check again, just chillout plz
           let now = Date.now()
           if (this.lastCheck + 16 > now) {
             return 3
           }
 
-                // remember the last time we checked all this
+          // remember the last time we checked all this
           this.lastCheck = now
 
-            // get the current pointer coordinates
+          // get the current pointer coordinates
           let coord = pointerCoord(ev)
 
           this.currentY = coord.y
 
-            // it's now possible they could be pulling down the content
-            // how far have they pulled so far?
+          // it's now possible they could be pulling down the content
+          // how far have they pulled so far?
           this.deltaY = (coord.y - this.startY)
 
-            // don't bother if they're scrolling up
-            // and have not already started dragging
+          // don't bother if they're scrolling up
+          // and have not already started dragging
           if (this.deltaY <= 0) {
-                    // the current Y is higher than the starting Y
-                    // so they scrolled up enough to be ignored
+            // the current Y is higher than the starting Y
+            // so they scrolled up enough to be ignored
             this.progress = 0
 
             if (this.state !== STATE_INACTIVE) {
@@ -247,7 +247,7 @@ export default {
             }
 
             if (this.appliedStyles) {
-                        // reset the styles only if they were applied
+              // reset the styles only if they were applied
               this.setCss(0, '', false, '')
               return 5
             }
@@ -256,106 +256,106 @@ export default {
           }
 
           if (this.state === STATE_INACTIVE) {
-                    // this refresh is not already actively pulling down
+            // this refresh is not already actively pulling down
 
-                    // get the content's scrollTop
+            // get the content's scrollTop
             let scrollHostScrollTop = this.contentCmp.getContentDimensions().scrollTop
 
-                // if the scrollTop is greater than zero then it's
-                // not possible to pull the content down yet
+            // if the scrollTop is greater than zero then it's
+            // not possible to pull the content down yet
             if (scrollHostScrollTop > 0) {
               this.progress = 0
               this.startY = null
               return 7
             }
 
-                    // content scrolled all the way to the top, and dragging down
+            // content scrolled all the way to the top, and dragging down
             this.state = STATE_PULLING
           }
 
-                // prevent native scroll events
+          // prevent native scroll events
           ev.preventDefault()
 
-            // the refresher is actively pulling at this point
-            // move the scroll element within the content element
+          // the refresher is actively pulling at this point
+          // move the scroll element within the content element
           this.setCss(this.deltaY * 0.5, '0ms', true, '')
 
           if (!this.deltaY) {
-                    // don't continue if there's no delta yet
+            // don't continue if there's no delta yet
             this.progress = 0
             return 8
           }
 
-                // so far so good, let's run this all back within zone now
+          // so far so good, let's run this all back within zone now
           this.onMoveInZone()
         },
 
         onMoveInZone () {
-                // set pull progress
+          // set pull progress
           this.progress = (this.deltaY * 0.5 / this.pullMin)
 
-            // emit "start" if it hasn't started yet
+          // emit "start" if it hasn't started yet
           if (!this.didStart) {
             this.didStart = true
             this.$emit('onStart', this)
           }
 
-                // emit "pulling" on every move
+          // emit "pulling" on every move
           this.$emit('onPull', this)
 
-                // do nothing if the delta is less than the pull threshold
+          // do nothing if the delta is less than the pull threshold
           if (this.deltaY * 0.5 < this.pullMin) {
-                    // ensure it stays in the pulling state, cuz its not ready yet
+            // ensure it stays in the pulling state, cuz its not ready yet
             this.state = STATE_PULLING
             return 2
           }
 
           if (this.deltaY * 0.5 > this.pullMax) {
-                    // they pulled farther than the max, so kick off the refresh
+            // they pulled farther than the max, so kick off the refresh
             this.beginRefresh()
             return 3
           }
 
-                // pulled farther than the pull min!!
-                // it is now in the `ready` state!!
-                // if they let go then it'll refresh, kerpow!!
+          // pulled farther than the pull min!!
+          // it is now in the `ready` state!!
+          // if they let go then it'll refresh, kerpow!!
           this.state = STATE_READY
 
           return 4
         },
 
         onEnd () {
-                // only run in a zone when absolutely necessary
+          // only run in a zone when absolutely necessary
 
           if (this.state === STATE_READY) {
-                    // they pulled down far enough, so it's ready to refresh
+            // they pulled down far enough, so it's ready to refresh
             this.beginRefresh()
           } else if (this.state === STATE_PULLING) {
-                    // they were pulling down, but didn't pull down far enough
-                    // set the content back to it's original location
-                    // and close the refresher
-                    // set that the refresh is actively cancelling
+            // they were pulling down, but didn't pull down far enough
+            // set the content back to it's original location
+            // and close the refresher
+            // set that the refresh is actively cancelling
             this.cancel()
           }
 
-                // reset on any touchend/mouseup
+          // reset on any touchend/mouseup
           this.startY = null
         },
 
         beginRefresh () {
-                // assumes we're already back in a zone
-                // they pulled down far enough, so it's ready to refresh
+          // assumes we're already back in a zone
+          // they pulled down far enough, so it's ready to refresh
           this.state = STATE_REFRESHING
 
-            // place the content in a hangout position while it thinks
+          // place the content in a hangout position while it thinks
           this.setCss(this.pullMin, (this.snapbackDuration + 'ms'), true, '')
 
-            // emit "refresh" because it was pulled down far enough
-            // and they let go to begin refreshing
+          // emit "refresh" because it was pulled down far enough
+          // and they let go to begin refreshing
           this.$emit('onRefresh', this)
         },
 
-            /**
+        /**
              * Call `complete()` when your async operation has completed.
              * For example, the `refreshing` state is while the app is performing
              * an asynchronous operation, such as receiving more data from an
@@ -368,7 +368,7 @@ export default {
           this.closeRefresher(STATE_COMPLETING, '120ms')
         },
 
-            /**
+        /**
              * Changes the refresher's state from `refreshing` to `cancelling`.
              */
         cancel () {
@@ -379,7 +379,7 @@ export default {
           var timer
 
           function close (ev) {
-                    // closing is done, return to inactive state
+            // closing is done, return to inactive state
             if (ev) {
               clearTimeout(timer)
             }
@@ -390,30 +390,30 @@ export default {
             this.setCss(0, '0ms', false, '')
           }
 
-                // create fallback timer incase something goes wrong with transitionEnd event
+          // create fallback timer incase something goes wrong with transitionEnd event
           timer = setTimeout(close.bind(this), 600)
 
-            // create transition end event on the content's scroll element
+          // create transition end event on the content's scroll element
           this.contentCmp.onScrollElementTransitionEnd(close.bind(this))
 
-            // reset set the styles on the scroll element
-            // set that the refresh is actively cancelling/completing
+          // reset set the styles on the scroll element
+          // set that the refresh is actively cancelling/completing
           this.state = state
           this.setCss(0, '', true, delay)
 
-//                if (this._pointerEvents) {
-//                    this._pointerEvents.stop();
-//                }
+          //                if (this._pointerEvents) {
+          //                    this._pointerEvents.stop();
+          //                }
         },
 
         setCss (y, duration, overflowVisible, delay) {
           this.appliedStyles = (y > 0)
 
           const content = this.contentCmp
-//                const Css = this._plt.Css;
-//                content.setScrollElementStyle(Css.transform, ((y > 0) ? 'translateY(' + y + 'px) translateZ(0px)' : 'translateZ(0px)'));
-//                content.setScrollElementStyle(Css.transitionDuration, duration);
-//                content.setScrollElementStyle(Css.transitionDelay, delay);
+          //                const Css = this._plt.Css;
+          //                content.setScrollElementStyle(Css.transform, ((y > 0) ? 'translateY(' + y + 'px) translateZ(0px)' : 'translateZ(0px)'));
+          //                content.setScrollElementStyle(Css.transitionDuration, duration);
+          //                content.setScrollElementStyle(Css.transitionDelay, delay);
           content.setScrollElementStyle('transform', ((y > 0) ? 'translateY(' + y + 'px) translateZ(0px)' : 'translateZ(0px)'))
           content.setScrollElementStyle('transitionDuration', duration)
           content.setScrollElementStyle('transitionDelay', delay)
@@ -428,8 +428,8 @@ export default {
             })
           }
 
-                // 如果为true, 则添加事件监听
-                // 等待Content完毕
+          // 如果为true, 则添加事件监听
+          // 等待Content完毕
           this.$nextTick(() => {
             if (shouldListen) {
               let contentElement = this.contentCmp.getScrollElement()

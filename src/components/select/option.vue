@@ -36,7 +36,7 @@
       mounted () {
         this.label = this.getText()
 
-            // if parent is select
+        // if parent is select
         if (this.$parent.$data.componentName === 'ionSelect') {
           this.selectComponent = this.$parent
           this.selectComponent.updateOptionList(this)

@@ -1,11 +1,6 @@
 <template>
-  <div :id="eleId" class="ion-range range" :class="[
-        'range-'+theme,
-        'range-'+theme+'-'+color,
-        pin?'range-has-pin':'',
-        pressed?'range-pressed':'',
-        disabled?'range-disabled':'',
-        ]"
+  <div :id="eleId" class="ion-range range"
+       :class="[themeClass, colorClass, {'range-has-pin':pin, 'range-pressed':pressed, 'range-disabled': disabled}]"
        @touchstart="pointerDown($event)"
        @touchmove="pointerMove($event)"
        @touchend="pointerUp($event)"
@@ -36,7 +31,7 @@
 <script>
   import ThemeMixins from '../../themes/theme.mixins'
 
-export default {
+  export default {
     name: 'ion-range',
     mixins: [ThemeMixins],
     data () {
@@ -121,7 +116,7 @@ export default {
     created () {
       this.inputUpdated()
 
-    // build all the ticks if there are any to show
+      // build all the ticks if there are any to show
       this.createTicks()
     },
     mounted () {
@@ -139,8 +134,6 @@ export default {
           item.elm.setAttribute('range-right', '')
         })
       }
-
-      this.$el.events
     },
     methods: {
       pointerDown (ev) {
@@ -152,21 +145,21 @@ export default {
         ev.preventDefault()
         ev.stopPropagation()
 
-      // get the start coordinates
+        // get the start coordinates
         const current = this._pointerCoord(ev)
 
-      // get the full dimensions of the slider element
+        // get the full dimensions of the slider element
         const rect = this.rect = this.$el.getBoundingClientRect()
 
-      // figure out which knob they started closer to
+        // figure out which knob they started closer to
         const ratio = this._clamp(0, (current.x - rect.left) / (rect.width), 1)
         this.activeB = this.dual && (Math.abs(ratio - this.ratioA) > Math.abs(ratio - this.ratioB))
 
-      // update the active knob's position
+        // update the active knob's position
         this._updatePos(current, rect, true)
 
-      // return true so the pointer events
-      // know everything's still valid
+        // return true so the pointer events
+        // know everything's still valid
         return true
       },
 
@@ -178,7 +171,7 @@ export default {
         ev.preventDefault()
         ev.stopPropagation()
 
-      // update the active knob's position
+        // update the active knob's position
         this._updatePos(this._pointerCoord(ev), this.rect, true)
       },
 
@@ -190,7 +183,7 @@ export default {
         ev.preventDefault()
         ev.stopPropagation()
 
-      // update the active knob's position
+        // update the active knob's position
         this._updatePos(this._pointerCoord(ev), this.rect, false)
       },
 
