@@ -15,6 +15,11 @@
     components: {
       IonListHeader
     },
+    props: {
+      title: String,
+      radioGroup: Boolean,
+      value: String
+    },
     data () {
       return {
         componentName: 'ionList',
@@ -26,10 +31,6 @@
         enableSliding: false,
         containsSlidingItems: false
       }
-    },
-    props: {
-      radioGroup: Boolean,
-      value: String
     },
     watch: {
       value (val) {

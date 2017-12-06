@@ -17,97 +17,98 @@
 </template>
 
 <script>
-  import ThemeMixins from '../themes/theme.mixins';
-  import IonHeader from "../components/page/header";
-  import IonToolbar from "../components/toolbar/toolbar";
-  import IonButtons from "../components/toolbar/toolbar-buttons";
-  import IonIcon from "../components/icon/icon";
-  import IonTitle from "../components/toolbar/toolbar-title";
-  import IonButton from "../components/button/button";
+import ThemeMixins from '../themes/theme.mixins'
+import IonHeader from '../components/page/header'
+import IonToolbar from '../components/toolbar/toolbar'
+import IonButtons from '../components/toolbar/toolbar-buttons'
+import IonIcon from '../components/icon/icon'
+import IonTitle from '../components/toolbar/toolbar-title'
+import IonButton from '../components/button/button'
 
-  export default {
-    components: {
-      IonButton,
-      IonTitle,
-      IonIcon,
-      IonButtons,
-      IonToolbar,
-      IonHeader
-    },
-    name: 'ion-navigation',
-    mixins: [ThemeMixins],
-    data() {
-      return {
-        componentName: 'ionToolbar',
-        roleName: 'toolbar',
+export default {
+  components: {
+    IonButton,
+    IonTitle,
+    IonIcon,
+    IonButtons,
+    IonToolbar,
+    IonHeader
+  },
+  name: 'ion-navigation',
+  mixins: [ThemeMixins],
+  data () {
+    return {
+      componentName: 'ionToolbar',
+      roleName: 'toolbar',
 
-        activated: true
-      };
+      activated: true
+    }
+  },
+  props: {
+    title: String,
+    showBack: {
+      type: Boolean,
+      default: false
     },
-    props: {
-      showBack: {
-        type: Boolean,
-        default: false
-      },
-      backIcon: {
-        type: String,
-        default: 'arrow-back'
-      },
-      backText: {
-        type: String,
-        default: 'Back'
-      },
-      onBack: Function,
+    backIcon: {
+      type: String,
+      default: 'arrow-back'
+    },
+    backText: {
+      type: String,
+      default: 'Back'
+    },
+    onBack: Function,
 
-      showMenu: {
-        type: Boolean,
-        default: false
-      },
-      moreIcon: {
-        type: String,
-        default: 'more'
-      },
-      moreText: {
-        type: String,
-        default: ''
-      },
-      onMenu: Function,
+    showMenu: {
+      type: Boolean,
+      default: false
     },
-    mounted() {
-      if (this.$slots['item-start']) {
-        this.$slots['item-start'].forEach(function (item) {
-          item.elm.setAttribute('start', '')
-        })
+    moreIcon: {
+      type: String,
+      default: 'more'
+    },
+    moreText: {
+      type: String,
+      default: ''
+    },
+    onMenu: Function
+  },
+  mounted () {
+    if (this.$slots['item-start']) {
+      this.$slots['item-start'].forEach(function (item) {
+        item.elm.setAttribute('start', '')
+      })
+    }
+    if (this.$slots['item-end']) {
+      this.$slots['item-end'].forEach(function (item) {
+        item.elm.setAttribute('end', '')
+      })
+    }
+  },
+  methods: {
+    onBackClick (ev) {
+      ev.preventDefault()
+      ev.stopPropagation()
+
+      if (this.onBack) {
+        return this.onBack(ev)
       }
-      if (this.$slots['item-end']) {
-        this.$slots['item-end'].forEach(function (item) {
-          item.elm.setAttribute('end', '')
-        })
-      }
+
+      let root = document.querySelector('.ion-app')
+      if (root) root.setAttribute('transition-direction', 'back')
+      history.go(-1)
     },
-    methods: {
-      onBackClick(ev) {
-        ev.preventDefault();
-        ev.stopPropagation();
+    onMenuClick (ev) {
+      ev.preventDefault()
+      ev.stopPropagation()
 
-        if (this.onBack) {
-          return this.onBack(ev)
-        }
-
-        let root = document.querySelector('.ion-app')
-        if (root) root.setAttribute('transition-direction', 'back');
-        history.go(-1)
-      },
-      onMenuClick(ev) {
-        ev.preventDefault();
-        ev.stopPropagation();
-
-        if (this.onMenu) {
-          this.onMenu(ev)
-        }
-      },
+      if (this.onMenu) {
+        this.onMenu(ev)
+      }
     }
   }
+}
 </script>
 
 

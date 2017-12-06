@@ -18,6 +18,7 @@
       'ion-item-divider': ItemDivider
     },
     props: {
+      title: String,
       reorder: {
         type: [String, Boolean],
         default: false

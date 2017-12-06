@@ -16,60 +16,64 @@
 </template>
 
 <script>
-  import {isTrueProperty} from '../../util/util'
-  import ThemeMixins from '../../themes/theme.mixins'
+import { isTrueProperty } from '../../util/util'
+import ThemeMixins from '../../themes/theme.mixins'
 
 export default {
-    name: 'ion-navbar',
-    mixins: [ThemeMixins],
-    data () {
-      return {
-        componentName: 'ionNavbar',
+  name: 'ion-navbar',
+  mixins: [ThemeMixins],
+  data () {
+    return {
+      componentName: 'ionNavbar',
 
-        isShowBack: isTrueProperty(this.showBack)
-      }
+      isShowBack: isTrueProperty(this.showBack)
+    }
+  },
+  props: {
+    title: {
+      type: String,
+      default: ''
     },
-    props: {
-      showBack: {
-        type: [Boolean, String],
-        default: false
-      },
-      backIcon: {
-        type: String,
-        default: 'arrow-back'
-      },
-      backText: {
-        type: String,
-        default: 'Back'
-      }
+    showBack: {
+      type: [Boolean, String],
+      default: false
     },
-    mounted () {
-      if (this.$slots['item-start']) {
-        this.$slots['item-start'].forEach(function (item) {
-          item.elm.setAttribute('start', '')
-        })
-      }
-      if (this.$slots['item-end']) {
-        this.$slots['item-end'].forEach(function (item) {
-          item.elm.setAttribute('end', '')
-        })
-      }
+    backIcon: {
+      type: String,
+      default: 'arrow-back'
     },
-    methods: {
-      onBackClick (ev) {
-        ev.preventDefault()
-        ev.stopPropagation()
+    backText: {
+      type: String,
+      default: 'Back'
+    }
+  },
+  mounted () {
+    if (this.$slots['item-start']) {
+      this.$slots['item-start'].forEach(function (item) {
+        item.elm.setAttribute('start', '')
+      })
+    }
+    if (this.$slots['item-end']) {
+      this.$slots['item-end'].forEach(function (item) {
+        item.elm.setAttribute('end', '')
+      })
+    }
+  },
+  methods: {
+    onBackClick (ev) {
+      ev.preventDefault()
+      ev.stopPropagation()
 
-        let root = document.querySelector('.ion-app')
-        if (root) root.setAttribute('transition-direction', 'back')
-        history.go(-1)
-      }
+      let root = document.querySelector('.ion-app')
+      if (root) root.setAttribute('transition-direction', 'back')
+      history.go(-1)
     }
   }
+}
 </script>
 
 <style lang="scss">
-  @import 'toolbar';
-  @import 'toolbar.ios';
-  @import 'toolbar.md';
+@import "toolbar";
+@import "toolbar.ios";
+@import "toolbar.md";
 </style>

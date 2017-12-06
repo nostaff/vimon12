@@ -7,7 +7,7 @@
           <h2 class="alert-title">{{title}}</h2>
         </div>
         <div class="alert-radio-group" role="radiogroup">
-          <ion-button class="alert-tappable" role="alert-radio" key="idx" v-for="(input, index) in inputs"
+          <ion-button class="alert-tappable" role="alert-radio" :key="index" v-for="(input, index) in inputs"
                       :value="input.value"
                       :aria-checked="input.value === currentValue"
                       :disabled="input.disabled"
@@ -20,7 +20,7 @@
           </ion-button>
         </div>
         <div class="alert-button-group">
-          <ion-button role="alert-button" key="idx" v-for="(button, index) in buttons"
+          <ion-button role="alert-button" :key="index" v-for="(button, index) in buttons"
                       :class="button.cssClass" @click.native="dismiss(index)">
             {{button.text}}
           </ion-button>
