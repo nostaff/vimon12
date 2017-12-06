@@ -36,6 +36,7 @@ import DemoRefresher from '../pages/Refresher'
 import DemoInfiniteScroll from '../pages/InfiniteScroll'
 
 // Advanced
+import DemoActionSheet from '../pages/ActionSheet'
 import DemoDialog from '../pages/Dialog'
 import DemoToast from '../pages/Toast'
 import DemoSwiper from '../pages/Swiper'
@@ -44,8 +45,9 @@ import DemoSwiperVertical from '../pages/SwiperVertical'
 import DemoPicker from '../pages/Picker'
 import DemoPopup from '../pages/Popup'
 import DemoPopover from '../pages/Popover'
-import DemoActionSheet from '../pages/ActionSheet'
 import DemoModal from '../pages/Modal'
+
+import NotFound from '../pages/NotFound'
 
 const routes = [
     { path: '/', name: 'demo.index', component: DemoHome },
@@ -83,6 +85,7 @@ const routes = [
     { path: '/demo/infinite-scroll', component: DemoInfiniteScroll },
 
     // Advanced
+    { path: '/demo/action-sheet', component: DemoActionSheet },
     { path: '/demo/dialog', component: DemoDialog },
     { path: '/demo/toast', component: DemoToast },
     { path: '/demo/swiper', component: DemoSwiper },
@@ -92,9 +95,9 @@ const routes = [
     { path: '/demo/popover', component: DemoPopover },
     { path: '/demo/actionSheet', component: DemoActionSheet },
     { path: '/demo/modal', component: DemoModal },
-    { path: '/demo/picker', component: DemoPicker }
+    { path: '/demo/picker', component: DemoPicker },
 
-    // { path: '*', component: NotFound }
+    { path: '*', component: NotFound }
 
 ]
 

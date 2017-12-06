@@ -2,43 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8323a9fe-be66-40c8-a870-6d9da02c649f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/mobile-vue.iml" afterPath="$PROJECT_DIR$/.idea/mobile-vue.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/build/doc-builder/config.js" afterPath="$PROJECT_DIR$/build/doc-builder/config.js" />
-      <change beforePath="$PROJECT_DIR$/build/doc-builder/gulpfile.js" afterPath="$PROJECT_DIR$/build/doc-builder/gulpfile.js" />
-      <change beforePath="$PROJECT_DIR$/build/doc-builder/theme/fixtures/base/chains.js" afterPath="$PROJECT_DIR$/build/doc-builder/theme/fixtures/base/chains.js" />
-      <change beforePath="$PROJECT_DIR$/build/doc-builder/theme/fixtures/base/index.js" afterPath="$PROJECT_DIR$/build/doc-builder/theme/fixtures/base/index.js" />
       <change beforePath="$PROJECT_DIR$/build/doc-builder/theme/fixtures/documents/probe.js" afterPath="$PROJECT_DIR$/build/doc-builder/theme/fixtures/documents/probe.js" />
-      <change beforePath="$PROJECT_DIR$/build/doc-builder/theme/publish.js" afterPath="$PROJECT_DIR$/build/doc-builder/theme/publish.js" />
-      <change beforePath="$PROJECT_DIR$/build/doc-builder/theme/static/scripts/linenumber.js" afterPath="$PROJECT_DIR$/build/doc-builder/theme/static/scripts/linenumber.js" />
-      <change beforePath="$PROJECT_DIR$/build/doc-builder/theme/static/scripts/prettify/prettify.js" afterPath="$PROJECT_DIR$/build/doc-builder/theme/static/scripts/prettify/prettify.js" />
-      <change beforePath="$PROJECT_DIR$/build/doc-builder/theme/static/styles/custom.css" afterPath="$PROJECT_DIR$/build/doc-builder/theme/static/styles/custom.css" />
-      <change beforePath="$PROJECT_DIR$/build/doc-builder/theme/static/styles/custom.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/doc-builder/theme/static/styles/custom.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/doc-builder/theme/static/styles/jsdoc.css" afterPath="$PROJECT_DIR$/build/doc-builder/theme/static/styles/jsdoc.css" />
-      <change beforePath="$PROJECT_DIR$/build/doc-builder/theme/static/styles/jsdoc.css.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/doc-builder/theme/static/styles/jsdoc.scss" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/doc-builder/theme/static/vue.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/gulpfile.lib.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/lib-builder/generate-entry.js" afterPath="$PROJECT_DIR$/build/lib-builder/generate-entry.js" />
-      <change beforePath="$PROJECT_DIR$/build/lib-builder/index.js" afterPath="$PROJECT_DIR$/build/lib-builder/index.js" />
-      <change beforePath="$PROJECT_DIR$/build/rollup.umd.conf.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/webpack.dist.conf.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/webpack.lib.conf.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/demos/build/build.js" afterPath="$PROJECT_DIR$/demos/build/build.js" />
-      <change beforePath="$PROJECT_DIR$/demos/build/dev-client.js" afterPath="$PROJECT_DIR$/demos/build/dev-client.js" />
-      <change beforePath="$PROJECT_DIR$/demos/build/dev-server.js" afterPath="$PROJECT_DIR$/demos/build/dev-server.js" />
-      <change beforePath="$PROJECT_DIR$/demos/build/get-scss-variables.js" afterPath="$PROJECT_DIR$/demos/build/get-scss-variables.js" />
-      <change beforePath="$PROJECT_DIR$/demos/build/utils.js" afterPath="$PROJECT_DIR$/demos/build/utils.js" />
-      <change beforePath="$PROJECT_DIR$/demos/build/vue-loader.conf.js" afterPath="$PROJECT_DIR$/demos/build/vue-loader.conf.js" />
+      <change beforePath="$PROJECT_DIR$/build/doc-builder/theme/static/scripts/qrcode.js" afterPath="$PROJECT_DIR$/build/doc-builder/theme/static/scripts/qrcode.js" />
       <change beforePath="$PROJECT_DIR$/demos/build/webpack.base.conf.js" afterPath="$PROJECT_DIR$/demos/build/webpack.base.conf.js" />
-      <change beforePath="$PROJECT_DIR$/demos/build/webpack.dev.conf.js" afterPath="$PROJECT_DIR$/demos/build/webpack.dev.conf.js" />
-      <change beforePath="$PROJECT_DIR$/demos/build/webpack.prod.conf.js" afterPath="$PROJECT_DIR$/demos/build/webpack.prod.conf.js" />
-      <change beforePath="$PROJECT_DIR$/demos/config/index.js" afterPath="$PROJECT_DIR$/demos/config/index.js" />
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/demos/index.html" />
+      <change beforePath="$PROJECT_DIR$/demos/src/main.js" afterPath="$PROJECT_DIR$/demos/src/main.js" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/components/card/card.vue" afterPath="$PROJECT_DIR$/src/components/card/card.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/infinite-scroll/infinite-scroll.vue" afterPath="$PROJECT_DIR$/src/components/infinite-scroll/infinite-scroll.vue" />
-      <change beforePath="$PROJECT_DIR$/src/components/input/input.scss" afterPath="$PROJECT_DIR$/src/components/input/input.scss" />
+      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change beforePath="$PROJECT_DIR$/src/components/action-sheet/action-sheet.vue" afterPath="$PROJECT_DIR$/src/components/action-sheet/action-sheet.vue" />
+      <change beforePath="$PROJECT_DIR$/src/components/icon/icon.vue" afterPath="$PROJECT_DIR$/src/components/icon/icon.vue" />
+      <change beforePath="$PROJECT_DIR$/src/components/icon/index.js" afterPath="$PROJECT_DIR$/src/components/icon/index.js" />
       <change beforePath="$PROJECT_DIR$/src/util/util.js" afterPath="$PROJECT_DIR$/src/util/util.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -59,32 +33,74 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file leaf-file-name="index.spec.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/action-sheet/__test__/index.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="48" column="12" lean-forward="false" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+            <state relative-caret-position="69">
+              <caret line="37" column="37" lean-forward="false" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+              <folding>
+                <marker date="1512491105000" expanded="true" signature="1346:1381" ph="..." />
+                <marker date="1512491105000" expanded="true" signature="1431:1445" ph="..." />
+                <marker date="1512491105000" expanded="true" signature="3392:3427" ph="..." />
+                <marker date="1512491105000" expanded="true" signature="3477:3491" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/action-sheet/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="demo-publish.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/demo-publish.js">
+      <file leaf-file-name=".eslintignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.eslintignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="input.scss" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/input/input.scss">
+      <file leaf-file-name=".editorconfig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.editorconfig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="166" column="16" lean-forward="true" selection-start-line="166" selection-start-column="16" selection-end-line="166" selection-end-column="16" />
+            <state relative-caret-position="165">
+              <caret line="11" column="32" lean-forward="false" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".eslintrc.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.eslintrc.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="action-sheet.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/action-sheet/action-sheet.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="47" lean-forward="false" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="47" />
+              <folding>
+                <marker date="1512492605000" expanded="true" signature="1401:1614" ph="..." />
+                <marker date="1512492605000" expanded="true" signature="1633:3989" ph="{&quot;name&quot;: 'ion-action-sheet'...}" />
+                <marker date="1512492605000" expanded="true" signature="1708:1765" ph="{&quot;IonButton&quot;: IonButton...}" />
+                <marker date="1512492605000" expanded="true" signature="1794:2015" ph="{&quot;cssClass&quot;: ''...}" />
+                <marker date="1512492605000" expanded="true" signature="1820:1874" ph="{&quot;title&quot;: ''...}" />
+                <marker date="1512492605000" expanded="true" signature="2037:3985" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -102,10 +118,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>re_color</find>
-      <find>is_md</find>
-      <find>Modal</find>
-      <find>Popover</find>
       <find>ISO_8601_REGEXP</find>
       <find>isBlank</find>
       <find>/* eslin</find>
@@ -132,6 +144,10 @@
       <find>/examples/</find>
       <find>index.html</find>
       <find>examples/</find>
+      <find>8085</find>
+      <find>port</find>
+      <find>alert</find>
+      <find>css/ionicons.css</find>
     </findStrings>
     <replaceStrings>
       <replace>0</replace>
@@ -188,12 +204,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/toolbar/navbar.vue" />
-        <option value="$PROJECT_DIR$/demos/src/pages/Swiper.vue" />
-        <option value="$PROJECT_DIR$/src/components/action-sheet/action-sheet.vue" />
-        <option value="$PROJECT_DIR$/src/components/address/address.vue" />
-        <option value="$PROJECT_DIR$/src/components/alert/alert.checkbox.vue" />
-        <option value="$PROJECT_DIR$/src/components/alert/alert.radio.vue" />
         <option value="$PROJECT_DIR$/src/components/alert/alert.vue" />
         <option value="$PROJECT_DIR$/src/components/backdrop/backdrop.vue" />
         <option value="$PROJECT_DIR$/src/components/button/button.vue" />
@@ -239,6 +249,12 @@
         <option value="$PROJECT_DIR$/src/components/input/textarea.vue" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/components/input/input.scss" />
+        <option value="$PROJECT_DIR$/src/components/icon/index.js" />
+        <option value="$PROJECT_DIR$/src/components/icon/icon.scss" />
+        <option value="$PROJECT_DIR$/src/components/icon/icon.vue" />
+        <option value="$PROJECT_DIR$/demos/src/main.js" />
+        <option value="$PROJECT_DIR$/src/components/action-sheet/action-sheet.vue" />
+        <option value="$PROJECT_DIR$/.editorconfig" />
       </list>
     </option>
   </component>
@@ -260,9 +276,6 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
@@ -340,6 +353,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -350,16 +365,6 @@
             <path>
               <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
               <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="demos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -373,14 +378,20 @@
               <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="input" type="462c0819:PsiDirectoryNode" />
+              <item name="action-sheet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mobile-vue" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mobile-vue" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="action-sheet" type="462c0819:PsiDirectoryNode" />
+              <item name="__test__" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -406,21 +417,22 @@
     <property name="node.js.detected.package.jscs" value="true" />
     <property name="node.js.selected.package.jscs" value="" />
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
+    <property name="editorconfig.notification" value="./build/*.js&#10;./config/*.js&#10;./docs/*&#10;./manual/*&#10;./node_modules/*&#10;./demos/src/assets/*.js&#10;./demos/build/*.js&#10;./demos/config/*.js&#10;./demos/static/*.js&#10;" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/demos/build" />
-      <recent name="$PROJECT_DIR$/src/util/__test__" />
-      <recent name="$PROJECT_DIR$/src/util" />
-      <recent name="$PROJECT_DIR$/demos/src/pages" />
-      <recent name="$PROJECT_DIR$/src/components/picker" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/demos" />
       <recent name="$PROJECT_DIR$/src/util" />
       <recent name="$PROJECT_DIR$/src/components/datetime" />
       <recent name="$PROJECT_DIR$/src/components/content" />
       <recent name="$PROJECT_DIR$/src/directives" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/demos/build" />
+      <recent name="$PROJECT_DIR$/src/util/__test__" />
+      <recent name="$PROJECT_DIR$/src/util" />
+      <recent name="$PROJECT_DIR$/demos/src/pages" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -435,29 +447,27 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.demo:dev">
-    <configuration name="util.firstUpperCase()" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Jest.ActionSheet (1)">
+    <configuration name="ActionSheet (1)" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/util/__test__/util.spec.js" />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/components/action-sheet/__test__/index.spec.js" />
       <test-names>
-        <test-name value="util" />
-        <test-name value="firstUpperCase()" />
+        <test-name value="ActionSheet" />
       </test-names>
     </configuration>
-    <configuration name="util.isBoolean()" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+    <configuration name="ActionSheet" type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/util/__test__/util.spec.js" />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/components/action-sheet/test/index.spec.js" />
       <test-names>
-        <test-name value="util" />
-        <test-name value="isBoolean()" />
+        <test-name value="ActionSheet" />
       </test-names>
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -551,19 +561,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="npm.demo:dev" />
-      <item index="1" class="java.lang.String" itemvalue="Jest.util.firstUpperCase()" />
-      <item index="2" class="java.lang.String" itemvalue="Jest.util.isBoolean()" />
-      <item index="3" class="java.lang.String" itemvalue="npm.lint" />
-      <item index="4" class="java.lang.String" itemvalue="npm.pub:entry" />
-      <item index="5" class="java.lang.String" itemvalue="npm.test" />
+      <item index="1" class="java.lang.String" itemvalue="npm.lint" />
+      <item index="2" class="java.lang.String" itemvalue="npm.pub:entry" />
+      <item index="3" class="java.lang.String" itemvalue="npm.test" />
+      <item index="4" class="java.lang.String" itemvalue="Jest.ActionSheet" />
+      <item index="5" class="java.lang.String" itemvalue="Jest.ActionSheet (1)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="npm.lint" />
-        <item index="1" class="java.lang.String" itemvalue="npm.test" />
-        <item index="2" class="java.lang.String" itemvalue="npm.pub:entry" />
-        <item index="3" class="java.lang.String" itemvalue="Jest.util.isBoolean()" />
-        <item index="4" class="java.lang.String" itemvalue="Jest.util.firstUpperCase()" />
+        <item index="0" class="java.lang.String" itemvalue="Jest.ActionSheet (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Jest.ActionSheet" />
+        <item index="2" class="java.lang.String" itemvalue="npm.test" />
+        <item index="3" class="java.lang.String" itemvalue="npm.lint" />
+        <item index="4" class="java.lang.String" itemvalue="npm.pub:entry" />
       </list>
     </recent_temporary>
   </component>
@@ -706,11 +716,20 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="util - 2017.12.05 at 17h 10m 53s.xml">
-      <configuration name="util" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="ActionSheet - 2017.12.05 at 23h 25m 07s.xml">
+      <configuration name="ActionSheet" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="util_firstUpperCase() - 2017.12.05 at 17h 14m 22s.xml">
-      <configuration name="util.firstUpperCase()" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="ActionSheet - 2017.12.05 at 23h 29m 23s.xml">
+      <configuration name="ActionSheet" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="ActionSheet_(1) - 2017.12.05 at 23h 32m 50s.xml">
+      <configuration name="ActionSheet (1)" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="ActionSheet_(1) - 2017.12.06 at 00h 28m 43s.xml">
+      <configuration name="ActionSheet (1)" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="ActionSheet_(1) - 2017.12.06 at 00h 30m 18s.xml">
+      <configuration name="ActionSheet (1)" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
     <history-entry file="util_isBlank() - 2017.12.05 at 17h 07m 08s.xml">
       <configuration name="util.isBlank()" configurationId="JavaScriptTestRunnerJest" />
@@ -742,18 +761,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="43" y="23" width="1397" height="877" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18968023" sideWeight="0.44423077" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18968023" sideWeight="0.44038463" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908162" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908162" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32780612" sideWeight="0.44186047" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.32908162" sideWeight="0.49709302" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18968023" sideWeight="0.5557692" order="2" side_tool="true" content_ui="tabs" x="611" y="330" width="261" height="262" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33673468" sideWeight="0.46802327" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33673468" sideWeight="0.4622093" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18968023" sideWeight="0.5596154" order="2" side_tool="true" content_ui="tabs" x="611" y="330" width="261" height="262" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33673468" sideWeight="0.53197676" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33673468" sideWeight="0.5377907" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.18968023" sideWeight="0.5133588" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39923468" sideWeight="0.49709302" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -789,104 +807,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/swiper/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/datetime/datetime-util.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="261" column="11" lean-forward="false" selection-start-line="261" selection-start-column="0" selection-end-line="262" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/swiper/core.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="193" column="8" lean-forward="false" selection-start-line="193" selection-start-column="8" selection-end-line="193" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit/specs/platform.spec.js" />
-    <entry file="file://$PROJECT_DIR$/test/unit/karma.conf.js" />
-    <entry file="file://$PROJECT_DIR$/test/unit/webpack.test.conf.js" />
-    <entry file="file://$PROJECT_DIR$/test/unit/.eslintrc" />
-    <entry file="file://$PROJECT_DIR$/test/unit/specs/Alert.spec.js" />
-    <entry file="file://$PROJECT_DIR$/test/unit/specs/Base.spec.js" />
-    <entry file="file://$PROJECT_DIR$/test/unit/index.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/_jest-cli@21.2.1@jest-cli/bin/jest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/_jest@21.2.1@jest/bin/jest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/_jest@21.2.1@jest/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-337">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/swiper/swiper.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="23" column="39" lean-forward="false" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/checkProtocol.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.eslintrc.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/item/item-sliding.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2834">
-          <caret line="318" column="6" lean-forward="false" selection-start-line="318" selection-start-column="6" selection-end-line="318" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demos/src/main.old.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/item/item-group.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="2" lean-forward="false" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/list/list.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="96" column="8" lean-forward="false" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/lib-builder/build-entry.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -922,7 +842,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/__test__/util.spec.js">
+    <entry file="file://$PROJECT_DIR$/src/util/test/util.spec.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
           <caret line="71" column="20" lean-forward="false" selection-start-line="71" selection-start-column="11" selection-end-line="71" selection-end-column="20" />
@@ -943,20 +863,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/webpack.lib.conf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/webpack.dist.conf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="49" lean-forward="false" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/build/webpack.lib.conf.js" />
+    <entry file="file://$PROJECT_DIR$/build/webpack.dist.conf.js" />
     <entry file="file://$PROJECT_DIR$/build/docs-publish.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -964,13 +872,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/gulpfile.lib.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/build/gulpfile.lib.js" />
     <entry file="file://$PROJECT_DIR$/demos/build/get-scss-variables.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1022,6 +924,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/demos/build/build.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json" />
+    <entry file="file://$PROJECT_DIR$/demos/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/doc-builder/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/demo-publish.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/input/input.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="166" column="16" lean-forward="false" selection-start-line="166" selection-start-column="16" selection-end-line="166" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/demos/config/dev.env.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1036,21 +974,137 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/demos/config/test.env.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demos/build/webpack.base.conf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demos/build/webpack.dev.conf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demos/build/dev-client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demos/build/dev-server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="66" column="20" lean-forward="false" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/swiper/swiper-item.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/swiper/swiper.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="39" lean-forward="false" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/demos/config/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+        <state relative-caret-position="375">
+          <caret line="25" column="8" lean-forward="false" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demos/build/build.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="9" />
+        <state relative-caret-position="512">
+          <caret line="172" column="24" lean-forward="false" selection-start-line="172" selection-start-column="7" selection-end-line="172" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
+    <entry file="file://$PROJECT_DIR$/node_modules/ionicons/dist/css/ionicons.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/icon/icon.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/icon/icon.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/icon/test/index.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/icon/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demos/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/action-sheet/action-sheet.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="47" lean-forward="false" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="47" />
+          <folding>
+            <marker date="1512492605000" expanded="true" signature="1401:1614" ph="..." />
+            <marker date="1512492605000" expanded="true" signature="1633:3989" ph="{&quot;name&quot;: 'ion-action-sheet'...}" />
+            <marker date="1512492605000" expanded="true" signature="1708:1765" ph="{&quot;IonButton&quot;: IonButton...}" />
+            <marker date="1512492605000" expanded="true" signature="1794:2015" ph="{&quot;cssClass&quot;: ''...}" />
+            <marker date="1512492605000" expanded="true" signature="1820:1874" ph="{&quot;title&quot;: ''...}" />
+            <marker date="1512492605000" expanded="true" signature="2037:3985" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/action-sheet/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/action-sheet/__test__/__snapshots__/index.spec.js.snap" />
+    <entry file="file://$PROJECT_DIR$/.eslintignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1058,43 +1112,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demos/index.html">
+    <entry file="file://$PROJECT_DIR$/.eslintrc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/.editorconfig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="48" column="12" lean-forward="false" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+        <state relative-caret-position="165">
+          <caret line="11" column="32" lean-forward="false" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/doc-builder/config.js">
+    <entry file="file://$PROJECT_DIR$/src/components/action-sheet/__test__/index.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/demo-publish.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="23" column="18" lean-forward="false" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/input/input.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="166" column="16" lean-forward="true" selection-start-line="166" selection-start-column="16" selection-end-line="166" selection-end-column="16" />
-          <folding />
+        <state relative-caret-position="69">
+          <caret line="37" column="37" lean-forward="false" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+          <folding>
+            <marker date="1512491105000" expanded="true" signature="1346:1381" ph="..." />
+            <marker date="1512491105000" expanded="true" signature="1431:1445" ph="..." />
+            <marker date="1512491105000" expanded="true" signature="3392:3427" ph="..." />
+            <marker date="1512491105000" expanded="true" signature="3477:3491" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -3,7 +3,7 @@ import AppRoot from './App.vue'
 import AttachFastClick from 'fastclick'
 import APP_CONFIGS from './config/app-configs'
 import PLATFORM_CONFIGS from './config/platform-configs'
-// import vmGeo from 'vm-geo'
+import 'ionicons/dist/css/ionicons.css'
 import router from './router'
 
 // 导入所有组件
