@@ -105,6 +105,15 @@ $action-sheet-md-icon-margin-start:                     0 !default;
   }
 }
 
+.action-sheet-md .action-sheet-title .action-sheet-sub-title {
+  max-width: 90%;
+  margin-top: 2%;
+  margin-right: auto;
+  margin-left: 0;
+  font-size: 77%;
+  line-height: 130%;
+}
+
 .action-sheet-md .action-sheet-button {
   @include text-align($action-sheet-md-text-align);
 

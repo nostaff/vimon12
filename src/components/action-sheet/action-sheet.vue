@@ -1,12 +1,15 @@
 <template>
-  <div role="dialog" :class="[themeClass, cssClass]" style="z-index: 10001;">
+  <div role="dialog" :class="['ion-action-sheet', themeClass, cssClass]" style="z-index: 10001;">
     <ion-backdrop @click.native="bdClick()" :enableBackdropDismiss="enableBackdropDismiss" :isActive="activated"></ion-backdrop>
     <transition name="ion-action-sheet-fadeup">
       <div class="action-sheet-wrapper" v-show="activated">
         <div class="action-sheet-container">
           <div class="action-sheet-group">
-            <div class="action-sheet-title" v-text="title"></div>
-            <ion-button role="action-sheet-button" key="idx" v-for="(button, index) in buttons" :disabled="button.disabled" :class="button.cssClass" @click.native="dismiss(index, button.disabled)">
+            <div class="action-sheet-title">
+              <span>{{title}}</span>
+              <div class="action-sheet-sub-title">{{subTitle}}</div>
+            </div>
+            <ion-button role="action-sheet-button" :key="index" v-for="(button, index) in buttons" :disabled="button.disabled" :class="button.cssClass" @click.native="dismiss(index, button.disabled)">
               <ion-icon class="action-sheet-icon icon" :name="button.icon" v-if="button.icon"></ion-icon>
               {{button.text}}
             </ion-button>
@@ -41,8 +44,11 @@
       return {
         defaultOptions: {
           title: '',
+          subTitle: '',
           buttons: []
         },
+        title: '',
+        subTitle: '',
         buttons: [],
         enableBackdropDismiss: true,
         cssClass: '',
@@ -56,6 +62,7 @@
       present (options) {
         let _options = objectAssign({}, this.defaultOptions, options)
         this.title = _options.title
+        this.subTitle = _options.subTitle
         if (typeof _options.cssClass === 'string') {
           this.cssClass = _options.cssClass
         }

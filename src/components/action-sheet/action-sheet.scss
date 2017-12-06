@@ -24,7 +24,7 @@ $action-sheet-max-width:                         500px !default;
 .action-sheet-wrapper {
   @include position(0, 0, 0, 0);
   @include margin(auto);
-  @include transform(translate3d(0, 100%, 0));
+  // @include transform(translate3d(0, 100%, 0));
 
   position: absolute;
   z-index: $z-index-overlay-wrapper;
@@ -64,3 +64,4 @@ $action-sheet-max-width:                         500px !default;
 
   flex-shrink: 0;
 }
+

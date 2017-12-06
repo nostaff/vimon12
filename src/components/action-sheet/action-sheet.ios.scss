@@ -136,7 +136,14 @@ $action-sheet-ios-button-cancel-font-weight:            600 !default;
   font-weight: $action-sheet-ios-title-font-weight;
   color: $action-sheet-ios-title-color;
 }
-
+.action-sheet-ios .action-sheet-title .action-sheet-sub-title {
+  max-width: 90%;
+  margin-top: 3%;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 77%;
+  line-height: 130%;
+}
 .action-sheet-ios .action-sheet-button {
   @include margin(0);
   @include padding($action-sheet-ios-button-padding);
