@@ -265,7 +265,9 @@ export default function (plt) {
   // showToast
   plt.showToast = (options) => {
     console.debug('Toast 组件使用DingTalk模式!')
-    if (options.type === 'fail') { options.type = 'error' }
+    if (options.type === 'fail') {
+      options.type = 'error'
+    }
     window.dd.device.notification.toast({
       icon: options.type, // icon样式，有success和error，默认为空 0.0.2
       text: options.message, // 提示信息
