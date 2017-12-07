@@ -4,9 +4,9 @@
     </div>
 </template>
 <script>
-    import ThemeMixins from '../../themes/theme.mixins'
+import ThemeMixins from '../../themes/theme.mixins'
 export default {
-      name: 'ion-title',
-      mixins: [ThemeMixins]
-    }
+  name: 'ion-title',
+  mixins: [ThemeMixins]
+}
 </script>

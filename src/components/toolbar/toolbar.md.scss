@@ -344,7 +344,7 @@ $toolbar-button-md-strong-font-weight:   bold !default;
   @include padding(0, 6px);
   @include text-align(start);
 
-  font-size: 2.4rem;
+  font-size: 2.4rem !important;
   font-weight: normal;
 }
 

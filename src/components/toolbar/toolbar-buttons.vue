@@ -4,18 +4,18 @@
     </div>
 </template>
 <script>
-    import ThemeMixins from '../../themes/theme.mixins'
+import ThemeMixins from '../../themes/theme.mixins'
 export default {
-      name: 'ion-buttons',
-      mixins: [ThemeMixins],
-      data () {
-        return {
-          componentName: 'ionButtons'
-        }
-      }
+  name: 'ion-buttons',
+  mixins: [ThemeMixins],
+  data () {
+    return {
+      componentName: 'ionButtons'
     }
+  }
+}
 </script>
 
 <style lang="scss">
-  @import 'toolbar-buttons';
+@import "toolbar-buttons";
 </style>
