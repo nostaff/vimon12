@@ -1,40 +1,36 @@
 <template>
-    <ion-list :title="title">
-        <ion-item :class="[
-            option.disabled?'item-checkbox-disabled':'',
-            getChecked(option.value) ? 'item-checkbox-checked' : ''
-            ]" key="idx" v-for="option in processOptions" @click.native="onChecked(option.value, option.disabled)">
-            {{option.label}}
-
-            <div :slot="labelPosition==='right'?'item-start':'item-end'" :class="[
-                'checkbox',
-                'checkbox-'+theme,
-                'checkbox-'+theme+'-'+getColor(option.color),
-                option.disabled?'checkbox-disabled':''
-                ]">
-                <div :class="['checkbox-icon', getChecked(option.value)?'checkbox-checked':'']">
-                    <div class="checkbox-inner"></div>
-                </div>
-                <ion-button role="checkbox" :disabled="option.disabled"></ion-button>
-            </div>
-        </ion-item>
-    </ion-list>
+  <ion-list :title="title">
+    <ion-item
+      :key="option.value"
+      v-for="option in processOptions"
+    >
+      <ion-label slot="item-label">{{option.label}}</ion-label>
+      <ion-checkbox
+        :slot="labelPosition==='right'?'item-start':'item-end'"
+        :disabled="option.disabled"
+        :value="getChecked(option.value)"
+        :color="getColor(option.color)"
+        @onChange="onChangeHandler(option.value)"
+      ></ion-checkbox>
+    </ion-item>
+  </ion-list>
 </template>
 <script>
   import ThemeMixins from '../../themes/theme.mixins'
   import IonList from '../list/list'
   import IonItem from '../item/item'
-  import IonButton from '../button/index'
+  import IonCheckbox from './checkbox.vue'
 
   export default {
     name: 'ion-checkbox-group',
     mixins: [ThemeMixins],
     components: {
-      IonButton,
       IonItem,
-      IonList
+      IonList,
+      IonCheckbox
     },
     props: {
+      title: String,
       options: {
         type: Array,
         required: true
@@ -48,7 +44,11 @@
         default: 'right'
       }
     },
-
+    data () {
+      return {
+        currentValue: this.value
+      }
+    },
     computed: {
       processOptions () {
         if (this.options.length && {}.hasOwnProperty.call(this.options[0], 'label')) {
@@ -62,24 +62,15 @@
             }
           })
         }
-      },
-
-      currentValue: function () {
-        return this.value
       }
-
     },
-
     methods: {
       getChecked (val) {
         return this.currentValue.indexOf(val) !== -1
       },
 
-      onChecked (val, disabled) {
-        if (disabled) return
-
+      onChangeHandler (val) {
         let index = this.currentValue.indexOf(val)
-
         if (index === -1) {
           this.currentValue.push(val)
         } else {
@@ -87,6 +78,7 @@
         }
         this.currentValue.sort()
 
+        this.$emit('input', this.currentValue)
         this.$emit('onChange', this.currentValue)
       },
 
