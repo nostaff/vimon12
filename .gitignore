@@ -2,7 +2,6 @@ node_modules/
 
 npm-debug.log
 yarn-error.log
-test/unit/coverage
 test/e2e/reports
 selenium-debug.log
 
@@ -12,7 +11,7 @@ selenium-debug.log
 *.zip
 
 publish/
-coverage/
+test/coverage/
 lib/
 dist/
 es/

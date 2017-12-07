@@ -22,7 +22,7 @@
     "release": "standard-version && npm run pub && git push --follow-tags origin master && npm publish",
     "ci-demo-release": "npm run demo:build && node build/demo-publish.js",
     "ci-docs-release": "npm run docs:build && node build/docs-publish.js",
-    "ci-report-coverage": "cat ./test/unit/coverage/lcov.info | coveralls",
+    "ci-report-coverage": "cat ./test/coverage/lcov.info | coveralls",
     "ci-github-release": "node build/github-release.js"
   },
   "standard-version": {
@@ -34,7 +34,7 @@
     }
   },
   "lint-staged": {
-    "{src,demos/src}/**/*.{js,vue}": ["eslint --fix"]
+    "{src,demos/src}/**/*.{js,vue}": ["eslint"]
   },
   "config": {
     "validate-commit-msg": {
@@ -86,7 +86,6 @@
     "eslint-loader": "^1.9.0",
     "eslint-plugin-html": "^4.0.1",
     "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jest": "^21.4.1",
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
@@ -124,7 +123,6 @@
     "vue-jest": "^1.3.0",
     "vue-loader": "^13.5.0",
     "vue-router": "^3.0.1",
-    "vue-server-renderer": "^2.5.9",
     "vue-style-loader": "^3.0.3",
     "vue-template-compiler": "^2.5.9",
     "vue-test-utils": "^1.0.0-beta.6",
@@ -159,7 +157,7 @@
       "vue"
     ],
     "moduleNameMapper": {
-      "^@/(.*)$": "<rootDir>/src/$1",
+      "@(.*)$": "<rootDir>/src/$1",
       "^vue$": "vue/dist/vue.common.js"
     },
     "transform": {
@@ -170,12 +168,14 @@
       "<rootDir>/node_modules/jest-serializer-vue"
     ],
     "mapCoverage": true,
-    "collectCoverage": true,
+    "collectCoverage": false,
     "collectCoverageFrom": [
       "src/**/*.{js,vue}",
       "!**/node_modules/**",
       "!**/vendor/**"
-    ]
+    ],
+    "coverageDirectory": "<rootDir>/test/coverage"
+
   },
   "theme": [
     "./demos/src/theme/variables.scss"
