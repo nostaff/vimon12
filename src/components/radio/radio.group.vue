@@ -1,88 +1,79 @@
 <template>
-  <ion-list :title="title">
-    <ion-item :class="[
-            'item-radio',
-            option.disabled?'item-radio-disabled':'',
-            (option.value === currentValue) ? 'item-radio-checked' : ''
-            ]" key="idx" v-for="option in processOptions" @click.native="onChecked(option.value, option.disabled)">
-      {{option.label}}
-      <div slot="item-end" :class="[
-                'radio',
-                'radio-'+theme,
-                'radio-'+theme+'-'+getColor(option.color),
-                 option.disabled?'radio-disabled':''
-                ]">
-        <div :class="['radio-icon', (option.value === currentValue)?'radio-checked':'']">
-          <div class="radio-inner"></div>
-        </div>
-        <ion-button role="radio" :disabled="option.disabled"></ion-button>
-      </div>
+  <ion-list :title="title" radio-group>
+    <ion-item
+        :key="option.value"
+        v-for="option in processOptions"
+      >
+      <ion-label slot="item-label">{{option.label}}</ion-label>
+      <ion-radio slot="item-content"
+        :disabled="option.disabled"
+        :value="option.value"
+        :checked="(option.value === currentValue)"
+        @onSelect="onSelectHandler($event)"
+        ></ion-radio>
     </ion-item>
   </ion-list>
 </template>
 <script>
-  import ThemeMixins from '../../themes/theme.mixins'
+import ThemeMixins from '../../themes/theme.mixins'
+import {isPresent} from '../../util/util'
 import IonList from '../list/list'
-  import IonItem from '../item/item'
-import IonButton from '../button/index'
+import IonItem from '../item/item'
 
 export default {
-    name: 'ion-radio-group',
-    mixins: [ThemeMixins],
-    components: {
-      IonButton,
-      IonItem,
-      IonList
+  name: 'ion-radio-group',
+  mixins: [ThemeMixins],
+  components: {
+    IonItem,
+    IonList
+  },
+  props: {
+    title: String,
+    options: {
+      type: Array,
+      required: true
     },
-    props: {
-      options: {
-        type: Array,
-        required: true
-      },
-      value: {
-        type: [Number, String, Boolean],
-        required: true
-      }
-    },
-
-    computed: {
-      processOptions () {
-        if (this.options.length && {}.hasOwnProperty.call(this.options[0], 'label')) {
-          return this.options
-        } else {
-          return this.options.map(function (item) {
-            return {
-              label: item,
-              value: item,
-              disabled: false
-            }
-          })
-        }
-      },
-
-      currentValue: function () {
-        return this.value
-      }
-
-    },
-
-    methods: {
-      onChecked (newVal, disabled) {
-        if (disabled) return
-        this.currentValue = newVal
-        this.$emit('input', newVal)
-        this.$emit('onChange', newVal)
-      },
-
-      // option的颜色优先
-      getColor: function (optionColor) {
-        return typeof optionColor !== 'undefined' ? optionColor : this.color
+    value: {
+      type: [Number, String, Boolean],
+      required: true
+    }
+  },
+  data () {
+    return {
+      currentValue: this.value
+    }
+  },
+  computed: {
+    processOptions () {
+      if (this.options.length && {}.hasOwnProperty.call(this.options[0], 'label')) {
+        return this.options
+      } else {
+        return this.options.map(function (item) {
+          return {
+            label: item,
+            value: item,
+            disabled: false
+          }
+        })
       }
     }
+  },
+
+  methods: {
+    onSelectHandler (newVal) {
+      this.currentValue = newVal
+      this.$emit('input', newVal)
+      this.$emit('onChange', newVal)
+    },
+    // option的颜色优先
+    getColor: function (optionColor) {
+      return isPresent(optionColor) ? optionColor : this.color
+    }
   }
+}
 </script>
 
 <style lang="scss">
-  @import 'radio.ios';
-  @import 'radio.md';
+@import "radio.ios";
+@import "radio.md";
 </style>

@@ -1,23 +1,19 @@
 <template>
     <ion-page>
         <ion-header>
-            <ion-navbar showBack="true" :color="theme" title="Page Title"></ion-navbar>
+            <ion-navbar show-back="true" :color="color" title="Page"></ion-navbar>
         </ion-header>
 
         <ion-content>
+            <ion-radio-group title="Navbar Color" :options="colors" v-model="color"></ion-radio-group>
 
-            <div style="height: 20px;"></div>
-
-            <ion-radio-group :options="themes" v-model="theme"></ion-radio-group>
-
+            <div>Selected Color: {{color}}</div>
         </ion-content>
 
         <ion-footer>
-
             <ion-toolbar>
                 <ion-title>I'm a footer</ion-title>
             </ion-toolbar>
-
         </ion-footer>
     </ion-page>
 </template>
@@ -25,7 +21,7 @@
     export default {
       data () {
         return {
-          themes: [
+          colors: [
             'default',
             'primary',
             'light',
@@ -33,7 +29,7 @@
             'danger',
             'dark'
           ],
-          theme: 'default'
+          color: 'danger'
         }
       }
     }
