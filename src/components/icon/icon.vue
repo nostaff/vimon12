@@ -1,5 +1,5 @@
 <template>
-  <i class="ion-icon" role="img" :class="['icon', 'icon-'-theme, colorClass]"></i>
+  <i class="ion-icon" role="img" :class="[themeClass, colorClass]"></i>
 </template>
 <script>
   import {isTrueProperty} from '../../util/util'
@@ -15,10 +15,7 @@
       }
     },
     props: {
-      name: {
-        type: String,
-        default: ''
-      },
+      name: String,
       ios: String,
       md: String,
       active: [String, Boolean]
@@ -32,9 +29,6 @@
           return this.theme + '-' + name
         }
         return name
-      },
-      colorClass () {
-        return this.color ? `icon-${this.theme}-${this.color}` : ''
       }
     },
     watch: {
