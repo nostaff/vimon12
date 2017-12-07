@@ -108,7 +108,7 @@
       this.parisTime = this.calculateTime('+1')
       this.madisonTime = this.calculateTime('-6')
 
-    // If it is Daylight Savings Time
+      // If it is Daylight Savings Time
       if (this.dst(new Date())) {
         this.parisTime = this.calculateTime('+2')
         this.madisonTime = this.calculateTime('-5')
@@ -122,8 +122,8 @@
         // create Date object for current location
         let d = new Date()
 
-      // create new Date object for different city
-      // using supplied offset
+        // create new Date object for different city
+        // using supplied offset
         let nd = new Date(d.getTime() + (3600000 * offset))
 
         return nd.toISOString()

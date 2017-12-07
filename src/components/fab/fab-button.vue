@@ -54,7 +54,7 @@
       /**
        * 按钮点击处理函数, 如果是主button, 则Fab组件改写此方法
        * @private
-       * */
+       **/
       clickHandler () {
         this.$emit('click', this.fabComponent)
         this.isMainButton && this.fabComponent.toggleClicked()

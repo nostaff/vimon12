@@ -18,7 +18,7 @@ function getPresentDismissIns (Factory) {
     /**
      * 组件实例
      * @private
-     * */
+     **/
     _ins: null, // instance
 
     /**
@@ -28,7 +28,7 @@ function getPresentDismissIns (Factory) {
      * @param {object} options - 传入参数
      * @return {Promise} - 开启动画结束的promise
      * @private
-     * */
+     **/
     present (options) {
       return new Promise(resolve => {
         if (this._ins && this._ins.isActive) {
@@ -53,7 +53,7 @@ function getPresentDismissIns (Factory) {
      * 关闭
      * @return {Promise} - 关闭动画结束的promise
      * @private
-     * */
+     **/
     dismiss () {
       return new Promise(resolve => {
         if (this._ins && this._ins.isActive) {
@@ -68,14 +68,14 @@ function getPresentDismissIns (Factory) {
     /**
      * 刷新
      * @private
-     * */
+     **/
     refresh () {
       this._ins && this._ins.refresh()
     },
     /**
      * 列重置
      * @private
-     * */
+     **/
     resetColumn (index) {
       this._ins && this._ins.resetColumn(index)
     }

@@ -21,8 +21,8 @@
             effect: 'scale',
             title: '',
             buttons: [
-                        {text: '确定'},
-                        {text: '取消'}
+              {text: '确定'},
+              {text: '取消'}
             ]
           }
 
@@ -38,7 +38,7 @@
             effect: 'scale',
             title: '',
             buttons: [
-                        {text: '确定', theme: 'assertive'}
+              {text: '确定', theme: 'assertive'}
             ],
             showClose: true
           }
@@ -54,14 +54,14 @@
             console.log(buttonIndex)
           })
 
-                /* fromTemplateUrl sample */
+          /* fromTemplateUrl sample */
 
-                // let path_to_template = ''
-                // $popup
-                //   .fromTemplateUrl(path_to_template, options)
-                //   .then((popup) => {
-                //     popup.present()
-                //   })
+          // let path_to_template = ''
+          // $popup
+          //   .fromTemplateUrl(path_to_template, options)
+          //   .then((popup) => {
+          //     popup.present()
+          //   })
         }
       }
     }

@@ -56,7 +56,7 @@
           ev: ev,
           template: Popage,
           data: {
-            contentEle: this.$refs.content.$el  // 传入数据, 内部通过`this.$options.$data`获取这个data
+            contentEle: this.$refs.content.$el // 传入数据, 内部通过`this.$options.$data`获取这个data
           }
         }).then((role) => {
           console.log(role)

@@ -83,7 +83,7 @@
         },
 
         getData () {
-                // return mock data synchronously
+          // return mock data synchronously
           let data = []
           for (var i = 0; i < 20; i++) {
             data.unshift(this._getRandomData())
@@ -92,7 +92,7 @@
         },
 
         getAsyncData () {
-                // async receive mock data
+          // async receive mock data
           return new Promise(resolve => {
             setTimeout(() => {
               resolve(this.getData())

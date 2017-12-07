@@ -397,7 +397,7 @@
 
       /**
        * @private
-       * */
+       **/
       init () {
         this.optHeight = this.getOptHeight()
 

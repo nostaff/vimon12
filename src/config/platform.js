@@ -31,7 +31,7 @@
  *    minor?: number;
  * }
  *
- * */
+ **/
 
 import { defaults, isFunction, isObject, isPresent } from '../util/util'
 import { getCss } from '../util/dom'
@@ -190,14 +190,14 @@ class Platform {
   /**
    * 设置网络类型
    * @private
-   * */
+   **/
   setNetworkType (networkType) {
     this._nt = networkType
   }
 
   /**
    * 获取网络类型, 如果是在平台, 则使用平台方法
-   * */
+   **/
   networkType () {
     return this._nt
   }
@@ -205,7 +205,7 @@ class Platform {
   /**
    * 当网络环境发生变化时触发注册函数
    * @param {Function} fn - 注册函数, 回调参数返回网络类型
-   * */
+   **/
   onNetworkChange (fn) {
     if (
       isPresent(fn) &&
@@ -619,13 +619,13 @@ class Platform {
 
 /**
  * @private
- * */
+ **/
 class PlatformNode {
   /**
    * 读取c中的配置信息
    * @param {PlatformConfig} registry
    * @param {string} platformName
-   * */
+   **/
   constructor (registry, platformName) {
     this.parent = null // 父节点
     this.child = null // 子节点
@@ -650,7 +650,7 @@ class PlatformNode {
    * 执行配置的匹配函数, 判断现在的node是否匹配当前运行平台
    * @param {Platform} p
    * @return {boolean}
-   * */
+   **/
   isMatch (p) {
     return this.c.isMatch && this.c.isMatch(p)
   }
@@ -658,7 +658,7 @@ class PlatformNode {
   /**
    * 初始化之前执行的函数
    * @param {Platform} platform
-   * */
+   **/
   beforeInitialize (platform) {
     this.c.beforeInitialize && this.c.beforeInitialize(platform)
   }
@@ -666,7 +666,7 @@ class PlatformNode {
   /**
    * 执行配置的初始化函数, 传入当前平台的参数
    * @param {Platform} platform
-   * */
+   **/
   initialize (platform) {
     this.c.initialize && this.c.initialize(platform)
   }
@@ -675,7 +675,7 @@ class PlatformNode {
    * 传入当前的平台信息, 获得版本信息
    * @param {Platform} p
    * @return {PlatformVersion}
-   * */
+   **/
   version (p) {
     if (this.c.versionParser) {
       const v = this.c.versionParser(p)
@@ -699,7 +699,7 @@ class PlatformNode {
    * 获得当前node的根node
    * @param {Platform} p
    * @return {PlatformNode}
-   * */
+   **/
   getRoot (p) {
     // 判断当前平台是否和当前的Node匹配
     if (this.isMatch(p)) {
@@ -732,7 +732,7 @@ class PlatformNode {
    * 获取 子集名称对应的父集列表
    * @param {string} subsetPlatformName
    * @return {array}
-   * */
+   **/
   getSubsetParents (subsetPlatformName) {
     const parentPlatformNames = []
     let platform = null // PlatformConfig
@@ -755,7 +755,7 @@ class PlatformNode {
  * @param {any} registry
  * @param {PlatformNode} platformNode
  * @private
- * */
+ **/
 function insertSuperset (registry, platformNode) {
   let supersetPlatformName = platformNode.superset()
   if (supersetPlatformName) {
@@ -783,7 +783,7 @@ function insertSuperset (registry, platformNode) {
 export class QueryParams {
   /**
    * @param {string} url
-   * */
+   **/
   constructor (url = window.location.href) {
     this.data = {} // {[key: string]: any}
     this.parseUrl(url)
@@ -791,14 +791,14 @@ export class QueryParams {
 
   /**
    * @param {string} key
-   * */
+   **/
   get (key) {
     return this.data[key.toLowerCase()]
   }
 
   /**
    * @param {string} url
-   * */
+   **/
   parseUrl (url) {
     if (url) {
       const startIndex = url.indexOf('?')
@@ -821,7 +821,7 @@ export class QueryParams {
 /**
  * @param {object} config - 用户在外面定义的平台配置, 需要和默认配置整合
  * @private
- * */
+ **/
 export function setupPlatform (config = {}) {
   const p = new Platform()
   let _finalConf = PLATFORM_DEFAULT_CONFIGS

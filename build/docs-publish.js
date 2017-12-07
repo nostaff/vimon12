@@ -2,7 +2,7 @@
  * 这个脚本适用于发布docs到 vimo 的gh-pages分支上
  * 发布之前需要将文档生成好
  * 文档位置为: vimo/docs/*
- * */
+ **/
 const {cd, exec, touch} = require('shelljs')
 const {readFileSync} = require('fs')
 

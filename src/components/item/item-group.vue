@@ -97,10 +97,10 @@
         let lastToIndex = this.lastToIndex
         this.lastToIndex = toIndex
 
-          /** ******* DOM READ ********** */
+        /** ******* DOM READ ***********/
         let children = this.$el.children
 
-          /** ******* DOM WRITE ********* */
+        /** ******* DOM WRITE **********/
         let transform = 'transform'
         if (toIndex >= lastToIndex) {
           for (let i = lastToIndex; i <= toIndex; i++) {

@@ -7,3 +7,5 @@
 ./demos/build/*.js
 ./demos/config/*.js
 ./demos/static/*.js
+./coverage/*
+

@@ -201,7 +201,6 @@
     </ion-page>
 </template>
 <script>
-
     export default {
       data () {
         return {
@@ -232,28 +231,28 @@
         this.toppings = ['bacon', 'xcheese']
 
         this.petData = [
-                {text: 'Bird', value: 'bird'},
-                {text: 'Cat', value: 'cat'},
-                {text: 'Dog', value: 'dog'},
-                {text: 'Honey Badger', value: 'honeybadger'}
+          {text: 'Bird', value: 'bird'},
+          {text: 'Cat', value: 'cat'},
+          {text: 'Dog', value: 'dog'},
+          {text: 'Honey Badger', value: 'honeybadger'}
         ]
 
         this.hairColorData = [
-                {text: 'Brown', value: 'brown'},
-                {text: 'Blonde', value: 'blonde'},
-                {text: 'Black', value: 'black'},
-                {text: 'Red', value: 'red'}
+          {text: 'Brown', value: 'brown'},
+          {text: 'Blonde', value: 'blonde'},
+          {text: 'Black', value: 'black'},
+          {text: 'Red', value: 'red'}
         ]
 
         // Pre-selected object with different object reference
         this.hairColor = ['brown']
 
         this.skittlesData = [
-                {text: 'Red', value: 'red'},
-                {text: 'Orange', value: 'orange'},
-                {text: 'Yellow', value: 'yellow'},
-                {text: 'Green', value: 'green'},
-                {text: 'Purple', value: 'purple'}
+          {text: 'Red', value: 'red'},
+          {text: 'Orange', value: 'orange'},
+          {text: 'Yellow', value: 'yellow'},
+          {text: 'Green', value: 'green'},
+          {text: 'Purple', value: 'purple'}
         ]
 
         this.skittles = ['red', 'purple']

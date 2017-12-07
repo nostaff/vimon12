@@ -250,7 +250,7 @@ export function assert (actual, reason) {
  * 首字母大写
  * @param {string} str - 传入string
  * @return {string}
- * */
+ **/
 export function firstUpperCase (str) {
   return str.toString()[0].toUpperCase() + str.toString().slice(1)
 }
@@ -261,7 +261,7 @@ export function firstUpperCase (str) {
  * @return {number}
  * @example
  * 10px -> 10
- * */
+ **/
 export function parsePxUnit (val) {
   return !!val && val.indexOf('px') > 0 ? parseInt(val, 10) : 0
 }

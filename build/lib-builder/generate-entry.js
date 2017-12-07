@@ -1,6 +1,6 @@
 /**
  * 根据组件名称自动生成lib的entry
- * */
+ **/
 var startcase = require('lodash.startcase')
 var config = require('./config')
 var fs = require('fs')
@@ -8,7 +8,7 @@ var fs = require('fs')
 /**
  * @param {Array} fileNames - 文件名称列表
  * @return {Promise}
- * */
+ **/
 module.exports = function generateEntry (fileNames) {
   return new Promise((resolve, reject) => {
     if (!Array.isArray(fileNames)) {

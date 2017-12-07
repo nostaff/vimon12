@@ -98,7 +98,7 @@ export class Config {
   constructor () {
     /**
      * @private
-     * */
+     **/
     this._cache = {} // cache 获取配置的缓存对象, 可用的config只有调用的时候才知道!
     this._settings = {} // setting/store/superlative 最高级配置 用户在初始化时自己的配置config
     this.plt = null // Platform 当前平台的实例
@@ -310,7 +310,7 @@ export class Config {
   /**
    * 获取缓存配置
    * @return {object}
-   * */
+   **/
   cache () {
     return this._cache
   }
@@ -320,7 +320,7 @@ export class Config {
  * @function setupConfig
  * @description Config类实例化
  * @private
- * */
+ **/
 export function setupConfig (config = {}, plt = {}) {
   const c = new Config()
   c.init(config, plt)

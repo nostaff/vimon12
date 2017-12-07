@@ -5,7 +5,7 @@
  * 3. 加载完毕执行 bridgeReady 钩子
  * 4. 执行平台相关的驱动, 比如UI组件/导航条/页面切换等可用前端实现的通用部分(如果没有则不执行)
  * 5. 执行完毕触发 $platform.ready(), 平台就绪
- * */
+ **/
 import { docReady } from '../../../../src/util/dom'
 import { PLATFORM_INIT_TIMEOUT } from './variable'
 import loadScript from '../../../../src/util/loadScript'
@@ -15,7 +15,7 @@ export default {
   initialize (plt) {
     /**
      * 加载JSSDK
-     * */
+     **/
     let val
     const _this = this
     let jsSDKUrl = checkProtocol(this.settings['jsSDKUrl'])
@@ -23,7 +23,7 @@ export default {
     /**
      * 在ready之前进行处理
      * 执行用户定义的onBridgeReady钩子
-     * */
+     **/
     plt.beforeReady = () => {
       loadScript(jsSDKUrl, () => {
         // document 准备好后才能启动监听
@@ -58,7 +58,7 @@ export default {
 
     /**
      * 微信的userAgent中包含了网络类型和当前语言
-     * */
+     **/
     // 获取网络类型 可能的字段: NetType/WIFI, NetType/2G, NetType/3G+, NetType/4G
     val = plt.userAgent().match(/NetType\/(\w+) /i)
     if (!!val && val.length > 0 && !!val[1]) {

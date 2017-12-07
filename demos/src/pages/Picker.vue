@@ -97,7 +97,7 @@
       role: 'submit',
       handler: () => {
         console.log('Share clicked')
-        return false       // 不关闭对话框
+        return false // 不关闭对话框
       }
     }
   ]

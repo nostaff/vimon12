@@ -33,7 +33,7 @@ export class History {
 
       /**
        * 方法增强: replace()
-       * */
+       **/
       let replaceCopy = this._router.replace
       replaceCopy = replaceCopy.bind(this._router)
       this._router.replace = function () {
@@ -50,7 +50,7 @@ export class History {
       if (this.usePushWindow) {
         /**
          * 方法增强: back()
-         * */
+         **/
         let backCopy = this._router.back
         backCopy = backCopy.bind(this._router)
         this._router.back = function () {
@@ -63,7 +63,7 @@ export class History {
 
         /**
          * 方法增强: go()
-         * */
+         **/
         let goCopy = this._router.go
         goCopy = goCopy.bind(this._router)
         this._router.go = function (n) {
@@ -88,7 +88,7 @@ export class History {
            * 因此, 需要判断下history.length, 此时, 不显示back按钮
            *
            * 同理, length=1也同样处理
-           * */
+           **/
           this._pushHistory({ to, from, next })
         } else {
           // 向记录后方追溯, 如果有匹配可认为是go(-n)操作, 否则就是push操作
@@ -115,7 +115,7 @@ export class History {
   /**
    * push to history
    * @private
-   * */
+   **/
   _pushHistory ({ to, from, next }) {
     if (to.fullPath === from.fullPath && to.name === from.name) {
       // 同地址同名称跳转不记录不处理
@@ -150,7 +150,7 @@ export class History {
   /**
    * pop history record
    * @private
-   * */
+   **/
   _popHistory (next, i = 0) {
     // 激活了浏览器的后退,这里只需要更新状态
     this._direction = 'backward'
@@ -162,7 +162,7 @@ export class History {
    * 获取当前的页面进行的方向
    * 只能是这两个值: forward || backward
    * @return {string}
-   * */
+   **/
   getDirection () {
     return this._direction
   }
@@ -170,7 +170,7 @@ export class History {
   /**
    * 判断是否能返回
    * @return {Boolean}
-   * */
+   **/
   canGoBack () {
     return this.length > 1
   }
@@ -178,7 +178,7 @@ export class History {
   /**
    * 获取当前的导航记录
    * @return {Array}
-   * */
+   **/
   getHistory () {
     return this._history
   }
@@ -194,7 +194,7 @@ export class History {
    *    },
    *    component: require('@/pages/index.vue')
    * }
-   * */
+   **/
   toRoot () {
     // 支付宝方式返回首页
     let isHandled = this._platform.popToRoot && this._platform.popToRoot()

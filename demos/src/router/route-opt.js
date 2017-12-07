@@ -1,6 +1,6 @@
 /**
  * 路由配置表
- * */
+ **/
 
 // pages
 import DemoHome from '../pages/Home'
@@ -50,54 +50,54 @@ import DemoModal from '../pages/Modal'
 import NotFound from '../pages/NotFound'
 
 const routes = [
-    { path: '/', name: 'demo.index', component: DemoHome },
+  { path: '/', name: 'demo.index', component: DemoHome },
 
-    // Components
-    { path: '/demo/button', name: 'demo.button', component: DemoButton },
-    { path: '/demo/chip', component: DemoChip },
-    { path: '/demo/badge', component: DemoBadge },
-    { path: '/demo/fabs', component: DemoFabs },
-    { path: '/demo/icons', component: DemoIcon },
-    { path: '/demo/spinner', component: DemoSpinner },
-    { path: '/demo/datetime', component: DemoDatetime },
+  // Components
+  { path: '/demo/button', name: 'demo.button', component: DemoButton },
+  { path: '/demo/chip', component: DemoChip },
+  { path: '/demo/badge', component: DemoBadge },
+  { path: '/demo/fabs', component: DemoFabs },
+  { path: '/demo/icons', component: DemoIcon },
+  { path: '/demo/spinner', component: DemoSpinner },
+  { path: '/demo/datetime', component: DemoDatetime },
 
-    // Form
-    { path: '/demo/input', component: DemoInput },
-    { path: '/demo/textarea', component: DemoTextarea },
-    { path: '/demo/search', component: DemoSearch },
-    { path: '/demo/select', component: DemoSelect },
-    { path: '/demo/radio', component: DemoRadio },
-    { path: '/demo/checkbox', component: DemoCheckbox },
-    { path: '/demo/toggle', component: DemoToggle },
-    { path: '/demo/range', component: DemoRange },
+  // Form
+  { path: '/demo/input', component: DemoInput },
+  { path: '/demo/textarea', component: DemoTextarea },
+  { path: '/demo/search', component: DemoSearch },
+  { path: '/demo/select', component: DemoSelect },
+  { path: '/demo/radio', component: DemoRadio },
+  { path: '/demo/checkbox', component: DemoCheckbox },
+  { path: '/demo/toggle', component: DemoToggle },
+  { path: '/demo/range', component: DemoRange },
 
-    // Layout
-    { path: '/demo/toolbar', component: DemoToolbar },
-    { path: '/demo/page', component: DemoPage },
-    { path: '/demo/list', component: DemoList },
-    { path: '/demo/grid', component: DemoGrid },
-    { path: '/demo/tabs', component: DemoTabs },
-    { path: '/demo/segment', component: DemoSegment },
-    { path: '/demo/menu', component: DemoMenu },
+  // Layout
+  { path: '/demo/toolbar', component: DemoToolbar },
+  { path: '/demo/page', component: DemoPage },
+  { path: '/demo/list', component: DemoList },
+  { path: '/demo/grid', component: DemoGrid },
+  { path: '/demo/tabs', component: DemoTabs },
+  { path: '/demo/segment', component: DemoSegment },
+  { path: '/demo/menu', component: DemoMenu },
 
-    // Data
-    { path: '/demo/refresher', component: DemoRefresher },
-    { path: '/demo/infinite-scroll', component: DemoInfiniteScroll },
+  // Data
+  { path: '/demo/refresher', component: DemoRefresher },
+  { path: '/demo/infinite-scroll', component: DemoInfiniteScroll },
 
-    // Advanced
-    { path: '/demo/action-sheet', component: DemoActionSheet },
-    { path: '/demo/dialog', component: DemoDialog },
-    { path: '/demo/toast', component: DemoToast },
-    { path: '/demo/swiper', component: DemoSwiper },
-    { path: '/demo/swiper/default', component: DemoSwiperDefault },
-    { path: '/demo/swiper/vertical', component: DemoSwiperVertical },
-    { path: '/demo/popup', component: DemoPopup },
-    { path: '/demo/popover', component: DemoPopover },
-    { path: '/demo/actionSheet', component: DemoActionSheet },
-    { path: '/demo/modal', component: DemoModal },
-    { path: '/demo/picker', component: DemoPicker },
+  // Advanced
+  { path: '/demo/action-sheet', component: DemoActionSheet },
+  { path: '/demo/dialog', component: DemoDialog },
+  { path: '/demo/toast', component: DemoToast },
+  { path: '/demo/swiper', component: DemoSwiper },
+  { path: '/demo/swiper/default', component: DemoSwiperDefault },
+  { path: '/demo/swiper/vertical', component: DemoSwiperVertical },
+  { path: '/demo/popup', component: DemoPopup },
+  { path: '/demo/popover', component: DemoPopover },
+  { path: '/demo/actionSheet', component: DemoActionSheet },
+  { path: '/demo/modal', component: DemoModal },
+  { path: '/demo/picker', component: DemoPicker },
 
-    { path: '*', component: NotFound }
+  { path: '*', component: NotFound }
 
 ]
 

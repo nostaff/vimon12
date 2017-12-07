@@ -11,7 +11,7 @@
       <ion-label range-left>{{min}}</ion-label>
     </slot>
     <div class="range-slider">
-      <div class="range-tick" :class="{'range-tick-active':tick.active}" role="presentation" v-for="(tick, index) in ticks" :style="'left:'+tick.left" v-if="snaps"></div>
+      <div class="range-tick" :class="{'range-tick-active':tick.active}" role="presentation" v-for="(tick, index) in ticks" :key="index" :style="'left:'+tick.left" v-if="snaps"></div>
       <div class="range-bar" role="presentation"></div>
       <div class="range-bar range-bar-active" role="presentation" :style="{left: barL, right: barR}"></div>
       <div class="range-knob-handle" role="slider" :aria-valuenow="valA" :aria-valuemin="min" :aria-valuemax="max" tabindex="0" :disabled="disabled" :style="{left: sliderA}">

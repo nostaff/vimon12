@@ -2,13 +2,13 @@
  * @name gulpFile
  * @description
  * 这个是gulpFile自动化工具
- * */
+ **/
 var path = require('path')
 var gulp = require('gulp')
 var jsdoc = require('gulp-jsdoc3')
 var del = require('del')
-var gulpLoadPlugins = require('gulp-load-plugins')
-var $ = gulpLoadPlugins()
+// var gulpLoadPlugins = require('gulp-load-plugins')
+// var $ = gulpLoadPlugins()
 var runSequence = require('run-sequence')
 var bs = require('browser-sync')
 var browserSync = bs.create()
@@ -21,9 +21,7 @@ var docPath = `${base}/docs`
 var sass = require('gulp-sass')
 
 gulp.task('theme:sass', function () {
-  return gulp.src('./theme/scss/*.scss')
-  .pipe(sass().on('error', sass.logError))
-  .pipe(gulp.dest('./theme/static/styles'))
+  return gulp.src('./theme/scss/*.scss').pipe(sass().on('error', sass.logError)).pipe(gulp.dest('./theme/static/styles'))
 })
 
 gulp.task('theme:sass:watch', function () {
@@ -38,16 +36,13 @@ gulp.task('clean', function (cb) {
 
 // 移动资源
 gulp.task('resource', function () {
-  return gulp.src('./asset/**/**/*.*')
-  .pipe(gulp.dest(`${docPath}/asset`))
+  return gulp.src('./asset/**/**/*.*').pipe(gulp.dest(`${docPath}/asset`))
 })
 
 // jsdoc
 gulp.task('make', ['resource'], function (cb) {
   getJsdocConfig(function (jsdocConfig) {
-    gulp.src([`${base}`], {read: false})
-    .pipe(plumber())
-    .pipe(jsdoc(jsdocConfig, cb))
+    gulp.src([`${base}`], {read: false}).pipe(plumber()).pipe(jsdoc(jsdocConfig, cb))
   })
 })
 

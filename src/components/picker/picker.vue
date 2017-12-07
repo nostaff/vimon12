@@ -102,7 +102,7 @@
    * ```
    *
    * @demo #/picker
-   * */
+   **/
   import { isString, isPresent, isNumber } from '../../util/util'
   import { urlChange } from '../../util/dom'
   import ThemeMixins from '../../themes/theme.mixins'
@@ -178,7 +178,7 @@ const NOOP = () => {}
       /**
        * Component Animate Hooks
        * @private
-       * */
+       **/
       beforeEnter () {
         this.enabled = false // 不允许过渡中途操作
         this.$app && this.$app.setEnabled(false, 400)
@@ -201,7 +201,7 @@ const NOOP = () => {}
       /**
        * 背景backdrop点击
        * @private
-       * */
+       **/
       bdClick () {
         if (this.enabled && this.enableBackdropDismiss) {
           this.dismiss()
@@ -222,7 +222,7 @@ const NOOP = () => {}
        * @param {Function} [options.onSelect=noop] - 某一列发生变化时触发
        * @description
        * 开启
-       * */
+       **/
       present () {
         this.isActive = true
         return new Promise((resolve) => { this.presentCallback = resolve })
@@ -232,7 +232,7 @@ const NOOP = () => {}
        * @function dismiss
        * @description
        * 关闭
-       * */
+       **/
       dismiss () {
         this.isActive = false
         this.unreg && this.unreg()
@@ -243,7 +243,7 @@ const NOOP = () => {}
       /**
        * 标题左右的两个按钮点击(取消/确定)
        * @private
-       * */
+       **/
       btnClick (button) {
         if (!this.enabled) {
           return
@@ -272,7 +272,7 @@ const NOOP = () => {}
        * @return {String} selected.value - value
        * @return {String} selected.columnIndex - columnIndex
        * @private
-       * */
+       **/
       getSelected () {
         let selected = {}
         this.columns.forEach((col, index) => {
@@ -289,7 +289,7 @@ const NOOP = () => {}
       /**
        * 当选择变化,对外发送事件
        * @private
-       * */
+       **/
       colChange (data) {
         // col发生变化时触发onSelect事件, 传递触发col的信息
         this.$emit('onSelect', data)
@@ -311,7 +311,7 @@ const NOOP = () => {}
        * - columns -> column.options: 如果不是对象, 则将传入的值toString后转给text/value
        *
        * @private
-       * */
+       **/
       normalizeData () {
         // normalize the data
         this.buttons = this.buttons.map(button => {
@@ -358,7 +358,7 @@ const NOOP = () => {}
       /**
        * 由子组件调用, 用于记录自己
        * @private
-       * */
+       **/
       recordChildComponent (childComponent) {
         this.cols.push(childComponent)
       },
@@ -366,7 +366,7 @@ const NOOP = () => {}
       // ------- 动态添加数据接口 --------
       /**
        * 动态添加修改列数据时,对某一列数据修改并刷新显示
-       * */
+       **/
       resetColumn (index) {
         this.cols[index].reset()
       },
@@ -374,7 +374,7 @@ const NOOP = () => {}
       /**
        * 如果设置的选中值与显示不一致, 使用这个刷新, 他会更新滚动位置
        * @private
-       * */
+       **/
       refresh () {
         this.cols.forEach(column => {
           column.refresh()

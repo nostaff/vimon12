@@ -80,7 +80,7 @@
         }
       },
       computed: {
-            // a computed getter
+        // a computed getter
         hasLabel: function () {
           return '有标签: ' + this.username
         },

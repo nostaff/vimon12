@@ -3,7 +3,7 @@
  * platform.js中关于平台方法的复写
  * 当前处于平台初始化完毕阶段, window.AlipayJSBridge等私有变量存在且可用
  * 只有通用组件、不需要鉴权的组件才做平台化处理， 比如setTitle
- * */
+ **/
 import { isArray, isFunction, isNumber, isPresent, isString } from '../../../../src/util/util'
 import Vue from 'vue'
 
@@ -17,7 +17,7 @@ export default function (plt) {
      * @param {boolean} result.networkInfo      - WIFI              | 3G                | NOTREACHABLE
      * @param {boolean} result.err_msg          - network_type:wifi | network_type:wwan | network_type:fail
      * @param {boolean} result.networkType      - wifi              | wwan              | fail
-     * */
+     **/
     plt.setNetworkType(result.networkInfo.toString().toLowerCase())
   })
 
@@ -149,7 +149,7 @@ export default function (plt) {
          * @param {object} result - 结果
          * @param {boolean} result.ok - 用户是否点击确定
          * @param {string} result.inputValue - 用户输入的内容
-         * */
+         **/
         if (result.ok) {
           isFunction(confirmButton.handler) && confirmButton.handler({[options.inputs[0].name]: result.inputValue})
         } else {
@@ -185,7 +185,7 @@ export default function (plt) {
     window.ap.showToast({
       content: options.message || '',
       type: options.type || '', // toast 类型，展示相应图标，默认 none，支持 success / fail / exception / none’。其中 exception //
-                                // 类型必须传文字信息
+      // 类型必须传文字信息
       duration: options.duration || 2000
     }, function () {
       isFunction(options.onDismiss) && options.onDismiss()
@@ -204,7 +204,7 @@ export default function (plt) {
     if (options.columns.length === 1 || options.columns.length === 2) {
       /**
        * normalize the data
-       * */
+       **/
       options.buttons = options.buttons.map(button => {
         if (isString(button)) {
           return {text: button}
@@ -218,7 +218,7 @@ export default function (plt) {
 
       /**
        * clean up dat data
-       * */
+       **/
       options.columns = options.columns.map(column => {
         if (!isPresent(column.options)) {
           column.options = []
@@ -297,7 +297,7 @@ export default function (plt) {
          * @param {string} result.selectedOneOption - selectedOneOption
          * @param {string} result.selectedTwoIndex - selectedTwoIndex
          * @param {string} result.selectedTwoOption - selectedTwoOption
-         * */
+         **/
         let data = {}
         if (result.selectedOneOption) {
           if (result.selectedOneOption) {
@@ -354,14 +354,14 @@ export default function (plt) {
           title: '', // 必填
           icon: '', // 按钮图标，支持 base64
           type: '', // 按钮图标类型，与 title、icon 三选一。支持 user / filter / search / add / settings / scan / info / help / locate
-                    // / more
+          // / more
           color: '#000000', // '#ED4A4D'
           badge: '-1' // 按钮红色气泡，默认 -1。其中 0 表示小红点，-1 表示不显示，其他值展示出来
         }
 
         /**
          * rgb(rgba) -> #000
-         * */
+         **/
         let getColor = function (element) {
           // 找到color
           var rgb = window.getComputedStyle(element).color

@@ -1,14 +1,14 @@
 /**
  * get theme from package.json
  * @return {Object} theme
- * */
+ **/
 var path = require('path')
 var existsSync = require('fs').existsSync
 var root = process.cwd()
 
 /**
  * 获取业务定义的scss的变量
- * */
+ **/
 function getScssVariables () {
   const pkgPath = `${root}/package.json`
   const pkg = existsSync(pkgPath) ? require(pkgPath) : {}
@@ -41,7 +41,7 @@ module.exports = getScssVariables()
  * - return:
  * rootDir/demos/src/theme/variables.scss
  *
- * */
+ **/
 function resolvePath (path) {
 
   if (path) {

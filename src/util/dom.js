@@ -117,7 +117,7 @@ export function removeClass (obj, cls) {
  * 判断元素是否在激活状态, 比如input
  * @param {HTMLElement} ele - 元素
  * @return {boolean}
- * */
+ **/
 export function isActive (ele) {
   return !!(ele && document.activeElement === ele)
 }
@@ -126,7 +126,7 @@ export function isActive (ele) {
  * 判断元素是否在focus状态, 比如input
  * @param {HTMLElement} ele - 元素
  * @return {boolean}
- * */
+ **/
 export function hasFocus (ele) {
   return isActive(ele) && ele.parentElement.querySelector(':focus') === ele
 }
@@ -136,7 +136,7 @@ export function hasFocus (ele) {
  * @param {HTMLElement} el      - 绑定的元素
  * @param {Function} callbackFn   - 绑定的函数
  * @return {Function}           - 取消绑定的函数
- * */
+ **/
 export function transitionEnd (el, callbackFn) {
   const unRegs = []
 
@@ -165,7 +165,7 @@ export function transitionEnd (el, callbackFn) {
  * hashChange，hash变化后执行回调, 并自动解绑
  * @param {function} callback - 回调函数
  * @return {function} - 解绑函数
- * */
+ **/
 export function hashChange (callback) {
   let unReg = null
 
@@ -182,7 +182,7 @@ export function hashChange (callback) {
  * urlChange(popstate)注册，绑定的函数触发后会自动解绑
  * @param {function} callback - 回调函数
  * @return {function} - 解绑函数
- * */
+ **/
 export function urlChange (callback) {
   let unReg = null
   const onStateChange = ev => {
@@ -241,7 +241,7 @@ export function registerListener (
 /**
  * 判断的当前浏览器是否支持isPassive属性
  * @return {Boolean}
- * */
+ **/
 export function isPassive () {
   var supportsPassiveOption = false
   try {
@@ -262,7 +262,7 @@ export function isPassive () {
  * document的ready事件监听
  * @param {Function} [callback] - 回调函数
  * @return {Promise} - 返回promise，completed后自动解绑
- * */
+ **/
 export function docReady (callback) {
   let promise = null // Promise;
 
