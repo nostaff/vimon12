@@ -34,9 +34,7 @@
     }
   },
   "lint-staged": {
-    "{src,demos/src}/**/*.{js,vue}": [
-      "eslint --fix"
-    ]
+    "{src,demos/src}/**/*.{js,vue}": ["eslint --fix"]
   },
   "config": {
     "validate-commit-msg": {

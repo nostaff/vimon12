@@ -161,7 +161,7 @@ export function isCheckedProperty (a, b) {
     return (b === 0 || b === '0')
   }
   // not using strict comparison on purpose
-  return (a == b) // tslint:disable-line
+  return (a === b) // tslint:disable-line
 }
 
 /**

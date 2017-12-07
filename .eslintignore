@@ -8,4 +8,4 @@
 ./demos/config/*.js
 ./demos/static/*.js
 ./coverage/*
-
+**/__tests__/*.js

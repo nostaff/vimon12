@@ -139,7 +139,7 @@ describe('util', function () {
     expect(isCheckedProperty('0', '0')).toBeTruthy()
 
     expect(isCheckedProperty('123', '123')).toBeTruthy()
-    expect(isCheckedProperty('123', 123)).toBeTruthy()
+    expect(isCheckedProperty('123', 123)).toBeFalsy()
   })
 
   it('transitionEnd()', function () {
