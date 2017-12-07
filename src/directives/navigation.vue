@@ -1,18 +1,18 @@
 <template>
   <ion-header v-show="activated">
-    <ion-toolbar class="ion-navbar">
+    <ion-navbar>
       <ion-button :class="['back-button','back-button-'+theme,'show-back-button']" :icon-only="!backText" @click.native="onBackClick" slot="item-start" v-if="showBack">
         <ion-icon :class="['back-button-icon','back-button-icon-'+theme]" :name="backIcon" v-if="backIcon"></ion-icon>
         <span :class="['back-button-text','back-button-text-'+theme]" v-if="backText && theme ==='ios'" v-text="backText"></span>
       </ion-button>
-      <ion-buttons slot="item-end" v-if="showMenu">
-        <ion-button :icon-only="!moreText" @click.native="onMenuClick">
+      <ion-buttons slot="item-end" v-if="showMore">
+        <ion-button :icon-only="!moreText" @click.native="onMoreClick">
           <ion-icon :class="['more-button-icon','more-button-icon-'+theme]" :name="moreIcon" v-if="moreIcon"></ion-icon>
           <span :class="['more-button-text','more-button-text-'+theme]" v-if="moreText" v-text="moreText"></span>
         </ion-button>
       </ion-buttons>
       <ion-title>{{title}}</ion-title>
-    </ion-toolbar>
+    </ion-navbar>
   </ion-header>
 </template>
 
@@ -60,7 +60,7 @@ export default {
     },
     onBack: Function,
 
-    showMenu: {
+    showMore: {
       type: Boolean,
       default: false
     },
@@ -72,7 +72,7 @@ export default {
       type: String,
       default: ''
     },
-    onMenu: Function
+    onMore: Function
   },
   mounted () {
     if (this.$slots['item-start']) {
@@ -86,6 +86,8 @@ export default {
       })
     }
   },
+  // ion-icon icon icon-ios back-button-icon back-button-icon-ios ion-ios-arrow-back
+  // ion-icon icon icon-ios back-button-icon back-button-icon-ios ion-ios-arrow-back
   methods: {
     onBackClick (ev) {
       ev.preventDefault()
@@ -99,12 +101,12 @@ export default {
       if (root) root.setAttribute('transition-direction', 'back')
       history.go(-1)
     },
-    onMenuClick (ev) {
+    onMoreClick (ev) {
       ev.preventDefault()
       ev.stopPropagation()
 
-      if (this.onMenu) {
-        this.onMenu(ev)
+      if (this.onMore) {
+        this.onMore(ev)
       }
     }
   }

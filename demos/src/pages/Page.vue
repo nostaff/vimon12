@@ -1,7 +1,7 @@
 <template>
     <ion-page>
         <ion-header>
-            <ion-navbar show-back="true" :color="color" title="Page"></ion-navbar>
+            <ion-navbar :color="color" title="Page"></ion-navbar>
         </ion-header>
 
         <ion-content>

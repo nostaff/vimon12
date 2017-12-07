@@ -17,8 +17,6 @@ export default {
   //     'vnode keys: ' + Object.keys(vnode).join(', ')
   // },
   inserted: function (el, binding) {
-    createElement('ion-navigation', el, true)
-
     let props = {
       showBack: false,
       showMenu: false
@@ -31,11 +29,12 @@ export default {
     if (options.backButtonText) { props.backText = options.backButtonText }
     if (options.onBackButtonClick && isFunction(options.onBackButtonClick)) { props.onBack = options.onBackButtonClick }
 
-    if (options.showMenuButton) { props.showMenu = options.showMenuButton }
+    if (options.showMoreButton) { props.showMore = options.showMoreButton }
     if (options.menuButtonIcon) { props.moreIcon = options.menuButtonIcon }
     if (options.menuButtonText) { props.moreText = options.menuButtonText }
+    if (options.onMoreButtonClick && isFunction(options.onMoreButtonClick)) { props.onMore = options.onMoreButtonClick }
 
-    if (options.onMenuButtonClick && isFunction(options.onMenuButtonClick)) { props.onMenu = options.onMenuButtonClick }
+    createElement('ion-navigation', el, true)
 
     Vue.prototype.$navbar = window.$navbar = new Vue(assign({}, Navigation, {
       data: {
