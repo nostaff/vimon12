@@ -8,3 +8,7 @@
     name: 'ion-row'
   }
 </script>
+
+<<style lang="scss">
+@import 'grid.scss';
+</style>

@@ -19,3 +19,7 @@
     name: 'ion-col'
   }
 </script>
+
+<<style lang="scss">
+@import 'grid.scss';
+</style>
