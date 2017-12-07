@@ -179,7 +179,7 @@ const VuePlugin = {
 
 /* istanbul ignore if */
 if (typeof window !== 'undefined' && window.Vue) {
-  install(window.Vue)
+  VuePlugin.install(window.Vue)
 }
 
 export {
