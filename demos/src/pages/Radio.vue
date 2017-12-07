@@ -21,12 +21,12 @@
 
                 <ion-item>
                     <ion-label slot="item-label">Python</ion-label>
-                    <ion-radio slot="item-content" value="Python" checked="true"></ion-radio>
+                    <ion-radio slot="item-content" value="Python" checked="true" color="danger"></ion-radio>
                 </ion-item>
 
                 <ion-item>
                     <ion-label slot="item-label">Ruby</ion-label>
-                    <ion-radio slot="item-content" value="Ruby" disabled></ion-radio>
+                    <ion-radio slot="item-content" value="Ruby" disabled color="secondary"></ion-radio>
                 </ion-item>
 
                 <ion-item>

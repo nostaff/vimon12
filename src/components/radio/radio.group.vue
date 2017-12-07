@@ -8,8 +8,9 @@
       <ion-radio slot="item-content"
         :disabled="option.disabled"
         :value="option.value"
-        :checked="(option.value === currentValue)"
-        @onSelect="onSelectHandler($event)"
+        :checked="getChecked(option.value)"
+        :color="getColor(option.color)"
+        @onSelect="onSelectHandler(option.value)"
         ></ion-radio>
     </ion-item>
   </ion-list>
@@ -35,7 +36,7 @@ export default {
     },
     value: {
       type: [Number, String, Boolean],
-      required: true
+      required: false
     }
   },
   data () {
@@ -60,6 +61,9 @@ export default {
   },
 
   methods: {
+    getChecked (val) {
+      return this.currentValue === val
+    },
     onSelectHandler (newVal) {
       this.currentValue = newVal
       this.$emit('input', newVal)
@@ -72,8 +76,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-@import "radio.ios";
-@import "radio.md";
-</style>

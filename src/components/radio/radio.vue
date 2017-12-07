@@ -7,7 +7,7 @@
   </div>
 </template>
 <script>
-import { isTrueProperty } from '../../util/util'
+import { isTrueProperty, isPresent } from '../../util/util'
 import ThemeMixins from '../../themes/theme.mixins'
 import IonButton from '../button/index'
 
@@ -17,16 +17,14 @@ export default {
   components: {
     IonButton
   },
-
   data () {
     return {
       isChecked: isTrueProperty(this.checked),
       isDisabled: isTrueProperty(this.disabled),
-      item: null,
+      itemCmp: null,
       radioGroup: null
     }
   },
-
   props: {
     value: {
       type: [Number, String, Boolean],
@@ -41,23 +39,20 @@ export default {
       default: false
     }
   },
-
   watch: {
     disabled (val) {
       this.setDisabled(isTrueProperty(val))
     }
   },
-
   mounted () {
     this.init()
   },
-
   methods: {
     setDisabled (disabled) {
       this.setChecked(null)
       this.isDisabled = disabled
 
-      this.item.setElementClass('item-radio-disabled', disabled)
+      this.itemCmp.setElementClass('item-radio-disabled', disabled)
     },
 
     setChecked (checkedValue) {
@@ -65,7 +60,8 @@ export default {
       if (this.isChecked !== isChecked) {
         this.isChecked = isChecked
 
-        this.item.setElementClass('item-radio-checked', isChecked)
+        this.itemCmp.setElementClass('item-radio-checked', isChecked)
+        this.itemCmp.setElementClass(`item-radio-${this.theme}-${this.color}`, isChecked && isPresent(this.color))
       }
     },
 
@@ -79,8 +75,8 @@ export default {
     init () {
       // if parent is item
       if (this.$parent && this.$parent.$data.componentName === 'ionItem') {
-        this.item = this.$parent
-        this.item.setElementClass('item-radio', true)
+        this.itemCmp = this.$parent
+        this.itemCmp.setElementClass('item-radio', true)
       }
 
       // if parent's parent is list
@@ -97,7 +93,6 @@ export default {
       this.setDisabled(isTrueProperty(this.disabled))
     }
   },
-
   destroyed () {
     this.radioGroup && this.radioGroup.removeRadioButton(this)
   }
