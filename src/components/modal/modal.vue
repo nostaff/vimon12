@@ -4,7 +4,7 @@
                   v-if="showBackdrop"
                   v-show="activated"
                   @click.native="bdClick"></ion-backdrop>
-    <transition name="modal-fadeup">
+    <transition name="modal-fade">
       <div class="modal-wrapper" v-show="activated">
         <div class="modal-viewport" ref="viewPort"></div>
       </div>

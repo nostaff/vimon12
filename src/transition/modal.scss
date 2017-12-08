@@ -1,17 +1,17 @@
 // transition 'fadeup'
-.ios .modal-fadeup-enter-active {
+.ios .modal-fade-enter-active {
   transition: transform .4s cubic-bezier(.36, .66, .04, 1);
   transform: translateY(0);
   opacity: 1;
 }
 
-.ios .modal-fadeup-leave-active {
+.ios .modal-fade-leave-active {
   transition: transform .3s ease-out;
   transform: translateY(0);
   opacity: 1;
 }
 
-.ios .modal-fadeup-enter, .ios .modal-fadeup-leave-to {
+.ios .modal-fade-enter, .ios .modal-fade-leave-to {
   transform: translateY(100%);
   opacity: 0;
 }
@@ -19,19 +19,19 @@
 
 
 // transition 'fadeup'
-.md .modal-fadeup-enter-active {
+.md .modal-fade-enter-active {
   transition: transform .4s cubic-bezier(.36, .66, .04, 1);
   transform: translateY(0);
   opacity: 1;
 }
 
-.md .modal-fadeup-leave-active {
+.md .modal-fade-leave-active {
   transition: transform .2s cubic-bezier(0.47,0,0.745,0.715);
   transform: translateY(0);
   opacity: 0.99;
 }
 
-.md .modal-fadeup-enter, .md .modal-fadeup-leave-to {
+.md .modal-fade-enter, .md .modal-fade-leave-to {
   transform: translateY(40px);
   opacity: 0;
 }

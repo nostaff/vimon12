@@ -1,7 +1,7 @@
 <template>
   <div class="ion-loading" :class="[themeClass, cssClass]" role="dialog">
     <ion-backdrop :enableBackdropDismiss="enableBackdropDismiss" :isActive="activated" v-if="showBackdrop" @click.native="bdClick()"></ion-backdrop>
-    <transition name="ion-loading-fadeup">
+    <transition name="loading-fade">
       <div class="loading-wrapper" v-show="activated">
         <div v-if="spinner" class="loading-spinner">
           <ion-spinner :name="spinner"></ion-spinner>

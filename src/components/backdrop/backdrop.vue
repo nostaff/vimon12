@@ -1,5 +1,5 @@
 <template>
-  <transition name="ion-backdrop-fade">
+  <transition name="backdrop-fade">
     <div class="ion-backdrop" :class="{'backdrop-no-tappable': !isEnableBackdropDismiss}" role="presentation" v-show="activated"></div>
   </transition>
 </template>

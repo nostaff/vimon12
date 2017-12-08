@@ -1,7 +1,7 @@
 <template>
   <div role="dialog" class="ion-popup" :class="[themeClass, cssClass]" style="z-index: 9999;">
     <ion-backdrop @click.native="bdClick()" :isActive="activated"></ion-backdrop>
-    <transition name="ion-popup-fadeup">
+    <transition name="popup-fade">
       <div class="popup-wrapper" v-show="activated">
         <div class="popup-toolbar" v-if="buttons">
           <div v-for="(button, index) in buttons" class="popup-toolbar-button" :class="button.cssRole">

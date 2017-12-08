@@ -1,14 +1,14 @@
 // transition fadeup
-.ion-picker-fadeup-enter-active {
+.picker-fade-enter-active {
   transition: transform .45s cubic-bezier(.36, .66, .04, 1);
   transform: translateY(0);
 }
 
-.ion-picker-fadeup-leave-active {
+.picker-fade-leave-active {
   transition: transform .4s cubic-bezier(.36, .66, .04, 1);
   transform: translateY(100%);
 }
 
-.ion-picker-fadeup-enter, .ion-picker-fadeup-leave-to {
+.picker-fade-enter, .picker-fade-leave-to {
   transform: translateY(100%);
 }

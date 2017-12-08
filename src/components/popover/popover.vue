@@ -3,7 +3,7 @@
     <ion-backdrop
         :enableBackdropDismiss="enableBackdropDismiss"
         v-if="showBackdrop" v-show="activated" @click.native="bdClick()"></ion-backdrop>
-    <transition name="ion-popover-fadeup">
+    <transition name="popover-fade">
       <div class="popover-wrapper" v-show="activated">
         <div class="popover-arrow" ref="popoverArrow"></div>
         <div class="popover-content" ref="popoverContent">
