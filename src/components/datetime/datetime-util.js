@@ -1,5 +1,31 @@
 /* eslint-disable camelcase */
-import {isBlank, isPresent, isString, isArray} from '../../util/util'
+/**
+ * @typedef {Object} DateTimeData   - DateTimeData
+ * @property {number} year - year
+ * @property {number} month - month
+ * @property {number} day - day
+ * @property {number} hour - hour
+ * @property {number} minute - minute
+ * @property {number} second - second
+ * @property {number} millisecond - millisecond
+ * @property {number} tzOffset - tzOffset
+ * */
+/**
+ * @typedef {Object} LocaleData   - LocaleData
+ * @property {string[]} monthNames - monthNames
+ * @property {string[]} monthShortNames - monthShortNames
+ * @property {string[]} dayNames - dayNames
+ * @property {string[]} dayShortNames - dayShortNames
+ * */
+/**
+ * @module datetime-util
+ * @description
+ *
+ * ## Datetime组件使用的日期工具
+ *
+ * @private
+ * */
+import { isArray, isBlank, isDate, isPresent, isString } from '../../util/util'
 
 const FORMAT_YYYY = 'YYYY'
 const FORMAT_YY = 'YY'
@@ -55,15 +81,7 @@ const DAY_NAMES = [
   'Saturday'
 ]
 
-const DAY_SHORT_NAMES = [
-  'Sun',
-  'Mon',
-  'Tue',
-  'Wed',
-  'Thu',
-  'Fri',
-  'Sat'
-]
+const DAY_SHORT_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
 const MONTH_NAMES = [
   'January',
@@ -96,9 +114,25 @@ const MONTH_SHORT_NAMES = [
 ]
 
 const VALID_AMPM_PREFIX = [
-  FORMAT_hh, FORMAT_h, FORMAT_mm, FORMAT_m, FORMAT_ss, FORMAT_s
+  FORMAT_hh,
+  FORMAT_h,
+  FORMAT_mm,
+  FORMAT_m,
+  FORMAT_ss,
+  FORMAT_s
 ]
 
+/* eslint-disable no-useless-escape */
+const ISO_8601_REGEXP = /^(\d{4}|[+\-]\d{6})(?:-(\d{2})(?:-(\d{2}))?)?(?:T(\d{2}):(\d{2})(?::(\d{2})(?:\.(\d{3}))?)?(?:(Z)|([+\-])(\d{2})(?::(\d{2}))?)?)?$/
+const TIME_REGEXP = /^((\d{2}):(\d{2})(?::(\d{2})(?:\.(\d{3}))?)?(?:(Z)|([+\-])(\d{2})(?::(\d{2}))?)?)?$/
+
+/* eslint-enable no-useless-escape */
+
+/**
+ * @param {string} template - template
+ * @param {DateTimeData} value - value
+ * @param {LocaleData} locale - locale
+ * */
 export function renderDateTime (template, value, locale) {
   if (isBlank(value)) {
     return ''
@@ -108,10 +142,10 @@ export function renderDateTime (template, value, locale) {
   let hasText = false
   FORMAT_KEYS.forEach((format, index) => {
     if (template.indexOf(format.f) > -1) {
-      const token = '{' + index + '}'
-      const text = renderTextFormat(format.f, (value)[format.k], value, locale)
+      var token = '{' + index + '}'
+      var text = renderTextFormat(format.f, value[format.k], value, locale)
 
-      if (!hasText && text && isPresent((value)[format.k])) {
+      if (!hasText && text && isPresent(value[format.k])) {
         hasText = true
       }
 
@@ -122,48 +156,61 @@ export function renderDateTime (template, value, locale) {
   })
 
   if (!hasText) {
-    console.warn(`Error date format: "${template}". `)
     return ''
   }
 
-  for (let i = 0; i < tokens.length; i += 2) {
+  for (var i = 0; i < tokens.length; i += 2) {
     template = template.replace(tokens[i], tokens[i + 1])
   }
 
   return template
 }
 
+/**
+ * @param {string} format - format
+ * @param {*} value - value
+ * @param {DateTimeData} date - date
+ * @param {LocaleData} locale - locale
+ * @return {string}
+ * */
 export function renderTextFormat (format, value, date, locale) {
   if (format === FORMAT_DDDD || format === FORMAT_DDD) {
     try {
-      value = (new Date(date.year, date.month - 1, date.day)).getDay()
+      value = new Date(date.year, date.month - 1, date.day).getDay()
 
       if (format === FORMAT_DDDD) {
         return (isPresent(locale.dayNames) ? locale.dayNames : DAY_NAMES)[value]
       }
 
-      return (isPresent(locale.dayShortNames) ? locale.dayShortNames : DAY_SHORT_NAMES)[value]
-    } catch (e) {
-    }
-
+      return (isPresent(locale.dayShortNames)
+        ? locale.dayShortNames
+        : DAY_SHORT_NAMES)[value]
+    } catch (e) {}
     return ''
   }
 
   if (format === FORMAT_A) {
-    return date ? date.hour < 12 ? 'AM' : 'PM' : isPresent(value) ? value.toUpperCase() : ''
+    return date
+      ? date.hour < 12 ? 'AM' : 'PM'
+      : isPresent(value) ? value.toUpperCase() : ''
   }
 
   if (format === FORMAT_a) {
-    return date ? date.hour < 12 ? 'am' : 'pm' : isPresent(value) ? value : ''
+    return date ? (date.hour < 12 ? 'am' : 'pm') : isPresent(value) ? value : ''
   }
 
   if (isBlank(value)) {
     return ''
   }
 
-  if (format === FORMAT_YY || format === FORMAT_MM ||
-        format === FORMAT_DD || format === FORMAT_HH ||
-        format === FORMAT_mm || format === FORMAT_ss) {
+  if (
+    format === FORMAT_YY ||
+    format === FORMAT_MM ||
+    format === FORMAT_DD ||
+    format === FORMAT_HH ||
+    format === FORMAT_mm ||
+    format === FORMAT_ss
+  ) {
     return twoDigit(value)
   }
 
@@ -176,7 +223,9 @@ export function renderTextFormat (format, value, date, locale) {
   }
 
   if (format === FORMAT_MMM) {
-    return (isPresent(locale.monthShortNames) ? locale.monthShortNames : MONTH_SHORT_NAMES)[value - 1]
+    return (isPresent(locale.monthShortNames)
+      ? locale.monthShortNames
+      : MONTH_SHORT_NAMES)[value - 1]
   }
 
   if (format === FORMAT_hh || format === FORMAT_h) {
@@ -187,13 +236,19 @@ export function renderTextFormat (format, value, date, locale) {
       value -= 12
     }
     if (format === FORMAT_hh && value < 10) {
-      return ('0' + value)
+      return '0' + value
     }
   }
 
   return value.toString()
 }
 
+/**
+ * @param {string} format - format
+ * @param {DateTimeData} min - min
+ * @param {DateTimeData} max - max
+ * @return {Array}
+ * */
 export function dateValueRange (format, min, max) {
   let opts = []
   let i
@@ -204,15 +259,24 @@ export function dateValueRange (format, min, max) {
     while (i >= min.year) {
       opts.push(i--)
     }
-  } else if (format === FORMAT_MMMM || format === FORMAT_MMM ||
-        format === FORMAT_MM || format === FORMAT_M ||
-        format === FORMAT_hh || format === FORMAT_h) {
+  } else if (
+    format === FORMAT_MMMM ||
+    format === FORMAT_MMM ||
+    format === FORMAT_MM ||
+    format === FORMAT_M ||
+    format === FORMAT_hh ||
+    format === FORMAT_h
+  ) {
     // month or 12-hour
     for (i = 1; i < 13; i++) {
       opts.push(i)
     }
-  } else if (format === FORMAT_DDDD || format === FORMAT_DDD ||
-        format === FORMAT_DD || format === FORMAT_D) {
+  } else if (
+    format === FORMAT_DDDD ||
+    format === FORMAT_DDD ||
+    format === FORMAT_DD ||
+    format === FORMAT_D
+  ) {
     // day
     for (i = 1; i < 32; i++) {
       opts.push(i)
@@ -240,49 +304,97 @@ export function dateValueRange (format, min, max) {
   return opts
 }
 
-export function dateSortValue (year, month, day, hour = 0, minute = 0) {
-  return parseInt(`1${fourDigit(year)}${twoDigit(month)}${twoDigit(day)}${twoDigit(hour)}${twoDigit(minute)}`, 10)
+/**
+ * @param {number} year - year
+ * @param {number} month - month
+ * @param {number} day - day
+ * @return {number}
+ * */
+export function dateSortValue (year, month, day) {
+  return parseInt(`1${fourDigit(year)}${twoDigit(month)}${twoDigit(day)}`, 10)
 }
 
+/**
+ * @param {DateTimeData} data - data
+ * @return {number}
+ * */
 export function dateDataSortValue (data) {
   if (data) {
-    return dateSortValue(data.year, data.month, data.day, data.hour, data.minute)
+    return dateSortValue(data.year, data.month, data.day)
   }
   return -1
 }
 
+/**
+ * @param {number} month - month
+ * @param {number} year - year
+ * @return {number}
+ * */
 export function daysInMonth (month, year) {
-  return (month === 4 || month === 6 || month === 9 || month === 11) ? 30 : (month === 2) ? isLeapYear(year) ? 29 : 28 : 31
+  return month === 4 || month === 6 || month === 9 || month === 11
+    ? 30
+    : month === 2 ? (isLeapYear(year) ? 29 : 28) : 31
 }
-
-export function isLeapYear (year) {
-  return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)
-}
-
-/* eslint-disable no-useless-escape */
-const ISO_8601_REGEXP = /^(\d{4}|[+\-]\d{6})(?:-(\d{2})(?:-(\d{2}))?)?(?:T(\d{2}):(\d{2})(?::(\d{2})(?:\.(\d{3}))?)?(?:(Z)|([+\-])(\d{2})(?::(\d{2}))?)?)?$/
-const TIME_REGEXP = /^((\d{2}):(\d{2})(?::(\d{2})(?:\.(\d{3}))?)?(?:(Z)|([+\-])(\d{2})(?::(\d{2}))?)?)?$/
-/* eslint-enable no-useless-escape */
 
 /**
- * @param val
- * @returns DatetimeData
- */
+ * @param {number} year - year
+ * @return {boolean}
+ * */
+export function isLeapYear (year) {
+  return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0
+}
+
+/**
+ * @param {*} val - val
+ * @return {DateTimeData}
+ * */
 export function parseDate (val) {
   // manually parse IS0 cuz Date.parse cannot be trusted
   // ISO 8601 format: 1994-12-15T13:47:20Z
-  let parse
+  // new Date()
+  // new Date().toString()
+  // new Date('2017/01/01')
 
-  if (isPresent(val) && val !== '') {
-    // try parsing for just time first, HH:MM
-    parse = TIME_REGEXP.exec(val)
-    if (isPresent(parse)) {
-      // adjust the array so it fits nicely with the datetime parse
-      parse.unshift(undefined, undefined)
-      parse[2] = parse[3] = undefined
-    } else {
-      // try parsing for full ISO datetime
-      parse = ISO_8601_REGEXP.exec(val)
+  let parse
+  if (isPresent(val)) {
+    if (val !== '') {
+      // try parsing for just time first, HH:MM
+      parse = TIME_REGEXP.exec(val)
+      if (isPresent(parse)) {
+        // adjust the array so it fits nicely with the datetime parse
+        parse.unshift(undefined, undefined)
+        parse[2] = parse[3] = undefined
+      } else {
+        // try parsing for full ISO datetime
+        parse = ISO_8601_REGEXP.exec(val)
+      }
+
+      // try to pase string to Date Object
+      if (isBlank(parse)) {
+        let dateValue = new Date(val)
+        if (isPresent(dateValue)) {
+          val = dateValue
+        }
+      }
+    }
+
+    // if val is a Date Object
+    if (
+      Object.prototype.toString
+        .call(val)
+        .match(/^(\[object )(\w+)\]$/i)[2]
+        .toLowerCase() === 'date'
+    ) {
+      parse = [
+        '',
+        val.getFullYear(),
+        val.getMonth() + 1,
+        val.getDate(),
+        val.getHours(),
+        val.getMinutes(),
+        val.getSeconds(),
+        val.getMilliseconds()
+      ]
     }
   }
 
@@ -292,11 +404,11 @@ export function parseDate (val) {
   }
 
   // ensure all the parse values exist with at least 0
-  for (let i = 1; i < 8; i++) {
-    parse[i] = (parse[i] !== undefined ? parseInt(parse[i], 10) : null)
+  for (var i = 1; i < 8; i++) {
+    parse[i] = parse[i] !== undefined ? parseInt(parse[i], 10) : null
   }
 
-  let tzOffset = 0
+  var tzOffset = 0
   if (isPresent(parse[9]) && isPresent(parse[10])) {
     // hours
     tzOffset = parseInt(parse[10], 10) * 60
@@ -322,45 +434,82 @@ export function parseDate (val) {
   }
 }
 
-export function updateDate (newData) {
+/**
+ * @param {DateTimeData} existingData - existingData
+ * @param {*} newData - newData
+ * */
+export function updateDate (existingData = {}, newData) {
+  !existingData && (existingData = {})
   if (isPresent(newData) && newData !== '') {
-    if (isString(newData)) {
+    if (isString(newData) || isDate(newData)) {
       // new date is a string, and hopefully in the ISO format
       // convert it to our DateTimeData if a valid ISO
       newData = parseDate(newData)
+
       if (newData) {
         // successfully parsed the ISO string to our DateTimeData
-        return newData
+        Object.assign(existingData, newData)
+        return existingData
       }
-    } else if ((isPresent(newData.year) || isPresent(newData.hour) || isPresent(newData.month) || isPresent(newData.day) || isPresent(newData.minute) || isPresent(newData.second))) {
+    } else if (
+      isPresent(newData.year) ||
+      isPresent(newData.hour) ||
+      isPresent(newData.month) ||
+      isPresent(newData.day) ||
+      isPresent(newData.minute) ||
+      isPresent(newData.second)
+    ) {
       // newData is from of a datetime picker's selected values
       // update the existing DateTimeData data with the new values
 
       // do some magic for 12-hour values
       if (isPresent(newData.ampm) && isPresent(newData.hour)) {
-        if (newData.ampm === 'pm') {
-          newData.hour = (newData.hour === 12 ? 12 : newData.hour + 12)
+        if (newData.ampm.value === 'pm') {
+          newData.hour.value =
+            newData.hour.value === 12 ? 12 : newData.hour.value + 12
         } else {
-          newData.hour = (newData.hour === 12 ? 0 : newData.hour)
+          newData.hour.value =
+            newData.hour.value === 12 ? 0 : newData.hour.value
         }
       }
 
-      return newData
-    }
+      // merge new values from the picker's selection
+      // to the existing DateTimeData values
+      for (var k in newData) {
+        existingData[k] = newData[k].value
+      }
 
+      return existingData
+    }
     // eww, invalid data
-    console.warn(`Error parsing date: "${newData}". Please provide a valid ISO 8601 datetime format: https://www.w3.org/TR/NOTE-datetime`)
+    console.warn(
+      `Error parsing date: "${newData}". Please provide a valid ISO 8601 datetime format: https://www.w3.org/TR/NOTE-datetime`
+    )
+  } else {
+    // blank data, clear everything out
+    for (let k in existingData) {
+      delete existingData[k]
+    }
   }
-  return {}
+
+  return existingData
 }
 
+/**
+ * @param {string} template - template
+ * @retrun {array}
+ * */
 export function parseTemplate (template) {
   const formats = []
 
   template = template.replace(/[^\w\s]/gi, ' ')
 
   FORMAT_KEYS.forEach(format => {
-    if (format.f.length > 1 && template.indexOf(format.f) > -1 && template.indexOf(format.f + format.f.charAt(0)) < 0) {
+    if (
+      format.f.length > 1 &&
+      template.indexOf(format.f) > -1 &&
+      template.indexOf(format.f + format.f.charAt(0)) < 0
+    ) {
       template = template.replace(format.f, ' ' + format.f + ' ')
     }
   })
@@ -371,8 +520,10 @@ export function parseTemplate (template) {
       if (word === format.f) {
         if (word === FORMAT_A || word === FORMAT_a) {
           // this format is an am/pm format, so it's an "a" or "A"
-          if ((formats.indexOf(FORMAT_h) < 0 && formats.indexOf(FORMAT_hh) < 0) ||
-                        VALID_AMPM_PREFIX.indexOf(words[i - 1]) === -1) {
+          if (
+            (formats.indexOf(FORMAT_h) < 0 && formats.indexOf(FORMAT_hh) < 0) ||
+            VALID_AMPM_PREFIX.indexOf(words[i - 1]) === -1
+          ) {
             // template does not already have a 12-hour format
             // or this am/pm format doesn't have a hour, minute, or second format immediately before it
             // so do not treat this word "a" or "A" as the am/pm format
@@ -387,18 +538,26 @@ export function parseTemplate (template) {
   return formats
 }
 
+/**
+ * @param {DateTimeData} date - date
+ * @param {string} format - format
+ * */
 export function getValueFromFormat (date, format) {
   if (format === FORMAT_A || format === FORMAT_a) {
-    return (date.hour < 12 ? 'am' : 'pm')
+    return date.hour < 12 ? 'am' : 'pm'
   }
   if (format === FORMAT_hh || format === FORMAT_h) {
-    return (date.hour > 12 ? date.hour - 12 : date.hour)
+    return date.hour > 12 ? date.hour - 12 : date.hour
   }
-  return (date)[convertFormatToKey(format)]
+  return date[convertFormatToKey(format)]
 }
 
+/**
+ * @param {string} format - format
+ * @return {string}
+ * */
 export function convertFormatToKey (format) {
-  for (const k in FORMAT_KEYS) {
+  for (var k in FORMAT_KEYS) {
     if (FORMAT_KEYS[k].f === format) {
       return FORMAT_KEYS[k].k
     }
@@ -407,23 +566,14 @@ export function convertFormatToKey (format) {
 }
 
 /**
- * @param data DatetimeData
- * @returns {string}
- */
+ * @param {DateTimeData} data - data
+ * @return {string}
+ * */
 export function convertDataToISO (data) {
   // https://www.w3.org/TR/NOTE-datetime
   let rtn = ''
 
   if (isPresent(data)) {
-    // do some magic for 12-hour values
-    if (isPresent(data.ampm) && isPresent(data.hour)) {
-      if (data.ampm === 'pm') {
-        data.hour = (data.hour === 12 ? 12 : data.hour + 12)
-      } else {
-        data.hour = (data.hour === 12 ? 0 : data.hour)
-      }
-    }
-
     if (isPresent(data.year)) {
       // YYYY
       rtn = fourDigit(data.year)
@@ -438,7 +588,9 @@ export function convertDataToISO (data) {
 
           if (isPresent(data.hour)) {
             // YYYY-MM-DDTHH:mm:SS
-            rtn += `T${twoDigit(data.hour)}:${twoDigit(data.minute)}:${twoDigit(data.second)}`
+            rtn += `T${twoDigit(data.hour)}:${twoDigit(data.minute)}:${twoDigit(
+              data.second
+            )}`
 
             if (data.millisecond > 0) {
               // YYYY-MM-DDTHH:mm:SS.SSS
@@ -450,7 +602,11 @@ export function convertDataToISO (data) {
               rtn += 'Z'
             } else {
               // YYYY-MM-DDTHH:mm:SS+/-HH:mm
-              rtn += (data.tzOffset > 0 ? '+' : '-') + twoDigit(Math.floor(data.tzOffset / 60)) + ':' + twoDigit(data.tzOffset % 60)
+              rtn +=
+                (data.tzOffset > 0 ? '+' : '-') +
+                twoDigit(Math.floor(data.tzOffset / 60)) +
+                ':' +
+                twoDigit(data.tzOffset % 60)
             }
           }
         }
@@ -475,78 +631,58 @@ export function convertDataToISO (data) {
 }
 
 /**
- * @param data Object
- * @returns DatetimeData
- */
-export function convertToDatetimeData (data) {
-  let rtn = {}
+ * @param {number} val - val
+ * @return {string}
+ * */
+function twoDigit (val) {
+  return ('0' + (isPresent(val) ? Math.abs(val) : '0')).slice(-2)
+}
 
-  if (isPresent(data)) {
-    // do some magic for 12-hour values
-    if (isPresent(data.ampm) && isPresent(data.hour)) {
-      if (data.ampm.value === 'pm') {
-        data.hour.value = (data.hour.value === 12 ? 12 : data.hour.value + 12)
-      } else {
-        data.hour.value = (data.hour.value === 12 ? 0 : data.hour.value)
-      }
-    }
+/**
+ * @param {number} val - val
+ * @return {string}
+ * */
+function threeDigit (val) {
+  return ('00' + (isPresent(val) ? Math.abs(val) : '0')).slice(-3)
+}
 
-    if (isPresent(data.year)) {
-      // YYYY
-      rtn.year = parseInt(data.year.value)
-    }
-
-    if (isPresent(data.month)) {
-      // YYYY-MM
-      rtn.month = parseInt(data.month.value)
-    }
-
-    if (isPresent(data.day)) {
-      // YYYY-MM-DD
-      rtn.day = parseInt(data.day.value)
-    }
-
-    if (isPresent(data.hour)) {
-      // YYYY-MM-DD HH:mm:SS
-      rtn.hour = parseInt(data.hour.value)
-    }
-
-    if (isPresent(data.minute)) {
-      rtn.minute = parseInt(data.minute.value)
-    }
-
-    if (isPresent(data.second)) {
-      rtn.second = parseInt(data.second.value)
-    }
-
-    if (isPresent(data.millisecond)) {
-      rtn.millisecond = parseInt(data.millisecond.value)
-    }
-  }
-
-  return rtn
+/**
+ * @param {number} val - val
+ * @return {string}
+ * */
+function fourDigit (val) {
+  return ('000' + (isPresent(val) ? Math.abs(val) : '0')).slice(-4)
 }
 
 /**
  * Use to convert a string of comma separated numbers or
  * an array of numbers, and clean up any user input
+ * @example
+ * '1,2,4,5'      ->  [1,2,3,5]
+ * '[1,2,3,4]'    ->  [1,2,3,4]
+ * [1,2,3,a]      ->  [1,2,3]
+ * @private
  */
 export function convertToArrayOfNumbers (input, type) {
+  var values = []
+
   if (isString(input)) {
     // convert the string to an array of strings
     // auto remove any whitespace and [] characters
     input = input.replace(/\[|\]|\s/g, '').split(',')
   }
 
-  let values = []
   if (isArray(input)) {
     // ensure each value is an actual number in the returned array
-    values = input
-      .map((num) => parseInt(num, 10))
-      .filter(isFinite)
+    input.forEach((num) => {
+      num = parseInt(num, 10)
+      if (!isNaN(num)) {
+        values.push(num)
+      }
+    })
   }
 
-  if (!values || !values.length) {
+  if (!values.length) {
     console.warn(`Invalid "${type}Values". Must be an array of numbers, or a comma separated string of numbers.`)
   }
 
@@ -556,37 +692,35 @@ export function convertToArrayOfNumbers (input, type) {
 /**
  * Use to convert a string of comma separated strings or
  * an array of strings, and clean up any user input
+ * @example
+ * 'a,b,c,d'      ->  [a,b,c,d]
+ * '[a,b,c,d]'    ->  [a,b,c,d]
+ * @private
  */
 export function convertToArrayOfStrings (input, type) {
   if (isPresent(input)) {
+    var values = []
+
     if (isString(input)) {
       // convert the string to an array of strings
       // auto remove any [] characters
       input = input.replace(/\[|\]/g, '').split(',')
     }
 
-    var values = []
     if (isArray(input)) {
       // trim up each string value
-      values = input.map((val) => val.trim())
+      input.forEach((val) => {
+        val = val.trim()
+        if (val) {
+          values.push(val)
+        }
+      })
     }
 
-    if (!values || !values.length) {
+    if (!values.length) {
       console.warn(`Invalid "${type}Names". Must be an array of strings, or a comma separated string.`)
     }
 
     return values
   }
-}
-
-function twoDigit (val) {
-  return ('0' + (isPresent(val) ? Math.abs(val) : '0')).slice(-2)
-}
-
-function threeDigit (val) {
-  return ('00' + (isPresent(val) ? Math.abs(val) : '0')).slice(-3)
-}
-
-function fourDigit (val) {
-  return ('000' + (isPresent(val) ? Math.abs(val) : '0')).slice(-4)
 }

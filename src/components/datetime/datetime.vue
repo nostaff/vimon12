@@ -18,7 +18,6 @@
 
 <script type="text/javascript">
   import { isBlank, isPresent, isTrueProperty, isArray, isString } from '../../util/util'
-  import { setElementClass } from '../../util/dom'
   import ThemeMixins from '../../themes/theme.mixins'
   import Picker from '../picker'
   import IonButton from '../button'
@@ -91,7 +90,7 @@
     watch: {
       disabled (val) {
         this.theDisabled = isTrueProperty(val)
-        this.itemComponent && setElementClass(this.itemComponent.$el, 'item-datetime-disabled', this.theDisabled)
+        this.itemComponent && this.itemComponent.setElementClass('item-datetime-disabled', this.theDisabled)
       },
       value (val) {
         this.theValue = parseDate(val)
@@ -363,7 +362,7 @@
        */
       checkHasValue (inputValue) {
         if (this.itemComponent) {
-          setElementClass(this.itemComponent.$el, 'input-has-value', !!(inputValue && inputValue !== ''))
+          this.itemComponent.setElementClass('input-has-value', !!(inputValue && inputValue !== ''))
         }
       },
 
@@ -444,7 +443,7 @@
         this.itemComponent = this.$parent
       }
       console.assert(this.itemComponent, 'The component of Datetime must in Item component.')
-      setElementClass(this.itemComponent.$el, 'item-datetime', true)
+      this.itemComponent.setElementClass('item-datetime', true)
 
       // first see if locale names were provided in the inputs
       // then check to see if they're in the config
