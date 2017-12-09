@@ -104,7 +104,7 @@
    *
    * @demo #/picker
    **/
-import { isString, isPresent, isNumber } from '../../util/util'
+import { isString, isPresent, isNumber, isFunction } from '../../util/util'
 import { urlChange } from '../../util/dom'
 import ThemeMixins from '../../themes/theme.mixins'
 import IonBackdrop from '../backdrop/backdrop'
@@ -255,8 +255,7 @@ export default {
       }
 
       let shouldDismiss = true
-
-      if (button.handler) {
+      if (isFunction(button.handler)) {
         // a handler has been provided, execute it
         // pass the handler the values from the inputs
         if (button.handler(this.getSelected()) === false) {
@@ -288,6 +287,7 @@ export default {
           columnIndex: index
         }
       })
+
       return selected
     },
 
@@ -303,7 +303,6 @@ export default {
       // col发生变化, 则获取当前选中的整体数据, 触发onChange事件
       let selectedData = this.getSelected()
       this.$emit('onChange', selectedData)
-      console.log(selectedData)
       this.onChange && this.onChange(selectedData)
     },
 
