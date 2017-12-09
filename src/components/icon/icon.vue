@@ -4,6 +4,7 @@
 <script>
   import {isTrueProperty} from '../../util/util'
   import ThemeMixins from '../../themes/theme.mixins'
+  import 'ionicons/dist/css/ionicons.css'
 
   export default {
     name: 'ion-icon',
