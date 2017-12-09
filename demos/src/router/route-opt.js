@@ -40,8 +40,6 @@ import DemoActionSheet from '../pages/ActionSheet'
 import DemoDialog from '../pages/Dialog'
 import DemoToast from '../pages/Toast'
 import DemoSwiper from '../pages/Swiper'
-import DemoSwiperDefault from '../pages/SwiperDefault'
-import DemoSwiperVertical from '../pages/SwiperVertical'
 import DemoPicker from '../pages/Picker'
 import DemoPopup from '../pages/Popup'
 import DemoPopover from '../pages/Popover'
@@ -89,8 +87,6 @@ const routes = [
   { path: '/demo/dialog', component: DemoDialog },
   { path: '/demo/toast', component: DemoToast },
   { path: '/demo/swiper', component: DemoSwiper },
-  { path: '/demo/swiper/default', component: DemoSwiperDefault },
-  { path: '/demo/swiper/vertical', component: DemoSwiperVertical },
   { path: '/demo/popup', component: DemoPopup },
   { path: '/demo/popover', component: DemoPopover },
   { path: '/demo/actionSheet', component: DemoActionSheet },

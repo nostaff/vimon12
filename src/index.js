@@ -40,7 +40,7 @@ import {Option, Select} from './components/select/index.js'
 // import Separation from './components/separation/index.js'
 // import Sheet from './components/sheet/index.js'
 // import SlideBox from './components/slide-box/index.js'
-// import Slides from './components/slides/index.js'
+import {Slides, Slide} from './components/slides/index.js'
 // import SlidesLite from './components/slides-lite/index.js'
 import Spinner from './components/spinner/index.js'
 import {Tab, Tabs} from './components/tabs/index.js'
@@ -130,7 +130,8 @@ const components = {
   // Separation,
   // Sheet,
   // SlideBox,
-  // Slides,
+  Slides,
+  Slide,
   // SlidesLite,
   Spinner,
   Tabs,
@@ -248,7 +249,8 @@ export {
   // Separation,
   // Sheet,
   // SlideBox,
-  // Slides,
+  Slides,
+  Slide,
   // SlidesLite,
   Spinner,
   Tabs,
