@@ -1,5 +1,5 @@
 <template>
-  <ion-page v-nav="{title: 'Chip', showBackButton: true}">
+  <ion-page v-nav="{title: 'Chip'}">
     <ion-content padding text-center>
       <h2>Text Chips</h2>
       <ion-chip>

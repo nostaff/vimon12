@@ -1,5 +1,5 @@
 <template>
-    <ion-page v-nav="{title: '下拉选择框', showBackButton: true}">
+    <ion-page v-nav="{title: '下拉选择框'}">
         <ion-content>
 
             <ion-list>

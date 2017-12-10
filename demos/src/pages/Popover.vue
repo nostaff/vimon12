@@ -1,5 +1,5 @@
 <template>
-  <ion-page v-nav="{title: '弹出框', showBackButton: true, showMoreButton: true, onMoreButtonClick: pageSetting}">
+  <ion-page v-nav="{title: '弹出框', showMoreButton: true, onMoreButtonClick: pageSetting}">
     <ion-content ref="content">
 
       <div padding>

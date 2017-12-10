@@ -1,5 +1,5 @@
 <template>
-    <ion-page v-nav="{title: '滑块', showBackButton: true}">
+    <ion-page v-nav="{title: '滑块'}">
         <ion-content class="padding-top outer-content">
 
             <ion-list>

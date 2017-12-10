@@ -1,5 +1,5 @@
 <template>
-  <ion-page v-nav="{title: '浮动按钮', showBackButton: true}">
+  <ion-page v-nav="{title: '浮动按钮'}">
     <ion-content fullscreen>
       <div v-for="i in array">{{i}}</div>
       <section slot="fixed">

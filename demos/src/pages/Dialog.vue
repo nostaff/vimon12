@@ -1,5 +1,5 @@
 <template>
-  <ion-page v-nav="{title: '对话框', showBackButton: true}">
+  <ion-page v-nav="{title: '对话框'}">
     <ion-content padding>
 
       <ion-button block @click.native="doAlert()">Basic Alert</ion-button>

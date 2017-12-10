@@ -1,5 +1,5 @@
 <template>
-    <ion-page v-nav="{title: '按钮', showBackButton: true}">
+    <ion-page v-nav="{title: '按钮'}">
         <ion-content text-center>
             <h4>Colors</h4>
             <ion-button>Default</ion-button>

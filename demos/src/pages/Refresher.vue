@@ -1,5 +1,5 @@
 <template>
-    <ion-page v-nav="{title: 'Refresher', showBackButton: true}">
+    <ion-page v-nav="{title: 'Refresher'}">
         <ion-content>
             <ion-refresher slot="refresher"
                            :enabled="enabled"

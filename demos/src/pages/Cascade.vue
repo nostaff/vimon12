@@ -1,5 +1,5 @@
 <template>
-  <ion-page v-nav="{title: '级联', showBackButton: true}">
+  <ion-page v-nav="{title: '级联'}">
     <ion-content>
       <cascade title="选择您所属的行政区划：" :fields="fields" :data="cities" :value="value" :onChange="onChange"></cascade>
 

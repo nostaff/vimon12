@@ -1,5 +1,5 @@
 <template>
-  <ion-page v-nav="{title: '选择器', showBackButton: true}">
+  <ion-page v-nav="{title: '选择器'}">
     <ion-content>
 
       <ion-list title="Datetime">

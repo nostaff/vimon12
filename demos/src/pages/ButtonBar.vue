@@ -1,5 +1,5 @@
 <template>
-  <ion-page v-nav="{title: 'iOS 风格选项卡', showBackButton: true}">
+  <ion-page v-nav="{title: 'iOS 风格选项卡'}">
     <ion-content>
 
       <div class="padding light-bg">

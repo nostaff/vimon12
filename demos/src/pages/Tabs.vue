@@ -1,5 +1,5 @@
 <template>
-    <ion-page v-nav="{title: '选项卡', showBackButton: true}">
+    <ion-page v-nav="{title: '选项卡'}">
         <ion-content class="tabs-demo">
             <!-- Text -->
             <ion-tabs tabs-only>

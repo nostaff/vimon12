@@ -1,5 +1,5 @@
 <template>
-    <ion-page v-nav="{title: '模态窗', showBackButton: true, showMoreButton: true}">
+    <ion-page v-nav="{title: '模态窗', showMoreButton: true}">
         <ion-content class="page-content padding">
 
             <div padding>

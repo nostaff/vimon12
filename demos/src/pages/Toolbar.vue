@@ -1,5 +1,5 @@
 <template>
-    <ion-page v-nav="{title: '工具条', showBackButton: true}">
+    <ion-page v-nav="{title: '工具条'}">
             <ion-content>
                 <ion-toolbar no-border-top>
                     <ion-title>Long title that never ends. It just goes on and on my friend.</ion-title>

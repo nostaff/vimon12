@@ -1,5 +1,5 @@
 <template>
-    <ion-page v-nav="{title: 'List 列表', showBackButton: true}">
+    <ion-page v-nav="{title: 'List 列表'}">
         <ion-content class="outer-content">
 
             <ion-list>

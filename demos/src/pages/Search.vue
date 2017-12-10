@@ -1,5 +1,5 @@
 <template>
-    <ion-page v-nav="{title: '搜索框', showBackButton: true}">
+    <ion-page v-nav="{title: '搜索框'}">
         <ion-content>
 
             <ion-searchbar v-model="keywords" placeholder="输入关键字" :onChange="onChange"

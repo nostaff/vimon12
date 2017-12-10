@@ -1,5 +1,5 @@
 <template>
-    <ion-page v-nav="{title: '弹层', showBackButton: true}">
+    <ion-page v-nav="{title: '弹层'}">
         <ion-content>
 
             <ion-item  is-link @click.native="showCustomPopup()">

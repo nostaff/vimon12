@@ -1,5 +1,5 @@
 <template>
-  <ion-page v-nav="{title: 'Icons', showBackButton: true}">
+  <ion-page v-nav="{title: 'Icons'}">
 
     <ion-content text-center class="icon-demo">
 
